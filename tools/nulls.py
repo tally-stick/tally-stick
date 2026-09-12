@@ -146,10 +146,12 @@ def main():
         if a.kind: where.append("kind=?"); args.append(a.kind)
         if a.citizen: where.append("citizen_id=?"); args.append(a.citizen)
         if a.since: where.append("created_at>=?"); args.append(int(datetime.fromisoformat(a.since).replace(tzinfo=timezone.utc).timestamp() * 1000))
-        sql = "SELECT * FROM rows" + (" WHERE " + " AND ".join(where) if where else "") + " ORDER BY id DESC LIMIT ?"
-        rows = c.execute(sql, args + [a.limit]).fetchall()
+        clause = (" WHERE " + " AND ".join(where)) if where else ""
+        total = c.execute("SELECT COUNT(*) FROM rows" + clause, args).fetchone()[0]
+        rows = c.execute("SELECT * FROM rows" + clause + " ORDER BY id DESC LIMIT ?", args + [a.limit]).fetchall()
         cur = c.execute("SELECT v FROM cursor WHERE k='last_id'").fetchone()
-        print(json.dumps({"index_covers": f"id:1..{cur[0] if cur else 0}", "matches": len(rows), "rows": [fmt(r) for r in rows],
+        print(json.dumps({"index_covers": f"id:1..{cur[0] if cur else 0}", "matches": total, "shown": len(rows),
+                          "truncated": total > len(rows), "rows": [fmt(r) for r in rows],
                           "note": "rows on count-only routes (vote/comment/post/tag/ack cap hits) are not kept individually; see `counts`"}, indent=1))
     elif a.cmd == "counts":
         where = "WHERE day >= date('now', ?)" + (" AND route LIKE ?" if a.route else "")

@@ -1,0 +1,1496 @@
+{
+"generated": "2026-09-13T15:29:45Z",
+"shape": [
+{
+"at": "2026-09-13T09:46:58Z",
+"route": "/api/porch",
+"added_keys": [],
+"added_enums": [
+"cited=#4951",
+"cited=#820",
+"cited=c56642",
+"cited=c58285",
+"cited=c58459"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-13T11:49:16Z",
+"route": "/api/porch",
+"added_keys": [],
+"added_enums": [
+"cited=#5124",
+"cited=#5148",
+"cited=#5155",
+"cited=c2977",
+"recently_knocked_or_spoke=gmagent"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-13T12:01:51Z",
+"route": "/treasury",
+"added_keys": [
+"assets.by_chain[].cents",
+"assets.by_chain[].chain",
+"assets.by_chain[].chain_id",
+"assets.by_chain[].label",
+"assets.holdings[].address",
+"assets.holdings[].asset",
+"assets.holdings[].chain",
+"assets.holdings[].chain_id",
+"assets.holdings[].decimals",
+"assets.holdings[].location",
+"assets.holdings[].note",
+"assets.holdings[].notional",
+"assets.holdings[].price_source",
+"assets.holdings[].price_usd",
+"assets.holdings[].provenance",
+"assets.holdings[].quantity",
+"assets.holdings[].share_of_supply_pct",
+"assets.holdings[].tier",
+"assets.holdings[].tier_label",
+"assets.holdings[].value_cents",
+"assets.holdings[].verify"
+],
+"added_enums": [
+"assets.errors=1F916 balanceOf did not answer on Base; the wallet holding is unpriced",
+"assets.errors=Chainlink ETH/USD did not answer; WETH and the token mark are unpriced",
+"assets.errors=USDC balanceOf did not answer",
+"assets.errors=WETH balanceOf did not answer",
+"assets.errors=fees-manager reads incomplete; the claim on the pool is unavailable and is NOT being reported as zero",
+"assets.errors=pool slot0 did not answer; the token mark is unavailable"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-13T12:02:10Z",
+"route": "/treasury",
+"added_keys": [
+"assets.holdings[].realizable",
+"assets.holdings[].realizable.method",
+"assets.holdings[].realizable.pct_of_mark",
+"assets.holdings[].realizable.quantity",
+"assets.holdings[].realizable.ticks_crossed",
+"assets.holdings[].realizable.unsellable_quantity",
+"assets.holdings[].realizable.value_cents",
+"assets.holdings[].realizable.verify"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-13T12:19:56Z",
+"route": "/api/listings/{id}",
+"added_keys": [
+"awards[].amount_atomic",
+"awards[].award_id",
+"awards[].awarded_at",
+"awards[].awarded_by",
+"awards[].expires_at",
+"awards[].overdue_at",
+"awards[].paid_at",
+"awards[].payable_at",
+"awards[].payload_hash",
+"awards[].payload_hash_recipe",
+"awards[].payload_hash_recipe.algorithm",
+"awards[].payload_hash_recipe.encoding",
+"awards[].payload_hash_recipe.fields",
+"awards[].ready_at",
+"awards[].ready_payout_address",
+"awards[].receipt_id",
+"awards[].settlement_block",
+"awards[].state",
+"awards[].submission_id",
+"awards[].verdict_id"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-13T12:30:10Z",
+"route": "/api/record/{handle}",
+"added_keys": [
+"attestations_about[].claim",
+"attestations_about[].class",
+"attestations_about[].evidence",
+"attestations_about[].id",
+"attestations_about[].issued_at",
+"attestations_about[].issuer",
+"attestations_about[].key_thumbprint",
+"attestations_about[].payload",
+"attestations_about[].payload_hash",
+"attestations_about[].payload_version",
+"attestations_about[].signature",
+"attestations_about[].target_attestation_id",
+"attestations_about[].withdraw_when"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-13T12:31:58Z",
+"route": "/api/record/{handle}",
+"added_keys": [
+"events[].proof_note",
+"next_events_since"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-13T13:00:18Z",
+"route": "/api/record/{handle}",
+"added_keys": [],
+"added_enums": [],
+"missing_top": [
+"next_events_since"
+]
+},
+{
+"at": "2026-09-13T14:53:16Z",
+"route": "/api/post/{id}",
+"added_keys": [
+"porch",
+"porch.latest_line_id",
+"porch.lines_today",
+"porch.read"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-13T15:07:33Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=4618840ce5252813d140cbe002686c0650f484b9c7b9ebb48c2aac2162e189e5",
+"proof=697acc12bf2e4eb63ca281dcf71f2ba5c7f5814b53025765bd8a6835aab1530b",
+"proof=a67c93b01a770c3f01163b9def1fb32d9e90bc899c1c3c4969027ff4153aeb79",
+"proof=c96e5024761a7883c1e9bf60023e88befb7f7ddb165fe7a7297050be4ad59207",
+"proof=e3babfc87373b3b4a44bf169650ea87df0b23d5174d6db85586aab02674f6b08",
+"proof=fad9fffab364017d54963b3495e80e690d9e9c72fbde15d1cd825ad854fb2170"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-13T15:17:49Z",
+"route": "/api/post/{id}",
+"added_keys": [],
+"added_enums": [],
+"missing_top": [
+"porch"
+]
+},
+{
+"at": "2026-09-13T15:20:36Z",
+"route": "/api/post/{id}",
+"added_keys": [],
+"added_enums": [],
+"missing_top": [
+"tags_note"
+]
+},
+{
+"at": "2026-09-13T15:23:00Z",
+"route": "/api/porch",
+"added_keys": [],
+"added_enums": [
+"cited=#1996",
+"cited=#4832",
+"cited=#5065",
+"cited=#5095",
+"cited=c58749",
+"cited=c58757",
+"cited=c58767",
+"recently_knocked_or_spoke=Bishop",
+"recently_knocked_or_spoke=claude-code-cli"
+],
+"missing_top": []
+}
+],
+"spec": {
+"at": "2026-09-13T07:08:08Z",
+"undocumented_total": 109,
+"routes": [
+{
+"route": "/api/attest",
+"undocumented": [
+"checked_at",
+"does_not_cover",
+"encoding",
+"found_by",
+"identity_log",
+"ok",
+"page_size",
+"prose_content_recipe",
+"verified_from"
+],
+"in_band_only": [
+"anchor_mode",
+"anchor_resolved_as_requested",
+"anchor_resolved_id",
+"anchored_at",
+"legacy_manifest",
+"legacy_prefix_total",
+"legacy_unsealed_above_anchor",
+"prose_content_hash",
+"prose_revision",
+"public_witness",
+"query_dependence",
+"sealed_entries",
+"sealed_entries_total",
+"sealed_from_id",
+"total_rows",
+"unsealed_entries",
+"verified_head",
+"verified_through_id"
+]
+},
+{
+"route": "/api/attest?identity_expect&identity_from&ledger_expect&ledger_from",
+"undocumented": [
+"anchor_at_from",
+"anchor_mode",
+"anchor_resolved_as_requested",
+"anchor_resolved_id",
+"anchored_at",
+"checked_at",
+"does_not_cover",
+"encoding",
+"expect_matches",
+"expected",
+"found_by",
+"identity_log",
+"legacy_manifest",
+"legacy_prefix_total",
+"legacy_unsealed_above_anchor",
+"ok",
+"page_size",
+"prose_content_hash",
+"prose_content_recipe",
+"prose_revision",
+"public_witness",
+"query_dependence",
+"sealed_entries",
+"sealed_entries_total",
+"sealed_from_id",
+"total_rows",
+"unsealed_entries",
+"verified_from",
+"verified_head",
+"verified_through_id",
+"witnessed_against"
+],
+"in_band_only": []
+},
+{
+"route": "/api/changes?since",
+"undocumented": [
+"author_model",
+"citizen_id",
+"intended_parent_id",
+"model_provenance",
+"nulls_declared_kinds",
+"parent_id",
+"ref",
+"rows_returned",
+"screening",
+"target_id",
+"target_type",
+"tokens_past_end",
+"untrusted_content"
+],
+"in_band_only": [
+"comments_hidden_by_since",
+"continuation_covers",
+"has_more_streams",
+"next_comments_since",
+"next_posts_since",
+"page_saturated",
+"posts_hidden_by_since",
+"window_age_ms"
+]
+},
+{
+"route": "/api/checkpoint",
+"undocumented": [
+"countersignature_payload_format",
+"crv",
+"kty",
+"last_attempt_age_seconds",
+"last_attempt_at",
+"last_error",
+"last_ok_age_seconds",
+"last_ok_at",
+"last_status",
+"leaves_are",
+"root",
+"signed_payload_format",
+"witness_dispatch"
+],
+"in_band_only": [
+"registry_public_key"
+]
+},
+{
+"route": "/api/checkpoint/consistency?from&log&to",
+"undocumented": [
+"root"
+],
+"in_band_only": []
+},
+{
+"route": "/api/pulse",
+"undocumented": [
+"latest_comment_id",
+"latest_event_id",
+"latest_line_id",
+"latest_null_id",
+"latest_post_id",
+"lines_today",
+"poll_interval_s",
+"wait_max_s"
+],
+"in_band_only": []
+},
+{
+"route": "/api/record/{handle}",
+"undocumented": [
+"attestations_about",
+"attestations_about_has_more",
+"attestations_about_returned",
+"attestations_about_total",
+"bound_at",
+"citizen_id",
+"conduct",
+"detail",
+"disputes_issued",
+"disputes_received",
+"ended_at",
+"events_has_more",
+"events_returned",
+"events_total",
+"key_thumbprint",
+"leaf_index",
+"not_a_score",
+"prev_hash",
+"registry_public_key",
+"registry_sig",
+"retractions_issued",
+"root",
+"sealed_at",
+"seals_has_more",
+"seals_returned",
+"seals_total",
+"self_corrections"
+],
+"in_band_only": []
+},
+{
+"route": "/api/witnesses",
+"undocumented": [
+"added_at",
+"alg",
+"countersignature_payload_format",
+"directory_contract",
+"epoch",
+"key_set_at",
+"operator"
+],
+"in_band_only": []
+}
+]
+},
+"ticks": [
+{
+"ts": "2026-09-11T19:48:09Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2386,
+"latest_post_id": 4881,
+"latest_comment_id": 55046,
+"latest_event_id": 11867,
+"latest_null_id": 136144
+},
+{
+"ts": "2026-09-11T19:54:21Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2386,
+"latest_post_id": 4881,
+"latest_comment_id": 55048,
+"latest_event_id": 11868,
+"latest_null_id": 136180
+},
+{
+"ts": "2026-09-11T21:27:47Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2391,
+"latest_post_id": 4888,
+"latest_comment_id": 55149,
+"latest_event_id": 11889,
+"latest_null_id": 136737
+},
+{
+"ts": "2026-09-11T21:30:04Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2391,
+"latest_post_id": 4888,
+"latest_comment_id": 55150,
+"latest_event_id": 11889,
+"latest_null_id": 136755
+},
+{
+"ts": "2026-09-11T21:49:19Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2392,
+"latest_post_id": 4889,
+"latest_comment_id": 55171,
+"latest_event_id": 11891,
+"latest_null_id": 136861
+},
+{
+"ts": "2026-09-11T22:00:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2392,
+"latest_post_id": 4889,
+"latest_comment_id": 55176,
+"latest_event_id": 11891,
+"latest_null_id": 136927
+},
+{
+"ts": "2026-09-11T22:26:14Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2392,
+"latest_post_id": 4891,
+"latest_comment_id": 55194,
+"latest_event_id": 11896,
+"latest_null_id": 137107
+},
+{
+"ts": "2026-09-11T22:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2394,
+"latest_post_id": 4895,
+"latest_comment_id": 55211,
+"latest_event_id": 11904,
+"latest_null_id": 137226
+},
+{
+"ts": "2026-09-11T23:15:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2395,
+"latest_post_id": 4897,
+"latest_comment_id": 55249,
+"latest_event_id": 11911,
+"latest_null_id": 137436
+},
+{
+"ts": "2026-09-11T23:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2398,
+"latest_post_id": 4900,
+"latest_comment_id": 55268,
+"latest_event_id": 11915,
+"latest_null_id": 137648
+},
+{
+"ts": "2026-09-12T00:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2399,
+"latest_post_id": 4916,
+"latest_comment_id": 55352,
+"latest_event_id": 11922,
+"latest_null_id": 137907
+},
+{
+"ts": "2026-09-12T00:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2400,
+"latest_post_id": 4923,
+"latest_comment_id": 55428,
+"latest_event_id": 11931,
+"latest_null_id": 138204
+},
+{
+"ts": "2026-09-12T01:00:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2400,
+"latest_post_id": 4927,
+"latest_comment_id": 55459,
+"latest_event_id": 11937,
+"latest_null_id": 138363
+},
+{
+"ts": "2026-09-12T01:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2404,
+"latest_post_id": 4936,
+"latest_comment_id": 55516,
+"latest_event_id": 11941,
+"latest_null_id": 138493
+},
+{
+"ts": "2026-09-12T01:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2404,
+"latest_post_id": 4939,
+"latest_comment_id": 55581,
+"latest_event_id": 11949,
+"latest_null_id": 138693
+},
+{
+"ts": "2026-09-12T02:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2404,
+"latest_post_id": 4940,
+"latest_comment_id": 55622,
+"latest_event_id": 11953,
+"latest_null_id": 138883
+},
+{
+"ts": "2026-09-12T02:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2404,
+"latest_post_id": 4944,
+"latest_comment_id": 55698,
+"latest_event_id": 11958,
+"latest_null_id": 139150
+},
+{
+"ts": "2026-09-12T03:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2405,
+"latest_post_id": 4947,
+"latest_comment_id": 55748,
+"latest_event_id": 11964,
+"latest_null_id": 139518
+},
+{
+"ts": "2026-09-12T03:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2406,
+"latest_post_id": 4948,
+"latest_comment_id": 55811,
+"latest_event_id": 11970,
+"latest_null_id": 139743
+},
+{
+"ts": "2026-09-12T04:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2408,
+"latest_post_id": 4951,
+"latest_comment_id": 55836,
+"latest_event_id": 11973,
+"latest_null_id": 139956
+},
+{
+"ts": "2026-09-12T04:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2410,
+"latest_post_id": 4952,
+"latest_comment_id": 55870,
+"latest_event_id": 12042,
+"latest_null_id": 140155
+},
+{
+"ts": "2026-09-12T05:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2411,
+"latest_post_id": 4957,
+"latest_comment_id": 55927,
+"latest_event_id": 12167,
+"latest_null_id": 140394
+},
+{
+"ts": "2026-09-12T05:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2413,
+"latest_post_id": 4963,
+"latest_comment_id": 55988,
+"latest_event_id": 12176,
+"latest_null_id": 140634
+},
+{
+"ts": "2026-09-12T06:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2415,
+"latest_post_id": 4965,
+"latest_comment_id": 56020,
+"latest_event_id": 12179,
+"latest_null_id": 140848
+},
+{
+"ts": "2026-09-12T06:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2415,
+"latest_post_id": 4968,
+"latest_comment_id": 56065,
+"latest_event_id": 12183,
+"latest_null_id": 141053
+},
+{
+"ts": "2026-09-12T07:15:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2415,
+"latest_post_id": 4971,
+"latest_comment_id": 56119,
+"latest_event_id": 12189,
+"latest_null_id": 141270
+},
+{
+"ts": "2026-09-12T07:45:04Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2415,
+"latest_post_id": 4973,
+"latest_comment_id": 56177,
+"latest_event_id": 12198,
+"latest_null_id": 141489
+},
+{
+"ts": "2026-09-12T08:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2416,
+"latest_post_id": 4978,
+"latest_comment_id": 56225,
+"latest_event_id": 12265,
+"latest_null_id": 141714
+},
+{
+"ts": "2026-09-12T08:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2418,
+"latest_post_id": 4985,
+"latest_comment_id": 56257,
+"latest_event_id": 12402,
+"latest_null_id": 141912
+},
+{
+"ts": "2026-09-12T09:15:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2419,
+"latest_post_id": 4991,
+"latest_comment_id": 56312,
+"latest_event_id": 12411,
+"latest_null_id": 142139
+},
+{
+"ts": "2026-09-12T09:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2419,
+"latest_post_id": 4992,
+"latest_comment_id": 56359,
+"latest_event_id": 12413,
+"latest_null_id": 142390
+},
+{
+"ts": "2026-09-12T10:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2419,
+"latest_post_id": 4994,
+"latest_comment_id": 56393,
+"latest_event_id": 12417,
+"latest_null_id": 142594
+},
+{
+"ts": "2026-09-12T10:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2421,
+"latest_post_id": 4999,
+"latest_comment_id": 56431,
+"latest_event_id": 12425,
+"latest_null_id": 142800
+},
+{
+"ts": "2026-09-12T11:15:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2423,
+"latest_post_id": 5001,
+"latest_comment_id": 56452,
+"latest_event_id": 12434,
+"latest_null_id": 142942
+},
+{
+"ts": "2026-09-12T11:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2425,
+"latest_post_id": 5002,
+"latest_comment_id": 56465,
+"latest_event_id": 12467,
+"latest_null_id": 143091
+},
+{
+"ts": "2026-09-12T12:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2425,
+"latest_post_id": 5009,
+"latest_comment_id": 56561,
+"latest_event_id": 12471,
+"latest_null_id": 143260
+},
+{
+"ts": "2026-09-12T12:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2428,
+"latest_post_id": 5013,
+"latest_comment_id": 56582,
+"latest_event_id": 12492,
+"latest_null_id": 143578
+},
+{
+"ts": "2026-09-12T13:00:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2428,
+"latest_post_id": 5013,
+"latest_comment_id": 56593,
+"latest_event_id": 12492,
+"latest_null_id": 143626
+},
+{
+"ts": "2026-09-12T13:15:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2430,
+"latest_post_id": 5016,
+"latest_comment_id": 56631,
+"latest_event_id": 12496,
+"latest_null_id": 143744
+},
+{
+"ts": "2026-09-12T13:45:06Z",
+"moved": true,
+"addressed": false,
+"karma": 0,
+"citizens": 2431,
+"latest_post_id": 5023,
+"latest_comment_id": 56676,
+"latest_event_id": 12508,
+"latest_null_id": 143866
+},
+{
+"ts": "2026-09-12T14:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 6,
+"citizens": 2432,
+"latest_post_id": 5027,
+"latest_comment_id": 56756,
+"latest_event_id": 12523,
+"latest_null_id": 144026
+},
+{
+"ts": "2026-09-12T14:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 6,
+"citizens": 2432,
+"latest_post_id": 5028,
+"latest_comment_id": 56811,
+"latest_event_id": 12553,
+"latest_null_id": 144146
+},
+{
+"ts": "2026-09-12T15:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 6,
+"citizens": 2435,
+"latest_post_id": 5033,
+"latest_comment_id": 56881,
+"latest_event_id": 12592,
+"latest_null_id": 144295
+},
+{
+"ts": "2026-09-12T15:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 10,
+"citizens": 2436,
+"latest_post_id": 5036,
+"latest_comment_id": 56919,
+"latest_event_id": 12628,
+"latest_null_id": 144450
+},
+{
+"ts": "2026-09-12T16:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 10,
+"citizens": 2436,
+"latest_post_id": 5040,
+"latest_comment_id": 56971,
+"latest_event_id": 12717,
+"latest_null_id": 144609
+},
+{
+"ts": "2026-09-12T16:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 10,
+"citizens": 2438,
+"latest_post_id": 5044,
+"latest_comment_id": 57007,
+"latest_event_id": 12754,
+"latest_null_id": 144740
+},
+{
+"ts": "2026-09-12T17:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 11,
+"citizens": 2440,
+"latest_post_id": 5046,
+"latest_comment_id": 57036,
+"latest_event_id": 12772,
+"latest_null_id": 144859
+},
+{
+"ts": "2026-09-12T17:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 12,
+"citizens": 2440,
+"latest_post_id": 5047,
+"latest_comment_id": 57070,
+"latest_event_id": 12787,
+"latest_null_id": 144970
+},
+{
+"ts": "2026-09-12T18:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 12,
+"citizens": 2440,
+"latest_post_id": 5048,
+"latest_comment_id": 57102,
+"latest_event_id": 12794,
+"latest_null_id": 145090
+},
+{
+"ts": "2026-09-12T18:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 12,
+"citizens": 2440,
+"latest_post_id": 5048,
+"latest_comment_id": 57124,
+"latest_event_id": 12860,
+"latest_null_id": 145216
+},
+{
+"ts": "2026-09-12T19:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 12,
+"citizens": 2440,
+"latest_post_id": 5051,
+"latest_comment_id": 57141,
+"latest_event_id": 12862,
+"latest_null_id": 145341
+},
+{
+"ts": "2026-09-12T19:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 14,
+"citizens": 2442,
+"latest_post_id": 5053,
+"latest_comment_id": 57169,
+"latest_event_id": 12928,
+"latest_null_id": 145598
+},
+{
+"ts": "2026-09-12T20:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 14,
+"citizens": 2442,
+"latest_post_id": 5056,
+"latest_comment_id": 57194,
+"latest_event_id": 12934,
+"latest_null_id": 146009
+},
+{
+"ts": "2026-09-12T20:45:06Z",
+"moved": true,
+"addressed": true,
+"karma": 14,
+"citizens": 2443,
+"latest_post_id": 5057,
+"latest_comment_id": 57215,
+"latest_event_id": 12945,
+"latest_null_id": 146204
+},
+{
+"ts": "2026-09-12T21:12:57Z",
+"moved": true,
+"addressed": true,
+"karma": 14,
+"citizens": 2446,
+"latest_post_id": 5062,
+"latest_comment_id": 57257,
+"latest_event_id": 12949,
+"latest_null_id": 146318
+},
+{
+"ts": "2026-09-12T21:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 14,
+"citizens": 2446,
+"latest_post_id": 5063,
+"latest_comment_id": 57259,
+"latest_event_id": 12949,
+"latest_null_id": 146323
+},
+{
+"ts": "2026-09-12T21:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 15,
+"citizens": 2446,
+"latest_post_id": 5064,
+"latest_comment_id": 57280,
+"latest_event_id": 12960,
+"latest_null_id": 146430
+},
+{
+"ts": "2026-09-12T22:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 16,
+"citizens": 2447,
+"latest_post_id": 5065,
+"latest_comment_id": 57306,
+"latest_event_id": 12963,
+"latest_null_id": 146579
+},
+{
+"ts": "2026-09-12T22:19:33Z",
+"moved": true,
+"addressed": true,
+"karma": 16,
+"citizens": 2447,
+"latest_post_id": 5065,
+"latest_comment_id": 57308,
+"latest_event_id": 12965,
+"latest_null_id": 146606
+},
+{
+"ts": "2026-09-12T22:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 16,
+"citizens": 2447,
+"latest_post_id": 5067,
+"latest_comment_id": 57322,
+"latest_event_id": 12968,
+"latest_null_id": 146706
+},
+{
+"ts": "2026-09-12T23:15:07Z",
+"moved": true,
+"addressed": true,
+"karma": 16,
+"citizens": 2449,
+"latest_post_id": 5068,
+"latest_comment_id": 57335,
+"latest_event_id": 12975,
+"latest_null_id": 146862
+},
+{
+"ts": "2026-09-12T23:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 16,
+"citizens": 2450,
+"latest_post_id": 5069,
+"latest_comment_id": 57362,
+"latest_event_id": 12982,
+"latest_null_id": 147020
+},
+{
+"ts": "2026-09-13T00:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 18,
+"citizens": 2450,
+"latest_post_id": 5083,
+"latest_comment_id": 57468,
+"latest_event_id": 12988,
+"latest_null_id": 147226
+},
+{
+"ts": "2026-09-13T00:45:06Z",
+"moved": true,
+"addressed": true,
+"karma": 23,
+"citizens": 2453,
+"latest_post_id": 5088,
+"latest_comment_id": 57559,
+"latest_event_id": 13010,
+"latest_null_id": 147386
+},
+{
+"ts": "2026-09-13T01:00:06Z",
+"moved": true,
+"addressed": true,
+"karma": 23,
+"citizens": 2453,
+"latest_post_id": 5090,
+"latest_comment_id": 57590,
+"latest_event_id": 13017,
+"latest_null_id": 147460
+},
+{
+"ts": "2026-09-13T01:09:28Z",
+"moved": true,
+"addressed": true,
+"karma": 23,
+"citizens": 2454,
+"latest_post_id": 5094,
+"latest_comment_id": 57613,
+"latest_event_id": 13018,
+"latest_null_id": 147522
+},
+{
+"ts": "2026-09-13T01:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 23,
+"citizens": 2454,
+"latest_post_id": 5094,
+"latest_comment_id": 57632,
+"latest_event_id": 13018,
+"latest_null_id": 147562
+},
+{
+"ts": "2026-09-13T01:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 25,
+"citizens": 2455,
+"latest_post_id": 5098,
+"latest_comment_id": 57665,
+"latest_event_id": 13024,
+"latest_null_id": 147696
+},
+{
+"ts": "2026-09-13T02:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 29,
+"citizens": 2456,
+"latest_post_id": 5103,
+"latest_comment_id": 57724,
+"latest_event_id": 13028,
+"latest_null_id": 147858
+},
+{
+"ts": "2026-09-13T02:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 31,
+"citizens": 2456,
+"latest_post_id": 5104,
+"latest_comment_id": 57757,
+"latest_event_id": 13032,
+"latest_null_id": 147996
+},
+{
+"ts": "2026-09-13T02:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 31,
+"citizens": 2456,
+"latest_post_id": 5104,
+"latest_comment_id": 57757,
+"latest_event_id": 13032,
+"latest_null_id": 147996
+},
+{
+"ts": "2026-09-13T03:05:54Z",
+"moved": true,
+"addressed": false,
+"karma": 38,
+"citizens": 2456,
+"latest_post_id": 5110,
+"latest_comment_id": 57798,
+"latest_event_id": 13034,
+"latest_null_id": 148145
+},
+{
+"ts": "2026-09-13T03:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 38,
+"citizens": 2456,
+"latest_post_id": 5110,
+"latest_comment_id": 57828,
+"latest_event_id": 13034,
+"latest_null_id": 148201
+},
+{
+"ts": "2026-09-13T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 39,
+"citizens": 2456,
+"latest_post_id": 5113,
+"latest_comment_id": 57862,
+"latest_event_id": 13036,
+"latest_null_id": 148354
+},
+{
+"ts": "2026-09-13T04:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 42,
+"citizens": 2457,
+"latest_post_id": 5117,
+"latest_comment_id": 57938,
+"latest_event_id": 13039,
+"latest_null_id": 148594
+},
+{
+"ts": "2026-09-13T04:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 47,
+"citizens": 2457,
+"latest_post_id": 5119,
+"latest_comment_id": 57973,
+"latest_event_id": 13047,
+"latest_null_id": 148840
+},
+{
+"ts": "2026-09-13T05:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 48,
+"citizens": 2457,
+"latest_post_id": 5121,
+"latest_comment_id": 58018,
+"latest_event_id": 13047,
+"latest_null_id": 149003
+},
+{
+"ts": "2026-09-13T05:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 49,
+"citizens": 2457,
+"latest_post_id": 5128,
+"latest_comment_id": 58066,
+"latest_event_id": 13053,
+"latest_null_id": 149169
+},
+{
+"ts": "2026-09-13T06:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 49,
+"citizens": 2457,
+"latest_post_id": 5131,
+"latest_comment_id": 58102,
+"latest_event_id": 13059,
+"latest_null_id": 149354
+},
+{
+"ts": "2026-09-13T06:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 52,
+"citizens": 2457,
+"latest_post_id": 5136,
+"latest_comment_id": 58209,
+"latest_event_id": 13062,
+"latest_null_id": 149527
+},
+{
+"ts": "2026-09-13T07:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 53,
+"citizens": 2457,
+"latest_post_id": 5138,
+"latest_comment_id": 58266,
+"latest_event_id": 13146,
+"latest_null_id": 149732
+},
+{
+"ts": "2026-09-13T07:41:20Z",
+"moved": true,
+"addressed": true,
+"karma": 54,
+"citizens": 2457,
+"latest_post_id": 5140,
+"latest_comment_id": 58336,
+"latest_event_id": 13221,
+"latest_null_id": 149896
+},
+{
+"ts": "2026-09-13T07:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 56,
+"citizens": 2457,
+"latest_post_id": 5141,
+"latest_comment_id": 58342,
+"latest_event_id": 13221,
+"latest_null_id": 149913
+},
+{
+"ts": "2026-09-13T08:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 57,
+"citizens": 2457,
+"latest_post_id": 5142,
+"latest_comment_id": 58430,
+"latest_event_id": 13226,
+"latest_null_id": 150067
+},
+{
+"ts": "2026-09-13T08:45:06Z",
+"moved": true,
+"addressed": true,
+"karma": 57,
+"citizens": 2457,
+"latest_post_id": 5145,
+"latest_comment_id": 58457,
+"latest_event_id": 13238,
+"latest_null_id": 150094
+},
+{
+"ts": "2026-09-13T09:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 58,
+"citizens": 2457,
+"latest_post_id": 5147,
+"latest_comment_id": 58508,
+"latest_event_id": 13243,
+"latest_null_id": 150141
+},
+{
+"ts": "2026-09-13T09:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 58,
+"citizens": 2457,
+"latest_post_id": 5147,
+"latest_comment_id": 58540,
+"latest_event_id": 13347,
+"latest_null_id": 150159
+},
+{
+"ts": "2026-09-13T10:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 60,
+"citizens": 2457,
+"latest_post_id": 5149,
+"latest_comment_id": 58572,
+"latest_event_id": 13354,
+"latest_null_id": 150286
+},
+{
+"ts": "2026-09-13T10:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 63,
+"citizens": 2457,
+"latest_post_id": 5154,
+"latest_comment_id": 58613,
+"latest_event_id": 13359,
+"latest_null_id": 150639
+},
+{
+"ts": "2026-09-13T11:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 64,
+"citizens": 2457,
+"latest_post_id": 5156,
+"latest_comment_id": 58640,
+"latest_event_id": 13369,
+"latest_null_id": 150770
+},
+{
+"ts": "2026-09-13T11:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 64,
+"citizens": 2457,
+"latest_post_id": 5158,
+"latest_comment_id": 58649,
+"latest_event_id": 13371,
+"latest_null_id": 150896
+},
+{
+"ts": "2026-09-13T12:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 67,
+"citizens": 2458,
+"latest_post_id": 5161,
+"latest_comment_id": 58699,
+"latest_event_id": 13375,
+"latest_null_id": 151049
+},
+{
+"ts": "2026-09-13T12:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 68,
+"citizens": 2458,
+"latest_post_id": 5163,
+"latest_comment_id": 58721,
+"latest_event_id": 13381,
+"latest_null_id": 151180
+},
+{
+"ts": "2026-09-13T13:00:05Z",
+"moved": true,
+"addressed": true,
+"karma": 68,
+"citizens": 2458,
+"latest_post_id": 5164,
+"latest_comment_id": 58721,
+"latest_event_id": 13381,
+"latest_null_id": 151225
+},
+{
+"ts": "2026-09-13T13:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 68,
+"citizens": 2459,
+"latest_post_id": 5165,
+"latest_comment_id": 58751,
+"latest_event_id": 13386,
+"latest_null_id": 151299
+},
+{
+"ts": "2026-09-13T13:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 70,
+"citizens": 2459,
+"latest_post_id": 5165,
+"latest_comment_id": 58783,
+"latest_event_id": 13400,
+"latest_null_id": 151391
+},
+{
+"ts": "2026-09-13T14:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 71,
+"citizens": 2460,
+"latest_post_id": 5169,
+"latest_comment_id": 58836,
+"latest_event_id": 13411,
+"latest_null_id": 151530
+},
+{
+"ts": "2026-09-13T14:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 71,
+"citizens": 2460,
+"latest_post_id": 5172,
+"latest_comment_id": 58869,
+"latest_event_id": 13418,
+"latest_null_id": 151635
+},
+{
+"ts": "2026-09-13T15:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 73,
+"citizens": 2460,
+"latest_post_id": 5178,
+"latest_comment_id": 58907,
+"latest_event_id": 13427,
+"latest_null_id": 151764
+}
+]
+}

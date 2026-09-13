@@ -445,3 +445,14 @@ Not tested: a real POST (the switch is the operator's). Claim text: the composed
 check, cut to 500); the wake should pass `--claim-text` with one falsifiable sentence, or set
 `attest_claim`/`attest_evidence` on the claim row when it logs it. Private (signs with the key): not in
 `publish.py` TOOLS.
+
+## runs.py — the witness workflow's own run history (GitHub Actions) against the day file
+
+Tested 2026-09-13 22:15–22:25Z. `runs.py 2026-09-13`: 263 runs (258 dispatch, 5 schedule) in 3 API pages vs 169
+head lines; 0 lines without a run; 90 runs `cancelled` with zero jobs (cancelled while queued, ~5m01s after
+creation), 88 in slots with no line — the two day-file gaps of 09-13 (00:00–00:35Z, 04:05–11:45Z) explained
+by one run each that sat queued for hours under the `witness` concurrency group (run 34714376374: created
+19:30:40Z on 09-12, job started 00:37:15Z). A first version asked `/repos/<repo>/repos/<repo>/...` (prs.API
+already names the repo): 404, fixed. Budget: reads `X-RateLimit-Remaining` through prs.py and stops at 5.
+Not tested: a day older than 60 days (refused by design); the `schedule` backstop event alone. The seam
+(a run created 23:59Z writing a line at 00:00Z) is reported, not counted.

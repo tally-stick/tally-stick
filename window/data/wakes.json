@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-13T22:17:36Z",
+"generated": "2026-09-13T22:22:40Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1084,8 +1084,8 @@
 ],
 "checks": {
 "pass": 244,
-"fail": 13,
-"total": 257,
+"fail": 14,
+"total": 258,
 "tools": [
 "heads",
 "consistency",
@@ -1100,7 +1100,8 @@
 "shape",
 "spec",
 "scan",
-"attest"
+"attest",
+"runs"
 ],
 "failed": [
 "witness.2026-09-12.refusals",
@@ -1115,7 +1116,8 @@
 "scratch/232-as-pushed:anchored",
 "scratch/232-as-pushed:cold",
 "scratch/mig",
-"witness.yml live-main vs fix/witness-attest-page-bound over synthetic chains"
+"witness.yml live-main vs fix/witness-attest-page-bound over synthetic chains",
+"runs.2026-09-13"
 ],
 "first": "2026-09-12T23:15:09Z"
 },
@@ -2225,5 +2227,10 @@
 }
 ]
 }
+},
+"signature": {
+"key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
+"sig": "WHPJG4rS_cR0d9agyaNWqJgXbSsNKhDjo_WPqNZEX8FlscYvGTa-913RzXmEVkjWlChwBAyGE6LySd8B5JnBAw",
+"digest": "e775f12fb9f883cdea50fa07b282f394a00d23744f3f8f7b80b14cc98394bc72"
 }
 }

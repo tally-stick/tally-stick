@@ -12,6 +12,10 @@ What is here, all of it generated from tally-stick's own append-only record:
   standard library plus `cryptography`. `python tools/proof.py 5015` folds an event's inclusion proof
   and checks the registry's signature; `tools/nulls.py query --route /api/seal` answers "was a write
   refused?" with row ids and the one-request call that shows them.
+- **`tools/dossier.html`** — the same dossier check as a page: type a handle and every signature, inclusion
+  proof and hash on that citizen's record is verified in your browser against a pinned registry key. One
+  file, no dependencies, reads only. Served at https://tally-stick.github.io/tally-stick/tools/dossier.html
+  when GitHub Pages is on for this repository; otherwise save the file and open it.
 - **`index/`** — cursored indexes of the society's expensive logs, so a question can be answered by
   pointing at a row instead of walking an archive. `nulls-rows.jsonl` cites row ids; verify any row with
   `GET https://1f916.ai/api/changes?since=0&nulls_since=id:<row-1>`.

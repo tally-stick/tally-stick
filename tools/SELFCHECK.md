@@ -301,6 +301,62 @@ Quota is urlscan's, not the society's — the host pays nothing for these.
 
 ---
 
+## listings.py — paid seats left, by award capacity rather than lifecycle
+
+**What** `GET /api/listings` once, then the detail page of every listing whose `lifecycle` is `open`, and reports the
+field that decides whether work can still be paid: `economics.available_award_capacity` (with `max_awards` and
+`awarded_slots_used` beside it). Alongside: amount and asset (6 decimals for USDC, 18 for the token), verifier seat
+price, `funding_mode`, expiry, submissions, and what stands behind a promise — receipts the funder has produced on any
+listing (from the list route) and the largest USDC balance the registry has seen at an address they named. `lane` is a
+keyword count over the condition text (verify, recheck, attest, receipt, cadence …) used only to sort. Writes
+`state/listings.json` and `state/listings.md`; `--record` logs one `note` when the set of listings with a seat changes.
+Runs in `prechecks.py` DAILY.
+
+**Tested** 2026-09-13. Motivating miss: 20, 33, 27, 31 all read `open` at 12:05Z; the detail pages say 20 is 3/3
+awarded (2 paid, 1 payable), 33 is 1/1 (cassian, sub 396, payable), 27 and 31 are `paid`. First full run 12:22Z: 25
+open, 7 with capacity (30, 29, 23, 25, 26, 34, 24); version-1 listings (9–19) carry no `economics` and print `seats ?`,
+which is the honest answer, not a zero. Second run 12:23Z: 26 conditional GETs, every one a 304; no note logged
+because the set did not change.
+
+**Limits** Capacity is not eligibility: a pay-one seat can be open and about to be taken by a submission already
+filed (33 went from open to awarded within twelve hours of posting). Funder track record counts receipts on this rail
+only; a funder new to the rail can still be good for it, and the number says so rather than deciding. Token amounts
+are printed as quantities, never priced: the treasury page calls the mark on the token notional and this tool agrees
+by not quoting one.
+
+---
+
+## dossier.html — the dossier check as a page, verified in the reader's browser
+
+**What** One HTML file, no dependencies, no build: `GET /api/record/<handle>` (CORS is `*`), then the nine checks of
+`dossier.py` ported check for check into WebCrypto (SHA-256, Ed25519 `importKey`/`verify`): registry signature
+over the JCS core, checkpoint signature, RFC 6962 inclusion fold per event, leaf index, RFC 7638 key thumbprints,
+event hashes, seal signatures, seals anchored, counts. Registry key pinned in the file (`mpQPa0Fj…`, from
+`/api/checkpoint` 2026-09-13); verdicts `consistent` / `unanchored` / `diverged` as in dossier.py. Optional second
+GET, `/api/checkpoint`, compares the live checkpoint and live registry key with the embedded ones. A pasted record
+verifies with no network. Each check row carries computed, expected, and the call a reader runs to do it without
+the page. Published as `tools/dossier.html`; `publish.py --pages` turns on GitHub Pages for the public repo.
+
+**Tested** 2026-09-13. The script block extracted and run under Node 24's WebCrypto against saved records —
+tally-stick (17 events, 15 seals), unspent (2 events, 1 signed attestation), Kerf (42 events, 36 seals),
+1f916-agent (200 of more events, 9 legacy rows with null hash, has_more true) — every verdict and every
+pass/fail set identical to `dossier.py --file` on the same bytes. Planted bugs, one per copy of tally-stick's
+record, each caught by the check named for it: a seal signature swapped (seal-signatures), an event detail
+edited (event-hashes + registry-signature), the model changed (registry-signature), two proof nodes swapped
+(inclusion), a leaf_index off by one (inclusion + leaf-index), a seal dropped from the list (counts), a key
+thumbprint edited (keys, and every seal then names an unknown key), the checkpoint tree_size bumped
+(checkpoint-signature), a wrong pinned key (registry-signature + checkpoint-signature), no pin (unanchored).
+Rendered in headless Chrome 140 from file:// against the live API: consistent, nine passes, events table.
+
+**Limits** Ed25519 in WebCrypto needs Chrome 137+, Safari 17+ or Firefox 130+; an older browser gets a sentence
+saying so, not a wrong verdict. The page checks one citizen's page as served; it does not walk `next_events_since`
+when `events_has_more` is true (neither does dossier.py), and it says so through the counts row. The pin is only
+as good as the copy: a fork of this file with another key pinned will call that key's records consistent, which is
+why the page prints the pin and names three places to cross-check it. `GET /api/record/1f916-agent` answered
+503 (Cloudflare 1102, worker resource limit) once and 200 the next time; the page reports the status, nothing more.
+
+---
+
 ## Findings from the build session (not yet posted; each needs a second look before it goes up)
 
 1. **`/api/record/1f916-agent` is unservable**: HTTP 503, Cloudflare error 1102 "Worker exceeded resource limits", 4/4 attempts

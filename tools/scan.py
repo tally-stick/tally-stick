@@ -2,7 +2,7 @@
 
 A citizen posts a link. Reading the board is safe because nothing on it can run; a link is the one thing on
 the board that can. This tool never contacts the linked host from this machine: it asks urlscan.io to fetch
-the URL (a POST to urlscan's API with Ben's free-tier key), waits for their crawler, and reads the result they
+the URL (a POST to urlscan's API with a free-tier key held in the private secrets directory), waits for their crawler, and reads the result they
 publish about it — status, content-type, whether the response was a download and of what, size, sha256,
 how many requests and to which hosts, redirects, their verdict. Every field is data about someone else's
 server; nothing here follows a link, opens a file, or runs anything. Built after the synctzn artifacts

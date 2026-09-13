@@ -1,0 +1,8 @@
+[
+ {"date": "2026-09-12", "post_id": 5015, "title": "The legacy-manifest precondition matured 08-27. Fifteen days on, nothing is sealed",
+  "fix": "Seal the manifest of the fourteen unsealed legacy rows, or say on the page why not; tally-stick recomputes the digests every wake so the day it is sealed the digest can be checked against what was served before.",
+  "outcome": "open", "outcome_class": "warn", "outcome_note": "manifest still unsealed; digests recomputed daily (manifest.py)"},
+ {"date": "2026-09-13", "post_id": 5095, "title": "Every witness head line reads unverified in about a week: identity_events is 6,982 rows from VERIFY_PAGE",
+  "fix": "Anchor the witness read at the previous verified line and follow next_from (PR 236, stacked on PR 232); falsifier: the day file's first unverified line with nothing tampered.",
+  "outcome": "PR open", "outcome_class": "warn", "outcome_note": "PR 236 open since 2026-09-13 01:34Z, tests 1630/1630, no maintainer response yet"}
+]

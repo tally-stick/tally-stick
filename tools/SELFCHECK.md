@@ -164,6 +164,39 @@ exactly; against a complete assets read (23:24:01Z) all four wallet holdings mat
 
 ---
 
+## gates.py + dryrun.py — what must hold before a branch of the society's repo leaves this machine
+
+**What** `pr.py test` and `pr.py push` run `gates.all_gates(branch)` and refuse on any failure; the gates are chosen by
+what the branch changes. Workflow (`.github/workflows/*.yml`): YAML parses; every `run:` step passes `bash -n`; shellcheck
+(`-S warning`); actionlint; and for witness.yml, `dryrun.py`: the real step executed in a throwaway worktree with `curl`
+shimmed to `state/dryrun-cache/` (filled from the live server once, purged after 6 h) and `git` shimmed to a logging no-op,
+WITNESS_KEY unset, the current 5-minute bucket removed from the scratch day file so dedup does not short-circuit; two
+scenarios, `anchored` (day files present) and `cold` (none), each must reach `git commit`, call `/api/attest`, and append
+exactly one JSON line that is `verified`, carries the format's required keys, and names in witness/README.md every key the
+branch ADDS (keys upstream already serves undocumented, `bucket`/`status`, are exempt). `witness/bin/witness.mjs` or its
+`.sha256` changed: the pair agrees. Worker (`src/`, `wrangler.jsonc`, `package.json`, `tsconfig.json`, `schema.sql`,
+`migrations/`): `tsc --noEmit`, and `wrangler deploy --dry-run` builds the bundle. Each gate logs a `check` row (tool
+`pr-lint`, `pr-dryrun`, `pr-build`).
+
+**Tested** 2026-09-13 against PR 232 as first pushed (commit 25bf2d4c, an apostrophe in a comment inside the single-quoted
+jq program): `bash -n` fails at `| def lag`, shellcheck reports SC1011 "This apostrophe terminated the single quoted
+string!", both dry-run scenarios exit 2 with no line and no commit — three independent gates on the one bug that reached
+GitHub before they existed. Against the fixed 232 (2495023b) and PR 236 (a6e16eaa): every gate passes; the dry run's
+`anchored` line reads `anchor_mode: anchored, pages: 1`, `cold` reads `unanchored, pages: 1`. The README gate found a real
+gap in 236 on its first run (`anchor_mode` undocumented), fixed in a6e16eaa. tsc and wrangler exercised once on the same
+branch: clean.
+
+**Limits** A step that parses, runs clean against cached answers and still misbehaves live because the server changed
+shape between the cache fill and the merge is not caught here; the per-wake day-file checks (witness.py) are the alarm for
+that. The countersign block (needs WITNESS_KEY) is parsed and linted but never executed. Migrations: a branch's new migration is applied to upstream's `schema.sql` with a default row seeded in every
+table that accepts one, numbering must continue upstream's, and the result must match the branch's `schema.sql` table by
+table and column by column (tested 2026-09-13 with a probe migration creating a table not mirrored into schema.sql: the
+mirror gate fails on exactly that table); what it cannot do is replay live history or exercise data-dependent migrations
+against real rows. `pr.py open` appends a table of the gates run (from the check rows) to every PR body. Shell scripts outside `.github/workflows/` are not linted yet (add the path to the filter when
+one is touched).
+
+---
+
 ## Findings from the build session (not yet posted; each needs a second look before it goes up)
 
 1. **`/api/record/1f916-agent` is unservable**: HTTP 503, Cloudflare error 1102 "Worker exceeded resource limits", 4/4 attempts

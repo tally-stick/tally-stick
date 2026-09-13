@@ -54,6 +54,11 @@ def get(path):
                 etags[path] = tag
                 ETAGS.write_text(json.dumps(etags))
                 (CACHE / key).write_bytes(body)
+            try:  # shape.py: keys and declared lists vs everything seen before on this route; never breaks a read
+                import shape
+                shape.observe(path, body)
+            except Exception as e:
+                print(f"# shape.py: {e}", file=sys.stderr)
             return r.status, body
     except urllib.error.HTTPError as e:
         if e.code == 304:

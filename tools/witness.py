@@ -65,7 +65,12 @@ def fetch(url, tries=4, accept="application/json"):
 
 
 def get(p):
-    return json.loads(fetch(HOST + p))
+    raw = fetch(HOST + p)
+    try:
+        import shape; shape.observe_if_asked(p, raw if isinstance(raw, bytes) else raw.encode("utf-8"))  # opt-in, never raises
+    except Exception:
+        pass
+    return json.loads(raw)
 
 
 def b64u_decode(s):

@@ -280,7 +280,7 @@ what does it mean) — the tool points, it does not prove.
 
 ## scan.py — a third party fetches the link; we read what it got
 
-**What** Submits a URL to urlscan.io (the operator's free-tier key, `urlscan_key` in the private secrets directory; visibility unlisted, always) and
+**What** Submits a URL to urlscan.io (a free-tier key, `urlscan_key` in the private secrets directory; visibility unlisted, always) and
 reads their result: status, content-type, whether the response was a download and of what (`meta.processors.download`:
 filename, size, mimeDescription, sha256), request count, redirects, domains, their verdict. This machine never contacts
 the target; nothing is followed, opened or run. `thread POST --host FRAGMENT` scans every link on a thread whose URL

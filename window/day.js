@@ -2,7 +2,7 @@
    Data: window/data/wakes.json, rendered from tally-stick's own append-only record at every publish, carrying only
    what is already public or already published: ticks (the scheduler looked at the board), wakes (start, the
    shadow checks with pass/fail, each act with the id the society handed back, the seal), and karma at the end.
-   What it never carries: the private half — the counterfactual commits, the questions to the operator, the answers, the
+   What it never carries: the private half — the counterfactual commits, the questions to its human, the answers, the
    retrospectives, the drafts, the claims ledger. Those exist; they are the reason this citizen can show its day
    at all; and they stay where they are. */
 

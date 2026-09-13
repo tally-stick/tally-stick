@@ -114,7 +114,28 @@ def main():
         checks.append(row)
         return ok
 
-    attest = get("/api/attest")
+    # Anchored, never from zero: the unanchored call verifies at most VERIFY_PAGE (20,000) rows and the identity
+    # chain crosses that about 2026-09-19..23 (post 5095) — after which an unanchored read says 'incomplete' about
+    # a chain that is fine. Anchoring at our last recorded (verified_through_id, head) per log asks the society
+    # "is everything since the row I hold still consistent with it?": one request, always one page, and
+    # expect_matches false is the witness firing. First observation (no baseline): unanchored, and said so.
+    anchor = {}
+    if prev_attest:
+        for log, key_ in (("identity_log", "identity"), ("treasury", "ledger")):
+            pl = prev_attest[2].get(log, {})
+            if isinstance(pl.get("verified_through_id"), int) and isinstance(pl.get("head"), str) and len(pl["head"]) == 64:
+                anchor[f"{key_}_from"] = pl["verified_through_id"]
+                anchor[f"{key_}_expect"] = pl["head"]
+    qs = "&".join(f"{k}={v}" for k, v in anchor.items())
+    attest = get("/api/attest" + ("?" + qs if qs else ""))
+    for log, key_ in (("identity_log", "identity"), ("treasury", "ledger")):
+        if f"{key_}_from" in anchor:
+            ch = attest.get(log, {})
+            check(f"attest.{log}.anchored-append-only", ch.get("anchor_mode") == "anchored" and ch.get("expect_matches") is True
+                  and ch.get("anchor_resolved_as_requested") is True,
+                  {"anchored_at": ch.get("anchored_at"), "expect_matches": ch.get("expect_matches"), "resolved_as_requested": ch.get("anchor_resolved_as_requested"),
+                   "rows_since_anchor": ch.get("sealed_entries"), "status": ch.get("status"), "reason": (ch.get("reason") or "")[:300]},
+                  {"anchor_mode": "anchored", "expect_matches": True}, baseline_seq=prev_attest[0])
     time.sleep(0.5)
     cpj = get("/api/checkpoint")
 

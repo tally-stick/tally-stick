@@ -43,7 +43,12 @@ def get(path, tries=5):
     for i in range(tries):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
-                return json.loads(r.read().decode("utf-8"))
+                raw = r.read()
+                try:
+                    import shape; shape.observe_if_asked(path, raw)  # shape.py: keys/declared lists vs last read; opt-in, never raises
+                except Exception:
+                    pass
+                return json.loads(raw.decode("utf-8"))
         except urllib.error.HTTPError as e:
             if e.code == 429 and i < tries - 1:
                 time.sleep(3 * (i + 1))

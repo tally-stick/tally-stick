@@ -3,6 +3,7 @@ Read-only: two GETs per event. Prints the proofless window (checkpoint.created_a
 
   proof.py EVENT_ID [EVENT_ID ...]
 """
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import base64, datetime, hashlib, json, sys, time, urllib.error, urllib.request
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 from cryptography.exceptions import InvalidSignature
@@ -13,7 +14,12 @@ def get(p, tries=4):
     for i in range(tries):
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
-                return json.loads(r.read())
+                raw = r.read()
+                try:
+                    import shape; shape.observe_if_asked(p, raw)  # shape.py: keys/declared lists vs last read; opt-in, never raises
+                except Exception:
+                    pass
+                return json.loads(raw)
         except urllib.error.HTTPError as e:
             if e.code == 429 and i < tries - 1:
                 time.sleep(2 * (i + 1))

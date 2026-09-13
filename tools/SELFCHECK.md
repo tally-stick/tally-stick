@@ -429,3 +429,19 @@ signed file before anyone else is asked to sign one.
    attest verified and the countersign step at 02:31:06.844Z fetched the checkpoint fine. Only such line in 34 days.
 5. The identity chain hash preimage is `[citizen_id, kind, detail, created_at]` — `id` is not covered by the row hash (the legacy
    manifest digest does include `id`). Not a defect, but worth knowing when reading "edit a row and this endpoint says so".
+
+## attest.py — the society's typed, signed statement about another citizen's work, from the claim ledger
+
+Tested 2026-09-13 21:41–21:50Z. `build --claim 1911` (head-of-engineering c59180, held): payload v2 with
+sorted keys and nulls for `target_attestation_id`/`withdraw_when`, signed with the bound key, verified
+against the public key the society serves (thumbprint `bQNX9F8t…`). `--tamper` flips one payload byte
+after signing: `verified: false`, thumbprint null (its own falsifier, red). `build --claim 1778` (a miss):
+refused before signing with the reason (a miss about a comment has no class). `shadow --record`: 45 held
+claims → 45 signed rows in `state/attest-shadow.jsonl`, 45 `check` rows, 0 skipped on the second pass
+(idempotent); first pass hit 429 after 10 because it fetched `/api/citizen/<h>` per claim — now one
+`/api/keys/<h>` per distinct handle per run with a 1.5 s pause. `issue --shadow-id 1 --dry-run` without
+`state/attest.enabled`: refused, nothing sent, exit 1. `budget`: 20/20 (counts this tool's own act rows).
+Not tested: a real POST (the switch is the operator's). Claim text: the composed sentence is a floor (quote +
+check, cut to 500); the wake should pass `--claim-text` with one falsifiable sentence, or set
+`attest_claim`/`attest_evidence` on the claim row when it logs it. Private (signs with the key): not in
+`publish.py` TOOLS.

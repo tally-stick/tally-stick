@@ -107,15 +107,37 @@ def list_days():
 
 
 def day_text(day, cache):
-    if cache and day != utc_today():
-        p = Path(cache) / f"{day}.jsonl"
-        if p.exists():
-            return p.read_text(encoding="utf-8")
+    """A past day's file never changes and is served from the cache. Today's file grows all day, so a copy of it
+    is written as <day>.jsonl.partial and never served as complete: on 2026-09-13 the 09-12 copy, cached at
+    12:56Z while 09-12 was still today, was served for a day and a half as if it were the whole file (#1834)."""
+    if cache:
+        full = Path(cache) / f"{day}.jsonl"
+        if day != utc_today() and full.exists():
+            txt = full.read_text(encoding="utf-8")
+            # a complete day file ends near midnight; a cached copy whose last line is hours earlier was taken while
+            # the day was still running (the 09-12 copy stopped at 12:56Z) — refetch once and overwrite
+            last = [l for l in txt.splitlines() if l.strip()]
+            try:
+                last_at = json.loads(last[-1]).get("at", "") if last else ""
+            except json.JSONDecodeError:
+                last_at = ""
+            if last_at[:10] == day and last_at[11:13] >= "22":
+                return txt
+            print(f"# cached {day}.jsonl looks partial (last line {last_at or 'unreadable'}); refetching", file=sys.stderr)
     txt = fetch(RAW + f"{day}.jsonl", accept="text/plain")
     if cache:
         Path(cache).mkdir(parents=True, exist_ok=True)
-        (Path(cache) / f"{day}.jsonl").write_text(txt, encoding="utf-8")
+        target = Path(cache) / (f"{day}.jsonl" if day != utc_today() else f"{day}.jsonl.partial")
+        target.write_text(txt, encoding="utf-8")
+        if day != utc_today():
+            partial = Path(cache) / f"{day}.jsonl.partial"
+            if partial.exists():
+                partial.unlink()
     return txt
+
+
+def prev_day(day):
+    return (datetime.datetime.strptime(day, "%Y-%m-%d") - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
 
 
 def parse_day(day, txt):
@@ -170,6 +192,19 @@ def main():
         heads += h; counters += c; bad += b
         per_day[d] = {"head_lines": len(h), "countersign_lines": len(c), "unparsed": len(b)}
     heads.sort(key=lambda j: j["at"])
+    # Cross-midnight join: a single day's file starts at its first run, so the gap between yesterday's last head
+    # line and today's first is invisible to a one-day read (c57768: 19:25Z -> 00:37Z, five hours, seen only by
+    # reading both files). Fetch yesterday's last head line (a past day: cached after the first time) and let the
+    # cadence windows below see the seam. Not for --all, which already has every day.
+    join = None
+    if not args.all and heads:
+        try:
+            yh, _, _ = parse_day(prev_day(days[0]), day_text(prev_day(days[0]), args.cache))
+            if yh:
+                join = max(yh, key=lambda j: j["at"])
+                heads.insert(0, join)
+        except Exception as e:  # yesterday's file missing is itself worth a row, not a crash
+            check("join-yesterday", False, {"error": str(e)[:200]}, "yesterday's day file readable for the midnight seam")
 
     live_cp = live_witnesses = None
     if not args.no_live:
@@ -337,7 +372,17 @@ def main():
              "five_minute_era": {"gaps": len(five), "within_6min": sum(1 for g in five if g <= 360), "over_10min": sum(1 for g in five if g > 600),
                                  "median_s": statistics.median(five) if five else None},
              "flagged_gaps": len(flagged), "degraded_windows": windows}
+    if join:
+        stats["midnight_join"] = {"yesterday_last": join["at"], "today_first": heads[1]["at"] if len(heads) > 1 else None}
     check("cadence", not windows, stats, "no gap > 2x expected cadence (expected 5 min after 2026-08-12T03:36:59Z, 60 min before)")
+    # Age of the newest head line: the witness is a five-minute job, so a newest line older than three slots means the
+    # job is not running NOW, whatever the day's history looks like. Today only (a past day's newest line is old by
+    # definition). Clock caution (egress c59105): 'at' is the runner's clock; ours is compared loosely (15 min).
+    if not args.all and days[0] == utc_today() and heads:
+        newest_at = parse_at(heads[-1]["at"])
+        age_s = (datetime.datetime.now(datetime.UTC) - newest_at).total_seconds()
+        check("newest-line-age", age_s <= 15 * 60, {"newest_at": heads[-1]["at"], "age_s": int(age_s)},
+              "newest head line within 15 min (three five-minute slots) of now")
     outages = [w for w in windows if w["severity"] == "outage"]
     check("outage", not outages, outages, "no degraded window of 1 h or longer", missed_slot_windows=len(windows) - len(outages))
 

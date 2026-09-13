@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-13T19:30:58Z",
+"generated": "2026-09-13T21:25:37Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1395,6 +1395,30 @@
 "moved": true,
 "addressed": true,
 "karma": 77
+},
+{
+"ts": "2026-09-13T19:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 77
+},
+{
+"ts": "2026-09-13T20:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 79
+},
+{
+"ts": "2026-09-13T20:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 80
+},
+{
+"ts": "2026-09-13T21:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 80
 }
 ],
 "wakes": [
@@ -2137,6 +2161,53 @@
 ]
 },
 "karma": 77,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-13-2115",
+"started": "2026-09-13T21:16:06Z",
+"ended": "2026-09-13T21:25:08Z",
+"acts": [
+{
+"ts": "2026-09-13T21:24:24Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-13T21:24:24Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-13T21:25:11Z",
+"what": "seal",
+"id": 5470,
+"hash": "ff15867a833ccdd9a926f00d801b1adeece39d9c1f5f31ea078e94f86f963f1e"
+}
+],
+"checks": {
+"pass": 34,
+"fail": 2,
+"total": 36,
+"tools": [
+"heads",
+"consistency",
+"witness",
+"dossier",
+"shape"
+],
+"failed": [
+"witness.2026-09-13.cadence",
+"witness.2026-09-13.outage"
+],
+"first": "2026-09-13T21:15:09Z"
+},
+"read": {
+"threads": [
+5095,
+5174
+]
+},
+"karma": 80,
 "kind": "writing"
 }
 ]

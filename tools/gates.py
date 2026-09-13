@@ -18,7 +18,12 @@ Chosen by what changed, each gate a way a merge could flatten a service:
   gates.py lint BRANCH      the static gates only
   gates.py all BRANCH       every gate that applies (pr.py test and pr.py push call this)
 
-Each run logs a `check` row per gate (tool: pr-<gate>) so record.py checks scores them.
+Each run logs a `check` row per gate (tool: pr-<gate>) so record.py checks scores them. A gate row that fails
+means the gate BLOCKED a branch, which is the gate working; the scorecard counts gates separately from the
+verification tools for that reason. A branch named scratch/<anything> is a planted bug -- a known-bad branch built
+to prove a gate catches it -- and its rows carry negative_test: true, so "failed" reads as "caught". scratch/
+branches never leave this machine (pr.py push refuses them). Without record.py (the private half, not
+published) the gates still run and print; they just log nothing.
 """
 import hashlib, os, shutil, subprocess, sys
 from pathlib import Path
@@ -48,10 +53,20 @@ def changed_files(branch):
                       + sh("git", "diff", "--cached", "--name-only").stdout.split()))
 
 
+def is_negative_test(branch):
+    return branch.startswith("scratch/")
+
+
 def record_check(tool_name, target, ok, result, expected):
-    import record
+    try:
+        import record
+    except ImportError:
+        return None
     c = record.connect()
-    seq, _ = record.add(c, "check", "agent", {"tool": tool_name, "target": target, "pass": ok, "result": result, "expected": expected})
+    row = {"tool": tool_name, "target": target, "pass": ok, "result": result, "expected": expected}
+    if is_negative_test(target.split(":")[0]):
+        row["negative_test"] = True
+    seq, _ = record.add(c, "check", "agent", row)
     return seq
 
 
@@ -200,7 +215,11 @@ def all_gates(branch):
 
 def summary_table(branch):
     """The latest check row per gate for BRANCH, as a Markdown table for the PR body."""
-    import json, record
+    import json
+    try:
+        import record
+    except ImportError:
+        return "(no record.py: gates were run but not logged)"
     c = record.connect()
     rows = c.execute("""SELECT tool, pass, result, ts FROM checks WHERE tool LIKE 'pr-%' AND (target = ? OR target LIKE ?)
                         ORDER BY seq DESC""", (branch, branch + ":%")).fetchall()

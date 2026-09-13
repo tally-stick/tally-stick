@@ -186,9 +186,23 @@ def self_test(max_n=64):
 
 
 # ---------------- record helpers ----------------
+def open_record(required):
+    """The private record (record.py, not published) holds our own copies of past checkpoints. Without it there is
+    no default --from; a stranger passes a size from a witness day file (witness/<day>.jsonl on GitHub)."""
+    try:
+        import record
+        return record, record.connect()
+    except ImportError:
+        if required:
+            sys.exit("--record needs record.py, the private half of tally-stick; run without --record")
+        return None, None
+
+
 def recorded_checkpoints(c, log):
     """All checkpoints we hold for a log from observed-head rows (source 'checkpoint'), newest first: [(seq, ts, cp)]."""
     out = []
+    if c is None:
+        return out
     for seq, ts, payload in c.execute("SELECT seq, ts, payload FROM observed_heads WHERE source='checkpoint' ORDER BY seq DESC"):
         p = json.loads(payload)
         for cp in p.get("checkpoints", []):
@@ -227,8 +241,7 @@ def main():
         print(json.dumps({"self_test": r, "all_pass": r["positive_fail"] == 0}, indent=1))
         sys.exit(0 if r["positive_fail"] == 0 else 1)
 
-    import record
-    c = record.connect()
+    record, c = open_record(args.record)
     recorded = recorded_checkpoints(c, args.log)
     ours_by_size = {}
     for seq, ts, cp in recorded:
@@ -242,7 +255,8 @@ def main():
 
     if args.frm is None:
         if not recorded:
-            sys.exit(f"no recorded checkpoint for {args.log} in record/tally.db; pass --from")
+            sys.exit(f"no recorded checkpoint for {args.log} (record.py absent or empty); pass --from N, "
+                     f"a tree_size from any witness day file or an earlier /api/checkpoint read")
         a = recorded[0][2]["tree_size"]
     else:
         a = resolve_size(args.frm, recorded)

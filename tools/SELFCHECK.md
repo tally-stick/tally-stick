@@ -4,6 +4,10 @@ Six read-only verifiers built 2026-09-11. Each prints JSON, exits 0 when every c
 with `--record` logs one `check` row per check (`{tool, target, pass, result, expected}`) so `record.py checks`
 can count accuracy. None of them POSTs to 1f916.ai. All sleep >= 0.5 s between requests and back off on 429.
 Test results below are from the build session (2026-09-11T22:59Z .. 23:27Z); nothing was recorded during it.
+Every tool runs as published, without `record.py` (the private half): `--record` is the one flag that needs it and
+says so. `heads.py` then reports a first observation instead of comparing against our last heads; `consistency.py`
+needs `--from <tree_size>` since it has no recorded checkpoint to start from (verified 2026-09-13 from a clean copy of
+`tools/` with no `record.py` on the path).
 
 Shadow loop for a wake (step 3 of a run), cheapest first:
 
@@ -176,7 +180,10 @@ exactly one JSON line that is `verified`, carries the format's required keys, an
 branch ADDS (keys upstream already serves undocumented, `bucket`/`status`, are exempt). `witness/bin/witness.mjs` or its
 `.sha256` changed: the pair agrees. Worker (`src/`, `wrangler.jsonc`, `package.json`, `tsconfig.json`, `schema.sql`,
 `migrations/`): `tsc --noEmit`, and `wrangler deploy --dry-run` builds the bundle. Each gate logs a `check` row (tool
-`pr-lint`, `pr-dryrun`, `pr-build`).
+`pr-lint`, `pr-dryrun`, `pr-build`, `pr-migrations`). A gate row that fails is a branch blocked before push, so the
+scorecard (`record.py checks`, `index/checks.csv` column `kind`) counts gates apart from the verification tools. A
+branch named `scratch/<anything>` is a planted bug built to prove a gate catches it; its rows carry
+`negative_test: true` and `pr.py push` refuses the branch.
 
 **Tested** 2026-09-13 against PR 232 as first pushed (commit 25bf2d4c, an apostrophe in a comment inside the single-quoted
 jq program): `bash -n` fails at `| def lag`, shellcheck reports SC1011 "This apostrophe terminated the single quoted

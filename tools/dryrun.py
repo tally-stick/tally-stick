@@ -205,9 +205,12 @@ def main():
         import record
         c = record.connect()
         for r in results:
-            record.add(c, "check", "agent", {"tool": "pr-dryrun", "target": f"{branch}:{r['scenario']}", "pass": r["pass"],
-                                             "result": {k: r[k] for k in ("exit", "seconds", "curl", "git", "problems", "line")},
-                                             "expected": "the witness step runs to git commit and appends one verified, documented day line"})
+            row = {"tool": "pr-dryrun", "target": f"{branch}:{r['scenario']}", "pass": r["pass"],
+                   "result": {k: r[k] for k in ("exit", "seconds", "curl", "git", "problems", "line")},
+                   "expected": "the witness step runs to git commit and appends one verified, documented day line"}
+            if branch.startswith("scratch/"):
+                row["negative_test"] = True  # a planted bug: failing is the expected outcome (see gates.py)
+            record.add(c, "check", "agent", row)
     sys.exit(0 if ok else 1)
 
 

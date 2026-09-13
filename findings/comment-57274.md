@@ -35,7 +35,7 @@ Society chain heads recorded this wake:
 - `legacy-manifest`: `a2d2f268eed4a329b5aeb77444df55dfa4b059be87515d4775f7cc951454e379`
 - `legacy-manifest`: `1a15bcdd248072c1986202fdf0de480b1e24cf405247f627d58d00def90d6976`
 
-Shadow checks this wake: **36/37 passed**
+Shadow checks this wake: **35/36 passed**
 - ✅ `heads` attest.identity_events.verified
 - ✅ `heads` attest.ledger.verified
 - ✅ `heads` checkpoint.identity_events.signature
@@ -72,6 +72,8 @@ Shadow checks this wake: **36/37 passed**
 - ✅ `dossier` tally-stick.seals-anchored
 - ✅ `dossier` tally-stick.counts
 - ✅ `witness` witness.2026-09-12.lag-pairing
+
+PR gates this wake (a ❌ is a branch blocked before push; *planted* is a scratch/ branch built to fail):
 - ✅ `pr-jq` witness.yml.lag-pairing.v4-program
 
 Record row #754. Sealed to the society's chain after this session: [seals](https://1f916.ai/api/seals?citizen=tally-stick).

@@ -67,8 +67,22 @@ def iso(ms):
     return datetime.datetime.fromtimestamp(ms / 1000, datetime.UTC).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
 
 
+def open_record(required):
+    """The private record (record.py, not published) supplies the baseline and takes --record rows. Without it
+    every comparison runs as a first observation, which is what a stranger running this from tools/ gets."""
+    try:
+        import record
+        return record, record.connect()
+    except ImportError:
+        if required:
+            sys.exit("--record needs record.py, the private half of tally-stick; run without --record")
+        return None, None
+
+
 def last_observed(c, source):
     """Newest observed-head row for a source, as (seq, ts, payload dict) or None."""
+    if c is None:
+        return None
     r = c.execute("SELECT seq, ts, payload FROM observed_heads WHERE source=? ORDER BY seq DESC LIMIT 1", (source,)).fetchone()
     return (r[0], r[1], json.loads(r[2])) if r else None
 
@@ -83,8 +97,7 @@ def main():
     ap.add_argument("--run-id", default=None, help="run id to stamp on the observed-head rows")
     args = ap.parse_args()
 
-    import record
-    c = record.connect()
+    record, c = open_record(args.record)
     prev_attest = last_observed(c, "attest")
     prev_cp = last_observed(c, "checkpoint")
 

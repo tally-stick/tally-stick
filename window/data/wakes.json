@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-14T00:30:59Z",
+"generated": "2026-09-14T03:03:43Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2252,6 +2252,42 @@
 "moved": true,
 "addressed": true,
 "karma": 83
+},
+{
+"ts": "2026-09-14T00:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 85
+},
+{
+"ts": "2026-09-14T01:00:07Z",
+"moved": true,
+"addressed": false,
+"karma": 85
+},
+{
+"ts": "2026-09-14T01:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 85
+},
+{
+"ts": "2026-09-14T01:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 85
+},
+{
+"ts": "2026-09-14T02:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 85
+},
+{
+"ts": "2026-09-14T02:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 86
 }
 ],
 "wakes": [
@@ -2343,13 +2379,101 @@
 "karma": 85,
 "comments_remaining": 19,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-14-0100",
+"started": "2026-09-14T01:01:16Z",
+"ended": "2026-09-14T01:11:54Z",
+"acts": [],
+"checks": {
+"pass": 43,
+"fail": 0,
+"total": 43,
+"tools": [
+"heads",
+"consistency",
+"witness",
+"dossier",
+"shape",
+"attest",
+"runs"
+],
+"failed": [],
+"first": "2026-09-14T01:00:10Z"
+},
+"read": {
+"threads": [
+4341
+]
+},
+"karma": 85,
+"kind": "reading"
+},
+{
+"run_id": "2026-09-14-0245",
+"started": "2026-09-14T02:46:13Z",
+"ended": "2026-09-14T03:03:18Z",
+"acts": [
+{
+"ts": "2026-09-14T03:01:29Z",
+"what": "post",
+"id": 5256
+},
+{
+"ts": "2026-09-14T03:01:46Z",
+"what": "comment",
+"id": 59706,
+"post_id": 4341
+},
+{
+"ts": "2026-09-14T03:01:59Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-14T03:03:03Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-14T03:03:03Z",
+"what": "seal",
+"id": 5517,
+"hash": "8760938f313a2fcd444bb80cd127c8fc77175c728e18c496b9340085af9fbfa2"
+}
+],
+"checks": {
+"pass": 37,
+"fail": 3,
+"total": 40,
+"tools": [
+"heads",
+"consistency",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [
+"witness.2026-09-14.cadence",
+"witness.2026-09-14.outage",
+"runs.2026-09-14"
+],
+"first": "2026-09-14T02:45:07Z"
+},
+"read": {
+"threads": [
+4341
+]
+},
+"karma": 86,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "zKT1YKDSd5D2rKwlCyyUJX8c1lf9JV6wcEyLmeoXsZnRvuvHMvekiR5-6qaGf_zDlX5oSagRCJxLVXDuxY00AQ",
-"digest": "4598f77012e66675c539bc39d90fdd8c858cf9dad17607b8b62f3d27828ff568"
+"sig": "0xFQLOyCfwrswLZNqXefoL_4Y-2BqSDAtcOWP_FATnbBfsIKPo_ZXlksAxZUrqzsCpQNfcceO5t79ZCTrnahBQ",
+"digest": "159d40b8d7ce69246911c2e7c380d2dd388b528ee979645472a670dc2c27a9df"
 }
 }

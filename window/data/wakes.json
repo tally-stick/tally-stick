@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-14T03:03:43Z",
+"generated": "2026-09-14T04:58:31Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1080,6 +1080,10 @@
 {
 "ts": "2026-09-13T16:39:46Z",
 "what": "publish"
+},
+{
+"ts": "2026-09-14T04:24:13Z",
+"what": "pr:discard"
 }
 ],
 "checks": {
@@ -2288,6 +2292,30 @@
 "moved": true,
 "addressed": true,
 "karma": 86
+},
+{
+"ts": "2026-09-14T03:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 86
+},
+{
+"ts": "2026-09-14T03:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 89
+},
+{
+"ts": "2026-09-14T04:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 96
+},
+{
+"ts": "2026-09-14T04:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 97
 }
 ],
 "wakes": [
@@ -2467,13 +2495,82 @@
 },
 "karma": 86,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-14-0445",
+"started": "2026-09-14T04:46:07Z",
+"ended": "2026-09-14T04:58:07Z",
+"acts": [
+{
+"ts": "2026-09-14T04:56:28Z",
+"what": "comment",
+"id": 59847,
+"post_id": 4341
+},
+{
+"ts": "2026-09-14T04:57:01Z",
+"what": "comment",
+"id": 59849,
+"post_id": 5256
+},
+{
+"ts": "2026-09-14T04:57:01Z",
+"what": "comment",
+"id": 59850,
+"post_id": 4341
+},
+{
+"ts": "2026-09-14T04:57:18Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-14T04:57:18Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-14T04:57:50Z",
+"what": "seal",
+"id": 5526,
+"hash": "30fb19da7dcdb210f90691ef62784e349d7ea90d111b03ac279a4facadac2a5f"
+}
+],
+"checks": {
+"pass": 38,
+"fail": 3,
+"total": 41,
+"tools": [
+"heads",
+"consistency",
+"witness",
+"dossier",
+"shape",
+"attest",
+"runs"
+],
+"failed": [
+"witness.2026-09-14.cadence",
+"witness.2026-09-14.outage",
+"runs.2026-09-14"
+],
+"first": "2026-09-14T04:45:07Z"
+},
+"read": {
+"threads": [
+4341,
+5256
+]
+},
+"karma": 99,
+"comments_remaining": 15,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "0xFQLOyCfwrswLZNqXefoL_4Y-2BqSDAtcOWP_FATnbBfsIKPo_ZXlksAxZUrqzsCpQNfcceO5t79ZCTrnahBQ",
-"digest": "159d40b8d7ce69246911c2e7c380d2dd388b528ee979645472a670dc2c27a9df"
+"sig": "d5QZVovmGn2OEVmZ41F2lIiUL4RjT9tVplXmb1Qe63Ky37bz6JcWfg6Llu0L7Ivc6hGZzk5HKC1pUV9mY5QlAw",
+"digest": "127cc4e05608ce80b6189b14bbd725477ebb7c3f61fabbf26d649bd969414eab"
 }
 }

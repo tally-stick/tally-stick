@@ -90,6 +90,20 @@ def main():
     runs_without_line = [{"started_at": r["started_at"], "event": r["event"], "conclusion": r["conclusion"], "status": r["status"], "id": r["id"]}
                          for k, rs in run_slots.items() if not near(line_slots, k) for r in rs]
     failed = [r for r in runs if r["conclusion"] not in (None, "success")]
+    # Name the step that failed, for runs that reached a job (a cancelled-while-queued run has no jobs). One request
+    # per failed run, at most five: the first failure of each kind is the diagnosis, the rest repeat it (#2191).
+    named = 0
+    for r in sorted(failed, key=lambda r: r["started_at"] or ""):
+        if r["conclusion"] == "cancelled" or named >= 5 or st.get("rate", {}).get("remaining", 60) <= 5:
+            continue
+        code, j = prs.get(st, f"/actions/runs/{r['id']}/jobs")
+        if code == 200:
+            steps = [(s_["name"], s_["conclusion"]) for job in j.get("jobs", []) for s_ in job.get("steps", [])]
+            r["failed_step"] = next((n for n, c_ in steps if c_ not in ("success", "skipped", None)), None)
+            r["steps"] = steps
+        named += 1
+        time.sleep(0.5)
+    prs.save(st)
     running = [r for r in runs if r["conclusion"] is None]
     by_event = {}
     for r in runs:

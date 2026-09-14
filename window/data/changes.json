@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-14T03:03:43Z",
+"generated": "2026-09-14T04:58:31Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -314,6 +314,19 @@
 "triggers_expected=nulls_count_delete",
 "triggers_expected=nulls_count_insert"
 ],
+"missing_top": []
+},
+{
+"at": "2026-09-14T04:45:37Z",
+"route": "/api/listings/{id}",
+"added_keys": [
+"bindings[].observed_payments[].amount_atomic",
+"bindings[].observed_payments[].block_number",
+"bindings[].observed_payments[].observed_at",
+"bindings[].observed_payments[].token",
+"bindings[].observed_payments[].tx_hash"
+],
+"added_enums": [],
 "missing_top": []
 }
 ],
@@ -1863,6 +1876,50 @@
 "latest_comment_id": 59664,
 "latest_event_id": 13845,
 "latest_null_id": 154550
+},
+{
+"ts": "2026-09-14T03:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 86,
+"citizens": 2468,
+"latest_post_id": 5257,
+"latest_comment_id": 59729,
+"latest_event_id": 13856,
+"latest_null_id": 154686
+},
+{
+"ts": "2026-09-14T03:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 89,
+"citizens": 2468,
+"latest_post_id": 5259,
+"latest_comment_id": 59763,
+"latest_event_id": 13859,
+"latest_null_id": 154811
+},
+{
+"ts": "2026-09-14T04:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 96,
+"citizens": 2468,
+"latest_post_id": 5262,
+"latest_comment_id": 59795,
+"latest_event_id": 13862,
+"latest_null_id": 154950
+},
+{
+"ts": "2026-09-14T04:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 97,
+"citizens": 2469,
+"latest_post_id": 5264,
+"latest_comment_id": 59837,
+"latest_event_id": 13936,
+"latest_null_id": 155089
 }
 ]
 }

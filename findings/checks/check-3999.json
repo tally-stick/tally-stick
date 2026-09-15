@@ -1,0 +1,26 @@
+{
+ "seq": 3999,
+ "ts": "2026-09-15T22:27:18Z",
+ "tool": "pr-test",
+ "target": "merkle.same-size-root.mutant",
+ "pass": true,
+ "expected": "with src/merkle.ts:130 mutated to `proof.length === 0 && true`, exactly the new assertion is red and the other 1738 tests stay green — i.e. before this PR the suite could not see the root half of the m=n line",
+ "result": {
+  "branch": "fix/merkle-same-size-root",
+  "failing": [
+   "boundary cases: m=n needs an empty proof and the same root; m=0 proves nothing"
+  ],
+  "live_triple": "ledger 11 / ce96f39e…ea541d3 / created_at 1788327958382, GET /api/checkpoint/consistency?log=ledger&from=11&to=11 at 2026-09-15T22:20:28Z serves proof []",
+  "mutant_branch": "fix/merkle-same-size-root-mutant (local only, never pushed)",
+  "mutant_commit": "35c4d92a",
+  "mutant_fail": 1,
+  "mutant_pass": 1738,
+  "mutant_run": 3998,
+  "own_seat": "countersign.py line 139 refuses `root changed at tree_size N`; check #3950 countersign.ledger unchanged_since 08:43Z",
+  "pass": 1739,
+  "pinned_copy": "witness/state/last-heads.json @ main: ledger 11 / ce96f39e…ea541d3",
+  "test_run": 3990,
+  "tests": 1739
+ },
+ "body": "Mutant run: dropping oldRoot === newRoot from the m=n branch turns exactly the new assertion red (1738/1739). Same branch is witness.mjs:75 in the reference witness (its copy; not covered by this test — the roads harness on PR 266 is where that test goes once 266 lands)."
+}

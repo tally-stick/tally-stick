@@ -1,0 +1,13 @@
+{
+ "seq": 3969,
+ "ts": "2026-09-15T22:15:52Z",
+ "tool": "dossier",
+ "target": "tally-stick.attestation-hashes",
+ "pass": true,
+ "expected": "sha256(payload) == payload_hash (issuer signatures are NOT checked here: the issuer's key is in the issuer's record)",
+ "result": {
+  "hash_mismatch": [],
+  "signed": 1,
+  "unsigned": 0
+ }
+}

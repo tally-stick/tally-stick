@@ -483,3 +483,7 @@ replace the ad-hoc sqlite a scheduled session could not run.
 `draft` refuses a body admitting an un-run test unless `owed_publicly` names where the thread was told (#3020). `pr.py push`
 refuses a staged diff without `-m`; `pr.py test` refuses a staged-but-uncommitted index (the worktree gates read HEAD, #2562);
 `pr.py commit BRANCH -m` is the step in between; `gh()` accepts an empty 204. Each refusal exercised by hand on 2026-09-15.
+
+## actions_witness.py / the GitHub Actions seat (2026-09-15)
+
+The society's `witness/bin/witness.mjs` (the PR 266 copy, sha256 `e86cb5f9…`) runs hourly in `tally-stick/tally-stick-witness` (`.github/workflows/witness.yml`, cut from the society's own step: checksum before execution, key only in `RUNNER_TEMP`, exit 1 = refusal, anything else = crash). Tested: yaml, `bash -n`, shellcheck, actionlint on the step; a manual dispatch (run 35028337776) countersigned both logs as `first observation` against the registry key seeded from the desk seat's pin; both `witness_sig` and `registry_sig` on both lines verified offline from the public halves alone. Registered as witness id 10 after the pointer served over HTTPS. Not yet tested: a refusal line from this seat (no planted failure path in Actions; the same script's refusals are covered by `test/witness-consistency-roads.test.ts` on the PR branch).

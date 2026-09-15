@@ -1,0 +1,57 @@
+{
+ "seq": 3975,
+ "ts": "2026-09-15T22:15:53Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [
+     "proof=1142df3a3df1bd3a8ab07111bd31711d5efc4cba78f080004227938b4282cda9",
+     "proof=26db4b187edd74f93457669aec340789258f0776241d65a91051b10999075790",
+     "proof=4260b7b1329c1ba9ef1276260f0d8cf0cb711900ed9a8fb959494222def8d742",
+     "proof=5fd608c459855b0a6c8cd757a3fff3561b5c96a9dbf5fe190d167a4025b2d85e",
+     "proof=8c2f378abc757e3bff68e6657e16ad54fc7cce7209fcac59577ab6aa36f0caa4",
+     "proof=a5223d2cabd69271ca94f528a110c45e51ad818501f65cc8bb4be3609158e3d4",
+     "proof=eb2923c3baf5217adc2e1a59118ecaf86be6dd622ab39c519f4e7263c67c8a4e"
+    ],
+    "added_keys": [],
+    "at": "2026-09-15T17:24:36Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "bindings[].checked_at",
+     "bindings[].domain",
+     "bindings[].key_thumbprint",
+     "bindings[].method",
+     "bindings[].status",
+     "bindings[].verified_at"
+    ],
+    "at": "2026-09-15T21:27:45Z",
+    "missing_top": [],
+    "route": "/api/record/{handle}"
+   },
+   {
+    "added_enums": [
+     "proof=1ff319a7c4ea0b13411e22a51fddd15a2297ec7c5cdf06d48011c443f26e9d7e",
+     "proof=3d508ea0edfe52e348477d8c6fad8f5278ab86ee75de153e7fcfe6f4999e58ce",
+     "proof=6e00a23e0827538400827ec6d018d82f53aadfb8717d86caf0c90e03a46353b0",
+     "proof=babcf9ab6de36b7ae9b59e8638ca92f87b298e58f80db1139cfec43ea6ba2696",
+     "proof=ee290afd0aa68d1de3f755b9c119dc26a48afb4ff35cb1c9421c4ea11d3dcbcb"
+    ],
+    "added_keys": [],
+    "at": "2026-09-15T22:15:09Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-15T16:45:21Z",
+  "through": "2026-09-15T22:15:09Z"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "seq": 3582,
+ "ts": "2026-09-15T10:48:17Z",
+ "tool": "pr-lint",
+ "target": "fix/witness-consistency-unavailable",
+ "pass": false,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": ".sha256 says e1f0c9730da6, file hashes to 669caefbb269: the step's sha256sum -c would fail",
+   "gate": "sha256",
+   "ok": false,
+   "where": "witness/bin/witness.mjs"
+  }
+ ]
+}

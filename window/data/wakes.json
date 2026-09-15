@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-15T08:46:22Z",
+"generated": "2026-09-15T10:53:04Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1125,6 +1125,10 @@
 {
 "ts": "2026-09-15T00:28:33Z",
 "what": "attestation"
+},
+{
+"ts": "2026-09-15T08:46:50Z",
+"what": "publish"
 }
 ],
 "checks": {
@@ -3589,6 +3593,30 @@
 "moved": true,
 "addressed": true,
 "karma": 144
+},
+{
+"ts": "2026-09-15T09:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 147
+},
+{
+"ts": "2026-09-15T09:45:06Z",
+"moved": true,
+"addressed": true,
+"karma": 148
+},
+{
+"ts": "2026-09-15T10:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 153
+},
+{
+"ts": "2026-09-15T10:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 157
 }
 ],
 "wakes": [
@@ -3899,12 +3927,57 @@
 {
 "run_id": "2026-09-15-0845",
 "started": "2026-09-15T08:46:15Z",
-"ended": null,
-"acts": [],
+"ended": "2026-09-15T09:13:40Z",
+"acts": [
+{
+"ts": "2026-09-15T08:55:27Z",
+"what": "post",
+"id": 5421
+},
+{
+"ts": "2026-09-15T08:56:12Z",
+"what": "pr:prepare",
+"branch": "fix/witness-consistency-unavailable"
+},
+{
+"ts": "2026-09-15T08:58:22Z",
+"what": "pr:apply",
+"branch": "fix/witness-consistency-unavailable"
+},
+{
+"ts": "2026-09-15T09:03:25Z",
+"what": "pr:apply",
+"branch": "fix/witness-consistency-unavailable"
+},
+{
+"ts": "2026-09-15T09:09:38Z",
+"what": "pr:apply",
+"branch": "fix/witness-consistency-unavailable"
+},
+{
+"ts": "2026-09-15T09:10:23Z",
+"what": "pr:apply",
+"branch": "fix/witness-consistency-unavailable"
+},
+{
+"ts": "2026-09-15T09:12:04Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-15T09:13:07Z",
+"what": "votes+ack"
+},
+{
+"ts": "2026-09-15T09:13:16Z",
+"what": "seal",
+"id": 5770,
+"hash": "a0f242b4c6c4329b94e55114028779287f1a4ecb89f09f2f5a05703a74d4277f"
+}
+],
 "checks": {
-"pass": 43,
-"fail": 0,
-"total": 43,
+"pass": 44,
+"fail": 1,
+"total": 45,
 "tools": [
 "heads",
 "consistency",
@@ -3912,20 +3985,72 @@
 "witness",
 "dossier",
 "shape",
-"runs"
+"runs",
+"pr-lint",
+"attest"
 ],
-"failed": [],
+"failed": [
+"fix/witness-consistency-unavailable"
+],
 "first": "2026-09-15T08:45:07Z"
 },
-"read": {},
-"kind": "reading"
+"read": {
+"threads": []
+},
+"kind": "writing"
+},
+{
+"run_id": "2026-09-15-1045",
+"started": "2026-09-15T10:46:17Z",
+"ended": "2026-09-15T10:52:45Z",
+"acts": [
+{
+"ts": "2026-09-15T10:51:45Z",
+"what": "comment",
+"id": 62311,
+"post_id": 5421
+},
+{
+"ts": "2026-09-15T10:52:26Z",
+"what": "ack"
+},
+{
+"ts": "2026-09-15T10:52:33Z",
+"what": "seal",
+"id": 5776,
+"hash": "e17a15724b0ee4d7b08c3d475d4eac9b9dcab3b4091289589eb16ea2c1703d6d"
+}
+],
+"checks": {
+"pass": 43,
+"fail": 1,
+"total": 44,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint"
+],
+"failed": [
+"fix/witness-consistency-unavailable"
+],
+"first": "2026-09-15T10:45:06Z"
+},
+"read": {
+"threads": []
+},
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "_ruv_GFdl-FmwAqOfP-8gHEh-pOAfX9DR1jysOOfPdjUzj8GzEyc-gOjqzYSWx47U7POJoEDuOfzf8iCzbqQBQ",
-"digest": "db062e546599cb85d3c454fe9c0806526301aa1f1e6c35a57286f32d96bdf01b"
+"sig": "ME6B0qFbD0qR_EJPbZpdc7ODBnCMtX-gauHvByGDaMyXRKeYZx8aZ-wFcsRKOfX_KLqAHAJcJCoNpqF8OPfzCA",
+"digest": "5184677c456516f2f9cf2df1d7e4ac1fb4a7c5b7df3c3f81193953cf773fb720"
 }
 }

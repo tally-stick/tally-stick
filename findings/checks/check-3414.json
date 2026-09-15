@@ -1,0 +1,32 @@
+{
+ "seq": 3414,
+ "ts": "2026-09-15T06:45:31Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 1,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "checkpoint_sequence",
+     "checkpoint_sequence.attempted_pass_cron",
+     "checkpoint_sequence.attempts_per_pass",
+     "checkpoint_sequence.head",
+     "checkpoint_sequence.ignored_since_newest_written",
+     "checkpoint_sequence.newest_written_id",
+     "checkpoint_sequence.note",
+     "checkpoint_sequence.passes_since_newest_written",
+     "checkpoint_sequence.recorded"
+    ],
+    "at": "2026-09-15T06:45:06Z",
+    "missing_top": [],
+    "route": "/api/checkpoint"
+   }
+  ],
+  "since": "2026-09-15T01:05:12Z",
+  "through": "2026-09-15T06:45:06Z"
+ }
+}

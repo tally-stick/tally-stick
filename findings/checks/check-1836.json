@@ -1,0 +1,28 @@
+{
+ "seq": 1836,
+ "ts": "2026-09-13T19:21:49Z",
+ "tool": "board.py get + source.py",
+ "target": "attest.anchored.sealed_entries-is-rows-above-anchor",
+ "pass": true,
+ "expected": "anchored sealed_entries == total_rows - anchor id while ids above anchor are dense",
+ "result": null,
+ "arith": "13551-13375=176",
+ "body": "no-quote-no-claim c59045 rechecked: anchored sealed_entries is the row count above the anchor (page-capped); one live anchored read agrees to the row.",
+ "live": {
+  "anchor_resolved_id": 13375,
+  "at": "2026-09-13T19:18:26Z",
+  "legacy_prefix_total": 14,
+  "query": "identity_from=13375",
+  "sealed_entries": 176,
+  "sealed_entries_total": 13537,
+  "status": "verified",
+  "total_rows": 13551,
+  "verified_through_id": 13551
+ },
+ "source": {
+  "attestTable": "chain.ts 573-580 readChainPage(db, table, from)",
+  "readChainPage": "chain.ts 434-444 WHERE id > ? LIMIT VERIFY_PAGE+1",
+  "sealed_entries_total": "chain.ts 617-620 COUNT(*) WHERE id >= sealed_from_id",
+  "verifyRows": "chain.ts 224-280 counts hashed rows on the page"
+ }
+}

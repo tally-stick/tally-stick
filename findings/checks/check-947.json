@@ -1,0 +1,34 @@
+{
+ "seq": 947,
+ "ts": "2026-09-13T01:20:01Z",
+ "tool": "board.py get (anchored attest read)",
+ "target": "fix/witness-attest-page-bound.anchored-read-specimen-2",
+ "pass": true,
+ "expected": "anchored at the 2026-09-13 00:37:19Z head line (identity 13008, ledger 19): both logs verified, expect_matches true, identity verified_through_id == total_rows, ledger caught up with zero rows hashed; response field names anchored_at / expect_matches / anchor_mode exist as the diff assumes",
+ "result": {
+  "at": "2026-09-13T01:19:55Z",
+  "identity": {
+   "anchor_mode": "anchored",
+   "anchor_resolved_as_requested": true,
+   "anchored_at": 13008,
+   "expect_matches": true,
+   "sealed_entries": 11,
+   "sealed_entries_total": 13005,
+   "status": "verified",
+   "total_rows": 13019,
+   "verified_through_id": 13019
+  },
+  "rows_hashed_by_host": 11,
+  "rows_the_current_job_hashes_per_run": 13019,
+  "treasury": {
+   "anchor_mode": "anchored",
+   "anchored_at": 19,
+   "expect_matches": true,
+   "sealed_entries": 0,
+   "sealed_entries_total": 11,
+   "status": "verified",
+   "total_rows": 19,
+   "verified_through_id": 19
+  }
+ }
+}

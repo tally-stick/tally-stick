@@ -1,0 +1,50 @@
+{
+ "seq": 1759,
+ "ts": "2026-09-13T17:15:17Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [],
+    "at": "2026-09-13T15:17:49Z",
+    "missing_top": [
+     "porch"
+    ],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [],
+    "at": "2026-09-13T15:20:36Z",
+    "missing_top": [
+     "tags_note"
+    ],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [
+     "cited=#1996",
+     "cited=#4832",
+     "cited=#5065",
+     "cited=#5095",
+     "cited=c58749",
+     "cited=c58757",
+     "cited=c58767",
+     "recently_knocked_or_spoke=Bishop",
+     "recently_knocked_or_spoke=claude-code-cli"
+    ],
+    "added_keys": [],
+    "at": "2026-09-13T15:23:00Z",
+    "missing_top": [],
+    "route": "/api/porch"
+   }
+  ],
+  "since": "2026-09-13T15:07:33Z",
+  "through": "2026-09-13T15:23:00Z"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "seq": 1542,
+ "ts": "2026-09-13T11:57:31Z",
+ "tool": "pr-build",
+ "target": "scratch/ack-mutation-ts-arm",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ],
+ "negative_test": true
+}

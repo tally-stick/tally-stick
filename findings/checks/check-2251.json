@@ -1,0 +1,328 @@
+{
+ "seq": 2251,
+ "ts": "2026-09-14T04:45:53Z",
+ "tool": "runs",
+ "target": "runs.2026-09-14",
+ "pass": false,
+ "expected": "every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 1,
+   "workflow_dispatch": 58
+  },
+  "failed": [
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T02:15:10Z",
+    "event": "workflow_dispatch",
+    "id": 34798585976,
+    "started_at": "2026-09-14T02:15:10Z",
+    "status": "completed",
+    "updated_at": "2026-09-14T02:15:22Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T02:10:09Z",
+    "event": "workflow_dispatch",
+    "id": 34798290861,
+    "started_at": "2026-09-14T02:10:09Z",
+    "status": "completed",
+    "updated_at": "2026-09-14T02:10:20Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T02:05:09Z",
+    "event": "workflow_dispatch",
+    "id": 34798007016,
+    "started_at": "2026-09-14T02:05:09Z",
+    "status": "completed",
+    "updated_at": "2026-09-14T02:05:21Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T02:00:10Z",
+    "event": "workflow_dispatch",
+    "id": 34797727959,
+    "started_at": "2026-09-14T02:00:10Z",
+    "status": "completed",
+    "updated_at": "2026-09-14T02:00:21Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:55:08Z",
+    "event": "workflow_dispatch",
+    "id": 34797454730,
+    "started_at": "2026-09-14T01:55:08Z",
+    "status": "completed",
+    "updated_at": "2026-09-14T01:55:19Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:50:11Z",
+    "event": "workflow_dispatch",
+    "id": 34797192314,
+    "started_at": "2026-09-14T01:50:11Z",
+    "status": "completed",
+    "updated_at": "2026-09-14T01:50:20Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:45:09Z",
+    "event": "workflow_dispatch",
+    "id": 34796932910,
+    "started_at": "2026-09-14T01:45:09Z",
+    "status": "completed",
+    "updated_at": "2026-09-14T01:45:21Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:40:15Z",
+    "event": "workflow_dispatch",
+    "failed_step": "Record chain heads",
+    "id": 34796670071,
+    "started_at": "2026-09-14T01:40:15Z",
+    "status": "completed",
+    "steps": [
+     [
+      "Set up job",
+      "success"
+     ],
+     [
+      "Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Record chain heads",
+      "failure"
+     ],
+     [
+      "Post Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Complete job",
+      "success"
+     ]
+    ],
+    "updated_at": "2026-09-14T01:40:24Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:35:08Z",
+    "event": "workflow_dispatch",
+    "failed_step": "Record chain heads",
+    "id": 34796391554,
+    "started_at": "2026-09-14T01:35:08Z",
+    "status": "completed",
+    "steps": [
+     [
+      "Set up job",
+      "success"
+     ],
+     [
+      "Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Record chain heads",
+      "failure"
+     ],
+     [
+      "Post Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Complete job",
+      "success"
+     ]
+    ],
+    "updated_at": "2026-09-14T01:35:17Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:30:16Z",
+    "event": "workflow_dispatch",
+    "failed_step": "Record chain heads",
+    "id": 34796123755,
+    "started_at": "2026-09-14T01:30:16Z",
+    "status": "completed",
+    "steps": [
+     [
+      "Set up job",
+      "success"
+     ],
+     [
+      "Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Record chain heads",
+      "failure"
+     ],
+     [
+      "Post Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Complete job",
+      "success"
+     ]
+    ],
+    "updated_at": "2026-09-14T01:30:25Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:25:13Z",
+    "event": "workflow_dispatch",
+    "failed_step": "Record chain heads",
+    "id": 34795852689,
+    "started_at": "2026-09-14T01:25:13Z",
+    "status": "completed",
+    "steps": [
+     [
+      "Set up job",
+      "success"
+     ],
+     [
+      "Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Record chain heads",
+      "failure"
+     ],
+     [
+      "Post Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Complete job",
+      "success"
+     ]
+    ],
+    "updated_at": "2026-09-14T01:25:25Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "failure",
+    "created_at": "2026-09-14T01:20:11Z",
+    "event": "workflow_dispatch",
+    "failed_step": "Record chain heads",
+    "id": 34795587299,
+    "started_at": "2026-09-14T01:20:11Z",
+    "status": "completed",
+    "steps": [
+     [
+      "Set up job",
+      "success"
+     ],
+     [
+      "Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Record chain heads",
+      "failure"
+     ],
+     [
+      "Post Run actions/checkout@v4",
+      "success"
+     ],
+     [
+      "Complete job",
+      "success"
+     ]
+    ],
+    "updated_at": "2026-09-14T01:20:21Z"
+   }
+  ],
+  "head_lines": 45,
+  "lines_without_run": [],
+  "running": 0,
+  "runs": 59,
+  "runs_without_line": [
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34798290861,
+    "started_at": "2026-09-14T02:10:09Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34798007016,
+    "started_at": "2026-09-14T02:05:09Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34797727959,
+    "started_at": "2026-09-14T02:00:10Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34797454730,
+    "started_at": "2026-09-14T01:55:08Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34797192314,
+    "started_at": "2026-09-14T01:50:11Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34796932910,
+    "started_at": "2026-09-14T01:45:09Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34796670071,
+    "started_at": "2026-09-14T01:40:15Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34796391554,
+    "started_at": "2026-09-14T01:35:08Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34796123755,
+    "started_at": "2026-09-14T01:30:16Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "id": 34795852689,
+    "started_at": "2026-09-14T01:25:13Z",
+    "status": "completed"
+   }
+  ]
+ }
+}

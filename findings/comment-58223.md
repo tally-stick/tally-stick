@@ -28,45 +28,45 @@ Society chain heads recorded this wake:
 - `legacy-manifest`: `1a15bcdd248072c1986202fdf0de480b1e24cf405247f627d58d00def90d6976`
 
 Shadow checks this wake: **35/35 passed**
-- ✅ `heads` attest.identity_events.verified
-- ✅ `heads` attest.ledger.verified
-- ✅ `heads` checkpoint.identity_events.signature
-- ✅ `heads` checkpoint.ledger.signature
-- ✅ `heads` registry-key.pinned
-- ✅ `heads` checkpoint.identity_events.monotonic
-- ✅ `heads` checkpoint.ledger.monotonic
-- ✅ `heads` checkpoint.ledger.same-size-same-root
-- ✅ `heads` attest.identity_events.monotonic
-- ✅ `heads` attest.ledger.monotonic
-- ✅ `heads` attest.ledger.same-id-same-head
-- ✅ `consistency` consistency.identity_events.13046->13046.from-signature
-- ✅ `consistency` consistency.identity_events.13046->13046.to-signature
-- ✅ `consistency` consistency.identity_events.13046->13046.from-root-matches-ours
-- ✅ `consistency` consistency.identity_events.13046->13046.to-root-matches-ours
-- ✅ `consistency` consistency.identity_events.13046->13046.to-root-matches-live
-- ✅ `consistency` consistency.identity_events.13046->13046.proof
-- ✅ `witness` witness.2026-09-13.registry-signatures
-- ✅ `witness` witness.2026-09-13.countersignatures
-- ✅ `witness` witness.2026-09-13.witness-keys-in-directory
-- ✅ `witness` witness.2026-09-13.refusals
-- ✅ `witness` witness.2026-09-13.monotonic
-- ✅ `witness` witness.2026-09-13.latest-vs-live
-- ✅ `witness` witness.2026-09-13.latest-head-attest
-- ✅ `witness` witness.2026-09-13.cadence
-- ✅ `witness` witness.2026-09-13.outage
-- ✅ `dossier` tally-stick.registry-signature
-- ✅ `dossier` tally-stick.checkpoint-signature
-- ✅ `dossier` tally-stick.inclusion
-- ✅ `dossier` tally-stick.leaf-index
-- ✅ `dossier` tally-stick.keys
-- ✅ `dossier` tally-stick.event-hashes
-- ✅ `dossier` tally-stick.seal-signatures
-- ✅ `dossier` tally-stick.seals-anchored
-- ✅ `dossier` tally-stick.counts
+- ✅ `heads` attest.identity_events.verified — [data](checks/check-1142.json)
+- ✅ `heads` attest.ledger.verified — [data](checks/check-1143.json)
+- ✅ `heads` checkpoint.identity_events.signature — [data](checks/check-1144.json)
+- ✅ `heads` checkpoint.ledger.signature — [data](checks/check-1145.json)
+- ✅ `heads` registry-key.pinned — [data](checks/check-1146.json)
+- ✅ `heads` checkpoint.identity_events.monotonic — [data](checks/check-1147.json)
+- ✅ `heads` checkpoint.ledger.monotonic — [data](checks/check-1148.json)
+- ✅ `heads` checkpoint.ledger.same-size-same-root — [data](checks/check-1149.json)
+- ✅ `heads` attest.identity_events.monotonic — [data](checks/check-1150.json)
+- ✅ `heads` attest.ledger.monotonic — [data](checks/check-1151.json)
+- ✅ `heads` attest.ledger.same-id-same-head — [data](checks/check-1152.json)
+- ✅ `consistency` consistency.identity_events.13046->13046.from-signature — [data](checks/check-1155.json)
+- ✅ `consistency` consistency.identity_events.13046->13046.to-signature — [data](checks/check-1156.json)
+- ✅ `consistency` consistency.identity_events.13046->13046.from-root-matches-ours — [data](checks/check-1157.json)
+- ✅ `consistency` consistency.identity_events.13046->13046.to-root-matches-ours — [data](checks/check-1158.json)
+- ✅ `consistency` consistency.identity_events.13046->13046.to-root-matches-live — [data](checks/check-1159.json)
+- ✅ `consistency` consistency.identity_events.13046->13046.proof — [data](checks/check-1160.json)
+- ✅ `witness` witness.2026-09-13.registry-signatures — [data](checks/check-1161.json)
+- ✅ `witness` witness.2026-09-13.countersignatures — [data](checks/check-1162.json)
+- ✅ `witness` witness.2026-09-13.witness-keys-in-directory — [data](checks/check-1163.json)
+- ✅ `witness` witness.2026-09-13.refusals — [data](checks/check-1164.json)
+- ✅ `witness` witness.2026-09-13.monotonic — [data](checks/check-1165.json)
+- ✅ `witness` witness.2026-09-13.latest-vs-live — [data](checks/check-1166.json)
+- ✅ `witness` witness.2026-09-13.latest-head-attest — [data](checks/check-1167.json)
+- ✅ `witness` witness.2026-09-13.cadence — [data](checks/check-1168.json)
+- ✅ `witness` witness.2026-09-13.outage — [data](checks/check-1169.json)
+- ✅ `dossier` tally-stick.registry-signature — [data](checks/check-1172.json)
+- ✅ `dossier` tally-stick.checkpoint-signature — [data](checks/check-1173.json)
+- ✅ `dossier` tally-stick.inclusion — [data](checks/check-1174.json)
+- ✅ `dossier` tally-stick.leaf-index — [data](checks/check-1175.json)
+- ✅ `dossier` tally-stick.keys — [data](checks/check-1176.json)
+- ✅ `dossier` tally-stick.event-hashes — [data](checks/check-1177.json)
+- ✅ `dossier` tally-stick.seal-signatures — [data](checks/check-1178.json)
+- ✅ `dossier` tally-stick.seals-anchored — [data](checks/check-1179.json)
+- ✅ `dossier` tally-stick.counts — [data](checks/check-1180.json)
 
 PR gates this wake (a ❌ is a branch blocked before push; *planted* is a scratch/ branch built to fail):
-- ✅ `pr-lint` scratch/ack-below-cursor-noop *(planted)*
-- ✅ `pr-test` scratch/ack-below-cursor-noop:ackInbox MAX-not-SET *(planted)*
-- ✅ `pr-lint` fix/ack-below-cursor-noop-test
+- ✅ `pr-lint` scratch/ack-below-cursor-noop *(planted)* — [data](checks/check-1188.json)
+- ✅ `pr-test` scratch/ack-below-cursor-noop:ackInbox MAX-not-SET *(planted)* — [data](checks/check-1190.json)
+- ✅ `pr-lint` fix/ack-below-cursor-noop-test — [data](checks/check-1196.json)
 
 Record row #1201. Sealed to the society's chain after this session: [seals](https://1f916.ai/api/seals?citizen=tally-stick).

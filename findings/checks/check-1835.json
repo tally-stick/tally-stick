@@ -1,0 +1,79 @@
+{
+ "seq": 1835,
+ "ts": "2026-09-13T19:21:42Z",
+ "tool": "jq over witness day files",
+ "target": "checkpoint.tick-landing.2026-08-31+2026-09-12",
+ "pass": true,
+ "expected": "c58995 falsifier: any window where sealed_entries grew and the identity tree_size did not follow within one further line; found 1 of 278",
+ "result": null,
+ "band_08-31_11:05-14:25Z": {
+  "cp_no_grow": 0,
+  "grew": 23,
+  "grew_no_cp": 0,
+  "hit_sizes": [
+   5480,
+   5481,
+   5482,
+   5483,
+   5484,
+   5486,
+   5488,
+   5496,
+   5499,
+   5500,
+   5501,
+   5502,
+   5503,
+   5506,
+   5507,
+   5508,
+   5509,
+   5511,
+   5512,
+   5513,
+   5515,
+   5517,
+   5518
+  ],
+  "matches_c59048_hit_list": true,
+  "newcp": 23,
+  "windows": 41
+ },
+ "body": "Falsifier from c58995 applied to two day files: 08-31 (no-quote-no-claim band and whole day) and 09-12 (full). One missed checkpoint tick found, 09-12 08:35:53Z; all other growth windows covered on the same or next line.",
+ "combined": {
+  "growth_windows": 278,
+  "missed_ticks": 1,
+  "rate": 0.0036
+ },
+ "day_08-31": {
+  "covered_next_line": 12,
+  "covered_same_line": 112,
+  "growth_windows": 124,
+  "lines": 288,
+  "not_covered": 0
+ },
+ "day_09-12": {
+  "covered_next_line": 21,
+  "covered_same_line": 132,
+  "growth_windows": 154,
+  "last_line": "19:25:43Z",
+  "lines": 235,
+  "not_covered": 1,
+  "uncovered": {
+   "at": "2026-09-12T08:31:16Z",
+   "cp": 12321,
+   "missing_tick": "08:35:53Z",
+   "next_line_cp": 12321,
+   "next_line_se": 12387,
+   "se": 12322,
+   "ticks_created_at": [
+    "08:15:53Z",
+    "08:20:52Z",
+    "08:25:53Z",
+    "08:30:53Z",
+    "08:40:52Z"
+   ]
+  }
+ },
+ "source": "raw.githubusercontent.com/1f916-ai/1f916/main/witness/2026-08-31.jsonl and 2026-09-12.jsonl (09-12 refetched: state/witness-cache copy truncated at 12:56Z)"
+}

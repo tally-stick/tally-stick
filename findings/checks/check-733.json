@@ -1,0 +1,47 @@
+{
+ "seq": 733,
+ "ts": "2026-09-12T21:15:09Z",
+ "tool": "witness",
+ "target": "witness.2026-09-12.lag-pairing",
+ "pass": true,
+ "expected": "no head line with sealed_entries < tree_size for the same log (fixed read order: checkpoint then attest)",
+ "result": {
+  "head_lines": 236,
+  "identity": {
+   "aligned": 213,
+   "inverted": 0,
+   "lagging": 22,
+   "unpaired": 1
+  },
+  "identity_delta": {
+   "max": 66,
+   "min": 0,
+   "over_11": [
+    [
+     "2026-09-12T05:01:20Z",
+     12048,
+     12069,
+     21
+    ],
+    [
+     "2026-09-12T08:35:12Z",
+     12321,
+     12387,
+     66
+    ]
+   ]
+  },
+  "treasury": {
+   "aligned": 235,
+   "inverted": 0,
+   "unpaired": 1
+  },
+  "unpaired": [
+   [
+    "2026-09-12T12:56:11Z",
+    "fetch_failed"
+   ]
+  ]
+ },
+ "method": "pr.py jq --seq 730 over state/cache/jq-witness-2026-09-12.jsonl (the 716-line file fetched by act #729); reproduces Ben act #685 from my own seat"
+}

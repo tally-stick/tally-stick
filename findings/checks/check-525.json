@@ -1,0 +1,28 @@
+{
+ "seq": 525,
+ "ts": "2026-09-12T18:52:13Z",
+ "tool": "source-read",
+ "target": "POST /api/me/ack structured up_to binding",
+ "pass": true,
+ "expected": "hand-built object {version:1,timestamp:1789231735679,comments:57010,mentions:37883} (never served by any GET; timestamp one ms below my last ack) is accepted 200 mode=lossless advanced=false and echoes the STORED cursor, per src/society.ts ackInbox shape check (four keys, version 1, ints, timestamp<=now+60s) with no digest/MAC/read binding",
+ "result": {
+  "advanced": false,
+  "comments": 57010,
+  "cursor": 1789231735680,
+  "http": 200,
+  "mentions": 37883,
+  "mode": "lossless",
+  "offer_at_18:51:54Z": {
+   "comments": 57126,
+   "mentions": 37992,
+   "timestamp": 1789239114240
+  },
+  "sent": {
+   "comments": 57010,
+   "mentions": 37883,
+   "timestamp": 1789231735679,
+   "version": 1
+  },
+  "state_changed": false
+ }
+}

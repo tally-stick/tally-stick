@@ -1,0 +1,993 @@
+{
+ "seq": 2033,
+ "ts": "2026-09-14T00:19:57Z",
+ "tool": "runs",
+ "target": "runs.2026-09-13",
+ "pass": false,
+ "expected": "every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 6,
+   "workflow_dispatch": 278
+  },
+  "failed": [
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:40:43Z",
+    "event": "workflow_dispatch",
+    "id": 34755060820,
+    "started_at": "2026-09-13T11:40:43Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:45:33Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:35:40Z",
+    "event": "workflow_dispatch",
+    "id": 34754843791,
+    "started_at": "2026-09-13T11:35:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:40:44Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:30:39Z",
+    "event": "workflow_dispatch",
+    "id": 34754622549,
+    "started_at": "2026-09-13T11:30:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:35:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:25:39Z",
+    "event": "workflow_dispatch",
+    "id": 34754410773,
+    "started_at": "2026-09-13T11:25:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:30:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:20:34Z",
+    "event": "workflow_dispatch",
+    "id": 34754184399,
+    "started_at": "2026-09-13T11:20:34Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:25:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:15:40Z",
+    "event": "workflow_dispatch",
+    "id": 34753974204,
+    "started_at": "2026-09-13T11:15:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:20:36Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:10:45Z",
+    "event": "workflow_dispatch",
+    "id": 34753757516,
+    "started_at": "2026-09-13T11:10:45Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:15:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:05:44Z",
+    "event": "workflow_dispatch",
+    "id": 34753540928,
+    "started_at": "2026-09-13T11:05:44Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:10:47Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T11:00:46Z",
+    "event": "workflow_dispatch",
+    "id": 34753320001,
+    "started_at": "2026-09-13T11:00:46Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:05:46Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:55:37Z",
+    "event": "workflow_dispatch",
+    "id": 34753104463,
+    "started_at": "2026-09-13T10:55:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T11:00:48Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:50:39Z",
+    "event": "workflow_dispatch",
+    "id": 34752899293,
+    "started_at": "2026-09-13T10:50:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:55:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:45:39Z",
+    "event": "workflow_dispatch",
+    "id": 34752690207,
+    "started_at": "2026-09-13T10:45:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:50:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:40:43Z",
+    "event": "workflow_dispatch",
+    "id": 34752477012,
+    "started_at": "2026-09-13T10:40:43Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:45:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:35:39Z",
+    "event": "workflow_dispatch",
+    "id": 34752260441,
+    "started_at": "2026-09-13T10:35:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:40:45Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:30:45Z",
+    "event": "workflow_dispatch",
+    "id": 34752045584,
+    "started_at": "2026-09-13T10:30:45Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:35:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:25:39Z",
+    "event": "workflow_dispatch",
+    "id": 34751819169,
+    "started_at": "2026-09-13T10:25:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:30:47Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:20:41Z",
+    "event": "workflow_dispatch",
+    "id": 34751603444,
+    "started_at": "2026-09-13T10:20:41Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:25:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:15:40Z",
+    "event": "workflow_dispatch",
+    "id": 34751384410,
+    "started_at": "2026-09-13T10:15:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:20:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:10:46Z",
+    "event": "workflow_dispatch",
+    "id": 34751178605,
+    "started_at": "2026-09-13T10:10:46Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:15:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:05:40Z",
+    "event": "workflow_dispatch",
+    "id": 34750959897,
+    "started_at": "2026-09-13T10:05:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:10:48Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:05:38Z",
+    "event": "schedule",
+    "id": 34750957971,
+    "started_at": "2026-09-13T10:05:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:05:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T10:00:48Z",
+    "event": "workflow_dispatch",
+    "id": 34750743634,
+    "started_at": "2026-09-13T10:00:48Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:05:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T09:55:46Z",
+    "event": "workflow_dispatch",
+    "id": 34750569044,
+    "started_at": "2026-09-13T09:55:46Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T10:00:51Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T09:45:43Z",
+    "event": "workflow_dispatch",
+    "id": 34750198841,
+    "started_at": "2026-09-13T09:45:43Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T09:55:50Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T09:40:49Z",
+    "event": "workflow_dispatch",
+    "id": 34749992294,
+    "started_at": "2026-09-13T09:40:49Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T09:45:45Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T09:35:40Z",
+    "event": "workflow_dispatch",
+    "id": 34749785787,
+    "started_at": "2026-09-13T09:35:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T09:40:51Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T09:20:39Z",
+    "event": "workflow_dispatch",
+    "id": 34749349601,
+    "started_at": "2026-09-13T09:20:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T09:35:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:40:43Z",
+    "event": "workflow_dispatch",
+    "id": 34748283702,
+    "started_at": "2026-09-13T08:40:43Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T09:20:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:35:40Z",
+    "event": "workflow_dispatch",
+    "id": 34748073722,
+    "started_at": "2026-09-13T08:35:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:40:45Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:30:41Z",
+    "event": "workflow_dispatch",
+    "id": 34747868405,
+    "started_at": "2026-09-13T08:30:41Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:35:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:25:45Z",
+    "event": "workflow_dispatch",
+    "id": 34747658851,
+    "started_at": "2026-09-13T08:25:45Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:30:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:20:40Z",
+    "event": "workflow_dispatch",
+    "id": 34747444400,
+    "started_at": "2026-09-13T08:20:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:25:47Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:15:40Z",
+    "event": "workflow_dispatch",
+    "id": 34747241385,
+    "started_at": "2026-09-13T08:15:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:20:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:10:43Z",
+    "event": "workflow_dispatch",
+    "id": 34747036773,
+    "started_at": "2026-09-13T08:10:43Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:15:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:05:39Z",
+    "event": "workflow_dispatch",
+    "id": 34746827151,
+    "started_at": "2026-09-13T08:05:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:10:45Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T08:00:42Z",
+    "event": "workflow_dispatch",
+    "id": 34746614193,
+    "started_at": "2026-09-13T08:00:42Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:05:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:55:37Z",
+    "event": "workflow_dispatch",
+    "id": 34746415154,
+    "started_at": "2026-09-13T07:55:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T08:00:44Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:50:40Z",
+    "event": "workflow_dispatch",
+    "id": 34746219155,
+    "started_at": "2026-09-13T07:50:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:55:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:45:38Z",
+    "event": "workflow_dispatch",
+    "id": 34746022434,
+    "started_at": "2026-09-13T07:45:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:50:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:40:42Z",
+    "event": "workflow_dispatch",
+    "id": 34745822813,
+    "started_at": "2026-09-13T07:40:42Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:45:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:35:37Z",
+    "event": "workflow_dispatch",
+    "id": 34745616343,
+    "started_at": "2026-09-13T07:35:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:40:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:30:40Z",
+    "event": "workflow_dispatch",
+    "id": 34745410951,
+    "started_at": "2026-09-13T07:30:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:35:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:25:38Z",
+    "event": "workflow_dispatch",
+    "id": 34745201634,
+    "started_at": "2026-09-13T07:25:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:30:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:20:39Z",
+    "event": "workflow_dispatch",
+    "id": 34744993259,
+    "started_at": "2026-09-13T07:20:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:25:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:15:40Z",
+    "event": "workflow_dispatch",
+    "id": 34744786814,
+    "started_at": "2026-09-13T07:15:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:20:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:10:39Z",
+    "event": "workflow_dispatch",
+    "id": 34744576395,
+    "started_at": "2026-09-13T07:10:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:15:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:05:38Z",
+    "event": "workflow_dispatch",
+    "id": 34744371334,
+    "started_at": "2026-09-13T07:05:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:10:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T07:00:39Z",
+    "event": "workflow_dispatch",
+    "id": 34744160401,
+    "started_at": "2026-09-13T07:00:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:05:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:55:38Z",
+    "event": "workflow_dispatch",
+    "id": 34743953286,
+    "started_at": "2026-09-13T06:55:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T07:00:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:50:40Z",
+    "event": "workflow_dispatch",
+    "id": 34743748970,
+    "started_at": "2026-09-13T06:50:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:55:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:45:40Z",
+    "event": "workflow_dispatch",
+    "id": 34743543000,
+    "started_at": "2026-09-13T06:45:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:50:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:40:39Z",
+    "event": "workflow_dispatch",
+    "id": 34743332598,
+    "started_at": "2026-09-13T06:40:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:45:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:35:40Z",
+    "event": "workflow_dispatch",
+    "id": 34743128202,
+    "started_at": "2026-09-13T06:35:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:40:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:30:38Z",
+    "event": "workflow_dispatch",
+    "id": 34742919548,
+    "started_at": "2026-09-13T06:30:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:35:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:25:38Z",
+    "event": "workflow_dispatch",
+    "id": 34742714534,
+    "started_at": "2026-09-13T06:25:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:30:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:20:40Z",
+    "event": "workflow_dispatch",
+    "id": 34742513938,
+    "started_at": "2026-09-13T06:20:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:25:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:15:39Z",
+    "event": "workflow_dispatch",
+    "id": 34742306376,
+    "started_at": "2026-09-13T06:15:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:20:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:10:42Z",
+    "event": "workflow_dispatch",
+    "id": 34742099265,
+    "started_at": "2026-09-13T06:10:42Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:15:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:05:39Z",
+    "event": "workflow_dispatch",
+    "id": 34741903750,
+    "started_at": "2026-09-13T06:05:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:10:44Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T06:00:37Z",
+    "event": "workflow_dispatch",
+    "id": 34741689938,
+    "started_at": "2026-09-13T06:00:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:05:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:55:31Z",
+    "event": "workflow_dispatch",
+    "id": 34741485614,
+    "started_at": "2026-09-13T05:55:31Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T06:00:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:50:40Z",
+    "event": "workflow_dispatch",
+    "id": 34741297487,
+    "started_at": "2026-09-13T05:50:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:55:33Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:45:40Z",
+    "event": "workflow_dispatch",
+    "id": 34741089620,
+    "started_at": "2026-09-13T05:45:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:50:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:40:41Z",
+    "event": "workflow_dispatch",
+    "id": 34740890020,
+    "started_at": "2026-09-13T05:40:41Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:45:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:35:39Z",
+    "event": "workflow_dispatch",
+    "id": 34740684115,
+    "started_at": "2026-09-13T05:35:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:40:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:30:41Z",
+    "event": "workflow_dispatch",
+    "id": 34740475822,
+    "started_at": "2026-09-13T05:30:41Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:35:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:25:37Z",
+    "event": "workflow_dispatch",
+    "id": 34740266848,
+    "started_at": "2026-09-13T05:25:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:30:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:20:37Z",
+    "event": "workflow_dispatch",
+    "id": 34740063761,
+    "started_at": "2026-09-13T05:20:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:25:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:15:37Z",
+    "event": "workflow_dispatch",
+    "id": 34739858269,
+    "started_at": "2026-09-13T05:15:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:20:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:10:39Z",
+    "event": "workflow_dispatch",
+    "id": 34739653898,
+    "started_at": "2026-09-13T05:10:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:15:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:05:45Z",
+    "event": "workflow_dispatch",
+    "id": 34739450435,
+    "started_at": "2026-09-13T05:05:45Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:10:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T05:00:42Z",
+    "event": "workflow_dispatch",
+    "id": 34739233406,
+    "started_at": "2026-09-13T05:00:42Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:05:47Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:55:42Z",
+    "event": "workflow_dispatch",
+    "id": 34739041144,
+    "started_at": "2026-09-13T04:55:42Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T05:00:44Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:50:38Z",
+    "event": "workflow_dispatch",
+    "id": 34738844916,
+    "started_at": "2026-09-13T04:50:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:55:44Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:45:39Z",
+    "event": "workflow_dispatch",
+    "id": 34738647833,
+    "started_at": "2026-09-13T04:45:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:50:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:40:40Z",
+    "event": "workflow_dispatch",
+    "id": 34738447377,
+    "started_at": "2026-09-13T04:40:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:45:41Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:35:38Z",
+    "event": "workflow_dispatch",
+    "id": 34738254098,
+    "started_at": "2026-09-13T04:35:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:40:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:30:37Z",
+    "event": "workflow_dispatch",
+    "id": 34738055360,
+    "started_at": "2026-09-13T04:30:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:35:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:25:39Z",
+    "event": "workflow_dispatch",
+    "id": 34737858895,
+    "started_at": "2026-09-13T04:25:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:30:39Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:20:36Z",
+    "event": "workflow_dispatch",
+    "id": 34737661349,
+    "started_at": "2026-09-13T04:20:36Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:25:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:17:06Z",
+    "event": "schedule",
+    "id": 34737525325,
+    "started_at": "2026-09-13T04:17:06Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:20:38Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:15:38Z",
+    "event": "workflow_dispatch",
+    "id": 34737468449,
+    "started_at": "2026-09-13T04:15:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:17:07Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T04:10:46Z",
+    "event": "workflow_dispatch",
+    "id": 34737279838,
+    "started_at": "2026-09-13T04:10:46Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T04:15:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T00:30:41Z",
+    "event": "workflow_dispatch",
+    "id": 34728151751,
+    "started_at": "2026-09-13T00:30:41Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T00:35:38Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T00:25:38Z",
+    "event": "workflow_dispatch",
+    "id": 34727933715,
+    "started_at": "2026-09-13T00:25:38Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T00:30:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T00:20:37Z",
+    "event": "workflow_dispatch",
+    "id": 34727721434,
+    "started_at": "2026-09-13T00:20:37Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T00:25:40Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T00:15:40Z",
+    "event": "workflow_dispatch",
+    "id": 34727512277,
+    "started_at": "2026-09-13T00:15:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T00:20:38Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T00:10:39Z",
+    "event": "workflow_dispatch",
+    "id": 34727299438,
+    "started_at": "2026-09-13T00:10:39Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T00:15:42Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T00:05:40Z",
+    "event": "workflow_dispatch",
+    "id": 34727084624,
+    "started_at": "2026-09-13T00:05:40Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T00:10:43Z"
+   },
+   {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "created_at": "2026-09-13T00:00:41Z",
+    "event": "workflow_dispatch",
+    "id": 34726860339,
+    "started_at": "2026-09-13T00:00:41Z",
+    "status": "completed",
+    "updated_at": "2026-09-13T00:05:42Z"
+   }
+  ],
+  "head_lines": 190,
+  "lines_without_run": [],
+  "running": 0,
+  "runs": 284,
+  "runs_without_line": [
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34754843791,
+    "started_at": "2026-09-13T11:35:40Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34754622549,
+    "started_at": "2026-09-13T11:30:39Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34754410773,
+    "started_at": "2026-09-13T11:25:39Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34754184399,
+    "started_at": "2026-09-13T11:20:34Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34753974204,
+    "started_at": "2026-09-13T11:15:40Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34753757516,
+    "started_at": "2026-09-13T11:10:45Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34753540928,
+    "started_at": "2026-09-13T11:05:44Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34753320001,
+    "started_at": "2026-09-13T11:00:46Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34753104463,
+    "started_at": "2026-09-13T10:55:37Z",
+    "status": "completed"
+   },
+   {
+    "conclusion": "cancelled",
+    "event": "workflow_dispatch",
+    "id": 34752899293,
+    "started_at": "2026-09-13T10:50:39Z",
+    "status": "completed"
+   }
+  ]
+ }
+}

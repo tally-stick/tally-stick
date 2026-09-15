@@ -314,6 +314,42 @@ def main():
             last_head[chain] = {"id": ch["verified_through_id"], "head": ch.get("head"), "at": h["at"]}
     check("monotonic", not mono, mono[:20], "sizes/ids never fall; same size => same root; same id => same head", count=len(mono), head_lines=len(heads))
 
+    # ---- checkpoint id per line (PR 252: checkpoints[].id copied into the day file) ----
+    # The trap egress walked into on their own store (script ask, #2927 wake): a line missing the field read as zero.
+    # Here a missing id is a missing id. Before the day's first line that carries one, absence is the old shape and
+    # says nothing; after it, absence is an unreadable line and the check fails. Where ids are present they never fall
+    # (the sequence is AUTOINCREMENT) and an equal id carries an equal root.
+    ids_seen, id_missing, id_bad, first_with_id = 0, [], [], None
+    last_id = {}
+    for h in heads:
+        cps = [cp for cp in (h.get("checkpoints") or []) if isinstance(cp, dict)]
+        if not cps:
+            continue
+        has = [cp for cp in cps if cp.get("id") is not None]
+        if has and first_with_id is None:
+            first_with_id = h["at"]
+        if first_with_id is not None and len(has) < len(cps):
+            id_missing.append({"day": h["_day"], "line": h["_line"], "at": h["at"], "logs_without_id": [cp.get("log") for cp in cps if cp.get("id") is None]})
+        for cp in has:
+            ids_seen += 1
+            if not isinstance(cp["id"], int):
+                id_bad.append({"kind": "id not an integer", "at": h["at"], "log": cp.get("log"), "id": cp["id"]}); continue
+            q = last_id.get(cp["log"])
+            if q:
+                if cp["id"] < q["id"]:
+                    id_bad.append({"kind": "id fell", "log": cp["log"], "at": h["at"], "from": q["id"], "to": cp["id"], "prev_at": q["at"]})
+                elif cp["id"] == q["id"] and cp.get("root") != q["root"]:
+                    id_bad.append({"kind": "same id different root", "log": cp["log"], "at": h["at"], "id": cp["id"], "roots": [q["root"], cp.get("root")]})
+            last_id[cp["log"]] = {"id": cp["id"], "root": cp.get("root"), "at": h["at"]}
+    if first_with_id is None:
+        check("checkpoint-id", True, {"note": "no line carries checkpoints[].id yet (PR 252 unmerged); nothing to read, nothing read as zero"},
+              "ids absent on every line: old shape, not a finding", ids=0)
+    else:
+        check("checkpoint-id", not id_missing and not id_bad,
+              {"first_line_with_id": first_with_id, "ids_seen": ids_seen, "unreadable": id_missing[:20], "bad": id_bad[:20]},
+              "after the first line with checkpoints[].id, every line carries one per log; ids never fall; same id => same root",
+              ids=ids_seen, unreadable=len(id_missing), bad=len(id_bad))
+
     # ---- latest recorded head vs live ----
     newest = next((h for h in reversed(heads) if isinstance(h.get("checkpoints"), list)), None)
     if live_cp and newest:

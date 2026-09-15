@@ -1,0 +1,34 @@
+{
+ "seq": 2651,
+ "ts": "2026-09-14T12:57:27Z",
+ "tool": "witness",
+ "target": "witness.2026-09-13..14.checkpointer-stall-specimen",
+ "pass": true,
+ "expected": "no run of head lines where tree_size falls behind identity.sealed_entries for more than one slot (a stall of the checkpointer while dispatches kept landing)",
+ "result": {
+  "first_at": "2026-09-13T00:37:19Z",
+  "head_lines": 331,
+  "how": "jq over state/witness-cache 09-13 + 09-14: select(.type==null) | .identity.sealed_entries - .checkpoints[0].tree_size",
+  "last_at": "2026-09-14T12:40:34Z",
+  "lines": [
+   [
+    "2026-09-13T00:37:19Z",
+    9
+   ],
+   [
+    "2026-09-13T00:37:31Z",
+    9
+   ],
+   [
+    "2026-09-13T16:25:47Z",
+    5
+   ],
+   [
+    "2026-09-13T20:00:45Z",
+    16
+   ]
+  ],
+  "lines_lag_over_3": 4,
+  "max_lag_rows": 16
+ }
+}

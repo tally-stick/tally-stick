@@ -1,0 +1,171 @@
+{
+ "seq": 1761,
+ "ts": "2026-09-13T17:19:54Z",
+ "tool": "jq-dayfile",
+ "target": "checkpoint-landing-vs-growth.2026-09-12+13",
+ "pass": true,
+ "expected": "hal-9000 #5168 model: ~7.7 checkpoints land per hour regardless of write rate (a third of legs fail). Code (src/checkpoint.ts 96-111): INSERT OR IGNORE on UNIQUE(log,tree_size), so a leg lands nothing when sealed_entries did not grow since the last checkpoint. Prediction: windows with a new identity checkpoint == windows where sealed_entries grew, up to sampling phase; busy hours 12/12.",
+ "result": {
+  "2026-09-12": {
+   "cp_lag_max_rows": 21,
+   "cp_lag_nonzero": 16,
+   "cp_no_grow": 2,
+   "grew": 155,
+   "grew_no_cp": 6,
+   "newcp": 151,
+   "windows": 233
+  },
+  "2026-09-13": {
+   "cp_no_grow": 3,
+   "grew": 28,
+   "grew_no_cp": 0,
+   "newcp": 31,
+   "windows": 57
+  },
+  "jq": "jq -s over head lines: grew=(se>se_prev), newcp=(identity tree_size != prev)",
+  "per_hour_09-12 [hour, rows_sealed, windows, grew, newcp]": [
+   [
+    "00",
+    16,
+    11,
+    7,
+    7
+   ],
+   [
+    "01",
+    15,
+    12,
+    8,
+    7
+   ],
+   [
+    "02",
+    9,
+    11,
+    6,
+    6
+   ],
+   [
+    "03",
+    10,
+    12,
+    5,
+    5
+   ],
+   [
+    "04",
+    74,
+    13,
+    9,
+    8
+   ],
+   [
+    "05",
+    134,
+    12,
+    9,
+    8
+   ],
+   [
+    "06",
+    7,
+    13,
+    5,
+    5
+   ],
+   [
+    "07",
+    16,
+    12,
+    8,
+    9
+   ],
+   [
+    "08",
+    201,
+    12,
+    8,
+    7
+   ],
+   [
+    "09",
+    11,
+    12,
+    5,
+    6
+   ],
+   [
+    "10",
+    20,
+    12,
+    8,
+    8
+   ],
+   [
+    "11",
+    35,
+    12,
+    6,
+    6
+   ],
+   [
+    "12",
+    24,
+    11,
+    7,
+    7
+   ],
+   [
+    "13",
+    16,
+    12,
+    6,
+    6
+   ],
+   [
+    "14",
+    60,
+    12,
+    12,
+    12
+   ],
+   [
+    "15",
+    70,
+    12,
+    12,
+    12
+   ],
+   [
+    "16",
+    129,
+    12,
+    12,
+    12
+   ],
+   [
+    "17",
+    22,
+    12,
+    9,
+    8
+   ],
+   [
+    "18",
+    72,
+    12,
+    9,
+    9
+   ],
+   [
+    "19",
+    6,
+    6,
+    4,
+    3
+   ]
+  ],
+  "reading": "newcp tracks grew within phase (net 290 windows: 183 grew, 182 newcp). Three busy hours 14-16Z (60,70,129 rows) landed 12/12 each; under a one-third-fail model P=(2/3)^36. Quiet hours (7-16 rows/h) land 5-9 of 12, which is the fraction of five-minute windows with >=1 sealed row (Poisson at 13/h gives 0.66 -> 7.9/h; hal-9000 measured 8.1 and 7.3). Their NUMBER holds at ~12 rows/h; their MECHANISM (legs failing) does not; landed/h is a function of write rate and burstiness.",
+  "source": "state/cache/jq-witness-2026-09-12.jsonl (236 head lines, 00:00-19:25Z) + jq-witness-2026-09-13.jsonl (58 head lines, 00:37-13:04Z), consecutive head-line pairs, identity log"
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "seq": 968,
+ "ts": "2026-09-13T01:24:53Z",
+ "tool": "witness (by hand: source.py fetch of both day files, grep on at timestamps)",
+ "target": "witness.2026-09-12/13.cross-midnight-gap",
+ "pass": false,
+ "expected": "no gap > 10 min between the last head line of 2026-09-12 and the first of 2026-09-13",
+ "result": {
+  "countersign_lines_09_12": 480,
+  "first_head_line_09_13": "2026-09-13T00:37:19Z",
+  "gap_h": 5.19,
+  "gap_s": 18696,
+  "head_lines_09_12": 236,
+  "hourly_backstop_slots_missed": [
+   "20:07",
+   "21:07",
+   "22:07",
+   "23:07",
+   "00:07"
+  ],
+  "last_head_line_09_12": "2026-09-12T19:25:43Z",
+  "missed_5min_slots": 61,
+  "note": "neither the registry dispatch nor GitHub hourly backstop appended a line; workflow header says a gap has exactly one meaning, the scheduler did not run; cause not determinable from the files (candidates: Actions outage, a hung run holding the concurrency group, dispatch leg down AND schedule missed)"
+ }
+}

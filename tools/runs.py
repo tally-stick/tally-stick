@@ -93,6 +93,21 @@ def main():
     # Name the step that failed, for runs that reached a job (a cancelled-while-queued run has no jobs). One request
     # per failed run, at most five: the first failure of each kind is the diagnosis, the rest repeat it (#2191).
     named = 0
+    # "a cancelled-while-queued run has no jobs" was an assumption this file skipped on and never executed (#2191,
+    # script ask 2026-09-14 08:45Z; the 09-13 post said 'zero jobs' for 90 runs on a 5-of-82 sample). So: one cancelled
+    # run per day gets its jobs page fetched, and the count is logged as its own check row. One request.
+    cancelled = sorted((r for r in failed if r["conclusion"] == "cancelled"), key=lambda r: r["started_at"] or "")
+    cancelled_probe = None
+    if cancelled and st.get("rate", {}).get("remaining", 60) > 5:
+        r0 = cancelled[0]
+        code, j = prs.get(st, f"/actions/runs/{r0['id']}/jobs")
+        jobs = j.get("jobs", []) if code == 200 else None
+        cancelled_probe = {"run_id": r0["id"], "started_at": r0["started_at"], "event": r0["event"], "http": code,
+                           "jobs": None if jobs is None else len(jobs),
+                           "job_states": None if jobs is None else [(job.get("name"), job.get("status"), job.get("conclusion")) for job in jobs][:5],
+                           "steps_run": None if jobs is None else sum(1 for job in jobs for s_ in job.get("steps", []) if s_.get("conclusion") not in (None, "skipped")),
+                           "of_cancelled_today": len(cancelled)}
+        time.sleep(0.5)
     for r in sorted(failed, key=lambda r: r["started_at"] or ""):
         if r["conclusion"] == "cancelled" or named >= 5 or st.get("rate", {}).get("remaining", 60) <= 5:
             continue
@@ -113,7 +128,7 @@ def main():
             "first_run": min((r["created_at"] for r in runs), default=None), "last_run": max((r["created_at"] for r in runs), default=None)}
     out = {"day": a.day, "runs": len(runs), "by_event": by_event, "failed": failed, "running": len(running),
            "head_lines": len(heads), "lines_without_run": lines_without_run, "runs_without_line": runs_without_line,
-           "seam": seam, "api": err, "github_budget_left": st.get("rate", {}).get("remaining")}
+           "seam": seam, "api": err, "cancelled_probe": cancelled_probe, "github_budget_left": st.get("rate", {}).get("remaining")}
     print(json.dumps(out, indent=1))
     if a.record:
         import record
@@ -124,6 +139,14 @@ def main():
                                                   | {"lines_without_run": lines_without_run[:10], "runs_without_line": runs_without_line[:10]},
                                                   "expected": "every head line has a run in its slot and every finished run wrote a line; no failed runs"})
         print(f"# check #{seq}", file=sys.stderr)
+        if cancelled_probe and cancelled_probe["jobs"] is not None:
+            # the assumption, measured: pass means this cancelled run reached no job step (queued-then-cancelled);
+            # fail means a cancelled run DID run steps, and every count that treated 'cancelled' as 'never started' is wrong
+            ok2 = cancelled_probe["steps_run"] == 0
+            seq2, _ = record.add(c, "check", "agent", {"tool": TOOL, "target": f"runs.{a.day}.cancelled-has-no-jobs", "pass": ok2,
+                                                       "result": cancelled_probe,
+                                                       "expected": "a cancelled witness run ran no step (jobs page: no step with a conclusion other than null/skipped)"})
+            print(f"# check #{seq2} cancelled-has-no-jobs: {'holds' if ok2 else 'FAILS'} on run {cancelled_probe['run_id']}", file=sys.stderr)
 
 
 if __name__ == "__main__":

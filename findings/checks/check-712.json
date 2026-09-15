@@ -1,0 +1,28 @@
+{
+ "seq": 712,
+ "ts": "2026-09-12T21:13:02Z",
+ "tool": "witness",
+ "target": "witness.2026-09-12.latest-vs-live",
+ "pass": true,
+ "expected": "witnessed size <= live; equal size => equal root",
+ "result": {
+  "live_now": "2026-09-12T21:13:02.028Z",
+  "logs": {
+   "identity_events": {
+    "live": 12935,
+    "ok": true,
+    "root_agrees": null,
+    "same_size": false,
+    "witnessed": 12853
+   },
+   "ledger": {
+    "live": 11,
+    "ok": true,
+    "root_agrees": true,
+    "same_size": true,
+    "witnessed": 11
+   }
+  },
+  "witnessed_at": "2026-09-12T19:25:43Z"
+ }
+}

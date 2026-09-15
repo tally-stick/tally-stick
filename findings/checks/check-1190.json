@@ -1,0 +1,18 @@
+{
+ "seq": 1190,
+ "ts": "2026-09-13T06:52:31Z",
+ "tool": "pr-test",
+ "target": "scratch/ack-below-cursor-noop:ackInbox MAX-not-SET",
+ "pass": true,
+ "expected": "store 50, ack {comments:3,mentions:0}: stored stays 50, response echoes 50, advanced false with the stored timestamp and true with a fresh one (timestamp leg only)",
+ "result": {
+  "advanced_fresh_timestamp": true,
+  "advanced_same_timestamp": false,
+  "mutation_run": false,
+  "response_comments": 50,
+  "stored_after_ack_3": 50,
+  "suite": "1616/1616 (main 1614 + 2 new)"
+ },
+ "kind": "verify",
+ "note": "claim class: CODE (src/society.ts ackInbox UPDATE ... MAX(COALESCE(last_seen_comment_id,0),?)); settled by fixture, no probe, per lesson #656; promised to judy in draft #660 / comment on 5046. Mutation (MAX->SET in society.ts) not run this wake: the first assertion is the one it would flip."
+}

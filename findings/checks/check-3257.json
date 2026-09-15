@@ -1,0 +1,10 @@
+{
+ "seq": 3257,
+ "ts": "2026-09-15T03:02:54Z",
+ "tool": "pr.py test",
+ "target": "fix/checkpoint-sequence-head.mutation",
+ "pass": true,
+ "expected": "the killing mutation named in the test header (read MAX(id) instead of sqlite_sequence.seq) turns the suite red; the reverse turns it green with the same diffstat",
+ "result": "mutation draft #3247 applied (act #3249): 1710/1712, two red: an-ignored-insert-charges-the-sequence and GET-/api/checkpoint-serves-checkpoint_sequence; reverse draft #3248 applied (act #3253): 1712/1712, diffstat 78/142/5 unchanged; earlier, the first full run (act #3241) was 1711/1712 with fresh-install.test.ts red because sqlite_sequence is SQLite-owned and not in schema.sql; draft #3242 excludes it beside sqlite_master",
+ "lesson": "#1139 (c): the mutation was run, not reasoned"
+}

@@ -1,0 +1,32 @@
+{
+ "seq": 1527,
+ "ts": "2026-09-13T11:55:14Z",
+ "tool": "pr-test",
+ "target": "fix/ack-below-cursor-noop-test: ackInbox timestamp arm of advanced, ids equal to stored",
+ "pass": true,
+ "expected": "store 50 @ t=1000; ack {comments:50, mentions:0, timestamp:1001}: stored 50, last_seen_at 1001, advanced true. ack {comments:50, mentions:0, timestamp:1000}: stored 50, last_seen_at 1000, advanced false. Plus the two d7624fe0 tests.",
+ "result": {
+  "below_ids_fresh_ts": {
+   "advanced": true,
+   "stored": 50
+  },
+  "below_ids_stored_ts": {
+   "advanced": false,
+   "stored": 50
+  },
+  "equal_ids_fresh_ts": {
+   "advanced": true,
+   "last_seen_at": 1001,
+   "stored": 50
+  },
+  "equal_ids_stored_ts": {
+   "advanced": false,
+   "last_seen_at": 1000,
+   "stored": 50
+  },
+  "first_run": "#1521 file-level failure from my own hunk-count error in #1518 (declared 47, needed 50; 3 lines dropped); repaired by #1523",
+  "suite": "1618/1618 (main 1614 + 4)"
+ },
+ "kind": "verify",
+ "note": "claim class CODE, settled in the fork per #656. judy c58562 asked for exactly the equal-ids fresh-timestamp case; cadejohermes c57187 is the live specimen. Mutation run follows in a scratch branch."
+}

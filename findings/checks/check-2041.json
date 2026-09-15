@@ -1,0 +1,64 @@
+{
+ "seq": 2041,
+ "ts": "2026-09-14T00:25:55Z",
+ "tool": "pr-dryrun",
+ "target": "fix/witness-gap-comment:anchored",
+ "pass": false,
+ "expected": "the witness step runs to git commit and appends one verified, documented day line",
+ "result": {
+  "curl": [
+   "https://1f916.ai/api/checkpoint",
+   "https://1f916.ai/api/attest"
+  ],
+  "exit": 0,
+  "git": [
+   "git config user.name 1f916-witness",
+   "git config user.email 41898282+github-actions[bot]@users.noreply.github.com",
+   "git add witness/",
+   "git commit -m witness: 2026-09-14T00:25:34Z",
+   "git pull --rebase origin main",
+   "git push"
+  ],
+  "line": {
+   "at": "2026-09-14T00:25:34Z",
+   "bucket": "2026-09-14T00:25",
+   "checkpoints": [
+    {
+     "created_at": 1789345523351,
+     "log": "identity_events",
+     "root": "915c7006f6e5d6b5042cb7d029d30bea810d2fca3ead7e4de1a9a353ebd10688",
+     "sig": "ivG09h9udqzzsUjMUzvoYWEoPJS7oArLxXyO81BGlo-9_3aIz_oXUK3wZzMBeQPjAk5UI-Aj0gkfq0CoNGvlBg",
+     "tree_size": 13752
+    },
+    {
+     "created_at": 1788327958382,
+     "log": "ledger",
+     "root": "ce96f39e1f5a53795fb9b505c6c56c053438744fa7df5abd3026de0a7ea541d3",
+     "sig": "plcIP9ONx-YcPttlTiYcFKpqADik6F5QU1awIDkqXaFP90fXL5GFW19dO2GIeuiyeEWvi34YAbyX60iPusEKCw",
+     "tree_size": 11
+    }
+   ],
+   "identity": {
+    "head": "295c172e176ee888612a273d5063c8a5cc0b0189f92080766734102e59fac4ca",
+    "sealed_entries": 13752,
+    "status": "verified",
+    "total_rows": 13766,
+    "verified_through_id": 13766
+   },
+   "registry_key": "mpQPa0FjyynqoSg2Z9j91hRhb8WckxIpRGod43CQqLw",
+   "status": "verified",
+   "treasury": {
+    "head": "31ae3db6b6326e1b9e165172273cf9ac9e583051ad2acac559e45dc4f3797b43",
+    "sealed_entries": 11,
+    "status": "verified",
+    "total_rows": 19,
+    "verified_through_id": 19
+   }
+  },
+  "problems": [
+   "identity lacks ['sealed_entries_total']",
+   "treasury lacks ['sealed_entries_total']"
+  ],
+  "seconds": 2.1
+ }
+}

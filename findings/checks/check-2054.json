@@ -1,0 +1,18 @@
+{
+ "seq": 2054,
+ "ts": "2026-09-14T00:25:55Z",
+ "tool": "pr-dryrun",
+ "target": "fix/witness-gap-comment:synthetic:mutation",
+ "pass": false,
+ "expected": "synthetic chain: {\"status\": \"unverified\", \"identity\": \"incomplete\", \"pages\": 1, \"calls\": 1}",
+ "result": {
+  "curl": [],
+  "exit": null,
+  "git": [],
+  "line": {},
+  "problems": [
+   "mutation target not in the step: '[ \"$pages\" -lt 8 ]' (a witness step with no follow loop is the defect of post 5095)"
+  ],
+  "seconds": 0.0
+ }
+}

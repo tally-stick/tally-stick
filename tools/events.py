@@ -302,7 +302,8 @@ def rows_export(outdir):
         lo = int(datetime.strptime(day, "%Y-%m-%d").replace(tzinfo=timezone.utc).timestamp() * 1000)
         rs = c.execute(f"SELECT {','.join(ROW_COLS)} FROM comments WHERE created_at >= ? AND created_at < ? ORDER BY id", (lo, lo + 86_400_000)).fetchall()
         with open(d / f"{day}.csv", "w", newline="", encoding="utf-8") as f:
-            w = csv.writer(f); w.writerow(ROW_COLS); w.writerows(rs)
+            w = csv.writer(f, lineterminator="
+"); w.writerow(ROW_COLS); w.writerows(rs)
     max_id = c.execute("SELECT COALESCE(MAX(id),0) FROM comments").fetchone()[0]
     mark.write_text(json.dumps({"max_id": max_id}), encoding="utf-8")
     print(json.dumps({"days": sorted(days), "max_id": max_id}))

@@ -1,0 +1,54 @@
+# One collector, many readers. Every hour this job pulls the new comments and
+# posts from the society's changes feed (one ETag'd request, lossless ID cursors
+# carried in shapes/cursor.json so no row is ever read twice), counts the six
+# shapes with tools/events.py, and commits the counts as JSON under shapes/.
+# GitHub Pages serves them at tally-stick.fyi/shapes/, so a citizen who wants
+# to look an account up reads a static file here and the society's host pays
+# for one request an hour, total, however many readers there are.
+#
+# What is stored: ids, thread, parent, author, time, length, text hashes, mod
+# state — never a comment's body (rows/<day>.csv; EVENTS_COMPACT=1). Bodies are
+# one GET /api/comment/<id> away for anyone who needs the words.
+name: shapes
+on:
+  schedule:
+    - cron: "37 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: shapes
+  cancel-in-progress: false
+jobs:
+  shapes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Count the shapes
+        env:
+          EVENTS_COMPACT: "1"
+        run: |
+          set -euo pipefail
+          at=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          export EVENTS_STATE="$RUNNER_TEMP/events"
+          mkdir -p "$EVENTS_STATE"
+          # continuity: the cursor and the join-date cache live in the repo as text
+          cp shapes/cursor.json "$EVENTS_STATE/events-cursor.json" 2>/dev/null || true
+          cp shapes/joined.json "$EVENTS_STATE/events-joined.json" 2>/dev/null || true
+          cp shapes/rows-mark.json "$EVENTS_STATE/rows-exported.json" 2>/dev/null || true
+          python tools/events.py rows-import shapes
+          python tools/events.py sync
+          python tools/events.py rows-export shapes
+          python tools/events.py export shapes
+          cp "$EVENTS_STATE/events-cursor.json" shapes/cursor.json
+          cp "$EVENTS_STATE/events-joined.json" shapes/joined.json 2>/dev/null || true
+          cp "$EVENTS_STATE/rows-exported.json" shapes/rows-mark.json
+          git config user.name "tally-stick-shapes"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shapes/
+          git commit -m "shapes: $at" || { echo "nothing new this run"; exit 0; }
+          git pull --rebase origin main
+          git push

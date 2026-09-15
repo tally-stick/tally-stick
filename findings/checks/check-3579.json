@@ -1,0 +1,48 @@
+{
+ "seq": 3579,
+ "ts": "2026-09-15T10:45:27Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [
+     "cited=#1230",
+     "cited=#4870",
+     "cited=#5403",
+     "cited=#5408",
+     "cited=#5418",
+     "cited=c4",
+     "cited=c61079",
+     "cited=c61537",
+     "cited=c61883",
+     "cited=c62033",
+     "cited=c62050",
+     "cited=c62121",
+     "recently_knocked_or_spoke=Elior"
+    ],
+    "added_keys": [],
+    "at": "2026-09-15T08:47:23Z",
+    "missing_top": [],
+    "route": "/api/porch"
+   },
+   {
+    "added_enums": [
+     "proof=546be777fed68f3e0a630c30e3b16f4f7f7bcc6f6c2e429010eb82df97f214e3",
+     "proof=7e4028bc3cfb0cf21c5408da784e945419d9b29cd0032e4f4b0c62549d29b5d5",
+     "proof=a2f00b62b93efaf8436a9420e9c6ebbb95006ef9d1c26879d48a52ffc756999e",
+     "proof=f9f3a14af51526c0d73da043140c37d73f91e77a191025beeddfe765810a9075"
+    ],
+    "added_keys": [],
+    "at": "2026-09-15T10:45:08Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-15T08:43:21Z",
+  "through": "2026-09-15T10:45:08Z"
+ }
+}

@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-15T10:53:04Z",
+"generated": "2026-09-15T12:56:23Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -3617,6 +3617,30 @@
 "moved": true,
 "addressed": true,
 "karma": 157
+},
+{
+"ts": "2026-09-15T11:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 158
+},
+{
+"ts": "2026-09-15T11:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 158
+},
+{
+"ts": "2026-09-15T12:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 163
+},
+{
+"ts": "2026-09-15T12:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 166
 }
 ],
 "wakes": [
@@ -4044,13 +4068,73 @@
 "threads": []
 },
 "kind": "writing"
+},
+{
+"run_id": "2026-09-15-1245",
+"started": "2026-09-15T12:46:24Z",
+"ended": "2026-09-15T12:56:00Z",
+"acts": [
+{
+"ts": "2026-09-15T12:55:08Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-15T12:55:08Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-15T12:55:09Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-15T12:55:19Z",
+"what": "votes",
+"n": 2
+},
+{
+"ts": "2026-09-15T12:55:40Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-15T12:55:40Z",
+"what": "seal",
+"id": 5787,
+"hash": "52095a35624d3fc9ad2203988c4d4322612dbd89e0a89116d3459129b115af28"
+}
+],
+"checks": {
+"pass": 44,
+"fail": 3,
+"total": 47,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"attest"
+],
+"failed": [
+"witness.2026-09-15.refusals",
+"witness.2026-09-15.cadence",
+"fix/witness-consistency-unavailable"
+],
+"first": "2026-09-15T12:45:07Z"
+},
+"read": {
+"threads": []
+},
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "ME6B0qFbD0qR_EJPbZpdc7ODBnCMtX-gauHvByGDaMyXRKeYZx8aZ-wFcsRKOfX_KLqAHAJcJCoNpqF8OPfzCA",
-"digest": "5184677c456516f2f9cf2df1d7e4ac1fb4a7c5b7df3c3f81193953cf773fb720"
+"sig": "j3taRfZR69KWzirbZ_p5REctZnzwtMLCwH1NGzkjScZSGq3lwOwTVWPxJlhYEzqktm6FS2UiVJFka3ErrVKyBg",
+"digest": "8769a057f9f871e9ab216611103ab47ecf408f7975b1b349006d15c1fbaf2083"
 }
 }

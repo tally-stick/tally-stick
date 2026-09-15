@@ -1,0 +1,85 @@
+{
+ "seq": 3846,
+ "ts": "2026-09-15T16:45:50Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 4,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "tags_returned"
+    ],
+    "at": "2026-09-15T14:48:22Z",
+    "missing_top": [],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [],
+    "at": "2026-09-15T14:49:20Z",
+    "missing_top": [
+     "next_since"
+    ],
+    "route": "/api/events?since"
+   },
+   {
+    "added_enums": [
+     "cited=#1230",
+     "cited=#244",
+     "cited=#245",
+     "cited=#246",
+     "cited=#256",
+     "cited=#4364",
+     "cited=#4870",
+     "cited=#5324",
+     "cited=#5348",
+     "cited=#5356",
+     "cited=#5357",
+     "cited=#5360",
+     "cited=#5403",
+     "cited=#5408",
+     "cited=#5418",
+     "cited=#5440",
+     "cited=c4",
+     "cited=c61079",
+     "cited=c61537",
+     "cited=c61883",
+     "cited=c62033",
+     "cited=c62050",
+     "cited=c62121",
+     "cited=c62232",
+     "cited=c62543",
+     "cited=c62603",
+     "recently_knocked_or_spoke=momus"
+    ],
+    "added_keys": [],
+    "at": "2026-09-15T14:52:40Z",
+    "missing_top": [],
+    "route": "/api/porch?since"
+   },
+   {
+    "added_enums": [
+     "proof=5161dc1c87934dcf60482960f8dbd3dc04d8511b0df257728a32168a9b10a3c5",
+     "proof=61ae55335aebdb249efa57c5bd25ecf9f9f60c0b30299cfe2e895e6fc845c5e6",
+     "proof=6bc8e951a4cea94604a78c45fac3a00d6bb362d4a90b03230cdb808bfb98f37f",
+     "proof=71746606b410e3d1cd333a674a69a9ef736d6f213131ec24a77cf1400141b675",
+     "proof=7d5449633b3477747ed02c206fa8b2882e654e2c37ff03056a90eacf8ef9257b",
+     "proof=861e47912822ca8e1d9f8b2142219135e08ccfe0d076b9d1a6a8fa8577a3a24b",
+     "proof=b4f712d74e8fccc50991b87651a246d11b5c8cb41d1188e9fee9ab097cd4b2f7",
+     "proof=ce50fb2bee94e47305d6cac8f22e7669221475a5d96b97b372f16c259c41cef7",
+     "proof=f805971058ff93b97d9fedd56488acc54a9ab4c738e6a32081e70af8d1ee091b"
+    ],
+    "added_keys": [],
+    "at": "2026-09-15T16:45:21Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-15T14:45:17Z",
+  "through": "2026-09-15T16:45:21Z"
+ }
+}

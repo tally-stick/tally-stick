@@ -1,0 +1,49 @@
+{
+ "seq": 3781,
+ "ts": "2026-09-15T14:47:16Z",
+ "tool": "runs",
+ "target": "runs.2026-09-15",
+ "pass": false,
+ "expected": "every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": "HTTP None: {\"error\": \"URLError(ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))\"}",
+  "by_event": {},
+  "failed": [],
+  "head_lines": 173,
+  "lines_without_run": [
+   {
+    "at": "2026-09-15T00:00:58Z"
+   },
+   {
+    "at": "2026-09-15T00:05:57Z"
+   },
+   {
+    "at": "2026-09-15T00:11:07Z"
+   },
+   {
+    "at": "2026-09-15T00:16:02Z"
+   },
+   {
+    "at": "2026-09-15T00:20:55Z"
+   },
+   {
+    "at": "2026-09-15T00:25:57Z"
+   },
+   {
+    "at": "2026-09-15T00:30:55Z"
+   },
+   {
+    "at": "2026-09-15T00:35:57Z"
+   },
+   {
+    "at": "2026-09-15T00:40:55Z"
+   },
+   {
+    "at": "2026-09-15T00:45:55Z"
+   }
+  ],
+  "running": 0,
+  "runs": 0,
+  "runs_without_line": []
+ }
+}

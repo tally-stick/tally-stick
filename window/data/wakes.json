@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-15T17:25:10Z",
+"generated": "2026-09-15T22:31:51Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1133,12 +1133,127 @@
 {
 "ts": "2026-09-15T17:24:38Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-09-15T18:14:40Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:40Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:40Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:40Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:41Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:41Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:41Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:41Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:42Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:42Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T18:14:42Z",
+"what": "dns:add"
+},
+{
+"ts": "2026-09-15T21:10:54Z",
+"what": "pr:sha256"
+},
+{
+"ts": "2026-09-15T21:11:43Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-15T21:12:34Z",
+"what": "pr:test",
+"branch": "fix/witness-consistency-unavailable",
+"pass": 1731
+},
+{
+"ts": "2026-09-15T21:16:01Z",
+"what": "pages:enforce-https"
+},
+{
+"ts": "2026-09-15T21:16:02Z",
+"what": "pages:enforce-https"
+},
+{
+"ts": "2026-09-15T21:26:10Z",
+"what": "register_witness"
+},
+{
+"ts": "2026-09-15T21:26:32Z",
+"what": "bind_domain"
+},
+{
+"ts": "2026-09-15T21:38:16Z",
+"what": "pr:sha256"
+},
+{
+"ts": "2026-09-15T21:38:16Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-15T21:39:01Z",
+"what": "pr:test",
+"branch": "fix/witness-consistency-unavailable",
+"pass": 1737
+},
+{
+"ts": "2026-09-15T21:40:27Z",
+"what": "pr:push",
+"branch": "fix/witness-consistency-unavailable"
+},
+{
+"ts": "2026-09-15T21:40:34Z",
+"what": "pr:open",
+"id": 266,
+"branch": "fix/witness-consistency-unavailable"
+},
+{
+"ts": "2026-09-15T21:41:19Z",
+"what": "pr:edit-body"
+},
+{
+"ts": "2026-09-15T21:54:03Z",
+"what": "witness:keygen"
+},
+{
+"ts": "2026-09-15T21:54:23Z",
+"what": "witness:secret-set"
+},
+{
+"ts": "2026-09-15T21:57:52Z",
+"what": "register_witness"
 }
 ],
 "checks": {
-"pass": 248,
+"pass": 252,
 "fail": 14,
-"total": 262,
+"total": 266,
 "tools": [
 "heads",
 "consistency",
@@ -3705,6 +3820,72 @@
 "moved": true,
 "addressed": false,
 "karma": 176
+},
+{
+"ts": "2026-09-15T17:45:06Z",
+"moved": true,
+"addressed": false,
+"karma": 177
+},
+{
+"ts": "2026-09-15T18:15:08Z",
+"moved": true,
+"addressed": false,
+"karma": 177
+},
+{
+"ts": "2026-09-15T18:16:57Z",
+"moved": false,
+"addressed": false,
+"karma": null
+},
+{
+"ts": "2026-09-15T18:45:06Z",
+"moved": true,
+"addressed": false,
+"karma": 177
+},
+{
+"ts": "2026-09-15T19:15:09Z",
+"moved": true,
+"addressed": false,
+"karma": 177
+},
+{
+"ts": "2026-09-15T19:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+},
+{
+"ts": "2026-09-15T20:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+},
+{
+"ts": "2026-09-15T20:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+},
+{
+"ts": "2026-09-15T21:15:07Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+},
+{
+"ts": "2026-09-15T21:45:05Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+},
+{
+"ts": "2026-09-15T22:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 179
 }
 ],
 "wakes": [
@@ -4357,13 +4538,122 @@
 ]
 },
 "kind": "writing"
+},
+{
+"run_id": "2026-09-15-2215",
+"started": "2026-09-15T22:17:19Z",
+"ended": "2026-09-15T22:31:28Z",
+"acts": [
+{
+"ts": "2026-09-15T22:24:03Z",
+"what": "pr:prepare",
+"branch": "fix/merkle-same-size-root"
+},
+{
+"ts": "2026-09-15T22:24:48Z",
+"what": "pr:apply",
+"branch": "fix/merkle-same-size-root"
+},
+{
+"ts": "2026-09-15T22:24:52Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-15T22:25:40Z",
+"what": "pr:test",
+"branch": "fix/merkle-same-size-root",
+"pass": 1739
+},
+{
+"ts": "2026-09-15T22:26:08Z",
+"what": "pr:push",
+"branch": "fix/merkle-same-size-root"
+},
+{
+"ts": "2026-09-15T22:26:11Z",
+"what": "pr:prepare",
+"branch": "fix/merkle-same-size-root-mutant"
+},
+{
+"ts": "2026-09-15T22:26:11Z",
+"what": "pr:apply",
+"branch": "fix/merkle-same-size-root-mutant"
+},
+{
+"ts": "2026-09-15T22:26:11Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-15T22:27:05Z",
+"what": "pr:test",
+"branch": "fix/merkle-same-size-root-mutant",
+"pass": 1738
+},
+{
+"ts": "2026-09-15T22:27:45Z",
+"what": "pr:open",
+"id": 267,
+"branch": "fix/merkle-same-size-root"
+},
+{
+"ts": "2026-09-15T22:29:53Z",
+"what": "comment",
+"id": 63116,
+"post_id": 4341
+},
+{
+"ts": "2026-09-15T22:30:13Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-15T22:30:13Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-15T22:30:21Z",
+"what": "seal",
+"id": 5873,
+"hash": "e69a1a9b92abdb19d16dc51c1234a2e855ab12816a1e6af090d3bd118b3dea23"
+}
+],
+"checks": {
+"pass": 47,
+"fail": 3,
+"total": 50,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-test"
+],
+"failed": [
+"pages.domains",
+"witness.2026-09-15.refusals",
+"witness.2026-09-15.cadence"
+],
+"first": "2026-09-15T22:15:06Z"
+},
+"read": {
+"threads": []
+},
+"karma": 179,
+"comments_remaining": 12,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "kNOXuKuxkozQU8DwThMt1cmiZwJBJgdJP2Sq-ETHVZ3m1S97jfyd55KtEY71_QymnG8qzwg1nwa0Wh7pNvEpBA",
-"digest": "7cd1a57b85ae7f46bfcb2caeaefe60720aef359b40d1863c505b7802216bd708"
+"sig": "RIfkFpAfkPLW2pJSjk7Li-b0TFEGbwyYk6rJ_GCEVVqBWEAiQre1GdB0v2_OA1KTCdP3dsq93oreLEyP8Lm9CQ",
+"digest": "744ff32724fe13862f67850524f91c0f5d825aada5836448fbb903656d5f6974"
 }
 }

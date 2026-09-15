@@ -1,0 +1,133 @@
+{
+ "seq": 1617,
+ "ts": "2026-09-13T13:10:44Z",
+ "tool": "witness (by hand: observed-head witness_dispatch rows vs day file)",
+ "target": "witness.2026-09-12/13.dispatch-accepted-no-line-landed",
+ "pass": false,
+ "expected": "an accepted dispatch (204) is followed by a head line within the next five-minute bucket",
+ "result": {
+  "checkpoint_cadence_in_gap_2": "ids 18479 -> 18651 between 04:25 and 11:35 = 172 ids = 86 cuts in 7.17 h = one cut per 5.0 min",
+  "gap_1": {
+   "dispatch_samples": [
+    {
+     "last_ok_at": "19:30:41Z",
+     "read": "19:35:11Z",
+     "row": 570,
+     "status": 204
+    },
+    {
+     "last_ok_at": "20:40:39Z",
+     "read": "20:45:07Z",
+     "row": 626,
+     "status": 204
+    },
+    {
+     "last_ok_at": "21:10:40Z",
+     "read": "21:12:58Z",
+     "row": 700,
+     "status": 204
+    },
+    {
+     "last_ok_at": "23:10:38Z",
+     "read": "23:15:09Z",
+     "row": 793,
+     "status": 204
+    },
+    {
+     "read": "00:55:42Z",
+     "row": 857,
+     "status": 204
+    }
+   ],
+   "gap_s": 18696,
+   "last_line": "2026-09-12T19:25:43Z",
+   "next_line": "2026-09-13T00:37:19Z"
+  },
+  "gap_2": {
+   "backstop_slots_silent": [
+    "05:07",
+    "06:07",
+    "07:07",
+    "08:07",
+    "09:07",
+    "10:07",
+    "11:07"
+   ],
+   "buckets_missed": 92,
+   "dispatch_samples": [
+    {
+     "cp_created": "04:25:23Z",
+     "cp_id": 18479,
+     "last_ok_at": "04:40:40Z",
+     "read": "04:45:07Z",
+     "row": 1086,
+     "status": 204,
+     "tree": 13032
+    },
+    {
+     "cp_created": "06:25:23Z",
+     "cp_id": 18527,
+     "last_ok_at": "06:40:39Z",
+     "read": "06:45:06Z",
+     "row": 1154,
+     "status": 204,
+     "tree": 13046
+    },
+    {
+     "last_ok_at": "07:00:39Z",
+     "read": "07:05:27Z",
+     "row": 1242,
+     "status": 204
+    },
+    {
+     "last_ok_at": "07:05:38Z",
+     "read": "07:06:53Z",
+     "row": 1283,
+     "status": 204
+    },
+    {
+     "cp_created": "07:40:23Z",
+     "cp_id": 18557,
+     "last_ok_at": "07:40:42Z",
+     "read": "07:41:23Z",
+     "row": 1342,
+     "status": 204,
+     "tree": 13207
+    },
+    {
+     "cp_created": "09:35:23Z",
+     "cp_id": 18603,
+     "last_ok_at": "09:40:49Z",
+     "read": "09:45:04Z",
+     "row": 1410,
+     "status": 204,
+     "tree": 13265
+    },
+    {
+     "cp_created": "11:35:23Z",
+     "cp_id": 18651,
+     "last_ok_at": "11:40:43Z",
+     "read": "11:45:06Z",
+     "row": 1479,
+     "status": 204,
+     "tree": 13357
+    },
+    {
+     "last_ok_at": "12:55:33Z",
+     "read": "13:00:09Z",
+     "row": 1583,
+     "status": 204
+    }
+   ],
+   "gap_s": 28149,
+   "last_line": "2026-09-13T04:00:47Z",
+   "next_line": "2026-09-13T11:49:56Z",
+   "recovery": [
+    "11:49:56 head",
+    "11:50:06 head",
+    "11:50:46 countersign-only (lines 136-137, no head line, bucket 11:50 deduped)"
+   ]
+  },
+  "reader_gap": "witness.py passed all checks at 11:45:10Z (rows #1527..) with the newest head line 7.7 h old: it measures gaps between lines, never the age of the newest line"
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "seq": 1180,
+ "ts": "2026-09-13T06:45:12Z",
+ "tool": "dossier",
+ "target": "tally-stick.counts",
+ "pass": true,
+ "expected": "returned == total == len(list) when has_more is false",
+ "result": {
+  "attestations_about": {
+   "in_list": 0,
+   "returned": 0,
+   "total": 0
+  },
+  "events": {
+   "in_list": 13,
+   "returned": 13,
+   "total": 13
+  },
+  "seals": {
+   "in_list": 11,
+   "returned": 11,
+   "total": 11
+  }
+ }
+}

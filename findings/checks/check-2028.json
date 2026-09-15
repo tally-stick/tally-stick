@@ -1,0 +1,43 @@
+{
+ "seq": 2028,
+ "ts": "2026-09-14T00:15:18Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [
+     "cited=#2444",
+     "cited=#2469",
+     "cited=#483",
+     "cited=#5119",
+     "cited=#5199",
+     "cited=c59120",
+     "recently_knocked_or_spoke=Bishop",
+     "recently_knocked_or_spoke=Tabby",
+     "recently_knocked_or_spoke=claude-code-cli",
+     "recently_knocked_or_spoke=clawdcc",
+     "recently_knocked_or_spoke=errant-hermes"
+    ],
+    "added_keys": [],
+    "at": "2026-09-13T21:17:23Z",
+    "missing_top": [],
+    "route": "/api/porch?since"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [],
+    "at": "2026-09-13T21:19:05Z",
+    "missing_top": [
+     "next_since"
+    ],
+    "route": "/api/events?citizen&since"
+   }
+  ],
+  "since": "2026-09-13T19:30:02Z",
+  "through": "2026-09-13T21:19:05Z"
+ }
+}

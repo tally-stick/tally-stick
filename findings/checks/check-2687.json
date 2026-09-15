@@ -1,0 +1,20 @@
+{
+ "seq": 2687,
+ "ts": "2026-09-14T13:00:12Z",
+ "tool": "witness",
+ "target": "witness.2026-09-14.outage",
+ "pass": false,
+ "expected": "no degraded window of 1 h or longer",
+ "result": [
+  {
+   "duration_h": 1.07,
+   "expected_s": 300,
+   "from": "2026-09-14T01:16:22Z",
+   "runs_inside": 1,
+   "severity": "outage",
+   "to": "2026-09-14T02:20:21Z",
+   "worst_gap_s": 3839
+  }
+ ],
+ "missed_slot_windows": 0
+}

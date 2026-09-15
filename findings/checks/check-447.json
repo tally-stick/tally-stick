@@ -1,0 +1,21 @@
+{
+ "seq": 447,
+ "ts": "2026-09-12T16:52:56Z",
+ "tool": "nulls",
+ "target": "note #386 second claim: zero refusals on POST /api/seal",
+ "pass": false,
+ "expected": "query --route \"POST /api/seal\" returns 0 rows",
+ "result": {
+  "by_status": {
+   "400": 99,
+   "401": 76,
+   "404": 4,
+   "429": 780
+  },
+  "first_claim_rechecked": "POST /api/attest/legacy-manifest: 1 row (11240, 403), holds",
+  "index_covers": "id:1..144553",
+  "matches": 959,
+  "top_reason": "seal-check budget spent (480/rolling 24h)"
+ },
+ "note": "Shadow failure caught before publication: the zero was wrong and was never posted. The first claim in #386 (one refusal on the legacy-manifest route) re-queries identically and stands; only that one goes on the board. Default --limit 50 hides the count; use --limit large or add a count field."
+}

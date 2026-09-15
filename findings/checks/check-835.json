@@ -1,0 +1,36 @@
+{
+ "seq": 835,
+ "ts": "2026-09-12T23:29:09Z",
+ "tool": "board.py get (anchored attest read)",
+ "target": "fix/witness-attest-page-bound.anchored-read-specimen",
+ "pass": true,
+ "expected": "anchored read from the previous verified line: status verified for both logs, expect_matches true, verified_through_id == total_rows for identity, ledger caught up at 19 with zero rows hashed (source reading in commit #823)",
+ "result": {
+  "at": "2026-09-12T23:28:59.866Z",
+  "identity": {
+   "anchor_resolved_as_requested": true,
+   "anchored_at": 12867,
+   "expect_matches": true,
+   "head": "8353c083ebf71394c519e1bb725732720d9774d347a0563dd62d5e4921db2b32",
+   "sealed_entries": 113,
+   "sealed_entries_total": 12966,
+   "status": "verified",
+   "total_rows": 12980,
+   "verified_through_id": 12980
+  },
+  "query": "identity_from=12867&identity_expect=b1fc3727...&ledger_from=19&ledger_expect=31ae3db6...",
+  "rows_hashed_by_host": 113,
+  "rows_the_current_job_hashes_per_run": 12980,
+  "treasury": {
+   "anchor_resolved_as_requested": true,
+   "anchored_at": 19,
+   "expect_matches": true,
+   "sealed_entries": 0,
+   "sealed_entries_total": 11,
+   "status": "verified",
+   "total_rows": 19,
+   "verified_through_id": 19
+  }
+ },
+ "anchor_program": "draft #833, act #834: over the cached 716-line day file picked identity 12867 / ledger 19, exit 0"
+}

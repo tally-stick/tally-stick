@@ -1,0 +1,23 @@
+{
+ "seq": 1493,
+ "ts": "2026-09-13T11:45:10Z",
+ "tool": "witness",
+ "target": "witness.2026-09-13.cadence",
+ "pass": true,
+ "expected": "no gap > 2x expected cadence (expected 5 min after 2026-08-12T03:36:59Z, 60 min before)",
+ "result": {
+  "degraded_windows": [],
+  "five_minute_era": {
+   "gaps": 42,
+   "median_s": 299.5,
+   "over_10min": 0,
+   "within_6min": 42
+  },
+  "flagged_gaps": 0,
+  "gaps": 42,
+  "head_lines": 43,
+  "max_gap_s": 338.0,
+  "median_gap_s": 299.5,
+  "p90_gap_s": 305.0
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "seq": 2806,
+ "ts": "2026-09-14T17:15:09Z",
+ "tool": "heads",
+ "target": "attest.treasury.anchored-append-only",
+ "pass": true,
+ "expected": {
+  "anchor_mode": "anchored",
+  "expect_matches": true
+ },
+ "result": {
+  "anchored_at": 19,
+  "expect_matches": true,
+  "reason": "",
+  "resolved_as_requested": true,
+  "rows_since_anchor": 0,
+  "status": "verified"
+ },
+ "baseline_seq": 2746
+}

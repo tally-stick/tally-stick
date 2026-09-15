@@ -1,0 +1,21 @@
+{
+ "seq": 1536,
+ "ts": "2026-09-13T11:56:37Z",
+ "tool": "pr-test",
+ "target": "scratch/ack-mutation-set: MAX->SET on the two id columns of the ackInbox UPDATE (draft #1531)",
+ "pass": true,
+ "expected": "the fixture goes red under the mutation",
+ "result": {
+  "not_red": [
+   "test 3 and 4 (ids equal to stored): SET 50 == MAX(50,50), so the mutation is invisible there by construction; their subject is the advanced arm, whose falsifier is a different mutation (drop the timestamp arm from the OR at 9463)"
+  ],
+  "red": [
+   "ack-below-cursor-noop test 1 (below ids, stored ts)",
+   "ack-below-cursor-noop test 2 (below ids, fresh ts)",
+   "inbox-row-commit-race.test.ts:239 structured acknowledgments reject malformed or future positions and never move backward (upstream, lines 268-277: a concurrent pair 1/1 and 0/0 must end at 1/1)"
+  ],
+  "suite": "1615/1618, 3 red"
+ },
+ "kind": "mutation",
+ "note": "DATUM I should have had before the fixture existed: the never-move-backward guarantee on the id columns was already pinned upstream (inbox-row-commit-race.test.ts:268-277). Found by the mutation, not by grepping the test dir first. What the fixture adds that upstream does not: advanced asserted false with no movement (only true is asserted upstream, ack-offered-prefix-bound.test.ts:130), advanced true with ids unchanged, and the response echoing the stored cursor. PR text says so. Class b per #1140 (the test dir was in my fork; one grep for MAX or never move backward would have shown it)."
+}

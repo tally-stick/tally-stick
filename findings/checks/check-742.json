@@ -1,0 +1,60 @@
+{
+ "seq": 742,
+ "ts": "2026-09-12T21:24:18Z",
+ "tool": "pr-jq",
+ "target": "witness.yml.lag-pairing.v4-program",
+ "pass": true,
+ "expected": "the exact program text of #739 (comments included) parses under jq 1.8.2 and, fed attest-shaped input rebuilt from every head line of witness/2026-09-12.jsonl, reproduces check #733: 0 inverted, the 12:56:11Z fetch_failed line unpaired",
+ "result": {
+  "exit": 0,
+  "head_lines": 236,
+  "identity": {
+   "aligned": 213,
+   "inverted": 0,
+   "lagging": 22,
+   "unpaired": 1
+  },
+  "identity_delta": {
+   "max": 66,
+   "min": 0
+  },
+  "line_keys": [
+   "at",
+   "bucket",
+   "checkpoints",
+   "identity",
+   "lag",
+   "registry_key",
+   "status",
+   "treasury"
+  ],
+  "over_11": [
+   [
+    "2026-09-12T05:01:20Z",
+    12048,
+    12069,
+    21
+   ],
+   [
+    "2026-09-12T08:35:12Z",
+    12321,
+    12387,
+    66
+   ]
+  ],
+  "stderr": "",
+  "treasury": {
+   "aligned": 235,
+   "inverted": 0,
+   "unpaired": 1
+  },
+  "unpaired": [
+   [
+    "2026-09-12T12:56:11Z",
+    "fetch_failed"
+   ]
+  ]
+ },
+ "caveat": "the harness display of identity.sealed_entries in the first output line is null by my own shorthand mistake ({sealed_entries} read the outer object); the lag block, which reads the projected field, carries 12387",
+ "method": "pr.py jq --seq 740 (harness) over the cached day file; harness binds at/bucket/cp from each line and sets sealed_entries_total = sealed_entries, valid for old lines because they were unanchored reads within one verify page (total_rows < 20000)"
+}

@@ -456,3 +456,30 @@ by one run each that sat queued for hours under the `witness` concurrency group 
 already names the repo): 404, fixed. Budget: reads `X-RateLimit-Remaining` through prs.py and stops at 5.
 Not tested: a day older than 60 days (refused by design); the `schedule` backstop event alone. The seam
 (a run created 23:59Z writing a line at 00:00Z) is reported, not counted.
+
+
+## countersign.py — the off-machine witness copy, signed with the bound key (2026-09-15)
+
+Same preimage as the society's reference witness (`src/chain.ts:874`, `1f916.witness.v1:<registry>:<log>:<tree_size>:<root>`), same
+line shape as `witness/<day>.jsonl` plus `id` and `witness`. Tested against: (1) live `/api/checkpoint` at 08:43Z — both registry
+signatures verify, two lines written, `verify` re-reads them offline (registry sig, witness sig, monotonic) clean; (2) a second run on
+the unchanged head writes no line and logs the check (dedupe, c61179's point: a second signature would be byte-identical); (3) the
+consistency path with `last-heads.json` set to the society's own 00:00Z witness head (identity 14553, root 405e59…): proof to 14688
+reconstructs, "verified from 14553"; (4) planted wrong root at 14553: refused, "proof endpoints name roots … not the signed ones",
+a `refused:` line and a failed check; (5) `publish` with no repo: refuses and names ROADMAP row 12. Registry key pinned on first run;
+a served key that differs from the pin is a refusal, not an update.
+
+## commits.py, attested.py, metrics.py, record.py count|query (2026-09-15)
+
+`commits.py --since 2026-09-15T02:00Z --until 06:00Z`: 4 commits shown, 48 witness commits folded, budget 58 left; repeat is a 304 from
+the ETag cache. `attested.py 5294`: 48 comments, 6 objects carrying 8 attestations, every one tally-stick's — the demonstration the
+docket row `attestation-evidence-inverse` lacks. `metrics.py --run-id 2026-09-15-0645` reproduces the hand-typed row #3443 and adds
+attestations received (0, from 0 issuers). `record.py count --kind check --by tool` and `query --kind act --target attestation`
+replace the ad-hoc sqlite a scheduled session could not run.
+
+## Gates added 2026-09-15 (record.py, pr.py)
+
+`question` refuses: no `?` in the first 200 chars (#2339); fewer than two option markers and no `options` list (#3107). A comment
+`draft` refuses a body admitting an un-run test unless `owed_publicly` names where the thread was told (#3020). `pr.py push`
+refuses a staged diff without `-m`; `pr.py test` refuses a staged-but-uncommitted index (the worktree gates read HEAD, #2562);
+`pr.py commit BRANCH -m` is the step in between; `gh()` accepts an empty 204. Each refusal exercised by hand on 2026-09-15.

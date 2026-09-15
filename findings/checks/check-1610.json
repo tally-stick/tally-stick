@@ -1,0 +1,148 @@
+{
+ "seq": 1610,
+ "ts": "2026-09-13T13:00:18Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 7,
+  "detail": [
+   {
+    "added_enums": [
+     "cited=#5124",
+     "cited=#5148",
+     "cited=#5155",
+     "cited=c2977",
+     "recently_knocked_or_spoke=gmagent"
+    ],
+    "added_keys": [],
+    "at": "2026-09-13T11:49:16Z",
+    "missing_top": [],
+    "route": "/api/porch"
+   },
+   {
+    "added_enums": [
+     "assets.errors=1F916 balanceOf did not answer on Base; the wallet holding is unpriced",
+     "assets.errors=Chainlink ETH/USD did not answer; WETH and the token mark are unpriced",
+     "assets.errors=USDC balanceOf did not answer",
+     "assets.errors=WETH balanceOf did not answer",
+     "assets.errors=fees-manager reads incomplete; the claim on the pool is unavailable and is NOT being reported as zero",
+     "assets.errors=pool slot0 did not answer; the token mark is unavailable"
+    ],
+    "added_keys": [
+     "assets.by_chain[].cents",
+     "assets.by_chain[].chain",
+     "assets.by_chain[].chain_id",
+     "assets.by_chain[].label",
+     "assets.holdings[].address",
+     "assets.holdings[].asset",
+     "assets.holdings[].chain",
+     "assets.holdings[].chain_id",
+     "assets.holdings[].decimals",
+     "assets.holdings[].location",
+     "assets.holdings[].note",
+     "assets.holdings[].notional",
+     "assets.holdings[].price_source",
+     "assets.holdings[].price_usd",
+     "assets.holdings[].provenance",
+     "assets.holdings[].quantity",
+     "assets.holdings[].share_of_supply_pct",
+     "assets.holdings[].tier",
+     "assets.holdings[].tier_label",
+     "assets.holdings[].value_cents",
+     "assets.holdings[].verify"
+    ],
+    "at": "2026-09-13T12:01:51Z",
+    "missing_top": [],
+    "route": "/treasury"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "assets.holdings[].realizable",
+     "assets.holdings[].realizable.method",
+     "assets.holdings[].realizable.pct_of_mark",
+     "assets.holdings[].realizable.quantity",
+     "assets.holdings[].realizable.ticks_crossed",
+     "assets.holdings[].realizable.unsellable_quantity",
+     "assets.holdings[].realizable.value_cents",
+     "assets.holdings[].realizable.verify"
+    ],
+    "at": "2026-09-13T12:02:10Z",
+    "missing_top": [],
+    "route": "/treasury"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "awards[].amount_atomic",
+     "awards[].award_id",
+     "awards[].awarded_at",
+     "awards[].awarded_by",
+     "awards[].expires_at",
+     "awards[].overdue_at",
+     "awards[].paid_at",
+     "awards[].payable_at",
+     "awards[].payload_hash",
+     "awards[].payload_hash_recipe",
+     "awards[].payload_hash_recipe.algorithm",
+     "awards[].payload_hash_recipe.encoding",
+     "awards[].payload_hash_recipe.fields",
+     "awards[].ready_at",
+     "awards[].ready_payout_address",
+     "awards[].receipt_id",
+     "awards[].settlement_block",
+     "awards[].state",
+     "awards[].submission_id",
+     "awards[].verdict_id"
+    ],
+    "at": "2026-09-13T12:19:56Z",
+    "missing_top": [],
+    "route": "/api/listings/{id}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "attestations_about[].claim",
+     "attestations_about[].class",
+     "attestations_about[].evidence",
+     "attestations_about[].id",
+     "attestations_about[].issued_at",
+     "attestations_about[].issuer",
+     "attestations_about[].key_thumbprint",
+     "attestations_about[].payload",
+     "attestations_about[].payload_hash",
+     "attestations_about[].payload_version",
+     "attestations_about[].signature",
+     "attestations_about[].target_attestation_id",
+     "attestations_about[].withdraw_when"
+    ],
+    "at": "2026-09-13T12:30:10Z",
+    "missing_top": [],
+    "route": "/api/record/{handle}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "events[].proof_note",
+     "next_events_since"
+    ],
+    "at": "2026-09-13T12:31:58Z",
+    "missing_top": [],
+    "route": "/api/record/{handle}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [],
+    "at": "2026-09-13T13:00:18Z",
+    "missing_top": [
+     "next_events_since"
+    ],
+    "route": "/api/record/{handle}"
+   }
+  ],
+  "since": "2026-09-13T09:46:58Z",
+  "through": "2026-09-13T13:00:18Z"
+ }
+}

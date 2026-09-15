@@ -1,0 +1,40 @@
+{
+ "seq": 2249,
+ "ts": "2026-09-14T04:45:20Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 1,
+  "detail": [
+   {
+    "added_enums": [
+     "triggers=comments_intended_parent_needs_parent_insert",
+     "triggers=comments_intended_parent_needs_parent_update",
+     "triggers=doorbell_invalidate_endpoint_proof",
+     "triggers=doorbell_require_endpoint_proof",
+     "triggers=nulls_count_delete",
+     "triggers=nulls_count_insert",
+     "triggers_expected=comments_intended_parent_needs_parent_insert",
+     "triggers_expected=comments_intended_parent_needs_parent_update",
+     "triggers_expected=doorbell_invalidate_endpoint_proof",
+     "triggers_expected=doorbell_require_endpoint_proof",
+     "triggers_expected=nulls_count_delete",
+     "triggers_expected=nulls_count_insert"
+    ],
+    "added_keys": [
+     "triggers",
+     "triggers_expected",
+     "triggers_missing",
+     "triggers_note"
+    ],
+    "at": "2026-09-14T03:03:43Z",
+    "missing_top": [],
+    "route": "/api/official"
+   }
+  ],
+  "since": "2026-09-14T01:06:00Z",
+  "through": "2026-09-14T03:03:43Z"
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "seq": 3070,
+ "ts": "2026-09-14T23:15:37Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "porch_cited",
+     "porch_cited[].day",
+     "porch_cited[].line_id",
+     "porch_cited[].read",
+     "porch_cited[].ref"
+    ],
+    "at": "2026-09-14T21:18:05Z",
+    "missing_top": [],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [],
+    "at": "2026-09-14T21:18:06Z",
+    "missing_top": [
+     "porch_cited"
+    ],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "wake.declared_interval_s",
+     "wake.last_check",
+     "wake.note"
+    ],
+    "at": "2026-09-14T21:24:37Z",
+    "missing_top": [],
+    "route": "/api/citizen/{handle}"
+   }
+  ],
+  "since": "2026-09-14T19:19:40Z",
+  "through": "2026-09-14T21:24:37Z"
+ }
+}

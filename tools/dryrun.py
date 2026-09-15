@@ -66,6 +66,9 @@ REQUIRED = {"at", "bucket", "status", "identity", "treasury"}
 REQUIRED_LOG = {"status", "head", "verified_through_id", "sealed_entries_total", "total_rows"}
 BASH = shutil.which("bash") or "C:/Program Files/Git/usr/bin/bash.exe"
 REAL_CURL = shutil.which("curl") or "curl"
+# The step runs under the jq the GitHub runner has (ubuntu-24.04: 1.7.1), not the 1.8.2 on PATH; 1.8 accepts syntax 1.7
+# rejects and that is how PR 236 broke production (#2260). Installed once outside PATH; pr.py tests programs under both.
+RUNNER_JQ = Path(os.environ.get("F916_RUNNER_JQ") or (Path.home() / "tools" / "jq-1.7.1" / "jq.exe"))
 
 
 def sh(*args, cwd=FORK, check=True, env=None):
@@ -117,7 +120,13 @@ if "{REAL_CURL}" "$@" > "$f.tmp"; then mv "$f.tmp" "$f"; cat "$f"; exit 0; else 
 printf '%s\\n' "git $*" >> "$DRYRUN_LOG.git"
 exit 0
 """
-    for name, body in (("curl", curl), ("git", git)):
+    if not RUNNER_JQ.exists():
+        raise SystemExit(f"runner jq not found at {RUNNER_JQ}: the dry run only counts under the runner's jq version (#2260)")
+    jq = f"""#!/usr/bin/env bash
+# dry-run jq: the runner's version, not the one on PATH
+exec "{RUNNER_JQ.as_posix()}" "$@"
+"""
+    for name, body in (("curl", curl), ("git", git), ("jq", jq)):
         p = shimdir / name
         p.write_text(body, encoding="utf-8", newline="\n")
         p.chmod(p.stat().st_mode | stat.S_IEXEC)
@@ -295,9 +304,37 @@ def synthetic_scenarios(tree: Path):
     yield "mutation", {"db": clean(over), "mutate": MUTATION, "expect": {"status": U, "identity": "incomplete", "pages": 1, "calls": 1}}
 
 
+def run_all(ref, offline, no_synthetic):
+    """Every scenario against one ref: the step script and README from a worktree of it, seeds from its own source."""
+    tmp_tree = Path(tempfile.mkdtemp(prefix="f916-dryrun-src-"))
+    sh("git", "worktree", "add", "-q", "--detach", str(tmp_tree / "t"), ref)
+    try:
+        script = step_script(tmp_tree / "t")
+        readme = (tmp_tree / "t" / "witness" / "README.md").read_text(encoding="utf-8")
+    finally:
+        sh("git", "worktree", "remove", "--force", str(tmp_tree / "t"), check=False)
+        shutil.rmtree(tmp_tree, ignore_errors=True)
+    base_keys = upstream_line_keys()
+    results = [run_scenario(n, ref, script, offline, readme, base_keys) for n in ("anchored", "cold")]
+    if not no_synthetic:
+        # the seeds and VERIFY_PAGE come from the ref's own source, read out of one worktree
+        seed_tree = Path(tempfile.mkdtemp(prefix="f916-dryrun-seed-"))
+        sh("git", "worktree", "add", "-q", "--detach", str(seed_tree / "t"), ref)
+        try:
+            for n, spec in synthetic_scenarios(seed_tree / "t"):
+                r = run_scenario(f"synthetic:{n}", ref, script, True, readme, base_keys, synthetic=spec)
+                r["expect"] = spec["expect"]
+                results.append(r)
+        finally:
+            sh("git", "worktree", "remove", "--force", str(seed_tree / "t"), check=False)
+            shutil.rmtree(seed_tree, ignore_errors=True)
+    return results
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("branch")
+    ap.add_argument("--base", default="upstream/main", help="ref to compare against; a scenario failing on both is inherited, not blocking. --base '' disables")
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--record", action="store_true")
     ap.add_argument("--no-synthetic", action="store_true", help="live scenarios only (the synthetic ones need node, ~30 s)")
@@ -310,44 +347,40 @@ def main():
             f.unlink()
     sh("git", "fetch", "-q", "origin", branch := a.branch, check=False)
     ref = branch if sh("git", "rev-parse", "-q", "--verify", branch, check=False).returncode == 0 else f"origin/{branch}"
-    tmp_tree = Path(tempfile.mkdtemp(prefix="f916-dryrun-src-"))
-    sh("git", "worktree", "add", "-q", "--detach", str(tmp_tree / "t"), ref)
-    try:
-        script = step_script(tmp_tree / "t")
-        readme = (tmp_tree / "t" / "witness" / "README.md").read_text(encoding="utf-8")
-    finally:
-        sh("git", "worktree", "remove", "--force", str(tmp_tree / "t"), check=False)
-        shutil.rmtree(tmp_tree, ignore_errors=True)
-    base_keys = upstream_line_keys()
-    results = [run_scenario(n, ref, script, a.offline, readme, base_keys) for n in ("anchored", "cold")]
-    if not a.no_synthetic:
-        # the seeds and VERIFY_PAGE come from the branch's own source, read out of one worktree
-        seed_tree = Path(tempfile.mkdtemp(prefix="f916-dryrun-seed-"))
-        sh("git", "worktree", "add", "-q", "--detach", str(seed_tree / "t"), ref)
-        try:
-            for n, spec in synthetic_scenarios(seed_tree / "t"):
-                r = run_scenario(f"synthetic:{n}", ref, script, True, readme, base_keys, synthetic=spec)
-                r["expect"] = spec["expect"]
-                results.append(r)
-        finally:
-            sh("git", "worktree", "remove", "--force", str(seed_tree / "t"), check=False)
-            shutil.rmtree(seed_tree, ignore_errors=True)
-    ok = all(r["pass"] for r in results)
+    results = run_all(ref, a.offline, a.no_synthetic)
+    # Compare against the base (#2062, 2026-09-14): a scenario that fails on the branch AND on the base is inherited,
+    # reported and not blocking; only a failure the branch introduces (base passes, branch fails) blocks. Before this, a
+    # scenario written for an unmerged fix failed every branch off main, including a comment-only change.
+    inherited = {}
+    if a.base:
+        sh("git", "fetch", "-q", "upstream", "main", check=False)
+        base_results = {r["scenario"]: r for r in run_all(a.base, a.offline, a.no_synthetic)}
+        for r in results:
+            b = base_results.get(r["scenario"])
+            if not r["pass"] and b is not None and not b["pass"]:
+                inherited[r["scenario"]] = b["problems"][:3]
+                r["inherited"] = True
+    ok = all(r["pass"] or r.get("inherited") for r in results)
     for r in results:
         ident = r["line"].get("identity", {}) if isinstance(r["line"].get("identity"), dict) else {}
-        print(("ok  " if r["pass"] else "FAIL") + f" {r['scenario']}: exit {r['exit']}, {r['seconds']}s, {len(r['curl'])} curl, {len(r['git'])} git; "
+        tag = "ok  " if r["pass"] else ("inh " if r.get("inherited") else "FAIL")
+        print(tag + f" {r['scenario']}: exit {r['exit']}, {r['seconds']}s, {len(r['curl'])} curl, {len(r['git'])} git; "
               + (f"line status={r['line'].get('status')} identity={ident.get('status')} anchor_mode={ident.get('anchor_mode')} "
                  f"pages={ident.get('pages')} through={ident.get('verified_through_id')} expect_matches={ident.get('expect_matches')}" if r["line"] else "no line"))
         for p in r["problems"]:
             print("      - " + p)
+        if r.get("inherited"):
+            print(f"      - inherited: {a.base} fails this scenario the same way; not this branch's defect")
     if a.record:
         import record
         c = record.connect()
         for r in results:
-            row = {"tool": "pr-dryrun", "target": f"{branch}:{r['scenario']}", "pass": r["pass"],
+            row = {"tool": "pr-dryrun", "target": f"{branch}:{r['scenario']}", "pass": bool(r["pass"] or r.get("inherited")),
                    "result": {k: r[k] for k in ("exit", "seconds", "curl", "git", "problems", "line")},
                    "expected": (f"synthetic chain: {json.dumps(r['expect'])}" if "expect" in r
                                 else "the witness step runs to git commit and appends one verified, documented day line")}
+            if r.get("inherited"):
+                row["inherited_from"] = {"base": a.base, "problems": inherited[r["scenario"]]}
             if branch.startswith("scratch/"):
                 row["negative_test"] = True  # a planted bug: failing is the expected outcome (see gates.py)
             record.add(c, "check", "agent", row)

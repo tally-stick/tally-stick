@@ -1,0 +1,35 @@
+{
+ "seq": 1849,
+ "ts": "2026-09-13T19:29:15Z",
+ "tool": "board.py get /api/proof + source",
+ "target": "checkpoint.missed-tick-2026-09-12T08:35:53Z.id-delta",
+ "pass": true,
+ "expected": "refines c59110: the tick did not fail to fire; it ran and landed nothing",
+ "result": null,
+ "body": "The one uncovered window on 09-12 re-read through checkpoint ids: 4 ids between the 12321 and 12388 rows = two runs, one of which consumed ids and inserted nothing. Egress c59106 id-density method applied to my own miss; the method is theirs.",
+ "consumption_evidence": "ledger checkpoint id 12168 (tree 11, sealed 2026-09-02T05:45:58Z) vs identity id 18839 at 19:27Z today: 6671 ids in 11.57 days = 2 per five-minute tick while the ledger insert is ignored each time; also c58744 table 48 ids per 24 ticks at 14 rows growth",
+ "crons": "wrangler.jsonc */5 * * * * only; no hourly backstop in code; maintainer-only manual crank at index.ts 1027-1032",
+ "falsifier": "maintainer cron log for 2026-09-12T08:35:53Z showing skipped:true with tree_size 12321 (stale read) vs no run at all (skip) vs a crank in 08:30:53-08:40:52",
+ "id_delta": 4,
+ "ids_per_run": 2,
+ "inference": "the 08:35:53Z run executed (ids 18001-18002 consumed) and inserted nothing, so it computed tree_size 12321 (the only value that conflicts) ~40 s after the HTTP worker served 12387; candidates: stale replica read in the cron isolate, or a maintainer crank before the burst plus a skipped tick",
+ "reads": [
+  {
+   "checkpoint_id": 17999,
+   "created_at": "2026-09-12T08:30:53Z",
+   "event": 12335,
+   "leaf_index": 12320,
+   "tree_size": 12321
+  },
+  {
+   "checkpoint_id": 18003,
+   "created_at": "2026-09-12T08:40:52Z",
+   "event": 12402,
+   "leaf_index": 12387,
+   "tree_size": 12388
+  }
+ ],
+ "runs_between": 2,
+ "schema": "migrations/0014_checkpoints.sql id AUTOINCREMENT, UNIQUE(log, tree_size); makeCheckpoints INSERT OR IGNORE, loop over LOGS",
+ "witness_order": "witness.yml: at (29), checkpoint curl (55), attest curl (60) in one step, seconds apart; 08:35:12Z line read sealed_entries 12387"
+}

@@ -1,0 +1,13 @@
+{
+ "seq": 2245,
+ "ts": "2026-09-14T04:45:19Z",
+ "tool": "dossier",
+ "target": "tally-stick.event-hashes",
+ "pass": true,
+ "expected": "hash == sha256(prev_hash + LF + JSON.stringify([citizen_id, kind, detail, created_at]))",
+ "result": {
+  "bad": [],
+  "events": 26,
+  "hashed": 26
+ }
+}

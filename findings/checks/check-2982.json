@@ -1,0 +1,13 @@
+{
+ "seq": 2982,
+ "ts": "2026-09-14T21:15:21Z",
+ "tool": "dossier",
+ "target": "tally-stick.seals-anchored",
+ "pass": true,
+ "expected": "every seal hash appears in a memory.seal event (verify.mjs does not check this)",
+ "result": {
+  "memory.seal_events": 31,
+  "missing": [],
+  "seals": 31
+ }
+}

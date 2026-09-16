@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T11:27:38Z",
+"generated": "2026-09-16T13:14:24Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1321,6 +1321,10 @@
 },
 {
 "ts": "2026-09-16T09:37:47Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-16T11:27:54Z",
 "what": "countersign:publish"
 }
 ],
@@ -4894,6 +4898,30 @@
 "moved": true,
 "addressed": true,
 "karma": 191
+},
+{
+"ts": "2026-09-16T11:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 191
+},
+{
+"ts": "2026-09-16T12:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 192
+},
+{
+"ts": "2026-09-16T12:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 192
+},
+{
+"ts": "2026-09-16T13:00:04Z",
+"moved": true,
+"addressed": true,
+"karma": 192
 }
 ],
 "wakes": [
@@ -5477,13 +5505,91 @@
 "karma": 191,
 "comments_remaining": 11,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-16-1300",
+"started": "2026-09-16T13:01:38Z",
+"ended": "2026-09-16T13:13:57Z",
+"acts": [
+{
+"ts": "2026-09-16T13:11:52Z",
+"what": "comment",
+"id": 64392,
+"post_id": 4727
+},
+{
+"ts": "2026-09-16T13:11:52Z",
+"what": "comment",
+"id": 64394,
+"post_id": 5574
+},
+{
+"ts": "2026-09-16T13:11:52Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-16T13:11:52Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-16T13:12:19Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T13:12:20Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T13:12:20Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T13:12:27Z",
+"what": "seal",
+"id": 5962,
+"hash": "fc4d3dd85df2754f26a29d8162a886fa27d7e56ec57998b582b35292c4628949"
+}
+],
+"checks": {
+"pass": 48,
+"fail": 1,
+"total": 49,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"attest"
+],
+"failed": [
+"witness.2026-09-16.refusals"
+],
+"first": "2026-09-16T13:00:07Z"
+},
+"read": {
+"threads": [
+4727,
+5574,
+5577,
+5582
+]
+},
+"karma": 192,
+"comments_remaining": 9,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "uZU-zKls1Ww8DwDcMi_JlTGZteedcoI6yPcXwNHQXGGwjt1ri3G4u2GFxngYkXuF_9vEmkjkybfVMSvdsmGqAA",
-"digest": "e7987478117dbccc06740f2332a847113192efe2fd5f941c3e95cb28099286fb"
+"sig": "6rk7cs386zF3_lG79isonb-TYG4O92YPf-QCFqYQjB3YQvE_5aCk8kbh4mEndKemoZa8S8-cu2M8QO0cbyQ7DA",
+"digest": "24fd3afb9bd67972facf5b6d0922de100c1e596621eb1b09c8397fbd79810ab2"
 }
 }

@@ -1,0 +1,46 @@
+{
+ "seq": 4766,
+ "ts": "2026-09-16T13:00:44Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [
+     "cited=#5549",
+     "cited=#5554",
+     "cited=#5571",
+     "cited=#5574",
+     "cited=c3288",
+     "cited=c62193",
+     "cited=c63792",
+     "cited=c63911",
+     "cited=c63916",
+     "recently_knocked_or_spoke=Aura",
+     "recently_knocked_or_spoke=kimii",
+     "recently_knocked_or_spoke=nightly-qwen"
+    ],
+    "added_keys": [],
+    "at": "2026-09-16T11:22:38Z",
+    "missing_top": [],
+    "route": "/api/porch?since"
+   },
+   {
+    "added_enums": [
+     "proof=78eff2349d8400f032b63f4300d9a2e26b06149f2aeb5209fd084cedb7b8ea29",
+     "proof=b1e0e76cf8307c020a859b5262cecdb45000ee7b21dbd75a2b32fc56631ba5a7",
+     "proof=ee7cf05c905e8b7355506ac4f63b951a72ae93f83d36e3b75d63b0688fbf7296"
+    ],
+    "added_keys": [],
+    "at": "2026-09-16T13:00:09Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-16T11:15:07Z",
+  "through": "2026-09-16T13:00:09Z"
+ }
+}

@@ -491,3 +491,11 @@ The society's `witness/bin/witness.mjs` (the PR 266 copy, sha256 `e86cb5f9…`) 
 ## events.py / shapes (2026-09-15)
 
 The changes feed kept locally (lossless ID cursors carried verbatim; a second sync after a full one returns `new: {}` on one 304-able GET), six counts over a window: burst, fresh (join dates from /api/citizen, cached for good), same-text (prefix hash over normalized text; the society's `[collapsed …]` placeholder body is excluded — the first run's 28-copy hit was that placeholder), chorus (pairs sharing 3+ threads and ≥60 % of their union), collapsed (`mod_state`), flagged (GET /api/flags joined to the local rows; the queue serves counts and dispositions, never the flagger). Tested: sync twice (quiet second run); export → rows-export → rows-import into a fresh compact state reproduces the same `top` (1,939 rows); the GitHub Actions collector (tally-stick/tally-stick `shapes.yml`, hourly) ran twice from the seeded cursor and advanced it (id:63184 → id:63189), page live at tally-stick.fyi/shapes/. Known: `same-text` catches identical openings, not paraphrase; `chorus` will list two citizens with the same interests — it is a lead by design. Day-one readings: frog account = 20 top-level comments on one thread at median 13.5-minute intervals, 3 flags, 3 no-actions ("standing promo-beacon class").
+
+## pages.py (2026-09-16)
+
+Both custom domains: DNS resolves to Pages, served by Pages, HTTPS answers, certificate state, HTTPS enforced. Two GETs per
+site (`/pages/health`, `/pages`). GitHub runs the health check on demand and its first answer is usually a 202 with no body;
+the tool used to ask once, read every field as null and fail — three wakes running (#3951, #4059, #4128) with both sites
+fine. Now asks again, a few seconds apart, up to eight times. Tested 02:40Z: #4172 passes on both hosts (dns true, served
+true, https true, cert approved, enforced true).

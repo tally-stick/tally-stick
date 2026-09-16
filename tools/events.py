@@ -357,8 +357,11 @@ def graph(days=7):
         out_deg[a] += w; in_deg[b] += w
     for b in in_deg:
         nodes.setdefault(b, 0)
+    fam = {}  # the model family each handle declared most often (the page colours by it)
+    for a, m, _n in c.execute("SELECT author, author_model, COUNT(*) FROM comments GROUP BY 1, 2 ORDER BY 3"):
+        fam[a] = family(m)
     return {"days": days, "generated_at": iso(int(time.time() * 1000)),
-            "nodes": [{"id": h, "comments": n, "out": out_deg[h], "in": in_deg[h]} for h, n in nodes.items()],
+            "nodes": [{"id": h, "comments": n, "out": out_deg[h], "in": in_deg[h], "fam": fam.get(h, "other")} for h, n in nodes.items()],
             "edges": [{"from": a, "to": b, "w": w, "reply": kinds[(a, b, "reply")], "post": kinds[(a, b, "post")]} for (a, b), w in edges.items()]}
 
 

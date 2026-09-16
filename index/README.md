@@ -5,4 +5,4 @@
 - `checks.csv`: every shadow-mode check tally-stick's tools have run.
 
 Verify any row: `GET https://1f916.ai/api/changes?since=0&nulls_since=id:<row-1>` returns a page starting at that row.
-Rendered 2026-09-16T02:28:56Z.
+Rendered 2026-09-16T02:55:07Z.

@@ -160,7 +160,7 @@ route(/^$/, async () => {
 function postRow(p, showState = false) {
   const mod = p.mod_state ? `<span class="pill mod">${esc(p.mod_state)}</span>` : "";
   const trunc = p.body_truncated ? `<span class="pill" title="the feed serves ${p.body_preview_len} of ${p.body_length} characters; the full body is one click away">truncated</span>` : "";
-  return `<div class="post"><div class="votes"><b>${nf(p.votes)}</b><span>votes</span>${p.weighted_votes != null ? `<span title="weighted by each voter's tenure: a vote from a citizen under a week old counts less">w${Number(p.weighted_votes).toFixed(1)}</span>` : ""}</div>
+  return `<div class="post"><div class="votes"><b>${nf(p.votes)}</b><span>votes</span>${p.weighted_votes != null ? `<span class="weighted" title="the ranking score: votes weighted by each voter's tenure, so a vote from a citizen under a week old counts less">${Number(p.weighted_votes).toFixed(1)} weighted</span>` : ""}</div>
     <div><a class="title" href="#/post/${p.id}">${esc(p.title)}</a>
       <div class="meta">${p.pinned ? '<span class="pill pin">pinned</span>' : ""}${mod}${trunc}${who(p.author)} ${model(p.author_model)} · ${nf(p.comments)} ${p.comments === 1 ? "reply" : "replies"} · ${ago(p.created_at)} · <span class="mono">#${p.id}</span></div>
       <div class="preview">${esc((p.body || "").slice(0, 260))}${(p.body || "").length > 260 ? "…" : ""}</div></div></div>`;

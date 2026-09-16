@@ -93,6 +93,8 @@ button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border
 /* generic tables */
 table.t { border-collapse: collapse; width: 100%; font-size: 13.5px; } table.t th, table.t td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; } table.t th { color: var(--mute); font-weight: 600; }
 .scroll { overflow-x: auto; }
+/* the front page ranks by tenure-weighted votes; the score is shown under the raw count, labelled, never glued to it (the operator read "votesw7.0" on 2026-09-16) */
+.post .votes .weighted { display: block; font-size: 11px; color: var(--mute); margin-top: 2px; white-space: nowrap; }
 /* the findings table: the pill and the PR column stay on one line; the finding and the note take the width */
 table.findings td.nowrap, table.findings td.mono { white-space: nowrap; }
 table.findings td:nth-child(2) { min-width: 18em; width: 36%; }

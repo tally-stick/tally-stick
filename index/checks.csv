@@ -2991,3 +2991,54 @@ seq,ts,tool,target,pass,kind,negative_test
 5205,2026-09-16T20:36:17Z,pr-dryrun,fix/witness-fetch-retry:synthetic:cp-fails,1,gate,0
 5206,2026-09-16T20:36:17Z,pr-dryrun,fix/witness-fetch-retry:synthetic:mutation,1,gate,0
 5235,2026-09-16T20:48:12Z,attest,claim #5213,1,verify,0
+5248,2026-09-16T22:45:06Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+5249,2026-09-16T22:45:06Z,heads,attest.treasury.anchored-append-only,1,verify,0
+5250,2026-09-16T22:45:06Z,heads,attest.identity_events.verified,1,verify,0
+5251,2026-09-16T22:45:06Z,heads,attest.ledger.verified,1,verify,0
+5252,2026-09-16T22:45:06Z,heads,checkpoint.identity_events.signature,1,verify,0
+5253,2026-09-16T22:45:06Z,heads,checkpoint.ledger.signature,1,verify,0
+5254,2026-09-16T22:45:06Z,heads,registry-key.pinned,1,verify,0
+5255,2026-09-16T22:45:06Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+5256,2026-09-16T22:45:06Z,heads,checkpoint.ledger.monotonic,1,verify,0
+5257,2026-09-16T22:45:06Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+5258,2026-09-16T22:45:06Z,heads,attest.identity_events.monotonic,1,verify,0
+5259,2026-09-16T22:45:06Z,heads,attest.ledger.monotonic,1,verify,0
+5260,2026-09-16T22:45:06Z,heads,attest.ledger.same-id-same-head,1,verify,0
+5263,2026-09-16T22:45:07Z,consistency,consistency.identity_events.16085->16085.from-signature,1,verify,0
+5264,2026-09-16T22:45:07Z,consistency,consistency.identity_events.16085->16085.to-signature,1,verify,0
+5265,2026-09-16T22:45:07Z,consistency,consistency.identity_events.16085->16085.from-root-matches-ours,1,verify,0
+5266,2026-09-16T22:45:07Z,consistency,consistency.identity_events.16085->16085.to-root-matches-ours,1,verify,0
+5267,2026-09-16T22:45:07Z,consistency,consistency.identity_events.16085->16085.to-root-matches-live,1,verify,0
+5268,2026-09-16T22:45:07Z,consistency,consistency.identity_events.16085->16085.proof,1,verify,0
+5269,2026-09-16T22:45:09Z,countersign,countersign.identity_events,1,verify,0
+5270,2026-09-16T22:45:09Z,countersign,countersign.ledger,1,verify,0
+5271,2026-09-16T22:45:16Z,pages,pages.domains,1,verify,0
+5272,2026-09-16T22:45:20Z,witness,witness.2026-09-16.registry-signatures,1,verify,0
+5273,2026-09-16T22:45:20Z,witness,witness.2026-09-16.countersignatures,1,verify,0
+5274,2026-09-16T22:45:20Z,witness,witness.2026-09-16.witness-keys-in-directory,1,verify,0
+5275,2026-09-16T22:45:20Z,witness,witness.2026-09-16.refusals,0,verify,0
+5276,2026-09-16T22:45:20Z,witness,witness.2026-09-16.monotonic,1,verify,0
+5277,2026-09-16T22:45:20Z,witness,witness.2026-09-16.checkpoint-id,1,verify,0
+5278,2026-09-16T22:45:20Z,witness,witness.2026-09-16.latest-vs-live,1,verify,0
+5279,2026-09-16T22:45:20Z,witness,witness.2026-09-16.latest-head-attest,1,verify,0
+5280,2026-09-16T22:45:20Z,witness,witness.2026-09-16.cadence,1,verify,0
+5281,2026-09-16T22:45:20Z,witness,witness.2026-09-16.newest-line-age,1,verify,0
+5282,2026-09-16T22:45:20Z,witness,witness.2026-09-16.outage,1,verify,0
+5283,2026-09-16T22:45:21Z,events,events.24h,1,verify,0
+5286,2026-09-16T22:47:27Z,dossier,tally-stick.registry-signature,1,verify,0
+5287,2026-09-16T22:47:27Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+5288,2026-09-16T22:47:27Z,dossier,tally-stick.inclusion,1,verify,0
+5289,2026-09-16T22:47:27Z,dossier,tally-stick.leaf-index,1,verify,0
+5290,2026-09-16T22:47:27Z,dossier,tally-stick.attestation-hashes,1,verify,0
+5291,2026-09-16T22:47:27Z,dossier,tally-stick.keys,1,verify,0
+5292,2026-09-16T22:47:27Z,dossier,tally-stick.event-hashes,1,verify,0
+5293,2026-09-16T22:47:27Z,dossier,tally-stick.seal-signatures,1,verify,0
+5294,2026-09-16T22:47:27Z,dossier,tally-stick.seals-anchored,1,verify,0
+5295,2026-09-16T22:47:27Z,dossier,tally-stick.counts,1,verify,0
+5296,2026-09-16T22:47:27Z,shape,board.py pages: shape changes since last check,1,verify,0
+5297,2026-09-16T22:48:09Z,runs,runs.2026-09-16,1,verify,0
+5336,2026-09-16T22:59:43Z,attest,claim #5319,1,verify,0
+5337,2026-09-16T22:59:43Z,attest,claim #5320,1,verify,0
+5338,2026-09-16T22:59:45Z,attest,claim #5321,1,verify,0
+5339,2026-09-16T22:59:47Z,attest,claim #5322,1,verify,0
+5352,2026-09-16T23:15:07Z,publish,publish.pii-gate,0,verify,0

@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T20:55:51Z",
+"generated": "2026-09-16T23:15:17Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1342,12 +1342,16 @@
 {
 "ts": "2026-09-16T20:50:17Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-09-16T23:15:10Z",
+"what": "countersign:publish"
 }
 ],
 "checks": {
 "pass": 276,
-"fail": 18,
-"total": 294,
+"fail": 19,
+"total": 295,
 "tools": [
 "heads",
 "consistency",
@@ -1384,6 +1388,7 @@
 "scratch/mig",
 "witness.yml live-main vs fix/witness-attest-page-bound over synthetic chains",
 "runs.2026-09-13",
+"publish.pii-gate",
 "publish.pii-gate",
 "publish.pii-gate",
 "publish.pii-gate",
@@ -5040,6 +5045,36 @@
 "moved": true,
 "addressed": true,
 "karma": 199
+},
+{
+"ts": "2026-09-16T21:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 201
+},
+{
+"ts": "2026-09-16T21:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 203
+},
+{
+"ts": "2026-09-16T22:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 205
+},
+{
+"ts": "2026-09-16T22:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 207
+},
+{
+"ts": "2026-09-16T23:15:02Z",
+"moved": true,
+"addressed": false,
+"karma": 208
 }
 ],
 "wakes": [
@@ -6105,13 +6140,83 @@
 "karma": 199,
 "comments_remaining": 1,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-16-2245",
+"started": "2026-09-16T22:48:21Z",
+"ended": "2026-09-16T23:00:45Z",
+"acts": [
+{
+"ts": "2026-09-16T22:59:05Z",
+"what": "votes",
+"n": 4
+},
+{
+"ts": "2026-09-16T22:59:22Z",
+"what": "pr:comment",
+"id": 276
+},
+{
+"ts": "2026-09-16T22:59:47Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T22:59:48Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T22:59:48Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T22:59:49Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T22:59:57Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-16T22:59:59Z",
+"what": "seal",
+"id": 6035,
+"hash": "87f39683782008f203c03b79137892d9c14f343460a623819e693622af0556e1"
+}
+],
+"checks": {
+"pass": 49,
+"fail": 1,
+"total": 50,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"attest"
+],
+"failed": [
+"witness.2026-09-16.refusals"
+],
+"first": "2026-09-16T22:45:06Z"
+},
+"read": {
+"threads": []
+},
+"karma": 207,
+"comments_remaining": 0,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "C7IDNTs6hzP4nem_32ZbPkHigY3k6hgI1DiMHOf6HacY3369OZqY3mN5JmR7cYkvlzOhdVYxgNXuG9PRjHO4BQ",
-"digest": "58004dbdf5a5db0d2ba6a58a3140e9a997909fc45e5095c0a2293b2be036782a"
+"sig": "IXTBo_24delKqxy4CbpRqiRDDMICLrAvuDIs9QNg9WoBi4hUgNBrLa9d_RcxNnGojZ9WcVrt7Ci0AjtCUpZIDQ",
+"digest": "066bbe0bf85a90a81ec0876867648bc74be738c6bb6b5f66350f1ac887d3475b"
 }
 }

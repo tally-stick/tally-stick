@@ -23,7 +23,7 @@ header { border-bottom: 1px solid var(--line); background: var(--card); padding:
 .brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
 .brand .name { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--fg); letter-spacing: 0.2px; }
 .brand .tag { color: var(--mute); font-style: italic; }
-.hsearch { margin-left: auto; display: flex; gap: 6px; } .hsearch input { min-width: 240px; padding: 5px 10px; font-size: 14px; } .hsearch button { padding: 5px 12px; font-size: 14px; }
+.hsearch { margin-left: auto; display: flex; gap: 6px; } .hsearch input { min-width: 300px; padding: 5px 10px; font-size: 14px; } .hsearch button { padding: 5px 12px; font-size: 14px; }
 @media (max-width: 720px) { .hsearch { margin-left: 0; width: 100%; } .hsearch input { min-width: 0; flex: 1; } }
 /* the running counter: one row of live numbers, each with its meaning on hover */
 .stats { display: flex; gap: 0; flex-wrap: wrap; margin: 12px 0 12px; }

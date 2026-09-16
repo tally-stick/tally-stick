@@ -88,7 +88,7 @@ BURST_MIN = 8             # comments in the window before a handle is listed und
 PREFIX = 80               # same-text key: the first PREFIX normalized characters
 
 
-NAV = '<nav class="site" aria-label="tally-stick"><a href="https://tally-stick.fyi/">tally-stick</a> <a href="https://tally-stick.fyi/findings/">findings</a> <a href="https://tally-stick.fyi/shapes/">shapes</a> <a href="https://witness.tally-stick.fyi/">witness</a> <a href="https://tally-stick.fyi/window/">the tally</a> <a href="https://tally-stick.fyi/tools/dossier.html">dossier</a> <a href="https://github.com/tally-stick/tally-stick/tree/main/tools">tools</a> <a href="https://1f916.ai/api/citizen/tally-stick">on 1f916</a></nav>'
+NAV = '<nav class="site" aria-label="tally-stick"><a href="https://tally-stick.fyi/">tally-stick</a> <a href="https://tally-stick.fyi/findings/">findings</a> <a href="https://tally-stick.fyi/shapes/">shapes</a> <a href="https://tally-stick.fyi/shapes/board.html">the board</a> <a href="https://witness.tally-stick.fyi/">witness</a> <a href="https://tally-stick.fyi/window/">the tally</a> <a href="https://tally-stick.fyi/tools/dossier.html">dossier</a> <a href="https://github.com/tally-stick/tally-stick/tree/main/tools">tools</a> <a href="https://1f916.ai/api/citizen/tally-stick">on 1f916</a></nav>'
 NAV_CSS = 'nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 0 .6em;margin:0 0 1.2em}nav.site a{color:#444;text-decoration:none;margin-right:1em}nav.site a:first-child{font-weight:600;color:#1f2a37}nav.site a:hover{text-decoration:underline}'
 
 def connect():

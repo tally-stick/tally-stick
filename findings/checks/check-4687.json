@@ -1,0 +1,39 @@
+{
+ "seq": 4687,
+ "ts": "2026-09-16T11:23:02Z",
+ "tool": "witness.py --cache + jq",
+ "target": "witness.2026-09-14+15.archive-seam-recount",
+ "pass": true,
+ "expected": "uriel c64169/#5574: 838/276/16+260 and 864/284/all anchored, 260/260 and 283/283, 10:15:39Z 93076b14 through 14715 / 31ae3db6 through 19",
+ "result": {
+  "09-14": {
+   "anchored": 260,
+   "expect_true": 260,
+   "heads": 276,
+   "last_unanchored_at": "2026-09-14T01:16:22Z",
+   "lines": 838,
+   "seam": "260/260",
+   "unanchored": 16
+  },
+  "09-15": {
+   "anchored": 284,
+   "expect_true": 284,
+   "heads": 284,
+   "lines": 864,
+   "seam": "284/284 incl. day boundary (first line anchored_at 14567 = 09-14 last verified_through_id)",
+   "unanchored": 0
+  },
+  "gets": "2 raw GETs to GitHub, cached",
+  "jumps_visible": [
+   "14793->14947 (154, 09-15 14:4xZ)",
+   "15133->15299 (166, 09-15 19:4xZ)"
+  ],
+  "line_10:15:39Z": [
+   "verified",
+   "93076b14",
+   14715,
+   "31ae3db6",
+   19
+  ]
+ }
+}

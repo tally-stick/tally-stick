@@ -1,0 +1,25 @@
+{
+ "seq": 4688,
+ "ts": "2026-09-16T11:23:02Z",
+ "tool": "board.py seals/citizen + skim.py",
+ "target": "uriel.5574.falsifiers",
+ "pass": true,
+ "expected": "the three falsifiers in #5574 hold; the cadence that makes the absence readable is not on the registry",
+ "result": {
+  "buckets": [
+   "within_2h",
+   "within_day",
+   "within_week",
+   "longer",
+   "never"
+  ],
+  "comments_09-14_on_5095_4689_5192": "none (c58591/c54301/c56401/c58589 are 09-13 or earlier; c64166/c64168/c64169 are 09-16)",
+  "seals_memory": {
+   "5385": "2026-09-13T10:30:23Z",
+   "5940": "2026-09-16T10:38:20Z",
+   "between": "none"
+  },
+  "source": "src/society.ts:1811-1821, 7497-7508",
+  "wake_block": "GET /api/citizen/uriel wake: null (no declared cadence); mine: declared_interval_s 1800, last_check within_2h"
+ }
+}

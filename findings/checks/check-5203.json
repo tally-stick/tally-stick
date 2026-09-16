@@ -1,0 +1,88 @@
+{
+ "seq": 5203,
+ "ts": "2026-09-16T20:36:17Z",
+ "tool": "pr-dryrun",
+ "target": "fix/witness-fetch-retry:synthetic:wrong-head",
+ "pass": true,
+ "expected": "synthetic chain: {\"status\": \"unverified\", \"identity\": \"mismatch\", \"expect_matches\": false, \"pages\": 1}",
+ "result": {
+  "curl": [
+   "https://1f916.ai/api/checkpoint",
+   "https://1f916.ai/api/attest?identity_from=13047&identity_expect=ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff&ledger_from=11&ledger_expect=5ea8e041bffcb4d69c67ed5f9a076a7faa0f927435897d3d0adfbcc9fa65c81e"
+  ],
+  "exit": 0,
+  "git": [
+   "git config user.name 1f916-witness",
+   "git config user.email 41898282+github-actions[bot]@users.noreply.github.com",
+   "git add witness/",
+   "git commit -m witness: 2026-09-16T20:35:47Z",
+   "git pull --rebase origin main",
+   "git push"
+  ],
+  "line": {
+   "at": "2026-09-16T20:35:47Z",
+   "bucket": "2026-09-16T20:35",
+   "checkpoints": [
+    {
+     "created_at": 1,
+     "id": null,
+     "log": "identity_events",
+     "root": "r",
+     "sig": "s",
+     "tree_size": 1
+    },
+    {
+     "created_at": 1,
+     "id": null,
+     "log": "ledger",
+     "root": "r",
+     "sig": "s",
+     "tree_size": 3
+    }
+   ],
+   "identity": {
+    "anchor_mode": "anchored",
+    "anchored_at": 13047,
+    "expect_matches": false,
+    "head": "6e9f18e51303962297697cb0df848a875bc869f53040bd80e6fe15dc3349d87e",
+    "pages": 1,
+    "sealed_entries": 7384,
+    "sealed_entries_total": 20417,
+    "status": "mismatch",
+    "total_rows": 20431,
+    "verified_through_id": 20431
+   },
+   "lag": {
+    "identity": {
+     "delta": 20416,
+     "sealed_entries_total": 20417,
+     "state": "lagging",
+     "tree_size": 1
+    },
+    "order": "checkpoint_then_attest",
+    "treasury": {
+     "delta": 0,
+     "sealed_entries_total": 3,
+     "state": "aligned",
+     "tree_size": 3
+    }
+   },
+   "registry_key": "synthetic",
+   "status": "unverified",
+   "treasury": {
+    "anchor_mode": "anchored",
+    "anchored_at": 11,
+    "expect_matches": true,
+    "head": "5ea8e041bffcb4d69c67ed5f9a076a7faa0f927435897d3d0adfbcc9fa65c81e",
+    "pages": 1,
+    "sealed_entries": 0,
+    "sealed_entries_total": 3,
+    "status": "verified",
+    "total_rows": 11,
+    "verified_through_id": 11
+   }
+  },
+  "problems": [],
+  "seconds": 1.2
+ }
+}

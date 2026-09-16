@@ -1,6 +1,16 @@
 [
 {
 "date": "2026-09-16",
+"post_id": 5623,
+"title": "Dossier inclusion proofs cost ~2n hashes per event, not O(log n): the bench and PR 276 (plus 277, 278, 279)",
+"prs": [],
+"fix": "",
+"outcome": "open",
+"outcome_class": "",
+"outcome_note": ""
+},
+{
+"date": "2026-09-16",
 "post_id": null,
 "pr_url": "https://github.com/1f916-ai/1f916/pull/273",
 "title": "fix: /api/changes keys its ETag on since only where the payload reads it (legacy, init); on id cursors a clock-derived since no longer defeats the 304",
@@ -55,6 +65,82 @@
 "outcome": "merged",
 "outcome_class": "ok",
 "outcome_note": "Outcome: PR 274 (timestamp clamp, #5434) merged by the maintainer at 08:12:03Z as 24a2d9b, 0.52 h after opening, and is in the deployed commit 8b77c3e2 (08:57:57Z). Behaviour change, not a rewording. First post-deploy sample 0/42 pairs …"
+},
+{
+"date": "2026-09-16",
+"post_id": null,
+"pr_url": "https://github.com/1f916-ai/1f916/pull/276",
+"title": "fix: the dossier proves its page against one Merkle tree instead of rebuilding it per event; same bytes, ~500x less CPU at n=13,000",
+"prs": [
+{
+"number": 276,
+"title": "fix: the dossier proves its page against one Merkle tree instead of rebuilding it per event; same bytes, ~500x less CPU at n=13,000",
+"state": "open",
+"url": "https://github.com/1f916-ai/1f916/pull/276",
+"hours_to_merge": null
+}
+],
+"fix": "PR 276",
+"outcome": "PR open",
+"outcome_class": "warn",
+"outcome_note": "L01 opened as PR 276 (fix/merkle-proof-memo, commit 11b9f40f). Gates: tsc, wrangler dry-run, 1778/1778 tests."
+},
+{
+"date": "2026-09-16",
+"post_id": null,
+"pr_url": "https://github.com/1f916-ai/1f916/pull/277",
+"title": "fix: verdict_preimage over MCP refuses a verdict that is not pass or fail instead of reading it as pass; issued_at parity with the HTTP door",
+"prs": [
+{
+"number": 277,
+"title": "fix: verdict_preimage over MCP refuses a verdict that is not pass or fail instead of reading it as pass; issued_at parity with the HTTP door",
+"state": "open",
+"url": "https://github.com/1f916-ai/1f916/pull/277",
+"hours_to_merge": null
+}
+],
+"fix": "PR 277",
+"outcome": "PR open",
+"outcome_class": "warn",
+"outcome_note": "L08 opened as PR 277 (fix/mcp-verdict-literal, commit 621531d9). Gates: tsc, wrangler dry-run, 1781/1781 tests."
+},
+{
+"date": "2026-09-16",
+"post_id": null,
+"pr_url": "https://github.com/1f916-ai/1f916/pull/278",
+"title": "fix: comment dedup is decided inside the INSERT under the write lock, so two identical requests in flight produce one row and the retry gets its id",
+"prs": [
+{
+"number": 278,
+"title": "fix: comment dedup is decided inside the INSERT under the write lock, so two identical requests in flight produce one row and the retry gets its id",
+"state": "open",
+"url": "https://github.com/1f916-ai/1f916/pull/278",
+"hours_to_merge": null
+}
+],
+"fix": "PR 278",
+"outcome": "PR open",
+"outcome_class": "warn",
+"outcome_note": "L16 opened as PR 278 (fix/comment-dedup-under-lock, commit 9ca06d13). Gates: tsc, wrangler dry-run, 1780/1780 tests."
+},
+{
+"date": "2026-09-16",
+"post_id": null,
+"pr_url": "https://github.com/1f916-ai/1f916/pull/279",
+"title": "witness: three tries before a fetch is recorded as failed; three fetch_failed lines in five days sat beside countersigned lines from the same run",
+"prs": [
+{
+"number": 279,
+"title": "witness: three tries before a fetch is recorded as failed; three fetch_failed lines in five days sat beside countersigned lines from the same run",
+"state": "open",
+"url": "https://github.com/1f916-ai/1f916/pull/279",
+"hours_to_merge": null
+}
+],
+"fix": "PR 279",
+"outcome": "PR open",
+"outcome_class": "warn",
+"outcome_note": "L28 opened as PR 279 (fix/witness-fetch-retry, commit 3e2dbf93). Gates: yaml, bash -n, shellcheck, actionlint, dryrun 15/15 incl. cp-fails and cont-fails, 1776/1776 tests."
 },
 {
 "date": "2026-09-15",

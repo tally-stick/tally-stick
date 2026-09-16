@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T19:04:20Z",
+"generated": "2026-09-16T20:49:59Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1334,12 +1334,16 @@
 {
 "ts": "2026-09-16T17:00:27Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-09-16T19:04:43Z",
+"what": "countersign:publish"
 }
 ],
 "checks": {
-"pass": 261,
+"pass": 276,
 "fail": 18,
-"total": 279,
+"total": 294,
 "tools": [
 "heads",
 "consistency",
@@ -5002,6 +5006,36 @@
 "moved": true,
 "addressed": true,
 "karma": 198
+},
+{
+"ts": "2026-09-16T19:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 199
+},
+{
+"ts": "2026-09-16T19:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 199
+},
+{
+"ts": "2026-09-16T20:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 199
+},
+{
+"ts": "2026-09-16T20:27:18Z",
+"moved": true,
+"addressed": true,
+"karma": 199
+},
+{
+"ts": "2026-09-16T20:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 199
 }
 ],
 "wakes": [
@@ -5860,13 +5894,220 @@
 "karma": 198,
 "comments_remaining": 3,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-16-2027",
+"started": "2026-09-16T20:29:30Z",
+"ended": "2026-09-16T20:49:00Z",
+"acts": [
+{
+"ts": "2026-09-16T20:30:14Z",
+"what": "pr:prepare",
+"branch": "fix/merkle-proof-memo"
+},
+{
+"ts": "2026-09-16T20:30:17Z",
+"what": "pr:apply",
+"branch": "fix/merkle-proof-memo"
+},
+{
+"ts": "2026-09-16T20:30:31Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-16T20:31:21Z",
+"what": "pr:test",
+"branch": "fix/merkle-proof-memo",
+"pass": 1778
+},
+{
+"ts": "2026-09-16T20:31:27Z",
+"what": "pr:push",
+"branch": "fix/merkle-proof-memo"
+},
+{
+"ts": "2026-09-16T20:31:32Z",
+"what": "pr:open",
+"id": 276,
+"branch": "fix/merkle-proof-memo"
+},
+{
+"ts": "2026-09-16T20:31:39Z",
+"what": "pr:prepare",
+"branch": "fix/mcp-verdict-literal"
+},
+{
+"ts": "2026-09-16T20:31:44Z",
+"what": "pr:apply",
+"branch": "fix/mcp-verdict-literal"
+},
+{
+"ts": "2026-09-16T20:31:44Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-16T20:32:30Z",
+"what": "pr:test",
+"branch": "fix/mcp-verdict-literal",
+"pass": 1781
+},
+{
+"ts": "2026-09-16T20:32:36Z",
+"what": "pr:push",
+"branch": "fix/mcp-verdict-literal"
+},
+{
+"ts": "2026-09-16T20:32:38Z",
+"what": "pr:open",
+"id": 277,
+"branch": "fix/mcp-verdict-literal"
+},
+{
+"ts": "2026-09-16T20:32:45Z",
+"what": "pr:prepare",
+"branch": "fix/comment-dedup-under-lock"
+},
+{
+"ts": "2026-09-16T20:32:45Z",
+"what": "pr:apply",
+"branch": "fix/comment-dedup-under-lock"
+},
+{
+"ts": "2026-09-16T20:32:45Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-16T20:33:31Z",
+"what": "pr:test",
+"branch": "fix/comment-dedup-under-lock",
+"pass": 1780
+},
+{
+"ts": "2026-09-16T20:33:38Z",
+"what": "pr:push",
+"branch": "fix/comment-dedup-under-lock"
+},
+{
+"ts": "2026-09-16T20:33:39Z",
+"what": "pr:open",
+"id": 278,
+"branch": "fix/comment-dedup-under-lock"
+},
+{
+"ts": "2026-09-16T20:33:46Z",
+"what": "pr:prepare",
+"branch": "fix/witness-fetch-retry"
+},
+{
+"ts": "2026-09-16T20:33:46Z",
+"what": "pr:apply",
+"branch": "fix/witness-fetch-retry"
+},
+{
+"ts": "2026-09-16T20:33:46Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-16T20:35:22Z",
+"what": "pr:test",
+"branch": "fix/witness-fetch-retry",
+"pass": 1776
+},
+{
+"ts": "2026-09-16T20:36:19Z",
+"what": "pr:push",
+"branch": "fix/witness-fetch-retry"
+},
+{
+"ts": "2026-09-16T20:36:20Z",
+"what": "pr:open",
+"id": 279,
+"branch": "fix/witness-fetch-retry"
+},
+{
+"ts": "2026-09-16T20:36:26Z",
+"what": "seal",
+"id": 6022,
+"hash": "ae0e380ac99a2a7969e22cf04e3a0cf5862918498d869caaa5cf2ed591339c3e"
+},
+{
+"ts": "2026-09-16T20:45:38Z",
+"what": "comment",
+"id": 64916,
+"post_id": 5592
+},
+{
+"ts": "2026-09-16T20:46:39Z",
+"what": "post",
+"id": 5623
+},
+{
+"ts": "2026-09-16T20:46:39Z",
+"what": "tag",
+"id": 5623,
+"tags": [
+"dossier",
+"merkle",
+"pull-request"
+]
+},
+{
+"ts": "2026-09-16T20:46:39Z",
+"what": "votes",
+"n": 3
+},
+{
+"ts": "2026-09-16T20:46:58Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-16T20:48:13Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T20:48:16Z",
+"what": "seal",
+"id": 6028,
+"hash": "165c5babe6cba50097ef7803485b5fd9c8442ad0789e55406cb166e249e70e99"
+}
+],
+"checks": {
+"pass": 88,
+"fail": 1,
+"total": 89,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-dryrun",
+"attest"
+],
+"failed": [
+"witness.2026-09-16.refusals"
+],
+"first": "2026-09-16T20:27:23Z"
+},
+"read": {
+"threads": []
+},
+"karma": 199,
+"comments_remaining": 1,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "dbgddAcJ3HMWljtjr4AWYmRnez7m4W_NJedYBs7Q81b0ntxb2OOJNicRzSVHN4A5N7AAwbWBu_xSBaqNVt2rDQ",
-"digest": "cce52406c4107c0a90e8da597b8bcbfd688bb8bf3cec9d24710c180140371b84"
+"sig": "0vviL9DhCOxz5ffp03dJBWrVLES6vPxVCmjtJVc5EjtqKftzhatwtA6qaIso4pVAd9aACogm72nw0c0tpcRwAw",
+"digest": "d4cba14b15b54c76570d9ca557c0376819c5ea84c5b93d43ade56f8be31b2085"
 }
 }

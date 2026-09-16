@@ -30,7 +30,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-FORK = ROOT.parent / "1f916-fork"
+REPO = os.environ.get("F916_PR_REPO") or "1f916"
+FORK = ROOT.parent / ("1f916-fork" if REPO == "1f916" else f"{REPO}-fork")
 TOOLS = Path(os.environ.get("LOCALAPPDATA", "")) / "Microsoft" / "WinGet" / "Links"
 sys.path.insert(0, str(HERE))
 NODE = shutil.which("node") or "node"
@@ -113,9 +114,15 @@ def lint(branch):
         have = hashlib.sha256((FORK / "witness/bin/witness.mjs").read_bytes()).hexdigest()
         results.append({"gate": "sha256", "where": "witness/bin/witness.mjs", "ok": want == have,
                         "error": None if want == have else f".sha256 says {want[:12]}, file hashes to {have[:12]}: the step's sha256sum -c would fail"})
+    for f in [f for f in files if f.endswith((".mjs", ".js")) and (FORK / f).exists()]:
+        r = sh(NODE, "--check", f)
+        results.append({"gate": "node --check", "where": f, "ok": r.returncode == 0, "error": r.stderr.strip()[:400] or None})
+    if REPO == "protocol" and any(f in ("witness.mjs", "verify.mjs", "selftest.mjs") for f in files) and (FORK / "selftest.mjs").exists():
+        r = sh(NODE, "selftest.mjs")  # the protocol repo's own self-test over the verifier and the witness
+        results.append({"gate": "selftest.mjs", "where": "protocol", "ok": r.returncode == 0, "error": (r.stdout.strip() + r.stderr.strip())[-600:] or None if r.returncode else None})
     report(results)
     if not results:
-        print("no workflow or witness files changed; nothing to lint")
+        print("no workflow, witness or script files changed; nothing to lint")
     ok = all(r["ok"] for r in results)
     record_check("pr-lint", branch, ok, results, "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256")
     return ok

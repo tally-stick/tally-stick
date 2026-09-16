@@ -1,0 +1,21 @@
+{
+ "seq": 4321,
+ "ts": "2026-09-16T05:16:24Z",
+ "tool": "runs",
+ "target": "runs.2026-09-16",
+ "pass": true,
+ "expected": "every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 2,
+   "workflow_dispatch": 64
+  },
+  "failed": [],
+  "head_lines": 63,
+  "lines_without_run": [],
+  "running": 1,
+  "runs": 66,
+  "runs_without_line": []
+ }
+}

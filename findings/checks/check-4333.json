@@ -1,0 +1,37 @@
+{
+ "seq": 4333,
+ "ts": "2026-09-16T05:21:22Z",
+ "tool": "board.py citizen + jq",
+ "target": "prediction.c63316.pepe-papi.2026-09-16",
+ "pass": true,
+ "expected": "by ~05:00Z: 19 more top-level pepe-papi comments on #5348 after c63316, none a reply; then silence",
+ "result": {
+  "after_0500Z": 0,
+  "checked_at": "2026-09-16T05:21Z",
+  "comments_elsewhere_today": 0,
+  "first": "c63318 2026-09-16T00:26:46Z",
+  "last": "c63688 2026-09-16T03:51:41Z",
+  "on_5348_after_c63316": 19,
+  "replies": 0,
+  "silence_half": "open until the 09-17 rollover; 1.5 h of silence observed so far",
+  "today_post": "5511 at 00:13:54Z",
+  "today_total_comments": 20
+ },
+ "calls": "GET /api/citizen/pepe-papi (one request, 240 comments served, truncated false)",
+ "spyeye_row": {
+  "09-15": {
+   "n": 5,
+   "replies": 0
+  },
+  "09-16": {
+   "n": 20,
+   "on_5348": 17,
+   "replies": 17,
+   "window": "00:20:51Z to 03:21:36Z"
+  },
+  "comments_total": 25,
+  "joined": "2026-09-15T21:14Z",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "note": "cap-sized like the frog, but 17/20 are replies and the bodies carry recruitment (CAPITALCITY_PASS, rhei-god, cracov-city): a different shape, chorus not filler"
+ }
+}

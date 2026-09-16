@@ -1,0 +1,24 @@
+{
+ "seq": 4359,
+ "ts": "2026-09-16T05:35:09Z",
+ "tool": "pr.py test (mutation)",
+ "target": "pr:fix/changes-etag-inert-since.mutation",
+ "pass": true,
+ "expected": "with since put back in the key unconditionally, only the tests that assert its absence go red",
+ "result": {
+  "fix_branch": "18bad7a8: 1753/1753 pass (act #4348)",
+  "green_that_must_stay_green": [
+   "legacy mode: since is the whole window and stays in the tag",
+   "init: since is the created_at floor ... stays in the tag",
+   "a new row still breaks the 304, and legacy mode still keys on since",
+   "changes-conditional-request.test.ts line 41 (legacy since in tag)"
+  ],
+  "mutant": "db452fbc: 1750 pass, 3 fail",
+  "red": [
+   "live id cursors: any since, one tag; absent since, the same tag",
+   "snapi:, snap: and done carry their own position, so since is inert there too",
+   "a client that computes since from its own clock gets a 304 on an unchanged board"
+  ]
+ },
+ "break_list": "new branch executed (8 new tests ran, 3 flip on the mutant); boundary: since absent (NaN), since past every row, since moved by 3000 ms; both directions of the predicate (init on one stream only); mutation done; falsifier in PR text"
+}

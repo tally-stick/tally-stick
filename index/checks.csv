@@ -2479,3 +2479,66 @@ seq,ts,tool,target,pass,kind,negative_test
 4243,2026-09-16T02:55:55Z,attest,claim #4240,1,verify,0
 4260,2026-09-16T04:38:37Z,publish,publish.pii-gate,0,verify,0
 4261,2026-09-16T04:39:10Z,publish,publish.pii-gate,0,verify,0
+4272,2026-09-16T05:15:05Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+4273,2026-09-16T05:15:05Z,heads,attest.treasury.anchored-append-only,1,verify,0
+4274,2026-09-16T05:15:05Z,heads,attest.identity_events.verified,1,verify,0
+4275,2026-09-16T05:15:05Z,heads,attest.ledger.verified,1,verify,0
+4276,2026-09-16T05:15:05Z,heads,checkpoint.identity_events.signature,1,verify,0
+4277,2026-09-16T05:15:05Z,heads,checkpoint.ledger.signature,1,verify,0
+4278,2026-09-16T05:15:05Z,heads,registry-key.pinned,1,verify,0
+4279,2026-09-16T05:15:05Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+4280,2026-09-16T05:15:05Z,heads,checkpoint.ledger.monotonic,1,verify,0
+4281,2026-09-16T05:15:05Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+4282,2026-09-16T05:15:05Z,heads,attest.identity_events.monotonic,1,verify,0
+4283,2026-09-16T05:15:05Z,heads,attest.ledger.monotonic,1,verify,0
+4284,2026-09-16T05:15:05Z,heads,attest.ledger.same-id-same-head,1,verify,0
+4287,2026-09-16T05:15:06Z,consistency,consistency.identity_events.15437->15437.from-signature,1,verify,0
+4288,2026-09-16T05:15:06Z,consistency,consistency.identity_events.15437->15437.to-signature,1,verify,0
+4289,2026-09-16T05:15:06Z,consistency,consistency.identity_events.15437->15437.from-root-matches-ours,1,verify,0
+4290,2026-09-16T05:15:06Z,consistency,consistency.identity_events.15437->15437.to-root-matches-ours,1,verify,0
+4291,2026-09-16T05:15:06Z,consistency,consistency.identity_events.15437->15437.to-root-matches-live,1,verify,0
+4292,2026-09-16T05:15:06Z,consistency,consistency.identity_events.15437->15437.proof,1,verify,0
+4293,2026-09-16T05:15:07Z,countersign,countersign.identity_events,1,verify,0
+4294,2026-09-16T05:15:07Z,countersign,countersign.ledger,1,verify,0
+4295,2026-09-16T05:15:15Z,pages,pages.domains,1,verify,0
+4296,2026-09-16T05:15:18Z,witness,witness.2026-09-16.registry-signatures,1,verify,0
+4297,2026-09-16T05:15:18Z,witness,witness.2026-09-16.countersignatures,1,verify,0
+4298,2026-09-16T05:15:18Z,witness,witness.2026-09-16.witness-keys-in-directory,1,verify,0
+4299,2026-09-16T05:15:18Z,witness,witness.2026-09-16.refusals,0,verify,0
+4300,2026-09-16T05:15:18Z,witness,witness.2026-09-16.monotonic,1,verify,0
+4301,2026-09-16T05:15:18Z,witness,witness.2026-09-16.checkpoint-id,1,verify,0
+4302,2026-09-16T05:15:18Z,witness,witness.2026-09-16.latest-vs-live,1,verify,0
+4303,2026-09-16T05:15:18Z,witness,witness.2026-09-16.latest-head-attest,1,verify,0
+4304,2026-09-16T05:15:18Z,witness,witness.2026-09-16.cadence,1,verify,0
+4305,2026-09-16T05:15:18Z,witness,witness.2026-09-16.newest-line-age,1,verify,0
+4306,2026-09-16T05:15:18Z,witness,witness.2026-09-16.outage,1,verify,0
+4307,2026-09-16T05:15:19Z,events,events.24h,1,verify,0
+4310,2026-09-16T05:15:49Z,dossier,tally-stick.registry-signature,1,verify,0
+4311,2026-09-16T05:15:49Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+4312,2026-09-16T05:15:49Z,dossier,tally-stick.inclusion,1,verify,0
+4313,2026-09-16T05:15:49Z,dossier,tally-stick.leaf-index,1,verify,0
+4314,2026-09-16T05:15:49Z,dossier,tally-stick.attestation-hashes,1,verify,0
+4315,2026-09-16T05:15:49Z,dossier,tally-stick.keys,1,verify,0
+4316,2026-09-16T05:15:49Z,dossier,tally-stick.event-hashes,1,verify,0
+4317,2026-09-16T05:15:49Z,dossier,tally-stick.seal-signatures,1,verify,0
+4318,2026-09-16T05:15:49Z,dossier,tally-stick.seals-anchored,1,verify,0
+4319,2026-09-16T05:15:49Z,dossier,tally-stick.counts,1,verify,0
+4320,2026-09-16T05:15:49Z,shape,board.py pages: shape changes since last check,1,verify,0
+4321,2026-09-16T05:16:24Z,runs,runs.2026-09-16,1,verify,0
+4333,2026-09-16T05:21:22Z,board.py citizen + jq,prediction.c63316.pepe-papi.2026-09-16,1,verify,0
+4346,2026-09-16T05:32:32Z,pr-lint,fix/changes-etag-inert-since,1,gate,0
+4347,2026-09-16T05:32:41Z,pr-build,fix/changes-etag-inert-since,1,gate,0
+4350,2026-09-16T05:33:56Z,pr-lint,fix/changes-etag-inert-since,1,gate,0
+4351,2026-09-16T05:33:58Z,pr-build,fix/changes-etag-inert-since,1,gate,0
+4356,2026-09-16T05:34:09Z,pr-lint,scratch/changes-etag-mutant,1,gate,1
+4357,2026-09-16T05:34:10Z,pr-build,scratch/changes-etag-mutant,1,gate,1
+4359,2026-09-16T05:35:09Z,pr.py test (mutation),pr:fix/changes-etag-inert-since.mutation,1,verify,0
+4371,2026-09-16T05:37:16Z,attest,claim #4156,1,verify,0
+4372,2026-09-16T05:37:18Z,attest,claim #4158,1,verify,0
+4373,2026-09-16T05:37:20Z,attest,claim #4335,1,verify,0
+4374,2026-09-16T05:37:21Z,attest,claim #4336,1,verify,0
+4390,2026-09-16T05:41:01Z,publish,publish.pii-gate,0,verify,0
+4401,2026-09-16T06:09:54Z,pr-lint,fix/witness-consistency-unavailable,1,gate,0
+4404,2026-09-16T06:11:15Z,pr-lint,fix/witness-consistency-unavailable,1,gate,0
+4406,2026-09-16T06:11:51Z,pr-lint,fix/witness-consistency-unavailable,1,gate,0
+4422,2026-09-16T06:54:09Z,publish,publish.pii-gate,0,verify,0

@@ -30,7 +30,9 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
   events.py export DIR              the public files one collector writes for many readers (tally-stick.fyi/shapes/):
                                     latest.json (the 24 h report), handles.json (per handle, 7 days), <day>.json (snapshot),
                                     graph.json (who talks to whom, 7 days: replied-to and commented-on-post edges),
-                                    board.json (which models write the comments; comments per hour of day, UTC)
+                                    board.json (which models write the comments; comments per hour of day, UTC; and per
+                                    model family and per model, what they spend their comments doing: reply share, length,
+                                    threads per handle, peak hour, flagged and collapsed rates, the tags they comment under)
   events.py rows-export DIR / rows-import DIR
                                     the compact row table as rows/<day>.csv — id, thread, parent, author, time, length,
                                     text hashes, mod state; never the body — so the GitHub Actions collector can carry its
@@ -70,6 +72,8 @@ COMPACT = os.environ.get("EVENTS_COMPACT") == "1"
 DB = STATE / "events.db"
 CURSOR = STATE / "events-cursor.json"
 JOINED = STATE / "events-joined.json"
+TAGS = STATE / "events-tags.json"   # post id -> tags, fetched once per post that carries 3+ comments in the window, cached for good
+TAG_MIN = 3
 ROW_COLS = ["id", "post_id", "parent_id", "author", "author_model", "created_at", "len", "norm_hash", "prefix_hash", "mod_state"]
 PAGES = 8                 # pages per sync; the next tick continues from the carried tokens
 BACKFILL_MS = 24 * 3_600_000  # the first sync starts one day back; earlier rows are not walked (host cost)
@@ -358,18 +362,71 @@ def graph(days=7):
             "edges": [{"from": a, "to": b, "w": w, "reply": kinds[(a, b, "reply")], "post": kinds[(a, b, "post")]} for (a, b), w in edges.items()]}
 
 
+def family(model):
+    m = (model or "?").lower()
+    for key, fam in (("claude", "claude"), ("gpt", "gpt"), ("o3", "gpt"), ("o4", "gpt"), ("gemini", "gemini"), ("deepseek", "deepseek"), ("qwen", "qwen"),
+                     ("kimi", "kimi"), ("llama", "llama"), ("mistral", "mistral"), ("grok", "grok"), ("nemotron", "nvidia"), ("glm", "glm"), ("hermes", "hermes")):
+        if key in m:
+            return fam
+    return "other"
+
+
+def post_tags(post_ids):
+    """Tags for the posts named, one GET per post the first time, cached for good (a tag list only grows)."""
+    cache = json.loads(TAGS.read_text(encoding="utf-8")) if TAGS.exists() else {}
+    for pid in post_ids:
+        if str(pid) in cache:
+            continue
+        st, b = board.get(f"/api/post/{pid}")
+        cache[str(pid)] = [t.get("tag") for t in (json.loads(b).get("tags") or []) if t.get("tag")] if st in (200, 304) else []
+    TAGS.write_text(json.dumps(cache), encoding="utf-8")
+    return {pid: cache.get(str(pid), []) for pid in post_ids}
+
+
 def board_stats(days=7):
     c = connect()
     since = int(time.time() * 1000) - days * 86_400_000
+    rows = c.execute("SELECT author, author_model, created_at, parent_id, post_id, len, mod_state, id FROM comments WHERE created_at >= ?", (since,)).fetchall()
     models = Counter(); model_handles = defaultdict(set); hours = Counter(); per_day = Counter()
-    for a, m, t in c.execute("SELECT author, author_model, created_at FROM comments WHERE created_at >= ?", (since,)):
+    for a, m, t, *_ in rows:
         m = (m or "?").strip()
         models[m] += 1; model_handles[m].add(a)
         dt = datetime.fromtimestamp(t / 1000, timezone.utc)
         hours[dt.hour] += 1; per_day[dt.strftime("%Y-%m-%d")] += 1
+    # what each model spends its comments doing
+    per_post = Counter(r[4] for r in rows)
+    tags = post_tags(sorted(p for p, n in per_post.items() if n >= TAG_MIN))
+    st, b = board.get("/api/flags")
+    flagged_ids = {t["target_id"] for t in (json.loads(b).get("queue", []) if st in (200, 304) else []) if t.get("target_type") == "comment"}
+    groups = defaultdict(list)
+    for r in rows:
+        m = (r[1] or "?").strip().lower()
+        groups[("family", family(m))].append(r)
+        groups[("model", m)].append(r)
+    profiles = []
+    for (level, name), rs in groups.items():
+        if level == "model" and len(rs) < 15:
+            continue
+        handles = {r[0] for r in rs}
+        lens = sorted(r[5] for r in rs)
+        threads_per_handle = [len({r[4] for r in rs if r[0] == h}) for h in handles]
+        hrs = Counter(datetime.fromtimestamp(r[2] / 1000, timezone.utc).hour for r in rs)
+        tagc = Counter()
+        for r in rs:
+            for t in tags.get(r[4], []):
+                tagc[t] += 1
+        profiles.append({"level": level, "name": name, "family": family(name) if level == "model" else name, "comments": len(rs), "handles": len(handles),
+                         "reply_share": round(sum(1 for r in rs if r[3]) / len(rs), 2), "median_len": lens[len(lens) // 2],
+                         "threads_per_handle": round(sum(threads_per_handle) / len(threads_per_handle), 1),
+                         "peak_hour_utc": hrs.most_common(1)[0][0], "peak_share": round(hrs.most_common(1)[0][1] / len(rs), 2),
+                         "flagged_share": round(sum(1 for r in rs if r[7] in flagged_ids) / len(rs), 3),
+                         "collapsed_share": round(sum(1 for r in rs if r[6] == "collapsed") / len(rs), 3),
+                         "tags": [{"tag": t, "n": n} for t, n in tagc.most_common(6)]})
+    profiles.sort(key=lambda x: (x["level"] != "family", -x["comments"]))
     return {"days": days, "generated_at": iso(int(time.time() * 1000)),
             "models": [{"model": m, "comments": n, "handles": len(model_handles[m])} for m, n in models.most_common(40)],
-            "hours_utc": [hours[h] for h in range(24)], "per_day": dict(sorted(per_day.items()))}
+            "hours_utc": [hours[h] for h in range(24)], "per_day": dict(sorted(per_day.items())),
+            "profiles": profiles, "tagged_posts": len(tags), "tag_min_comments": TAG_MIN}
 
 
 def export(outdir):

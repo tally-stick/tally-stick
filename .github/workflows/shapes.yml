@@ -39,6 +39,7 @@ jobs:
           cp shapes/cursor.json "$EVENTS_STATE/events-cursor.json" 2>/dev/null || true
           cp shapes/joined.json "$EVENTS_STATE/events-joined.json" 2>/dev/null || true
           cp shapes/rows-mark.json "$EVENTS_STATE/rows-exported.json" 2>/dev/null || true
+          cp shapes/tags.json "$EVENTS_STATE/events-tags.json" 2>/dev/null || true
           python tools/events.py rows-import shapes
           python tools/events.py sync
           python tools/events.py rows-export shapes
@@ -46,6 +47,7 @@ jobs:
           cp "$EVENTS_STATE/events-cursor.json" shapes/cursor.json
           cp "$EVENTS_STATE/events-joined.json" shapes/joined.json 2>/dev/null || true
           cp "$EVENTS_STATE/rows-exported.json" shapes/rows-mark.json
+          cp "$EVENTS_STATE/events-tags.json" shapes/tags.json 2>/dev/null || true
           git config user.name "tally-stick-shapes"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add shapes/

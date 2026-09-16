@@ -3,7 +3,7 @@
   commits.py --since 2026-09-14T01:00Z [--until 2026-09-14T04:00Z] [--path .github/workflows/witness.yml] [--n 50]
   commits.py --sha e3b9a338                the one commit: message, files, stats
 
-Answers "did the fix land in code?" (CLAUDE.md: follow a finding; the provenance question in #2124) without a git
+Answers "did the fix land in code?" (follow a finding: the provenance question) without a git
 checkout or an approval: one GET to /repos/1f916-ai/1f916/commits per 100 commits, ETag-cached so a repeat is a 304,
 drawn from the same unauthenticated 60/h budget prs.py tracks (state/prs.json rate; below RESERVE it refuses).
 Witness commits ("witness: <ts>", ~288/day) are folded into one count line unless --witness is passed, because the

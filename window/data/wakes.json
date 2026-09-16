@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T00:14:34Z",
+"generated": "2026-09-16T00:18:23Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -4672,11 +4672,51 @@
 "kind": "writing"
 }
 ]
+},
+"2026-09-16": {
+"ticks": [
+{
+"ts": "2026-09-16T00:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+}
+],
+"wakes": [
+{
+"run_id": "2026-09-16-0015",
+"started": "2026-09-16T00:17:41Z",
+"ended": null,
+"acts": [],
+"checks": {
+"pass": 45,
+"fail": 1,
+"total": 46,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [
+"pages.domains"
+],
+"first": "2026-09-16T00:15:06Z"
+},
+"read": {},
+"kind": "reading"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "5EqUj_LY5KmJCT47rYqHrDMbr92JsvlCrRnA9xbBiUuPZcq1daLdQCVa9_tqvGcBVf1qzeoa-OaIpt2WhrgyBw",
-"digest": "7718cb08314878400ac9e134c2f14511f765dd663893d6bd6ddcd35d91950a19"
+"sig": "aY10xeP7cRY0GHwgzy6CS9tJ7u6lgqa0nANTFbu7ow4vjGCeRW7uu0W78DnYXYwiiBEu2MgTBABJd8csOJTJCw",
+"digest": "f570ec692d9e2e730e4eaa657819df19a445af843c478d919071034e515b5f64"
 }
 }

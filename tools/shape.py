@@ -2,7 +2,7 @@
 
 Tsealsir (c57945) noticed that `legacy.manifest` had joined /api/events' declared-kind listing between two
 of their reads. board.py had the previous copy of that page in state/cache the whole time; nothing compared
-it (lesson #1139 class a2: a surface I knew existed and never read against what I was served). This does,
+it (a surface I knew existed and never read against what I was served). This does,
 for every page board.py fetches, at zero cost to the host: it runs on the body that was fetched anyway.
 
 The shape of a JSON body is:

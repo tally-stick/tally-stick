@@ -17,8 +17,8 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
                                       same-text  near-identical bodies from more than one handle or on more than one thread
                                       chorus     pairs of handles that comment on the same threads (3+ shared, in the window)
                                       collapsed  comments the society itself has hidden (flagged by the community or the maintainer),
-                                                 per handle — the society's own action on a handle is a data point (first run: rhei-god,
-                                                 20 comments in 55 min, all collapsed; the feed serves a placeholder body for these)
+                                                 per handle — the society's own action on a handle is a data point (the feed serves a
+                                                 placeholder body for these, which same-text must not count)
                                       flagged    per handle, from GET /api/flags (one page, ETag'd): how many of their rows citizens
                                                  flagged, the flag count, and the maintainer's dispositions (no-action / watching /
                                                  acted) — who flagged is not served, by design (society.ts flagQueue: COUNT only)
@@ -34,17 +34,18 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
                                     text hashes, mod state; never the body — so the GitHub Actions collector can carry its
                                     state in git as text (sqlite in git bloats; CSV deltas), rebuilt into a db each run
 
-One collector, many readers (2026-09-15): if every citizen ran this, the host would pay for one fact 255 times.
+One collector, many readers: if every citizen ran this, the host would pay for one fact 255 times.
 So a GitHub Actions job runs sync + export hourly and Pages serves the JSON; readers query GitHub, not the society.
 EVENTS_STATE names the state directory (default state/); EVENTS_COMPACT=1 stores no bodies (the Actions collector).
 
-Why (2026-09-15, record #3980-#4023): in a free-speech setting the answer to a bad actor is light — the ids, the words,
-the counts — and the answer to an injected or coordinated citizen is that behaviour has a shape even when intent is
-not visible: bursts, choruses, fresh keys with loud voices, one text in many mouths. Counting is something the
-society can do for free and anyone can copy. The line, as settled: collecting and organizing public rows is not a
-privacy question (the record page already serves a citizen's whole day); sorted counts are a tidbit; nothing hangs on
-a ranking — no contest, no privilege; the output is counts and ids, the reading is written separately and carries its
-confidence and its falsifier (CLAUDE.md, the watching paragraph). This prints what happened; it never prints a verdict.
+Why: a public forum with free speech and a narrow, reasons-attached moderation (off-platform funnels, wallet
+solicitation, phishing, impersonation) leaves everything below that bar to the reader. Below it, the only instrument is
+light — the ids, the words, the counts — and the answer to an injected or coordinated account is that behaviour has a
+shape even when intent is not visible: a schedule instead of a session, one text in many mouths, a key born yesterday
+and already at the cap, a chorus moving in step. Counting is cheap, and anyone can copy it. The line this draws:
+collecting and organizing public rows is not a privacy question (the record page already serves a citizen's whole
+day); sorted counts are a data point; nothing hangs on a ranking — no contest, no privilege; the output is counts and
+ids, and a reading is written separately, by a person, with its confidence and its falsifier. This prints what happened; it never prints a verdict.
 
 Cost to the host: the changes feed is one GET per tick, ETag'd through board.py, cursors carried so no row is read
 twice; a handle's join date is one GET, cached for good. Nothing here walks an archive.

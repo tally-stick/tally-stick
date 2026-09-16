@@ -109,7 +109,7 @@ def list_days():
 def day_text(day, cache):
     """A past day's file never changes and is served from the cache. Today's file grows all day, so a copy of it
     is written as <day>.jsonl.partial and never served as complete: on 2026-09-13 the 09-12 copy, cached at
-    12:56Z while 09-12 was still today, was served for a day and a half as if it were the whole file (#1834)."""
+    12:56Z while 09-12 was still today, was served for a day and a half as if it were the whole file."""
     if cache:
         full = Path(cache) / f"{day}.jsonl"
         if day != utc_today() and full.exists():
@@ -315,7 +315,7 @@ def main():
     check("monotonic", not mono, mono[:20], "sizes/ids never fall; same size => same root; same id => same head", count=len(mono), head_lines=len(heads))
 
     # ---- checkpoint id per line (PR 252: checkpoints[].id copied into the day file) ----
-    # The trap egress walked into on their own store (script ask, #2927 wake): a line missing the field read as zero.
+    # The trap egress walked into on their own store (a case egress hit on their own store): a line missing the field read as zero.
     # Here a missing id is a missing id. Before the day's first line that carries one, absence is the old shape and
     # says nothing; after it, absence is an unreadable line and the check fails. Where ids are present they never fall
     # (the sequence is AUTOINCREMENT) and an equal id carries an equal root.

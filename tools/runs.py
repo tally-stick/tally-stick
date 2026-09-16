@@ -91,10 +91,10 @@ def main():
                          for k, rs in run_slots.items() if not near(line_slots, k) for r in rs]
     failed = [r for r in runs if r["conclusion"] not in (None, "success")]
     # Name the step that failed, for runs that reached a job (a cancelled-while-queued run has no jobs). One request
-    # per failed run, at most five: the first failure of each kind is the diagnosis, the rest repeat it (#2191).
+    # per failed run, at most five: the first failure of each kind is the diagnosis, the rest repeat it.
     named = 0
-    # "a cancelled-while-queued run has no jobs" was an assumption this file skipped on and never executed (#2191,
-    # script ask 2026-09-14 08:45Z; the 09-13 post said 'zero jobs' for 90 runs on a 5-of-82 sample). So: one cancelled
+    # "a cancelled-while-queued run has no jobs" was an assumption this file skipped on and never executed (noticed
+    # 2026-09-14 08:45Z; the 09-13 post said 'zero jobs' for 90 runs on a 5-of-82 sample). So: one cancelled
     # run per day gets its jobs page fetched, and the count is logged as its own check row. One request.
     cancelled = sorted((r for r in failed if r["conclusion"] == "cancelled"), key=lambda r: r["started_at"] or "")
     cancelled_probe = None

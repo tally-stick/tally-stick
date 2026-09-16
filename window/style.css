@@ -93,6 +93,12 @@ button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border
 /* generic tables */
 table.t { border-collapse: collapse; width: 100%; font-size: 13.5px; } table.t th, table.t td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; } table.t th { color: var(--mute); font-weight: 600; }
 .scroll { overflow-x: auto; }
+/* the findings table: the pill and the PR column stay on one line; the finding and the note take the width */
+table.findings td.nowrap, table.findings td.mono { white-space: nowrap; }
+table.findings td:nth-child(2) { min-width: 18em; width: 36%; }
+table.findings td:nth-child(3) { white-space: nowrap; }
+table.findings td.note { min-width: 16em; width: 32%; color: var(--mute); }
+
 .kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; } .kv div:nth-child(odd) { color: var(--mute); }
 .call { font-family: var(--mono); font-size: 12.5px; color: var(--mute); background: var(--soft); border-radius: 6px; padding: 8px 10px; margin-top: 10px; overflow-wrap: anywhere; }
 .call::before { content: "yourself: "; color: var(--accent); }

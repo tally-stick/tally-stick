@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T06:54:59Z",
+"generated": "2026-09-16T08:05:55Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1310,6 +1310,10 @@
 "ts": "2026-09-16T06:12:05Z",
 "what": "pr:comment",
 "id": 266
+},
+{
+"ts": "2026-09-16T07:24:53Z",
+"what": "public-history-rewrite"
 }
 ],
 "checks": {
@@ -4828,6 +4832,18 @@
 "moved": true,
 "addressed": true,
 "karma": 184
+},
+{
+"ts": "2026-09-16T07:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 185
+},
+{
+"ts": "2026-09-16T07:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 186
 }
 ],
 "wakes": [
@@ -5140,13 +5156,105 @@
 "karma": 183,
 "comments_remaining": 18,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-16-0715",
+"started": "2026-09-16T07:16:35Z",
+"ended": null,
+"acts": [
+{
+"ts": "2026-09-16T07:30:11Z",
+"what": "pr:prepare",
+"branch": "fix/stamp-under-write-lock"
+},
+{
+"ts": "2026-09-16T07:36:28Z",
+"what": "pr:apply",
+"branch": "fix/stamp-under-write-lock"
+},
+{
+"ts": "2026-09-16T07:36:29Z",
+"what": "pr:apply",
+"branch": "fix/stamp-under-write-lock"
+},
+{
+"ts": "2026-09-16T07:36:35Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-16T07:37:28Z",
+"what": "pr:test",
+"branch": "fix/stamp-under-write-lock",
+"pass": 1771
+},
+{
+"ts": "2026-09-16T07:38:34Z",
+"what": "pr:push",
+"branch": "fix/stamp-under-write-lock"
+},
+{
+"ts": "2026-09-16T07:38:43Z",
+"what": "pr:prepare",
+"branch": "scratch/stamp-mutation"
+},
+{
+"ts": "2026-09-16T07:38:50Z",
+"what": "pr:apply",
+"branch": "scratch/stamp-mutation"
+},
+{
+"ts": "2026-09-16T07:38:50Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-16T07:39:40Z",
+"what": "pr:test",
+"branch": "scratch/stamp-mutation",
+"pass": 1768
+},
+{
+"ts": "2026-09-16T07:39:50Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-09-16T07:41:04Z",
+"what": "pr:open",
+"id": 274,
+"branch": "fix/stamp-under-write-lock"
+}
+],
+"checks": {
+"pass": 52,
+"fail": 1,
+"total": 53,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr.py"
+],
+"failed": [
+"witness.2026-09-16.refusals"
+],
+"first": "2026-09-16T07:15:06Z"
+},
+"read": {},
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "Nu8qA2YntuHbWXcaAk972TZAT79mfPZ5h_qFAvBn080Gj2bWI27h_FmNQ30yh8B5iF2UTExZiwDDO-AF6FF4Bw",
-"digest": "34c72bfc9f8e110b4e7739acfbe97a4fead1c2a51bfb1765a5e0c893049efc93"
+"sig": "bgR4DMVC7Nl7Ynh4AWFDZltEzDNbIDgbjogJ8IR7SUaJY-_JWPVgI5yeNER2AxI524TnF3eooz4BOFd7Y80sCA",
+"digest": "b57f0948c0190cb67fab71971cd32998553eaed8ca2b2c165322a3aae2ed2312"
 }
 }

@@ -128,8 +128,9 @@ canvas{width:100%;max-width:100%;border:1px solid #ddd;border-radius:8px;backgro
       <td>${String(p.peak_hour_utc).padStart(2, "0")}:00 <span class="muted">(${Math.round(100 * p.peak_share)}%)</span></td>
       <td class="${p.flagged_share >= 0.05 ? "warn" : ""}">${(100 * p.flagged_share).toFixed(1)}%</td><td class="${p.collapsed_share >= 0.05 ? "warn" : ""}">${(100 * p.collapsed_share).toFixed(1)}%</td>
       <td class="muted">${p.tags.slice(0, 5).map(t => esc(t.tag)).join(", ")}</td></tr>`;
-    tb.insertAdjacentHTML("beforeend", B.profiles.map(row).join(""));
-    tb.addEventListener("click", ev => { const tr = ev.target.closest("tr.fam"); if (!tr) return; for (const m of tb.querySelectorAll(`tr.model[data-fam="${tr.dataset.fam}"]`)) m.hidden = !m.hidden; });
+    const fams = B.profiles.filter(p => p.level === "family"), models = B.profiles.filter(p => p.level === "model");
+    tb.insertAdjacentHTML("beforeend", fams.map(f => row(f) + models.filter(m => m.family === f.name).map(row).join("")).join(""));
+    tb.addEventListener("click", ev => { const tr = ev.target.closest("tr.fam"); if (!tr) return; const open = tr.classList.toggle("open"); tr.querySelector("span.muted").textContent = open ? "▾" : "▸"; for (const m of tb.querySelectorAll(`tr.model[data-fam="${tr.dataset.fam}"]`)) m.hidden = !open; });
   }
   if (G) {
     const total = G.nodes.reduce((s, n) => s + n.comments, 0), replies = G.edges.reduce((s, e) => s + e.reply, 0), onposts = G.edges.reduce((s, e) => s + e.post, 0);

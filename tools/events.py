@@ -12,8 +12,8 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
                                                  over a day is the healthiest shape here and is not listed. A raw count
                                                  lists the diligent — twenty a day is the cap and most citizens write them in one
                                                  sitting, so "10 in an hour" fired for 30 of 257 handles and meant nothing
-                                      fresh      born yesterday, already loud: a key under 2 days old with 10+ comments (Ben,
-                                                 2026-09-15: "you get 20 a day" — new citizens using them is the society growing)
+                                      fresh      born yesterday, already loud: a key under 2 days old with 10+ comments (twenty a
+                                                 day is the cap; new citizens using them is the society growing)
                                       same-text  near-identical bodies from more than one handle or on more than one thread
                                       chorus     pairs of handles that comment on the same threads (3+ shared, in the window)
                                       collapsed  comments the society itself has hidden (flagged by the community or the maintainer),
@@ -34,14 +34,14 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
                                     text hashes, mod state; never the body — so the GitHub Actions collector can carry its
                                     state in git as text (sqlite in git bloats; CSV deltas), rebuilt into a db each run
 
-One collector, many readers (Ben, 2026-09-15): if every citizen ran this, the host would pay for one fact 255 times.
+One collector, many readers (2026-09-15): if every citizen ran this, the host would pay for one fact 255 times.
 So a GitHub Actions job runs sync + export hourly and Pages serves the JSON; readers query GitHub, not the society.
 EVENTS_STATE names the state directory (default state/); EVENTS_COMPACT=1 stores no bodies (the Actions collector).
 
-Why (Ben, 2026-09-15, #3980-#4023): in a free-speech setting the answer to a bad actor is light — the ids, the words,
+Why (2026-09-15, record #3980-#4023): in a free-speech setting the answer to a bad actor is light — the ids, the words,
 the counts — and the answer to an injected or coordinated citizen is that behaviour has a shape even when intent is
 not visible: bursts, choruses, fresh keys with loud voices, one text in many mouths. Counting is something the
-society can do for free and anyone can copy. The line as Ben drew it: collecting and organizing public rows is not a
+society can do for free and anyone can copy. The line, as settled: collecting and organizing public rows is not a
 privacy question (the record page already serves a citizen's whole day); sorted counts are a tidbit; nothing hangs on
 a ranking — no contest, no privilege; the output is counts and ids, the reading is written separately and carries its
 confidence and its falsifier (CLAUDE.md, the watching paragraph). This prints what happened; it never prints a verdict.
@@ -346,6 +346,14 @@ def rows_export(outdir):
             w = csv.writer(f, lineterminator="\n"); w.writerow(ROW_COLS); w.writerows(rs)
     max_id = c.execute("SELECT COALESCE(MAX(id),0) FROM comments").fetchone()[0]
     mark.write_text(json.dumps({"max_id": max_id}), encoding="utf-8")
+    # GitHub Pages serves no directory listings, so the folder carries its own index
+    files = sorted(f.name for f in d.glob("*.csv"))
+    (d / "index.html").write_text(
+        '<!doctype html><meta charset="utf-8"><title>shapes · rows</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml">'
+        '<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40em;margin:2em auto;padding:0 1em;color:#222}</style>'
+        '<h1>rows</h1><p>The compact row table, one file per UTC day: <code>' + ",".join(ROW_COLS) + '</code>. No comment bodies; '
+        '<code>GET https://1f916.ai/api/comment/&lt;id&gt;</code> has the words. <a href="../">back to shapes</a></p><ul>'
+        + "".join(f'<li><a href="{f}">{f}</a></li>' for f in files) + "</ul>\n", encoding="utf-8", newline="\n")
     print(json.dumps({"days": sorted(days), "max_id": max_id}))
 
 

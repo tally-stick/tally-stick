@@ -28,7 +28,9 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
   events.py top [--hours 24] [--n 20]
                                     comments per handle, sorted — a count labelled as what it measures (comments), nothing more
   events.py export DIR              the public files one collector writes for many readers (tally-stick.fyi/shapes/):
-                                    latest.json (the 24 h report), handles.json (per handle, 7 days), <day>.json (snapshot)
+                                    latest.json (the 24 h report), handles.json (per handle, 7 days), <day>.json (snapshot),
+                                    graph.json (who talks to whom, 7 days: replied-to and commented-on-post edges),
+                                    board.json (which models write the comments; comments per hour of day, UTC)
   events.py rows-export DIR / rows-import DIR
                                     the compact row table as rows/<day>.csv — id, thread, parent, author, time, length,
                                     text hashes, mod state; never the body — so the GitHub Actions collector can carry its
@@ -326,14 +328,60 @@ def handles_summary(days=7):
     return {"days": days, "generated_at": iso(now), "handles": out}
 
 
+def graph(days=7):
+    """Who talks to whom: an edge A->B for every reply A made to B's comment and every comment A left on B's post."""
+    c = connect()
+    since = int(time.time() * 1000) - days * 86_400_000
+    post_author = dict(c.execute("SELECT id, author FROM posts").fetchall())
+    comment_author = dict(c.execute("SELECT id, author FROM comments").fetchall())
+    edges = Counter()
+    kinds = Counter()
+    nodes = Counter()
+    replies_in = Counter()
+    for a, post_id, parent_id in c.execute("SELECT author, post_id, parent_id FROM comments WHERE created_at >= ?", (since,)):
+        nodes[a] += 1
+        if parent_id and parent_id in comment_author:
+            b = comment_author[parent_id]
+            if b != a:
+                edges[(a, b)] += 1; kinds[(a, b, "reply")] += 1; replies_in[b] += 1
+        elif post_id in post_author:
+            b = post_author[post_id]
+            if b != a:
+                edges[(a, b)] += 1; kinds[(a, b, "post")] += 1
+    out_deg = Counter(); in_deg = Counter()
+    for (a, b), w in edges.items():
+        out_deg[a] += w; in_deg[b] += w
+    for b in in_deg:
+        nodes.setdefault(b, 0)
+    return {"days": days, "generated_at": iso(int(time.time() * 1000)),
+            "nodes": [{"id": h, "comments": n, "out": out_deg[h], "in": in_deg[h]} for h, n in nodes.items()],
+            "edges": [{"from": a, "to": b, "w": w, "reply": kinds[(a, b, "reply")], "post": kinds[(a, b, "post")]} for (a, b), w in edges.items()]}
+
+
+def board_stats(days=7):
+    c = connect()
+    since = int(time.time() * 1000) - days * 86_400_000
+    models = Counter(); model_handles = defaultdict(set); hours = Counter(); per_day = Counter()
+    for a, m, t in c.execute("SELECT author, author_model, created_at FROM comments WHERE created_at >= ?", (since,)):
+        m = (m or "?").strip()
+        models[m] += 1; model_handles[m].add(a)
+        dt = datetime.fromtimestamp(t / 1000, timezone.utc)
+        hours[dt.hour] += 1; per_day[dt.strftime("%Y-%m-%d")] += 1
+    return {"days": days, "generated_at": iso(int(time.time() * 1000)),
+            "models": [{"model": m, "comments": n, "handles": len(model_handles[m])} for m, n in models.most_common(40)],
+            "hours_utc": [hours[h] for h in range(24)], "per_day": dict(sorted(per_day.items()))}
+
+
 def export(outdir):
     d = Path(outdir); d.mkdir(parents=True, exist_ok=True)
+    (d / "graph.json").write_text(json.dumps(graph()), encoding="utf-8", newline="\n")
+    (d / "board.json").write_text(json.dumps(board_stats(), indent=1), encoding="utf-8", newline="\n")
     latest = report(24, False, quiet=True)
     (d / "latest.json").write_text(json.dumps(latest, indent=1), encoding="utf-8", newline="\n")
     day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     (d / f"{day}.json").write_text(json.dumps(latest, indent=1), encoding="utf-8", newline="\n")
     (d / "handles.json").write_text(json.dumps(handles_summary(), indent=1), encoding="utf-8", newline="\n")
-    print(json.dumps({"wrote": ["latest.json", f"{day}.json", "handles.json"], "comments_24h": latest["comments"], "handles_7d": len(json.loads((d / "handles.json").read_text(encoding="utf-8"))["handles"])}))
+    print(json.dumps({"wrote": ["latest.json", f"{day}.json", "handles.json", "graph.json", "board.json"], "comments_24h": latest["comments"], "handles_7d": len(json.loads((d / "handles.json").read_text(encoding="utf-8"))["handles"])}))
 
 
 def rows_export(outdir):

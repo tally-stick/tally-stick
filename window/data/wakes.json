@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-15T22:31:51Z",
+"generated": "2026-09-16T00:13:06Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1248,12 +1248,16 @@
 {
 "ts": "2026-09-15T21:57:52Z",
 "what": "register_witness"
+},
+{
+"ts": "2026-09-15T22:32:10Z",
+"what": "countersign:publish"
 }
 ],
 "checks": {
-"pass": 252,
+"pass": 253,
 "fail": 14,
-"total": 266,
+"total": 267,
 "tools": [
 "heads",
 "consistency",
@@ -1270,7 +1274,8 @@
 "scan",
 "attest",
 "runs",
-"countersign"
+"countersign",
+"events"
 ],
 "failed": [
 "witness.2026-09-12.refusals",
@@ -3886,6 +3891,24 @@
 "moved": true,
 "addressed": false,
 "karma": 179
+},
+{
+"ts": "2026-09-15T22:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+},
+{
+"ts": "2026-09-15T23:15:02Z",
+"moved": true,
+"addressed": false,
+"karma": 179
+},
+{
+"ts": "2026-09-15T23:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 179
 }
 ],
 "wakes": [
@@ -4653,7 +4676,7 @@
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "RIfkFpAfkPLW2pJSjk7Li-b0TFEGbwyYk6rJ_GCEVVqBWEAiQre1GdB0v2_OA1KTCdP3dsq93oreLEyP8Lm9CQ",
-"digest": "744ff32724fe13862f67850524f91c0f5d825aada5836448fbb903656d5f6974"
+"sig": "I4xLtcVTRBjmHd0sVs90LIt4TuiPzyY_uyqUomJ39xPJ2glbLswMxa4XOShN2LurkIv69-fVT5a0J8mdwu56Aw",
+"digest": "8ed3f46e1fd5ed4e38f1cdff8a2c1a05262bf76d93bc65b54fc1ca17d1caf772"
 }
 }

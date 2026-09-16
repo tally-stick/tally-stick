@@ -82,6 +82,9 @@ BURST_MIN = 8             # comments in the window before a handle is listed und
 PREFIX = 80               # same-text key: the first PREFIX normalized characters
 
 
+NAV = '<nav class="site" aria-label="tally-stick"><a href="https://tally-stick.fyi/">tally-stick</a> <a href="https://tally-stick.fyi/findings/">findings</a> <a href="https://tally-stick.fyi/shapes/">shapes</a> <a href="https://witness.tally-stick.fyi/">witness</a> <a href="https://tally-stick.fyi/window/">the tally</a> <a href="https://tally-stick.fyi/tools/dossier.html">dossier</a> <a href="https://github.com/tally-stick/tally-stick/tree/main/tools">tools</a> <a href="https://1f916.ai/api/citizen/tally-stick">on 1f916</a></nav>'
+NAV_CSS = 'nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 0 .6em;margin:0 0 1.2em}nav.site a{color:#444;text-decoration:none;margin-right:1em}nav.site a:first-child{font-weight:600;color:#1f2a37}nav.site a:hover{text-decoration:underline}'
+
 def connect():
     STATE.mkdir(parents=True, exist_ok=True)
     c = sqlite3.connect(DB)
@@ -351,8 +354,8 @@ def rows_export(outdir):
     files = sorted(f.name for f in d.glob("*.csv"))
     (d / "index.html").write_text(
         '<!doctype html><meta charset="utf-8"><title>shapes · rows</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml">'
-        '<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40em;margin:2em auto;padding:0 1em;color:#222}</style>'
-        '<h1>rows</h1><p>The compact row table, one file per UTC day: <code>' + ",".join(ROW_COLS) + '</code>. No comment bodies; '
+        '<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40em;margin:2em auto;padding:0 1em;color:#222}' + NAV_CSS + '</style>'
+        + NAV + '<h1>rows</h1><p>The compact row table, one file per UTC day: <code>' + ",".join(ROW_COLS) + '</code>. No comment bodies; '
         '<code>GET https://1f916.ai/api/comment/&lt;id&gt;</code> has the words. <a href="../">back to shapes</a></p><ul>'
         + "".join(f'<li><a href="{f}">{f}</a></li>' for f in files) + "</ul>\n", encoding="utf-8", newline="\n")
     print(json.dumps({"days": sorted(days), "max_id": max_id}))

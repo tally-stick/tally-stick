@@ -73,7 +73,7 @@ DB = STATE / "events.db"
 CURSOR = STATE / "events-cursor.json"
 JOINED = STATE / "events-joined.json"
 TAGS = STATE / "events-tags.json"   # post id -> tags, fetched once per post that carries 3+ comments in the window, cached for good
-TAG_MIN = 3
+TAG_MIN = 5
 ROW_COLS = ["id", "post_id", "parent_id", "author", "author_model", "created_at", "len", "norm_hash", "prefix_hash", "mod_state"]
 PAGES = int(os.environ.get("EVENTS_PAGES") or 8)  # pages per sync; the next tick continues from the carried tokens (raised once for the backfill)
 BACKFILL_MS = 24 * 3_600_000  # the first sync starts one day back; earlier rows are not walked (host cost)
@@ -335,7 +335,7 @@ def handles_summary(days=7):
 def graph(days=7):
     """Who talks to whom: an edge A->B for every reply A made to B's comment and every comment A left on B's post."""
     c = connect()
-    since = int(time.time() * 1000) - days * 86_400_000
+    since = int(time.time() * 1000) - days * 86_400_000 if days else 0
     post_author = dict(c.execute("SELECT id, author FROM posts").fetchall())
     comment_author = dict(c.execute("SELECT id, author FROM comments").fetchall())
     edges = Counter()
@@ -374,18 +374,26 @@ def family(model):
 def post_tags(post_ids):
     """Tags for the posts named, one GET per post the first time, cached for good (a tag list only grows)."""
     cache = json.loads(TAGS.read_text(encoding="utf-8")) if TAGS.exists() else {}
+    fetched = 0
     for pid in post_ids:
-        if str(pid) in cache:
+        if cache.get(str(pid)) is not None:
             continue
-        st, b = board.get(f"/api/post/{pid}")
-        cache[str(pid)] = [t.get("tag") for t in (json.loads(b).get("tags") or []) if t.get("tag")] if st in (200, 304) else []
+        try:
+            st, b = board.get(f"/api/post/{pid}")
+            cache[str(pid)] = [t.get("tag") for t in (json.loads(b).get("tags") or []) if t.get("tag")] if st in (200, 304) else None
+        except Exception as e:  # a timeout on one post is not a reason to lose the others; None is retried next time
+            print(f"# tags for post {pid}: {e!r}", file=sys.stderr)
+            cache[str(pid)] = None
+        fetched += 1
+        if fetched % 20 == 0:
+            TAGS.write_text(json.dumps(cache), encoding="utf-8")
     TAGS.write_text(json.dumps(cache), encoding="utf-8")
-    return {pid: cache.get(str(pid), []) for pid in post_ids}
+    return {pid: cache.get(str(pid)) or [] for pid in post_ids}
 
 
 def board_stats(days=7):
     c = connect()
-    since = int(time.time() * 1000) - days * 86_400_000
+    since = int(time.time() * 1000) - days * 86_400_000 if days else 0
     rows = c.execute("SELECT author, author_model, created_at, parent_id, post_id, len, mod_state, id FROM comments WHERE created_at >= ?", (since,)).fetchall()
     models = Counter(); model_handles = defaultdict(set); hours = Counter(); per_day = Counter()
     for a, m, t, *_ in rows:
@@ -395,7 +403,16 @@ def board_stats(days=7):
         hours[dt.hour] += 1; per_day[dt.strftime("%Y-%m-%d")] += 1
     # what each model spends its comments doing
     per_post = Counter(r[4] for r in rows)
-    tags = post_tags(sorted(p for p, n in per_post.items() if n >= TAG_MIN))
+    # Tags cost one GET per post, so they are fetched only for the last 7 days' busy posts (about 30 new posts a day) and
+    # cached for good; a longer window reads the cache and says how much of it is covered. Fetching tags for a 30-day or
+    # all-time window would be thousands of requests (3,183 posts with 3+ comments in 30 days on 2026-09-16) — the
+    # archive walk the host-cost rule forbids, and the run that tried it was stopped.
+    recent = int(time.time() * 1000) - 7 * 86_400_000
+    busy_recent = {r[4] for r in rows if r[2] >= recent}
+    tags = post_tags(sorted(p for p, n in per_post.items() if n >= TAG_MIN and p in busy_recent))
+    cached = json.loads(TAGS.read_text(encoding="utf-8")) if TAGS.exists() else {}
+    tags = {p: cached.get(str(p)) or [] for p in per_post}  # whatever the cache holds, for any window (None = a fetch that failed, retried next run)
+    tag_min = TAG_MIN
     st, b = board.get("/api/flags")
     flagged_ids = {t["target_id"] for t in (json.loads(b).get("queue", []) if st in (200, 304) else []) if t.get("target_type") == "comment"}
     groups = defaultdict(list)
@@ -405,7 +422,7 @@ def board_stats(days=7):
         groups[("model", m)].append(r)
     profiles = []
     for (level, name), rs in groups.items():
-        if level == "model" and len(rs) < 15:
+        if level == "model" and len(rs) < max(15, len(rows) // 150):
             continue
         handles = {r[0] for r in rs}
         lens = sorted(r[5] for r in rs)
@@ -426,19 +443,20 @@ def board_stats(days=7):
     return {"days": days, "generated_at": iso(int(time.time() * 1000)),
             "models": [{"model": m, "comments": n, "handles": len(model_handles[m])} for m, n in models.most_common(40)],
             "hours_utc": [hours[h] for h in range(24)], "per_day": dict(sorted(per_day.items())),
-            "profiles": profiles, "tagged_posts": len(tags), "tag_min_comments": TAG_MIN}
+            "profiles": profiles, "tagged_posts": sum(1 for p in per_post if cached.get(str(p))), "posts_in_window": len(per_post), "tag_min_comments": tag_min}
 
 
 def export(outdir):
     d = Path(outdir); d.mkdir(parents=True, exist_ok=True)
-    (d / "graph.json").write_text(json.dumps(graph()), encoding="utf-8", newline="\n")
-    (d / "board.json").write_text(json.dumps(board_stats(), indent=1), encoding="utf-8", newline="\n")
+    for label, days in (("", 7), ("-30", 30), ("-all", None)):
+        (d / f"graph{label}.json").write_text(json.dumps(graph(days)), encoding="utf-8", newline="\n")
+        (d / f"board{label}.json").write_text(json.dumps(board_stats(days), indent=1), encoding="utf-8", newline="\n")
     latest = report(24, False, quiet=True)
     (d / "latest.json").write_text(json.dumps(latest, indent=1), encoding="utf-8", newline="\n")
     day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     (d / f"{day}.json").write_text(json.dumps(latest, indent=1), encoding="utf-8", newline="\n")
     (d / "handles.json").write_text(json.dumps(handles_summary(), indent=1), encoding="utf-8", newline="\n")
-    print(json.dumps({"wrote": ["latest.json", f"{day}.json", "handles.json", "graph.json", "board.json"], "comments_24h": latest["comments"], "handles_7d": len(json.loads((d / "handles.json").read_text(encoding="utf-8"))["handles"])}))
+    print(json.dumps({"wrote": ["latest.json", f"{day}.json", "handles.json", "graph[-30|-all].json", "board[-30|-all].json"], "comments_24h": latest["comments"], "handles_7d": len(json.loads((d / "handles.json").read_text(encoding="utf-8"))["handles"])}))
 
 
 def rows_export(outdir):
@@ -446,15 +464,18 @@ def rows_export(outdir):
     d = Path(outdir) / "rows"; d.mkdir(parents=True, exist_ok=True)
     c = connect()
     mark = STATE / "rows-exported.json"
-    last = json.loads(mark.read_text(encoding="utf-8")).get("max_id", 0) if mark.exists() else 0
-    days = {datetime.fromtimestamp(t / 1000, timezone.utc).strftime("%Y-%m-%d") for t, in c.execute("SELECT created_at FROM comments WHERE id > ?", (last,))}
+    seen = json.loads(mark.read_text(encoding="utf-8")).get("per_day", {}) if mark.exists() else {}
+    counts = {}
+    for day, n in c.execute("SELECT strftime('%Y-%m-%d', created_at / 1000, 'unixepoch'), COUNT(*) FROM comments GROUP BY 1"):
+        counts[day] = n
+    days = {day for day, n in counts.items() if seen.get(day) != n or not (d / f"{day}.csv").exists()}
     for day in sorted(days):
         lo = int(datetime.strptime(day, "%Y-%m-%d").replace(tzinfo=timezone.utc).timestamp() * 1000)
         rs = c.execute(f"SELECT {','.join(ROW_COLS)} FROM comments WHERE created_at >= ? AND created_at < ? ORDER BY id", (lo, lo + 86_400_000)).fetchall()
         with open(d / f"{day}.csv", "w", newline="", encoding="utf-8") as f:
             w = csv.writer(f, lineterminator="\n"); w.writerow(ROW_COLS); w.writerows(rs)
     max_id = c.execute("SELECT COALESCE(MAX(id),0) FROM comments").fetchone()[0]
-    mark.write_text(json.dumps({"max_id": max_id}), encoding="utf-8")
+    mark.write_text(json.dumps({"max_id": max_id, "per_day": counts}), encoding="utf-8")
     # GitHub Pages serves no directory listings, so the folder carries its own index
     files = sorted(f.name for f in d.glob("*.csv"))
     (d / "index.html").write_text(

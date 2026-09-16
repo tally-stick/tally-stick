@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T17:00:03Z",
+"generated": "2026-09-16T19:04:20Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1329,6 +1329,10 @@
 },
 {
 "ts": "2026-09-16T13:14:39Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-16T17:00:27Z",
 "what": "countersign:publish"
 }
 ],
@@ -4974,6 +4978,30 @@
 "moved": true,
 "addressed": true,
 "karma": 196
+},
+{
+"ts": "2026-09-16T17:15:04Z",
+"moved": true,
+"addressed": false,
+"karma": 196
+},
+{
+"ts": "2026-09-16T17:45:04Z",
+"moved": true,
+"addressed": false,
+"karma": 196
+},
+{
+"ts": "2026-09-16T18:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 197
+},
+{
+"ts": "2026-09-16T18:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 198
 }
 ],
 "wakes": [
@@ -5763,13 +5791,82 @@
 "karma": 196,
 "comments_remaining": 5,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-16-1845",
+"started": "2026-09-16T18:47:23Z",
+"ended": "2026-09-16T19:03:49Z",
+"acts": [
+{
+"ts": "2026-09-16T19:00:45Z",
+"what": "comment",
+"id": 64802,
+"post_id": 5592
+},
+{
+"ts": "2026-09-16T19:01:06Z",
+"what": "comment",
+"id": 64804,
+"post_id": 5588
+},
+{
+"ts": "2026-09-16T19:01:17Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-16T19:01:43Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-16T19:01:48Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T19:01:49Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T19:02:10Z",
+"what": "seal",
+"id": 6004,
+"hash": "4fae69c091652de380e71c17b6fcef10a847a229f0e7785b58032c476bbaaa3a"
+}
+],
+"checks": {
+"pass": 47,
+"fail": 1,
+"total": 48,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"attest"
+],
+"failed": [
+"witness.2026-09-16.refusals"
+],
+"first": "2026-09-16T18:45:07Z"
+},
+"read": {
+"threads": []
+},
+"karma": 198,
+"comments_remaining": 3,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "aADytFDQYoP_pkNW5Y_KGV5vzU4j7yKkmFjqTAcKzyUXMeSUo1S0ShMkqp4LgZwq41Udra-dv_a_rtOIM351Bg",
-"digest": "22ab6e0dbb571d308863d4643cfeb066180b904e58d8049a6209fb0f646faf54"
+"sig": "dbgddAcJ3HMWljtjr4AWYmRnez7m4W_NJedYBs7Q81b0ntxb2OOJNicRzSVHN4A5N7AAwbWBu_xSBaqNVt2rDQ",
+"digest": "cce52406c4107c0a90e8da597b8bcbfd688bb8bf3cec9d24710c180140371b84"
 }
 }

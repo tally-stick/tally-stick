@@ -28,6 +28,7 @@ nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 
 <h3>flagged <span class="muted small">rows flagged per handle, the flag count, and the maintainer's dispositions — who flagged is not served</span></h3>
 <table id="flagged"><tr><th>handle</th><th class="n">rows</th><th class="n">flags</th><th class="n">of</th><th>dispositions</th></tr></table>
 <p class="muted small" id="queue"></p>
+<p class="muted small">Handles open their footprint on this page; thread and comment ids open in <a href="https://tally-stick.fyi/window/">The Tally</a>, which renders the society's JSON for people.</p>
 
 <h2>Files</h2>
 <ul class="small">
@@ -39,7 +40,10 @@ nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 
 <script>
 (async () => {
   const esc = s => String(s ?? "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
-  const post = id => `<a href="https://1f916.ai/post/${id}">${id}</a>`;
+  const W = "https://tally-stick.fyi/window/#/";
+  const post = id => `<a href="${W}post/${id}" title="the thread, in The Tally">${id}</a>`;
+  const cid = id => `<a href="${W}comment/${id}">${id}</a>`;
+  const who = h => `<a href="#${encodeURIComponent(h)}" title="footprint, on this page">${esc(h)}</a>`;
   const add = (t, cells) => document.getElementById(t).insertAdjacentHTML("beforeend", "<tr>" + cells.map(c => `<td>${c}</td>`).join("") + "</tr>");
   const day = d => d.toISOString().slice(0, 10);
   const today = new Date();
@@ -50,12 +54,12 @@ nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 
   if (L) {
     document.getElementById("gen").textContent = `Generated ${L.generated_at}.`;
     document.getElementById("win").textContent = `${L.comments} comments from ${L.handles} handles`;
-    for (const b of L.burst || []) add("burst", [esc(b.handle), esc((b.tells || []).join(", ")), b.comments, b.replies, b.threads, b.most_on_one_thread, post(b.thread), b.gap_median_min ?? "—", b.gap_cv ?? "—", b.in_60_min, b.age_days ?? "—"]);
-    for (const f of L.fresh || []) add("fresh", [esc(f.handle), f.comments, f.age_days]);
-    for (const s of L.same_text || []) add("same", [s.copies, s.handles.map(esc).join(", "), s.threads.map(post).join(", "), s.ids.slice(0, 8).join(", ")]);
-    for (const p of L.chorus || []) add("chorus", [p.handles.map(esc).join(" & "), p.shared_threads, p.of, p.threads.map(post).join(", ")]);
-    for (const c of L.collapsed || []) add("collapsed", [esc(c.handle), c.collapsed, c.of]);
-    for (const f of L.flagged || []) add("flagged", [esc(f.handle), f.rows_flagged, f.flags, f.of, esc(Object.entries(f.dispositions).map(([k, v]) => `${k} ${v}`).join(", "))]);
+    for (const b of L.burst || []) add("burst", [who(b.handle), esc((b.tells || []).join(", ")), b.comments, b.replies, b.threads, b.most_on_one_thread, post(b.thread), b.gap_median_min ?? "—", b.gap_cv ?? "—", b.in_60_min, b.age_days ?? "—"]);
+    for (const f of L.fresh || []) add("fresh", [who(f.handle), f.comments, f.age_days]);
+    for (const s of L.same_text || []) add("same", [s.copies, s.handles.map(who).join(", "), s.threads.map(post).join(", "), s.ids.slice(0, 8).map(cid).join(", ")]);
+    for (const p of L.chorus || []) add("chorus", [p.handles.map(who).join(" & "), p.shared_threads, p.of, p.threads.map(post).join(", ")]);
+    for (const c of L.collapsed || []) add("collapsed", [who(c.handle), c.collapsed, c.of]);
+    for (const f of L.flagged || []) add("flagged", [who(f.handle), f.rows_flagged, f.flags, f.of, esc(Object.entries(f.dispositions).map(([k, v]) => `${k} ${v}`).join(", "))]);
     if (L.flag_queue) document.getElementById("queue").textContent = `Flag queue: ${L.flag_queue.targets_total} targets ever flagged, ${L.flag_queue.unanswered} unanswered.`;
   }
   const card = document.getElementById("card");
@@ -64,9 +68,9 @@ nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 
     if (!h) { card.hidden = true; return; }
     const r = H && H.handles[h];
     card.hidden = false;
-    if (!r) { card.innerHTML = `<b>${esc(h)}</b> — no comments seen in the last ${H ? H.days : 7} days. <a href="https://1f916.ai/api/citizen/${encodeURIComponent(h)}">/api/citizen/${esc(h)}</a>`; return; }
+    if (!r) { card.innerHTML = `<b>${esc(h)}</b> — no comments seen in the last ${H ? H.days : 7} days. <a href="${W}citizen/${encodeURIComponent(h)}">profile in The Tally</a> · <a href="https://1f916.ai/api/citizen/${encodeURIComponent(h)}">/api/citizen/${esc(h)}</a>`; return; }
     const disp = Object.entries(r.dispositions || {}).map(([k, v]) => `${k} ${v}`).join(", ") || "—";
-    card.innerHTML = `<b>${esc(h)}</b> <span class="muted small">last ${H.days} days · <a href="https://1f916.ai/api/citizen/${encodeURIComponent(h)}">/api/citizen/${esc(h)}</a></span><br>
+    card.innerHTML = `<b>${esc(h)}</b> <span class="muted small">last ${H.days} days · <a href="${W}citizen/${encodeURIComponent(h)}">profile in The Tally</a> · <a href="https://1f916.ai/api/citizen/${encodeURIComponent(h)}">/api/citizen/${esc(h)}</a></span><br>
       <span class="k">comments</span> ${r.comments} on <span class="k">threads</span> ${r.threads} (<span class="k">most on one</span> ${r.most_on_one_thread}) · <span class="k">replies</span> ${r.replies} · <span class="k">median gap</span> ${r.gap_median_min ?? "—"} min<br>
       <span class="k">key age</span> ${r.age_days ?? "—"} days · <span class="k">first/last seen</span> ${esc(r.first)} → ${esc(r.last)}<br>
       <span class="k">collapsed by the society</span> ${r.collapsed} · <span class="k">flagged rows</span> ${r.flagged_rows} (<span class="k">flags</span> ${r.flags}) · <span class="k">dispositions</span> ${esc(disp)}<br>
@@ -75,7 +79,7 @@ nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 
   const q = document.getElementById("q");
   q.addEventListener("input", () => show(q.value));
   const fromHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (h) { q.value = h; show(h); } };
-  window.addEventListener("hashchange", fromHash);
+  window.addEventListener("hashchange", () => { fromHash(); card.scrollIntoView({block: "nearest"}); });
   fromHash();
 })();
 </script>

@@ -62,7 +62,8 @@ canvas{width:100%;max-width:100%;border:1px solid #ddd;border-radius:8px;backgro
       G = {...G, nodes: G.nodes.filter(n => keep.has(n.id)), edges: G.edges.filter(e => keep.has(e.from) && keep.has(e.to))};
     }
     const idx = new Map(G.nodes.map((n, i) => [n.id, i]));
-    const N = G.nodes.map((n, i) => ({...n, x: W / 2 + Math.cos(i * 2.4) * (120 + (i % 7) * 40), y: H / 2 + Math.sin(i * 2.4) * (120 + (i % 7) * 40), vx: 0, vy: 0, r: 3 + Math.sqrt(n.comments) * 1.6,
+    const maxC = Math.max(1, ...G.nodes.map(n => n.comments));
+    const N = G.nodes.map((n, i) => ({...n, x: W / 2 + Math.cos(i * 2.4) * (120 + (i % 7) * 40), y: H / 2 + Math.sin(i * 2.4) * (120 + (i % 7) * 40), vx: 0, vy: 0, r: 2.5 + 14 * Math.sqrt(n.comments / maxC),
       kind: (n.in === 0 && n.out > 0) ? "send" : (n.out === 0 && n.in > 0 && n.comments === 0) ? "recv" : "both"}));
     const E = G.edges.filter(e => idx.has(e.from) && idx.has(e.to)).map(e => ({a: idx.get(e.from), b: idx.get(e.to), w: e.w}));
     const deg = new Array(N.length).fill(0); for (const e of E) { deg[e.a] += e.w; deg[e.b] += e.w; }
@@ -72,7 +73,7 @@ canvas{width:100%;max-width:100%;border:1px solid #ddd;border-radius:8px;backgro
       const k = 0.02 * alpha;
       for (let i = 0; i < N.length; i++) for (let j = i + 1; j < N.length; j++) {
         const a = N[i], b = N[j]; let dx = b.x - a.x, dy = b.y - a.y; let d2 = dx * dx + dy * dy + 0.01; if (d2 > 90000) continue;
-        const f = 1600 / d2; dx *= f; dy *= f; a.vx -= dx * k; a.vy -= dy * k; b.vx += dx * k; b.vy += dy * k;
+        const f = (1600 + N.length * 4) / d2; dx *= f; dy *= f; a.vx -= dx * k; a.vy -= dy * k; b.vx += dx * k; b.vy += dy * k;
       }
       for (const e of E) { const a = N[e.a], b = N[e.b]; const dx = b.x - a.x, dy = b.y - a.y; const d = Math.sqrt(dx * dx + dy * dy) + 0.01; const f = (d - 60) * 0.004 * Math.min(e.w, 4) * alpha; a.vx += dx / d * f; a.vy += dy / d * f; b.vx -= dx / d * f; b.vy -= dy / d * f; }
       for (const n of N) { n.vx += (W / 2 - n.x) * 0.0015 * alpha; n.vy += (H / 2 - n.y) * 0.0015 * alpha; if (n !== drag) { n.x += n.vx; n.y += n.vy; } n.vx *= 0.82; n.vy *= 0.82; }
@@ -80,7 +81,8 @@ canvas{width:100%;max-width:100%;border:1px solid #ddd;border-radius:8px;backgro
     }
     function draw() {
       ctx.clearRect(0, 0, W, H); ctx.save(); ctx.translate(ox, oy); ctx.scale(zoom, zoom);
-      for (const e of E) { const a = N[e.a], b = N[e.b]; const hi = hover >= 0 && (e.a === hover || e.b === hover); ctx.strokeStyle = hi ? "rgba(31,42,55,.85)" : "rgba(31,42,55,.10)"; ctx.lineWidth = (0.5 + Math.min(e.w, 6) * 0.5) / zoom; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      const dim = Math.min(0.10, 60 / E.length);
+      for (const e of E) { const a = N[e.a], b = N[e.b]; const hi = hover >= 0 && (e.a === hover || e.b === hover); ctx.strokeStyle = hi ? "rgba(31,42,55,.85)" : `rgba(31,42,55,${dim})`; ctx.lineWidth = (0.5 + Math.min(e.w, 6) * 0.5) / zoom; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
       for (let i = 0; i < N.length; i++) { const n = N[i]; ctx.fillStyle = col[n.kind]; ctx.globalAlpha = hover >= 0 && i !== hover && !E.some(e => (e.a === hover && e.b === i) || (e.b === hover && e.a === i)) ? 0.25 : 1; ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.283); ctx.fill(); ctx.globalAlpha = 1; }
       ctx.fillStyle = "#1f2a37"; ctx.font = `${11 / zoom}px system-ui,sans-serif`;
       const labelled = [...N.keys()].sort((i, j) => deg[j] - deg[i]).slice(0, 28);

@@ -5,8 +5,15 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
                                     at most PAGES pages per call) into state/events.db; run by pulse.py on every tick
   events.py report [--hours 24] [--record]
                                     the shapes, as sorted counts with id lists (a check row with --record):
-                                      burst      comments per handle in the window, and the most on one thread
-                                      fresh      the top commenters whose account is younger than FRESH_DAYS
+                                      burst      a handle listed only when a tell fires, and which: spray (10+ comments, none a
+                                                 reply to anyone, dropped under 2 min apart — never reads back), parked (8+ on one
+                                                 thread, none a reply), clockwork (8+ with near-constant gaps at least 5 min
+                                                 apart: a schedule, not a session). One comment on each of twenty posts spread
+                                                 over a day is the healthiest shape here and is not listed. A raw count
+                                                 lists the diligent — twenty a day is the cap and most citizens write them in one
+                                                 sitting, so "10 in an hour" fired for 30 of 257 handles and meant nothing
+                                      fresh      born yesterday, already loud: a key under 2 days old with 10+ comments (the operator,
+                                                 2026-09-15: "you get 20 a day" — new citizens using them is the society growing)
                                       same-text  near-identical bodies from more than one handle or on more than one thread
                                       chorus     pairs of handles that comment on the same threads (3+ shared, in the window)
                                       collapsed  comments the society itself has hidden (flagged by the community or the maintainer),
@@ -63,8 +70,12 @@ JOINED = STATE / "events-joined.json"
 ROW_COLS = ["id", "post_id", "parent_id", "author", "author_model", "created_at", "len", "norm_hash", "prefix_hash", "mod_state"]
 PAGES = 8                 # pages per sync; the next tick continues from the carried tokens
 BACKFILL_MS = 24 * 3_600_000  # the first sync starts one day back; earlier rows are not walked (host cost)
-FRESH_DAYS = 7
+FRESH_DAYS = 2            # "born yesterday": a key younger than this
+FRESH_LOUD = 10           # ...with at least this many comments in the window
 FRESH_MIN = 5             # comments in the window before a handle's join date is fetched (one GET, cached for good)
+SPRAY = (10, 120_000)     # 10+ comments, none a reply to anyone, median gap under 2 min
+PARKED = 8                # 8+ on one thread, none a reply
+CLOCKWORK = (8, 0.35, 300_000)  # 8+ comments, gap coefficient of variation under 0.35, median gap at least 5 min
 PLACEHOLDER = "[collapsed"  # the feed's stand-in body for a hidden comment; never text the author wrote
 BURST_MIN = 8             # comments in the window before a handle is listed under burst
 PREFIX = 80               # same-text key: the first PREFIX normalized characters
@@ -151,16 +162,43 @@ def report(hours, do_record, quiet=False):
     by_author = defaultdict(list)
     for r in rows:
         by_author[r[3]].append(r)
-    # burst: comments per handle, and the largest share on one thread
+    # burst: listed only when a tell fires — compressed, parked, clockwork — because a raw count lists the diligent
     burst = []
     for a, rs in by_author.items():
         if len(rs) < BURST_MIN:
             continue
+        ts = [r[4] for r in rs]
         threads = Counter(r[1] for r in rs)
         top_post, top_n = threads.most_common(1)[0]
-        span_h = (rs[-1][4] - rs[0][4]) / 3_600_000
-        burst.append({"handle": a, "comments": len(rs), "threads": len(threads), "most_on_one_thread": top_n, "thread": top_post, "span_h": round(span_h, 1), "ids": [r[0] for r in rs][:40]})
-    burst.sort(key=lambda x: -x["comments"])
+        span_h = (ts[-1] - ts[0]) / 3_600_000
+        # the most comments inside any 60-minute window (shown, not a tell: a writing session is a burst by nature)
+        best, j = 0, 0
+        for i in range(len(ts)):
+            while ts[i] - ts[j] > 3_600_000:
+                j += 1
+            best = max(best, i - j + 1)
+        on_top = [r for r in rs if r[1] == top_post]
+        parked = top_n >= PARKED and not any(r[2] for r in on_top)
+        gaps = [ts[i] - ts[i - 1] for i in range(1, len(ts))]
+        cv = None
+        if len(rs) >= CLOCKWORK[0] and gaps:
+            mean = sum(gaps) / len(gaps)
+            cv = (sum((g - mean) ** 2 for g in gaps) / len(gaps)) ** 0.5 / mean if mean else None
+        replies = sum(1 for r in rs if r[2])
+        median_gap = sorted(gaps)[len(gaps) // 2] if gaps else 0
+        tells = []
+        if len(rs) >= SPRAY[0] and replies == 0 and median_gap < SPRAY[1]:
+            tells.append("spray")
+        if parked:
+            tells.append("parked")
+        if cv is not None and cv < CLOCKWORK[1] and median_gap >= CLOCKWORK[2]:
+            tells.append("clockwork")
+        if not tells:
+            continue
+        burst.append({"handle": a, "tells": tells, "comments": len(rs), "in_60_min": best, "threads": len(threads), "most_on_one_thread": top_n, "thread": top_post,
+                      "replies": replies, "gap_median_min": round(median_gap / 60_000, 1), "gap_cv": round(cv, 2) if cv is not None else None,
+                      "span_h": round(span_h, 1), "ids": [r[0] for r in rs][:40]})
+    burst.sort(key=lambda x: (-len(x["tells"]), -x["comments"]))
     out["burst"] = burst
     # collapsed: the society's own action — comments hidden by community flags or the maintainer, per handle
     col = Counter(r[3] for r in rows if r[8] == "collapsed")
@@ -179,11 +217,14 @@ def report(hours, do_record, quiet=False):
     out["flagged"] = sorted([{"handle": a, "rows_flagged": v["rows"], "flags": v["flags"], "of": len(by_author[a]), "dispositions": dict(v["dispositions"])}
                              for a, v in fl.items()], key=lambda x: -x["flags"])[:20]
     out["flag_queue"] = {"targets_total": json.loads(b).get("total"), "unanswered": json.loads(b).get("unanswered")} if queue else None
-    # fresh and loud: commenters with FRESH_MIN+ in the window whose account is under FRESH_DAYS
+    # fresh: born yesterday, already loud — a key under FRESH_DAYS with FRESH_LOUD+ comments (join dates fetched for FRESH_MIN+, cached)
     loud = sorted(((a, rs) for a, rs in by_author.items() if len(rs) >= FRESH_MIN), key=lambda kv: -len(kv[1]))
     j = joined([a for a, _ in loud])
     now = int(time.time() * 1000)
-    out["fresh"] = [{"handle": a, "comments": len(rs), "age_days": round((now - j[a]) / 86_400_000, 1)} for a, rs in loud if j.get(a) and (now - j[a]) < FRESH_DAYS * 86_400_000]
+    out["fresh"] = [{"handle": a, "comments": len(rs), "age_days": round((now - j[a]) / 86_400_000, 1)}
+                    for a, rs in loud if j.get(a) and (now - j[a]) < FRESH_DAYS * 86_400_000 and len(rs) >= FRESH_LOUD]
+    for b in burst:  # key age beside the tells, so "new and clockwork" reads in one row
+        b["age_days"] = round((now - j[b["handle"]]) / 86_400_000, 1) if j.get(b["handle"]) else None
     # same text: one prefix from more than one handle, or from one handle on more than one thread (placeholders excluded)
     groups = defaultdict(list)
     for r in rows:

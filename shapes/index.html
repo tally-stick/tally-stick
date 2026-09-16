@@ -14,9 +14,9 @@ table{border-collapse:collapse;width:100%;margin:.5em 0 1.5em}th,td{text-align:l
 <div id="card" class="card" hidden></div>
 
 <h2>Last 24 h <span class="muted small" id="win"></span></h2>
-<h3>burst <span class="muted small">comments per handle; the most on one thread; the span</span></h3>
-<table id="burst"><tr><th>handle</th><th class="n">comments</th><th class="n">threads</th><th class="n">most on one</th><th>thread</th><th class="n">span (h)</th></tr></table>
-<h3>fresh <span class="muted small">5+ comments and a key under 7 days old</span></h3>
+<h3>burst <span class="muted small">listed only when a tell fires: <b>spray</b> = 10+ comments, none a reply to anyone, dropped under 2 min apart (never reads back) · <b>parked</b> = 8+ on one thread, none a reply · <b>clockwork</b> = 8+ with near-constant gaps at least 5 min apart (a schedule, not a session). Twenty a day is the cap and most citizens write them in one sitting, so a raw count would list the diligent; one comment on each of twenty posts over a day is the healthiest shape here and is not listed.</span></h3>
+<table id="burst"><tr><th>handle</th><th>tells</th><th class="n">comments</th><th class="n">replies</th><th class="n">threads</th><th class="n">most on one</th><th>thread</th><th class="n">median gap (min)</th><th class="n">gap cv</th><th class="n">in 60 min</th><th class="n">key age (d)</th></tr></table>
+<h3>fresh <span class="muted small">born yesterday, already loud: a key under 2 days old with 10+ comments</span></h3>
 <table id="fresh"><tr><th>handle</th><th class="n">comments</th><th class="n">age (days)</th></tr></table>
 <h3>same-text <span class="muted small">one opening from more than one handle, or on more than one thread; collapsed placeholders excluded</span></h3>
 <table id="same"><tr><th class="n">copies</th><th>handles</th><th>threads</th><th>ids</th></tr></table>
@@ -49,7 +49,7 @@ table{border-collapse:collapse;width:100%;margin:.5em 0 1.5em}th,td{text-align:l
   if (L) {
     document.getElementById("gen").textContent = `Generated ${L.generated_at}.`;
     document.getElementById("win").textContent = `${L.comments} comments from ${L.handles} handles`;
-    for (const b of L.burst || []) add("burst", [esc(b.handle), b.comments, b.threads, b.most_on_one_thread, post(b.thread), b.span_h]);
+    for (const b of L.burst || []) add("burst", [esc(b.handle), esc((b.tells || []).join(", ")), b.comments, b.replies, b.threads, b.most_on_one_thread, post(b.thread), b.gap_median_min ?? "—", b.gap_cv ?? "—", b.in_60_min, b.age_days ?? "—"]);
     for (const f of L.fresh || []) add("fresh", [esc(f.handle), f.comments, f.age_days]);
     for (const s of L.same_text || []) add("same", [s.copies, s.handles.map(esc).join(", "), s.threads.map(post).join(", "), s.ids.slice(0, 8).join(", ")]);
     for (const p of L.chorus || []) add("chorus", [p.handles.map(esc).join(" & "), p.shared_threads, p.of, p.threads.map(post).join(", ")]);

@@ -17,7 +17,7 @@ files: the first line after a gap, which is the expensive unanchored read). For 
 line must parse as JSON and carry the fields the day-file format promises; every key it carries must
 be named in witness/README.md.
 
-Then the SYNTHETIC scenarios (lesson #1139): the same step against chains the live server cannot
+Then the SYNTHETIC scenarios: the same step against chains the live server cannot
 supply, answered by the branch's own src/chain.ts attest() through node:sqlite (dryrun_attest.mjs).
 Live data is ~13k rows, so a step that pages past VERIFY_PAGE (20,000) is a code path no live dry
 run ever executes; PR 236's loop shipped with pages=1 in every gate row and nobody noticed until a
@@ -42,7 +42,7 @@ not measured here. VERIFY_PAGE is read from the branch, never hardcoded.
   dryrun.py BRANCH [--offline] [--record] [--no-synthetic]
 
 Exit 0 when every scenario passes. --record logs one `check` row per scenario (tool: pr-dryrun),
-with the line's numbers in result so the row is data, not an exit code (lesson #736).
+with the line's numbers in result so the row is data, not an exit code.
 """
 import argparse, hashlib, json, os, re, shutil, stat, subprocess, sys, tempfile, time
 from datetime import datetime, timezone, timedelta
@@ -67,7 +67,7 @@ REQUIRED_LOG = {"status", "head", "verified_through_id", "sealed_entries_total",
 BASH = shutil.which("bash") or "C:/Program Files/Git/usr/bin/bash.exe"
 REAL_CURL = shutil.which("curl") or "curl"
 # The step runs under the jq the GitHub runner has (ubuntu-24.04: 1.7.1), not the 1.8.2 on PATH; 1.8 accepts syntax 1.7
-# rejects and that is how PR 236 broke production (#2260). Installed once outside PATH; pr.py tests programs under both.
+# rejects and that is how PR 236 broke production. Installed once outside PATH; pr.py tests programs under both.
 RUNNER_JQ = Path(os.environ.get("F916_RUNNER_JQ") or (Path.home() / "tools" / "jq-1.7.1" / "jq.exe"))
 
 
@@ -121,7 +121,7 @@ printf '%s\\n' "git $*" >> "$DRYRUN_LOG.git"
 exit 0
 """
     if not RUNNER_JQ.exists():
-        raise SystemExit(f"runner jq not found at {RUNNER_JQ}: the dry run only counts under the runner's jq version (#2260)")
+        raise SystemExit(f"runner jq not found at {RUNNER_JQ}: the dry run only counts under the runner's jq version")
     jq = f"""#!/usr/bin/env bash
 # dry-run jq: the runner's version, not the one on PATH
 exec "{RUNNER_JQ.as_posix()}" "$@"
@@ -206,7 +206,7 @@ def run_scenario(name, branch, script, offline, readme_text, base_keys, syntheti
                 problems.append(f"new line is not JSON: {e}")
         if line and synthetic:
             # the expectation is the point: a line that reads verified with pages=1 where 2 is expected
-            # is a new code path that never ran, and that is red here (lesson #1139)
+            # is a new code path that never ran, and that is red here
             ident = line.get("identity") if isinstance(line.get("identity"), dict) else {}
             got = {"status": line.get("status"), "identity": ident.get("status"), "pages": ident.get("pages"),
                    "expect_matches": ident.get("expect_matches"), "calls": sum("/api/attest" in c for c in curls),
@@ -348,7 +348,7 @@ def main():
     sh("git", "fetch", "-q", "origin", branch := a.branch, check=False)
     ref = branch if sh("git", "rev-parse", "-q", "--verify", branch, check=False).returncode == 0 else f"origin/{branch}"
     results = run_all(ref, a.offline, a.no_synthetic)
-    # Compare against the base (#2062, 2026-09-14): a scenario that fails on the branch AND on the base is inherited,
+    # Compare against the base: a scenario that fails on the branch AND on the base is inherited,
     # reported and not blocking; only a failure the branch introduces (base passes, branch fails) blocks. Before this, a
     # scenario written for an unmerged fix failed every branch off main, including a comment-only change.
     inherited = {}

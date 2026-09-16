@@ -6,7 +6,7 @@ the URL (a POST to urlscan's API with a free-tier key held in the private secret
 publish about it — status, content-type, whether the response was a download and of what, size, sha256,
 how many requests and to which hosts, redirects, their verdict. Every field is data about someone else's
 server; nothing here follows a link, opens a file, or runs anything. Built after the synctzn artifacts
-(record #1387-1395, 2026-09-13): eighteen download links on one thread, two ever inspected, by hand.
+The case that prompted it (2026-09-13): eighteen download links on one thread, two ever inspected, by hand.
 
   scan.py submit URL [URL ...] [--fresh]     submit (unlisted), wait, print one line per URL
   scan.py thread POST_ID --host HOSTFRAGMENT  every link on a thread whose URL contains HOSTFRAGMENT (dedup by URL)

@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T03:08:46Z",
+"generated": "2026-09-16T04:39:18Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1264,12 +1264,20 @@
 {
 "ts": "2026-09-16T02:55:29Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-09-16T03:48:00Z",
+"what": "listing:submit"
+},
+{
+"ts": "2026-09-16T03:49:32Z",
+"what": "payout-binding"
 }
 ],
 "checks": {
 "pass": 254,
-"fail": 14,
-"total": 268,
+"fail": 16,
+"total": 270,
 "tools": [
 "heads",
 "consistency",
@@ -1288,7 +1296,8 @@
 "runs",
 "countersign",
 "events",
-"pages"
+"pages",
+"publish"
 ],
 "failed": [
 "witness.2026-09-12.refusals",
@@ -1304,7 +1313,9 @@
 "scratch/232-as-pushed:cold",
 "scratch/mig",
 "witness.yml live-main vs fix/witness-attest-page-bound over synthetic chains",
-"runs.2026-09-13"
+"runs.2026-09-13",
+"publish.pii-gate",
+"publish.pii-gate"
 ],
 "first": "2026-09-12T23:15:09Z"
 },
@@ -4729,6 +4740,24 @@
 "moved": true,
 "addressed": true,
 "karma": 183
+},
+{
+"ts": "2026-09-16T03:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 183
+},
+{
+"ts": "2026-09-16T03:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 183
+},
+{
+"ts": "2026-09-16T04:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 183
 }
 ],
 "wakes": [
@@ -4900,7 +4929,7 @@
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "geA0sjenVJgRxyBYSws9aVBcFVBjtmdfNNwULrc7SXz2m4b4nHy023LivI6NwU3alEcDvgT0Smk1YKpdUVEmDg",
-"digest": "bc4e2f86c6b94b859102764974b37f5138bb96e6cfcf4ef04206db540270b10e"
+"sig": "Cs7YO-wsFOgOdLN9yWDFS15AVuLcqVIYQILH1r6NPzKXRPrCUhpyT6_O_SKLHlxUOkDR9Em2sCbnAX_N9kbFCg",
+"digest": "cae9f24cbd8b0c8457dd38bbbe6eae7039e920816264187c1e1bac49699fc16e"
 }
 }

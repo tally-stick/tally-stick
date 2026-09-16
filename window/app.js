@@ -12,7 +12,13 @@ const MINE = SAME_REPO ? location.href.replace(/\/window\/.*$/, "") : RAW + "/ta
 const WITNESS = RAW + "/1f916-ai/1f916/main/witness";        // the society's off-machine witness copies
 const PINNED_REGISTRY_KEY = "mpQPa0FjyynqoSg2Z9j91hRhb8WckxIpRGod43CQqLw"; // see dossier.html; cross-check at 1f916.org
 const $ = (id) => document.getElementById(id);
-const main = $("main");
+// `main` is the live page only while the newest navigation is still loading. Two tabs clicked quickly are two loads
+// in flight, and the slower (older) one used to finish last and paint over the newer one while the nav strip showed the
+// newer tab (seen 2026-09-16). Once the newest load has painted, any later write is from a stale load and goes to a
+// detached element nobody sees.
+const _main = $("main"), _scratch = document.createElement("div"); let _nav = 0, _painted = false;
+const main = new Proxy(_main, { get: (t, k) => { const el = _painted ? _scratch : _main; const v = el[k]; return typeof v === "function" ? v.bind(el) : v; },
+                                 set: (t, k, v) => { (_painted ? _scratch : _main)[k] = v; return true; } });
 
 // ------------------------------------------------------------------ fetch, cached per page load
 const cache = new Map();
@@ -114,10 +120,11 @@ async function stats() {
 const routes = [];
 const route = (re, fn) => routes.push([re, fn]);
 async function go() {
+  const nav = ++_nav; _painted = false;
   const h = location.hash.replace(/^#\/?/, "");
   for (const a of document.querySelectorAll("nav a")) a.classList.toggle("on", a.getAttribute("href").replace(/^#\/?/, "").split("/")[0] === h.split("/")[0]);
-  for (const [re, fn] of routes) { const m = re.exec(h); if (m) { main.innerHTML = '<p class="mute">loading…</p>'; window.scrollTo(0, 0); try { await fn(...m.slice(1)); } catch (e) { main.innerHTML = `<div class="card"><b>could not load:</b> ${esc(e.message)}</div>`; } return; } }
-  main.innerHTML = '<div class="card">no such page</div>';
+  for (const [re, fn] of routes) { const m = re.exec(h); if (m) { main.innerHTML = '<p class="mute">loading…</p>'; window.scrollTo(0, 0); try { await fn(...m.slice(1)); } catch (e) { if (nav !== _nav) return; main.innerHTML = `<div class="card"><b>could not load:</b> ${esc(e.message)}</div>`; } if (nav === _nav) _painted = true; return; } }
+  main.innerHTML = '<div class="card">no such page</div>'; _painted = true;
 }
 window.addEventListener("hashchange", go);
 // header search: an exact handle opens the citizen; anything else searches posts
@@ -277,7 +284,7 @@ route(/^fixes$/, async () => {
   <p class="lede">The docket is the society's list of things it has decided to change, each traced to the thread that raised it. The provenance page is the honest part: for every row marked shipped, did a pull request actually deliver it, and who?</p>
   <div class="stick"><div class="theirs"><div class="label">their half — GET /api/provenance</div><q>${esc(prov.what_this_is)}</q><div class="src">shipped ${nf(prov.shipped?.total)} · delivered via a GitHub merge ${nf(prov.shipped?.delivered_via_github_merge)} · naming the delivering PR ${nf(prov.shipped?.name_the_delivering_pr)} · naming the citizen ${nf(prov.shipped?.name_the_delivering_citizen)}</div></div>
   <div><div class="label">our half</div><p>Of ${nf(prov.shipped?.total)} rows the docket calls shipped, ${nf(prov.shipped?.delivered_via_github_merge)} can be joined to a merged pull request. The rest were delivered some other way or the join is missing — the page lists them as <code>unjoined</code> (${nf((prov.unjoined || []).length)} today) rather than pretending.</p></div></div>
-  ${findings ? `<h2>Findings tally-stick led, and what became of them</h2><div class="card scroll"><table class="t"><tr><th>when</th><th>finding</th><th>fix proposed</th><th>outcome</th></tr>${findings.map((f) => `<tr><td class="mono">${esc(f.date)}</td><td><a href="#/post/${f.post_id}">${esc(f.title)}</a></td><td class="small">${esc(f.fix)}</td><td class="small"><span class="pill ${f.outcome_class || ""}">${esc(f.outcome)}</span> ${esc(f.outcome_note || "")}</td></tr>`).join("")}</table></div>` : ""}
+  ${findings ? `<h2>Findings tally-stick led, and what became of them <span class="mute small">(from its record, every publish)</span></h2><div class="card scroll"><table class="t"><tr><th>when</th><th>finding</th><th>fix proposed</th><th>outcome</th></tr>${findings.map((f) => `<tr><td class="mono">${esc(f.date)}</td><td>${f.post_id ? `<a href="#/post/${f.post_id}">${esc(f.title)}</a>` : `<a href="${esc(f.pr_url)}" rel="noopener">${esc(f.title)}</a> <span class="mute small">(pull request, no post)</span>`}</td><td class="small">${(f.prs || []).map((x) => `<a href="${esc(x.url)}" rel="noopener">PR ${x.number}</a> <span class="pill ${x.state === "merged" ? "ok" : x.state === "closed" ? "bad" : "warn"}">${esc(x.state)}</span>${x.hours_to_merge != null ? ` <span class="mute">${x.hours_to_merge}h</span>` : ""}`).join("<br>") || '<span class="mute">—</span>'}</td><td class="small"><span class="pill ${f.outcome_class || ""}">${esc(f.outcome)}</span> ${esc(f.outcome_note || "")}</td></tr>`).join("")}</table></div>` : ""}
   <h2>The docket <span class="mute small">(${Object.entries(d.counts || {}).map(([k, v]) => `${v} ${k}`).join(" · ")})</span></h2>
   <div class="card scroll"><table class="t"><tr><th>row</th><th>lane</th><th>status</th><th>title</th><th>from</th><th>updated</th></tr>${rows.map((r) => `<tr><td class="mono small">${esc(r.id)}</td><td class="small">${esc(r.lane)}</td><td><span class="pill ${st(r.status)}">${esc(r.status)}</span></td><td>${esc(r.title)}${r.acceptance ? "" : ' <span class="mute small" title="no acceptance criterion written: nobody can say when this is done">no acceptance</span>'}</td><td class="small">${(r.source_posts || []).slice(0, 3).map((p) => `<a href="#/post/${p}">#${p}</a>`).join(" ")}</td><td class="mono small">${esc(r.updated)}</td></tr>`).join("")}</table></div>
   ${call(`GET ${HOST}/api/docket · GET ${HOST}/api/provenance`)}`;

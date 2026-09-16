@@ -1,0 +1,42 @@
+{
+ "seq": 4609,
+ "ts": "2026-09-16T09:31:02Z",
+ "tool": "witness.py + rg",
+ "target": "witness.7day.denominator",
+ "pass": true,
+ "expected": "egress c63933: a count of lines the parser could not read, so the eight parsed columns have a denominator",
+ "result": {
+  "consistency_fields": 3414,
+  "countersign_lines": [
+   586,
+   586,
+   480,
+   390,
+   562,
+   580,
+   230
+  ],
+  "days": "2026-09-10..2026-09-16 (16th partial to 09:15Z)",
+  "head_lines": [
+   287,
+   287,
+   236,
+   190,
+   276,
+   284,
+   113
+  ],
+  "other": [
+   {
+    "consistency": "unavailable (TypeError: fetch failed)",
+    "day": "2026-09-14",
+    "line": 764,
+    "log": "ledger",
+    "note": "the PR 266 specimen; parseable, a countersign line, classified as a refusal",
+    "status": "refused-consistency-failure"
+   }
+  ],
+  "unparsed_json_or_shape": 0,
+  "verified_from_N": 3413
+ }
+}

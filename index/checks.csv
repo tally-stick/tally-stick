@@ -2595,3 +2595,54 @@ seq,ts,tool,target,pass,kind,negative_test
 4521,2026-09-16T07:38:51Z,pr-lint,scratch/stamp-mutation,1,gate,1
 4522,2026-09-16T07:38:52Z,pr-build,scratch/stamp-mutation,1,gate,1
 4525,2026-09-16T07:39:57Z,pr.py,pr.stamp-under-write-lock.mutation,1,verify,0
+4545,2026-09-16T09:15:05Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+4546,2026-09-16T09:15:05Z,heads,attest.treasury.anchored-append-only,1,verify,0
+4547,2026-09-16T09:15:05Z,heads,attest.identity_events.verified,1,verify,0
+4548,2026-09-16T09:15:05Z,heads,attest.ledger.verified,1,verify,0
+4549,2026-09-16T09:15:05Z,heads,checkpoint.identity_events.signature,1,verify,0
+4550,2026-09-16T09:15:05Z,heads,checkpoint.ledger.signature,1,verify,0
+4551,2026-09-16T09:15:05Z,heads,registry-key.pinned,1,verify,0
+4552,2026-09-16T09:15:05Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+4553,2026-09-16T09:15:05Z,heads,checkpoint.ledger.monotonic,1,verify,0
+4554,2026-09-16T09:15:05Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+4555,2026-09-16T09:15:05Z,heads,attest.identity_events.monotonic,1,verify,0
+4556,2026-09-16T09:15:05Z,heads,attest.ledger.monotonic,1,verify,0
+4557,2026-09-16T09:15:05Z,heads,attest.ledger.same-id-same-head,1,verify,0
+4560,2026-09-16T09:15:06Z,consistency,consistency.identity_events.15592->15592.from-signature,1,verify,0
+4561,2026-09-16T09:15:06Z,consistency,consistency.identity_events.15592->15592.to-signature,1,verify,0
+4562,2026-09-16T09:15:06Z,consistency,consistency.identity_events.15592->15592.from-root-matches-ours,1,verify,0
+4563,2026-09-16T09:15:06Z,consistency,consistency.identity_events.15592->15592.to-root-matches-ours,1,verify,0
+4564,2026-09-16T09:15:06Z,consistency,consistency.identity_events.15592->15592.to-root-matches-live,1,verify,0
+4565,2026-09-16T09:15:06Z,consistency,consistency.identity_events.15592->15592.proof,1,verify,0
+4566,2026-09-16T09:15:07Z,countersign,countersign.identity_events,1,verify,0
+4567,2026-09-16T09:15:07Z,countersign,countersign.ledger,1,verify,0
+4568,2026-09-16T09:15:14Z,pages,pages.domains,1,verify,0
+4569,2026-09-16T09:15:18Z,witness,witness.2026-09-16.registry-signatures,1,verify,0
+4570,2026-09-16T09:15:18Z,witness,witness.2026-09-16.countersignatures,1,verify,0
+4571,2026-09-16T09:15:18Z,witness,witness.2026-09-16.witness-keys-in-directory,1,verify,0
+4572,2026-09-16T09:15:18Z,witness,witness.2026-09-16.refusals,0,verify,0
+4573,2026-09-16T09:15:18Z,witness,witness.2026-09-16.monotonic,1,verify,0
+4574,2026-09-16T09:15:18Z,witness,witness.2026-09-16.checkpoint-id,1,verify,0
+4575,2026-09-16T09:15:18Z,witness,witness.2026-09-16.latest-vs-live,1,verify,0
+4576,2026-09-16T09:15:18Z,witness,witness.2026-09-16.latest-head-attest,1,verify,0
+4577,2026-09-16T09:15:18Z,witness,witness.2026-09-16.cadence,1,verify,0
+4578,2026-09-16T09:15:18Z,witness,witness.2026-09-16.newest-line-age,1,verify,0
+4579,2026-09-16T09:15:18Z,witness,witness.2026-09-16.outage,1,verify,0
+4580,2026-09-16T09:15:19Z,events,events.24h,1,verify,0
+4583,2026-09-16T09:15:34Z,dossier,tally-stick.registry-signature,1,verify,0
+4584,2026-09-16T09:15:34Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+4585,2026-09-16T09:15:34Z,dossier,tally-stick.inclusion,1,verify,0
+4586,2026-09-16T09:15:34Z,dossier,tally-stick.leaf-index,1,verify,0
+4587,2026-09-16T09:15:34Z,dossier,tally-stick.attestation-hashes,1,verify,0
+4588,2026-09-16T09:15:34Z,dossier,tally-stick.keys,1,verify,0
+4589,2026-09-16T09:15:34Z,dossier,tally-stick.event-hashes,1,verify,0
+4590,2026-09-16T09:15:34Z,dossier,tally-stick.seal-signatures,1,verify,0
+4591,2026-09-16T09:15:34Z,dossier,tally-stick.seals-anchored,1,verify,0
+4592,2026-09-16T09:15:34Z,dossier,tally-stick.counts,1,verify,0
+4593,2026-09-16T09:15:34Z,shape,board.py pages: shape changes since last check,1,verify,0
+4594,2026-09-16T09:16:11Z,runs,runs.2026-09-16,1,verify,0
+4599,2026-09-16T09:25:45Z,witness+commits,witness.2026-09-16.refusals.cause,1,verify,0
+4600,2026-09-16T09:25:45Z,source.py+board.py,checkpoint.query-params.mechanism,1,verify,0
+4601,2026-09-16T09:25:45Z,board.py changes + commits.py,pr274.post-deploy.inversions,1,verify,0
+4609,2026-09-16T09:31:02Z,witness.py + rg,witness.7day.denominator,1,verify,0
+4623,2026-09-16T09:36:18Z,attest,claim #4602,1,verify,0

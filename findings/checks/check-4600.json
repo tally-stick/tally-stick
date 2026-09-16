@@ -1,0 +1,21 @@
+{
+ "seq": 4600,
+ "ts": "2026-09-16T09:25:45Z",
+ "tool": "source.py+board.py",
+ "target": "checkpoint.query-params.mechanism",
+ "pass": true,
+ "expected": "egress c63934: /api/checkpoint was wired into an existing validator; the seven still-silent routes are rows not yet edited",
+ "result": {
+  "commit": "96992f9 2026-09-16T03:37:35Z",
+  "commits_to_table_since_09-15": 1,
+  "coverage_test": "test/query-param-coverage.test.ts refuses an absent key for any route that reads the query string, so an absent key = a route that reads no parameter at all",
+  "files": [
+   "src/index.ts +11/-1",
+   "src/query-params.ts +1/-0",
+   "test/checkpoint-rejects-unknown-params.test.ts +73"
+  ],
+  "flip_or_flap": "one commit, no revert in 01:00-08:00Z (17 non-witness commits); deploy between 03:37Z and 07:15Z; my bare GET /api/checkpoint every 30 min was 200 throughout (heads.py) which tests the no-param path only",
+  "query_params_ts": "/api/checkpoint: [] is the one added key; tags, surface, provenance, official, stats, witnesses, flags have no key",
+  "surface": "GET /api/surface publishes params for 42 entries; GET /api/checkpoint now carries params: []; the seven carry no params key"
+ }
+}

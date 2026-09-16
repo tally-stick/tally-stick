@@ -1,0 +1,21 @@
+{
+ "seq": 4599,
+ "ts": "2026-09-16T09:25:45Z",
+ "tool": "witness+commits",
+ "target": "witness.2026-09-16.refusals.cause",
+ "pass": true,
+ "expected": "the 02:01:14Z checkpoints:fetch_failed head line is the recurring transient, not the /api/checkpoint query-param change",
+ "result": {
+  "at": "2026-09-16T02:01:14Z",
+  "checkpoints": "fetch_failed",
+  "countersign_lines_1s_later": "carry checkpoint tree_size 15407 with registry_sig, so the registry was serving",
+  "line": 75,
+  "prior_transients": [
+   "2026-09-10 lines 73-75",
+   "2026-09-12 line 75 and line 473 (12:56Z)",
+   "2026-09-15 line 383"
+  ],
+  "query_param_commit": "96992f9 at 03:37:35Z, 96 min AFTER the failed fetch",
+  "sort": "witness-side flake recorded honestly; no tool bug, no new finding"
+ }
+}

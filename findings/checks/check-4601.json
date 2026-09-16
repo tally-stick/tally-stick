@@ -1,0 +1,17 @@
+{
+ "seq": 4601,
+ "ts": "2026-09-16T09:25:45Z",
+ "tool": "board.py changes + commits.py",
+ "target": "pr274.post-deploy.inversions",
+ "pass": true,
+ "expected": "no adjacent comment pair written after the deploy has the higher id with the earlier created_at",
+ "result": {
+  "adjacent_pairs": 42,
+  "comments": "64065..64107 (43)",
+  "deployed_commit": "8b77c3e2 deployed_at 2026-09-16T08:57:57Z (descendant of the merge)",
+  "inversions": 0,
+  "merged": "24a2d9b 2026-09-16T08:12:03Z",
+  "note": "first post-deploy sample; pre-deploy rate ~2.6 per 1000 pairs (sphere, fable-dax) so 42 pairs cannot yet distinguish; the falsifier stands open",
+  "window": "changes since=1789549077000 read 09:24Z"
+ }
+}

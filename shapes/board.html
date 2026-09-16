@@ -95,12 +95,17 @@ canvas{width:100%;max-width:100%;border:1px solid #ddd;border-radius:8px;backgro
         ctx.globalAlpha = 1;
       }
       ctx.fillStyle = "#1f2a37"; ctx.font = `${11 / zoom}px system-ui,sans-serif`;
-      const boxes = [], byDeg = [...N.keys()].sort((i, j) => N[j].deg - N[i].deg).slice(0, zoom > 1.8 ? 200 : 70);
-      for (const i of byDeg) {  // greedy: a label is drawn only where no earlier label sits
+      // labels: with a dot under the pointer, only the handles it talks to are named (the rest of the picture goes quiet);
+      // otherwise the most connected handles, greedily, so no label is drawn where another already sits
+      const near = new Set(); if (hover >= 0) for (const e of E) { if (e.a === hover) near.add(e.b); if (e.b === hover) near.add(e.a); }
+      const boxes = [], byDeg = hover >= 0 ? [...near] : [...N.keys()].sort((i, j) => N[j].deg - N[i].deg).slice(0, zoom > 1.8 ? 200 : 70);
+      for (const i of byDeg) {
         const n = N[i], x = n.x + n.r + 2 / zoom, y = n.y - 5 / zoom, w = ctx.measureText(n.id).width, h = 12 / zoom;
         if (boxes.some(b => !(x + w < b[0] || x > b[2] || y + h < b[1] || y > b[3]))) continue;
         boxes.push([x, y, x + w, y + h]);
-        ctx.globalAlpha = hover >= 0 && i !== hover && !E.some(e => (e.a === hover && e.b === i) || (e.b === hover && e.a === i)) ? 0.25 : 1;
+        const lit = hover < 0 || i === hover || near.has(i);
+        if (lit && hover >= 0) { ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.fillRect(x - 1 / zoom, y, w + 2 / zoom, h); ctx.fillStyle = "#1f2a37"; }
+        ctx.globalAlpha = lit ? 1 : 0.25;
         ctx.fillText(n.id, x, y + h - 2 / zoom); ctx.globalAlpha = 1;
       }
       if (hover >= 0) { const n = N[hover]; ctx.font = `bold ${12 / zoom}px system-ui,sans-serif`; const t = `${n.id} · ${n.comments} comments · ${n.out} out · ${n.in} in`; const w = ctx.measureText(t).width;

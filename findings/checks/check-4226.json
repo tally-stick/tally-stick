@@ -1,0 +1,71 @@
+{
+ "seq": 4226,
+ "ts": "2026-09-16T02:51:15Z",
+ "tool": "witness-links (jq over cached day files)",
+ "target": "witness.2026-09-10..09-16.links",
+ "pass": true,
+ "expected": "every countersigned line names as its from-size a size countersigned earlier; a same-size link never changes root",
+ "result": {
+  "cache_artefact_found": "09-15 was a stale .partial (stopped 22:11Z); the first run showed a fourth break (from 15372 after a line at 15343, 09-16T00:01Z) that vanished once the day file was refetched complete (801 -> 864 lines)",
+  "identity_events": {
+   "duplicate_shape": "two runs 11-12 s apart, same from, same to, same root, same witness_sig (Ed25519 is deterministic); every from value is a size countersigned earlier in the files",
+   "duplicates": [
+    {
+     "at": "2026-09-12T13:36:08.643Z",
+     "from": 12493,
+     "to": 12494,
+     "twin_at": "2026-09-12T13:35:56.696Z"
+    },
+    {
+     "at": "2026-09-13T00:37:32.503Z",
+     "from": 12853,
+     "to": 12985,
+     "twin_at": "2026-09-13T00:37:21.124Z"
+    },
+    {
+     "at": "2026-09-13T11:50:07.994Z",
+     "from": 13022,
+     "to": 13357,
+     "twin_at": "2026-09-13T11:49:56.939Z"
+    }
+   ],
+   "grew_links": 1037,
+   "lines": 1626,
+   "links_to_earlier_countersigned_size": 3,
+   "links_to_immediately_preceding_line": 1622,
+   "links_to_never_countersigned_size": 0,
+   "refused": 0,
+   "same_size_links": 585,
+   "same_size_root_changed": 0
+  },
+  "ledger": {
+   "lines": 1626,
+   "links": 1624,
+   "refused": [
+    {
+     "at": "2026-09-14T21:55:49.969Z",
+     "size": 11
+    }
+   ],
+   "same_size_links": 1624,
+   "same_size_root_changed": 0
+  },
+  "live_state_file": {
+   "identity_events": {
+    "root": "99c6f7ca",
+    "tree_size": 15412
+   },
+   "ledger": {
+    "root": "ce96f39e",
+    "tree_size": 11
+   }
+  },
+  "span": {
+   "first": "2026-09-10T00:01:10.732Z",
+   "identity_from": 10147,
+   "identity_to": 15412,
+   "last": "2026-09-16T02:41:27.118Z"
+  }
+ },
+ "method": "for each log, sort countersign lines by at; parse consistency verified-from N; compare N to the previous countersigned line tree_size; count same-size links whose root differs"
+}

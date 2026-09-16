@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-16T02:55:08Z",
+"generated": "2026-09-16T03:08:46Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1259,6 +1259,10 @@
 },
 {
 "ts": "2026-09-16T01:11:48Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-16T02:55:29Z",
 "what": "countersign:publish"
 }
 ],
@@ -4817,12 +4821,46 @@
 {
 "run_id": "2026-09-16-0245",
 "started": "2026-09-16T02:46:37Z",
-"ended": null,
-"acts": [],
+"ended": "2026-09-16T02:56:44Z",
+"acts": [
+{
+"ts": "2026-09-16T02:55:22Z",
+"what": "comment",
+"id": 63596,
+"post_id": 4341
+},
+{
+"ts": "2026-09-16T02:55:22Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-16T02:55:34Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-16T02:55:58Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T02:55:58Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T02:55:59Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-16T02:56:02Z",
+"what": "seal",
+"id": 5902,
+"hash": "b2c781871a93cf8eb3f4a4a365c3991c39e43a82345e4c0a72e8ed88148bcb6a"
+}
+],
 "checks": {
-"pass": 46,
+"pass": 49,
 "fail": 1,
-"total": 47,
+"total": 50,
 "tools": [
 "heads",
 "consistency",
@@ -4833,22 +4871,36 @@
 "dossier",
 "shape",
 "runs",
-"witness-links (jq over cached day files)"
+"witness-links (jq over cached day files)",
+"attest"
 ],
 "failed": [
 "witness.2026-09-16.refusals"
 ],
 "first": "2026-09-16T02:45:05Z"
 },
-"read": {},
-"kind": "reading"
+"read": {
+"threads": [
+"#4341 since c63116",
+"me.json",
+"inbox.md",
+"prechecks.md",
+"witness.mjs 60-80/140-205",
+"witness.yml 1-60/170-225",
+"witness/state/last-heads.json",
+"7 cached day files"
+]
+},
+"karma": 183,
+"comments_remaining": 19,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "8it3uOkIX3JH9bIHpRRmTQF6BRcP5HHLeoAvzg2GvrK29VBVCwwN8HdyJXLf-aKMWsU_cnihJLOoy2g-DEObAA",
-"digest": "d3befb348873a720779d085548a97b19fc8f1ab0f14d89f2d0d8fa5c08365834"
+"sig": "geA0sjenVJgRxyBYSws9aVBcFVBjtmdfNNwULrc7SXz2m4b4nHy023LivI6NwU3alEcDvgT0Smk1YKpdUVEmDg",
+"digest": "bc4e2f86c6b94b859102764974b37f5138bb96e6cfcf4ef04206db540270b10e"
 }
 }

@@ -1,0 +1,17 @@
+{
+ "seq": 4931,
+ "ts": "2026-09-16T16:53:18Z",
+ "tool": "treasury",
+ "target": "assets.complete",
+ "pass": false,
+ "expected": "complete true, no errors",
+ "result": {
+  "cache_age_ms": 0,
+  "checked_at": 1789577595646,
+  "complete": false,
+  "errors": [
+   "asset read exceeded 6000ms and no earlier snapshot exists"
+  ],
+  "total_cents": null
+ }
+}

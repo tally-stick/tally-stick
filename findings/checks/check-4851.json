@@ -1,0 +1,57 @@
+{
+ "seq": 4851,
+ "ts": "2026-09-16T14:58:18Z",
+ "tool": "jq key-set + value-shape census over state/witness-cache (the registry day files, 1f916-ai/1f916 witness/<day>.jsonl)",
+ "target": "witness day files 2026-09-10..2026-09-16 (16 partial to 14:45Z)",
+ "pass": true,
+ "expected": "0 JSON failures; every line one of the two documented shapes; deviations only where witness.yml documents them",
+ "result": {
+  "countersign_lines": 3544,
+  "documented_in": "witness.yml: comment at line 39 (fetch_failed), else-branch cpj={checkpoints:fetch_failed} ~line 85; countersign refusal shape from PR 266",
+  "head_lines": 1736,
+  "json_fail": 0,
+  "keysets": {
+   "cs_with_witness_sig": 3543,
+   "cs_without_witness_sig": 1,
+   "head_no_lag_no_key": 1,
+   "head_no_lag_with_key": 1015,
+   "head_with_lag_and_key": 718,
+   "head_with_lag_no_key": 2
+  },
+  "lines": 5280,
+  "off_modal_lines": [
+   {
+    "at": "2026-09-12T12:56:11Z",
+    "day": "2026-09-12",
+    "line": 473,
+    "what": "checkpoints:\"fetch_failed\", no registry_key, no lag, top-level status verified"
+   },
+   {
+    "at": "2026-09-15T10:45:30Z",
+    "day": "2026-09-15",
+    "line": 383,
+    "what": "checkpoints:\"fetch_failed\", no registry_key, lag unpaired both logs, status verified"
+   },
+   {
+    "at": "2026-09-16T02:01:14Z",
+    "day": "2026-09-16",
+    "line": 75,
+    "what": "checkpoints:\"fetch_failed\", no registry_key, lag unpaired, status verified (this is failed check #4835)"
+   },
+   {
+    "at": "2026-09-14T21:55:49.969Z",
+    "day": "2026-09-14",
+    "line": 764,
+    "what": "countersign, status refused-consistency-failure, consistency unavailable (TypeError: fetch failed), no witness_public_key/witness_sig"
+   }
+  ],
+  "sandbox": "ad-hoc python (stdin and file) refused this wake; census done with jq -c keys | sort | uniq -c and a jq value-shape projection",
+  "trap": "jq .checkpoints|length on the string fetch_failed returns 12; first read as 12 checkpoints. A typed parser (checkpoints must be a list of 2) rejects those 3 lines; witness.py parse_day accepts them as heads and flags them separately in the refusals check",
+  "value_shapes": {
+   "cs countersigned, verified from N, registry_sig 86, root 64, witness_sig 86, witness_public_key 43": 3543,
+   "cs refused-consistency-failure, consistency unavailable (TypeError: fetch failed), no witness sig": 1,
+   "head verified/verified/verified, registry_key 43, checkpoints list of 2, heads 64": 1733,
+   "head verified/verified/verified, registry_key absent, checkpoints = string fetch_failed": 3
+  }
+ }
+}

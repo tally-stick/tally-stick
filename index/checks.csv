@@ -3735,3 +3735,55 @@ seq,ts,tool,target,pass,kind,negative_test
 6571,2026-09-17T13:11:53Z,attest,claim #6551,1,verify,0
 6572,2026-09-17T13:11:55Z,attest,claim #6552,1,verify,0
 6573,2026-09-17T13:11:57Z,attest,claim #6565,1,verify,0
+6585,2026-09-17T14:45:05Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+6586,2026-09-17T14:45:05Z,heads,attest.treasury.anchored-append-only,1,verify,0
+6587,2026-09-17T14:45:05Z,heads,attest.identity_events.verified,1,verify,0
+6588,2026-09-17T14:45:05Z,heads,attest.ledger.verified,1,verify,0
+6589,2026-09-17T14:45:05Z,heads,checkpoint.identity_events.signature,1,verify,0
+6590,2026-09-17T14:45:05Z,heads,checkpoint.ledger.signature,1,verify,0
+6591,2026-09-17T14:45:05Z,heads,registry-key.pinned,1,verify,0
+6592,2026-09-17T14:45:05Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+6593,2026-09-17T14:45:05Z,heads,checkpoint.ledger.monotonic,1,verify,0
+6594,2026-09-17T14:45:05Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+6595,2026-09-17T14:45:05Z,heads,attest.identity_events.monotonic,1,verify,0
+6596,2026-09-17T14:45:05Z,heads,attest.ledger.monotonic,1,verify,0
+6597,2026-09-17T14:45:05Z,heads,attest.ledger.same-id-same-head,1,verify,0
+6600,2026-09-17T14:45:07Z,consistency,consistency.identity_events.16477->16477.from-signature,1,verify,0
+6601,2026-09-17T14:45:07Z,consistency,consistency.identity_events.16477->16477.to-signature,1,verify,0
+6602,2026-09-17T14:45:07Z,consistency,consistency.identity_events.16477->16477.from-root-matches-ours,1,verify,0
+6603,2026-09-17T14:45:07Z,consistency,consistency.identity_events.16477->16477.to-root-matches-ours,1,verify,0
+6604,2026-09-17T14:45:07Z,consistency,consistency.identity_events.16477->16477.to-root-matches-live,1,verify,0
+6605,2026-09-17T14:45:07Z,consistency,consistency.identity_events.16477->16477.proof,1,verify,0
+6606,2026-09-17T14:45:08Z,countersign,countersign.identity_events,1,verify,0
+6607,2026-09-17T14:45:08Z,countersign,countersign.ledger,1,verify,0
+6608,2026-09-17T14:45:16Z,pages,pages.domains,1,verify,0
+6609,2026-09-17T14:45:19Z,witness,witness.2026-09-17.registry-signatures,1,verify,0
+6610,2026-09-17T14:45:19Z,witness,witness.2026-09-17.countersignatures,1,verify,0
+6611,2026-09-17T14:45:19Z,witness,witness.2026-09-17.witness-keys-in-directory,1,verify,0
+6612,2026-09-17T14:45:19Z,witness,witness.2026-09-17.refusals,1,verify,0
+6613,2026-09-17T14:45:19Z,witness,witness.2026-09-17.monotonic,1,verify,0
+6614,2026-09-17T14:45:19Z,witness,witness.2026-09-17.checkpoint-id,1,verify,0
+6615,2026-09-17T14:45:19Z,witness,witness.2026-09-17.latest-vs-live,1,verify,0
+6616,2026-09-17T14:45:19Z,witness,witness.2026-09-17.latest-head-attest,1,verify,0
+6617,2026-09-17T14:45:19Z,witness,witness.2026-09-17.cadence,1,verify,0
+6618,2026-09-17T14:45:19Z,witness,witness.2026-09-17.newest-line-age,1,verify,0
+6619,2026-09-17T14:45:19Z,witness,witness.2026-09-17.outage,1,verify,0
+6620,2026-09-17T14:45:20Z,events,events.24h,1,verify,0
+6623,2026-09-17T14:45:22Z,dossier,tally-stick.registry-signature,1,verify,0
+6624,2026-09-17T14:45:22Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+6625,2026-09-17T14:45:22Z,dossier,tally-stick.inclusion,1,verify,0
+6626,2026-09-17T14:45:22Z,dossier,tally-stick.leaf-index,1,verify,0
+6627,2026-09-17T14:45:22Z,dossier,tally-stick.attestation-hashes,1,verify,0
+6628,2026-09-17T14:45:22Z,dossier,tally-stick.keys,1,verify,0
+6629,2026-09-17T14:45:22Z,dossier,tally-stick.event-hashes,1,verify,0
+6630,2026-09-17T14:45:22Z,dossier,tally-stick.seal-signatures,1,verify,0
+6631,2026-09-17T14:45:22Z,dossier,tally-stick.seals-anchored,1,verify,0
+6632,2026-09-17T14:45:22Z,dossier,tally-stick.counts,1,verify,0
+6633,2026-09-17T14:45:22Z,shape,board.py pages: shape changes since last check,1,verify,0
+6634,2026-09-17T14:46:02Z,runs,runs.2026-09-17,1,verify,0
+6649,2026-09-17T14:56:08Z,pr-lint,fix/changes-since-resolved-before-validator,1,gate,0
+6650,2026-09-17T14:56:13Z,pr-build,fix/changes-since-resolved-before-validator,1,gate,0
+6651,2026-09-17T14:57:18Z,pr-lint,fix/changes-since-resolved-before-validator,1,gate,0
+6652,2026-09-17T14:57:19Z,pr-build,fix/changes-since-resolved-before-validator,1,gate,0
+6664,2026-09-17T15:00:27Z,attest,claim #6638,1,verify,0
+6665,2026-09-17T15:00:27Z,attest,claim #6661,1,verify,0

@@ -3531,3 +3531,59 @@ seq,ts,tool,target,pass,kind,negative_test
 6194,2026-09-17T05:59:17Z,attest,claim #6180,1,verify,0
 6195,2026-09-17T05:59:18Z,attest,claim #6181,1,verify,0
 6196,2026-09-17T05:59:20Z,attest,claim #6184,1,verify,0
+6213,2026-09-17T07:45:06Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+6214,2026-09-17T07:45:06Z,heads,attest.treasury.anchored-append-only,1,verify,0
+6215,2026-09-17T07:45:06Z,heads,attest.identity_events.verified,1,verify,0
+6216,2026-09-17T07:45:06Z,heads,attest.ledger.verified,1,verify,0
+6217,2026-09-17T07:45:06Z,heads,checkpoint.identity_events.signature,1,verify,0
+6218,2026-09-17T07:45:06Z,heads,checkpoint.ledger.signature,1,verify,0
+6219,2026-09-17T07:45:06Z,heads,registry-key.pinned,1,verify,0
+6220,2026-09-17T07:45:06Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+6221,2026-09-17T07:45:06Z,heads,checkpoint.ledger.monotonic,1,verify,0
+6222,2026-09-17T07:45:06Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+6223,2026-09-17T07:45:06Z,heads,attest.identity_events.monotonic,1,verify,0
+6224,2026-09-17T07:45:06Z,heads,attest.ledger.monotonic,1,verify,0
+6225,2026-09-17T07:45:06Z,heads,attest.ledger.same-id-same-head,1,verify,0
+6228,2026-09-17T07:45:08Z,consistency,consistency.identity_events.16353->16353.from-signature,1,verify,0
+6229,2026-09-17T07:45:08Z,consistency,consistency.identity_events.16353->16353.to-signature,1,verify,0
+6230,2026-09-17T07:45:08Z,consistency,consistency.identity_events.16353->16353.from-root-matches-ours,1,verify,0
+6231,2026-09-17T07:45:08Z,consistency,consistency.identity_events.16353->16353.to-root-matches-ours,1,verify,0
+6232,2026-09-17T07:45:08Z,consistency,consistency.identity_events.16353->16353.to-root-matches-live,1,verify,0
+6233,2026-09-17T07:45:08Z,consistency,consistency.identity_events.16353->16353.proof,1,verify,0
+6234,2026-09-17T07:45:09Z,countersign,countersign.identity_events,1,verify,0
+6235,2026-09-17T07:45:09Z,countersign,countersign.ledger,1,verify,0
+6236,2026-09-17T07:45:16Z,pages,pages.domains,1,verify,0
+6237,2026-09-17T07:45:20Z,witness,witness.2026-09-17.registry-signatures,1,verify,0
+6238,2026-09-17T07:45:20Z,witness,witness.2026-09-17.countersignatures,1,verify,0
+6239,2026-09-17T07:45:20Z,witness,witness.2026-09-17.witness-keys-in-directory,1,verify,0
+6240,2026-09-17T07:45:20Z,witness,witness.2026-09-17.refusals,1,verify,0
+6241,2026-09-17T07:45:20Z,witness,witness.2026-09-17.monotonic,1,verify,0
+6242,2026-09-17T07:45:20Z,witness,witness.2026-09-17.checkpoint-id,1,verify,0
+6243,2026-09-17T07:45:20Z,witness,witness.2026-09-17.latest-vs-live,1,verify,0
+6244,2026-09-17T07:45:20Z,witness,witness.2026-09-17.latest-head-attest,1,verify,0
+6245,2026-09-17T07:45:20Z,witness,witness.2026-09-17.cadence,1,verify,0
+6246,2026-09-17T07:45:20Z,witness,witness.2026-09-17.newest-line-age,1,verify,0
+6247,2026-09-17T07:45:20Z,witness,witness.2026-09-17.outage,1,verify,0
+6248,2026-09-17T07:45:22Z,events,events.24h,1,verify,0
+6251,2026-09-17T07:45:23Z,dossier,tally-stick.registry-signature,1,verify,0
+6252,2026-09-17T07:45:23Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+6253,2026-09-17T07:45:23Z,dossier,tally-stick.inclusion,1,verify,0
+6254,2026-09-17T07:45:23Z,dossier,tally-stick.leaf-index,1,verify,0
+6255,2026-09-17T07:45:23Z,dossier,tally-stick.attestation-hashes,1,verify,0
+6256,2026-09-17T07:45:23Z,dossier,tally-stick.keys,1,verify,0
+6257,2026-09-17T07:45:23Z,dossier,tally-stick.event-hashes,1,verify,0
+6258,2026-09-17T07:45:23Z,dossier,tally-stick.seal-signatures,1,verify,0
+6259,2026-09-17T07:45:23Z,dossier,tally-stick.seals-anchored,1,verify,0
+6260,2026-09-17T07:45:23Z,dossier,tally-stick.counts,1,verify,0
+6261,2026-09-17T07:45:23Z,shape,board.py pages: shape changes since last check,1,verify,0
+6262,2026-09-17T07:45:53Z,runs,runs.2026-09-17,1,verify,0
+6278,2026-09-17T07:56:12Z,pr-lint,fix/wake-check-on-inbox-read,1,gate,0
+6279,2026-09-17T07:56:20Z,pr-build,fix/wake-check-on-inbox-read,1,gate,0
+6284,2026-09-17T07:57:24Z,pr-lint,fix/wake-check-on-inbox-read,1,gate,0
+6285,2026-09-17T07:57:26Z,pr-build,fix/wake-check-on-inbox-read,1,gate,0
+6288,2026-09-17T07:58:38Z,pr-lint,fix/wake-check-on-inbox-read,1,gate,0
+6289,2026-09-17T07:58:40Z,pr-build,fix/wake-check-on-inbox-read,1,gate,0
+6294,2026-09-17T07:58:49Z,pr-lint,scratch/wake-check-mutant,1,gate,1
+6295,2026-09-17T07:58:50Z,pr-build,scratch/wake-check-mutant,1,gate,1
+6309,2026-09-17T08:03:34Z,attest,claim #6299,1,verify,0
+6310,2026-09-17T08:03:34Z,attest,claim #6301,1,verify,0

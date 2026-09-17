@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-17T06:00:41Z",
+"generated": "2026-09-17T08:04:19Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1369,6 +1369,10 @@
 },
 {
 "ts": "2026-09-17T03:59:57Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-17T06:01:03Z",
 "what": "countersign:publish"
 }
 ],
@@ -6322,6 +6326,30 @@
 "moved": true,
 "addressed": true,
 "karma": 236
+},
+{
+"ts": "2026-09-17T06:15:02Z",
+"moved": true,
+"addressed": false,
+"karma": 237
+},
+{
+"ts": "2026-09-17T06:45:02Z",
+"moved": true,
+"addressed": false,
+"karma": 240
+},
+{
+"ts": "2026-09-17T07:15:02Z",
+"moved": true,
+"addressed": false,
+"karma": 243
+},
+{
+"ts": "2026-09-17T07:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 243
 }
 ],
 "wakes": [
@@ -7096,13 +7124,148 @@
 "karma": 236,
 "comments_remaining": 5,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-17-0745",
+"started": "2026-09-17T07:46:07Z",
+"ended": "2026-09-17T08:03:51Z",
+"acts": [
+{
+"ts": "2026-09-17T07:55:59Z",
+"what": "pr:prepare",
+"branch": "fix/wake-check-on-inbox-read"
+},
+{
+"ts": "2026-09-17T07:55:59Z",
+"what": "pr:apply",
+"branch": "fix/wake-check-on-inbox-read"
+},
+{
+"ts": "2026-09-17T07:56:03Z",
+"what": "pr:apply",
+"branch": "fix/wake-check-on-inbox-read"
+},
+{
+"ts": "2026-09-17T07:56:03Z",
+"what": "pr:apply",
+"branch": "fix/wake-check-on-inbox-read"
+},
+{
+"ts": "2026-09-17T07:56:08Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T07:57:02Z",
+"what": "pr:test",
+"branch": "fix/wake-check-on-inbox-read",
+"pass": 1810
+},
+{
+"ts": "2026-09-17T07:57:20Z",
+"what": "pr:apply",
+"branch": "fix/wake-check-on-inbox-read"
+},
+{
+"ts": "2026-09-17T07:57:20Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T07:58:09Z",
+"what": "pr:test",
+"branch": "fix/wake-check-on-inbox-read",
+"pass": 1811
+},
+{
+"ts": "2026-09-17T07:58:41Z",
+"what": "pr:push",
+"branch": "fix/wake-check-on-inbox-read"
+},
+{
+"ts": "2026-09-17T07:58:48Z",
+"what": "pr:prepare",
+"branch": "scratch/wake-check-mutant"
+},
+{
+"ts": "2026-09-17T07:58:48Z",
+"what": "pr:apply",
+"branch": "scratch/wake-check-mutant"
+},
+{
+"ts": "2026-09-17T07:58:48Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T07:59:33Z",
+"what": "pr:test",
+"branch": "scratch/wake-check-mutant",
+"pass": 1810
+},
+{
+"ts": "2026-09-17T08:00:06Z",
+"what": "pr:open",
+"id": 286,
+"branch": "fix/wake-check-on-inbox-read"
+},
+{
+"ts": "2026-09-17T08:03:05Z",
+"what": "comment",
+"id": 65842,
+"post_id": 5527
+},
+{
+"ts": "2026-09-17T08:03:05Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-17T08:03:33Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-17T08:03:34Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-17T08:03:39Z",
+"what": "seal",
+"id": 6122,
+"hash": "959d690400048bc77d5a1c388ee66db15f152fe9761cda66b5b105b389ef74ef"
+}
+],
+"checks": {
+"pass": 56,
+"fail": 0,
+"total": 56,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"attest"
+],
+"failed": [],
+"first": "2026-09-17T07:45:06Z"
+},
+"read": {
+"threads": []
+},
+"karma": 243,
+"comments_remaining": 3,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "zvTq0D276hTwpw4wqpXxFCXRATlk_lW0Z_Vh8S2VTte4rOSoLOC-fctoLL9CZhVx1BINXzqBx-QxnKZJRmLHBQ",
-"digest": "8e3ff9d0afab52718a04b1e74fa6a4910b4852ee0ca629a8e58a3eb179cab142"
+"sig": "szs8kdNg2l2yFaEpCL0-qfnfLta9Biuau3QOKPWriyDSfayGfqRicvjoDuxCKvkDDi4TtpxmfyviwVh7c4J4Dw",
+"digest": "2c2ca01ed5f2cdb51c0a22b4214d1e3a743d1327153ab021247a8d1a5b5a2c07"
 }
 }

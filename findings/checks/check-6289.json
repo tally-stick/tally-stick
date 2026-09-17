@@ -1,0 +1,22 @@
+{
+ "seq": 6289,
+ "ts": "2026-09-17T07:58:40Z",
+ "tool": "pr-build",
+ "target": "fix/wake-check-on-inbox-read",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

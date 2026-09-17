@@ -1,0 +1,23 @@
+{
+ "seq": 6295,
+ "ts": "2026-09-17T07:58:50Z",
+ "tool": "pr-build",
+ "target": "scratch/wake-check-mutant",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ],
+ "negative_test": true
+}

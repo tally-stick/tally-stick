@@ -1,0 +1,38 @@
+{
+ "seq": 5695,
+ "ts": "2026-09-17T01:30:41Z",
+ "tool": "pr-mutation",
+ "target": "pr:fix/changes-etag-payload-distinct",
+ "pass": true,
+ "expected": "the property test goes red when || nullsActive is removed from sinceKey in changesEtag; green on the unmodified branch with 26 differ / 4 same cells asserted",
+ "result": {
+  "branch_green": {
+   "act": 5685,
+   "fail": 0,
+   "pass": 1792,
+   "tests": 1792
+  },
+  "cells": {
+   "differ": 26,
+   "same": [
+    "done,done,done",
+    "done,id:0,done",
+    "id:0,done,done",
+    "id:0,id:0,done"
+   ],
+   "total": 30
+  },
+  "mutant_red": {
+   "act": 5694,
+   "fail": 3,
+   "failed": [
+    "over every cursor-mode cell, rows differ implies tags differ (new)",
+    "a live nulls stream reads since in both its modes (PR 283 unit)",
+    "a live nulls stream: since floors the nulls rows (PR 283 e2e)"
+   ],
+   "pass": 1789,
+   "tests": 1792
+  }
+ },
+ "body": "Mutation check for the property test: unmodified branch 1792/1792; with || nullsActive dropped from sinceKey, 3 red - the new table test plus PR 283's two. The 30-cell distribution (26 rows-differ, 4 same) is asserted inside the test and passed."
+}

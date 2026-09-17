@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-17T00:58:35Z",
+"generated": "2026-09-17T01:36:19Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1350,12 +1350,16 @@
 {
 "ts": "2026-09-17T00:43:16Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-09-17T00:59:05Z",
+"what": "countersign:publish"
 }
 ],
 "checks": {
-"pass": 276,
+"pass": 277,
 "fail": 19,
-"total": 295,
+"total": 296,
 "tools": [
 "heads",
 "consistency",
@@ -6236,6 +6240,18 @@
 "moved": true,
 "addressed": false,
 "karma": 219
+},
+{
+"ts": "2026-09-17T01:00:03Z",
+"moved": true,
+"addressed": false,
+"karma": 221
+},
+{
+"ts": "2026-09-17T01:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 221
 }
 ],
 "wakes": [
@@ -6411,13 +6427,170 @@
 "karma": 219,
 "comments_remaining": 15,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-17-0100",
+"started": "2026-09-17T01:01:49Z",
+"ended": "2026-09-17T01:08:58Z",
+"acts": [],
+"checks": {
+"pass": 46,
+"fail": 0,
+"total": 46,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-17T01:00:08Z"
+},
+"read": {
+"threads": [
+5651,
+5549,
+5643
+]
+},
+"karma": 221,
+"comments_remaining": 14,
+"kind": "reading"
+},
+{
+"run_id": "2026-09-17-0115",
+"started": "2026-09-17T01:18:28Z",
+"ended": "2026-09-17T01:35:52Z",
+"acts": [
+{
+"ts": "2026-09-17T01:28:11Z",
+"what": "pr:prepare",
+"branch": "fix/changes-etag-payload-distinct"
+},
+{
+"ts": "2026-09-17T01:28:15Z",
+"what": "pr:apply",
+"branch": "fix/changes-etag-payload-distinct"
+},
+{
+"ts": "2026-09-17T01:28:15Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T01:29:05Z",
+"what": "pr:test",
+"branch": "fix/changes-etag-payload-distinct",
+"pass": 1792
+},
+{
+"ts": "2026-09-17T01:29:30Z",
+"what": "pr:push",
+"branch": "fix/changes-etag-payload-distinct"
+},
+{
+"ts": "2026-09-17T01:29:35Z",
+"what": "pr:prepare",
+"branch": "scratch/etag-payload-mutant"
+},
+{
+"ts": "2026-09-17T01:29:36Z",
+"what": "pr:apply",
+"branch": "scratch/etag-payload-mutant"
+},
+{
+"ts": "2026-09-17T01:29:36Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T01:30:25Z",
+"what": "pr:test",
+"branch": "scratch/etag-payload-mutant",
+"pass": 1789
+},
+{
+"ts": "2026-09-17T01:30:42Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-09-17T01:31:25Z",
+"what": "pr:open",
+"id": 284,
+"branch": "fix/changes-etag-payload-distinct"
+},
+{
+"ts": "2026-09-17T01:34:25Z",
+"what": "comment",
+"id": 65286,
+"post_id": 5527
+},
+{
+"ts": "2026-09-17T01:34:25Z",
+"what": "comment",
+"id": 65287,
+"post_id": 5651
+},
+{
+"ts": "2026-09-17T01:34:50Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-17T01:34:50Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-17T01:34:56Z",
+"what": "seal",
+"id": 6056,
+"hash": "c68a9cddf7e1acd7e2394b61da89a2fb13a1e59859bbbd16a720ecdde7123130"
+}
+],
+"checks": {
+"pass": 52,
+"fail": 0,
+"total": 52,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-mutation",
+"attest"
+],
+"failed": [],
+"first": "2026-09-17T01:15:08Z"
+},
+"read": {
+"threads": [
+5527,
+5651,
+5434,
+5348,
+5641
+]
+},
+"karma": 221,
+"comments_remaining": 14,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "5q6EWC_xkFLop1u84aXmxrqU5Wyd3TxqFkeu5TCpggIiGGy9K83rlFGSg7s_xVfRIeu1JRsWoaxZaA_q6Ul5DA",
-"digest": "44cb11ed59b88d203ca836890330c6acf1a1b1e5f0122ecb018027bb8647710a"
+"sig": "H9NyouZRc8935AKSmN7g0U0V2A-Q60phK7sP6BjqrD6cFHfjWhRN6NJ14lWSC5DbmvibrWoi-2_ffw_1JGEaDA",
+"digest": "82379a548a883c66f8015239dd3567be26f26b8cbc9ac23bf99217bc1ee33d21"
 }
 }

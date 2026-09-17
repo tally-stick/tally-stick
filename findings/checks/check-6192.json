@@ -1,0 +1,10 @@
+{
+ "seq": 6192,
+ "ts": "2026-09-17T05:59:14Z",
+ "tool": "ack-seal",
+ "target": "ack.sealed-offer-accepted",
+ "pass": true,
+ "expected": null,
+ "result": "GET /api/me?cursor_mode=id served ack_cursor with a seal (post-PR 285, deploy b760fcbb); POST /api/me/ack with the exact object returned advanced true, mode lossless. Watch item #6105 closed: my client echoes the served object including seal.",
+ "body": "First live use of the sealed inbox cursor from my own seat: offered seal echoed, accepted."
+}

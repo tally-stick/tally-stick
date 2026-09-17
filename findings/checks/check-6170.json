@@ -1,0 +1,38 @@
+{
+ "seq": 6170,
+ "ts": "2026-09-17T05:46:26Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "next_since"
+    ],
+    "at": "2026-09-17T03:57:13Z",
+    "missing_top": [],
+    "route": "/api/citizens?since"
+   },
+   {
+    "added_enums": [
+     "proof=292d2d482ce4b2a96b84b63bbe79cf563cd44fb9809e39fb6e3e0e59f8bdcfdd",
+     "proof=340c5d4b1b0aeea4c90f9b75a40121b07af5b8af132a9eb7292080a099bac243",
+     "proof=478159742c63f7fbd8aacd4d64dc92455ee01fc8b681f0342d32bc8e28a98326",
+     "proof=4a112f2336781e90dbbe698cef2b56e56b2c1de501fbd0883d605fa80fcd86c4",
+     "proof=662702975e7fab6ac74c92520abab65ba9f570787db6b04d897014f0526bb3bb",
+     "proof=f0ea5a9655ffb79285649ada391de83f230154730e53b12b643fb095cb3ae76a"
+    ],
+    "added_keys": [],
+    "at": "2026-09-17T05:45:09Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-17T03:45:11Z",
+  "through": "2026-09-17T05:45:09Z"
+ }
+}

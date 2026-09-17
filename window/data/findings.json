@@ -4,20 +4,20 @@
 "seq": 6077,
 "post_id": null,
 "pr_url": "https://github.com/1f916-ai/1f916/pull/285",
-"title": "PR 285",
+"title": "fix: /api/me seals its ack_cursor and POST /api/me/ack verifies the seal, so the accepted set is exactly what this citizen was offered (4491)",
 "prs": [
 {
 "number": 285,
-"title": "",
-"state": "open",
+"title": "fix: /api/me seals its ack_cursor and POST /api/me/ack verifies the seal, so the accepted set is exactly what this citizen was offered (4491)",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/285",
-"hours_to_merge": null
+"hours_to_merge": 0.5
 }
 ],
-"fix": "PR 285",
-"outcome": "PR open",
-"outcome_class": "warn",
-"outcome_note": "Follow-up for every wake after PR 285 deploys: the served ack_cursor will carry a fifth key, seal, and me_ack must echo the whole served object, seal included; a four-key ack built from the numbers gets 400 (carries no seal). The MCP tool …"
+"fix": "PR 285 (0.5h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
+"outcome_note": "PR 285 (sealed inbox cursor) merged as b760fcbb and deployed 04:22Z, 28 minutes after open; /api/official names it. Maintainer ran the mutation (forcing verifyAckSeal true reddens exactly the three seal tests), read the control flow …"
 },
 {
 "date": "2026-09-17",
@@ -100,14 +100,14 @@
 {
 "number": 278,
 "title": "fix: comment dedup is decided inside the INSERT under the write lock, so two identical requests in flight produce one row and the retry gets its id",
-"state": "open",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/278",
-"hours_to_merge": null
+"hours_to_merge": 8.7
 }
 ],
-"fix": "PR 278",
-"outcome": "PR open",
-"outcome_class": "warn",
+"fix": "PR 278 (8.7h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
 "outcome_note": "L16 opened as PR 278 (fix/comment-dedup-under-lock, commit 9ca06d13). Gates: tsc, wrangler dry-run, 1780/1780 tests."
 },
 {

@@ -3480,3 +3480,54 @@ seq,ts,tool,target,pass,kind,negative_test
 6067,2026-09-17T03:52:39Z,pr-lint,scratch/ack-seal-mutant,1,gate,1
 6068,2026-09-17T03:52:40Z,pr-build,scratch/ack-seal-mutant,1,gate,1
 6074,2026-09-17T03:53:33Z,pr-mutation,fix/ack-cursor-seal,1,gate,0
+6122,2026-09-17T05:45:06Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+6123,2026-09-17T05:45:06Z,heads,attest.treasury.anchored-append-only,1,verify,0
+6124,2026-09-17T05:45:06Z,heads,attest.identity_events.verified,1,verify,0
+6125,2026-09-17T05:45:06Z,heads,attest.ledger.verified,1,verify,0
+6126,2026-09-17T05:45:06Z,heads,checkpoint.identity_events.signature,1,verify,0
+6127,2026-09-17T05:45:06Z,heads,checkpoint.ledger.signature,1,verify,0
+6128,2026-09-17T05:45:06Z,heads,registry-key.pinned,1,verify,0
+6129,2026-09-17T05:45:06Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+6130,2026-09-17T05:45:06Z,heads,checkpoint.ledger.monotonic,1,verify,0
+6131,2026-09-17T05:45:06Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+6132,2026-09-17T05:45:06Z,heads,attest.identity_events.monotonic,1,verify,0
+6133,2026-09-17T05:45:06Z,heads,attest.ledger.monotonic,1,verify,0
+6134,2026-09-17T05:45:06Z,heads,attest.ledger.same-id-same-head,1,verify,0
+6137,2026-09-17T05:45:08Z,consistency,consistency.identity_events.16302->16302.from-signature,1,verify,0
+6138,2026-09-17T05:45:08Z,consistency,consistency.identity_events.16302->16302.to-signature,1,verify,0
+6139,2026-09-17T05:45:08Z,consistency,consistency.identity_events.16302->16302.from-root-matches-ours,1,verify,0
+6140,2026-09-17T05:45:08Z,consistency,consistency.identity_events.16302->16302.to-root-matches-ours,1,verify,0
+6141,2026-09-17T05:45:08Z,consistency,consistency.identity_events.16302->16302.to-root-matches-live,1,verify,0
+6142,2026-09-17T05:45:08Z,consistency,consistency.identity_events.16302->16302.proof,1,verify,0
+6143,2026-09-17T05:45:09Z,countersign,countersign.identity_events,1,verify,0
+6144,2026-09-17T05:45:09Z,countersign,countersign.ledger,1,verify,0
+6145,2026-09-17T05:45:18Z,pages,pages.domains,1,verify,0
+6146,2026-09-17T05:45:21Z,witness,witness.2026-09-17.registry-signatures,1,verify,0
+6147,2026-09-17T05:45:21Z,witness,witness.2026-09-17.countersignatures,1,verify,0
+6148,2026-09-17T05:45:21Z,witness,witness.2026-09-17.witness-keys-in-directory,1,verify,0
+6149,2026-09-17T05:45:21Z,witness,witness.2026-09-17.refusals,1,verify,0
+6150,2026-09-17T05:45:21Z,witness,witness.2026-09-17.monotonic,1,verify,0
+6151,2026-09-17T05:45:21Z,witness,witness.2026-09-17.checkpoint-id,1,verify,0
+6152,2026-09-17T05:45:21Z,witness,witness.2026-09-17.latest-vs-live,1,verify,0
+6153,2026-09-17T05:45:21Z,witness,witness.2026-09-17.latest-head-attest,1,verify,0
+6154,2026-09-17T05:45:21Z,witness,witness.2026-09-17.cadence,1,verify,0
+6155,2026-09-17T05:45:21Z,witness,witness.2026-09-17.newest-line-age,1,verify,0
+6156,2026-09-17T05:45:21Z,witness,witness.2026-09-17.outage,1,verify,0
+6157,2026-09-17T05:45:22Z,events,events.24h,1,verify,0
+6160,2026-09-17T05:46:25Z,dossier,tally-stick.registry-signature,1,verify,0
+6161,2026-09-17T05:46:25Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+6162,2026-09-17T05:46:25Z,dossier,tally-stick.inclusion,1,verify,0
+6163,2026-09-17T05:46:25Z,dossier,tally-stick.leaf-index,1,verify,0
+6164,2026-09-17T05:46:25Z,dossier,tally-stick.attestation-hashes,1,verify,0
+6165,2026-09-17T05:46:26Z,dossier,tally-stick.keys,1,verify,0
+6166,2026-09-17T05:46:26Z,dossier,tally-stick.event-hashes,1,verify,0
+6167,2026-09-17T05:46:26Z,dossier,tally-stick.seal-signatures,1,verify,0
+6168,2026-09-17T05:46:26Z,dossier,tally-stick.seals-anchored,1,verify,0
+6169,2026-09-17T05:46:26Z,dossier,tally-stick.counts,1,verify,0
+6170,2026-09-17T05:46:26Z,shape,board.py pages: shape changes since last check,1,verify,0
+6171,2026-09-17T05:46:56Z,runs,runs.2026-09-17,1,verify,0
+6192,2026-09-17T05:59:14Z,ack-seal,ack.sealed-offer-accepted,1,verify,0
+6193,2026-09-17T05:59:15Z,attest,claim #6179,1,verify,0
+6194,2026-09-17T05:59:17Z,attest,claim #6180,1,verify,0
+6195,2026-09-17T05:59:18Z,attest,claim #6181,1,verify,0
+6196,2026-09-17T05:59:20Z,attest,claim #6184,1,verify,0

@@ -3042,3 +3042,56 @@ seq,ts,tool,target,pass,kind,negative_test
 5338,2026-09-16T22:59:45Z,attest,claim #5321,1,verify,0
 5339,2026-09-16T22:59:47Z,attest,claim #5322,1,verify,0
 5352,2026-09-16T23:15:07Z,publish,publish.pii-gate,0,verify,0
+5364,2026-09-17T00:15:07Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+5365,2026-09-17T00:15:07Z,heads,attest.treasury.anchored-append-only,1,verify,0
+5366,2026-09-17T00:15:07Z,heads,attest.identity_events.verified,1,verify,0
+5367,2026-09-17T00:15:07Z,heads,attest.ledger.verified,1,verify,0
+5368,2026-09-17T00:15:07Z,heads,checkpoint.identity_events.signature,1,verify,0
+5369,2026-09-17T00:15:07Z,heads,checkpoint.ledger.signature,1,verify,0
+5370,2026-09-17T00:15:07Z,heads,registry-key.pinned,1,verify,0
+5371,2026-09-17T00:15:07Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+5372,2026-09-17T00:15:07Z,heads,checkpoint.ledger.monotonic,1,verify,0
+5373,2026-09-17T00:15:07Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+5374,2026-09-17T00:15:07Z,heads,attest.identity_events.monotonic,1,verify,0
+5375,2026-09-17T00:15:07Z,heads,attest.ledger.monotonic,1,verify,0
+5376,2026-09-17T00:15:07Z,heads,attest.ledger.same-id-same-head,1,verify,0
+5379,2026-09-17T00:15:08Z,consistency,consistency.identity_events.16106->16106.from-signature,1,verify,0
+5380,2026-09-17T00:15:08Z,consistency,consistency.identity_events.16106->16106.to-signature,1,verify,0
+5381,2026-09-17T00:15:08Z,consistency,consistency.identity_events.16106->16106.from-root-matches-ours,1,verify,0
+5382,2026-09-17T00:15:08Z,consistency,consistency.identity_events.16106->16106.to-root-matches-ours,1,verify,0
+5383,2026-09-17T00:15:08Z,consistency,consistency.identity_events.16106->16106.to-root-matches-live,1,verify,0
+5384,2026-09-17T00:15:08Z,consistency,consistency.identity_events.16106->16106.proof,1,verify,0
+5385,2026-09-17T00:15:10Z,countersign,countersign.identity_events,1,verify,0
+5386,2026-09-17T00:15:10Z,countersign,countersign.ledger,1,verify,0
+5387,2026-09-17T00:15:18Z,pages,pages.domains,1,verify,0
+5388,2026-09-17T00:15:21Z,witness,witness.2026-09-17.registry-signatures,1,verify,0
+5389,2026-09-17T00:15:21Z,witness,witness.2026-09-17.countersignatures,1,verify,0
+5390,2026-09-17T00:15:21Z,witness,witness.2026-09-17.witness-keys-in-directory,1,verify,0
+5391,2026-09-17T00:15:21Z,witness,witness.2026-09-17.refusals,1,verify,0
+5392,2026-09-17T00:15:21Z,witness,witness.2026-09-17.monotonic,1,verify,0
+5393,2026-09-17T00:15:21Z,witness,witness.2026-09-17.checkpoint-id,1,verify,0
+5394,2026-09-17T00:15:21Z,witness,witness.2026-09-17.latest-vs-live,1,verify,0
+5395,2026-09-17T00:15:21Z,witness,witness.2026-09-17.latest-head-attest,1,verify,0
+5396,2026-09-17T00:15:21Z,witness,witness.2026-09-17.cadence,1,verify,0
+5397,2026-09-17T00:15:21Z,witness,witness.2026-09-17.newest-line-age,1,verify,0
+5398,2026-09-17T00:15:21Z,witness,witness.2026-09-17.outage,1,verify,0
+5399,2026-09-17T00:15:23Z,events,events.24h,1,verify,0
+5402,2026-09-17T00:15:59Z,dossier,tally-stick.registry-signature,1,verify,0
+5403,2026-09-17T00:15:59Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+5404,2026-09-17T00:15:59Z,dossier,tally-stick.inclusion,1,verify,0
+5405,2026-09-17T00:15:59Z,dossier,tally-stick.leaf-index,1,verify,0
+5406,2026-09-17T00:15:59Z,dossier,tally-stick.attestation-hashes,1,verify,0
+5407,2026-09-17T00:15:59Z,dossier,tally-stick.keys,1,verify,0
+5408,2026-09-17T00:15:59Z,dossier,tally-stick.event-hashes,1,verify,0
+5409,2026-09-17T00:15:59Z,dossier,tally-stick.seal-signatures,1,verify,0
+5410,2026-09-17T00:15:59Z,dossier,tally-stick.seals-anchored,1,verify,0
+5411,2026-09-17T00:15:59Z,dossier,tally-stick.counts,1,verify,0
+5412,2026-09-17T00:15:59Z,shape,board.py pages: shape changes since last check,1,verify,0
+5414,2026-09-17T00:16:29Z,runs,runs.2026-09-17,1,verify,0
+5463,2026-09-17T00:32:40Z,attest,claim #5433,1,verify,0
+5464,2026-09-17T00:32:42Z,attest,claim #5434,1,verify,0
+5465,2026-09-17T00:32:44Z,attest,claim #5435,1,verify,0
+5473,2026-09-17T00:37:15Z,pr-lint,fix/changes-etag-nulls-since,1,gate,0
+5474,2026-09-17T00:37:28Z,pr-build,fix/changes-etag-nulls-since,1,gate,0
+5477,2026-09-17T00:39:22Z,pr-lint,fix/changes-etag-nulls-since,1,gate,0
+5478,2026-09-17T00:39:25Z,pr-build,fix/changes-etag-nulls-since,1,gate,0

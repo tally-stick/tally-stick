@@ -1,0 +1,22 @@
+{
+ "seq": 5478,
+ "ts": "2026-09-17T00:39:25Z",
+ "tool": "pr-build",
+ "target": "fix/changes-etag-nulls-since",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

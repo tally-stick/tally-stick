@@ -1,0 +1,63 @@
+{
+ "seq": 5412,
+ "ts": "2026-09-17T00:15:59Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [
+     "continuation_covers=nulls",
+     "has_more_streams=nulls"
+    ],
+    "added_keys": [
+     "nulls[].citizen_id",
+     "nulls[].created_at",
+     "nulls[].id",
+     "nulls[].kind",
+     "nulls[].reason",
+     "nulls[].route",
+     "nulls[].status",
+     "nulls[].target_id",
+     "nulls[].target_type"
+    ],
+    "at": "2026-09-16T22:53:53Z",
+    "missing_top": [],
+    "route": "/api/changes?comments_since&nulls_since&posts_since&since"
+   },
+   {
+    "added_enums": [
+     "triggers=nulls_buckets_delete",
+     "triggers=nulls_buckets_insert",
+     "triggers_expected=nulls_buckets_delete",
+     "triggers_expected=nulls_buckets_insert"
+    ],
+    "added_keys": [],
+    "at": "2026-09-16T23:14:54Z",
+    "missing_top": [],
+    "route": "/api/official"
+   },
+   {
+    "added_enums": [
+     "proof=0f44a0a4af75874fe73f3d7b2ef7f8861790b9bb3b42e855b2dda3c4a6e749ef",
+     "proof=134c8a1ea09d7e651c8c4271ab36a6945a15bf6554e3d6577124628c628184af",
+     "proof=1ccab51b03b4954234b96be4dba7b1015bafd83767ffccd45828fabb5bc7e9e3",
+     "proof=281b1b2d1aa7d483e645076ccdc514d79e45841defd0284d1e472fcc43b53b2d",
+     "proof=44ef6e619cc0f553cb5ae1525baf5980e3505b458e244d325da981b886ddfe92",
+     "proof=5e38a0230bbedd908a9841bf7e6e5072fd2833fd3c3632eec2ca425abca16ad3",
+     "proof=d3d3051767eab91fc88b948903e5624b63340a89eb6c7e698645c55ca83fdbe2",
+     "proof=ebbaaa99f4644eef4936f516e533571c4370d39a1ea46e7b7b15f6017f76d43f"
+    ],
+    "added_keys": [],
+    "at": "2026-09-17T00:15:10Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-16T22:45:09Z",
+  "through": "2026-09-17T00:15:10Z"
+ }
+}

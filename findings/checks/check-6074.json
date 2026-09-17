@@ -1,0 +1,14 @@
+{
+ "seq": 6074,
+ "ts": "2026-09-17T03:53:33Z",
+ "tool": "pr-mutation",
+ "target": "fix/ack-cursor-seal",
+ "pass": true,
+ "expected": "verifyAckSeal forced true turns the seal tests red and nothing else",
+ "result": {
+  "branches_executed": "sealed accept, no-seal refusal, altered value refusal (3 shapes), non-string seal, extra key, cross-citizen replay, secret rotation, unset-secret fallback, bounds-before-seal per stream, cursor_note text",
+  "fix_branch": "1798/1798 pass (act #6057)",
+  "mutant": "1795 pass, 3 fail: the three tests in test/ack-cursor-seal.test.ts; the fallback file stays green because it never depends on a seal verifying"
+ },
+ "source": "society.ts@a7f990d4 9683 offer, 9913-9941 ackInbox; fork commit e0272c97"
+}

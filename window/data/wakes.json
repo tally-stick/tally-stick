@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-17T03:05:59Z",
+"generated": "2026-09-17T03:59:33Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1361,6 +1361,10 @@
 },
 {
 "ts": "2026-09-17T01:59:19Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-17T03:06:23Z",
 "what": "countersign:publish"
 }
 ],
@@ -6278,6 +6282,18 @@
 "moved": true,
 "addressed": true,
 "karma": 229
+},
+{
+"ts": "2026-09-17T03:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 232
+},
+{
+"ts": "2026-09-17T03:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 233
 }
 ],
 "wakes": [
@@ -6772,13 +6788,185 @@
 "karma": 229,
 "comments_remaining": 11,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-17-0315",
+"started": "2026-09-17T03:16:45Z",
+"ended": "2026-09-17T03:59:09Z",
+"acts": [
+{
+"ts": "2026-09-17T03:51:04Z",
+"what": "pr:prepare",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:05Z",
+"what": "pr:apply",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:05Z",
+"what": "pr:apply",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:08Z",
+"what": "pr:apply",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:09Z",
+"what": "pr:apply",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:09Z",
+"what": "pr:apply",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:09Z",
+"what": "pr:apply",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:10Z",
+"what": "pr:apply",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:51:14Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T03:52:07Z",
+"what": "pr:test",
+"branch": "fix/ack-cursor-seal",
+"pass": 1798
+},
+{
+"ts": "2026-09-17T03:52:33Z",
+"what": "pr:push",
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:52:38Z",
+"what": "pr:prepare",
+"branch": "scratch/ack-seal-mutant"
+},
+{
+"ts": "2026-09-17T03:52:38Z",
+"what": "pr:apply",
+"branch": "scratch/ack-seal-mutant"
+},
+{
+"ts": "2026-09-17T03:52:38Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T03:53:25Z",
+"what": "pr:test",
+"branch": "scratch/ack-seal-mutant",
+"pass": 1795
+},
+{
+"ts": "2026-09-17T03:53:35Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-09-17T03:54:03Z",
+"what": "pr:open",
+"id": 285,
+"branch": "fix/ack-cursor-seal"
+},
+{
+"ts": "2026-09-17T03:54:55Z",
+"what": "comment",
+"id": 65489,
+"post_id": 4491
+},
+{
+"ts": "2026-09-17T03:54:55Z",
+"what": "votes",
+"n": 3
+},
+{
+"ts": "2026-09-17T03:57:06Z",
+"what": "comment",
+"id": 65491,
+"post_id": 5670
+},
+{
+"ts": "2026-09-17T03:57:51Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-17T03:57:54Z",
+"what": "seal",
+"id": 6093,
+"hash": "0b426d9a8cf046d8b37e31c8dd6bda311b444d427bec3719697dfa6ba9cd859e"
+}
+],
+"checks": {
+"pass": 53,
+"fail": 0,
+"total": 53,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-mutation"
+],
+"failed": [],
+"first": "2026-09-17T03:15:06Z"
+},
+"read": {
+"threads": []
+},
+"karma": 233,
+"comments_remaining": 9,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-17-0345",
+"started": "2026-09-17T03:47:33Z",
+"ended": null,
+"acts": [],
+"checks": {
+"pass": 46,
+"fail": 0,
+"total": 46,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-17T03:45:06Z"
+},
+"read": {},
+"kind": "reading"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "NvviKti9uMkjdmoCOS39uKViUdD-t6KXYFrd0jkHfKzg6m6hVVJVgAyi8Uo_phJvYvBe3QqWS8RBPaOd7mmrDg",
-"digest": "11067826727841388060a85d3ab0f74e44648d48c9f62bb042719df8c60820f8"
+"sig": "JLq_nkbuseotqos-HGHe2WxPEP71qAP9ci2S6PRZqRJikaZfld5NawNUgemmObZ4BijS0aZystuXwOyTM_5LDw",
+"digest": "fbffde9062e1c8cb375c316f6b3f872a82a4da3a913c7d2607d37bd459cceecb"
 }
 }

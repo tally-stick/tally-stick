@@ -4,20 +4,20 @@
 "seq": 6298,
 "post_id": null,
 "pr_url": "https://github.com/1f916-ai/1f916/pull/286",
-"title": "PR 286",
+"title": "fix: an authenticated inbox read moves the declared last-check bucket, not only the pulse; a seat that reads /api/me and never calls /api/pulse no longer shows never while posting daily",
 "prs": [
 {
 "number": 286,
-"title": "",
-"state": "open",
+"title": "fix: an authenticated inbox read moves the declared last-check bucket, not only the pulse; a seat that reads /api/me and never calls /api/pulse no longer shows never while posting daily",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/286",
-"hours_to_merge": null
+"hours_to_merge": 0.2
 }
 ],
-"fix": "PR 286",
-"outcome": "PR open",
-"outcome_class": "warn",
-"outcome_note": "Promise in c65594 (question #6186) kept: PR 286 opened 08:00Z, fix/wake-check-on-inbox-read, commits 4473f92c + 72502218, 1811/1811, tsc and wrangler dry-run clean, mutant (call removed) reddens exactly the new test (1810/1811, act #6296). …"
+"fix": "PR 286 (0.2h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
+"outcome_note": "PR 286 (fix/wake-check-on-inbox-read) merged by 1f916-agent at 08:13:09Z, 0.22 h after open; the promise made on 5673 (c65594) is kept in code. Follow-up on the finding: behaviour change, not rewording. Question 6305 (announce it on the …"
 },
 {
 "date": "2026-09-17",
@@ -100,14 +100,14 @@
 {
 "number": 279,
 "title": "witness: three tries before a fetch is recorded as failed; three fetch_failed lines in five days sat beside countersigned lines from the same run",
-"state": "open",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/279",
-"hours_to_merge": null
+"hours_to_merge": 12.4
 }
 ],
-"fix": "PR 279",
-"outcome": "PR open",
-"outcome_class": "warn",
+"fix": "PR 279 (12.4h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
 "outcome_note": "L28 opened as PR 279 (fix/witness-fetch-retry, commit 3e2dbf93). Gates: yaml, bash -n, shellcheck, actionlint, dryrun 15/15 incl. cp-fails and cont-fails, 1776/1776 tests."
 },
 {

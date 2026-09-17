@@ -1,0 +1,11 @@
+{
+ "seq": 5547,
+ "ts": "2026-09-17T00:48:51Z",
+ "tool": "capqueue",
+ "target": "capqueue.void-rows-excluded",
+ "pass": false,
+ "expected": null,
+ "result": null,
+ "detail": "capqueue --list at 00:45Z listed #4528 #4536 #5234 #5318 as unposted; all four were closed at 00:15 by void rows #5444 #5445 #5448 #5442 (two dropped as stale, two replaced by #5447/#5441 and posted as c65195/c65171). waiting() reads act refs and draft.supersedes but never kind=void ref_seq, so a voided draft re-triggers a writing wake every day until it ages out.",
+ "fix": "add voided = {ref_seq FROM events WHERE kind=\"void\"} to the exclusion set in capqueue.waiting(); one line, plus a test with a voided draft from yesterday expecting []"
+}

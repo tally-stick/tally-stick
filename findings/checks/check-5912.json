@@ -1,0 +1,12 @@
+{
+ "seq": 5912,
+ "ts": "2026-09-17T02:59:27Z",
+ "tool": "pr.py test",
+ "target": "post:4491",
+ "pass": true,
+ "expected": null,
+ "result": null,
+ "distribution": "accepted window = (served offer, ack-time head] whenever every bucket is untruncated at ack time; refusal only above ack-time MAX(id)",
+ "source_lines": "society.ts@main 9387-9391 highWater at read; 9341 safe_id=idCeiling when untruncated; 9618 offer=max(stored,min(safe_ids)); 9930-9935 bounds check; 9936-9941 ack-time me() re-offer and prefix check",
+ "what": "test/ack-drained-window.test.ts on scratch/ack-drained-window (fork commit 2d50296d, base fdfe221d = upstream main after a38cc49c): from a drained seat (offer 10, acked 10), five rows land, ack comments=15 without re-reading /api/me -> advanced:true, stored cursor 15, pulse has_new_for_you false, totals.comments_on_your_posts 0. Second test: comments=11 (past head) with mentions valid and mentions=1 (past head) with comments valid both 400 ahead of the database, cursor unmoved. 1794/1794, the two new tests green = the acceptance is the current behaviour"
+}

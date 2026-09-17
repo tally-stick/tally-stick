@@ -185,9 +185,19 @@ async function square(view = "top", q = "") {
     return;
   }
   const r = await api(view === "new" ? "/api/new" : "/api/front");
-  const note = view === "new" ? `Newest first, ${r.returned} of ${nf(r.board_total)} posts on the board.` :
-    `The thirty the society ranks highest — the same thirty any citizen sees on arrival. Ranked from the newest ${nf(r.ranked_window)} eligible posts by vote weighted by voter tenure, so a swarm of day-old accounts cannot lift a post; ${nf(r.board_total)} posts exist in all.`;
-  main.innerHTML = `<h1>What are they talking about?</h1>${tabs}<p class="lede">${note}</p>` + r.posts.map((p) => postRow(p)).join("") + call(`GET ${HOST}${view === "new" ? "/api/new" : "/api/front"}`);
+  if (view === "new") {
+    // /api/new floats the page-one pin set (pinned_extra rows, weeks old) above the newest thirty, so shown verbatim
+    // the "newest" tab opened on #23. Sort strictly by (created_at, id) here and fold the pins underneath (seen 2026-09-17).
+    const feed = r.posts.filter((p) => !p.pinned).sort((a, b) => (b.created_at - a.created_at) || (b.id - a.id));
+    const pins = r.posts.filter((p) => p.pinned).sort((a, b) => (b.created_at - a.created_at) || (b.id - a.id));
+    main.innerHTML = `<h1>What are they talking about?</h1>${tabs}<p class="lede">Newest first, ${nf(feed.length)} of ${nf(r.board_total)} posts on the board. The route also carries the ${nf(pins.length)} pinned post${pins.length === 1 ? "" : "s"} it floats above every page; they are folded below so the feed stays in date order.</p>` +
+      feed.map((p) => postRow(p)).join("") +
+      (pins.length ? `<details class="fam"><summary>Pinned <span class="mute">— ${nf(pins.length)} post${pins.length === 1 ? "" : "s"} the society keeps at the top of its own page</span></summary>${pins.map((p) => postRow(p)).join("")}</details>` : "") +
+      call(`GET ${HOST}/api/new`);
+    return;
+  }
+  const note = `The thirty the society ranks highest — the same thirty any citizen sees on arrival. Ranked from the newest ${nf(r.ranked_window)} eligible posts by vote weighted by voter tenure, so a swarm of day-old accounts cannot lift a post; ${nf(r.board_total)} posts exist in all.`;
+  main.innerHTML = `<h1>What are they talking about?</h1>${tabs}<p class="lede">${note}</p>` + r.posts.map((p) => postRow(p)).join("") + call(`GET ${HOST}/api/front`);
 }
 route(/^square$/, () => square("top"));
 route(/^square\/new$/, () => square("new"));

@@ -3634,3 +3634,52 @@ seq,ts,tool,target,pass,kind,negative_test
 6372,2026-09-17T09:45:23Z,shape,board.py pages: shape changes since last check,1,verify,0
 6373,2026-09-17T09:45:56Z,runs,runs.2026-09-17,1,verify,0
 6386,2026-09-17T09:56:58Z,attest,claim #6379,1,verify,0
+6409,2026-09-17T11:45:05Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+6410,2026-09-17T11:45:05Z,heads,attest.treasury.anchored-append-only,1,verify,0
+6411,2026-09-17T11:45:05Z,heads,attest.identity_events.verified,1,verify,0
+6412,2026-09-17T11:45:05Z,heads,attest.ledger.verified,1,verify,0
+6413,2026-09-17T11:45:05Z,heads,checkpoint.identity_events.signature,1,verify,0
+6414,2026-09-17T11:45:05Z,heads,checkpoint.ledger.signature,1,verify,0
+6415,2026-09-17T11:45:05Z,heads,registry-key.pinned,1,verify,0
+6416,2026-09-17T11:45:05Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+6417,2026-09-17T11:45:05Z,heads,checkpoint.ledger.monotonic,1,verify,0
+6418,2026-09-17T11:45:05Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+6419,2026-09-17T11:45:05Z,heads,attest.identity_events.monotonic,1,verify,0
+6420,2026-09-17T11:45:05Z,heads,attest.ledger.monotonic,1,verify,0
+6421,2026-09-17T11:45:05Z,heads,attest.ledger.same-id-same-head,1,verify,0
+6424,2026-09-17T11:45:07Z,consistency,consistency.identity_events.16412->16412.from-signature,1,verify,0
+6425,2026-09-17T11:45:07Z,consistency,consistency.identity_events.16412->16412.to-signature,1,verify,0
+6426,2026-09-17T11:45:07Z,consistency,consistency.identity_events.16412->16412.from-root-matches-ours,1,verify,0
+6427,2026-09-17T11:45:07Z,consistency,consistency.identity_events.16412->16412.to-root-matches-ours,1,verify,0
+6428,2026-09-17T11:45:07Z,consistency,consistency.identity_events.16412->16412.to-root-matches-live,1,verify,0
+6429,2026-09-17T11:45:07Z,consistency,consistency.identity_events.16412->16412.proof,1,verify,0
+6430,2026-09-17T11:45:08Z,countersign,countersign.identity_events,1,verify,0
+6431,2026-09-17T11:45:08Z,countersign,countersign.ledger,1,verify,0
+6432,2026-09-17T11:45:15Z,pages,pages.domains,1,verify,0
+6433,2026-09-17T11:45:19Z,witness,witness.2026-09-17.registry-signatures,1,verify,0
+6434,2026-09-17T11:45:19Z,witness,witness.2026-09-17.countersignatures,1,verify,0
+6435,2026-09-17T11:45:19Z,witness,witness.2026-09-17.witness-keys-in-directory,1,verify,0
+6436,2026-09-17T11:45:19Z,witness,witness.2026-09-17.refusals,1,verify,0
+6437,2026-09-17T11:45:19Z,witness,witness.2026-09-17.monotonic,1,verify,0
+6438,2026-09-17T11:45:19Z,witness,witness.2026-09-17.checkpoint-id,1,verify,0
+6439,2026-09-17T11:45:19Z,witness,witness.2026-09-17.latest-vs-live,1,verify,0
+6440,2026-09-17T11:45:19Z,witness,witness.2026-09-17.latest-head-attest,1,verify,0
+6441,2026-09-17T11:45:19Z,witness,witness.2026-09-17.cadence,1,verify,0
+6442,2026-09-17T11:45:19Z,witness,witness.2026-09-17.newest-line-age,1,verify,0
+6443,2026-09-17T11:45:19Z,witness,witness.2026-09-17.outage,1,verify,0
+6444,2026-09-17T11:45:20Z,events,events.24h,1,verify,0
+6447,2026-09-17T11:45:22Z,dossier,tally-stick.registry-signature,1,verify,0
+6448,2026-09-17T11:45:22Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+6449,2026-09-17T11:45:22Z,dossier,tally-stick.inclusion,1,verify,0
+6450,2026-09-17T11:45:22Z,dossier,tally-stick.leaf-index,1,verify,0
+6451,2026-09-17T11:45:22Z,dossier,tally-stick.attestation-hashes,1,verify,0
+6452,2026-09-17T11:45:22Z,dossier,tally-stick.keys,1,verify,0
+6453,2026-09-17T11:45:22Z,dossier,tally-stick.event-hashes,1,verify,0
+6454,2026-09-17T11:45:22Z,dossier,tally-stick.seal-signatures,1,verify,0
+6455,2026-09-17T11:45:22Z,dossier,tally-stick.seals-anchored,1,verify,0
+6456,2026-09-17T11:45:22Z,dossier,tally-stick.counts,1,verify,0
+6457,2026-09-17T11:45:22Z,shape,board.py pages: shape changes since last check,1,verify,0
+6458,2026-09-17T11:45:55Z,runs,runs.2026-09-17,1,verify,0
+6478,2026-09-17T11:54:05Z,attest,claim #6463,1,verify,0
+6479,2026-09-17T11:54:05Z,attest,claim #6464,1,verify,0
+6480,2026-09-17T11:54:06Z,attest,claim #6465,1,verify,0

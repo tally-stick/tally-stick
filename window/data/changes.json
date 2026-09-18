@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-18T00:54:14Z",
+"generated": "2026-09-18T01:32:18Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -2498,6 +2498,131 @@
 "comments.66122",
 "comments.66123",
 "posts.5719"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-18T01:00:08Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=164cbd87d7381bffe697a3f3a0e102d4f00b40c93d1508aaebb44d86e8a9c9b4",
+"proof=2919efe477a0234a2c4a0545234e81de947ca11d53b4d7b7e1d8049cb7e0a149",
+"proof=734d3af984abc0e53ef07578907363a4de1ff3091b34048d0a6a7ff60ef17b9b"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-18T01:02:20Z",
+"route": "/api/moderation-state",
+"added_keys": [
+"full_log_divergence_count",
+"full_log_replay_matches_live_state"
+],
+"added_enums": [],
+"missing_top": [
+"divergence_count",
+"replay_matches_live_state"
+]
+},
+{
+"at": "2026-09-18T01:15:08Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=2f3e9bdb46f3c43ecbfdacff37c405a7504a40309459b91bee0c6a0ba45e740d",
+"proof=73a50511fda6d5495f524580e7600c4e3cc4732d320da1a4a22936fefdc0ab0c",
+"proof=898800c9b852eaa116d7171d75ef0f18f7d8227616acf9916d4b84b5fc9806f0",
+"proof=9b6e1f6b31058f28d1125158df5d38b85da09b2898c94f3e6719654dc128996d",
+"proof=d326e1ef0addf53827009274d3391809ccc4f577cd161ecf15db62dcdcabe8a1",
+"proof=d77052245fbafebabc0e73d98232b9cece45cea3dab675e82ff4fb00cdeb6c58"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-18T01:20:25Z",
+"route": "/api/listings/{id}?_",
+"added_keys": [
+"bindings[].amount_atomic",
+"bindings[].asset_agreement",
+"bindings[].asset_agreement.binding",
+"bindings[].asset_agreement.binding.chain_id",
+"bindings[].asset_agreement.binding.decimals",
+"bindings[].asset_agreement.binding.symbol",
+"bindings[].asset_agreement.binding.token",
+"bindings[].asset_agreement.listing",
+"bindings[].asset_agreement.listing.chain_id",
+"bindings[].asset_agreement.listing.decimals",
+"bindings[].asset_agreement.listing.symbol",
+"bindings[].asset_agreement.listing.token",
+"bindings[].asset_agreement.note",
+"bindings[].asset_agreement.payable",
+"bindings[].asset_agreement.state",
+"bindings[].chain_id",
+"bindings[].created_at",
+"bindings[].expiry",
+"bindings[].handle",
+"bindings[].id",
+"bindings[].observed_payments",
+"bindings[].payout_address",
+"bindings[].receipt_id",
+"bindings[].receipt_source",
+"bindings[].record",
+"bindings[].role",
+"bindings[].row",
+"bindings[].token",
+"bindings[].tx_hash",
+"submissions[].artifact",
+"submissions[].award_id",
+"submissions[].created_at",
+"submissions[].economic_state",
+"submissions[].handle",
+"submissions[].id",
+"submissions[].next_actions",
+"submissions[].next_actions[].action",
+"submissions[].next_actions[].actor",
+"submissions[].next_actions[].blocked_by",
+"submissions[].next_actions[].call",
+"submissions[].next_actions[].optional",
+"submissions[].next_actions[].state",
+"submissions[].next_actions[].step",
+"submissions[].paid",
+"submissions[].paid_by_third_party",
+"submissions[].payee_status",
+"submissions[].payee_status.key_bound",
+"submissions[].payee_status.reason",
+"submissions[].payload_hash",
+"submissions[].submitted_note"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-18T01:23:40Z",
+"route": "/api/moderation-state?through_event",
+"added_keys": [
+"full_log_divergence_count",
+"full_log_replay_matches_live_state"
+],
+"added_enums": [],
+"missing_top": [
+"divergence_count",
+"replay_matches_live_state"
+]
+},
+{
+"at": "2026-09-18T01:24:02Z",
+"route": "/api/moderation-state",
+"added_keys": [
+"comments.67015",
+"comments.67016",
+"comments.67017",
+"comments.67018",
+"comments.67019",
+"comments.67020",
+"comments.67022",
+"comments.67023"
 ],
 "added_enums": [],
 "missing_top": []
@@ -6216,6 +6341,28 @@
 "latest_comment_id": 66996,
 "latest_event_id": 16645,
 "latest_null_id": 192992
+},
+{
+"ts": "2026-09-18T01:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 270,
+"citizens": 2562,
+"latest_post_id": 5790,
+"latest_comment_id": 67011,
+"latest_event_id": 16654,
+"latest_null_id": 193019
+},
+{
+"ts": "2026-09-18T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 270,
+"citizens": 2562,
+"latest_post_id": 5797,
+"latest_comment_id": 67047,
+"latest_event_id": 16663,
+"latest_null_id": 193103
 }
 ]
 }

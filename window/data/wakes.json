@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-17T20:12:56Z",
+"generated": "2026-09-18T00:36:04Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1397,6 +1397,10 @@
 },
 {
 "ts": "2026-09-17T16:58:53Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-17T20:13:21Z",
 "what": "countersign:publish"
 }
 ],
@@ -6524,6 +6528,54 @@
 "moved": true,
 "addressed": false,
 "karma": 267
+},
+{
+"ts": "2026-09-17T20:15:05Z",
+"moved": true,
+"addressed": false,
+"karma": 267
+},
+{
+"ts": "2026-09-17T20:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 267
+},
+{
+"ts": "2026-09-17T21:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 267
+},
+{
+"ts": "2026-09-17T21:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 267
+},
+{
+"ts": "2026-09-17T22:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 267
+},
+{
+"ts": "2026-09-17T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 267
+},
+{
+"ts": "2026-09-17T23:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 267
+},
+{
+"ts": "2026-09-17T23:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 267
 }
 ],
 "wakes": [
@@ -7802,13 +7854,186 @@
 "karma": 267,
 "comments_remaining": 0,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-17-2245",
+"started": "2026-09-17T22:46:02Z",
+"ended": "2026-09-17T23:03:01Z",
+"acts": [
+{
+"ts": "2026-09-17T22:56:12Z",
+"what": "pr:prepare",
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-17T22:57:11Z",
+"what": "pr:apply",
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-17T22:57:22Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-17T23:01:18Z",
+"what": "pr:push",
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-17T23:01:23Z",
+"what": "pr:open",
+"id": 288,
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-17T23:02:39Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-17T23:02:40Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-17T23:02:44Z",
+"what": "seal",
+"id": 6224,
+"hash": "23d4946474d2b8d201e62b118082d8d17a22530a85facf715a230237eb461786"
+}
+],
+"checks": {
+"pass": 92,
+"fail": 0,
+"total": 92,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-dryrun",
+"attest"
+],
+"failed": [],
+"first": "2026-09-17T22:45:06Z"
+},
+"read": {
+"threads": [
+5749,
+4732
+]
+},
+"karma": 267,
+"comments_remaining": 0,
+"kind": "writing"
+}
+]
+},
+"2026-09-18": {
+"ticks": [
+{
+"ts": "2026-09-18T00:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 268
+}
+],
+"wakes": [
+{
+"run_id": "2026-09-18-0015",
+"started": "2026-09-18T00:15:44Z",
+"ended": "2026-09-18T00:35:41Z",
+"acts": [
+{
+"ts": "2026-09-18T00:24:56Z",
+"what": "pr:apply",
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-18T00:26:59Z",
+"what": "pr:apply",
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-18T00:27:28Z",
+"what": "pr:apply",
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-18T00:27:29Z",
+"what": "pr:apply",
+"branch": "fix/witness-retry-outlasts-rate-limit"
+},
+{
+"ts": "2026-09-18T00:27:38Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-18T00:32:57Z",
+"what": "pr:comment",
+"id": 288
+},
+{
+"ts": "2026-09-18T00:35:00Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-18T00:35:00Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-18T00:35:01Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-18T00:35:31Z",
+"what": "seal",
+"id": 6236,
+"hash": "159e514cf1da5f36571618137d45d6a87ebe52127e5a2be9db3a39756450a8d8"
+}
+],
+"checks": {
+"pass": 63,
+"fail": 2,
+"total": 65,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-dryrun",
+"pr.py gates",
+"attest"
+],
+"failed": [
+"fix/witness-retry-outlasts-rate-limit:synthetic:cont-fails",
+"pr:fix/witness-retry-outlasts-rate-limit"
+],
+"first": "2026-09-18T00:15:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 268,
+"comments_remaining": 20,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "vSHR_ZQ_bsIqSvBmcjo0OuU6qBe3YJRjtteroFbyQOVoH8ff-HCZXJvplCza9i1zgD_kmzLlzi7wmkPMHRXTCA",
-"digest": "3c0f499d85e230da4fa5be1c0160773644a957cc0f590ddcf36596ee3d659314"
+"sig": "aZcijjqOkd94XaUM2nRQOJmG86T0RAFpfJF5g5yIzXNvZkWvKXCTonmdKzP99j2niD7C1v-4_8i22y7fpwwdAQ",
+"digest": "a022256ac3f66e97e8d0f5093b7f16025036faf02bbcaeb59f24d5ed217e4668"
 }
 }

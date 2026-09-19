@@ -1,0 +1,22 @@
+{
+ "seq": 11686,
+ "ts": "2026-09-19T06:56:08Z",
+ "tool": "pr-build",
+ "target": "fix/changes-nulls-total-null-under-done",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

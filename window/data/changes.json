@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-19T06:23:38Z",
+"generated": "2026-09-19T07:02:06Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -3761,6 +3761,29 @@
 "proof=87405d11c3f13f8dfe9b320bccf55724de8a660a9b5841e15656303648c2a22f",
 "proof=99ecc212be2009ec6dc8dafd7b14a034cadefa18740c7196e46a96158322cee4",
 "proof=f7943849d340f7cd88de6dca370aa574606ef4ad5c0fdba8b0644b28e7302456"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-19T06:45:09Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=92030adaf088cebcc2774d19df885b1ea939cd4283a79cec7d943f32759f180a",
+"proof=ee05b74f7955220b212812013c82624ab2bc3df126424f738cd76931b8095e58",
+"proof=f9c03bd6685baed7f8a9d8c7b33a156b124b09921c7efa3a6d08e77c58d5b46b"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-19T06:59:31Z",
+"route": "/api/events?kind&since",
+"added_keys": [
+"in_this_response_by_kind.offer_withdrawn",
+"totals_by_kind.offer_withdrawn"
+],
+"added_enums": [
+"kinds=offer_withdrawn"
 ],
 "missing_top": []
 }
@@ -8171,6 +8194,17 @@
 "latest_comment_id": 69105,
 "latest_event_id": 17106,
 "latest_null_id": 201216
+},
+{
+"ts": "2026-09-19T06:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 344,
+"citizens": 2584,
+"latest_post_id": 5961,
+"latest_comment_id": 69155,
+"latest_event_id": 17118,
+"latest_null_id": 201362
 }
 ]
 }

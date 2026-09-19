@@ -563,11 +563,17 @@ outstanding.py reads from `state/runs/<run>-<mode>.log` (the `result` field, UTF
 run on a Claude Max 5x plan: usage windows are the cost, Opus tokens the scarce unit (operator, 2026-09-19), so `opus_tokens`
 sums input+output+cache_create+cache_read over every model id containing "opus", and `opus_fresh` drops the cache reads
 (what the window actually had to generate fresh). `report` reads those rows back by UTC day and by run_id over the last
-24h, no network, so a day's or a wake's Opus spend is one query instead of a re-read of every log.
+24h, no network, so a day's or a wake's Opus spend is one query instead of a re-read of every log. Tokens only: the
+`costUSD` fields the CLI prints are dropped at ingest (operator, 2026-09-19: "Don't give me dollar amount for these. I
+just need to know tokens."), and the hands are broken out per family (`haiku_tok`, `sonnet_tok`, summed over every
+non-Opus model id in `by_model`; anything else lands in `other_tokens` in the JSON). The earlier `all_tok` column read
+the CLI's top-level `usage` totals, which on some builds came in *below* `opus_tokens` (run 2026-09-19-0615: 1,435,138
+against 4,524,564), so it was dropped rather than kept as a number nobody should trust.
 
 **Tested** 2026-09-19, three JSON shapes, `ingest --dry-run` (prints the payload, writes nothing) unless noted:
 - single-object, `modelUsage` with `claude-opus-5` (10000+4000+6000+300000=320000 opus_tokens, 20000 opus_fresh; matches by
-  hand) and `claude-haiku-4-5-20251001` (excluded from both opus sums) — payload correct, `total_cost_usd` carried through.
+  hand) and `claude-haiku-4-5-20251001` (excluded from both opus sums) — payload correct, `total_cost_usd` carried through
+  (that field and the per-model `cost_usd` were removed from the payload the same day; see the tokens-only note above).
 - multi-line: a `type:"system"` line, a `type:"assistant"` line, then `type:"result"` last, with no `total_cost_usd` key at
   all — the whole-file parse fails (three concatenated JSON values), the line-by-line fallback picks the last `result`
   object, and the payload carries `"total_cost_usd": null` rather than inventing a number or crashing.
@@ -581,6 +587,12 @@ seq 11358 (`record.py show --seq 11358 --full` confirms `by_model`, `totals`, `o
 `run_id`, `mode` all round-tripped); the log file held exactly the three-line `result` text and nothing else; `record.py
 verify` still passes at 11358 events after the insert. `report --days 1` then showed one wake for 2026-09-19, by day and
 by run_id, turns/opus_tok/opus_fresh/all_tok/cost_usd all matching the recorded row.
+
+Re-tested 2026-09-19 after the tokens-only change: `ingest --dry-run` on the real `state/runs/2026-09-19-1745-writing.json`
+carries no `cost_usd`/`total_cost_usd` key at all (`grep -i cost scripts/usage.py` matches only the docstring); `report
+--days 2` over the 29 recorded rows shows `haiku_tok`/`sonnet_tok` per wake, and the 07:15 wake's split (1,612,620 Haiku,
+5,440,987 Sonnet) matches a hand sum of that row's `by_model`. Rows recorded before the change still carry the old
+`cost_usd` keys; `report` ignores them.
 
 **Limits** `ingest` trusts the caller's `--mode`; it does not itself check the JSON came from the wake it claims to. A
 model id that doesn't contain the substring "opus" (a rename) would silently drop out of `opus_tokens`; the fix if that

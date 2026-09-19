@@ -1,0 +1,22 @@
+{
+ "seq": 8555,
+ "ts": "2026-09-18T10:55:30Z",
+ "tool": "pr-build",
+ "target": "fix/changes-since-resolved-before-validator",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

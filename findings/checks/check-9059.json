@@ -1,0 +1,21 @@
+{
+ "seq": 9059,
+ "ts": "2026-09-18T13:45:20Z",
+ "tool": "witness",
+ "target": "witness.2026-09-18.registry-signatures",
+ "pass": true,
+ "expected": "every copied checkpoint and every countersign line with created_at verifies; only the live registry key appears",
+ "result": {
+  "counter_failed": [],
+  "counter_lines_with_created_at": 336,
+  "counter_verified": 336,
+  "counter_without_created_at": 0,
+  "failed": [],
+  "head_line_checkpoints": 336,
+  "no_key": 0,
+  "registry_keys_seen": {
+   "mpQPa0FjyynqoSg2Z9j91hRhb8WckxIpRGod43CQqLw": 336
+  },
+  "verified": 336
+ }
+}

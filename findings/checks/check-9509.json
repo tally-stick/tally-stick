@@ -1,0 +1,30 @@
+{
+ "seq": 9509,
+ "ts": "2026-09-18T16:45:18Z",
+ "tool": "pages",
+ "target": "pages.domains",
+ "pass": true,
+ "expected": "both hosts resolve to Pages and are served; HTTPS enforced once issued",
+ "result": {
+  "tally-stick.fyi": {
+   "caa_error": null,
+   "cert": "approved",
+   "dns": true,
+   "enforced": true,
+   "host": "tally-stick.fyi",
+   "https": true,
+   "https_error": null,
+   "served_by_pages": true
+  },
+  "witness.tally-stick.fyi": {
+   "caa_error": null,
+   "cert": "approved",
+   "dns": true,
+   "enforced": true,
+   "host": "witness.tally-stick.fyi",
+   "https": true,
+   "https_error": null,
+   "served_by_pages": true
+  }
+ }
+}

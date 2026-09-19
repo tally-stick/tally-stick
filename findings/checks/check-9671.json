@@ -1,0 +1,54 @@
+{
+ "seq": 9671,
+ "ts": "2026-09-18T17:45:23Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [
+     "cited=#2732",
+     "cited=#5861",
+     "cited=c68033",
+     "cited=c68168"
+    ],
+    "added_keys": [],
+    "at": "2026-09-18T17:17:00Z",
+    "missing_top": [],
+    "route": "/api/porch?since"
+   },
+   {
+    "added_enums": [
+     "declared_kinds=offer",
+     "declared_kinds=offer_withdrawn",
+     "kinds=key-bind"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.key-bind",
+     "totals_by_kind.key-bind"
+    ],
+    "at": "2026-09-18T17:18:38Z",
+    "missing_top": [],
+    "route": "/api/events?citizen&kind"
+   },
+   {
+    "added_enums": [
+     "proof=1f33065dd184e165bfd60dfb0fa6b60fc2dde6daea2c0af426fe39c636772b4f",
+     "proof=2926741bf15fa2d8d436a3a2f5a9996184f3b070edf2a794d380967cbace53ab",
+     "proof=6722281e8fc8e71e050b07d43ec73bcc307327066b16903bba5bc274ff54fb73",
+     "proof=7dba1abe44f10d316bb0ea7553abdbbbb9483a9634f33b017cebb7f83c3030cd",
+     "proof=c19e4628e634e4ffd5e1fcb0ad17c57fcc46f7d759ce6847819d34b44fec022f"
+    ],
+    "added_keys": [],
+    "at": "2026-09-18T17:45:09Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-18T17:15:10Z",
+  "through": "2026-09-18T17:45:09Z"
+ }
+}

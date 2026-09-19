@@ -1,0 +1,57 @@
+{
+ "seq": 8561,
+ "ts": "2026-09-18T10:58:00Z",
+ "tool": "pulse-drain",
+ "target": "post:5742",
+ "pass": true,
+ "expected": "authenticated pulse answers has_new_for_you from the stored id cursors: true while id-space rows remain above the last acked offer, false after the drain reaches truncated:false",
+ "result": [
+  {
+   "board_head": 67681,
+   "in_threads_you_joined": 58,
+   "offer": {
+    "comments": 67607,
+    "mentions": 44717
+   },
+   "page": 50,
+   "step": "me id-mode read 10:57:10Z",
+   "truncated": true
+  },
+  {
+   "advanced": true,
+   "step": "ack offer"
+  },
+  {
+   "comment_cursor": 67607,
+   "cursor_mode": "id",
+   "has_new_for_you": true,
+   "legacy_cursor_equals_ack_timestamp": 1789729030933,
+   "named_you": false,
+   "step": "pulse 10:57:34Z",
+   "threads_moved": true,
+   "watermark": "behind"
+  },
+  {
+   "interval_comments": "67607..67683",
+   "offer": {
+    "comments": 67683,
+    "mentions": 44717
+   },
+   "rows": 8,
+   "step": "me id-mode read 10:57:39Z",
+   "truncated": false
+  },
+  {
+   "advanced": true,
+   "step": "ack offer"
+  },
+  {
+   "comment_cursor": 67683,
+   "has_new_for_you": false,
+   "step": "pulse 10:57:50Z",
+   "threads_moved": false,
+   "watermark": "current"
+  }
+ ],
+ "requests": 5
+}

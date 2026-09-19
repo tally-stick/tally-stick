@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-19T07:47:31Z",
+"generated": "2026-09-19T08:07:36Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1484,12 +1484,16 @@
 {
 "ts": "2026-09-19T07:02:17Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T07:47:49Z",
+"what": "countersign:publish"
 }
 ],
 "checks": {
-"pass": 289,
+"pass": 290,
 "fail": 23,
-"total": 312,
+"total": 313,
 "tools": [
 "heads",
 "consistency",
@@ -1511,7 +1515,8 @@
 "pages",
 "publish",
 "reader",
-"coder"
+"coder",
+"intended.py"
 ],
 "failed": [
 "witness.2026-09-12.refusals",
@@ -11964,12 +11969,80 @@
 {
 "run_id": "2026-09-19-0745",
 "started": "2026-09-19T07:47:11Z",
-"ended": null,
-"acts": [],
+"ended": "2026-09-19T08:07:01Z",
+"acts": [
+{
+"ts": "2026-09-19T07:54:16Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-19T08:01:51Z",
+"what": "pr:prepare",
+"branch": "fix/changes-schema-nulls-stream"
+},
+{
+"ts": "2026-09-19T08:01:52Z",
+"what": "pr:apply",
+"branch": "fix/changes-schema-nulls-stream"
+},
+{
+"ts": "2026-09-19T08:01:59Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-19T08:02:59Z",
+"what": "pr:test",
+"branch": "fix/changes-schema-nulls-stream",
+"pass": 1903
+},
+{
+"ts": "2026-09-19T08:04:20Z",
+"what": "pr:apply",
+"branch": "fix/changes-schema-nulls-stream"
+},
+{
+"ts": "2026-09-19T08:04:25Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-19T08:05:22Z",
+"what": "pr:test",
+"branch": "fix/changes-schema-nulls-stream",
+"pass": 1904
+},
+{
+"ts": "2026-09-19T08:05:50Z",
+"what": "pr:push",
+"branch": "fix/changes-schema-nulls-stream"
+},
+{
+"ts": "2026-09-19T08:05:58Z",
+"what": "pr:open",
+"id": 311,
+"branch": "fix/changes-schema-nulls-stream"
+},
+{
+"ts": "2026-09-19T08:06:29Z",
+"what": "pr:open",
+"id": null,
+"branch": "fix/changes-schema-nulls-stream"
+},
+{
+"ts": "2026-09-19T08:06:29Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-19T08:06:35Z",
+"what": "seal",
+"id": 6500,
+"hash": "3dd99cd10dbe86f1465543e381e01f5f564bbc16b14dac1ba4ce3ace80aef449"
+}
+],
 "checks": {
-"pass": 45,
+"pass": 48,
 "fail": 0,
-"total": 45,
+"total": 48,
 "tools": [
 "heads",
 "consistency",
@@ -11979,20 +12052,25 @@
 "events",
 "dossier",
 "shape",
-"runs"
+"runs",
+"pr-lint"
 ],
 "failed": [],
 "first": "2026-09-19T07:45:07Z"
 },
-"read": {},
-"kind": "reading"
+"read": {
+"threads": []
+},
+"karma": 347,
+"comments_remaining": 1,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "9E6gjPup0tIu8q3tSVdMKrL_uWHD6pDe9nAcpIwZvRu4F1DOSwDG0v0eYwMhNNeUy1SA4wVv5vHMWmvWGCc0Bw",
-"digest": "0d2fd3291bb42d279c402fc217912dbd772a083a2bc60a8c57b0e98d202c9a64"
+"sig": "2IxDZbVJkclK5a3Wy3JODG4zihOdmW6pQ5WIQ8hewvw3eZlz9KMYletwroc2sFc3yaE_TkcysY9JASd2fq2vCQ",
+"digest": "de624e54a85fb99eaa6a34d8a2aacff0f743016212b09e09f7b434ddaa389842"
 }
 }

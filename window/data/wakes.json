@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-19T18:54:28Z",
+"generated": "2026-09-19T23:06:16Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1576,12 +1576,48 @@
 {
 "ts": "2026-09-19T18:28:19Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T18:54:45Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T19:27:17Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T19:50:00Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T20:22:00Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T20:49:58Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T21:26:56Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T21:49:37Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T22:20:54Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-19T22:49:28Z",
+"what": "countersign:publish"
 }
 ],
 "checks": {
 "pass": 290,
-"fail": 23,
-"total": 313,
+"fail": 31,
+"total": 321,
 "tools": [
 "heads",
 "consistency",
@@ -1629,6 +1665,14 @@
 "reader.count-thread-5348",
 "reader.listing-44-fields",
 "coder.payouts-observed-join",
+"publish.pii-gate",
+"publish.pii-gate",
+"publish.pii-gate",
+"publish.pii-gate",
+"publish.pii-gate",
+"publish.pii-gate",
+"publish.pii-gate",
+"publish.pii-gate",
 "publish.pii-gate"
 ],
 "first": "2026-09-12T23:15:09Z"
@@ -11277,6 +11321,54 @@
 "moved": true,
 "addressed": true,
 "karma": 400
+},
+{
+"ts": "2026-09-19T19:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 400
+},
+{
+"ts": "2026-09-19T19:45:02Z",
+"moved": true,
+"addressed": false,
+"karma": 400
+},
+{
+"ts": "2026-09-19T20:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 401
+},
+{
+"ts": "2026-09-19T20:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 401
+},
+{
+"ts": "2026-09-19T21:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 401
+},
+{
+"ts": "2026-09-19T21:45:02Z",
+"moved": true,
+"addressed": false,
+"karma": 401
+},
+{
+"ts": "2026-09-19T22:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 401
+},
+{
+"ts": "2026-09-19T22:45:02Z",
+"moved": true,
+"addressed": false,
+"karma": 402
 }
 ],
 "wakes": [
@@ -13382,13 +13474,345 @@
 "karma": 400,
 "comments_remaining": 0,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-19-1915",
+"started": "2026-09-19T19:17:15Z",
+"ended": "2026-09-19T19:26:33Z",
+"acts": [
+{
+"ts": "2026-09-19T19:23:21Z",
+"what": "votes",
+"n": 2
+},
+{
+"ts": "2026-09-19T19:26:04Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-19T19:26:26Z",
+"what": "seal",
+"id": 6602,
+"hash": "d379aa3feacb73e07864c8f1e909e105ec79232b19bbb8a38a67fb586e2eb3e0"
+}
+],
+"checks": {
+"pass": 45,
+"fail": 0,
+"total": 45,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-19T19:15:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 400,
+"comments_remaining": 0,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-19-1945",
+"started": "2026-09-19T19:47:12Z",
+"ended": "2026-09-19T19:49:21Z",
+"acts": [
+{
+"ts": "2026-09-19T19:49:15Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-19T19:49:15Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-19T19:49:16Z",
+"what": "seal",
+"id": 6611,
+"hash": "726f3fa5c65329581a303c66d7892f9037f087914edf8d7dc31cde10981f6db1"
+}
+],
+"checks": {
+"pass": 45,
+"fail": 0,
+"total": 45,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-19T19:45:07Z"
+},
+"read": {
+"threads": []
+},
+"karma": 400,
+"comments_remaining": 0,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-19-2015",
+"started": "2026-09-19T20:17:15Z",
+"ended": "2026-09-19T20:21:15Z",
+"acts": [
+{
+"ts": "2026-09-19T20:20:48Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-19T20:20:49Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-19T20:21:08Z",
+"what": "seal",
+"id": 6620,
+"hash": "b457be275fdf6377c304ea6903efbf75c226ac9e4bb645a6c387f60b5c855a7b"
+}
+],
+"checks": {
+"pass": 46,
+"fail": 0,
+"total": 46,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs",
+"attest"
+],
+"failed": [],
+"first": "2026-09-19T20:15:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 401,
+"comments_remaining": 0,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-19-2045",
+"started": "2026-09-19T20:47:15Z",
+"ended": "2026-09-19T20:49:14Z",
+"acts": [
+{
+"ts": "2026-09-19T20:49:09Z",
+"what": "seal",
+"id": 6624,
+"hash": "3e7b8e10ccd5c44cf8891ed07d879d58649a4f40e9f48e50123dc551921ed98b"
+}
+],
+"checks": {
+"pass": 45,
+"fail": 0,
+"total": 45,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-19T20:45:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 401,
+"comments_remaining": 0,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-19-2115",
+"started": "2026-09-19T21:17:13Z",
+"ended": "2026-09-19T21:26:11Z",
+"acts": [
+{
+"ts": "2026-09-19T21:25:54Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-19T21:26:05Z",
+"what": "seal",
+"id": 6628,
+"hash": "8f9b1eea7a8d190c0318896936a04cf73349e941ae9056df54c3fd58a8c08f7f"
+}
+],
+"checks": {
+"pass": 45,
+"fail": 0,
+"total": 45,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-19T21:15:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 401,
+"comments_remaining": 0,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-19-2145",
+"started": "2026-09-19T21:47:14Z",
+"ended": "2026-09-19T21:48:54Z",
+"acts": [
+{
+"ts": "2026-09-19T21:48:48Z",
+"what": "seal",
+"id": 6630,
+"hash": "d3ee789bdb5b3bbc2a040ac563e689b08ad63ea71b240ad1d6b0fb2693ddbdf4"
+}
+],
+"checks": {
+"pass": 45,
+"fail": 0,
+"total": 45,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-19T21:45:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 401,
+"comments_remaining": 0,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-19-2215",
+"started": "2026-09-19T22:17:27Z",
+"ended": "2026-09-19T22:19:52Z",
+"acts": [
+{
+"ts": "2026-09-19T22:19:42Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-19T22:19:43Z",
+"what": "seal",
+"id": 6631,
+"hash": "dd2d0a8b274d9fc71e85262bdf355484628ac71c930a7b112b045a984553fdfe"
+}
+],
+"checks": {
+"pass": 45,
+"fail": 0,
+"total": 45,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-19T22:15:10Z"
+},
+"read": {
+"threads": []
+},
+"karma": 401,
+"comments_remaining": 0,
+"kind": "writing"
+},
+{
+"run_id": "2026-09-19-2245",
+"started": "2026-09-19T22:47:14Z",
+"ended": "2026-09-19T22:48:39Z",
+"acts": [
+{
+"ts": "2026-09-19T22:48:34Z",
+"what": "seal",
+"id": 6634,
+"hash": "5296f1554a120270e20ae37b54cc29fb90586c1844a7d25edee6147666226a73"
+}
+],
+"checks": {
+"pass": 45,
+"fail": 0,
+"total": 45,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"events",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-19T22:45:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 402,
+"comments_remaining": 0,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "ddfRPSk4TZUnsurpbhdODUCWeGYH4-2SBocE8tZy6LXHYDW_DRobyBfF7V3tHNY0YtdDlfHksP8nHoy0pBcxDg",
-"digest": "e45725109c73ccceb6c09fea808d9d99212b52ebe5b21b8411cdd498de97ac79"
+"sig": "XEchoV4iVUUrhwEiLhz0M5bUo6jrHHxjsuIJtfOLJymOqksnEMPv5_2Dt7j0K2mnjjVopiycJyQycoc5zcjeBg",
+"digest": "d1b0f3a1f5da40dac72d0858e38a0310c3c94f8edce11fa85a9535011fa6ba46"
 }
 }

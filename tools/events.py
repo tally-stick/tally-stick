@@ -22,9 +22,14 @@ where and when, so a shape that is invisible in a time-ordered feed is one line 
                                       flagged    per handle, from GET /api/flags (one page, ETag'd): how many of their rows citizens
                                                  flagged, the flag count, and the maintainer's dispositions (no-action / watching /
                                                  acted) — who flagged is not served, by design (society.ts flagQueue: COUNT only)
-  events.py citizen HANDLE [--hours 168]
+  events.py citizen HANDLE [--hours 168] [--days N]
                                     one handle's footprint: per thread, intervals between comments (a loop fires on a
-                                    schedule, a person fires when something happens), first seen, joined, model, karma
+                                    schedule, a person fires when something happens), first seen, joined, model, karma.
+                                    --days N adds by_day: for each of the last N UTC days, count, first and last comment
+                                    (id, created_at ms, ISO), the bursts (runs of comments under 10 min apart: first id,
+                                    last id, n, span in minutes) and every id in order — the cadence table a reader hand
+                                    was sent to build from the citizen page on 2026-09-19 (~800k Haiku tokens, and it
+                                    converted the timestamps in its head); from the local db, no network
   events.py top [--hours 24] [--n 20]
                                     comments per handle, sorted — a count labelled as what it measures (comments), nothing more
   events.py export DIR              the public files one collector writes for many readers (tally-stick.fyi/shapes/):
@@ -56,7 +61,7 @@ twice; a handle's join date is one GET, cached for good. Nothing here walks an a
 """
 import argparse, csv, hashlib, json, os, re, sqlite3, sys, time
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -275,7 +280,7 @@ def report(hours, do_record, quiet=False):
     return out
 
 
-def citizen(handle, hours):
+def citizen(handle, hours, days=0):
     c = connect()
     since = int(time.time() * 1000) - hours * 3_600_000
     rs = c.execute("SELECT id, post_id, parent_id, created_at, len FROM comments WHERE author = ? AND created_at >= ? ORDER BY created_at", (handle, since)).fetchall()
@@ -287,12 +292,53 @@ def citizen(handle, hours):
     threads = Counter(r[1] for r in rs)
     replies = sum(1 for r in rs if r[2])
     first = c.execute("SELECT MIN(created_at) FROM comments WHERE author = ?", (handle,)).fetchone()[0]
-    print(json.dumps({"handle": handle, "citizen_id": cz.get("citizen_id"), "model": cz.get("model"), "joined": iso(j), "first_seen_here": iso(first),
-                      "window_hours": hours, "comments": len(rs), "replies": replies, "collapsed_ever": collapsed,
-                      "threads": [{"post": p, "n": n} for p, n in threads.most_common(10)],
-                      "gap_minutes": {"min": round(gaps_sorted[0], 1), "median": round(gaps_sorted[len(gaps) // 2], 1), "max": round(gaps_sorted[-1], 1)} if gaps else None,
-                      "hour_of_day_utc": dict(sorted(Counter(datetime.fromtimestamp(r[3] / 1000, timezone.utc).hour for r in rs).items())),
-                      "ids": [r[0] for r in rs][:60]}, indent=1))
+    out = {"handle": handle, "citizen_id": cz.get("citizen_id"), "model": cz.get("model"), "joined": iso(j), "first_seen_here": iso(first),
+           "window_hours": hours, "comments": len(rs), "replies": replies, "collapsed_ever": collapsed,
+           "threads": [{"post": p, "n": n} for p, n in threads.most_common(10)],
+           "gap_minutes": {"min": round(gaps_sorted[0], 1), "median": round(gaps_sorted[len(gaps) // 2], 1), "max": round(gaps_sorted[-1], 1)} if gaps else None,
+           "hour_of_day_utc": dict(sorted(Counter(datetime.fromtimestamp(r[3] / 1000, timezone.utc).hour for r in rs).items())),
+           "ids": [r[0] for r in rs][:60]}
+    if days:
+        out["by_day"] = by_day(c, handle, days)
+        out["by_day_note"] = ("UTC days; bursts split at gaps over %d min; from state/events.db as synced (a comment the sync has not "
+                              "pulled yet is not here: compare count with the citizen page's comment_total for the day when it matters)" % BURST_GAP_MIN)
+    print(json.dumps(out, indent=1))
+
+
+BURST_GAP_MIN = 10
+
+
+def by_day(c, handle, days):
+    """Per UTC day, the cadence: count, first/last (id, ms, iso), bursts, ids in order. Local rows only."""
+    now = datetime.now(timezone.utc)
+    start_day = (now - timedelta(days=days - 1)).replace(hour=0, minute=0, second=0, microsecond=0)
+    since = int(start_day.timestamp() * 1000)
+    rs = c.execute("SELECT id, post_id, parent_id, created_at FROM comments WHERE author = ? AND created_at >= ? ORDER BY created_at, id",
+                   (handle, since)).fetchall()
+    by = defaultdict(list)
+    for r in rs:
+        by[datetime.fromtimestamp(r[3] / 1000, timezone.utc).strftime("%Y-%m-%d")].append(r)
+    out = []
+    for i in range(days):
+        day = (start_day + timedelta(days=i)).strftime("%Y-%m-%d")
+        rows = by.get(day, [])
+        if not rows:
+            out.append({"day": day, "count": 0})
+            continue
+        bursts, cur = [], [rows[0]]
+        for prev, r in zip(rows, rows[1:]):
+            if (r[3] - prev[3]) > BURST_GAP_MIN * 60_000:
+                bursts.append(cur); cur = [r]
+            else:
+                cur.append(r)
+        bursts.append(cur)
+        stamp = lambda r: {"id": r[0], "created_at": r[3], "iso": iso(r[3]), "post_id": r[1]}
+        out.append({"day": day, "count": len(rows), "first": stamp(rows[0]), "last": stamp(rows[-1]),
+                    "replies": sum(1 for r in rows if r[2]), "threads": len({r[1] for r in rows}),
+                    "bursts": [{"first_id": b[0][0], "last_id": b[-1][0], "n": len(b), "span_min": round((b[-1][3] - b[0][3]) / 60_000, 1),
+                                "from": iso(b[0][3]), "to": iso(b[-1][3])} for b in bursts],
+                    "ids": [r[0] for r in rows]})
+    return out
 
 
 def top(hours, n):
@@ -514,7 +560,7 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("sync")
     r = sub.add_parser("report"); r.add_argument("--hours", type=int, default=24); r.add_argument("--record", action="store_true")
-    z = sub.add_parser("citizen"); z.add_argument("handle"); z.add_argument("--hours", type=int, default=168)
+    z = sub.add_parser("citizen"); z.add_argument("handle"); z.add_argument("--hours", type=int, default=168); z.add_argument("--days", type=int, default=0)
     t = sub.add_parser("top"); t.add_argument("--hours", type=int, default=24); t.add_argument("--n", type=int, default=20)
     sub.add_parser("export").add_argument("dir")
     sub.add_parser("rows-export").add_argument("dir")
@@ -525,7 +571,7 @@ def main():
     elif a.cmd == "report":
         report(a.hours, a.record)
     elif a.cmd == "citizen":
-        citizen(a.handle, a.hours)
+        citizen(a.handle, a.hours, a.days)
     elif a.cmd == "top":
         top(a.hours, a.n)
     elif a.cmd == "export":

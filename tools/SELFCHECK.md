@@ -555,6 +555,47 @@ paste the output, or report the raw value); list `test/` instead of guessing; a 
 Standing rule (CLAUDE.md): every id or number a hand returns is spot-checked before it is cited. Known: the wake-side tool
 restriction itself is untested from inside a wake until the first wake spawns one; the first such wake's log is the test.
 
+**Coder gate (2026-09-19, later the same day).** Measured from the session transcripts (tokens only, see the hands table in
+the operator session): six Haiku readers cost 4.0M and stood in for an estimated 20M-30M Opus; the two Sonnet coders cost
+8.3M, one shipped as PR 311 after a follow-up commit, the other (07:15, 5.4M) produced a diff no row ever carried, in a
+wake with no commit row naming a PR. Operator: "You definitely should only be using the coder when you know you have code to
+write and push out. OR if you need to write up code because you are analyzing or giving an example of something." So
+`agentgate.py` now refuses a `coder` inside a wake unless the record has a `commit` row under the wake's run id with target
+`pr:<branch>` or `code: true` in its payload. Tested against real rows: run 2026-09-19-0745 (commit #11901, `pr:fix/...`)
+allows, run 2026-09-19-0715 refuses with the reason naming both routes, `reader` passes in either, everything passes with
+F916_WAKE unset; the `code: true` route tested on a scratch copy of the db (a commit row with `code: true` and target
+`post:1` allows; an unknown run_id refuses); `record.py verify` unchanged at 13584 after. Known: the check reads the
+record, so a commit row written and then judged wrong still unlocks the hand for that wake; the row is the declaration.
+
+## retrieval scripts that replace reader hands (2026-09-19)
+
+Sorting the day's nine hands by brief: four readers were sent to run one command N times and copy the output (a
+cadence table from the citizen page, twenty `skim.py --since` calls, eight comments whole, an event-log walk through
+grep), one was half that, one was a real read (is a comment an "empty confirmation"). Operator: write the scripts now,
+internal scripts need no proposing; a SQLite table for served data is fine. Four landed, each tested against the hand's
+own oracle:
+
+- `events.py citizen H --days N` adds `by_day` (count, first/last id+ms+ISO, bursts split at 10-minute gaps, ids) from
+  the local feed table, no network. Oracle: the 07:15 brief's known burst c67409-c67430 at 07:04-07:05Z on 09-18;
+  reproduced (20 rows, one burst, span 1.0 min) and 09-19's (c69184-c69203, 07:07-07:08Z, 19 rows).
+- `skim.py posts ID,ID,... [--since ID | --since-ts ISO]` and `--since-ts` on `post`: per thread the new comments and one
+  tally line, then a footer naming the threads that moved and the new mentions of me. Run on #5966,#5937 since
+  2026-09-19T12:00Z: 11 and 3 new, mentions [69476, 69602, 69991]; spot-checked c69991 (fable-dax, "@tally-stick") by eye.
+- `skim.py comments ID,... [--full]` and `--inbox` (ids from state/me.json replies / comments_on_your_posts /
+  mentions_of_you): c69710 whole matches `board.py comment 69710`; `--inbox` with an empty inbox says so and exits 0.
+- `eventwalk.py sync|count`: the identity-events log kept in `idevents` in state/events.db (id, citizen, kind, detail,
+  hashes as served; chain not verified here). First sync: 17,871 rows in 36 pages, and Cloudflare 1015 (429) fired at the
+  tenth back-to-back page, so pages are paced 1.5 s apart and a 429/503 backs off 10/20/30/40 s keeping the cursor;
+  resumed from the local max and completed (served latest_event_id 17871 = local max). Second sync: +0 rows, 1 page (a
+  304). `count --kind memory.seal --match signed=... --match bearer=...`: 4,081 + 2,549 = 6,630 = the served
+  totals_by_kind for memory.seal, a partition with nothing left over (the 16:15 hand's two numbers, from 28 GETs and 60
+  turns). pulse.py now runs `eventwalk.py sync --pages 4` each tick beside `events.py sync`.
+- `hands.py [--days N]` (private): the counterfactual table above, from the session transcripts; run with the weekly report.
+
+Limits: `by_day` sees only what `events.py sync` has pulled (say so beside a count when it matters); `eventwalk` trusts
+the served rows and `INSERT OR IGNORE`s on id, so a served row that changed under the same id would keep its first
+version (the hash chain would show it; not this script's job).
+
 ## usage.py (2026-09-19)
 
 Turns the JSON `claude -p --output-format json` prints at the end of a wake into two things: the plain-text closing note

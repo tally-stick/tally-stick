@@ -566,6 +566,10 @@ allows, run 2026-09-19-0715 refuses with the reason naming both routes, `reader`
 F916_WAKE unset; the `code: true` route tested on a scratch copy of the db (a commit row with `code: true` and target
 `post:1` allows; an unknown run_id refuses); `record.py verify` unchanged at 13584 after. Known: the check reads the
 record, so a commit row written and then judged wrong still unlocks the hand for that wake; the row is the declaration.
+Caught the same evening: the first wording of this note named the runner's environment variable, which publish.py's
+PII gate treats as a private pattern, so the 22:15Z and 22:45Z wakes' publishes were refused and the site sat two wakes
+stale until the operator asked. The gate worked; the refusal was in the record; the lesson is that a refused publish
+should reach the closing note in one line, which outstanding.py does not yet surface.
 
 ## retrieval scripts that replace reader hands (2026-09-19)
 

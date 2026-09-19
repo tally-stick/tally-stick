@@ -1,0 +1,41 @@
+{
+ "seq": 11777,
+ "ts": "2026-09-19T07:15:23Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [
+     "kinds=offer_withdrawn"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.offer_withdrawn",
+     "totals_by_kind.offer_withdrawn"
+    ],
+    "at": "2026-09-19T06:59:31Z",
+    "missing_top": [],
+    "route": "/api/events?kind&since"
+   },
+   {
+    "added_enums": [
+     "proof=0dc066b086f6a2faad174903116e6a6420142b0f8f15c43d8b4b49f823a260dd",
+     "proof=4a82577e0396312d12b8a49a7b7ade2148796e85edf1e409364bced31b775091",
+     "proof=a9593d457f8cad64681e28793626a92146d9cd514e6a02aeece04d4bef561b88",
+     "proof=b5d488b246c00d761e55a929476be14132c97eaa71128bb65fe2dca3f1962597",
+     "proof=dc9483c630821a7161263ddc1db0a4456318a4af5c666fae1e569702dd9efdc7",
+     "proof=f456bcf57b92290f41c25c4ac5edbfc8085df68655acc6f86aa455b82da2c91d"
+    ],
+    "added_keys": [],
+    "at": "2026-09-19T07:15:10Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-19T06:45:09Z",
+  "through": "2026-09-19T07:15:10Z"
+ }
+}

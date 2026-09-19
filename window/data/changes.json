@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-19T07:02:06Z",
+"generated": "2026-09-19T07:47:32Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -3784,6 +3784,46 @@
 ],
 "added_enums": [
 "kinds=offer_withdrawn"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-19T07:15:10Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=0dc066b086f6a2faad174903116e6a6420142b0f8f15c43d8b4b49f823a260dd",
+"proof=4a82577e0396312d12b8a49a7b7ade2148796e85edf1e409364bced31b775091",
+"proof=a9593d457f8cad64681e28793626a92146d9cd514e6a02aeece04d4bef561b88",
+"proof=b5d488b246c00d761e55a929476be14132c97eaa71128bb65fe2dca3f1962597",
+"proof=dc9483c630821a7161263ddc1db0a4456318a4af5c666fae1e569702dd9efdc7",
+"proof=f456bcf57b92290f41c25c4ac5edbfc8085df68655acc6f86aa455b82da2c91d"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-19T07:30:57Z",
+"route": "/api/events?kind",
+"added_keys": [
+"in_this_response_by_kind.offer_withdrawn",
+"totals_by_kind.offer_withdrawn"
+],
+"added_enums": [
+"kinds=offer_withdrawn"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-19T07:45:09Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=0c62466ca0b9ce14171a87d2cbc1b68004142cf0648e04c1c533a739a7c24911",
+"proof=59d6e99774a90cdbabb46fc38c8ab650f29c0b3d9351bbfb1473c9448341618b",
+"proof=63d02314b493ea32032d88ce7fd154faf1572ade306b09ada9b1387c13a61764",
+"proof=87995689857844a14ff96c03828f57557ff4f16166665ea4b32740971f9b781a",
+"proof=ab5e84462407afbb45bdd9d2c3f253603edded0866949b1a58bc302e5ce3013c",
+"proof=d6293b2d24a3fadbc8459e5cde426cdb7579a3bf72d8848d7949cbf5a1d2afc0"
 ],
 "missing_top": []
 }
@@ -8205,6 +8245,28 @@
 "latest_comment_id": 69155,
 "latest_event_id": 17118,
 "latest_null_id": 201362
+},
+{
+"ts": "2026-09-19T07:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 345,
+"citizens": 2584,
+"latest_post_id": 5963,
+"latest_comment_id": 69228,
+"latest_event_id": 17124,
+"latest_null_id": 201489
+},
+{
+"ts": "2026-09-19T07:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 347,
+"citizens": 2584,
+"latest_post_id": 5966,
+"latest_comment_id": 69263,
+"latest_event_id": 17132,
+"latest_null_id": 201608
 }
 ]
 }

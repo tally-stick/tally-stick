@@ -8873,3 +8873,52 @@ seq,ts,tool,target,pass,kind,negative_test
 14256,2026-09-20T00:15:25Z,shape,board.py pages: shape changes since last check,1,verify,0
 14257,2026-09-20T00:15:30Z,runs,runs.2026-09-20,1,verify,0
 14284,2026-09-20T00:34:15Z,attest,claim #14282,1,verify,0
+14296,2026-09-20T00:45:09Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+14297,2026-09-20T00:45:09Z,heads,attest.treasury.anchored-append-only,1,verify,0
+14298,2026-09-20T00:45:09Z,heads,attest.identity_events.verified,1,verify,0
+14299,2026-09-20T00:45:09Z,heads,attest.ledger.verified,1,verify,0
+14300,2026-09-20T00:45:09Z,heads,checkpoint.identity_events.signature,1,verify,0
+14301,2026-09-20T00:45:09Z,heads,checkpoint.ledger.signature,1,verify,0
+14302,2026-09-20T00:45:09Z,heads,registry-key.pinned,1,verify,0
+14303,2026-09-20T00:45:09Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+14304,2026-09-20T00:45:09Z,heads,checkpoint.ledger.monotonic,1,verify,0
+14305,2026-09-20T00:45:09Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+14306,2026-09-20T00:45:09Z,heads,attest.identity_events.monotonic,1,verify,0
+14307,2026-09-20T00:45:09Z,heads,attest.ledger.monotonic,1,verify,0
+14308,2026-09-20T00:45:09Z,heads,attest.ledger.same-id-same-head,1,verify,0
+14311,2026-09-20T00:45:10Z,consistency,consistency.identity_events.17924->17924.from-signature,1,verify,0
+14312,2026-09-20T00:45:11Z,consistency,consistency.identity_events.17924->17924.to-signature,1,verify,0
+14313,2026-09-20T00:45:11Z,consistency,consistency.identity_events.17924->17924.from-root-matches-ours,1,verify,0
+14314,2026-09-20T00:45:11Z,consistency,consistency.identity_events.17924->17924.to-root-matches-ours,1,verify,0
+14315,2026-09-20T00:45:11Z,consistency,consistency.identity_events.17924->17924.to-root-matches-live,1,verify,0
+14316,2026-09-20T00:45:11Z,consistency,consistency.identity_events.17924->17924.proof,1,verify,0
+14317,2026-09-20T00:45:12Z,countersign,countersign.identity_events,1,verify,0
+14318,2026-09-20T00:45:12Z,countersign,countersign.ledger,1,verify,0
+14319,2026-09-20T00:45:19Z,pages,pages.domains,1,verify,0
+14320,2026-09-20T00:45:23Z,witness,witness.2026-09-20.registry-signatures,1,verify,0
+14321,2026-09-20T00:45:23Z,witness,witness.2026-09-20.countersignatures,1,verify,0
+14322,2026-09-20T00:45:23Z,witness,witness.2026-09-20.witness-keys-in-directory,1,verify,0
+14323,2026-09-20T00:45:23Z,witness,witness.2026-09-20.refusals,1,verify,0
+14324,2026-09-20T00:45:23Z,witness,witness.2026-09-20.monotonic,1,verify,0
+14325,2026-09-20T00:45:23Z,witness,witness.2026-09-20.checkpoint-id,1,verify,0
+14326,2026-09-20T00:45:23Z,witness,witness.2026-09-20.latest-vs-live,1,verify,0
+14327,2026-09-20T00:45:23Z,witness,witness.2026-09-20.latest-head-attest,1,verify,0
+14328,2026-09-20T00:45:23Z,witness,witness.2026-09-20.cadence,1,verify,0
+14329,2026-09-20T00:45:23Z,witness,witness.2026-09-20.newest-line-age,1,verify,0
+14330,2026-09-20T00:45:23Z,witness,witness.2026-09-20.outage,1,verify,0
+14331,2026-09-20T00:45:23Z,events,events.24h,1,verify,0
+14334,2026-09-20T00:45:25Z,dossier,tally-stick.registry-signature,1,verify,0
+14335,2026-09-20T00:45:25Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+14336,2026-09-20T00:45:25Z,dossier,tally-stick.inclusion,1,verify,0
+14337,2026-09-20T00:45:25Z,dossier,tally-stick.leaf-index,1,verify,0
+14338,2026-09-20T00:45:25Z,dossier,tally-stick.attestation-hashes,1,verify,0
+14339,2026-09-20T00:45:25Z,dossier,tally-stick.keys,1,verify,0
+14340,2026-09-20T00:45:25Z,dossier,tally-stick.event-hashes,1,verify,0
+14341,2026-09-20T00:45:25Z,dossier,tally-stick.seal-signatures,1,verify,0
+14342,2026-09-20T00:45:25Z,dossier,tally-stick.counts,1,verify,0
+14343,2026-09-20T00:45:26Z,shape,board.py pages: shape changes since last check,1,verify,0
+14345,2026-09-20T00:45:56Z,attest,claim #10248,1,verify,0
+14346,2026-09-20T00:45:57Z,attest,claim #10250,1,verify,0
+14347,2026-09-20T00:45:59Z,attest,claim #11279,1,verify,0
+14348,2026-09-20T00:46:01Z,attest,claim #11343,1,verify,0
+14349,2026-09-20T00:46:02Z,runs,runs.2026-09-20,1,verify,0

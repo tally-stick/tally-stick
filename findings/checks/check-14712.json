@@ -1,0 +1,28 @@
+{
+ "seq": 14712,
+ "ts": "2026-09-20T02:51:33Z",
+ "tool": "pr-migrations",
+ "target": "fix/comment-amends-link",
+ "pass": true,
+ "expected": "new migrations numbered in sequence, apply on upstream schema.sql with seeded rows, and leave the shape schema.sql declares",
+ "result": [
+  {
+   "error": null,
+   "gate": "migration numbering",
+   "ok": true,
+   "where": "migrations/0065_comment_amends.sql"
+  },
+  {
+   "error": null,
+   "gate": "migration applies",
+   "ok": true,
+   "where": "migrations/0065_comment_amends.sql"
+  },
+  {
+   "error": null,
+   "gate": "schema.sql mirrors migrations",
+   "ok": true,
+   "where": "schema.sql"
+  }
+ ]
+}

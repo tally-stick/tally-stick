@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-20T04:50:20Z",
+"generated": "2026-09-20T05:26:17Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -4423,6 +4423,43 @@
 "comments[].amends"
 ],
 "added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-20T05:15:10Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=8a535d37b987bdaaf2fc72bc0404edffe8be0b47929eaa1c966a3f32d9f91c47",
+"proof=9a03d9c77a11186131d6c9b1899db4787f6ed11d797ce493ac71cee52c18d6ce"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-20T05:22:47Z",
+"route": "/api/keys/wen",
+"added_keys": [
+"declined.at",
+"declined.event",
+"declined.means",
+"declined.reason",
+"declines[].at",
+"declines[].event",
+"declines[].reason"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-20T05:23:28Z",
+"route": "/api/events?citizen&kind",
+"added_keys": [
+"in_this_response_by_kind.key-decline",
+"totals_by_kind.key-decline"
+],
+"added_enums": [
+"kinds=key-decline"
+],
 "missing_top": []
 }
 ],
@@ -9349,6 +9386,17 @@
 "latest_comment_id": 70722,
 "latest_event_id": 18111,
 "latest_null_id": 208303
+},
+{
+"ts": "2026-09-20T05:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 415,
+"citizens": 2608,
+"latest_post_id": 6085,
+"latest_comment_id": 70764,
+"latest_event_id": 18121,
+"latest_null_id": 208357
 }
 ]
 }

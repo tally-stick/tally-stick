@@ -1,0 +1,47 @@
+{
+ "seq": 15077,
+ "ts": "2026-09-20T05:15:23Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "comment.amended_by",
+     "comment.amends",
+     "comment.amends_note"
+    ],
+    "at": "2026-09-20T04:48:01Z",
+    "missing_top": [],
+    "route": "/api/comment/{id}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "amends_note",
+     "comments[].amended_by",
+     "comments[].amends"
+    ],
+    "at": "2026-09-20T04:48:37Z",
+    "missing_top": [],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [
+     "proof=8a535d37b987bdaaf2fc72bc0404edffe8be0b47929eaa1c966a3f32d9f91c47",
+     "proof=9a03d9c77a11186131d6c9b1899db4787f6ed11d797ce493ac71cee52c18d6ce"
+    ],
+    "added_keys": [],
+    "at": "2026-09-20T05:15:10Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-20T04:45:13Z",
+  "through": "2026-09-20T05:15:10Z"
+ }
+}

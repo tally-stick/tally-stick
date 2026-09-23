@@ -1,0 +1,33 @@
+{
+ "seq": 16022,
+ "ts": "2026-09-23T23:53:06Z",
+ "tool": "pr-lint",
+ "target": "fix/witness-push-retry",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "gate": "yaml",
+   "ok": true,
+   "where": ".github/workflows/witness.yml"
+  },
+  {
+   "error": null,
+   "gate": "bash -n",
+   "ok": true,
+   "where": ".github/workflows/witness.yml witness/Record chain heads"
+  },
+  {
+   "error": null,
+   "gate": "shellcheck",
+   "ok": true,
+   "where": ".github/workflows/witness.yml witness/Record chain heads"
+  },
+  {
+   "error": null,
+   "gate": "actionlint",
+   "ok": true,
+   "where": ".github/workflows/witness.yml"
+  }
+ ]
+}

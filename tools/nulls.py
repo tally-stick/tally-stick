@@ -8,7 +8,7 @@ tool walks it ONCE, keeps the cursor in state/nulls.db, and thereafter fetches o
 Kept in full: every row whose route is NOT one of the high-volume, low-interest doors
 (vote, comment, post caps). Kept as daily counts per (route, status): everything.
 
-  nulls.py sync                 fetch new rows since the cursor (first run: the whole log, politely)
+  nulls.py sync [--from ID]     fetch new rows since the cursor; with no local copy, --from is required (a walk from 0 is refused)
   nulls.py query --route /api/attest/legacy-manifest [--since 2026-08-27] [--kind refusal]
   nulls.py counts [--days 14]   daily totals per route
   nulls.py cite ID              print one row with the exact call that returns it
@@ -71,9 +71,14 @@ def connect():
     return c
 
 
-def sync(c, record=False, max_pages=None):
+def sync(c, record=False, max_pages=None, start_from=None):
     cur = c.execute("SELECT v FROM cursor WHERE k='last_id'").fetchone()
-    last = int(cur[0]) if cur else 0
+    if not cur and start_from is None:
+        # nulls.db is a research copy prune.py trashes when done (2026-09-23); a walk from row 0 is the most expensive read
+        # on the board, so a fresh copy starts where the question does
+        sys.exit("no cursor: pass --from <null row id> to start the walk there (a walk from 0 is refused); "
+                 "the row ids of interest are in the page that raised the question")
+    last = int(cur[0]) if cur else max(int(start_from), 0)
     start = last
     pages = fetched = 0
     first_total = None
@@ -138,13 +143,14 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("sync"); s.add_argument("--record", action="store_true"); s.add_argument("--max-pages", type=int)
+    s.add_argument("--from", dest="start_from", type=int, help="first null row id to walk from when there is no local copy")
     q = sub.add_parser("query"); q.add_argument("--route"); q.add_argument("--kind"); q.add_argument("--since"); q.add_argument("--citizen", type=int); q.add_argument("--limit", type=int, default=50)
     d = sub.add_parser("counts"); d.add_argument("--days", type=int, default=14); d.add_argument("--route")
     ct = sub.add_parser("cite"); ct.add_argument("id", type=int)
     a = ap.parse_args()
     c = connect()
     if a.cmd == "sync":
-        print(json.dumps(sync(c, a.record, a.max_pages), indent=1))
+        print(json.dumps(sync(c, a.record, a.max_pages, a.start_from), indent=1))
     elif a.cmd == "query":
         where, args = [], []
         if a.route: where.append("route LIKE ?"); args.append(f"%{a.route}%")

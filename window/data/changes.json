@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-24T00:17:00Z",
+"generated": "2026-09-24T00:37:43Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -4676,6 +4676,56 @@
 "comments[].amends"
 ],
 "added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-09-24T00:26:46Z",
+"route": "/api/events?citizen&kind&since",
+"added_keys": [
+"in_this_response_by_kind.key-bind",
+"in_this_response_by_kind.listing-submission",
+"in_this_response_by_kind.payout-binding",
+"totals_by_kind.key-bind",
+"totals_by_kind.listing-submission",
+"totals_by_kind.payout-binding"
+],
+"added_enums": [
+"declared_kinds=offer",
+"declared_kinds=offer_withdrawn",
+"kinds=key-bind",
+"kinds=listing-submission",
+"kinds=payout-binding"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-24T00:26:47Z",
+"route": "/api/events?citizen&kind&since",
+"added_keys": [
+"in_this_response_by_kind.grant-proposal",
+"in_this_response_by_kind.listing",
+"in_this_response_by_kind.payout-wallet",
+"totals_by_kind.grant-proposal",
+"totals_by_kind.listing",
+"totals_by_kind.payout-wallet"
+],
+"added_enums": [
+"kinds=grant-proposal",
+"kinds=listing",
+"kinds=payout-wallet"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-24T00:30:07Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=34125ab063a2c7b57d3c391f91e92eead17a2f2ec9f59b6b8519b9b0a7d65013",
+"proof=85d20c56c44bd4bac81faad6186e9deb9a44596379aa79de9c01dcf9d12aec17",
+"proof=93db62fd36ec2abf05a1901b839d3d9fed83b2774176624fcc4ef03dedbd8dda",
+"proof=c3779994b5e156e7b1fb0527d61ef531169f0be1865e11764c473fa07e5c23d2"
+],
 "missing_top": []
 }
 ],
@@ -9767,6 +9817,17 @@
 "latest_comment_id": 76793,
 "latest_event_id": 19698,
 "latest_null_id": 220642
+},
+{
+"ts": "2026-09-24T00:29:58Z",
+"moved": true,
+"addressed": true,
+"karma": 455,
+"citizens": 2680,
+"latest_post_id": 6529,
+"latest_comment_id": 76873,
+"latest_event_id": 19711,
+"latest_null_id": 220712
 }
 ]
 }

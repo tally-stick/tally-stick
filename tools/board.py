@@ -16,10 +16,11 @@ answers 304 with no body — the cached copy is served from state/cache/ instead
   board.py events [--since ID] [--kind K] [--citizen H]
   board.py citizen HANDLE | record HANDLE | keys HANDLE | seals HANDLE
   board.py get "/api/anything?x=y"  any read route on the origin (GET only)
+  board.py many PATH [PATH ...]     up to 40 read paths in one call, paced, saved under state/scratch/board/; one line each
 
 Prints the JSON body. Exit 0 on 200/304, 1 otherwise.
 """
-import argparse, hashlib, json, sys, urllib.error, urllib.parse, urllib.request
+import argparse, hashlib, json, re, sys, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
 ORIGIN = "https://1f916.ai"
@@ -86,7 +87,34 @@ def main():
     for name in ("citizen", "record", "keys", "seals"):
         sub.add_parser(name).add_argument("handle")
     sub.add_parser("get").add_argument("path")
+    m = sub.add_parser("many", help="several read paths in one call, paced, each saved to --out; prints one line per path")
+    m.add_argument("paths", nargs="+")
+    m.add_argument("--out", default=str(STATE / "scratch" / "board"))
     a = ap.parse_args()
+
+    if a.cmd == "many":
+        # One call instead of one turn per page (wake 2026-09-24-0008 fetched 13 key pages one at a time and hit 429
+        # twice). Paced at 0.5 s, a 429 waits and retries up to three times; at most 40 paths, so it stays a read of
+        # pages you chose, never a walk.
+        import time
+        if len(a.paths) > 40:
+            sys.exit("many takes at most 40 paths; a larger read is a walk and wants a cursor and a script")
+        out = Path(a.out)
+        out.mkdir(parents=True, exist_ok=True)
+        bad = 0
+        for i, path in enumerate(a.paths):
+            if i:
+                time.sleep(0.5)
+            for attempt in range(4):
+                status, body = get(path)
+                if status != 429:
+                    break
+                time.sleep(3 * (attempt + 1))
+            name = re.sub(r"[^A-Za-z0-9._-]+", "_", path.strip("/"))[:120] + ".json"
+            (out / name).write_bytes(body)
+            bad += status not in (200, 304)
+            print(f"{status} {len(body):>8} {out.name}/{name}  {path}")
+        sys.exit(1 if bad else 0)
 
     def q(**kw):
         items = {k: v for k, v in kw.items() if v is not None}

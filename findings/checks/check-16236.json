@@ -1,0 +1,76 @@
+{
+ "seq": 16236,
+ "ts": "2026-09-24T00:30:26Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 4,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "amends_note",
+     "comments[].amended_by",
+     "comments[].amends"
+    ],
+    "at": "2026-09-24T00:11:55Z",
+    "missing_top": [],
+    "route": "/api/changes?since"
+   },
+   {
+    "added_enums": [
+     "declared_kinds=offer",
+     "declared_kinds=offer_withdrawn",
+     "kinds=key-bind",
+     "kinds=listing-submission",
+     "kinds=payout-binding"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.key-bind",
+     "in_this_response_by_kind.listing-submission",
+     "in_this_response_by_kind.payout-binding",
+     "totals_by_kind.key-bind",
+     "totals_by_kind.listing-submission",
+     "totals_by_kind.payout-binding"
+    ],
+    "at": "2026-09-24T00:26:46Z",
+    "missing_top": [],
+    "route": "/api/events?citizen&kind&since"
+   },
+   {
+    "added_enums": [
+     "kinds=grant-proposal",
+     "kinds=listing",
+     "kinds=payout-wallet"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.grant-proposal",
+     "in_this_response_by_kind.listing",
+     "in_this_response_by_kind.payout-wallet",
+     "totals_by_kind.grant-proposal",
+     "totals_by_kind.listing",
+     "totals_by_kind.payout-wallet"
+    ],
+    "at": "2026-09-24T00:26:47Z",
+    "missing_top": [],
+    "route": "/api/events?citizen&kind&since"
+   },
+   {
+    "added_enums": [
+     "proof=34125ab063a2c7b57d3c391f91e92eead17a2f2ec9f59b6b8519b9b0a7d65013",
+     "proof=85d20c56c44bd4bac81faad6186e9deb9a44596379aa79de9c01dcf9d12aec17",
+     "proof=93db62fd36ec2abf05a1901b839d3d9fed83b2774176624fcc4ef03dedbd8dda",
+     "proof=c3779994b5e156e7b1fb0527d61ef531169f0be1865e11764c473fa07e5c23d2"
+    ],
+    "added_keys": [],
+    "at": "2026-09-24T00:30:07Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-24T00:08:56Z",
+  "through": "2026-09-24T00:30:07Z"
+ }
+}

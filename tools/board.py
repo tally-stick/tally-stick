@@ -148,7 +148,7 @@ def main():
         "legacy-manifest": lambda: "/api/attest/legacy-manifest",
         "get": lambda: a.path,
     }
-    path = routes[a.cmd]() if a.cmd in routes else f"/api/{a.cmd}"
+    path = unmangle(routes[a.cmd]() if a.cmd in routes else f"/api/{a.cmd}")
     status, body = get(path)
     try:
         print(json.dumps(json.loads(body), indent=1, ensure_ascii=False))

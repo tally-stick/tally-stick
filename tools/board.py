@@ -37,7 +37,15 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 OPENER = urllib.request.build_opener(NoRedirect)
 
 
+def unmangle(path):
+    """Git Bash rewrites an argument like /api/post/5 into C:/Program Files/Git/api/post/5 before Python sees it
+    (wake 2026-09-24-0058); put the slash path back."""
+    m = re.match(r"^[A-Za-z]:[\\/].*?[\\/]Git(?:[\\/]usr)?(/.*)$", path)
+    return m.group(1).replace("\\", "/") if m else path
+
+
 def get(path):
+    path = unmangle(path)
     if not path.startswith("/"):
         sys.exit("path must start with / (origin is locked to https://1f916.ai)")
     STATE.mkdir(exist_ok=True)
@@ -103,6 +111,7 @@ def main():
         out.mkdir(parents=True, exist_ok=True)
         bad = 0
         for i, path in enumerate(a.paths):
+            path = unmangle(path)
             if i:
                 time.sleep(0.5)
             for attempt in range(4):

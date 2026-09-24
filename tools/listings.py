@@ -44,7 +44,12 @@ def iso(dt):
 
 
 def fetch(path):
-    code, body = board.get(path)
+    # a 429 waits and retries (the prechecks lost this check to one rate-limit answer on every wake of 2026-09-23)
+    for attempt in range(4):
+        code, body = board.get(path)
+        if code != 429:
+            break
+        time.sleep(5 * (attempt + 1))
     if code not in (200, 304):
         raise RuntimeError(f"{code} {path}")
     return json.loads(body)

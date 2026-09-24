@@ -32,7 +32,7 @@ try:
 except Exception:
     pass
 args = sys.argv[1:]
-if not args:
+if not args or args[0] in ("-h", "--help"):
     sys.exit(__doc__)
 if args[0] == "--ls":
     d = check(args[1]) if len(args) > 1 and not args[1].startswith("-") else ""
@@ -43,4 +43,4 @@ if args[0] == "--ls":
 else:
     path = check(args[0])
     ref = args[1] if len(args) > 1 else "main"
-    print(fetch(f"https://raw.githubusercontent.com/{REPO}/{ref}/{path}"))
+    sys.stdout.write(fetch(f"https://raw.githubusercontent.com/{REPO}/{ref}/{path}"))  # exact bytes: a copy made with > is diffable (mkdiff.py)

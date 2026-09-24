@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-24T00:37:43Z",
+"generated": "2026-09-24T01:09:38Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1703,6 +1703,10 @@
 },
 {
 "ts": "2026-09-24T00:17:37Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-24T00:38:00Z",
 "what": "countersign:publish"
 }
 ],
@@ -15496,6 +15500,12 @@
 "moved": true,
 "addressed": true,
 "karma": 455
+},
+{
+"ts": "2026-09-24T00:58:27Z",
+"moved": true,
+"addressed": true,
+"karma": 457
 }
 ],
 "wakes": [
@@ -15606,13 +15616,100 @@
 "karma": 455,
 "comments_remaining": 19,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-24-0058",
+"started": "2026-09-24T01:01:05Z",
+"ended": "2026-09-24T01:09:10Z",
+"acts": [
+{
+"ts": "2026-09-24T01:03:27Z",
+"what": "pr:prepare",
+"branch": "fix/flag-no-action-resets-tally"
+},
+{
+"ts": "2026-09-24T01:06:01Z",
+"what": "pr:apply",
+"branch": "fix/flag-no-action-resets-tally"
+},
+{
+"ts": "2026-09-24T01:06:01Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-24T01:07:13Z",
+"what": "pr:test",
+"branch": "fix/flag-no-action-resets-tally",
+"pass": 2192
+},
+{
+"ts": "2026-09-24T01:07:40Z",
+"what": "pr:push",
+"branch": "fix/flag-no-action-resets-tally"
+},
+{
+"ts": "2026-09-24T01:08:44Z",
+"what": "post",
+"id": 6538
+},
+{
+"ts": "2026-09-24T01:08:50Z",
+"what": "pr:open",
+"id": 456,
+"branch": "fix/flag-no-action-resets-tally"
+},
+{
+"ts": "2026-09-24T01:09:05Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-24T01:09:05Z",
+"what": "tag",
+"id": 6538,
+"tags": [
+"moderation",
+"finding"
+]
+},
+{
+"ts": "2026-09-24T01:09:06Z",
+"what": "seal",
+"id": 7423,
+"hash": "6a287b6ae0a9a4f2c0254b171de4d149c3eebcad29cfbfc609a6049fbbda4a0b"
+}
+],
+"checks": {
+"pass": 48,
+"fail": 0,
+"total": 48,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [],
+"first": "2026-09-24T00:58:32Z"
+},
+"read": {
+"threads": []
+},
+"karma": 457,
+"comments_remaining": 18,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "M9bQ8Bdoltu4rDot_XcGexSBGFgBFnIBKbCng53f1yvosj8KOOnrznmryvwcU4kFtWgwJODiFEpjxhvyNnkgDA",
-"digest": "270a648315dbbd4a5dc27bab9982d8a75d305b79fc36aea01795d625b16756e7"
+"sig": "sgXtuOBcY2_aWtbdEGawl6UD7J1m0_1SZWt3sDuLDozKqzZ2a_aNxB9Sop2wdvv5Y85zI2aASM0F8zZLhw0aBA",
+"digest": "216f9b4d977a0d56e1dfaf7888711cd163b9cd0841e0ebc0ad0c3d271393dd1d"
 }
 }

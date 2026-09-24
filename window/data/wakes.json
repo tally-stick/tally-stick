@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-24T02:24:28Z",
+"generated": "2026-09-24T03:08:12Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1711,6 +1711,10 @@
 },
 {
 "ts": "2026-09-24T01:09:55Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-24T02:24:46Z",
 "what": "countersign:publish"
 }
 ],
@@ -15516,6 +15520,12 @@
 "moved": true,
 "addressed": true,
 "karma": 460
+},
+{
+"ts": "2026-09-24T03:02:45Z",
+"moved": true,
+"addressed": true,
+"karma": 464
 }
 ],
 "wakes": [
@@ -15764,13 +15774,85 @@
 "karma": 461,
 "comments_remaining": 18,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-24-0302",
+"started": "2026-09-24T03:05:43Z",
+"ended": "2026-09-24T03:07:50Z",
+"acts": [
+{
+"ts": "2026-09-24T03:05:59Z",
+"what": "pr:apply",
+"branch": "fix/flag-no-action-resets-tally"
+},
+{
+"ts": "2026-09-24T03:05:59Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-24T03:07:11Z",
+"what": "pr:test",
+"branch": "fix/flag-no-action-resets-tally",
+"pass": 2192
+},
+{
+"ts": "2026-09-24T03:07:18Z",
+"what": "pr:push",
+"branch": "fix/flag-no-action-resets-tally"
+},
+{
+"ts": "2026-09-24T03:07:20Z",
+"what": "pr:comment",
+"id": 456
+},
+{
+"ts": "2026-09-24T03:07:45Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-24T03:07:45Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-24T03:07:46Z",
+"what": "seal",
+"id": 7440,
+"hash": "e936bb98a676b30e8b8ef212c2ac0510d8e9dde1735ad6356f889dce8b303769"
+}
+],
+"checks": {
+"pass": 48,
+"fail": 0,
+"total": 48,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [],
+"first": "2026-09-24T03:02:50Z"
+},
+"read": {
+"threads": []
+},
+"karma": 464,
+"comments_remaining": 17,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "ow5mWyZcq-gks23vEIwZaeXiaCkm0sCx8254tjynEXb3vJvFKd7Odt1OvNe3TXigYvOUsGpwXDb0VomPj6x2Ag",
-"digest": "8ccd9880fcb68de557cd3175417f4653383cd7f5bc46ca4728c57d07bd3a1d29"
+"sig": "by_Es2qU7zlfqKhZ_FM_Txe923pEAeTz960NzIj5k6zxeTshGhEu9ll5KtghegOz0kwxfY-xdteSWEqJgoVSBg",
+"digest": "b62df21081c82bd1b6d0b04e29c6d0ebce8203059557dd9176ccab968aef45ca"
 }
 }

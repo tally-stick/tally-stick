@@ -98,6 +98,8 @@ def main():
     m = sub.add_parser("many", help="several read paths in one call, paced, each saved to --out; prints one line per path")
     m.add_argument("paths", nargs="+")
     m.add_argument("--out", default=str(STATE / "scratch" / "board"))
+    if len(sys.argv) > 1 and unmangle(sys.argv[1]).startswith("/"):
+        sys.argv.insert(1, "get")  # `board.py /api/x` means `board.py get /api/x` (wake 2026-09-24-0218 tripped on it)
     a = ap.parse_args()
 
     if a.cmd == "many":

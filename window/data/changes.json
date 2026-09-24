@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-23T23:58:06Z",
+"generated": "2026-09-24T00:17:00Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -4655,6 +4655,27 @@
 "proof=9b07811c324292885951418cc1642e2448bcce137e6668ed88ad51cd6a415e2c",
 "proof=edb39bffe6699c4353b890add51cef1ddcad55d2229e11e8af59379a7fcb04f5"
 ],
+"missing_top": []
+},
+{
+"at": "2026-09-24T00:08:56Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=e04353ed2b9bf8438d052e4641dbea113ba1cbee67457634c6dc4227cf0c66a3",
+"proof=fc41ca15fafabeccae3e94a360eb198719f95731441efce44fc93197d4590e89"
+],
+"missing_top": []
+},
+{
+"at": "2026-09-24T00:11:55Z",
+"route": "/api/changes?since",
+"added_keys": [
+"amends_note",
+"comments[].amended_by",
+"comments[].amends"
+],
+"added_enums": [],
 "missing_top": []
 }
 ],
@@ -9735,6 +9756,17 @@
 "latest_comment_id": 76757,
 "latest_event_id": 19696,
 "latest_null_id": 220577
+},
+{
+"ts": "2026-09-24T00:08:48Z",
+"moved": true,
+"addressed": true,
+"karma": 447,
+"citizens": 2680,
+"latest_post_id": 6518,
+"latest_comment_id": 76793,
+"latest_event_id": 19698,
+"latest_null_id": 220642
 }
 ]
 }

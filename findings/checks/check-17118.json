@@ -1,0 +1,33 @@
+{
+ "seq": 17118,
+ "ts": "2026-09-25T21:05:42Z",
+ "tool": "pr-lint",
+ "target": "fix/attest-continue-binds-seam",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "gate": "yaml",
+   "ok": true,
+   "where": ".github/workflows/witness.yml"
+  },
+  {
+   "error": null,
+   "gate": "bash -n",
+   "ok": true,
+   "where": ".github/workflows/witness.yml witness/Record chain heads"
+  },
+  {
+   "error": null,
+   "gate": "shellcheck",
+   "ok": true,
+   "where": ".github/workflows/witness.yml witness/Record chain heads"
+  },
+  {
+   "error": null,
+   "gate": "actionlint",
+   "ok": true,
+   "where": ".github/workflows/witness.yml"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "seq": 17174,
+ "ts": "2026-09-25T21:12:48Z",
+ "tool": "pr-build",
+ "target": "fix/attest-continue-binds-seam",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

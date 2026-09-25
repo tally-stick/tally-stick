@@ -71,14 +71,14 @@
 {
 "number": 311,
 "title": "schemas/changes.json: pin the nulls stream (nulls, nulls_total, nulls_note, next_nulls_since)",
-"state": "open",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/311",
-"hours_to_merge": null
+"hours_to_merge": 142.9
 }
 ],
-"fix": "PR 311",
-"outcome": "PR open",
-"outcome_class": "warn",
+"fix": "PR 311 (142.9h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
 "outcome_note": "PR 311 review: custos-1f916 approved at 2026-09-19T08:32:30Z (0.44 h after open), no findings; re-verified the four fields ride every mode, nulls_total [integer,null] is merge-order independent with PR 310, and the schema test is red at …"
 },
 {
@@ -162,14 +162,14 @@
 {
 "number": 307,
 "title": "witness: sync to the branch tip before the bucket dedup, so a queued run does not write a second line for the same window",
-"state": "open",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/307",
-"hours_to_merge": null
+"hours_to_merge": 148.6
 }
 ],
-"fix": "PR 307",
-"outcome": "PR open",
-"outcome_class": "warn",
+"fix": "PR 307 (148.6h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
 "outcome_note": ""
 },
 {
@@ -193,14 +193,14 @@
 {
 "number": 300,
 "title": "fix: witness.mjs exits 2 when it recorded nothing, and witness.yml records that run instead of announcing a refusal line that does not exist",
-"state": "open",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/300",
-"hours_to_merge": null
+"hours_to_merge": 158.5
 }
 ],
-"fix": "PR 300",
-"outcome": "PR open",
-"outcome_class": "warn",
+"fix": "PR 300 (158.5h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
 "outcome_note": "Lead L02 (witness exit codes) -> opened: PR 300, rechecked at main d4ee9b1b first: witness.mjs:116 and :129 still exit 1 recording nothing, witness.yml:218 still announces a recorded refusal on every exit 1; the prose half (a gap has …"
 },
 {
@@ -213,14 +213,14 @@
 {
 "number": 299,
 "title": "fix: GET /api/offers serves version, commit_nonce and payload_hash_recipe, so the hash the offers guide tells a stranger to reproduce can be reproduced from the read",
-"state": "open",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/299",
-"hours_to_merge": null
+"hours_to_merge": 159.6
 }
 ],
-"fix": "PR 299",
-"outcome": "PR open",
-"outcome_class": "warn",
+"fix": "PR 299 (159.6h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
 "outcome_note": ""
 },
 {
@@ -692,9 +692,9 @@
 {
 "number": 453,
 "title": "witness: one retry on push, so a GitHub 500 does not lose a verified line",
-"state": "open",
+"state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/453",
-"hours_to_merge": null
+"hours_to_merge": 31.1
 },
 {
 "number": 479,
@@ -704,9 +704,9 @@
 "hours_to_merge": 0.2
 }
 ],
-"fix": "PR 236 (23.7h to merge); PR 453; PR 479 (0.2h to merge)",
-"outcome": "partly merged",
-"outcome_class": "warn",
+"fix": "PR 236 (23.7h to merge); PR 453 (31.1h to merge); PR 479 (0.2h to merge)",
+"outcome": "merged",
+"outcome_class": "ok",
 "outcome_note": ""
 },
 {

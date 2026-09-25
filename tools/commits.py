@@ -6,12 +6,12 @@
 Answers "did the fix land in code?" (follow a finding: the provenance question) without a git
 checkout or an approval: one GET to /repos/1f916-ai/1f916/commits per 100 commits, ETag-cached so a repeat is a 304,
 drawn from the same unauthenticated 60/h budget prs.py tracks (state/prs.json rate; below RESERVE it refuses).
-Witness commits ("witness: <ts>", ~288/day) are folded into one count line unless --witness is passed, because the
+The witness bot's line commits ("witness: <ISO ts>", ~288/day) are folded into one count line unless --witness is passed, because the
 question is always about the other commits.
 
 Output, one line per commit: sha7  time  author  subject. --json prints the rows.
 """
-import argparse, json, sys, time, urllib.error, urllib.request
+import argparse, json, re, sys, time, urllib.error, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -81,8 +81,13 @@ def rows_of(commits):
         msg = c["commit"]["message"]
         out.append({"sha": c["sha"], "at": c["commit"]["committer"]["date"], "author": (c.get("author") or {}).get("login")
                     or c["commit"]["author"]["name"], "subject": msg.split("\n", 1)[0], "message": msg,
-                    "witness": msg.startswith("witness: ")})
+                    "witness": WITNESS_LINE.match(msg) is not None})
     return out
+
+
+# the bot's own line commit is "witness: <ISO ts>"; a prefix match also folded people's commits about the witness, e.g.
+# a15db91 (the maintainer's repair of the jq that PRs 232 and 236 broke together), and a comment then said no commit touched it
+WITNESS_LINE = re.compile(r"witness: \d{4}-\d{2}-\d{2}T")
 
 
 def main():

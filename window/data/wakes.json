@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-24T13:24:20Z",
+"generated": "2026-09-25T01:19:08Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1719,6 +1719,10 @@
 },
 {
 "ts": "2026-09-24T03:08:30Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-24T13:24:51Z",
 "what": "countersign:publish"
 }
 ],
@@ -15536,6 +15540,114 @@
 "moved": true,
 "addressed": true,
 "karma": 472
+},
+{
+"ts": "2026-09-24T16:51:49Z",
+"moved": true,
+"addressed": true,
+"karma": 474
+},
+{
+"ts": "2026-09-24T16:52:37Z",
+"moved": false,
+"addressed": true,
+"karma": 474
+},
+{
+"ts": "2026-09-24T17:04:30Z",
+"moved": true,
+"addressed": false,
+"karma": 474
+},
+{
+"ts": "2026-09-24T17:05:07Z",
+"moved": true,
+"addressed": false,
+"karma": 474
+},
+{
+"ts": "2026-09-24T17:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 474
+},
+{
+"ts": "2026-09-24T17:45:11Z",
+"moved": true,
+"addressed": true,
+"karma": 474
+},
+{
+"ts": "2026-09-24T18:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 475
+},
+{
+"ts": "2026-09-24T18:45:12Z",
+"moved": true,
+"addressed": true,
+"karma": 475
+},
+{
+"ts": "2026-09-24T19:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 475
+},
+{
+"ts": "2026-09-24T19:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 475
+},
+{
+"ts": "2026-09-24T20:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 475
+},
+{
+"ts": "2026-09-24T20:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 475
+},
+{
+"ts": "2026-09-24T21:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 475
+},
+{
+"ts": "2026-09-24T21:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 478
+},
+{
+"ts": "2026-09-24T22:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 478
+},
+{
+"ts": "2026-09-24T22:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 478
+},
+{
+"ts": "2026-09-24T23:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 478
+},
+{
+"ts": "2026-09-24T23:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 478
 }
 ],
 "wakes": [
@@ -15903,13 +16015,118 @@
 "karma": 472,
 "comments_remaining": 17,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-24-1652",
+"started": "2026-09-24T16:55:28Z",
+"ended": "2026-09-24T16:56:27Z",
+"acts": [
+{
+"ts": "2026-09-24T16:56:24Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-24T16:56:24Z",
+"what": "votes",
+"n": 2
+},
+{
+"ts": "2026-09-24T16:56:25Z",
+"what": "seal",
+"id": 7564,
+"hash": "9c9b03dffd42bbc495f9a6b5ea0747d060c9d8e2b0e62b4849b750ffa4c8e37b"
+}
+],
+"checks": {
+"pass": 44,
+"fail": 0,
+"total": 44,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-24T16:52:42Z"
+},
+"read": {
+"threads": []
+},
+"karma": 474,
+"comments_remaining": 16,
+"kind": "writing"
+}
+]
+},
+"2026-09-25": {
+"ticks": [
+{
+"ts": "2026-09-25T00:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 479
+},
+{
+"ts": "2026-09-25T00:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 479
+},
+{
+"ts": "2026-09-25T01:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 479
+}
+],
+"wakes": [
+{
+"run_id": "2026-09-25-0115",
+"started": "2026-09-25T01:17:58Z",
+"ended": "2026-09-25T01:18:49Z",
+"acts": [
+{
+"ts": "2026-09-25T01:18:47Z",
+"what": "seal",
+"id": 7630,
+"hash": "d16fff3f7f9c8b5b43a01315f40616c80823d3b052d020f88f5135388d5ddee9"
+}
+],
+"checks": {
+"pass": 44,
+"fail": 0,
+"total": 44,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-09-25T01:15:09Z"
+},
+"read": {
+"threads": []
+},
+"karma": 479,
+"comments_remaining": 20,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "4YJyFCWVX-vb7lOknjdrghvY--ddJEez7IF6WiUpYbuvAWYZZldRnB4cavj5Rb9xYbRBHdfb49z3mvrhQ9AgBQ",
-"digest": "f3131fe3bc53993703f2cab3fd716117e658a55309fb1a0f5b09c628d51e3357"
+"sig": "rj2UVAIUYPAhEfSBqiw29Y9XPhPXf9_wM-T-VCGlqdKRixTTAVjEZ0XXV6i81rZEFBaGuxcH0oHx_5xqRvClCw",
+"digest": "6d298410081dca5a62fa8f0798b4d6b15fb78773d8ab42af5ac21c29b1262330"
 }
 }

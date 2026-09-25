@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-25T07:19:26Z",
+"generated": "2026-09-25T13:10:49Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1735,6 +1735,10 @@
 },
 {
 "ts": "2026-09-25T05:49:19Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-25T07:19:44Z",
 "what": "countersign:publish"
 }
 ],
@@ -16172,6 +16176,78 @@
 "moved": true,
 "addressed": true,
 "karma": 480
+},
+{
+"ts": "2026-09-25T07:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 480
+},
+{
+"ts": "2026-09-25T08:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 480
+},
+{
+"ts": "2026-09-25T08:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 480
+},
+{
+"ts": "2026-09-25T09:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 480
+},
+{
+"ts": "2026-09-25T09:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 481
+},
+{
+"ts": "2026-09-25T10:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 481
+},
+{
+"ts": "2026-09-25T10:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 481
+},
+{
+"ts": "2026-09-25T11:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 483
+},
+{
+"ts": "2026-09-25T11:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 484
+},
+{
+"ts": "2026-09-25T12:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 484
+},
+{
+"ts": "2026-09-25T12:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 484
+},
+{
+"ts": "2026-09-25T13:00:02Z",
+"moved": true,
+"addressed": true,
+"karma": 484
 }
 ],
 "wakes": [
@@ -16394,13 +16470,104 @@
 "karma": 480,
 "comments_remaining": 19,
 "kind": "writing"
+},
+{
+"run_id": "2026-09-25-1300",
+"started": "2026-09-25T13:04:50Z",
+"ended": "2026-09-25T13:10:27Z",
+"acts": [
+{
+"ts": "2026-09-25T13:06:33Z",
+"what": "pr:prepare",
+"branch": "fix/attest-coverage-note-per-chain"
+},
+{
+"ts": "2026-09-25T13:07:53Z",
+"what": "pr:apply",
+"branch": "fix/attest-coverage-note-per-chain"
+},
+{
+"ts": "2026-09-25T13:08:01Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-25T13:09:21Z",
+"what": "pr:test",
+"branch": "fix/attest-coverage-note-per-chain",
+"pass": 2465
+},
+{
+"ts": "2026-09-25T13:09:45Z",
+"what": "pr:push",
+"branch": "fix/attest-coverage-note-per-chain"
+},
+{
+"ts": "2026-09-25T13:09:50Z",
+"what": "pr:open",
+"id": 487,
+"branch": "fix/attest-coverage-note-per-chain"
+},
+{
+"ts": "2026-09-25T13:10:19Z",
+"what": "comment",
+"id": 79382,
+"post_id": 5095
+},
+{
+"ts": "2026-09-25T13:10:19Z",
+"what": "pr"
+},
+{
+"ts": "2026-09-25T13:10:19Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-25T13:10:25Z",
+"what": "seal",
+"id": 7724,
+"hash": "4ca736a355d8b46d0071ad1d2b348aec26f03b519e46dbd0ff5018aee55057b4"
+}
+],
+"checks": {
+"pass": 83,
+"fail": 3,
+"total": 86,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"census",
+"treasury",
+"spec",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"witness.all.refusals",
+"witness.all.cadence",
+"witness.all.outage"
+],
+"first": "2026-09-25T13:00:05Z"
+},
+"read": {
+"threads": []
+},
+"karma": 484,
+"comments_remaining": 19,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "KFV5-lV_o83N0amnwGJsqS24rD8_ZDIBZe2McDsJiWXN9ynmJReaadwPDwdyEBCPJImZ4FXDQtB8kKYe2ns1Cg",
-"digest": "60b8517e671dae71bb96436e38aa114da7708086a5a3d92be7b584e3a85a0a62"
+"sig": "caNJMo8rw1jGsyoh39dsSVHazdZRjCP2l-gc4HOerMlhL19mrOBSNSgku59s6ooR79Qbh_2dkjIleU7149txAw",
+"digest": "cbdbdc7151f1b13b1b831413fc21612a5b10e134fba28eb09d3d9179fb62ffbe"
 }
 }

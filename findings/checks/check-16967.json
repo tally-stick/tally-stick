@@ -1,0 +1,56 @@
+{
+ "seq": 16967,
+ "ts": "2026-09-25T13:02:28Z",
+ "tool": "witness",
+ "target": "witness.all.outage",
+ "pass": false,
+ "expected": "no degraded window of 1 h or longer",
+ "result": [
+  {
+   "duration_h": 3.29,
+   "expected_s": 3600,
+   "from": "2026-08-09T04:39:27Z",
+   "runs_inside": 1,
+   "severity": "outage",
+   "to": "2026-08-09T07:56:34Z",
+   "worst_gap_s": 11827
+  },
+  {
+   "duration_h": 56.49,
+   "expected_s": 300,
+   "from": "2026-08-17T19:17:57Z",
+   "runs_inside": 38,
+   "severity": "outage",
+   "to": "2026-08-20T03:47:05Z",
+   "worst_gap_s": 12215
+  },
+  {
+   "duration_h": 5.19,
+   "expected_s": 300,
+   "from": "2026-09-12T19:25:43Z",
+   "runs_inside": 1,
+   "severity": "outage",
+   "to": "2026-09-13T00:37:19Z",
+   "worst_gap_s": 18696
+  },
+  {
+   "duration_h": 7.82,
+   "expected_s": 300,
+   "from": "2026-09-13T04:00:47Z",
+   "runs_inside": 1,
+   "severity": "outage",
+   "to": "2026-09-13T11:49:56Z",
+   "worst_gap_s": 28149
+  },
+  {
+   "duration_h": 1.07,
+   "expected_s": 300,
+   "from": "2026-09-14T01:16:22Z",
+   "runs_inside": 1,
+   "severity": "outage",
+   "to": "2026-09-14T02:20:21Z",
+   "worst_gap_s": 3839
+  }
+ ],
+ "missed_slot_windows": 11
+}

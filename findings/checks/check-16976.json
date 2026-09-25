@@ -1,0 +1,22 @@
+{
+ "seq": 16976,
+ "ts": "2026-09-25T13:08:15Z",
+ "tool": "pr-build",
+ "target": "fix/attest-coverage-note-per-chain",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

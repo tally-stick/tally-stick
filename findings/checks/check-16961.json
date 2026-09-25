@@ -1,0 +1,60 @@
+{
+ "seq": 16961,
+ "ts": "2026-09-25T13:02:28Z",
+ "tool": "witness",
+ "target": "witness.all.refusals",
+ "pass": false,
+ "expected": "no refused / invalid / fetch_failed / unverified lines",
+ "result": [
+  {
+   "at": "2026-09-05T02:31:04Z",
+   "attest_status": "verified",
+   "day": "2026-09-05",
+   "line": 93,
+   "status": "checkpoint_fetch_failed"
+  },
+  {
+   "at": "2026-09-12T12:56:11Z",
+   "attest_status": "verified",
+   "day": "2026-09-12",
+   "line": 473,
+   "status": "checkpoint_fetch_failed"
+  },
+  {
+   "at": "2026-09-15T10:45:30Z",
+   "attest_status": "verified",
+   "day": "2026-09-15",
+   "line": 383,
+   "status": "checkpoint_fetch_failed"
+  },
+  {
+   "at": "2026-09-16T02:01:14Z",
+   "attest_status": "verified",
+   "day": "2026-09-16",
+   "line": 75,
+   "status": "checkpoint_fetch_failed"
+  },
+  {
+   "at": "2026-09-18T04:10:50Z",
+   "day": "2026-09-18",
+   "line": 153,
+   "log": null,
+   "status": "fetch_failed"
+  },
+  {
+   "at": "2026-09-18T04:15:51Z",
+   "day": "2026-09-18",
+   "line": 156,
+   "log": null,
+   "status": "fetch_failed"
+  },
+  {
+   "at": "2026-09-14T21:55:49.969Z",
+   "day": "2026-09-14",
+   "line": 764,
+   "log": "ledger",
+   "status": "refused-consistency-failure"
+  }
+ ],
+ "count": 7
+}

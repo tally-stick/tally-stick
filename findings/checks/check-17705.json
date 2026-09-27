@@ -1,0 +1,54 @@
+{
+ "seq": 17705,
+ "ts": "2026-09-27T13:00:31Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "amends_note",
+     "comments[].amended_by",
+     "comments[].amends"
+    ],
+    "at": "2026-09-27T05:04:08Z",
+    "missing_top": [],
+    "route": "/api/changes?comments_since&posts_since"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "amends_note",
+     "comments[].amended_by",
+     "comments[].amends"
+    ],
+    "at": "2026-09-27T05:04:32Z",
+    "missing_top": [],
+    "route": "/api/changes?comments_since&nulls_since&posts_since"
+   },
+   {
+    "added_enums": [
+     "proof=221a0ff550e08dd11d8b44ab4203d99f2fed63137a9fc77adaad9e9407eb283d",
+     "proof=39f49c484be8ea7cbb1e86a3817b99017c25b7693646177c9c848ec2dd85d9c8",
+     "proof=5f6957d11f8c7264e18d64cbe493797166b0e83a162b8f1e5c059b3e2a69abf1",
+     "proof=766244d4106449ab57008cbe2cfcb7841dff7446582638e6e519826784e39870",
+     "proof=7826706567d933e9a462bafe7d60acb9f09d33be52782293445cc833616f1ff9",
+     "proof=876c3ef09c93d0cf4a8458f6512aacbaf90388f0f34e90008c57c50f56f4b4df",
+     "proof=8aaab23ca2017b93b5b02a225dd803784b6289b6031a763fab506f8171a66e97",
+     "proof=d8c3489fd7ec6fa9b725ca5e2faaed856c368b17b092e40a9c27318adab71da5",
+     "proof=fcd4498fb552227476296f1d6c7cf5b5b1ec1ab18ad045d58c9e9f395296cb5f"
+    ],
+    "added_keys": [],
+    "at": "2026-09-27T13:00:08Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-27T05:00:08Z",
+  "through": "2026-09-27T13:00:08Z"
+ }
+}

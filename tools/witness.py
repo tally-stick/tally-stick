@@ -176,6 +176,15 @@ def main():
     days = list_days() if args.all else [args.day or utc_today()]
     scope = "all" if args.all else days[0]
     checks = []
+    # --all is the weekly audit over every day file. Past incidents never leave the history, so failing on any of them
+    # reported the same three failures every week (first run 2026-09-25: newest incident 09-18, each already caught by
+    # that day's own check). It fails only on incidents inside the last 8 days (a weekly cycle plus a day's slack);
+    # the older ones stay in the result as history. A line with no timestamp counts as new.
+    since = datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=8) if args.all else None
+    window_note = " inside the last 8 days (older incidents listed as history)" if args.all else ""
+
+    def fresh(at):
+        return since is None or not at or parse_at(at) >= since
 
     def check(target, ok, result, expected, **extra):
         row = {"tool": TOOL, "target": f"witness.{scope}.{target}", "pass": bool(ok), "result": result, "expected": expected}
@@ -284,7 +293,9 @@ def main():
         elif j.get("checkpoints") == "fetch_failed":
             # the attest GET succeeded but the checkpoint GET (curl -sf) did not, in the same run
             refusals.append({"day": j["_day"], "line": j["_line"], "at": j.get("at"), "status": "checkpoint_fetch_failed", "attest_status": st})
-    check("refusals", not refusals, refusals[:20], "no refused / invalid / fetch_failed / unverified lines", count=len(refusals))
+    new_refusals = [r for r in refusals if fresh(r["at"])]
+    check("refusals", not new_refusals, refusals[:20], "no refused / invalid / fetch_failed / unverified lines" + window_note,
+          count=len(refusals), new=len(new_refusals))
 
     # ---- monotonic across head lines ----
     mono = []
@@ -410,7 +421,9 @@ def main():
              "flagged_gaps": len(flagged), "degraded_windows": windows}
     if join:
         stats["midnight_join"] = {"yesterday_last": join["at"], "today_first": heads[1]["at"] if len(heads) > 1 else None}
-    check("cadence", not windows, stats, "no gap > 2x expected cadence (expected 5 min after 2026-08-12T03:36:59Z, 60 min before)")
+    new_windows = [w for w in windows if fresh(w["to"])]
+    check("cadence", not new_windows, stats, "no gap > 2x expected cadence (expected 5 min after 2026-08-12T03:36:59Z, 60 min before)" + window_note,
+          new=len(new_windows))
     # Age of the newest head line: the witness is a five-minute job, so a newest line older than three slots means the
     # job is not running NOW, whatever the day's history looks like. Today only (a past day's newest line is old by
     # definition). Clock caution (egress c59105): 'at' is the runner's clock; ours is compared loosely (15 min).
@@ -420,7 +433,9 @@ def main():
         check("newest-line-age", age_s <= 15 * 60, {"newest_at": heads[-1]["at"], "age_s": int(age_s)},
               "newest head line within 15 min (three five-minute slots) of now")
     outages = [w for w in windows if w["severity"] == "outage"]
-    check("outage", not outages, outages, "no degraded window of 1 h or longer", missed_slot_windows=len(windows) - len(outages))
+    new_outages = [w for w in outages if fresh(w["to"])]
+    check("outage", not new_outages, outages, "no degraded window of 1 h or longer" + window_note,
+          missed_slot_windows=len(windows) - len(outages), new=len(new_outages))
 
     all_ok = all(r["pass"] for r in checks)
     print(json.dumps({"scope": scope, "days": len(days), "per_day": per_day, "unparsed": bad[:10], "live_registry_key": live_key,

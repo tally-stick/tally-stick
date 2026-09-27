@@ -11058,3 +11058,53 @@ seq,ts,tool,target,pass,kind,negative_test
 17750,2026-09-27T13:10:52Z,attest,claim #17711,1,verify,0
 17751,2026-09-27T13:10:52Z,attest,claim #17712,1,verify,0
 17752,2026-09-27T13:10:54Z,attest,claim #17713,1,verify,0
+17776,2026-09-27T21:00:06Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+17777,2026-09-27T21:00:06Z,heads,attest.treasury.anchored-append-only,1,verify,0
+17778,2026-09-27T21:00:06Z,heads,attest.identity_events.verified,1,verify,0
+17779,2026-09-27T21:00:06Z,heads,attest.ledger.verified,1,verify,0
+17780,2026-09-27T21:00:06Z,heads,checkpoint.identity_events.signature,1,verify,0
+17781,2026-09-27T21:00:06Z,heads,checkpoint.ledger.signature,1,verify,0
+17782,2026-09-27T21:00:06Z,heads,registry-key.pinned,1,verify,0
+17783,2026-09-27T21:00:06Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+17784,2026-09-27T21:00:06Z,heads,checkpoint.ledger.monotonic,1,verify,0
+17785,2026-09-27T21:00:06Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+17786,2026-09-27T21:00:06Z,heads,attest.identity_events.monotonic,1,verify,0
+17787,2026-09-27T21:00:06Z,heads,attest.ledger.monotonic,1,verify,0
+17788,2026-09-27T21:00:06Z,heads,attest.ledger.same-id-same-head,1,verify,0
+17791,2026-09-27T21:00:07Z,consistency,consistency.identity_events.20858->20858.from-signature,1,verify,0
+17792,2026-09-27T21:00:07Z,consistency,consistency.identity_events.20858->20858.to-signature,1,verify,0
+17793,2026-09-27T21:00:07Z,consistency,consistency.identity_events.20858->20858.from-root-matches-ours,1,verify,0
+17794,2026-09-27T21:00:07Z,consistency,consistency.identity_events.20858->20858.to-root-matches-ours,1,verify,0
+17795,2026-09-27T21:00:07Z,consistency,consistency.identity_events.20858->20858.to-root-matches-live,1,verify,0
+17796,2026-09-27T21:00:07Z,consistency,consistency.identity_events.20858->20858.proof,1,verify,0
+17797,2026-09-27T21:00:09Z,countersign,countersign.identity_events,1,verify,0
+17798,2026-09-27T21:00:09Z,countersign,countersign.ledger,1,verify,0
+17799,2026-09-27T21:00:34Z,pages,pages.domains,1,verify,0
+17800,2026-09-27T21:00:37Z,witness,witness.2026-09-27.registry-signatures,1,verify,0
+17801,2026-09-27T21:00:37Z,witness,witness.2026-09-27.countersignatures,1,verify,0
+17802,2026-09-27T21:00:37Z,witness,witness.2026-09-27.witness-keys-in-directory,1,verify,0
+17803,2026-09-27T21:00:37Z,witness,witness.2026-09-27.refusals,1,verify,0
+17804,2026-09-27T21:00:37Z,witness,witness.2026-09-27.monotonic,1,verify,0
+17805,2026-09-27T21:00:37Z,witness,witness.2026-09-27.checkpoint-id,1,verify,0
+17806,2026-09-27T21:00:37Z,witness,witness.2026-09-27.latest-vs-live,1,verify,0
+17807,2026-09-27T21:00:37Z,witness,witness.2026-09-27.latest-head-attest,1,verify,0
+17808,2026-09-27T21:00:37Z,witness,witness.2026-09-27.cadence,1,verify,0
+17809,2026-09-27T21:00:37Z,witness,witness.2026-09-27.newest-line-age,1,verify,0
+17810,2026-09-27T21:00:37Z,witness,witness.2026-09-27.outage,1,verify,0
+17813,2026-09-27T21:00:40Z,dossier,tally-stick.registry-signature,1,verify,0
+17814,2026-09-27T21:00:40Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+17815,2026-09-27T21:00:40Z,dossier,tally-stick.inclusion,1,verify,0
+17816,2026-09-27T21:00:40Z,dossier,tally-stick.leaf-index,1,verify,0
+17817,2026-09-27T21:00:40Z,dossier,tally-stick.attestation-hashes,1,verify,0
+17818,2026-09-27T21:00:40Z,dossier,tally-stick.keys,1,verify,0
+17819,2026-09-27T21:00:40Z,dossier,tally-stick.event-hashes,1,verify,0
+17820,2026-09-27T21:00:40Z,dossier,tally-stick.seal-signatures,1,verify,0
+17821,2026-09-27T21:00:40Z,dossier,tally-stick.counts,1,verify,0
+17822,2026-09-27T21:00:40Z,shape,board.py pages: shape changes since last check,1,verify,0
+17823,2026-09-27T21:01:10Z,runs,runs.2026-09-27,1,verify,0
+17829,2026-09-27T21:06:52Z,pr-lint,fix/wake-missed-windows,1,gate,0
+17830,2026-09-27T21:07:07Z,pr-build,fix/wake-missed-windows,1,gate,0
+17831,2026-09-27T21:07:08Z,pr-migrations,fix/wake-missed-windows,1,gate,0
+17835,2026-09-27T21:08:41Z,pr-lint,fix/wake-missed-windows,1,gate,0
+17836,2026-09-27T21:08:43Z,pr-build,fix/wake-missed-windows,1,gate,0
+17837,2026-09-27T21:08:44Z,pr-migrations,fix/wake-missed-windows,1,gate,0

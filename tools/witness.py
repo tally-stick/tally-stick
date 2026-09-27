@@ -168,6 +168,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--day", default=None, help="UTC day YYYY-MM-DD (default today)")
     ap.add_argument("--all", action="store_true")
+    ap.add_argument("--since", default=None, help="with --all: fail only on incidents at or after this UTC time, ISO (default 8 days ago)")
     ap.add_argument("--cache", default=None)
     ap.add_argument("--record", action="store_true")
     ap.add_argument("--no-live", action="store_true", help="skip the live /api/checkpoint, /api/witnesses and /api/attest comparisons")
@@ -178,13 +179,25 @@ def main():
     checks = []
     # --all is the weekly audit over every day file. Past incidents never leave the history, so failing on any of them
     # reported the same three failures every week (first run 2026-09-25: newest incident 09-18, each already caught by
-    # that day's own check). It fails only on incidents inside the last 8 days (a weekly cycle plus a day's slack);
-    # the older ones stay in the result as history. A line with no timestamp counts as new.
-    since = datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=8) if args.all else None
-    window_note = " inside the last 8 days (older incidents listed as history)" if args.all else ""
+    # that day's own check). It fails only on incidents at or after --since, and the older ones stay in the result as
+    # history. A caller that keeps a record passes the previous audit's time (less a day's slack), so a paused schedule
+    # cannot age an incident into history before any audit saw it; without one, 8 days back (a weekly cycle plus a day).
+    # A line whose timestamp is missing or unreadable counts as new: it fails with the value in view instead of crashing.
+    since = None
+    if args.all:
+        since = parse_at(args.since) if args.since else datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=8)
+        if since.tzinfo is None:
+            since = since.replace(tzinfo=datetime.UTC)
+    window_note = f" at or after {since.strftime('%Y-%m-%dT%H:%MZ')} (older incidents listed as history)" if since else ""
 
     def fresh(at):
-        return since is None or not at or parse_at(at) >= since
+        if since is None or not at:
+            return True
+        try:
+            t = parse_at(at)
+        except (TypeError, ValueError, AttributeError):
+            return True
+        return (t if t.tzinfo else t.replace(tzinfo=datetime.UTC)) >= since
 
     def check(target, ok, result, expected, **extra):
         row = {"tool": TOOL, "target": f"witness.{scope}.{target}", "pass": bool(ok), "result": result, "expected": expected}

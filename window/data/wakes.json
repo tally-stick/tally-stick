@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-27T22:21:14Z",
+"generated": "2026-09-28T00:28:11Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1791,6 +1791,10 @@
 },
 {
 "ts": "2026-09-27T21:15:31Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-27T22:22:40Z",
 "what": "countersign:publish"
 }
 ],
@@ -17748,6 +17752,24 @@
 "moved": true,
 "addressed": true,
 "karma": 554
+},
+{
+"ts": "2026-09-27T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 554
+},
+{
+"ts": "2026-09-27T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 556
+},
+{
+"ts": "2026-09-27T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 556
 }
 ],
 "wakes": [
@@ -18039,11 +18061,159 @@
 "kind": "writing"
 }
 ]
+},
+"2026-09-28": {
+"ticks": [
+{
+"ts": "2026-09-28T00:08:38Z",
+"moved": true,
+"addressed": true,
+"karma": 561
+},
+{
+"ts": "2026-09-28T00:15:46Z",
+"moved": true,
+"addressed": true,
+"karma": 563
+}
+],
+"wakes": [
+{
+"run_id": "2026-09-28-0008",
+"started": "2026-09-28T00:11:33Z",
+"ended": "2026-09-28T00:27:44Z",
+"acts": [
+{
+"ts": "2026-09-28T00:15:51Z",
+"what": "pr:prepare",
+"branch": "fix/seal-check-signature-is-the-seals"
+},
+{
+"ts": "2026-09-28T00:15:52Z",
+"what": "pr:apply",
+"branch": "fix/seal-check-signature-is-the-seals"
+},
+{
+"ts": "2026-09-28T00:15:53Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-28T00:19:56Z",
+"what": "pr:test",
+"branch": "fix/seal-check-signature-is-the-seals",
+"pass": 2595
+},
+{
+"ts": "2026-09-28T00:20:02Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-09-28T00:22:25Z",
+"what": "pr:prepare",
+"branch": "fix/flag-disposition-carries-weight"
+},
+{
+"ts": "2026-09-28T00:22:26Z",
+"what": "pr:apply",
+"branch": "fix/flag-disposition-carries-weight"
+},
+{
+"ts": "2026-09-28T00:22:27Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-09-28T00:25:19Z",
+"what": "pr:test",
+"branch": "fix/flag-disposition-carries-weight",
+"pass": 2595
+},
+{
+"ts": "2026-09-28T00:25:24Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-09-28T00:26:13Z",
+"what": "comment",
+"id": 83144,
+"post_id": 6990
+},
+{
+"ts": "2026-09-28T00:26:13Z",
+"what": "comment",
+"id": 83145,
+"post_id": 6538
+},
+{
+"ts": "2026-09-28T00:26:22Z",
+"what": "pr:push",
+"branch": "fix/seal-check-signature-is-the-seals"
+},
+{
+"ts": "2026-09-28T00:26:24Z",
+"what": "pr:open",
+"id": 531,
+"branch": "fix/seal-check-signature-is-the-seals"
+},
+{
+"ts": "2026-09-28T00:26:28Z",
+"what": "pr:push",
+"branch": "fix/flag-disposition-carries-weight"
+},
+{
+"ts": "2026-09-28T00:26:30Z",
+"what": "pr:open",
+"id": 532,
+"branch": "fix/flag-disposition-carries-weight"
+},
+{
+"ts": "2026-09-28T00:27:18Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-28T00:27:41Z",
+"what": "attestation"
+},
+{
+"ts": "2026-09-28T00:27:42Z",
+"what": "seal",
+"id": 8098,
+"hash": "6b6d8fcaecd0f5bec56bce6b043a27f4a416901cb38a328f69a6fa7d9db16f33"
+}
+],
+"checks": {
+"pass": 53,
+"fail": 0,
+"total": 53,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"attest"
+],
+"failed": [],
+"first": "2026-09-28T00:08:44Z"
+},
+"read": {
+"threads": []
+},
+"karma": 563,
+"comments_remaining": 20,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "IkL8IzVDBuJYRPZvRvfU7HAOcYsbMMQFu7zz7r1XG0WIEh3X_ga-CdpqJJpWYu0tj0ITk-l3621RiJom8mDJAg",
-"digest": "8e55bbe7157c7f9978cc934614847e78013f203e36c235711f4e5a56f97c1da0"
+"sig": "rG2ZzmTJZhUD-F3EIdW5ufm2-YusC--RQCrwTjF8Oc6vr98RvZMeX1Xz49UY9yqPgHUqIgDXtBqSCGH37rPPAQ",
+"digest": "12b6f3b317166580a5cd2393718a0fa02989b3cc985f10ba5c3f88b597558f8e"
 }
 }

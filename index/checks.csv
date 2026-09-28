@@ -11155,3 +11155,56 @@ seq,ts,tool,target,pass,kind,negative_test
 17927,2026-09-27T22:16:29Z,attest,claim #17858,1,verify,0
 17928,2026-09-27T22:16:31Z,attest,claim #17859,1,verify,0
 17929,2026-09-27T22:16:43Z,runs,runs.2026-09-27,1,verify,0
+17940,2026-09-28T00:08:44Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+17941,2026-09-28T00:08:44Z,heads,attest.treasury.anchored-append-only,1,verify,0
+17942,2026-09-28T00:08:44Z,heads,attest.identity_events.verified,1,verify,0
+17943,2026-09-28T00:08:44Z,heads,attest.ledger.verified,1,verify,0
+17944,2026-09-28T00:08:44Z,heads,checkpoint.identity_events.signature,1,verify,0
+17945,2026-09-28T00:08:44Z,heads,checkpoint.ledger.signature,1,verify,0
+17946,2026-09-28T00:08:44Z,heads,registry-key.pinned,1,verify,0
+17947,2026-09-28T00:08:44Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+17948,2026-09-28T00:08:44Z,heads,checkpoint.ledger.monotonic,1,verify,0
+17949,2026-09-28T00:08:44Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+17950,2026-09-28T00:08:44Z,heads,attest.identity_events.monotonic,1,verify,0
+17951,2026-09-28T00:08:44Z,heads,attest.ledger.monotonic,1,verify,0
+17952,2026-09-28T00:08:44Z,heads,attest.ledger.same-id-same-head,1,verify,0
+17955,2026-09-28T00:08:46Z,consistency,consistency.identity_events.20886->20886.from-signature,1,verify,0
+17956,2026-09-28T00:08:46Z,consistency,consistency.identity_events.20886->20886.to-signature,1,verify,0
+17957,2026-09-28T00:08:46Z,consistency,consistency.identity_events.20886->20886.from-root-matches-ours,1,verify,0
+17958,2026-09-28T00:08:46Z,consistency,consistency.identity_events.20886->20886.to-root-matches-ours,1,verify,0
+17959,2026-09-28T00:08:46Z,consistency,consistency.identity_events.20886->20886.to-root-matches-live,1,verify,0
+17960,2026-09-28T00:08:46Z,consistency,consistency.identity_events.20886->20886.proof,1,verify,0
+17961,2026-09-28T00:08:48Z,countersign,countersign.identity_events,1,verify,0
+17962,2026-09-28T00:08:48Z,countersign,countersign.ledger,1,verify,0
+17963,2026-09-28T00:09:14Z,pages,pages.domains,1,verify,0
+17964,2026-09-28T00:09:17Z,witness,witness.2026-09-28.registry-signatures,1,verify,0
+17965,2026-09-28T00:09:17Z,witness,witness.2026-09-28.countersignatures,1,verify,0
+17966,2026-09-28T00:09:17Z,witness,witness.2026-09-28.witness-keys-in-directory,1,verify,0
+17967,2026-09-28T00:09:17Z,witness,witness.2026-09-28.refusals,1,verify,0
+17968,2026-09-28T00:09:17Z,witness,witness.2026-09-28.monotonic,1,verify,0
+17969,2026-09-28T00:09:17Z,witness,witness.2026-09-28.checkpoint-id,1,verify,0
+17970,2026-09-28T00:09:17Z,witness,witness.2026-09-28.latest-vs-live,1,verify,0
+17971,2026-09-28T00:09:17Z,witness,witness.2026-09-28.latest-head-attest,1,verify,0
+17972,2026-09-28T00:09:17Z,witness,witness.2026-09-28.cadence,1,verify,0
+17973,2026-09-28T00:09:17Z,witness,witness.2026-09-28.newest-line-age,1,verify,0
+17974,2026-09-28T00:09:17Z,witness,witness.2026-09-28.outage,1,verify,0
+17977,2026-09-28T00:09:20Z,dossier,tally-stick.registry-signature,1,verify,0
+17978,2026-09-28T00:09:20Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+17979,2026-09-28T00:09:20Z,dossier,tally-stick.inclusion,1,verify,0
+17980,2026-09-28T00:09:20Z,dossier,tally-stick.leaf-index,1,verify,0
+17981,2026-09-28T00:09:20Z,dossier,tally-stick.attestation-hashes,1,verify,0
+17982,2026-09-28T00:09:20Z,dossier,tally-stick.keys,1,verify,0
+17983,2026-09-28T00:09:20Z,dossier,tally-stick.event-hashes,1,verify,0
+17984,2026-09-28T00:09:20Z,dossier,tally-stick.seal-signatures,1,verify,0
+17985,2026-09-28T00:09:20Z,dossier,tally-stick.counts,1,verify,0
+17986,2026-09-28T00:09:20Z,shape,board.py pages: shape changes since last check,1,verify,0
+17987,2026-09-28T00:09:42Z,runs,runs.2026-09-28,1,verify,0
+17994,2026-09-28T00:15:54Z,pr-lint,fix/seal-check-signature-is-the-seals,1,gate,0
+17995,2026-09-28T00:17:10Z,pr-build,fix/seal-check-signature-is-the-seals,1,gate,0
+18002,2026-09-28T00:22:28Z,pr-lint,fix/flag-disposition-carries-weight,1,gate,0
+18003,2026-09-28T00:22:36Z,pr-build,fix/flag-disposition-carries-weight,1,gate,0
+18014,2026-09-28T00:26:17Z,pr-lint,fix/seal-check-signature-is-the-seals,1,gate,0
+18015,2026-09-28T00:26:20Z,pr-build,fix/seal-check-signature-is-the-seals,1,gate,0
+18018,2026-09-28T00:26:24Z,pr-lint,fix/flag-disposition-carries-weight,1,gate,0
+18019,2026-09-28T00:26:27Z,pr-build,fix/flag-disposition-carries-weight,1,gate,0
+18024,2026-09-28T00:27:40Z,attest,claim #18023,1,verify,0

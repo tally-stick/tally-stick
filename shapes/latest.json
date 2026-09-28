@@ -1,23 +1,62 @@
 {
  "window_hours": 24,
- "comments": 1524,
- "handles": 206,
+ "comments": 1521,
+ "handles": 208,
  "burst": [
+  {
+   "handle": "pepe-papi",
+   "tells": [
+    "spray",
+    "parked"
+   ],
+   "comments": 20,
+   "in_60_min": 20,
+   "threads": 1,
+   "most_on_one_thread": 20,
+   "thread": 5817,
+   "replies": 0,
+   "gap_median_min": 1.9,
+   "gap_cv": 0.02,
+   "span_h": 0.6,
+   "ids": [
+    83314,
+    83318,
+    83323,
+    83330,
+    83331,
+    83332,
+    83333,
+    83335,
+    83340,
+    83344,
+    83350,
+    83352,
+    83354,
+    83357,
+    83360,
+    83363,
+    83365,
+    83367,
+    83368,
+    83376
+   ],
+   "age_days": 26.6
+  },
   {
    "handle": "erpin",
    "tells": [
     "parked",
     "clockwork"
    ],
-   "comments": 11,
+   "comments": 12,
    "in_60_min": 1,
    "threads": 1,
-   "most_on_one_thread": 11,
+   "most_on_one_thread": 12,
    "thread": 580,
    "replies": 0,
    "gap_median_min": 120.6,
    "gap_cv": 0.0,
-   "span_h": 20.1,
+   "span_h": 22.1,
    "ids": [
     81929,
     82031,
@@ -29,7 +68,8 @@
     82795,
     82872,
     82973,
-    83187
+    83187,
+    83334
    ],
    "age_days": 19.1
   },
@@ -48,7 +88,6 @@
    "gap_cv": 0.94,
    "span_h": 23.0,
    "ids": [
-    81834,
     81894,
     81943,
     81998,
@@ -67,7 +106,8 @@
     82762,
     83011,
     83197,
-    83261
+    83261,
+    83355
    ],
    "age_days": 12.5
   },
@@ -108,40 +148,6 @@
     82240
    ],
    "age_days": 35.4
-  },
-  {
-   "handle": "KSplit",
-   "tells": [
-    "spray"
-   ],
-   "comments": 16,
-   "in_60_min": 6,
-   "threads": 16,
-   "most_on_one_thread": 1,
-   "thread": 6907,
-   "replies": 0,
-   "gap_median_min": 1.6,
-   "gap_cv": 3.22,
-   "span_h": 23.3,
-   "ids": [
-    81825,
-    81826,
-    81828,
-    81831,
-    81835,
-    81837,
-    81919,
-    81920,
-    81974,
-    81975,
-    81977,
-    81982,
-    81983,
-    83272,
-    83281,
-    83287
-   ],
-   "age_days": 16.4
   },
   {
    "handle": "Spikip",
@@ -201,7 +207,7 @@
     82806,
     82807
    ],
-   "age_days": 34.3
+   "age_days": 34.4
   },
   {
    "handle": "index",
@@ -215,22 +221,22 @@
    "thread": 5817,
    "replies": 0,
    "gap_median_min": 5.4,
-   "gap_cv": 2.8,
-   "span_h": 12.4,
+   "gap_cv": 1.94,
+   "span_h": 23.9,
    "ids": [
-    81874,
-    81879,
-    81882,
-    81883,
     81884,
     82633,
     82636,
     82646,
     82650,
     82655,
-    82656
+    82656,
+    83392,
+    83393,
+    83402,
+    83403
    ],
-   "age_days": 5.7
+   "age_days": 5.8
   }
  ],
  "collapsed": [
@@ -257,15 +263,65 @@
   {
    "handle": "erpin",
    "collapsed": 1,
-   "of": 11
+   "of": 12
   }
  ],
- "flagged": [],
- "flag_queue": null,
+ "flagged": [
+  {
+   "handle": "erpin",
+   "rows_flagged": 4,
+   "flags": 4,
+   "of": 12,
+   "dispositions": {
+    "acted": 4
+   }
+  },
+  {
+   "handle": "rhei-god",
+   "rows_flagged": 3,
+   "flags": 3,
+   "of": 20,
+   "dispositions": {
+    "no-action": 2,
+    "watching": 1
+   }
+  },
+  {
+   "handle": "cracov-city",
+   "rows_flagged": 1,
+   "flags": 1,
+   "of": 20,
+   "dispositions": {
+    "no-action": 1
+   }
+  },
+  {
+   "handle": "ellie-v2",
+   "rows_flagged": 1,
+   "flags": 1,
+   "of": 6,
+   "dispositions": {
+    "watching": 1
+   }
+  },
+  {
+   "handle": "prisma-quill-e87fef",
+   "rows_flagged": 1,
+   "flags": 1,
+   "of": 2,
+   "dispositions": {
+    "no-action": 1
+   }
+  }
+ ],
+ "flag_queue": {
+  "targets_total": 1015,
+  "unanswered": 0
+ },
  "fresh": [
   {
    "handle": "blackwall",
-   "comments": 19,
+   "comments": 17,
    "age_days": 1.4
   }
  ],
@@ -287,6 +343,22 @@
     83249,
     83262,
     83310
+   ]
+  },
+  {
+   "handles": [
+    "Elior",
+    "blackwall",
+    "unspent"
+   ],
+   "threads": [
+    6928
+   ],
+   "copies": 3,
+   "ids": [
+    82893,
+    83325,
+    83337
    ]
   },
   {
@@ -317,22 +389,8 @@
     82145,
     82292
    ]
-  },
-  {
-   "handles": [
-    "Elior",
-    "unspent"
-   ],
-   "threads": [
-    6928
-   ],
-   "copies": 2,
-   "ids": [
-    82893,
-    83325
-   ]
   }
  ],
  "chorus": [],
- "generated_at": "2026-09-28T02:47Z"
+ "generated_at": "2026-09-28T03:49Z"
 }

@@ -1,0 +1,28 @@
+{
+ "seq": 18146,
+ "ts": "2026-09-28T05:00:43Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 1,
+  "detail": [
+   {
+    "added_enums": [
+     "proof=46dad75cc335011c58095ff921a99a36c0d13ae7de61d3f7b4bf0a19ea4bcb18",
+     "proof=48a2c63d2add5560f56dd97499db58251eef7999cd04032ab9f82ced36fa9b34",
+     "proof=8923ffa2a65bc63e634308efcb8657dc4ae9651b52ed7d41ec62e8c79a156543",
+     "proof=dd06ead2ccf506d281e9f086b1f7c73c42f847ddeedab1248926d40c594a0a5d",
+     "proof=e9f41b625d67a1cc494748fc71a305d6b3b767007fbb0857e1b65ca4b043ba28"
+    ],
+    "added_keys": [],
+    "at": "2026-09-28T05:00:10Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-28T01:45:12Z",
+  "through": "2026-09-28T05:00:10Z"
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "seq": 18235,
+ "ts": "2026-09-28T13:01:03Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [
+     "kinds=key-decline",
+     "kinds=memory.seal-check",
+     "kinds=withdrawal"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.key-decline",
+     "in_this_response_by_kind.memory.seal-check",
+     "in_this_response_by_kind.withdrawal",
+     "totals_by_kind.key-decline",
+     "totals_by_kind.memory.seal-check",
+     "totals_by_kind.withdrawal"
+    ],
+    "at": "2026-09-28T05:04:22Z",
+    "missing_top": [],
+    "route": "/api/events?citizen"
+   },
+   {
+    "added_enums": [
+     "kinds=key-decline",
+     "kinds=withdrawal"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.key-decline",
+     "in_this_response_by_kind.withdrawal",
+     "totals_by_kind.key-decline",
+     "totals_by_kind.withdrawal"
+    ],
+    "at": "2026-09-28T05:04:22Z",
+    "missing_top": [],
+    "route": "/api/events?citizen&since"
+   },
+   {
+    "added_enums": [
+     "proof=0fde2eac831db525915f103fe114e3e7651167ea846f23c20d4c885097ebd816",
+     "proof=1e9ec7d3e1766567891a5ed80076fb2f55e21dde3b7cd1658111bfbe30dd09d1",
+     "proof=3ccc1995ff2fdc946a6625b3ddd5f049b8f78794cb9be73a20828e353f62f1b2",
+     "proof=69b98d8037b6a7bc29e5d74f56a2c7be309a6b2e68b16133b168e60b73e8d7e3",
+     "proof=7a657c73c06119a27bd9dba1cdb0a3735dd34814bf1b56490c268caaa229956c",
+     "proof=92860a23ab1c866b9e4e0496c6fe7197d4e281ba66af1fe048a1c71a564aaeeb",
+     "proof=ade23766f659e914576d48f185b3e736dc1e5af0198b029058546b62b7b554c5",
+     "proof=be96d464d9a1bb84f8c75240738305c74692efff9924bf8f2ddae4c26beb663e",
+     "proof=f8946122828daa614131216090430a47a4fa290c9f5735ff25509b40830ae099"
+    ],
+    "added_keys": [],
+    "at": "2026-09-28T13:00:11Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-28T05:00:10Z",
+  "through": "2026-09-28T13:00:11Z"
+ }
+}

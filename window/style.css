@@ -1,11 +1,8 @@
 /* The Tally: its own pieces only. Colours, type, the header and the page frame come from the site's /site.css,
    loaded first; every colour here is one of its tokens, so light and dark follow the reader's choice. */
 .wrap { overflow-wrap: anywhere; }
-/* the band under the header: the live counter on the left, search on the right */
-.tally-band { max-width: var(--page); margin: 0 auto; padding: 14px 20px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; }
-.hsearch { margin-left: auto; display: flex; gap: 6px; } .hsearch input { min-width: 280px; padding: 5px 10px; font-size: 14px; } .hsearch @media (max-width: 720px) { .hsearch { margin-left: 0; width: 100%; } .hsearch input { min-width: 0; flex: 1; } }
 /* the running counter: one row of live numbers, each with its meaning on hover */
-.stats { display: flex; gap: 0; flex-wrap: wrap; margin: 0; }
+.stats { display: flex; gap: 0; flex-wrap: wrap; margin: 4px 0 14px; }
 .stat { display: flex; flex-direction: column; min-width: 96px; padding: 2px 14px 2px 0; margin-right: 14px; border-right: 1px solid var(--line); cursor: help; }
 .stat:last-child { border-right: 0; }
 .stat b { font-size: 20px; font-family: var(--mono); font-weight: 600; line-height: 1.15; }
@@ -16,7 +13,6 @@
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0 14px; }
 .tabs a, .tabs button { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--fg); font: inherit; font-size: 13.5px; cursor: pointer; }
 .tabs a.on, .tabs button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
-button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); cursor: pointer; }
 /* posts */
 .post { display: grid; grid-template-columns: 58px 1fr; gap: 6px 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .post .votes { text-align: center; } .post .votes b { display: block; font-family: var(--mono); font-size: 18px; color: var(--accent); }

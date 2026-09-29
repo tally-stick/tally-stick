@@ -1,59 +1,21 @@
-/* The Tally — one stylesheet. Light by default, dark when the reader's system asks. */
-:root {
-  --bg: #f6f4ee; --fg: #1c1b18; --mute: #6c6a62; --line: #dcd9cf; --card: #fffdf8; --soft: #efece3;
-  --ok: #1f7a3d; --okbg: #e3f2e8; --bad: #a8261c; --badbg: #f9e3df; --warn: #8a5a00; --warnbg: #fbf0d6;
-  --link: #1b4f9c; --accent: #8a6d1f; --wood: #c9a86a;
-  --mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
-  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #151412; --fg: #e9e6dd; --mute: #9f9c92; --line: #34322c; --card: #1e1d19; --soft: #26241f;
-          --ok: #72d190; --okbg: #17301f; --bad: #f18d80; --badbg: #3b1c18; --warn: #e2b65a; --warnbg: #3a2d10;
-          --link: #8ab4f8; --accent: #d7b45c; --wood: #8a6d3a; }
-}
-* { box-sizing: border-box; }
-html { color-scheme: light dark; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 15.5px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-a { color: var(--link); text-decoration: none; } a:hover { text-decoration: underline; }
-code, .mono { font-family: var(--mono); font-size: 0.88em; }
-pre { background: var(--soft); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; overflow-x: auto; font-size: 13px; }
-.mute { color: var(--mute); }
+/* The Tally: its own pieces only. Colours, type, the header and the page frame come from the site's /site.css,
+   loaded first; every colour here is one of its tokens, so light and dark follow the reader's choice. */
 .wrap { overflow-wrap: anywhere; }
-header { border-bottom: 1px solid var(--line); background: var(--card); padding: 14px 20px 0; }
-.brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-.brand .name { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--fg); letter-spacing: 0.2px; }
-.brand .tag { color: var(--mute); font-style: italic; }
-.hsearch { margin-left: auto; display: flex; gap: 6px; } .hsearch input { min-width: 300px; padding: 5px 10px; font-size: 14px; } .hsearch button { padding: 5px 12px; font-size: 14px; }
-@media (max-width: 720px) { .hsearch { margin-left: 0; width: 100%; } .hsearch input { min-width: 0; flex: 1; } }
+/* the band under the header: the live counter on the left, search on the right */
+.tally-band { max-width: var(--page); margin: 0 auto; padding: 14px 20px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; }
+.hsearch { margin-left: auto; display: flex; gap: 6px; } .hsearch input { min-width: 280px; padding: 5px 10px; font-size: 14px; } .hsearch @media (max-width: 720px) { .hsearch { margin-left: 0; width: 100%; } .hsearch input { min-width: 0; flex: 1; } }
 /* the running counter: one row of live numbers, each with its meaning on hover */
-.stats { display: flex; gap: 0; flex-wrap: wrap; margin: 12px 0 12px; }
+.stats { display: flex; gap: 0; flex-wrap: wrap; margin: 0; }
 .stat { display: flex; flex-direction: column; min-width: 96px; padding: 2px 14px 2px 0; margin-right: 14px; border-right: 1px solid var(--line); cursor: help; }
 .stat:last-child { border-right: 0; }
 .stat b { font-size: 20px; font-family: var(--mono); font-weight: 600; line-height: 1.15; }
 .stat span { font-size: 11.5px; color: var(--mute); text-transform: lowercase; }
-/* the stick: one row of notches, the current one cut deeper; scrolls sideways when narrow, never wraps */
-nav { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; margin: 0 -20px; padding: 0 20px; border-top: 2px solid var(--wood); }
-nav::-webkit-scrollbar { display: none; }
-nav a { flex: 0 0 auto; padding: 9px 14px 10px; color: var(--mute); font-size: 14px; position: relative; white-space: nowrap; }
-nav a::before { content: ""; position: absolute; left: 0; top: 0; width: 2px; height: 8px; background: var(--wood); }
-nav a:hover { color: var(--fg); text-decoration: none; }
-nav a.on { color: var(--fg); font-weight: 600; }
-nav a.on::before { height: 18px; width: 3px; }
-nav a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--fg); }
-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-main { max-width: 1040px; margin: 0 auto; padding: 22px 20px 60px; }
-footer { max-width: 1040px; margin: 0 auto; padding: 18px 20px 40px; color: var(--mute); font-size: 13px; border-top: 2px solid var(--wood); }
-@media (prefers-reduced-motion: no-preference) { nav a, .pill { transition: color .15s; } }
-h1 { font-family: var(--serif); font-size: 30px; margin: 4px 0 8px; font-weight: 700; line-height: 1.2; }
-h2 { font-family: var(--serif); font-size: 21px; margin: 26px 0 8px; }
-h3 { font-size: 16px; margin: 18px 0 6px; }
-.lede { font-size: 17px; color: var(--mute); margin: 0 0 18px; max-width: 720px; line-height: 1.5; }
+@media (max-width: 640px) { .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 0; width: 100%; } .stat { min-width: 0; margin-right: 0; padding-right: 8px; margin-left: 0; } .stat:nth-child(3n) { border-right: 0; } .stat b { font-size: 17px; } }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin: 12px 0; }
 .row { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0 14px; }
 .tabs a, .tabs button { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--fg); font: inherit; font-size: 13.5px; cursor: pointer; }
 .tabs a.on, .tabs button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
-input[type=search], input[type=text] { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); min-width: 220px; }
 button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); cursor: pointer; }
 /* posts */
 .post { display: grid; grid-template-columns: 58px 1fr; gap: 6px 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }

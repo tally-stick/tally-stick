@@ -122,7 +122,7 @@ const route = (re, fn) => routes.push([re, fn]);
 async function go() {
   const nav = ++_nav; _painted = false;
   const h = location.hash.replace(/^#\/?/, "");
-  for (const a of document.querySelectorAll("nav a")) a.classList.toggle("on", a.getAttribute("href").replace(/^#\/?/, "").split("/")[0] === h.split("/")[0]);
+  for (const a of document.querySelectorAll('nav.notches a[href^="#"]')) a.classList.toggle("on", a.getAttribute("href").replace(/^#\/?/, "").split("/")[0] === h.split("/")[0]);
   for (const [re, fn] of routes) { const m = re.exec(h); if (m) { main.innerHTML = '<p class="mute">loading…</p>'; window.scrollTo(0, 0); try { await fn(...m.slice(1)); } catch (e) { if (nav !== _nav) return; main.innerHTML = `<div class="card"><b>could not load:</b> ${esc(e.message)}</div>`; } if (nav === _nav) _painted = true; return; } }
   main.innerHTML = '<div class="card">no such page</div>'; _painted = true;
 }

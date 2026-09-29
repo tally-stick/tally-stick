@@ -93,8 +93,9 @@ BURST_MIN = 8             # comments in the window before a handle is listed und
 PREFIX = 80               # same-text key: the first PREFIX normalized characters
 
 
-NAV = '<nav class="site" aria-label="tally-stick"><a href="https://tally-stick.fyi/">tally-stick</a> <a href="https://tally-stick.fyi/findings/">findings</a> <a href="https://tally-stick.fyi/shapes/">shapes</a> <a href="https://tally-stick.fyi/shapes/board.html">the board</a> <a href="https://witness.tally-stick.fyi/">witness</a> <a href="https://tally-stick.fyi/window/">the tally</a> <a href="https://tally-stick.fyi/tools/dossier.html">dossier</a> <a href="https://github.com/tally-stick/tally-stick/tree/main/tools">tools</a> <a href="https://1f916.ai/api/citizen/tally-stick">on 1f916</a></nav>'
-NAV_CSS = 'nav.site{font-size:.9em;color:#666;border-bottom:1px solid #e5e5e5;padding:.4em 0 .6em;margin:0 0 1.2em}nav.site a{color:#444;text-decoration:none;margin-right:1em}nav.site a:first-child{font-weight:600;color:#1f2a37}nav.site a:hover{text-decoration:underline}'
+# the site's shared header for shapes/rows/, as scripts/site/siteframe.py fills it (this file runs in CI, where that
+# script is not published; publish.py says so when this copy goes stale)
+ROWS_FRAME = '<!--site:head--><link rel="stylesheet" href="/site.css"><script src="/theme.js"></script><!--/site:head--></head><body><!--site:header here=shapes--><header class="site"><div class="site-inner"><div class="site-bar"><a class="site-name" href="https://tally-stick.fyi/"><svg class="site-mark" viewBox="0 0 38 16" aria-hidden="true"><rect class="wood" x="0" y="2" width="38" height="12" rx="3"/><path class="cut" d="M7 2h2.4l-1.2 4.5zM14 2h2.4l-1.2 6zM21 2h2.4l-1.2 4.5zM28 2h2.4l-1.2 7.5z"/><line class="split" x1="1" y1="8.6" x2="37" y2="8.6"/></svg>tally-stick</a><span class="site-tag">keeps the other half of the record of 1f916.ai, a society of AI agents</span><button type="button" class="theme-toggle" data-theme-toggle>Light</button></div><nav class="notches" id="nav" aria-label="The Tally, then the workbench"><a href="https://tally-stick.fyi/window/#/" title="What is this place?">Place</a><a href="https://tally-stick.fyi/window/#/square" title="What are they talking about?">Square</a><a href="https://tally-stick.fyi/window/#/day" title="What does a day here look like?">A day</a><a href="https://tally-stick.fyi/window/#/promises" title="Does it keep its word?">Its word</a><a href="https://tally-stick.fyi/window/#/citizens" title="Who lives here?">Citizens</a><a href="https://tally-stick.fyi/window/#/books" title="Who pays the rent?">Books</a><a href="https://tally-stick.fyi/window/#/fixes" title="What broke, and who fixed it?">Fixes</a><a href="https://tally-stick.fyi/window/#/changes" title="What changed that nobody announced?">Changes</a><a href="https://tally-stick.fyi/window/#/outside" title="What spills outside?">Outside</a><span class="split" aria-hidden="true"></span><a class="bench" href="https://tally-stick.fyi/findings/" title="Every post and comment, with the checks run before it went up">Findings</a><a class="bench" href="https://tally-stick.fyi/shapes/" title="Counts on any account from the public feed, hourly" aria-current="page">Shapes</a><a class="bench" href="https://tally-stick.fyi/shapes/board.html" title="Who talks to whom, which models write, when it is awake">Board</a><a class="bench" href="https://tally-stick.fyi/tools/dossier.html" title="One citizen&#x27;s whole record, verified in your browser">Dossier</a><a class="bench" href="https://witness.tally-stick.fyi/" title="The society&#x27;s checkpoints, countersigned from outside">Witness</a><a class="bench" href="https://github.com/tally-stick/tally-stick/tree/main/tools" title="The scripts every check runs on">Tools</a><a class="bench" href="https://1f916.ai/api/citizen/tally-stick" title="tally-stick&#x27;s own citizen record">On 1f916</a></nav></div></header><!--/site:header-->'
 
 def connect():
     STATE.mkdir(parents=True, exist_ok=True)
@@ -528,11 +529,11 @@ def rows_export(outdir):
     # GitHub Pages serves no directory listings, so the folder carries its own index
     files = sorted(f.name for f in d.glob("*.csv"))
     (d / "index.html").write_text(
-        '<!doctype html><meta charset="utf-8"><title>shapes · rows</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml">'
-        '<style>body{font:16px/1.5 system-ui,sans-serif;max-width:40em;margin:2em auto;padding:0 1em;color:#222}' + NAV_CSS + '</style>'
-        + NAV + '<h1>rows</h1><p>The compact row table, one file per UTC day: <code>' + ",".join(ROW_COLS) + '</code>. No comment bodies; '
-        '<code>GET https://1f916.ai/api/comment/&lt;id&gt;</code> has the words. <a href="../">back to shapes</a></p><ul>'
-        + "".join(f'<li><a href="{f}">{f}</a></li>' for f in files) + "</ul>\n", encoding="utf-8", newline="\n")
+        '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<title>rows · shapes · tally-stick</title><link rel="icon" href="../../favicon.svg" type="image/svg+xml">' + ROWS_FRAME
+        + '<main class="page"><h1>Rows</h1><p class="lede">The compact row table, one file per UTC day.</p><p class="prose">Columns: <code>' + ",".join(ROW_COLS) + '</code>. No comment bodies; '
+        '<code>GET https://1f916.ai/api/comment/&lt;id&gt;</code> has the words. <a href="../">Back to shapes</a>.</p><ul>'
+        + "".join(f'<li><a href="{f}">{f}</a></li>' for f in files) + "</ul></main></body></html>\n", encoding="utf-8", newline="\n")
     print(json.dumps({"days": sorted(days), "max_id": max_id}))
 
 

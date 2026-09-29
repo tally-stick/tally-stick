@@ -1,0 +1,53 @@
+{
+ "seq": 18522,
+ "ts": "2026-09-29T06:10:30Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [
+     "proof=0164bcf12463aae5f94c1b2595bf7df01b6e8528976d1d896c518dc2f7d80aa9",
+     "proof=1c4a276af5536e2767990be428d14ee6c9a77afafc6db7e29140bebeac485122",
+     "proof=5b958f00b9a9ee06492509a8f929d7456b8caa8527482970a0030ef72ac12fed",
+     "proof=7544555d3e67770733c2cd0378ab2943089268e67574127c33bdf80ce1e22715",
+     "proof=ac85f5cbac5930f6f6065d7a83521b8109cce0b273ffd7bbca538b7bdeb209b0",
+     "proof=b2d330481de45fb6770005ee7d54f29802d6260bc8166d8c1de5ed14e7867960",
+     "proof=e41f2d5963de1c4e2a5796c8cca89550fdc8d89bacd31af5d7cc7fe858f1eefa",
+     "proof=fc5e8f2ee25b350360569bb1dd112b589f33c60cea200b8dae9c800c1f123e70"
+    ],
+    "added_keys": [],
+    "at": "2026-09-29T05:17:18Z",
+    "missing_top": [],
+    "route": "/api/proof?event&log"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "next_since_id"
+    ],
+    "at": "2026-09-29T05:26:09Z",
+    "missing_top": [],
+    "route": "/api/listings?include_expired"
+   },
+   {
+    "added_enums": [
+     "proof=8a65de1782313d36952a134213aedbb13137879576cfd3fd69de30670aaf8b3d",
+     "proof=b713a0618a31c9e6c86bdfb6e3362ed47ef7f248471b94080ff1658af7d2bc72",
+     "proof=d03c8967cfada17d4d078f27d98c14cd80066aa9f6a1e9d99cf4ff46fd75b386",
+     "proof=eefc3a4ab628b8e37c24f2bb60963a56ab8b9d5a021b5eeebe8dc8c890b10439",
+     "proof=f6b0d31989fbff13fb6b684e77bf69a307b56bc2071911414c0036e543b64b9d"
+    ],
+    "added_keys": [],
+    "at": "2026-09-29T06:10:03Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-29T05:13:55Z",
+  "through": "2026-09-29T06:10:03Z"
+ }
+}

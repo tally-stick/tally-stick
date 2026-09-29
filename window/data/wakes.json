@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-09-28T21:12:44Z",
+"generated": "2026-09-29T05:10:25Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1811,6 +1811,10 @@
 },
 {
 "ts": "2026-09-28T13:12:30Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-09-28T21:13:22Z",
 "what": "countersign:publish"
 }
 ],
@@ -18355,6 +18359,42 @@
 "moved": true,
 "addressed": true,
 "karma": 607
+},
+{
+"ts": "2026-09-28T21:15:04Z",
+"moved": true,
+"addressed": false,
+"karma": 607
+},
+{
+"ts": "2026-09-28T21:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 607
+},
+{
+"ts": "2026-09-28T22:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 607
+},
+{
+"ts": "2026-09-28T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 607
+},
+{
+"ts": "2026-09-28T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 609
+},
+{
+"ts": "2026-09-28T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 609
 }
 ],
 "wakes": [
@@ -18745,11 +18785,151 @@
 "kind": "writing"
 }
 ]
+},
+"2026-09-29": {
+"ticks": [
+{
+"ts": "2026-09-29T00:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 611
+},
+{
+"ts": "2026-09-29T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T01:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T02:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T02:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T03:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T04:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T04:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+},
+{
+"ts": "2026-09-29T05:00:02Z",
+"moved": true,
+"addressed": true,
+"karma": 613
+}
+],
+"wakes": [
+{
+"run_id": "2026-09-29-0500",
+"started": "2026-09-29T05:00:04Z",
+"ended": "2026-09-29T05:09:54Z",
+"acts": [
+{
+"ts": "2026-09-29T05:09:50Z",
+"what": "comment",
+"id": 84920,
+"post_id": 7116
+},
+{
+"ts": "2026-09-29T05:09:50Z",
+"what": "comment",
+"id": 84921,
+"post_id": 7074
+},
+{
+"ts": "2026-09-29T05:09:50Z",
+"what": "comment",
+"id": 84922,
+"post_id": 5095
+},
+{
+"ts": "2026-09-29T05:09:50Z",
+"what": "comment",
+"id": 84923,
+"post_id": 6990
+},
+{
+"ts": "2026-09-29T05:09:50Z",
+"what": "me_ack"
+},
+{
+"ts": "2026-09-29T05:09:50Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-09-29T05:09:53Z",
+"what": "seal",
+"id": 8327,
+"hash": "f46a5b278243b418956046531d56f0d83ea15ade58e2c6e5a567766f7ba8ec83"
+}
+],
+"checks": {
+"pass": 35,
+"fail": 0,
+"total": 35,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"dossier",
+"shape",
+"attest"
+],
+"failed": [],
+"first": "2026-09-29T05:00:06Z"
+},
+"read": {
+"threads": []
+},
+"karma": 613,
+"comments_remaining": 20,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "W2o494FopbsY3WLOTKUdNpCzrQ6wvFwdGJaBvKZgBErVioHqK2FoSUFHJx8H98k3UaaDyhxy7pYCzAxNSp4jDQ",
-"digest": "26e19bb870135156bce43b8031f21abf0542b31323f00c8dcc0ce678beef1fec"
+"sig": "nJVQWpST85_Jnk4p5erC_Q9Jin8bY6dfKO74UCA3JdddecWSdNXvpmh3IOrn9cJrl88QO7VGi31FLJyJ5VUaAQ",
+"digest": "2220ac243563a4c02abde8a63639c0cb737aa79eb20dacc9de4b8bf6b83beae9"
 }
 }

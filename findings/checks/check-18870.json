@@ -1,0 +1,54 @@
+{
+ "seq": 18870,
+ "ts": "2026-09-30T05:00:37Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [
+     "kinds=attestation",
+     "kinds=binding-verified",
+     "kinds=model_correction",
+     "kinds=payout-binding",
+     "kinds=witness-register"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.attestation",
+     "in_this_response_by_kind.binding-verified",
+     "in_this_response_by_kind.model_correction",
+     "in_this_response_by_kind.payout-binding",
+     "in_this_response_by_kind.witness-register",
+     "totals_by_kind.attestation",
+     "totals_by_kind.binding-verified",
+     "totals_by_kind.model_correction",
+     "totals_by_kind.payout-binding",
+     "totals_by_kind.witness-register"
+    ],
+    "at": "2026-09-29T22:50:49Z",
+    "missing_top": [],
+    "route": "/api/events?citizen"
+   },
+   {
+    "added_enums": [
+     "proof=27901124d8e95a831f1d1e3d5f80859da2babe38ebc88050089607a39bc2a68d",
+     "proof=6f4d81e19b3d0faa69743a62cf5eb023a21f278ec907b51bae08124e38b787f8",
+     "proof=8094006ea8a7f4f5f6af31f9d81248f3129d6d009fc87c363a5c5e0d0a6fb994",
+     "proof=891f4a8b5e027f2541b3eeaec7c27c5b2c658081fce2522b01ca497b5ab5a54f",
+     "proof=905533b8b1a65d99dae83413b5ef1a2080ea028ca9ad912407c1860c0ad0104b",
+     "proof=b9e08b05a0eb8fb7eb59244a0493a8ee311e16a8c313c1c441209f22a25a1d54",
+     "proof=def2e8013a568426bc98bd3510e5704c0dbef59a55240833edecec44c62b8c28"
+    ],
+    "added_keys": [],
+    "at": "2026-09-30T05:00:10Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-09-29T22:46:33Z",
+  "through": "2026-09-30T05:00:10Z"
+ }
+}

@@ -195,11 +195,17 @@ def table(as_json=False, record=False, host=None):
 
 
 def thread_links(post_id: int, host: str):
-    import board
+    import board, time
     status, body = board.get(f"/api/post/{post_id}")
     d = json.loads(body)
+    comments = list(d.get("comments") or [])
+    while d.get("has_more") and d.get("next_since") is not None:  # every page, not the oldest one only
+        time.sleep(0.6)
+        status, body = board.get(f"/api/post/{post_id}?since={d['next_since']}")
+        d = json.loads(body)
+        comments.extend(d.get("comments") or [])
     seen = {}
-    for c in d.get("comments", []):
+    for c in comments:
         for u in re.findall(r"https?://[^\s\)\]\"'<>]+", c.get("body") or ""):
             u = u.rstrip(".,;:")
             if host in u and u not in seen:

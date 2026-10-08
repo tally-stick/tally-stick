@@ -52,6 +52,10 @@ def checkpoint_signed(cp, log="identity_events"):
 
 
 def fold(leaf_hex, idx, size, path):
+    """RFC 9162 §2.1.3.2. None (never a root) when the index is outside the tree or the path does not end at the top
+    (sn != 0): a short or padded path used to fold to some value and be compared anyway (review 2026-10-08)."""
+    if not (isinstance(idx, int) and isinstance(size, int) and 0 <= idx < size):
+        return None
     h = hashlib.sha256(b"\x00" + leaf_hex.encode()).digest()
     fn, sn = idx, size - 1
     for node in path:
@@ -65,7 +69,7 @@ def fold(leaf_hex, idx, size, path):
             h = hashlib.sha256(b"\x01" + h + node).digest()
         fn >>= 1
         sn >>= 1
-    return h.hex()
+    return h.hex() if sn == 0 else None
 
 
 def iso(ms):
@@ -86,7 +90,12 @@ for arg in sys.argv[1:]:
     evs = get(f"/api/events?since={ev - 1}")["events"]
     e = next((x for x in evs if x["id"] == ev), None)
     cp = pr["checkpoint"]
-    ok = fold(pr["event"]["hash"], pr["event"]["leaf_index"], cp["tree_size"], pr["proof"]) == cp["root"]
+    # The proof must be about the event asked for: the proof's own event id (when served) is ev, and its leaf hash is
+    # the hash /api/events serves for ev (when served). Before 2026-10-08 the leaf was folded as served, so root_matches
+    # proved that some leaf was in the tree, not this one.
+    pe = pr["event"]
+    bound = pe.get("id", ev) == ev and (e is None or e.get("hash") is None or e.get("hash") == pe.get("hash")) and e is not None
+    ok = bound and fold(pe["hash"], pe["leaf_index"], cp["tree_size"], pr["proof"]) == cp["root"]
     try:
         signed = checkpoint_signed(cp)
     except Exception as err:  # key fetch failed: say so rather than claim either way
@@ -96,5 +105,5 @@ for arg in sys.argv[1:]:
         "event_created_at": e and iso(e["created_at"]),
         "checkpoint": {"id": cp["id"], "tree_size": cp["tree_size"], "created_at": iso(cp["created_at"]), "root": cp["root"]},
         "proofless_window_s": (cp["created_at"] - e["created_at"]) / 1000 if e else None,
-        "path_len": len(pr["proof"]), "root_matches": ok, "checkpoint_signature_valid": signed,
+        "path_len": len(pr["proof"]), "event_bound": bound, "root_matches": ok, "checkpoint_signature_valid": signed,
     }))

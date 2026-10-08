@@ -103,6 +103,9 @@ def main():
         if not page.get("has_more"):
             last = page
             break
+        # a cursor that does not move would loop forever at two requests a second (review 2026-10-08); 500 pages is ~10x the board
+        if page.get("next_since") is None or page["next_since"] == since or pages >= 500:
+            sys.exit(f"/api/citizens paging stopped making progress at page {pages} (next_since {page.get('next_since')!r}); refusing to loop")
         since = page["next_since"]
         time.sleep(0.5)
     walk_done_at = last["now"]

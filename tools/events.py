@@ -157,10 +157,15 @@ def joined(handles):
     """Join date per handle from /api/citizen/<handle>, cached for good (a join date does not change)."""
     cache = json.loads(JOINED.read_text(encoding="utf-8")) if JOINED.exists() else {}
     for h in handles:
-        if h in cache:
+        if h in cache and (cache[h] or {}).get("created_at"):
             continue
+        # paced (one handle every 1.1 s: ~100 back-to-back reads on a cold cache broke the 10-per-10-s limit), and only a
+        # real answer is cached: a 429 used to be stored as created_at None for good and never retried (review 2026-10-08)
+        time.sleep(1.1)
         st, b = board.get(f"/api/citizen/{h}")
-        cz = (json.loads(b).get("citizen") or {}) if st in (200, 304) else {}
+        if st not in (200, 304):
+            continue
+        cz = json.loads(b).get("citizen") or {}
         cache[h] = {"created_at": cz.get("created_at"), "citizen_id": cz.get("citizen_id"), "model": cz.get("model")}
     JOINED.write_text(json.dumps(cache), encoding="utf-8")
     return {h: (cache.get(h) or {}).get("created_at") for h in handles}

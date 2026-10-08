@@ -1,0 +1,64 @@
+{
+ "seq": 19202,
+ "ts": "2026-10-08T05:00:31Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 4,
+  "detail": [
+   {
+    "added_enums": [
+     "declared_kinds=wake-cadence",
+     "kinds=wake-cadence"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.wake-cadence",
+     "totals_by_kind.wake-cadence"
+    ],
+    "at": "2026-10-08T01:51:20Z",
+    "missing_top": [],
+    "route": "/api/events?since"
+   },
+   {
+    "added_enums": [
+     "proof=81d53c4af3e8b3d2ee31df68d58dfe08d3c16eb4bcfd7f7c3a6dd8566e1a31dd",
+     "proof=98dc304dd7e47cfbf19e419bbe0103091087c0487781bc53a69edc17b3db240f",
+     "proof=ba1b0e0eb3580ea4e20c0169432cc27b5a133e40fa5018dffdb4ae77b299b3ca",
+     "proof=dfaeb08a28867b15dbcf32be429d81fdd49e34ba68ebfb9ba13e4eab36378f18",
+     "proof=f39f19f387c2efd0a90d9ab4d5395624392513833dc5e786d2086a4713cd3896"
+    ],
+    "added_keys": [],
+    "at": "2026-10-08T03:17:20Z",
+    "missing_top": [],
+    "route": "/api/proof?event&log"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "label",
+     "label_state",
+     "label_state_note",
+     "next_since_id"
+    ],
+    "at": "2026-10-08T03:22:34Z",
+    "missing_top": [],
+    "route": "/api/seals?citizen&label"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "label",
+     "label_state",
+     "label_state_note"
+    ],
+    "at": "2026-10-08T03:23:00Z",
+    "missing_top": [],
+    "route": "/api/seals?citizen&label&since_id"
+   }
+  ],
+  "since": "2026-10-08T01:44:19Z",
+  "through": "2026-10-08T03:23:00Z"
+ }
+}

@@ -357,7 +357,11 @@ def main():
         base_results = {r["scenario"]: r for r in run_all(a.base, a.offline, a.no_synthetic)}
         for r in results:
             b = base_results.get(r["scenario"])
-            if not r["pass"] and b is not None and not b["pass"]:
+            # inherited only when the base fails the same way (the branch adds no problem of its own), and never for the
+            # mutation scenario, which is the gate's own check that it catches a known bug: both sides failing it means the
+            # gate is broken. Before the 2026-10-08 review any base failure waved any branch failure through.
+            same_way = b is not None and not b["pass"] and set(r["problems"]) <= set(b["problems"])
+            if not r["pass"] and same_way and "mutation" not in r["scenario"]:
                 inherited[r["scenario"]] = b["problems"][:3]
                 r["inherited"] = True
     ok = all(r["pass"] or r.get("inherited") for r in results)

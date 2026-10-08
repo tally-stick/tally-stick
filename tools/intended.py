@@ -46,8 +46,12 @@ def load_thread(post_id):
     d = fetch(path)
     post = d.get("post") or {}
     comments = list(d.get("comments") or [])
+    last_since = None
     while d.get("has_more"):
         since = d.get("next_since")
+        if since is not None and since == last_since:  # a repeating cursor would loop forever on cached 304s (review 2026-10-08)
+            sys.exit(f"{path}: next_since {since!r} repeated; refusing to loop")
+        last_since = since
         if since is None:
             sys.exit(f"has_more is true but the response for {path} carries no next_since cursor — "
                       f"refusing to page by walking the archive from since=0")

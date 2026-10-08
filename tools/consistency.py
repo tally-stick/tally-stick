@@ -204,12 +204,13 @@ def open_record(required):
 
 
 def recorded_checkpoints(c, log):
-    """All checkpoints we hold for a log from observed-head rows (source 'checkpoint'), newest first: [(seq, ts, cp)]."""
+    """All checkpoints we hold for a log from observed-head rows (source 'checkpoint'), newest first: [(seq, ts, cp)].
+    Only rows from runs whose checks passed (heads.trusted_observed): a failed read is not a reference (review 2026-10-08)."""
     out = []
     if c is None:
         return out
-    for seq, ts, payload in c.execute("SELECT seq, ts, payload FROM observed_heads WHERE source='checkpoint' ORDER BY seq DESC"):
-        p = json.loads(payload)
+    from heads import trusted_observed
+    for seq, ts, p in trusted_observed(c, "checkpoint"):
         for cp in p.get("checkpoints", []):
             if cp.get("log") == log:
                 out.append((seq, ts, cp))
@@ -298,8 +299,9 @@ def main():
         check(f"consistency.{tag}.shape", False, shape_notes, "from/to/proof present")
     else:
         f, t = pr["from"], pr["to"]
-        if f["tree_size"] != a or t["tree_size"] != b:
-            shape_notes.append(f"served sizes {f['tree_size']}->{t['tree_size']} differ from requested {a}->{b}")
+        # a proof between sizes the server chose says nothing about a->b: a failed check, not a note (review 2026-10-08)
+        check(f"consistency.{tag}.sizes-as-requested", f["tree_size"] == a and t["tree_size"] == b,
+              {"served": [f["tree_size"], t["tree_size"]]}, {"requested": [a, b]})
         check(f"consistency.{tag}.from-signature", checkpoint_signed(key, args.log, f),
               {"tree_size": f["tree_size"], "root": f["root"], "created_at": iso(f["created_at"])}, "registry signature verifies")
         check(f"consistency.{tag}.to-signature", checkpoint_signed(key, args.log, t),

@@ -140,11 +140,13 @@ def main():
     if a.record:
         import record
         c = record.connect()
-        ok = not failed and not runs_without_line and not lines_without_run and not err
+        # a day with no runs and no lines is the witness not running, not a clean day (every day since 2026-09-28
+        # recorded pass=True that way until the 2026-10-08 review)
+        ok = not failed and not runs_without_line and not lines_without_run and not err and (runs or heads)
         seq, _ = record.add(c, "check", "agent", {"tool": TOOL, "target": f"runs.{a.day}", "pass": ok,
                                                   "result": {k: out[k] for k in ("runs", "by_event", "failed", "running", "head_lines", "api")}
                                                   | {"lines_without_run": lines_without_run[:10], "runs_without_line": runs_without_line[:10]},
-                                                  "expected": "every head line has a run in its slot and every finished run wrote a line; no failed runs"})
+                                                  "expected": "at least one run or line; every head line has a run in its slot and every finished run wrote a line; no failed runs"})
         print(f"# check #{seq}", file=sys.stderr)
         if cancelled_probe and cancelled_probe["jobs"] is not None:
             # the assumption, measured: pass means this cancelled run reached no job step (queued-then-cancelled);

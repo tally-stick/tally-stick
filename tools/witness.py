@@ -230,7 +230,10 @@ def main():
             # 2026-09-28T16:26Z and every pre-wake check from 10-07 crashed on the 404 instead of saying how stale it was.
             if e.code != 404 or args.all:
                 raise
-            newest = list_days()[-1:] or [None]
+            try:  # the directory listing is an unauthenticated GitHub API call: a 403 here must not undo the point of this branch
+                newest = list_days()[-1:] or [None]
+            except Exception:
+                newest = [None]
             age_days = (datetime.datetime.strptime(d, "%Y-%m-%d") - datetime.datetime.strptime(newest[0], "%Y-%m-%d")).days if newest[0] else None
             check("day-file-present", False, {"day": d, "status": 404, "newest_day_file": newest[0], "days_since_newest": age_days},
                   "a day file for the day (the witness writes one every five minutes)")

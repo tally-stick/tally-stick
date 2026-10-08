@@ -20,7 +20,7 @@ Read-only against the network (two GETs). Checks, each logged as a `check` row u
 Comparison baseline: the newest `observed-head` rows in record/tally.db (view observed_heads) with
 source 'checkpoint' / 'attest'. No baseline yet => the monotonic checks report pass with note 'first observation'.
 """
-import argparse, base64, datetime, json, sys, time, urllib.error, urllib.request
+import argparse, base64, datetime, json, os, sys, time, urllib.error, urllib.request
 from pathlib import Path
 
 from cryptography.exceptions import InvalidSignature
@@ -84,12 +84,30 @@ def open_record(required):
         return None, None
 
 
-def last_observed(c, source):
-    """Newest observed-head row for a source, as (seq, ts, payload dict) or None."""
+def trusted_observed(c, source):
+    """observed-head rows for a source, newest first, as (seq, ts, payload), skipping every row from a run whose checks
+    failed. Both rows were written whether the checks passed or not, and the newest row was the next run's baseline:
+    a rollback or a new registry key alarmed once and then compared equal to itself and passed (review 2026-10-08).
+    Rows carry checks_passed since then; older checkpoint rows carry signatures_verified (that run's all-pass), and an
+    attest row is judged by the checkpoint row of the same run."""
     if c is None:
-        return None
-    r = c.execute("SELECT seq, ts, payload FROM observed_heads WHERE source=? ORDER BY seq DESC LIMIT 1", (source,)).fetchone()
-    return (r[0], r[1], json.loads(r[2])) if r else None
+        return
+    failed_runs = set()
+    for (payload,) in c.execute("SELECT payload FROM observed_heads WHERE source='checkpoint'"):
+        p = json.loads(payload)
+        if (p.get("checks_passed", p.get("signatures_verified")) is False) and p.get("run_id"):
+            failed_runs.add(p["run_id"])
+    for seq, ts, payload in c.execute("SELECT seq, ts, payload FROM observed_heads WHERE source=? ORDER BY seq DESC", (source,)):
+        p = json.loads(payload)
+        verdict = p.get("checks_passed", p.get("signatures_verified") if source == "checkpoint" else None)
+        if verdict is False or (verdict is None and p.get("run_id") in failed_runs):
+            continue
+        yield seq, ts, p
+
+
+def last_observed(c, source):
+    """Newest trusted observed-head row for a source, as (seq, ts, payload dict) or None."""
+    return next(trusted_observed(c, source), None)
 
 
 def main():
@@ -100,7 +118,12 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--record", action="store_true", help="log check rows and observed-head rows to record/tally.db")
     ap.add_argument("--run-id", default=None, help="run id to stamp on the observed-head rows")
+    ap.add_argument("--rebaseline", action="store_true",
+                    help="with --record: store this read as the baseline even if checks fail (after a decision that the change is "
+                         "legitimate, e.g. an announced key rotation); refused inside a wake")
     args = ap.parse_args()
+    if args.rebaseline and (not args.record or os.environ.get("F916_WAKE")):
+        sys.exit("--rebaseline needs --record and is a decision made outside a wake, with the reason on the record")
 
     record, c = open_record(args.record)
     prev_attest = last_observed(c, "attest")
@@ -230,12 +253,18 @@ def main():
         for row in checks:
             seq, _ = record.add(c, "check", "agent", row)
             print(f"recorded check #{seq} {row['target']} pass={row['pass']}", file=sys.stderr)
-        a = dict(attest); a.update({"source": "attest", "head": chains["identity_events"].get("head")})
+        trusted = ok or args.rebaseline
+        a = dict(attest); a.update({"source": "attest", "head": chains["identity_events"].get("head"), "checks_passed": trusted})
+        if args.rebaseline and not ok:
+            a["rebaselined"] = True
         if args.run_id:
             a["run_id"] = args.run_id
         seq, _ = record.add(c, "observed-head", "agent", a)
         print(f"recorded observed-head #{seq} attest", file=sys.stderr)
-        k = dict(cpj); k.update({"source": "checkpoint", "head": by_log.get("identity_events", {}).get("root"), "signatures_verified": ok})
+        k = dict(cpj); k.update({"source": "checkpoint", "head": by_log.get("identity_events", {}).get("root"), "signatures_verified": ok,
+                                 "checks_passed": trusted})
+        if args.rebaseline and not ok:
+            k["rebaselined"] = True
         if args.run_id:
             k["run_id"] = args.run_id
         seq, _ = record.add(c, "observed-head", "agent", k)

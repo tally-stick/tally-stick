@@ -42,8 +42,17 @@ def tool(name):
     return shutil.which(name) or shutil.which(name, path=str(TOOLS))
 
 
-def sh(*args, cwd=FORK, timeout=600):
-    return subprocess.run(args, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
+def sh(*args, cwd=FORK, timeout=600, env=None):
+    return subprocess.run(args, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout, env=env)
+
+
+def windows_tar_first():
+    """The environment for a build that shells out to `tar` with a Windows path. Upstream's build-source-mirror.mjs
+    (wrangler's build step since 2026-10-06) runs `tar -x -C C:\\...\\tree`; a wake runs under Git Bash, whose GNU tar
+    comes first on PATH and reads the backslashes as escapes (`\\1f916-fork` became `\\001f916-fork`: Cannot open).
+    System32's bsdtar takes the path as written, so it goes first."""
+    sys32 = str(Path(os.environ.get("SystemRoot", r"C:\Windows")) / "System32")
+    return {**os.environ, "PATH": sys32 + os.pathsep + os.environ.get("PATH", "")}
 
 
 def changed_files(branch):
@@ -133,7 +142,8 @@ def build(branch):
     results = []
     r = sh(NODE, str(FORK / "node_modules/typescript/bin/tsc"), "--noEmit")
     results.append({"gate": "tsc", "where": "src/", "ok": r.returncode == 0, "error": (r.stdout.strip().splitlines() or [None])[0]})
-    r = sh(NODE, str(FORK / "node_modules/wrangler/bin/wrangler.js"), "deploy", "--dry-run", "--outdir", ".tally-stick-build")
+    r = sh(NODE, str(FORK / "node_modules/wrangler/bin/wrangler.js"), "deploy", "--dry-run", "--outdir", ".tally-stick-build",
+           env=windows_tar_first())
     shutil.rmtree(FORK / ".tally-stick-build", ignore_errors=True)
     results.append({"gate": "wrangler --dry-run", "where": "worker", "ok": r.returncode == 0,
                     "error": None if r.returncode == 0 else ((r.stderr or r.stdout).strip().splitlines() or [""])[-1][:300]})

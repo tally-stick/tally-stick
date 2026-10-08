@@ -205,12 +205,38 @@ def main():
         checks.append(row)
         return ok
 
+    def finish():
+        all_ok = all(r["pass"] for r in checks)
+        print(json.dumps({"scope": scope, "days": len(days), "per_day": per_day, "unparsed": bad[:10], "live_registry_key": live_key,
+                          "checks": checks, "all_pass": all_ok}, indent=1, ensure_ascii=False))
+        if args.record:
+            import record
+            c = record.connect()
+            for row in checks:
+                seq, _ = record.add(c, "check", "agent", row)
+                print(f"recorded check #{seq} {row['target']} pass={row['pass']}", file=sys.stderr)
+        sys.exit(0 if all_ok else 1)
+
     heads, counters, bad = [], [], []
     per_day = {}
+    live_key = None
     for i, d in enumerate(days):
         if i:
             time.sleep(0.5)
-        h, c, b = parse_day(d, day_text(d, args.cache))
+        try:
+            txt = day_text(d, args.cache)
+        except urllib.error.HTTPError as e:
+            # No file for the day is the witness not running, a finding, not a tool error: the society's job stopped at
+            # 2026-09-28T16:26Z and every pre-wake check from 10-07 crashed on the 404 instead of saying how stale it was.
+            if e.code != 404 or args.all:
+                raise
+            newest = list_days()[-1:] or [None]
+            age_days = (datetime.datetime.strptime(d, "%Y-%m-%d") - datetime.datetime.strptime(newest[0], "%Y-%m-%d")).days if newest[0] else None
+            check("day-file-present", False, {"day": d, "status": 404, "newest_day_file": newest[0], "days_since_newest": age_days},
+                  "a day file for the day (the witness writes one every five minutes)")
+            per_day[d] = {"missing": True}
+            finish()
+        h, c, b = parse_day(d, txt)
         heads += h; counters += c; bad += b
         per_day[d] = {"head_lines": len(h), "countersign_lines": len(c), "unparsed": len(b)}
     heads.sort(key=lambda j: j["at"])
@@ -450,16 +476,7 @@ def main():
     check("outage", not new_outages, outages, "no degraded window of 1 h or longer" + window_note,
           missed_slot_windows=len(windows) - len(outages), new=len(new_outages))
 
-    all_ok = all(r["pass"] for r in checks)
-    print(json.dumps({"scope": scope, "days": len(days), "per_day": per_day, "unparsed": bad[:10], "live_registry_key": live_key,
-                      "checks": checks, "all_pass": all_ok}, indent=1, ensure_ascii=False))
-    if args.record:
-        import record
-        c = record.connect()
-        for row in checks:
-            seq, _ = record.add(c, "check", "agent", row)
-            print(f"recorded check #{seq} {row['target']} pass={row['pass']}", file=sys.stderr)
-    sys.exit(0 if all_ok else 1)
+    finish()
 
 
 if __name__ == "__main__":

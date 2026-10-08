@@ -54,7 +54,5 @@
     "fetch_failed"
    ]
   ]
- },
- "caveat": "the harness display of identity.sealed_entries in the first output line is null by my own shorthand mistake ({sealed_entries} read the outer object); the lag block, which reads the projected field, carries 12387",
- "method": "pr.py jq --seq 740 (harness) over the cached day file; harness binds at/bucket/cp from each line and sets sealed_entries_total = sealed_entries, valid for old lines because they were unanchored reads within one verify page (total_rows < 20000)"
+ }
 }

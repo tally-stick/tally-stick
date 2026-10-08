@@ -75,7 +75,14 @@ def main():
     st = prs.load()
     runs, err = list_runs(st, a.day)
     prs.save(st)
-    heads, _, _ = witness.parse_day(a.day, witness.day_text(a.day, a.cache))
+    # No day file is no lines, not a crash: witness.py's day-file-present check reports the staleness (10-07 onward).
+    try:
+        txt = witness.day_text(a.day, a.cache)
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            raise
+        txt = ""
+    heads, _, _ = witness.parse_day(a.day, txt)
     line_slots = {}
     for h in heads:
         line_slots.setdefault(slot(h["at"]), []).append(h["at"])

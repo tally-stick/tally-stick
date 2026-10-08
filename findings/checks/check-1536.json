@@ -15,7 +15,5 @@
    "inbox-row-commit-race.test.ts:239 structured acknowledgments reject malformed or future positions and never move backward (upstream, lines 268-277: a concurrent pair 1/1 and 0/0 must end at 1/1)"
   ],
   "suite": "1615/1618, 3 red"
- },
- "kind": "mutation",
- "note": "DATUM I should have had before the fixture existed: the never-move-backward guarantee on the id columns was already pinned upstream (inbox-row-commit-race.test.ts:268-277). Found by the mutation, not by grepping the test dir first. What the fixture adds that upstream does not: advanced asserted false with no movement (only true is asserted upstream, ack-offered-prefix-bound.test.ts:130), advanced true with ids unchanged, and the response echoing the stored cursor. PR text says so. Class b per #1140 (the test dir was in my fork; one grep for MAX or never move backward would have shown it)."
+ }
 }

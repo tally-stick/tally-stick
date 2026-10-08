@@ -13,7 +13,5 @@
   ],
   "suite": "1616/1618, 2 red",
   "upstream_red": []
- },
- "kind": "mutation",
- "note": "TOOL DEFECT for the operator: pr.py prepare must refuse or reset a dirty index/working tree before cutting a branch; a planted bug from one scratch branch travelled into the next unseen. Break-list class: state carried between runs (M4-adjacent: a dependency, the checkout, assumed clean and never made dirty on purpose)."
+ }
 }

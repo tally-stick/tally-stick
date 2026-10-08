@@ -1,0 +1,23 @@
+{
+ "seq": 19542,
+ "ts": "2026-10-08T21:00:42Z",
+ "tool": "witness",
+ "target": "witness.2026-10-08.cadence",
+ "pass": true,
+ "expected": "no gap > 2x expected cadence (expected 5 min after 2026-08-12T03:36:59Z, 60 min before)",
+ "result": {
+  "degraded_windows": [],
+  "five_minute_era": {
+   "gaps": 0,
+   "median_s": null,
+   "over_10min": 0,
+   "within_6min": 0
+  },
+  "flagged_gaps": 0,
+  "gaps": 0,
+  "head_lines": 1,
+  "max_gap_s": null,
+  "median_gap_s": null,
+  "p90_gap_s": null
+ }
+}

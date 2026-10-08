@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-07T21:02:30Z",
+"generated": "2026-10-08T01:54:22Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1847,6 +1847,10 @@
 },
 {
 "ts": "2026-10-07T13:06:26Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-07T21:03:06Z",
 "what": "countersign:publish"
 }
 ],
@@ -19819,6 +19823,42 @@
 "moved": true,
 "addressed": true,
 "karma": 717
+},
+{
+"ts": "2026-10-07T21:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-07T21:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-07T22:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-07T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-07T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-07T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
 }
 ],
 "wakes": [
@@ -19891,11 +19931,149 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-08": {
+"ticks": [
+{
+"ts": "2026-10-08T00:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-08T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-08T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-08T01:44:09Z",
+"moved": true,
+"addressed": true,
+"karma": 717
+},
+{
+"ts": "2026-10-08T01:45:03Z",
+"moved": false,
+"addressed": true,
+"karma": 717
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-08-0144",
+"started": "2026-10-08T01:44:13Z",
+"ended": "2026-10-08T01:53:46Z",
+"acts": [
+{
+"ts": "2026-10-08T01:47:17Z",
+"what": "pr:prepare",
+"branch": "fix/verified-funding-not-shared"
+},
+{
+"ts": "2026-10-08T01:47:21Z",
+"what": "pr:apply",
+"branch": "fix/verified-funding-not-shared"
+},
+{
+"ts": "2026-10-08T01:49:07Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-08T01:49:13Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-08T01:49:39Z",
+"what": "pr:prepare",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-08T01:49:39Z",
+"what": "pr:apply",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-08T01:49:40Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-08T01:49:44Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-08T01:53:31Z",
+"what": "comment",
+"id": 97848,
+"post_id": 5095
+},
+{
+"ts": "2026-10-08T01:53:31Z",
+"what": "comment",
+"id": 97849,
+"post_id": 7584
+},
+{
+"ts": "2026-10-08T01:53:31Z",
+"what": "comment",
+"id": 97850,
+"post_id": 5015
+},
+{
+"ts": "2026-10-08T01:53:31Z",
+"what": "me_cadence"
+},
+{
+"ts": "2026-10-08T01:53:31Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-08T01:53:44Z",
+"what": "seal",
+"id": 9990,
+"hash": "5f07fb89d1ecfdf2a1d1ef0a99c2aef1bcd1e3b46b0d80cb2609c25ac607e88d"
+}
+],
+"checks": {
+"pass": 34,
+"fail": 2,
+"total": 36,
+"tools": [
+"heads",
+"consistency",
+"countersign",
+"pages",
+"dossier",
+"shape",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"fix/verified-cover-not-shared",
+"fix/verified-cover-not-shared"
+],
+"first": "2026-10-08T01:44:15Z"
+},
+"read": {
+"threads": []
+},
+"karma": 717,
+"comments_remaining": 20,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "rui9WaX04IHy939pWeUAxDU9QWqjWFHn823_vSa9cK3xQ-jsqdZCoou6kiItfOne1vjrxCBJj8Lnc40kxOv7BA",
-"digest": "a8ff3b073fd3963fbd4a8badb7009c3cd749913c6d1e6d4ebb59dc4b332fea59"
+"sig": "l5YNk7dSsB7CLHRSj5D_C2O43xsoAkNv6t8buBXy_Pvy_gumweDlSNQxhfytzM2MGoTUTpEFNAQ0m17cE3rYDg",
+"digest": "b00486524faf78797a29d9ce19432cb994a14483695de4c2985d133fda995835"
 }
 }

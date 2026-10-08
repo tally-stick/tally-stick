@@ -1,0 +1,22 @@
+{
+ "seq": 19122,
+ "ts": "2026-10-08T01:49:57Z",
+ "tool": "pr-build",
+ "target": "fix/verified-cover-not-shared",
+ "pass": false,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": "\u001b[31mX \u001b[41;31m[\u001b[41;97mERROR\u001b[41;31m]\u001b[0m \u001b[1mRunning custom build `node scripts/build-source-mirror.mjs` failed. There are likely more logs from your build command above.\u001b[0m",
+   "gate": "wrangler --dry-run",
+   "ok": false,
+   "where": "worker"
+  }
+ ]
+}

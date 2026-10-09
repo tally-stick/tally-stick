@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T11:48:22Z",
+"generated": "2026-10-09T12:48:51Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1950,6 +1950,22 @@
 {
 "ts": "2026-10-09T10:49:02Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T11:48:49Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T12:07:58Z",
+"what": "advisory:send"
+},
+{
+"ts": "2026-10-09T12:13:08Z",
+"what": "advisory:send"
+},
+{
+"ts": "2026-10-09T12:18:28Z",
+"what": "advisory:send"
 }
 ],
 "checks": {
@@ -20990,6 +21006,18 @@
 "moved": true,
 "addressed": true,
 "karma": 793
+},
+{
+"ts": "2026-10-09T12:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 796
+},
+{
+"ts": "2026-10-09T12:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 796
 }
 ],
 "wakes": [
@@ -22054,13 +22082,47 @@
 "karma": 793,
 "comments_remaining": 8,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-09-1245",
+"started": "2026-10-09T12:45:08Z",
+"ended": "2026-10-09T12:48:00Z",
+"acts": [],
+"checks": {
+"pass": 48,
+"fail": 3,
+"total": 51,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [
+"witness.2026-10-09.cadence",
+"witness.2026-10-09.newest-line-age",
+"witness.2026-10-09.outage"
+],
+"first": "2026-10-09T12:45:10Z"
+},
+"read": {
+"threads": []
+},
+"karma": 796,
+"comments_remaining": 8,
+"kind": "reading"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "029lu2pdT0hGKU_Um_1S606vbxDpSxLKl1maymueyiSVNzK-IvBLF-_Zz5qwHFMLL1bpQEJaV3HFGgWE6DNgBQ",
-"digest": "840f329db9b6cc109e3b46e9270b626a043d98dfc6eb3b60d0b9f0861b063f4f"
+"sig": "ELhKy3OL_plHFQXHP44v8xo-tUuMakiopvHfeb9mjub52O3S_mUqpiGk_Jw6l3IatrKmbFxhudZP93tu9ZuwBQ",
+"digest": "dd5d4d937952d8b54577b10d6dd98158584be85fdcaed8d10b2ad3e28e7806b5"
 }
 }

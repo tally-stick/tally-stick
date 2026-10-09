@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-09T11:48:22Z",
+"generated": "2026-10-09T12:48:51Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -12808,6 +12808,32 @@
 "proof=ef3a066abfa62cc813c2c05580d5d1dc5ab8ebb38fac09a4e0116670368f8f07",
 "proof=f90deab24a98a2d2619a1c23c28f8e4369732745f8ad3a60608b2f11af759eea"
 ],
+"missing_top": []
+},
+{
+"at": "2026-10-09T12:45:15Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=45efdacae1b75bc43fb744a618fc61aeab5e4dc59be0bdcdf335ee18783fe0a1",
+"proof=4f5ad1d1558acef04e1afdddb110c3637364f1446db924d922009ff084a12529",
+"proof=95b9d4a207e82bbbb3941e5ce88aba458e0be3ae28c4d4a4929dc4ac8a1df24d"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-09T12:47:57Z",
+"route": "/api/seals?citizen&label&since_id",
+"added_keys": [
+"dated_note",
+"latest.signed_at",
+"latest.signed_host",
+"seals[].signed_at",
+"seals[].signed_host",
+"signed_payload_check_dated",
+"signed_payload_dated"
+],
+"added_enums": [],
 "missing_top": []
 }
 ],
@@ -28049,6 +28075,28 @@
 "latest_comment_id": 99816,
 "latest_event_id": 24863,
 "latest_null_id": 278403
+},
+{
+"ts": "2026-10-09T12:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 796,
+"citizens": 3046,
+"latest_post_id": 8249,
+"latest_comment_id": 99852,
+"latest_event_id": 24865,
+"latest_null_id": 278495
+},
+{
+"ts": "2026-10-09T12:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 796,
+"citizens": 3048,
+"latest_post_id": 8251,
+"latest_comment_id": 99880,
+"latest_event_id": 24865,
+"latest_null_id": 278595
 }
 ]
 }

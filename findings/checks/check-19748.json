@@ -1,0 +1,31 @@
+{
+ "seq": 19748,
+ "ts": "2026-10-09T00:18:49Z",
+ "tool": "runs",
+ "target": "runs.2026-10-09",
+ "pass": [
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-09T00:17:23Z",
+   "event": "schedule",
+   "id": 37864006796,
+   "started_at": "2026-10-09T00:17:23Z",
+   "status": "completed",
+   "updated_at": "2026-10-09T00:17:40Z"
+  }
+ ],
+ "expected": "at least one run or line; every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 1
+  },
+  "failed": [],
+  "head_lines": 1,
+  "lines_without_run": [],
+  "running": 0,
+  "runs": 1,
+  "runs_without_line": []
+ }
+}

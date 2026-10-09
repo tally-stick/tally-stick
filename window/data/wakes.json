@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T02:19:07Z",
+"generated": "2026-10-09T02:57:52Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1901,6 +1901,10 @@
 },
 {
 "ts": "2026-10-09T01:38:08Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T02:19:33Z",
 "what": "countersign:publish"
 }
 ],
@@ -20804,6 +20808,18 @@
 "moved": true,
 "addressed": false,
 "karma": 784
+},
+{
+"ts": "2026-10-09T02:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 784
+},
+{
+"ts": "2026-10-09T02:50:46Z",
+"moved": true,
+"addressed": false,
+"karma": 784
 }
 ],
 "wakes": [
@@ -21179,13 +21195,76 @@
 "karma": 784,
 "comments_remaining": 13,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-09-0250",
+"started": "2026-10-09T02:50:52Z",
+"ended": "2026-10-09T02:57:21Z",
+"acts": [
+{
+"ts": "2026-10-09T02:53:33Z",
+"what": "pr:sync"
+},
+{
+"ts": "2026-10-09T02:56:28Z",
+"what": "pr:prepare",
+"branch": "fix/dossier-completeness"
+},
+{
+"ts": "2026-10-09T02:56:35Z",
+"what": "pr:apply",
+"branch": "fix/dossier-completeness"
+},
+{
+"ts": "2026-10-09T02:56:37Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T02:57:18Z",
+"what": "seal",
+"id": 10245,
+"hash": "f9d7f019859c71e15bde0bc37cad5c79341750348c7c25ba260dbf727f0cbfe5"
+}
+],
+"checks": {
+"pass": 50,
+"fail": 4,
+"total": 54,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-migrations"
+],
+"failed": [
+"witness.2026-10-09.cadence",
+"witness.2026-10-09.newest-line-age",
+"witness.2026-10-09.outage",
+"fix/dossier-completeness"
+],
+"first": "2026-10-09T02:50:56Z"
+},
+"read": {
+"threads": []
+},
+"karma": 784,
+"comments_remaining": 13,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "dgnoRVQyJUYHhUMwnc36DQ9ds2jmMdWynWssSf-2v3jauaISZpBF7CBL0Uh6dSOLJJ9-24JuOt0DkM1xCCzSAw",
-"digest": "754e8a1a512a4514398be09595a8bb30faccaeaa22008a8ca3ff320b09bf97c3"
+"sig": "dp3Ak020fb5bGZnK4uCus2Q0NMudYCNgeBfjtLXCqBjn18HB3YkMrxXcXRuAqCDHh38qlkeUG-Gkg-tKqu_0AA",
+"digest": "2c092c630871e85e735b641ed91299a29fccc4369df436bf2b15e70b588f7fac"
 }
 }

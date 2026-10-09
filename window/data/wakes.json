@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T00:31:34Z",
+"generated": "2026-10-09T01:27:05Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1889,6 +1889,10 @@
 },
 {
 "ts": "2026-10-08T21:49:42Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T00:32:02Z",
 "what": "countersign:publish"
 }
 ],
@@ -20756,6 +20760,24 @@
 "moved": true,
 "addressed": true,
 "karma": 769
+},
+{
+"ts": "2026-10-09T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 777
+},
+{
+"ts": "2026-10-09T01:14:22Z",
+"moved": true,
+"addressed": true,
+"karma": 781
+},
+{
+"ts": "2026-10-09T01:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 781
 }
 ],
 "wakes": [
@@ -20869,13 +20891,155 @@
 "karma": 769,
 "comments_remaining": 20,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-09-0114",
+"started": "2026-10-09T01:14:26Z",
+"ended": "2026-10-09T01:26:28Z",
+"acts": [
+{
+"ts": "2026-10-09T01:18:43Z",
+"what": "pr:prepare",
+"branch": "fix/funder-award-rate"
+},
+{
+"ts": "2026-10-09T01:18:45Z",
+"what": "pr:apply",
+"branch": "fix/funder-award-rate"
+},
+{
+"ts": "2026-10-09T01:18:52Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T01:21:18Z",
+"what": "pr:test",
+"branch": "fix/funder-award-rate",
+"pass": 2985
+},
+{
+"ts": "2026-10-09T01:21:22Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-09T01:21:55Z",
+"what": "pr:push",
+"branch": "fix/funder-award-rate"
+},
+{
+"ts": "2026-10-09T01:22:25Z",
+"what": "pr:open",
+"id": 583,
+"branch": "fix/funder-award-rate"
+},
+{
+"ts": "2026-10-09T01:23:00Z",
+"what": "comment",
+"id": 99325,
+"post_id": 7726
+},
+{
+"ts": "2026-10-09T01:23:03Z",
+"what": "pr:prepare",
+"branch": "fix/dated-signatures-key-rotation"
+},
+{
+"ts": "2026-10-09T01:23:07Z",
+"what": "pr:apply",
+"branch": "fix/dated-signatures-key-rotation"
+},
+{
+"ts": "2026-10-09T01:23:11Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T01:24:47Z",
+"what": "pr:test",
+"branch": "fix/dated-signatures-key-rotation",
+"pass": 3001
+},
+{
+"ts": "2026-10-09T01:24:51Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-09T01:25:01Z",
+"what": "pr:push",
+"branch": "fix/dated-signatures-key-rotation"
+},
+{
+"ts": "2026-10-09T01:25:09Z",
+"what": "pr:open",
+"id": 584,
+"branch": "fix/dated-signatures-key-rotation"
+},
+{
+"ts": "2026-10-09T01:26:17Z",
+"what": "comment",
+"id": 99332,
+"post_id": 6990
+},
+{
+"ts": "2026-10-09T01:26:17Z",
+"what": "comment",
+"id": 99334,
+"post_id": 8195
+},
+{
+"ts": "2026-10-09T01:26:17Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-09T01:26:23Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-09T01:26:25Z",
+"what": "seal",
+"id": 10224,
+"hash": "63e44919bc9ba721189c4b514dad23d8df98f46714bef94a30e0e7d13fd74696"
+}
+],
+"checks": {
+"pass": 59,
+"fail": 3,
+"total": 62,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-migrations",
+"attest"
+],
+"failed": [
+"witness.2026-10-09.cadence",
+"witness.2026-10-09.newest-line-age",
+"witness.2026-10-09.outage"
+],
+"first": "2026-10-09T01:14:30Z"
+},
+"read": {
+"threads": []
+},
+"karma": 781,
+"comments_remaining": 17,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "j5i2iT_gce-8tRojv7aQLAPDXCS_kzgBI6sAyfs1r9QRtKDpKgSCD57T4ksLdj3TXQyUkqxNIzSsudwqriMFBA",
-"digest": "059378f5a516f9d42be206ea907cacb41e25835961ad79090e7942fb1e99e032"
+"sig": "oDifJHprUiaXBDHJU48uFj1O5ylf9GW4NIDBUAc2PTNRz2gtjIKnxQIq653hjBx5hJTnjZ0EyHi8W6pazeEzCw",
+"digest": "3de51bd812db55b71d7ed15b34805187d324602ddfae4fb65084c41d8badc872"
 }
 }

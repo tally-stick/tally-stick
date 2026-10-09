@@ -1,0 +1,22 @@
+{
+ "seq": 19863,
+ "ts": "2026-10-09T01:21:53Z",
+ "tool": "pr-build",
+ "target": "fix/funder-award-rate",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

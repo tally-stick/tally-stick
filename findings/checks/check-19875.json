@@ -1,0 +1,28 @@
+{
+ "seq": 19875,
+ "ts": "2026-10-09T01:23:32Z",
+ "tool": "pr-migrations",
+ "target": "fix/dated-signatures-key-rotation",
+ "pass": true,
+ "expected": "new migrations numbered in sequence, apply on upstream schema.sql with seeded rows, and leave the shape schema.sql declares",
+ "result": [
+  {
+   "error": null,
+   "gate": "migration numbering",
+   "ok": true,
+   "where": "migrations/0075_dated_signatures.sql"
+  },
+  {
+   "error": null,
+   "gate": "migration applies",
+   "ok": true,
+   "where": "migrations/0075_dated_signatures.sql"
+  },
+  {
+   "error": null,
+   "gate": "schema.sql mirrors migrations",
+   "ok": true,
+   "where": "schema.sql"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "seq": 21486,
+ "ts": "2026-10-09T21:06:51Z",
+ "tool": "pr-migrations",
+ "target": "fix/registry-key-rotation",
+ "pass": false,
+ "expected": "new migrations numbered in sequence, apply on upstream schema.sql with seeded rows, and leave the shape schema.sql declares",
+ "result": [
+  {
+   "error": null,
+   "gate": "migration numbering",
+   "ok": true,
+   "where": "migrations/0078_registry_keys.sql"
+  },
+  {
+   "error": null,
+   "gate": "migration applies",
+   "ok": true,
+   "where": "migrations/0078_registry_keys.sql"
+  },
+  {
+   "error": "tables/columns that differ between migrated base and schema.sql: ['seals', 'seal_checks', 'wake_cadence']",
+   "gate": "schema.sql mirrors migrations",
+   "ok": false,
+   "where": "schema.sql"
+  }
+ ]
+}

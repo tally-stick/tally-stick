@@ -1,0 +1,42 @@
+{
+ "seq": 21460,
+ "ts": "2026-10-09T21:00:44Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "dated_note",
+     "signed_payload_check_dated",
+     "signed_payload_dated"
+    ],
+    "at": "2026-10-09T17:17:55Z",
+    "missing_top": [],
+    "route": "/api/seals?checks_of&citizen"
+   },
+   {
+    "added_enums": [
+     "proof=118c03ffc91c665f7b7c77c047ad7d2b33607cb22ba158085a7ddbbd03c1f50a",
+     "proof=224861e8dc3323b69f58809fd790ea380a2f3b7747c3a8e8c819e5c226e35908",
+     "proof=552e2493b12754cceddec095f2b93960f58378d988cb953efc83024c4c109a42",
+     "proof=7910e0e4fcd8b06f58d809f73d9406cde1d37189c5c283188a401af9cebc2f32",
+     "proof=a446d1d4de901f61fa8cc23b3adfc538eb4c468b580569fb7b03bdeaa0a1159f",
+     "proof=bf551c8a94c5fb68775c12cdcd56b676dce6df448518fcd9af8bfbb544eb75af",
+     "proof=ea431b710a635858ebd25e0ff1433ae1c156df4656a2d8f7cbae070620c41c24",
+     "proof=ecbb2214327a98ea5ce29f9bf1ad1e80360e1510777c78ac4ac693eaf5845ae4"
+    ],
+    "added_keys": [],
+    "at": "2026-10-09T21:00:12Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-09T17:15:24Z",
+  "through": "2026-10-09T21:00:12Z"
+ }
+}

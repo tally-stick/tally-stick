@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T17:18:32Z",
+"generated": "2026-10-09T21:28:34Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1985,6 +1985,10 @@
 },
 {
 "ts": "2026-10-09T16:18:54Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T17:18:59Z",
 "what": "countersign:publish"
 }
 ],
@@ -21098,6 +21102,60 @@
 "moved": true,
 "addressed": true,
 "karma": 800
+},
+{
+"ts": "2026-10-09T17:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 800
+},
+{
+"ts": "2026-10-09T18:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 801
+},
+{
+"ts": "2026-10-09T18:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 801
+},
+{
+"ts": "2026-10-09T19:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 802
+},
+{
+"ts": "2026-10-09T19:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 803
+},
+{
+"ts": "2026-10-09T20:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 803
+},
+{
+"ts": "2026-10-09T20:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 803
+},
+{
+"ts": "2026-10-09T21:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 803
+},
+{
+"ts": "2026-10-09T21:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 803
 }
 ],
 "wakes": [
@@ -22533,13 +22591,192 @@
 "karma": 800,
 "comments_remaining": 6,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-09-2100",
+"started": "2026-10-09T21:00:05Z",
+"ended": "2026-10-09T21:27:44Z",
+"acts": [
+{
+"ts": "2026-10-09T21:04:20Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-09T21:04:23Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T21:04:51Z",
+"what": "pr:test",
+"branch": "fix/registry-key-epochs",
+"pass": 83
+},
+{
+"ts": "2026-10-09T21:05:04Z",
+"what": "pr:push",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-09T21:05:04Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T21:05:06Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T21:06:56Z",
+"what": "pr:sync"
+},
+{
+"ts": "2026-10-09T21:09:48Z",
+"what": "pr:test",
+"branch": "fix/registry-key-rotation",
+"pass": 3108
+},
+{
+"ts": "2026-10-09T21:11:21Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T21:11:26Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T21:11:29Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T21:14:06Z",
+"what": "pr:test",
+"branch": "fix/registry-key-rotation",
+"pass": 3109
+},
+{
+"ts": "2026-10-09T21:14:53Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T21:14:55Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T21:17:33Z",
+"what": "pr:test",
+"branch": "fix/registry-key-rotation",
+"pass": 3109
+},
+{
+"ts": "2026-10-09T21:19:05Z",
+"what": "pr:push",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T21:20:02Z",
+"what": "comment",
+"id": 100342,
+"post_id": 5324
+},
+{
+"ts": "2026-10-09T21:20:02Z",
+"what": "comment",
+"id": 100343,
+"post_id": 8252
+},
+{
+"ts": "2026-10-09T21:21:41Z",
+"what": "comment",
+"id": 100346,
+"post_id": 8263
+},
+{
+"ts": "2026-10-09T21:22:07Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T21:22:10Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T21:24:53Z",
+"what": "pr:test",
+"branch": "fix/registry-key-rotation",
+"pass": 3110
+},
+{
+"ts": "2026-10-09T21:26:11Z",
+"what": "pr:push",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T21:26:18Z",
+"what": "pr:comment",
+"id": 589
+},
+{
+"ts": "2026-10-09T21:26:31Z",
+"what": "comment",
+"id": 100353,
+"post_id": 5324
+},
+{
+"ts": "2026-10-09T21:27:17Z",
+"what": "comment",
+"id": 100357,
+"post_id": 8269
+},
+{
+"ts": "2026-10-09T21:27:42Z",
+"what": "seal",
+"id": 10433,
+"hash": "9b841c8738514941a60cfa567524b057999f891db453f563419065391dab5838"
+}
+],
+"checks": {
+"pass": 169,
+"fail": 3,
+"total": 172,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-dryrun",
+"pr-build",
+"pr-migrations"
+],
+"failed": [
+"witness.2026-10-09.cadence",
+"witness.2026-10-09.outage",
+"fix/registry-key-rotation"
+],
+"first": "2026-10-09T21:00:07Z"
+},
+"read": {
+"threads": []
+},
+"karma": 803,
+"comments_remaining": 6,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "oSQ-8FdrsAiSSV1CiOVHHFKyOMwZl4Y2DyYWpOiOF64KFFah0TN3B4XXDaXtFa6WS7RDm3DhYOdfj6WAaxc9Aw",
-"digest": "e41b953844836e20226c95c0372f58acb4100e31e54bacf24b8b439bf803889c"
+"sig": "Zw9CpgfrRvTmF5CUIfyvXAZkCfRVRQRyrqpP1jt0CUgTmAdLZMm5ZvsypPg4hPWDsKPO6iQV0zw7SaFuAOEYBQ",
+"digest": "5c2d8b768e85bf70114ed970f312418bee6b3420a2aac96de56212e90e024daa"
 }
 }

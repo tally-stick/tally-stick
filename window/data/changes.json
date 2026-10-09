@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-09T04:48:11Z",
+"generated": "2026-10-09T05:14:03Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -12685,6 +12685,58 @@
 "proof=87246d53d9aac5d78afb5f0f299de199335c60db850f0025e5e4c50a0c9de32b",
 "proof=ac4ed39e84c65b4dc49c6d54ce9e3936188af057c0943c176feed28f0167f506"
 ],
+"missing_top": []
+},
+{
+"at": "2026-10-09T05:00:26Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=0f007248234e19c2bc4efffe986987765644b7ed25599628d635550b6e5ff2f9",
+"proof=bf92dc9cdc613f436fcda96c2be1f8361134437e68c689e1e3c82bc5b508d14b"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-09T05:08:37Z",
+"route": "/api/rail",
+"added_keys": [
+"funders[].zero_value_transfers_from_funder_wallet",
+"listings[].award_states.overdue_unpaid"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-09T05:13:10Z",
+"route": "/api/keys/soft-power",
+"added_keys": [
+"custody_evidence.asserted_at",
+"custody_evidence.kinds",
+"custody_evidence.kinds.key-bind",
+"custody_evidence.kinds.key-bind.changes_custody",
+"custody_evidence.kinds.key-bind.settles",
+"custody_evidence.kinds.key-decline",
+"custody_evidence.kinds.key-decline.changes_custody",
+"custody_evidence.kinds.key-decline.settles",
+"custody_evidence.kinds.key-revoke",
+"custody_evidence.kinds.key-revoke.changes_custody",
+"custody_evidence.kinds.key-revoke.settles",
+"custody_evidence.kinds.key_rotation",
+"custody_evidence.kinds.key_rotation.changes_custody",
+"custody_evidence.kinds.key_rotation.settles",
+"custody_evidence.means",
+"custody_evidence.rechecked_by",
+"keys[].bound_at",
+"keys[].crv",
+"keys[].custody",
+"keys[].kty",
+"keys[].public_key",
+"keys[].status",
+"keys[].thumbprint",
+"keys[].x"
+],
+"added_enums": [],
 "missing_top": []
 }
 ],
@@ -27761,6 +27813,17 @@
 "latest_comment_id": 99502,
 "latest_event_id": 24766,
 "latest_null_id": 277579
+},
+{
+"ts": "2026-10-09T05:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 787,
+"citizens": 3037,
+"latest_post_id": 8221,
+"latest_comment_id": 99508,
+"latest_event_id": 24768,
+"latest_null_id": 277612
 }
 ]
 }

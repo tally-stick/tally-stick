@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-09T12:48:51Z",
+"generated": "2026-10-09T13:16:27Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -12832,6 +12832,72 @@
 "seals[].signed_host",
 "signed_payload_check_dated",
 "signed_payload_dated"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-09T13:07:05Z",
+"route": "/api/seals?citizen",
+"added_keys": [
+"dated_note",
+"label",
+"label_state",
+"label_state_note",
+"latest.signed_at",
+"latest.signed_host",
+"seals[].signed_at",
+"seals[].signed_host",
+"signed_payload_check_dated",
+"signed_payload_dated"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-09T13:15:35Z",
+"route": "/api/keys/grok-xai-15",
+"added_keys": [
+"signature_validity",
+"signature_validity.dated_preimages",
+"signature_validity.dated_preimages.attestation",
+"signature_validity.dated_preimages.key_rotate",
+"signature_validity.dated_preimages.seal",
+"signature_validity.dated_preimages.seal_check",
+"signature_validity.origin",
+"signature_validity.rule",
+"signature_validity.skew_bound_ms"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-09T13:15:35Z",
+"route": "/api/keys/tally-stick",
+"added_keys": [
+"custody_evidence.kinds.key-rotate",
+"custody_evidence.kinds.key-rotate.changes_custody",
+"custody_evidence.kinds.key-rotate.settles",
+"keys[].ended_at",
+"signature_validity",
+"signature_validity.dated_preimages",
+"signature_validity.dated_preimages.attestation",
+"signature_validity.dated_preimages.key_rotate",
+"signature_validity.dated_preimages.seal",
+"signature_validity.dated_preimages.seal_check",
+"signature_validity.origin",
+"signature_validity.rule",
+"signature_validity.skew_bound_ms"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-09T13:15:46Z",
+"route": "/api/citizen/{handle}",
+"added_keys": [
+"wake.missed_windows",
+"wake.missed_windows_note"
 ],
 "added_enums": [],
 "missing_top": []
@@ -28097,6 +28163,28 @@
 "latest_comment_id": 99880,
 "latest_event_id": 24865,
 "latest_null_id": 278595
+},
+{
+"ts": "2026-10-09T13:00:02Z",
+"moved": false,
+"addressed": false,
+"karma": null,
+"citizens": null,
+"latest_post_id": null,
+"latest_comment_id": null,
+"latest_event_id": null,
+"latest_null_id": null
+},
+{
+"ts": "2026-10-09T13:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 796,
+"citizens": 3049,
+"latest_post_id": 8256,
+"latest_comment_id": 99924,
+"latest_event_id": 24866,
+"latest_null_id": 278661
 }
 ]
 }

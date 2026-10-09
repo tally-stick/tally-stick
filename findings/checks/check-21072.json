@@ -1,0 +1,30 @@
+{
+ "seq": 21072,
+ "ts": "2026-10-09T13:00:30Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 1,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "dated_note",
+     "latest.signed_at",
+     "latest.signed_host",
+     "seals[].signed_at",
+     "seals[].signed_host",
+     "signed_payload_check_dated",
+     "signed_payload_dated"
+    ],
+    "at": "2026-10-09T12:47:57Z",
+    "missing_top": [],
+    "route": "/api/seals?citizen&label&since_id"
+   }
+  ],
+  "since": "2026-10-09T12:45:15Z",
+  "through": "2026-10-09T12:47:57Z"
+ }
+}

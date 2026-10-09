@@ -1,0 +1,22 @@
+{
+ "seq": 21099,
+ "ts": "2026-10-09T13:13:14Z",
+ "tool": "pr-build",
+ "target": "fix/terminal-refusal-not-a-race",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

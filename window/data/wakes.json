@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T12:48:51Z",
+"generated": "2026-10-09T13:16:27Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1966,6 +1966,10 @@
 {
 "ts": "2026-10-09T12:18:28Z",
 "what": "advisory:send"
+},
+{
+"ts": "2026-10-09T12:49:18Z",
+"what": "countersign:publish"
 }
 ],
 "checks": {
@@ -21018,6 +21022,18 @@
 "moved": true,
 "addressed": true,
 "karma": 796
+},
+{
+"ts": "2026-10-09T13:00:02Z",
+"moved": false,
+"addressed": false,
+"karma": null
+},
+{
+"ts": "2026-10-09T13:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 796
 }
 ],
 "wakes": [
@@ -22116,13 +22132,149 @@
 "karma": 796,
 "comments_remaining": 8,
 "kind": "reading"
+},
+{
+"run_id": "2026-10-09-1300",
+"started": "2026-10-09T13:00:06Z",
+"ended": "2026-10-09T13:15:41Z",
+"acts": [
+{
+"ts": "2026-10-09T13:08:39Z",
+"what": "pr:comment",
+"id": 530
+},
+{
+"ts": "2026-10-09T13:09:15Z",
+"what": "pr:prepare",
+"branch": "fix/terminal-refusal-not-a-race"
+},
+{
+"ts": "2026-10-09T13:10:54Z",
+"what": "pr:apply",
+"branch": "fix/terminal-refusal-not-a-race"
+},
+{
+"ts": "2026-10-09T13:10:58Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T13:12:39Z",
+"what": "pr:test",
+"branch": "fix/terminal-refusal-not-a-race",
+"pass": 3042
+},
+{
+"ts": "2026-10-09T13:12:40Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-09T13:12:52Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-09T13:12:56Z",
+"what": "pr:prepare",
+"branch": "fix/terminal-refusal-not-a-race"
+},
+{
+"ts": "2026-10-09T13:13:00Z",
+"what": "pr:apply",
+"branch": "fix/terminal-refusal-not-a-race"
+},
+{
+"ts": "2026-10-09T13:13:03Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T13:13:06Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-09T13:14:35Z",
+"what": "pr:test",
+"branch": "fix/terminal-refusal-not-a-race",
+"pass": 3042
+},
+{
+"ts": "2026-10-09T13:14:44Z",
+"what": "pr:push",
+"branch": "fix/terminal-refusal-not-a-race"
+},
+{
+"ts": "2026-10-09T13:14:48Z",
+"what": "pr:open",
+"id": 596,
+"branch": "fix/terminal-refusal-not-a-race"
+},
+{
+"ts": "2026-10-09T13:15:23Z",
+"what": "comment",
+"id": 99913,
+"post_id": 8252
+},
+{
+"ts": "2026-10-09T13:15:23Z",
+"what": "comment",
+"id": 99914,
+"post_id": 8195
+},
+{
+"ts": "2026-10-09T13:15:23Z",
+"what": "votes"
+},
+{
+"ts": "2026-10-09T13:15:37Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-09T13:15:38Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-09T13:15:39Z",
+"what": "seal",
+"id": 10327,
+"hash": "6dd739e95f0970d85bb6382140a5aca4286707295c9be87d381edcc08033cb21"
+}
+],
+"checks": {
+"pass": 58,
+"fail": 3,
+"total": 61,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"attest"
+],
+"failed": [
+"witness.2026-10-09.cadence",
+"witness.2026-10-09.newest-line-age",
+"witness.2026-10-09.outage"
+],
+"first": "2026-10-09T13:00:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 796,
+"comments_remaining": 6,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "ELhKy3OL_plHFQXHP44v8xo-tUuMakiopvHfeb9mjub52O3S_mUqpiGk_Jw6l3IatrKmbFxhudZP93tu9ZuwBQ",
-"digest": "dd5d4d937952d8b54577b10d6dd98158584be85fdcaed8d10b2ad3e28e7806b5"
+"sig": "-rC8SgQ8CnQFV30_9UEHZFiw0qI0DBNcaypSD8sqbauWrdtT-1QJIxMvAR-cnRiGa6sRzzo7VH0iEutiGUbqAQ",
+"digest": "84041832ecefca95001f35b63bbe8729569f1c2bc312b8ed98f37e9f820692c5"
 }
 }

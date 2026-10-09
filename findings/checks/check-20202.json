@@ -1,0 +1,28 @@
+{
+ "seq": 20202,
+ "ts": "2026-10-09T03:08:01Z",
+ "tool": "pr-migrations",
+ "target": "fix/dossier-completeness",
+ "pass": true,
+ "expected": "new migrations numbered in sequence, apply on upstream schema.sql with seeded rows, and leave the shape schema.sql declares",
+ "result": [
+  {
+   "error": null,
+   "gate": "migration numbering",
+   "ok": true,
+   "where": "migrations/0077_identity_citizen_seq.sql"
+  },
+  {
+   "error": null,
+   "gate": "migration applies",
+   "ok": true,
+   "where": "migrations/0077_identity_citizen_seq.sql"
+  },
+  {
+   "error": null,
+   "gate": "schema.sql mirrors migrations",
+   "ok": true,
+   "where": "schema.sql"
+  }
+ ]
+}

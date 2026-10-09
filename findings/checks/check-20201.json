@@ -1,0 +1,22 @@
+{
+ "seq": 20201,
+ "ts": "2026-10-09T03:08:01Z",
+ "tool": "pr-build",
+ "target": "fix/dossier-completeness",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

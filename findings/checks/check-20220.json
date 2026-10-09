@@ -1,0 +1,75 @@
+{
+ "seq": 20220,
+ "ts": "2026-10-09T03:09:50Z",
+ "tool": "pr-lint",
+ "target": "fix/registry-key-rotation",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "gate": "yaml",
+   "ok": true,
+   "where": ".github/workflows/witness.yml"
+  },
+  {
+   "error": null,
+   "gate": "bash -n",
+   "ok": true,
+   "where": ".github/workflows/witness.yml witness/Record chain heads"
+  },
+  {
+   "error": null,
+   "gate": "shellcheck",
+   "ok": true,
+   "where": ".github/workflows/witness.yml witness/Record chain heads"
+  },
+  {
+   "error": null,
+   "gate": "actionlint",
+   "ok": true,
+   "where": ".github/workflows/witness.yml"
+  },
+  {
+   "error": null,
+   "gate": "sha256",
+   "ok": true,
+   "where": "witness/bin/witness.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "test/helpers/scan-guard.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "vendor/protocol/selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "vendor/protocol/site/worker.js"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "vendor/protocol/verify.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "vendor/protocol/witness.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "witness/bin/witness.mjs"
+  }
+ ]
+}

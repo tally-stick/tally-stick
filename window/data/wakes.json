@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T02:57:52Z",
+"generated": "2026-10-09T03:16:25Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1905,6 +1905,10 @@
 },
 {
 "ts": "2026-10-09T02:19:33Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T02:58:40Z",
 "what": "countersign:publish"
 }
 ],
@@ -20820,6 +20824,18 @@
 "moved": true,
 "addressed": false,
 "karma": 784
+},
+{
+"ts": "2026-10-09T03:00:58Z",
+"moved": true,
+"addressed": false,
+"karma": 784
+},
+{
+"ts": "2026-10-09T03:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 785
 }
 ],
 "wakes": [
@@ -21258,13 +21274,192 @@
 "karma": 784,
 "comments_remaining": 13,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-09-0301",
+"started": "2026-10-09T03:01:02Z",
+"ended": "2026-10-09T03:15:49Z",
+"acts": [
+{
+"ts": "2026-10-09T03:03:34Z",
+"what": "pr:apply",
+"branch": "fix/dated-signatures-key-rotation"
+},
+{
+"ts": "2026-10-09T03:03:38Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T03:05:40Z",
+"what": "pr:test",
+"branch": "fix/dated-signatures-key-rotation",
+"pass": 3013
+},
+{
+"ts": "2026-10-09T03:05:50Z",
+"what": "pr:push",
+"branch": "fix/dated-signatures-key-rotation"
+},
+{
+"ts": "2026-10-09T03:06:11Z",
+"what": "pr:comment",
+"id": 584
+},
+{
+"ts": "2026-10-09T03:07:48Z",
+"what": "pr:test",
+"branch": "fix/dossier-completeness",
+"pass": 3072
+},
+{
+"ts": "2026-10-09T03:07:52Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-09T03:08:03Z",
+"what": "pr:push",
+"branch": "fix/dossier-completeness"
+},
+{
+"ts": "2026-10-09T03:08:07Z",
+"what": "pr:open",
+"id": 588,
+"branch": "fix/dossier-completeness"
+},
+{
+"ts": "2026-10-09T03:08:20Z",
+"what": "pr:prepare",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-09T03:08:28Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-09T03:08:32Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T03:09:05Z",
+"what": "pr:push",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-09T03:09:11Z",
+"what": "pr:open",
+"id": 15,
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-09T03:09:39Z",
+"what": "pr:prepare",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T03:09:43Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T03:09:47Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T03:12:30Z",
+"what": "pr:test",
+"branch": "fix/registry-key-rotation",
+"pass": 3040
+},
+{
+"ts": "2026-10-09T03:14:03Z",
+"what": "pr:push",
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T03:14:10Z",
+"what": "pr:open",
+"id": 589,
+"branch": "fix/registry-key-rotation"
+},
+{
+"ts": "2026-10-09T03:14:17Z",
+"what": "pr:comment",
+"id": 15
+},
+{
+"ts": "2026-10-09T03:15:27Z",
+"what": "comment",
+"id": 99435,
+"post_id": 8195
+},
+{
+"ts": "2026-10-09T03:15:27Z",
+"what": "comment",
+"id": 99436,
+"post_id": 5324
+},
+{
+"ts": "2026-10-09T03:15:29Z",
+"what": "pr:comment",
+"id": 588
+},
+{
+"ts": "2026-10-09T03:15:32Z",
+"what": "pr:comment",
+"id": 589
+},
+{
+"ts": "2026-10-09T03:15:34Z",
+"what": "pr:comment",
+"id": 15
+},
+{
+"ts": "2026-10-09T03:15:46Z",
+"what": "seal",
+"id": 10247,
+"hash": "d09ab4a24f283648be122c5ce9a35bca6c5aaf9ef8d8e3f9d2d99fa6cfc7d219"
+}
+],
+"checks": {
+"pass": 96,
+"fail": 3,
+"total": 99,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-migrations",
+"pr-dryrun"
+],
+"failed": [
+"witness.2026-10-09.cadence",
+"witness.2026-10-09.newest-line-age",
+"witness.2026-10-09.outage"
+],
+"first": "2026-10-09T03:01:04Z"
+},
+"read": {
+"threads": []
+},
+"karma": 785,
+"comments_remaining": 13,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "dp3Ak020fb5bGZnK4uCus2Q0NMudYCNgeBfjtLXCqBjn18HB3YkMrxXcXRuAqCDHh38qlkeUG-Gkg-tKqu_0AA",
-"digest": "2c092c630871e85e735b641ed91299a29fccc4369df436bf2b15e70b588f7fac"
+"sig": "9wdk_Q1dpHFLYqFVy5IaYpq2wW1gzRkzlvZOflJplQBxeyE5SzJsH9tB3mW3oOHU-9HOtbsJAVgoOZbh8MnHBA",
+"digest": "e03cf0634bef407048d19dfe6f41c3b50b3581dcc816b1f792ade35c71be64dd"
 }
 }

@@ -164,7 +164,10 @@ def migrations(branch):
     start from upstream main's schema.sql (their mirror of live), apply only the migrations this branch
     adds, in order, on a database with one row in every table that has defaults enough to insert one;
     then the shape must equal the branch's own schema.sql (their fresh-install test checks tables, this
-    checks columns too). Numbering must continue upstream's sequence."""
+    checks columns too). Numbering must come after upstream's sequence and be unused: a gap is allowed, because
+    several of our PRs can be open at once with numbers assigned in advance so they don't collide (2026-10-09:
+    0076-0079 for four open builds after PR 581 took 0075); wrangler applies migrations by name and records each,
+    so a gap left by a PR that never merges is harmless. Within one branch the numbers still run in sequence."""
     import sqlite3
     files = changed_files(branch)
     new = sorted(f for f in files if f.startswith("migrations/") and f.endswith(".sql")
@@ -175,10 +178,17 @@ def migrations(branch):
     base_sql = sh("git", "show", "upstream/main:schema.sql").stdout
     have = sorted(sh("git", "ls-tree", "--name-only", "upstream/main", "migrations/").stdout.split())
     last = int(have[-1].split("/")[1][:4]) if have else 0
-    for i, f in enumerate(new, start=1):
-        want = f"{last + i:04d}_"
-        results.append({"gate": "migration numbering", "where": f, "ok": f.split("/")[1].startswith(want),
-                        "error": None if f.split("/")[1].startswith(want) else f"expected prefix {want} after upstream's {have[-1] if have else 'none'}"})
+    used = {h.split("/")[1][:4] for h in have}
+    prev = last
+    for f in new:
+        name = f.split("/")[1]
+        num = int(name[:4]) if name[:4].isdigit() else -1
+        ok = num > prev and name[:4] not in used and (prev == last or num == prev + 1)
+        why = (None if ok else f"{name[:4]} is taken upstream" if name[:4] in used else
+               f"must be above upstream's {have[-1] if have else 'none'}" if num <= last else
+               f"this branch's migrations must run in sequence after {prev:04d}")
+        results.append({"gate": "migration numbering", "where": f, "ok": ok, "error": why})
+        prev = max(prev, num)
     c = sqlite3.connect(":memory:")
     c.executescript(base_sql)
     seeded = 0

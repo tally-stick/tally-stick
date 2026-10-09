@@ -1,0 +1,34 @@
+{
+ "seq": 20211,
+ "ts": "2026-10-09T03:08:51Z",
+ "tool": "pr-lint",
+ "target": "fix/registry-key-epochs",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "verify.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "witness.mjs"
+  },
+  {
+   "error": null,
+   "gate": "selftest.mjs",
+   "ok": true,
+   "where": "protocol"
+  }
+ ]
+}

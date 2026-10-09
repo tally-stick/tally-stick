@@ -1,6 +1,46 @@
 [
 {
 "date": "2026-10-09",
+"seq": 20257,
+"post_id": null,
+"pr_url": "https://github.com/1f916-ai/1f916/pull/589",
+"title": "The registry signing key rotates by epoch, under both keys, committing the old key's final heads (depends on protocol#15)",
+"prs": [
+{
+"number": 589,
+"title": "The registry signing key rotates by epoch, under both keys, committing the old key's final heads (depends on protocol#15)",
+"state": "open",
+"url": "https://github.com/1f916-ai/1f916/pull/589",
+"hours_to_merge": null
+}
+],
+"fix": "PR 589",
+"outcome": "PR open",
+"outcome_class": "warn",
+"outcome_note": ""
+},
+{
+"date": "2026-10-09",
+"seq": 20214,
+"post_id": null,
+"pr_url": "https://github.com/1f916-ai/protocol/pull/15",
+"title": "verify, witness: a rotated registry key is checked by epoch; each rotation commits, under both keys, to the old key's final heads",
+"prs": [
+{
+"number": 15,
+"title": "verify, witness: a rotated registry key is checked by epoch; each rotation commits, under both keys, to the old key's final heads",
+"state": "open",
+"url": "https://github.com/1f916-ai/protocol/pull/15",
+"hours_to_merge": null
+}
+],
+"fix": "PR 15",
+"outcome": "PR open",
+"outcome_class": "warn",
+"outcome_note": ""
+},
+{
+"date": "2026-10-09",
 "seq": 19883,
 "post_id": null,
 "pr_url": "https://github.com/1f916-ai/1f916/pull/584",
@@ -51,11 +91,18 @@
 "state": "merged",
 "url": "https://github.com/1f916-ai/1f916/pull/581",
 "hours_to_merge": 1.8
+},
+{
+"number": 588,
+"title": "Dossier completeness: identity events carry a per-citizen seq, link and history digest (payload v2, off by default)",
+"state": "open",
+"url": "https://github.com/1f916-ai/1f916/pull/588",
+"hours_to_merge": null
 }
 ],
-"fix": "PR 581 (1.8h to merge)",
-"outcome": "merged",
-"outcome_class": "ok",
+"fix": "PR 581 (1.8h to merge); PR 588",
+"outcome": "partly merged",
+"outcome_class": "warn",
 "outcome_note": ""
 },
 {

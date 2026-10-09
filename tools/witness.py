@@ -26,8 +26,9 @@ Checks:
   latest-vs-live          the newest head line's checkpoints vs live /api/checkpoint: size <= live, same size => same root
   latest-head-attest      the README recipe: GET /api/attest?identity_from=&identity_expect=&ledger_from=&ledger_expect=
                           with the newest head line's heads must answer status 'verified' + expect_matches true
-  cadence                 gaps between consecutive head-line `at` values; expected cadence 60 min before
-                          2026-08-12T03:36:59Z and 5 min after; a gap > 2x expected is flagged and adjacent flagged
+  cadence                 gaps between consecutive head-line `at` values; expected cadence 5 min from
+                          2026-08-12T03:36:59Z to 2026-09-29T01:46:21Z, 60 min otherwise (hourly: an outage is
+                          3 h or more); a gap > 2x expected is flagged and adjacent flagged
                           gaps are merged into 'degraded windows'. Pass = no degraded window in scope.
 """
 import argparse, base64, datetime, json, os, re, statistics, sys, time, urllib.error, urllib.request
@@ -43,6 +44,11 @@ RAW = "https://raw.githubusercontent.com/1f916-ai/1f916/main/witness/"
 API = "https://api.github.com/repos/1f916-ai/1f916/contents/witness"
 TOOL = "witness"
 FIVE_MIN_SINCE = "2026-08-12T03:36:59Z"  # README: cadence went hourly -> five-minute at this moment
+# The registry stopped dispatching the five-minute run at this moment; since then only GitHub's hourly schedule runs it
+# (PR 593's witness.yml comment, merged 2026-10-09). GitHub delays and drops scheduled runs, so the hourly era is judged
+# loosely: a gap over 2 h is a missed slot, a window of 3 h or more an outage, a newest line over 3 h old a stopped job.
+HOURLY_SINCE = "2026-09-29T01:46:21Z"
+HOURLY_OUTAGE_H = 3
 DAY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -434,12 +440,12 @@ def main():
         check("latest-head-attest", ok, {"witnessed_at": newest_h["at"], "attest": res}, "status verified + expect_matches true on both chains (README recipe)")
 
     # ---- cadence ----
-    switch = parse_at(FIVE_MIN_SINCE)
+    switch, hourly = parse_at(FIVE_MIN_SINCE), parse_at(HOURLY_SINCE)
     gaps, flagged = [], []
     for p, n in zip(heads, heads[1:]):
         t0, t1 = parse_at(p["at"]), parse_at(n["at"])
         g = (t1 - t0).total_seconds()
-        expected = 300 if t0 >= switch else 3600
+        expected = 300 if switch <= t0 < hourly else 3600
         gaps.append(g)
         if g > 2 * expected:
             flagged.append({"from": p["at"], "to": n["at"], "gap_s": int(g), "expected_s": expected})
@@ -453,8 +459,10 @@ def main():
     for w in windows:
         w["duration_h"] = round((parse_at(w["to"]) - parse_at(w["from"])).total_seconds() / 3600, 2)
         # a missed slot or two is the dispatch leg hiccupping; an hour or more means the five-minute leg was down
-        w["severity"] = "outage" if w["duration_h"] >= 1 else "missed-slot"
-    five = [g for (p, g) in zip(heads, gaps) if parse_at(p["at"]) >= switch]
+        # (hourly era: GitHub's schedule slips, so an outage is 3 h or more)
+        limit_h = HOURLY_OUTAGE_H if parse_at(w["from"]) >= hourly else 1
+        w["severity"] = "outage" if w["duration_h"] >= limit_h else "missed-slot"
+    five = [g for (p, g) in zip(heads, gaps) if switch <= parse_at(p["at"]) < hourly]
     stats = {"head_lines": len(heads), "gaps": len(gaps),
              "median_gap_s": statistics.median(gaps) if gaps else None, "max_gap_s": max(gaps) if gaps else None,
              "p90_gap_s": sorted(gaps)[int(0.9 * (len(gaps) - 1))] if gaps else None,
@@ -464,7 +472,7 @@ def main():
     if join:
         stats["midnight_join"] = {"yesterday_last": join["at"], "today_first": heads[1]["at"] if len(heads) > 1 else None}
     new_windows = [w for w in windows if fresh(w["to"])]
-    check("cadence", not new_windows, stats, "no gap > 2x expected cadence (expected 5 min after 2026-08-12T03:36:59Z, 60 min before)" + window_note,
+    check("cadence", not new_windows, stats, f"no gap > 2x expected cadence (expected 5 min from {FIVE_MIN_SINCE} to {HOURLY_SINCE}, 60 min otherwise)" + window_note,
           new=len(new_windows))
     # Age of the newest head line: the witness is a five-minute job, so a newest line older than three slots means the
     # job is not running NOW, whatever the day's history looks like. Today only (a past day's newest line is old by
@@ -472,11 +480,12 @@ def main():
     if not args.all and days[0] == utc_today() and heads:
         newest_at = parse_at(heads[-1]["at"])
         age_s = (datetime.datetime.now(datetime.UTC) - newest_at).total_seconds()
-        check("newest-line-age", age_s <= 15 * 60, {"newest_at": heads[-1]["at"], "age_s": int(age_s)},
-              "newest head line within 15 min (three five-minute slots) of now")
+        limit_s = HOURLY_OUTAGE_H * 3600 if newest_at >= hourly else 15 * 60
+        check("newest-line-age", age_s <= limit_s, {"newest_at": heads[-1]["at"], "age_s": int(age_s), "limit_s": limit_s},
+              f"newest head line within {limit_s // 60} min of now (hourly job since {HOURLY_SINCE}; five-minute before)")
     outages = [w for w in windows if w["severity"] == "outage"]
     new_outages = [w for w in outages if fresh(w["to"])]
-    check("outage", not new_outages, outages, "no degraded window of 1 h or longer" + window_note,
+    check("outage", not new_outages, outages, f"no degraded window of {HOURLY_OUTAGE_H} h or longer (1 h in the five-minute era)" + window_note,
           missed_slot_windows=len(windows) - len(outages), new=len(new_outages))
 
     finish()

@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T14:18:10Z",
+"generated": "2026-10-09T15:22:30Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1973,6 +1973,10 @@
 },
 {
 "ts": "2026-10-09T13:16:54Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T14:18:37Z",
 "what": "countersign:publish"
 }
 ],
@@ -21050,6 +21054,18 @@
 "moved": true,
 "addressed": true,
 "karma": 798
+},
+{
+"ts": "2026-10-09T14:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 798
+},
+{
+"ts": "2026-10-09T15:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 798
 }
 ],
 "wakes": [
@@ -22325,13 +22341,93 @@
 "karma": 798,
 "comments_remaining": 6,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-09-1515",
+"started": "2026-10-09T15:15:06Z",
+"ended": "2026-10-09T15:22:01Z",
+"acts": [
+{
+"ts": "2026-10-09T15:17:49Z",
+"what": "pr:sync"
+},
+{
+"ts": "2026-10-09T15:18:53Z",
+"what": "pr:push",
+"branch": "fix/seal-check-signature-is-the-seals"
+},
+{
+"ts": "2026-10-09T15:19:26Z",
+"what": "pr:apply",
+"branch": "fix/seal-check-signature-is-the-seals"
+},
+{
+"ts": "2026-10-09T15:19:28Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-09T15:21:17Z",
+"what": "pr:test",
+"branch": "fix/seal-check-signature-is-the-seals",
+"pass": 3044
+},
+{
+"ts": "2026-10-09T15:21:21Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-09T15:21:31Z",
+"what": "pr:push",
+"branch": "fix/seal-check-signature-is-the-seals"
+},
+{
+"ts": "2026-10-09T15:21:49Z",
+"what": "pr:comment",
+"id": 531
+},
+{
+"ts": "2026-10-09T15:21:59Z",
+"what": "seal",
+"id": 10362,
+"hash": "ee32619b5fc36b5419302093008fb9f58546081a9b5e644e8d37a02bba182622"
+}
+],
+"checks": {
+"pass": 55,
+"fail": 2,
+"total": 57,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"witness.2026-10-09.cadence",
+"witness.2026-10-09.outage"
+],
+"first": "2026-10-09T15:15:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 798,
+"comments_remaining": 6,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "yiA2yxY2nLKPGfPyBuzFnDeMQUQBH4qZD9-slwLVW1wj7aG8Y0WwV9NcJ3--tAp7phktO9g2OhBnzvLrAKppAQ",
-"digest": "d436894136f677e49c3b9536fd12e2ba9332c01a0c8a1275a0b1570624871de9"
+"sig": "ENwrwsmsqWCbZ1IVYk4vMp7iFSaXKbqT1VatHmaLuUGROL9CalKDtaf7QzvEbIj5AUagIi4wswnULLQJHtmaBw",
+"digest": "fec931d373ce367ba7660919c05476a702b878fd729349b3238cf5aca4fae8f5"
 }
 }

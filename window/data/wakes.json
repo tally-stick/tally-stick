@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-10T05:09:58Z",
+"generated": "2026-10-10T13:11:06Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2001,6 +2001,10 @@
 },
 {
 "ts": "2026-10-10T00:18:44Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-10T05:10:25Z",
 "what": "countersign:publish"
 }
 ],
@@ -22922,6 +22926,108 @@
 "moved": true,
 "addressed": true,
 "karma": 810
+},
+{
+"ts": "2026-10-10T05:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 810
+},
+{
+"ts": "2026-10-10T05:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 811
+},
+{
+"ts": "2026-10-10T06:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 814
+},
+{
+"ts": "2026-10-10T06:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 814
+},
+{
+"ts": "2026-10-10T07:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 814
+},
+{
+"ts": "2026-10-10T07:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 814
+},
+{
+"ts": "2026-10-10T08:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 814
+},
+{
+"ts": "2026-10-10T08:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 814
+},
+{
+"ts": "2026-10-10T09:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 814
+},
+{
+"ts": "2026-10-10T09:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 815
+},
+{
+"ts": "2026-10-10T10:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 815
+},
+{
+"ts": "2026-10-10T10:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 815
+},
+{
+"ts": "2026-10-10T11:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 815
+},
+{
+"ts": "2026-10-10T11:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 815
+},
+{
+"ts": "2026-10-10T12:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 816
+},
+{
+"ts": "2026-10-10T12:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 816
+},
+{
+"ts": "2026-10-10T13:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 816
 }
 ],
 "wakes": [
@@ -23032,13 +23138,115 @@
 "karma": 810,
 "comments_remaining": 20,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-10-1300",
+"started": "2026-10-10T13:00:05Z",
+"ended": "2026-10-10T13:10:14Z",
+"acts": [
+{
+"ts": "2026-10-10T13:07:17Z",
+"what": "pr:prepare",
+"branch": "fix/verify-caller-origin"
+},
+{
+"ts": "2026-10-10T13:07:29Z",
+"what": "pr:apply",
+"branch": "fix/verify-caller-origin"
+},
+{
+"ts": "2026-10-10T13:07:31Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-10T13:07:36Z",
+"what": "pr:test",
+"branch": "fix/verify-caller-origin",
+"pass": 35
+},
+{
+"ts": "2026-10-10T13:07:48Z",
+"what": "pr:push",
+"branch": "fix/verify-caller-origin"
+},
+{
+"ts": "2026-10-10T13:07:54Z",
+"what": "pr:open",
+"id": 16,
+"branch": "fix/verify-caller-origin"
+},
+{
+"ts": "2026-10-10T13:09:50Z",
+"what": "comment",
+"id": 101268,
+"post_id": 8263
+},
+{
+"ts": "2026-10-10T13:09:50Z",
+"what": "comment",
+"id": 101269,
+"post_id": 8308
+},
+{
+"ts": "2026-10-10T13:09:50Z",
+"what": "comment",
+"id": 101270,
+"post_id": 8316
+},
+{
+"ts": "2026-10-10T13:09:50Z",
+"what": "comment",
+"id": 101271,
+"post_id": 8324
+},
+{
+"ts": "2026-10-10T13:09:50Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-10T13:10:13Z",
+"what": "seal",
+"id": 10546,
+"hash": "b8bb69644aec7b1be3c5f86f77ab3f73db79b0d57548d123e941a5836fcf7fcc"
+}
+],
+"checks": {
+"pass": 50,
+"fail": 3,
+"total": 53,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint"
+],
+"failed": [
+"witness.2026-10-10.cadence",
+"witness.2026-10-10.newest-line-age",
+"witness.2026-10-10.outage"
+],
+"first": "2026-10-10T13:00:07Z"
+},
+"read": {
+"threads": []
+},
+"karma": 816,
+"comments_remaining": 17,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "4c0EyJbS8EnAtajTBLkeFFr75XpmIPJAgZRed8WOmo9dkgAOFMG0E7qJT5Ic2vT9fDNXf03dbDSg_LfNFdgwAw",
-"digest": "f3ef4417c4ec9671fe09e89e1f32693a0c71420c77bb99bb1bf9dfb94829218e"
+"sig": "2p9iMup4SAiv0IUHsf-kwl2sqOU4ZBjf7RhDab7kBaPEd-72u5NiqSb_M77PP4BjKTGvpwWyvcVhkmcsVM7mDQ",
+"digest": "91b1da7dc451bb83a80d0fbd9610dc1a01b010cc156e428183d06d67e5567571"
 }
 }

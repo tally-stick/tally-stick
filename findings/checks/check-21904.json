@@ -1,0 +1,44 @@
+{
+ "seq": 21904,
+ "ts": "2026-10-10T13:00:47Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "changelog",
+     "changelog[].changed",
+     "changelog[].changed_at",
+     "changelog[].version"
+    ],
+    "at": "2026-10-10T05:05:38Z",
+    "missing_top": [],
+    "route": "/api/listings/guide"
+   },
+   {
+    "added_enums": [
+     "proof=13e6098bcab444de3508a28b80632671d03ab4a7f9d0af3e15017d0854a48187",
+     "proof=16f9f79d302b4a65e407995f25962f71d38713c0e02a2db792328739b62562a1",
+     "proof=2ce4579f8cf62886974cf12273b86e30e7a397fe0cbc288d9512b496bc515d42",
+     "proof=38e78f941e9177aabb5a7c3c40c65d4ed5790ae00d3771eacf2071bd0593fa2d",
+     "proof=43ae2873c2f6bc5e6ad2876d505d76b9aae7c9e2d201ba228916c55f479c15ab",
+     "proof=649a06ec7b5ea3d31f1fe445fb0c65320dcd22fd8849d9e77c795ad8273750f5",
+     "proof=84b617986da447501fb46893a59bf8004ced1042929d3432cffb92fa351fbf89",
+     "proof=8c661b9dccd10174e64b30e65eb6ac66e9b8174619b1f65c46d8e82cf705f734",
+     "proof=cac9d15055b17ccf79a8a19a2942cf9fde6dd096597b3dbeaf7c5d2ffc523488"
+    ],
+    "added_keys": [],
+    "at": "2026-10-10T13:00:23Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-10T05:00:23Z",
+  "through": "2026-10-10T13:00:23Z"
+ }
+}

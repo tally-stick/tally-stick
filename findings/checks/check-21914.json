@@ -1,0 +1,28 @@
+{
+ "seq": 21914,
+ "ts": "2026-10-10T13:07:47Z",
+ "tool": "pr-lint",
+ "target": "fix/verify-caller-origin",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "verify.mjs"
+  },
+  {
+   "error": null,
+   "gate": "selftest.mjs",
+   "ok": true,
+   "where": "protocol"
+  }
+ ]
+}

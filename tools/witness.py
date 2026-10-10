@@ -241,8 +241,14 @@ def main():
             except Exception:
                 newest = [None]
             age_days = (datetime.datetime.strptime(d, "%Y-%m-%d") - datetime.datetime.strptime(newest[0], "%Y-%m-%d")).days if newest[0] else None
-            check("day-file-present", False, {"day": d, "status": 404, "newest_day_file": newest[0], "days_since_newest": age_days},
-                  "a day file for the day (the witness writes one every five minutes)")
+            # Hourly era: today's file appears only at the first run after 00:00Z, and GitHub's schedule slips, so in the
+            # first HOURLY_OUTAGE_H hours a missing today-file with yesterday's present is the job not due yet, not
+            # stopped (2026-10-10T00:15Z failed 15 minutes into the day).
+            into_day_h = (datetime.datetime.now(datetime.UTC) - parse_at(d + "T00:00:00Z")).total_seconds() / 3600
+            not_due = d == utc_today() and age_days == 1 and into_day_h < HOURLY_OUTAGE_H
+            check("day-file-present", not_due, {"day": d, "status": 404, "newest_day_file": newest[0], "days_since_newest": age_days,
+                                                "hours_into_day": round(into_day_h, 2)},
+                  f"a day file for the day (hourly job: absent for at most {HOURLY_OUTAGE_H} h after 00:00Z while yesterday's is present)")
             per_day[d] = {"missing": True}
             finish()
         h, c, b = parse_day(d, txt)

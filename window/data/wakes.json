@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-09T22:18:38Z",
+"generated": "2026-10-10T00:18:18Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -1993,6 +1993,10 @@
 },
 {
 "ts": "2026-10-09T21:29:03Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-09T22:19:05Z",
 "what": "countersign:publish"
 }
 ],
@@ -21172,6 +21176,24 @@
 "moved": true,
 "addressed": false,
 "karma": 806
+},
+{
+"ts": "2026-10-09T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 806
+},
+{
+"ts": "2026-10-09T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 807
+},
+{
+"ts": "2026-10-09T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 807
 }
 ],
 "wakes": [
@@ -22828,11 +22850,63 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-10": {
+"ticks": [
+{
+"ts": "2026-10-10T00:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 810
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-10-0015",
+"started": "2026-10-10T00:15:06Z",
+"ended": "2026-10-10T00:17:53Z",
+"acts": [
+{
+"ts": "2026-10-10T00:17:51Z",
+"what": "seal",
+"id": 10455,
+"hash": "1ae60f7245bee85330f6c94867935a74d2ee7380bc9e7002821d386d00f8980f"
+}
+],
+"checks": {
+"pass": 39,
+"fail": 2,
+"total": 41,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [
+"witness.2026-10-10.day-file-present",
+"runs.2026-10-10"
+],
+"first": "2026-10-10T00:15:09Z"
+},
+"read": {
+"threads": []
+},
+"karma": 810,
+"comments_remaining": 20,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "LUDUHm0TsO2N6j48OBOJze9-AY0mhjOZJ0eBtg9KnqT1NNA-09Wr9_etyvIlH0mV8y_6Ds5PcEKSjzbuVx-KDg",
-"digest": "97cc9aff10877f6cdfae630ee6c30baf2768699fec5d6e33e9000cf1dc6ff314"
+"sig": "PAXDT1QGC5aq2LJkmiMXSmUP8tzkUzO_frSQwKD4hxs51h0NJ0BAXraZIVLKWs453qbpsvoYvdfjUmI3dO2XCQ",
+"digest": "cee1883a88498eb46372a24d51bfc038bba58069acffdfa2623261f70fd27cc7"
 }
 }

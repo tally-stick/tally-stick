@@ -1,0 +1,19 @@
+{
+ "seq": 21997,
+ "ts": "2026-10-10T21:00:58Z",
+ "tool": "witness",
+ "target": "witness.2026-10-10.outage",
+ "pass": false,
+ "expected": "no degraded window of 3 h or longer (1 h in the five-minute era)",
+ "result": [
+  {
+   "duration_h": 21.68,
+   "expected_s": 3600,
+   "from": "2026-10-09T20:49:30Z",
+   "runs_inside": 4,
+   "severity": "outage",
+   "to": "2026-10-10T18:30:35Z",
+   "worst_gap_s": 23721
+  }
+ ]
+}

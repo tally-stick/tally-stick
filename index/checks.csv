@@ -13950,3 +13950,57 @@ seq,ts,tool,target,pass,kind,negative_test
 22456,2026-10-11T13:45:48Z,dossier,tally-stick.counts,1,verify,0
 22457,2026-10-11T13:45:48Z,shape,board.py pages: shape changes since last check,1,verify,0
 22458,2026-10-11T13:45:53Z,runs,runs.2026-10-11,"[{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-11T08:42:56Z"",""event"":""schedule"",""id"":38125780993,""started_at"":""2026-10-11T08:42:56Z"",""status"":""completed"",""updated_at"":""2026-10-11T08:43:12Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-11T01:48:42Z"",""event"":""schedule"",""id"":38103076880,""started_at"":""2026-10-11T01:48:42Z"",""status"":""completed"",""updated_at"":""2026-10-11T01:48:59Z""}]",verify,0
+22482,2026-10-11T21:00:09Z,relay,relay.write.instructions,1,verify,0
+22483,2026-10-11T21:00:09Z,relay,relay.write.pinned-tools,1,verify,0
+22484,2026-10-11T21:00:09Z,relay,relay.write.new-tools,1,verify,0
+22485,2026-10-11T21:00:09Z,relay,relay.read.instructions,1,verify,0
+22486,2026-10-11T21:00:09Z,relay,relay.read.pinned-tools,1,verify,0
+22487,2026-10-11T21:00:09Z,relay,relay.read.new-tools,1,verify,0
+22488,2026-10-11T21:00:10Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+22489,2026-10-11T21:00:10Z,heads,attest.treasury.anchored-append-only,1,verify,0
+22490,2026-10-11T21:00:11Z,heads,attest.identity_events.verified,1,verify,0
+22491,2026-10-11T21:00:11Z,heads,attest.ledger.verified,1,verify,0
+22492,2026-10-11T21:00:11Z,heads,checkpoint.identity_events.signature,1,verify,0
+22493,2026-10-11T21:00:11Z,heads,checkpoint.ledger.signature,1,verify,0
+22494,2026-10-11T21:00:11Z,heads,registry-key.pinned,1,verify,0
+22495,2026-10-11T21:00:11Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+22496,2026-10-11T21:00:11Z,heads,checkpoint.ledger.monotonic,1,verify,0
+22497,2026-10-11T21:00:11Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+22498,2026-10-11T21:00:11Z,heads,attest.identity_events.monotonic,1,verify,0
+22499,2026-10-11T21:00:11Z,heads,attest.ledger.monotonic,1,verify,0
+22500,2026-10-11T21:00:11Z,heads,attest.ledger.same-id-same-head,1,verify,0
+22503,2026-10-11T21:00:12Z,consistency,consistency.identity_events.25881->25881.sizes-as-requested,1,verify,0
+22504,2026-10-11T21:00:12Z,consistency,consistency.identity_events.25881->25881.from-signature,1,verify,0
+22505,2026-10-11T21:00:12Z,consistency,consistency.identity_events.25881->25881.to-signature,1,verify,0
+22506,2026-10-11T21:00:12Z,consistency,consistency.identity_events.25881->25881.from-root-matches-ours,1,verify,0
+22507,2026-10-11T21:00:12Z,consistency,consistency.identity_events.25881->25881.to-root-matches-ours,1,verify,0
+22508,2026-10-11T21:00:12Z,consistency,consistency.identity_events.25881->25881.to-root-matches-live,1,verify,0
+22509,2026-10-11T21:00:12Z,consistency,consistency.identity_events.25881->25881.proof,1,verify,0
+22510,2026-10-11T21:00:14Z,countersign,countersign.identity_events,1,verify,0
+22511,2026-10-11T21:00:14Z,countersign,countersign.ledger,1,verify,0
+22512,2026-10-11T21:00:27Z,pages,pages.domains,1,verify,0
+22513,2026-10-11T21:00:30Z,witness,witness.2026-10-11.registry-signatures,1,verify,0
+22514,2026-10-11T21:00:30Z,witness,witness.2026-10-11.countersignatures,1,verify,0
+22515,2026-10-11T21:00:30Z,witness,witness.2026-10-11.witness-keys-in-directory,1,verify,0
+22516,2026-10-11T21:00:30Z,witness,witness.2026-10-11.refusals,1,verify,0
+22517,2026-10-11T21:00:30Z,witness,witness.2026-10-11.monotonic,1,verify,0
+22518,2026-10-11T21:00:30Z,witness,witness.2026-10-11.checkpoint-id,1,verify,0
+22519,2026-10-11T21:00:30Z,witness,witness.2026-10-11.latest-vs-live,1,verify,0
+22520,2026-10-11T21:00:30Z,witness,witness.2026-10-11.latest-head-attest,1,verify,0
+22521,2026-10-11T21:00:30Z,witness,witness.2026-10-11.cadence,0,verify,0
+22522,2026-10-11T21:00:30Z,witness,witness.2026-10-11.newest-line-age,1,verify,0
+22523,2026-10-11T21:00:30Z,witness,witness.2026-10-11.outage,0,verify,0
+22526,2026-10-11T21:00:33Z,dossier,tally-stick.registry-signature,1,verify,0
+22527,2026-10-11T21:00:33Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+22528,2026-10-11T21:00:33Z,dossier,tally-stick.inclusion,1,verify,0
+22529,2026-10-11T21:00:33Z,dossier,tally-stick.leaf-index,1,verify,0
+22530,2026-10-11T21:00:33Z,dossier,tally-stick.attestation-hashes,1,verify,0
+22531,2026-10-11T21:00:33Z,dossier,tally-stick.keys,1,verify,0
+22532,2026-10-11T21:00:33Z,dossier,tally-stick.event-hashes,1,verify,0
+22533,2026-10-11T21:00:33Z,dossier,tally-stick.seal-signatures,1,verify,0
+22534,2026-10-11T21:00:33Z,dossier,tally-stick.counts,1,verify,0
+22535,2026-10-11T21:00:33Z,shape,board.py pages: shape changes since last check,1,verify,0
+22537,2026-10-11T21:00:38Z,runs,runs.2026-10-11,"[{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-11T20:12:21Z"",""event"":""schedule"",""id"":38171214299,""started_at"":""2026-10-11T20:12:21Z"",""status"":""completed"",""updated_at"":""2026-10-11T20:12:37Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-11T19:01:12Z"",""event"":""schedule"",""id"":38166245202,""started_at"":""2026-10-11T19:01:12Z"",""status"":""completed"",""updated_at"":""2026-10-11T19:01:28Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-11T15:35:47Z"",""event"":""schedule"",""id"":38151931619,""started_at"":""2026-10-11T15:35:47Z"",""status"":""completed"",""updated_at"":""2026-10-11T15:36:01Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-11T08:42:56Z"",""event"":""schedule"",""id"":38125780993,""started_at"":""2026-10-11T08:42:56Z"",""status"":""completed"",""updated_at"":""2026-10-11T08:43:12Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-11T01:48:42Z"",""event"":""schedule"",""id"":38103076880,""started_at"":""2026-10-11T01:48:42Z"",""status"":""completed"",""updated_at"":""2026-10-11T01:48:59Z""}]",verify,0
+22578,2026-10-11T21:12:55Z,attest,claim #22560,1,verify,0
+22579,2026-10-11T21:12:57Z,attest,claim #22561,1,verify,0
+22580,2026-10-11T21:12:59Z,attest,claim #22562,1,verify,0

@@ -1,0 +1,61 @@
+{
+ "seq": 22348,
+ "ts": "2026-10-11T13:00:50Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 4,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "listings[].submission_deadline"
+    ],
+    "at": "2026-10-11T05:00:43Z",
+    "missing_top": [],
+    "route": "/api/listings?include_expired"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "listings[].submission_deadline"
+    ],
+    "at": "2026-10-11T05:00:44Z",
+    "missing_top": [],
+    "route": "/api/listings?include_expired&since_id"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "comments_limit"
+    ],
+    "at": "2026-10-11T05:04:12Z",
+    "missing_top": [],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [
+     "proof=23322fc23adf6afb58594f71baffbaa47e00ce79678ab1780003b0308323e025",
+     "proof=4375f2f7e421ceff2c1b3877ee507a89aded51f62af515d3be4e85221275e0e3",
+     "proof=4933b6f55c06dd693bea3a3aa37692a33ea1453137070a8880d4ebd9d2e2cd86",
+     "proof=69d4b1834f1c37bdeec9084b843eb43ce264433fb7ea8c62e1d3a5aeec1202fa",
+     "proof=770ab3604d797aae31507b03ca91136f9209bcccf6d6300754559c076433d179",
+     "proof=94376fdd78c2045ba5685bc6bbef96be8322f398ea545b2cad12a7fa9d03a0cb",
+     "proof=9529b5b0538aad3ad26ec9c408c1f4b6af986a6c13564926d827c2a78374964c",
+     "proof=a069747234af169df78277f1850481806aa50104309747effcf6c245179c085a",
+     "proof=ac7a2907956e67ae27e18d980ccbd406aaf482f9e6ea237cccbe25f25007ddff",
+     "proof=ba06986da0d90122caac667be701a618f512f78db10b6c99fe871ca90aae1da0",
+     "proof=bfb1d70e1f4f26a706a4c022defe22252f0607b8d81ab82845239f69bef582d1"
+    ],
+    "added_keys": [],
+    "at": "2026-10-11T13:00:24Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-11T05:00:25Z",
+  "through": "2026-10-11T13:00:24Z"
+ }
+}

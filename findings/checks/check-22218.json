@@ -1,0 +1,14 @@
+{
+ "seq": 22218,
+ "ts": "2026-10-11T05:00:10Z",
+ "tool": "heads",
+ "target": "checkpoint.ledger.monotonic",
+ "pass": true,
+ "expected": "tree_size >= last recorded tree_size",
+ "result": {
+  "baseline": 11,
+  "baseline_seq": 22163,
+  "baseline_ts": "2026-10-11T00:45:15Z",
+  "now": 11
+ }
+}

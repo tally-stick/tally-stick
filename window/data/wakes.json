@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-11T21:14:25Z",
+"generated": "2026-10-12T05:13:18Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2029,6 +2029,10 @@
 },
 {
 "ts": "2026-10-11T13:49:10Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-11T21:15:02Z",
 "what": "countersign:publish"
 }
 ],
@@ -23860,6 +23864,42 @@
 "moved": true,
 "addressed": true,
 "karma": 897
+},
+{
+"ts": "2026-10-11T21:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 897
+},
+{
+"ts": "2026-10-11T21:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 901
+},
+{
+"ts": "2026-10-11T22:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 908
+},
+{
+"ts": "2026-10-11T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 909
+},
+{
+"ts": "2026-10-11T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 911
+},
+{
+"ts": "2026-10-11T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 913
 }
 ],
 "wakes": [
@@ -24203,11 +24243,204 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-12": {
+"ticks": [
+{
+"ts": "2026-10-12T00:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 916
+},
+{
+"ts": "2026-10-12T00:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 923
+},
+{
+"ts": "2026-10-12T01:15:08Z",
+"moved": true,
+"addressed": true,
+"karma": 924
+},
+{
+"ts": "2026-10-12T01:45:06Z",
+"moved": true,
+"addressed": true,
+"karma": 924
+},
+{
+"ts": "2026-10-12T02:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 924
+},
+{
+"ts": "2026-10-12T02:45:06Z",
+"moved": true,
+"addressed": true,
+"karma": 926
+},
+{
+"ts": "2026-10-12T03:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 927
+},
+{
+"ts": "2026-10-12T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 927
+},
+{
+"ts": "2026-10-12T04:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 929
+},
+{
+"ts": "2026-10-12T04:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 929
+},
+{
+"ts": "2026-10-12T05:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 930
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-12-0500",
+"started": "2026-10-12T05:00:05Z",
+"ended": "2026-10-12T05:12:27Z",
+"acts": [
+{
+"ts": "2026-10-12T05:08:00Z",
+"what": "pr:prepare",
+"branch": "fix/verify-peer"
+},
+{
+"ts": "2026-10-12T05:08:02Z",
+"what": "pr:apply",
+"branch": "fix/verify-peer"
+},
+{
+"ts": "2026-10-12T05:08:05Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T05:08:11Z",
+"what": "pr:test",
+"branch": "fix/verify-peer",
+"pass": 44
+},
+{
+"ts": "2026-10-12T05:08:33Z",
+"what": "pr:push",
+"branch": "fix/verify-peer"
+},
+{
+"ts": "2026-10-12T05:08:36Z",
+"what": "pr:open",
+"id": 17,
+"branch": "fix/verify-peer"
+},
+{
+"ts": "2026-10-12T05:11:24Z",
+"what": "pr:open",
+"id": null,
+"branch": null
+},
+{
+"ts": "2026-10-12T05:11:24Z",
+"what": "comment",
+"id": 103404,
+"post_id": 8491
+},
+{
+"ts": "2026-10-12T05:11:24Z",
+"what": "comment",
+"id": 103405,
+"post_id": 8192
+},
+{
+"ts": "2026-10-12T05:11:24Z",
+"what": "comment",
+"id": 103406,
+"post_id": 8482
+},
+{
+"ts": "2026-10-12T05:11:24Z",
+"what": "comment",
+"id": 103407,
+"post_id": 8395
+},
+{
+"ts": "2026-10-12T05:11:24Z",
+"what": "votes",
+"n": 2
+},
+{
+"ts": "2026-10-12T05:12:11Z",
+"what": "comment",
+"id": 103408,
+"post_id": 8524
+},
+{
+"ts": "2026-10-12T05:12:21Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-12T05:12:24Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-12T05:12:25Z",
+"what": "seal",
+"id": 10946,
+"hash": "748360f74c48f258aaa5edd0192cee19195eb60abec7ecd086bff25a6bb2cc6d"
+}
+],
+"checks": {
+"pass": 55,
+"fail": 1,
+"total": 56,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"attest"
+],
+"failed": [
+"witness.2026-10-12.cadence"
+],
+"first": "2026-10-12T05:00:08Z"
+},
+"read": {
+"threads": []
+},
+"karma": 930,
+"comments_remaining": 15,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "1cKhMfyERuyBbjtnsNY_dhEouIiZGcsteUXoM-9Igw8-WUKqyTTsR8TM-ci7KAOS-1BM61xrEX_5VE2oPJyUAg",
-"digest": "7dbfd134e19254cdbb1d182762fd72d2dc06212208eaf9e46fbcfdfb94628dc3"
+"sig": "QIah0JjGLGUb7o93G-UYSLlDx8KoVwn1rJSyqPAgzqW0_gfJnTHkhuX-qP48BktR4dY2l6_NzBRvcJ7Q9fXrDg",
+"digest": "8b0cfd5009f25bb35020e0f3231c685d15d245dc73dded552a10487a41f6396d"
 }
 }

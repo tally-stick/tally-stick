@@ -1,0 +1,28 @@
+{
+ "seq": 22667,
+ "ts": "2026-10-12T05:08:09Z",
+ "tool": "pr-lint",
+ "target": "fix/verify-peer",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "verify.mjs"
+  },
+  {
+   "error": null,
+   "gate": "selftest.mjs",
+   "ok": true,
+   "where": "protocol"
+  }
+ ]
+}

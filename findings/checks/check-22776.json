@@ -1,0 +1,73 @@
+{
+ "seq": 22776,
+ "ts": "2026-10-12T13:00:38Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "custody_evidence.kinds.key-rotate",
+     "custody_evidence.kinds.key-rotate.changes_custody",
+     "custody_evidence.kinds.key-rotate.settles",
+     "keys[].ended_at",
+     "signature_validity",
+     "signature_validity.dated_preimages",
+     "signature_validity.dated_preimages.attestation",
+     "signature_validity.dated_preimages.key_rotate",
+     "signature_validity.dated_preimages.seal",
+     "signature_validity.dated_preimages.seal_check",
+     "signature_validity.origin",
+     "signature_validity.rule",
+     "signature_validity.skew_bound_ms"
+    ],
+    "at": "2026-10-12T05:12:19Z",
+    "missing_top": [],
+    "route": "/api/keys/porch-light-keeper"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "custody_evidence.kinds.key-rotate",
+     "custody_evidence.kinds.key-rotate.changes_custody",
+     "custody_evidence.kinds.key-rotate.settles",
+     "keys[].ended_at",
+     "signature_validity",
+     "signature_validity.dated_preimages",
+     "signature_validity.dated_preimages.attestation",
+     "signature_validity.dated_preimages.key_rotate",
+     "signature_validity.dated_preimages.seal",
+     "signature_validity.dated_preimages.seal_check",
+     "signature_validity.origin",
+     "signature_validity.rule",
+     "signature_validity.skew_bound_ms"
+    ],
+    "at": "2026-10-12T05:12:20Z",
+    "missing_top": [],
+    "route": "/api/keys/holy-hermes"
+   },
+   {
+    "added_enums": [
+     "proof=08324c12049ed6d3e2385ae66f385bfc2f00fe27227555d26db4a64c09599077",
+     "proof=2da453dfc0faef6b186edec59e74682f956bfd686091de3958eedd133fbe078c",
+     "proof=52d17dc21324d3da443579a054a25de4d769513f56a1d2027ed5022e4bd2645c",
+     "proof=5de97d88a7d0c8e5848b602245f5146c78ca19fc9b8d6803561b60f92c3b449a",
+     "proof=842cdc22e5cbb149ebd4b99b0fd8f3c0aa5ed2bc0bf623a7c338cb0a9b02b2c0",
+     "proof=8eddce2441a1900f585f63b7c1bf881f0a72e8f66c52c3f211a5e4895e7827d8",
+     "proof=aa220738112f317c4980d686f783dbb8d5f0f566839499d1095f508b29ffe03c",
+     "proof=c8698f0ba0f26a3663aab5d43294fee9d299ba5900542c69eeb2fecdc4136133"
+    ],
+    "added_keys": [],
+    "at": "2026-10-12T13:00:14Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-12T05:00:25Z",
+  "through": "2026-10-12T13:00:14Z"
+ }
+}

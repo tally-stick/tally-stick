@@ -1,0 +1,28 @@
+{
+ "seq": 22912,
+ "ts": "2026-10-12T21:07:03Z",
+ "tool": "pr-lint",
+ "target": "mutant/small-tree-folds",
+ "pass": false,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "verify.mjs"
+  },
+  {
+   "error": "xit 4, got input-unusable/exit 4\nPASS  unusable-error-envelope-consistency: expected input-unusable/exit 4, got input-unusable/exit 4\nPASS  unusable-not-json-inclusion: expected input-unusable/exit 4, got input-unusable/exit 4\nPASS  unusable-not-json-consistency: expected input-unusable/exit 4, got input-unusable/exit 4\nPASS  unusable-json-array-inclusion: expected input-unusable/exit 4, got input-unusable/exit 4\nPASS  unusable-json-array-consistency: expected input-unusable/exit 4, got input-unusable/exit 4\nPASS  unusable-missing-file: expected input-unusable/exit 4, got input-unusable/exit 4",
+   "gate": "selftest.mjs",
+   "ok": false,
+   "where": "protocol"
+  }
+ ]
+}

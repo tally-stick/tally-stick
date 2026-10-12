@@ -1,0 +1,22 @@
+{
+ "seq": 22951,
+ "ts": "2026-10-12T21:11:26Z",
+ "tool": "pr-build",
+ "target": "build/witness-push-receipts",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

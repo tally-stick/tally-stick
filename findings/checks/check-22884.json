@@ -1,0 +1,37 @@
+{
+ "seq": 22884,
+ "ts": "2026-10-12T21:00:29Z",
+ "tool": "witness",
+ "target": "witness.2026-10-12.cadence",
+ "pass": false,
+ "expected": "no gap > 2x expected cadence (expected 5 min from 2026-08-12T03:36:59Z to 2026-09-29T01:46:21Z, 60 min otherwise)",
+ "result": {
+  "degraded_windows": [
+   {
+    "duration_h": 19.86,
+    "expected_s": 3600,
+    "from": "2026-10-12T00:28:54Z",
+    "runs_inside": 5,
+    "severity": "outage",
+    "to": "2026-10-12T20:20:31Z",
+    "worst_gap_s": 24063
+   }
+  ],
+  "five_minute_era": {
+   "gaps": 0,
+   "median_s": null,
+   "over_10min": 0,
+   "within_6min": 0
+  },
+  "flagged_gaps": 5,
+  "gaps": 6,
+  "head_lines": 7,
+  "max_gap_s": 24063.0,
+  "median_gap_s": 11458.0,
+  "midnight_join": {
+   "today_first": "2026-10-12T00:28:54Z",
+   "yesterday_last": "2026-10-11T22:59:18Z"
+  },
+  "p90_gap_s": 17217.0
+ }
+}

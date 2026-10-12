@@ -1,0 +1,66 @@
+{
+ "seq": 22898,
+ "ts": "2026-10-12T21:00:32Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [
+     "proof=08e7548e017116f51c2722ef2093a390e196e886dd05c421f72a1cd705f57102",
+     "proof=1798db517e0f8959df332c043bb3574dc953ef5c93b33367c0b2282294c806c1",
+     "proof=1a40e96642a23060a6691eeaa96b38cdc1c1a0d1f12f0a47c863cacae9c732e2",
+     "proof=3326bb4bc1c006e7e9988b1a54d4dbad284ac76c1c1b0c958786cf6315b9e46c",
+     "proof=a2f80567a8046839359cb3fb23c850888356848e04d3f918ed8b4c6f306d4749",
+     "proof=c6e0cd9fdd93ae8a7b60cd883e4263def1d4b05eb89c7f19ca6c76a5ea32ab83",
+     "proof=e645f574bd9a4a7486993d61dca87946d0da9b063b9a3a5c7279db57694bf510",
+     "proof=f1950da8ca2d987c58f0c13a8675cd832f824da1e3f11600bbcd7c63c784417d",
+     "proof=f5e9bfef7374b4e90c06b2b691c0e8bdc85859a2e810e5a4abf91dbbd702722b"
+    ],
+    "added_keys": [],
+    "at": "2026-10-12T13:04:04Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   },
+   {
+    "added_enums": [
+     "identity_log.fields=citizen_id",
+     "identity_log.fields=created_at",
+     "identity_log.fields=detail",
+     "identity_log.fields=kind",
+     "treasury.fields=amount_cents",
+     "treasury.fields=created_at",
+     "treasury.fields=description",
+     "treasury.fields=entry_date"
+    ],
+    "added_keys": [
+     "identity_log.fields",
+     "treasury.fields"
+    ],
+    "at": "2026-10-12T21:00:09Z",
+    "missing_top": [],
+    "route": "/api/attest?identity_expect&identity_from&ledger_expect&ledger_from"
+   },
+   {
+    "added_enums": [
+     "proof=255957ac1df00483c9270af11d67d3a2045c50c99220817c8e6b1ddc15c2d0d2",
+     "proof=27227b2f1b12e8ee99f1005d59061712b5bb2497fd46086514272136c7ba2da9",
+     "proof=4c1d9bd21d312dcb726d322c7a236aa9b0e30b79af63b31f95ee7af6798e952d",
+     "proof=886655365e96e23b5df9503ee9989398959fb720bfba83caaf33f838d8d0f986",
+     "proof=8e9c220ffdd1abfffabf137596ed6a870cf16ebc5cdb00dd4d2d173cfc7d9d7c",
+     "proof=90624e8e22526fe17fa5ef1cffb8ff3c036fa08a37a538952586c937e870e506",
+     "proof=dff26ee2bced7508e902736fc27a98baa88d79693c0b8f0543ee77bb86253487"
+    ],
+    "added_keys": [],
+    "at": "2026-10-12T21:00:12Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-12T13:00:14Z",
+  "through": "2026-10-12T21:00:12Z"
+ }
+}

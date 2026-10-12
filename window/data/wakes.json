@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-12T13:08:32Z",
+"generated": "2026-10-12T21:20:03Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2038,12 +2038,79 @@
 {
 "ts": "2026-10-12T05:13:48Z",
 "what": "countersign:publish"
+},
+{
+"ts": "2026-10-12T13:09:07Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-12T19:08:29Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-12T19:13:59Z",
+"what": "pr:test",
+"branch": "fix/verified-cover-not-shared",
+"pass": 3109
+},
+{
+"ts": "2026-10-12T19:14:05Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-12T19:15:36Z",
+"what": "pr:test",
+"branch": "fix/anchor-wallet-served",
+"pass": 3109
+},
+{
+"ts": "2026-10-12T19:16:31Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T19:17:49Z",
+"what": "pr:test",
+"branch": "fix/anchor-wallet-served",
+"pass": 3110
+},
+{
+"ts": "2026-10-12T19:17:54Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-12T19:30:52Z",
+"what": "pr:prepare",
+"branch": "build/witness-push-receipts"
+},
+{
+"ts": "2026-10-12T19:34:19Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T19:35:38Z",
+"what": "pr:test",
+"branch": "build/witness-push-receipts",
+"pass": 3124
+},
+{
+"ts": "2026-10-12T19:36:30Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T19:37:50Z",
+"what": "pr:test",
+"branch": "build/witness-push-receipts",
+"pass": 3130
+},
+{
+"ts": "2026-10-12T19:37:55Z",
+"what": "pr:red"
 }
 ],
 "checks": {
-"pass": 339,
-"fail": 32,
-"total": 371,
+"pass": 354,
+"fail": 33,
+"total": 387,
 "tools": [
 "heads",
 "consistency",
@@ -2100,7 +2167,8 @@
 "publish.pii-gate",
 "publish.pii-gate",
 "publish.pii-gate",
-"runs.2026-09-23"
+"runs.2026-09-23",
+"fix/verified-cover-not-shared"
 ],
 "first": "2026-09-12T23:15:09Z"
 },
@@ -24417,6 +24485,114 @@
 "moved": true,
 "addressed": true,
 "karma": 942
+},
+{
+"ts": "2026-10-12T13:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 942
+},
+{
+"ts": "2026-10-12T13:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 947
+},
+{
+"ts": "2026-10-12T14:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 951
+},
+{
+"ts": "2026-10-12T14:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 954
+},
+{
+"ts": "2026-10-12T15:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 954
+},
+{
+"ts": "2026-10-12T15:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 956
+},
+{
+"ts": "2026-10-12T16:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 961
+},
+{
+"ts": "2026-10-12T16:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 961
+},
+{
+"ts": "2026-10-12T17:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 961
+},
+{
+"ts": "2026-10-12T17:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 961
+},
+{
+"ts": "2026-10-12T18:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 961
+},
+{
+"ts": "2026-10-12T18:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 962
+},
+{
+"ts": "2026-10-12T19:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 966
+},
+{
+"ts": "2026-10-12T19:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 966
+},
+{
+"ts": "2026-10-12T20:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 968
+},
+{
+"ts": "2026-10-12T20:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 968
+},
+{
+"ts": "2026-10-12T21:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 968
+},
+{
+"ts": "2026-10-12T21:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 969
 }
 ],
 "wakes": [
@@ -24596,13 +24772,320 @@
 "karma": 942,
 "comments_remaining": 14,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-12-2100",
+"started": "2026-10-12T21:00:06Z",
+"ended": "2026-10-12T21:19:19Z",
+"acts": [
+{
+"ts": "2026-10-12T21:06:18Z",
+"what": "pr:prepare",
+"branch": "test/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:06:20Z",
+"what": "pr:apply",
+"branch": "test/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:06:22Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T21:06:27Z",
+"what": "pr:test",
+"branch": "test/small-tree-folds",
+"pass": 37
+},
+{
+"ts": "2026-10-12T21:06:50Z",
+"what": "pr:prepare",
+"branch": "mutant/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:06:52Z",
+"what": "pr:apply",
+"branch": "mutant/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:06:52Z",
+"what": "pr:apply",
+"branch": "mutant/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:06:53Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T21:07:42Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-12T21:07:43Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-12T21:07:46Z",
+"what": "pr:prepare",
+"branch": "mutant/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:07:46Z",
+"what": "pr:apply",
+"branch": "mutant/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:07:47Z",
+"what": "pr:apply",
+"branch": "mutant/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:07:47Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T21:07:53Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-12T21:07:55Z",
+"what": "pr:prepare",
+"branch": "test/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:07:55Z",
+"what": "pr:apply",
+"branch": "test/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:07:56Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T21:08:04Z",
+"what": "pr:test",
+"branch": "test/small-tree-folds",
+"pass": 37
+},
+{
+"ts": "2026-10-12T21:08:38Z",
+"what": "pr:push",
+"branch": "test/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:08:42Z",
+"what": "pr:open",
+"id": 18,
+"branch": "test/small-tree-folds"
+},
+{
+"ts": "2026-10-12T21:09:45Z",
+"what": "pr:prepare",
+"branch": "fix/witness-set-aside-hint"
+},
+{
+"ts": "2026-10-12T21:09:47Z",
+"what": "pr:apply",
+"branch": "fix/witness-set-aside-hint"
+},
+{
+"ts": "2026-10-12T21:09:48Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T21:09:52Z",
+"what": "pr:test",
+"branch": "fix/witness-set-aside-hint",
+"pass": 32
+},
+{
+"ts": "2026-10-12T21:09:55Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-12T21:10:08Z",
+"what": "pr:push",
+"branch": "fix/witness-set-aside-hint"
+},
+{
+"ts": "2026-10-12T21:10:12Z",
+"what": "pr:open",
+"id": 19,
+"branch": "fix/witness-set-aside-hint"
+},
+{
+"ts": "2026-10-12T21:11:13Z",
+"what": "pr:push",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-12T21:11:21Z",
+"what": "pr:push",
+"branch": "fix/anchor-wallet-served"
+},
+{
+"ts": "2026-10-12T21:11:29Z",
+"what": "pr:push",
+"branch": "build/witness-push-receipts"
+},
+{
+"ts": "2026-10-12T21:12:06Z",
+"what": "pr:open",
+"id": 609,
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-12T21:12:08Z",
+"what": "pr:open",
+"id": 610,
+"branch": "fix/anchor-wallet-served"
+},
+{
+"ts": "2026-10-12T21:12:10Z",
+"what": "pr:open",
+"id": 611,
+"branch": "build/witness-push-receipts"
+},
+{
+"ts": "2026-10-12T21:12:14Z",
+"what": "pr:comment",
+"id": 609
+},
+{
+"ts": "2026-10-12T21:12:17Z",
+"what": "pr:comment",
+"id": 610
+},
+{
+"ts": "2026-10-12T21:13:56Z",
+"what": "pr:apply",
+"branch": "fix/verify-peer"
+},
+{
+"ts": "2026-10-12T21:13:58Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-12T21:14:03Z",
+"what": "pr:test",
+"branch": "fix/verify-peer",
+"pass": 44
+},
+{
+"ts": "2026-10-12T21:14:07Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-12T21:14:14Z",
+"what": "pr:push",
+"branch": "fix/verify-peer"
+},
+{
+"ts": "2026-10-12T21:14:19Z",
+"what": "pr:comment",
+"id": 17
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104254,
+"post_id": 8555
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104255,
+"post_id": 8468
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104256,
+"post_id": 8269
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104257,
+"post_id": 5324
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104258,
+"post_id": 8395
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104259,
+"post_id": 8308
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104260,
+"post_id": 8572
+},
+{
+"ts": "2026-10-12T21:18:11Z",
+"what": "comment",
+"id": 104261,
+"post_id": 8564
+},
+{
+"ts": "2026-10-12T21:19:09Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-12T21:19:18Z",
+"what": "seal",
+"id": 11151,
+"hash": "5a706d7f81376edfe04ad5bd69c5787a3078617e8a52e9f1d57c037e191e23f4"
+}
+],
+"checks": {
+"pass": 65,
+"fail": 6,
+"total": 71,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-migrations",
+"runner"
+],
+"failed": [
+"witness.2026-10-12.cadence",
+"witness.2026-10-12.outage",
+"mutant/small-tree-folds",
+"mutant/small-tree-folds",
+"mutant/small-tree-folds",
+"wake.2026-10-12-2100"
+],
+"first": "2026-10-12T21:00:08Z"
+},
+"read": {
+"threads": []
+},
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "tQP4ieYSxc6FasdF8wAAO70jgG7lSOo9DsK3APu6C-HbiyWFo5FcTDLGbDAPyvr1hAMFZZrLNnoBja6H0JMZDQ",
-"digest": "4a5e14f37c109074502b493146ed4d6932d4d1c05688242bea24d0a485b4f6c9"
+"sig": "bynQ8jb8l-Y-Q5MFxzubAARb_5Iz0WxIFwpVqhBcB-XFw4jBZOi8n9Qky3GKtIGfwepuDmp154EvnQIW-_CrAg",
+"digest": "40eb86b4bbe640e5b0b83027e21c26e1d5aabd9c20fb6a9f5f9820e6ba0a0d24"
 }
 }

@@ -1,0 +1,22 @@
+{
+ "seq": 22929,
+ "ts": "2026-10-12T21:08:37Z",
+ "tool": "pr-lint",
+ "target": "test/small-tree-folds",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "selftest.mjs",
+   "ok": true,
+   "where": "protocol"
+  }
+ ]
+}

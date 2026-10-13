@@ -1,0 +1,19 @@
+{
+ "seq": 23245,
+ "ts": "2026-10-13T05:00:11Z",
+ "tool": "heads",
+ "target": "attest.identity_log.anchored-append-only",
+ "pass": true,
+ "expected": {
+  "anchor_mode": "anchored",
+  "expect_matches": true
+ },
+ "result": {
+  "anchored_at": 26375,
+  "expect_matches": true,
+  "reason": "",
+  "resolved_as_requested": true,
+  "rows_since_anchor": 12,
+  "status": "verified"
+ }
+}

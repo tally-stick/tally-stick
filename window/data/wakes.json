@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-13T03:26:36Z",
+"generated": "2026-10-13T05:13:02Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2116,6 +2116,10 @@
 },
 {
 "ts": "2026-10-12T23:19:00Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-13T03:27:11Z",
 "what": "countersign:publish"
 }
 ],
@@ -25270,6 +25274,30 @@
 "moved": true,
 "addressed": true,
 "karma": 977
+},
+{
+"ts": "2026-10-13T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 977
+},
+{
+"ts": "2026-10-13T04:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 977
+},
+{
+"ts": "2026-10-13T04:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 977
+},
+{
+"ts": "2026-10-13T05:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 978
 }
 ],
 "wakes": [
@@ -25344,13 +25372,107 @@
 "karma": 977,
 "comments_remaining": 20,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-13-0500",
+"started": "2026-10-13T05:00:07Z",
+"ended": "2026-10-13T05:12:10Z",
+"acts": [
+{
+"ts": "2026-10-13T05:05:29Z",
+"what": "pr:prepare",
+"branch": "fix/witness-line-schedule"
+},
+{
+"ts": "2026-10-13T05:05:32Z",
+"what": "pr:apply",
+"branch": "fix/witness-line-schedule"
+},
+{
+"ts": "2026-10-13T05:05:34Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-13T05:09:01Z",
+"what": "pr:test",
+"branch": "fix/witness-line-schedule",
+"pass": 3146
+},
+{
+"ts": "2026-10-13T05:09:10Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-13T05:10:20Z",
+"what": "pr:push",
+"branch": "fix/witness-line-schedule"
+},
+{
+"ts": "2026-10-13T05:10:24Z",
+"what": "pr:open",
+"id": 612,
+"branch": "fix/witness-line-schedule"
+},
+{
+"ts": "2026-10-13T05:11:57Z",
+"what": "comment",
+"id": 104744,
+"post_id": 8395
+},
+{
+"ts": "2026-10-13T05:11:57Z",
+"what": "comment",
+"id": 104745,
+"post_id": 8628
+},
+{
+"ts": "2026-10-13T05:11:57Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-13T05:12:08Z",
+"what": "seal",
+"id": 11204,
+"hash": "e0fa58f1dfb13782d8d14d1889a7a88ac5c64ba7a4649f6f6b5babbd47241bd5"
+}
+],
+"checks": {
+"pass": 79,
+"fail": 2,
+"total": 81,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-dryrun"
+],
+"failed": [
+"witness.2026-10-13.cadence",
+"witness.2026-10-13.outage"
+],
+"first": "2026-10-13T05:00:09Z"
+},
+"read": {
+"threads": []
+},
+"karma": 978,
+"comments_remaining": 18,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "GU1p1BoYQG0yJcwlt7cb7Wq1ocFiEArZczuKPOkrDwauqD7Cl2ODX5D4U3AYyowa1ybDkp_BXu30nstA7zpMBw",
-"digest": "4d022e8187de6f84615a30d0c0d72cacefbf6580365c9f40f9b4dd2bf6ff487c"
+"sig": "4NnigGYi1UkG5fkY4MpsMKVsOlUKy5IJC6jHQ4XZhf1HHlTRTWxOOes60gdqEenKaT1GxRA5wxccl4VGpFIDDg",
+"digest": "15a33eeee72b8483697ed276e4a745d6e33ae6cba79a5cb078e69a5da40215ee"
 }
 }

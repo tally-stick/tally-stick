@@ -1,0 +1,92 @@
+{
+ "seq": 23301,
+ "ts": "2026-10-13T05:07:31Z",
+ "tool": "pr-dryrun",
+ "target": "fix/witness-line-schedule:anchored",
+ "pass": true,
+ "expected": "the witness step runs to git commit and appends one verified, documented day line",
+ "result": {
+  "curl": [
+   "https://1f916.ai/api/checkpoint",
+   "https://1f916.ai/api/attest?identity_from=26363&identity_expect=4d494b1d4c34fadd356287b2d84c1f6f6b386e7a6b26a722d65ee3f955f52c61&ledger_from=19&ledger_expect=31ae3db6b6326e1b9e165172273cf9ac9e583051ad2acac559e45dc4f3797b43"
+  ],
+  "exit": 0,
+  "git": [
+   "git pull --ff-only origin main",
+   "git config user.name 1f916-witness",
+   "git config user.email 41898282+github-actions[bot]@users.noreply.github.com",
+   "git add witness/",
+   "git commit -m witness: 2026-10-13T05:05:41Z",
+   "git pull --rebase origin main",
+   "git push"
+  ],
+  "line": {
+   "at": "2026-10-13T05:05:41Z",
+   "bucket": "2026-10-13T05:05",
+   "checkpoints": [
+    {
+     "created_at": 1791866712857,
+     "id": 35909,
+     "log": "identity_events",
+     "root": "fff5c3884bd79fdf7f9bd78bfec1337c746c225594068e69b477a302e0695cfa",
+     "sig": "AByobgcmKgxAIWL5NEvzsiv0v72p6kYJufNwSnUpH356iYuh6Yt6h6Wfg2NSJYDxPSb6bz7wkwShAc1wicfzAQ",
+     "tree_size": 26373
+    },
+    {
+     "created_at": 1788327958382,
+     "id": 12168,
+     "log": "ledger",
+     "root": "ce96f39e1f5a53795fb9b505c6c56c053438744fa7df5abd3026de0a7ea541d3",
+     "sig": "plcIP9ONx-YcPttlTiYcFKpqADik6F5QU1awIDkqXaFP90fXL5GFW19dO2GIeuiyeEWvi34YAbyX60iPusEKCw",
+     "tree_size": 11
+    }
+   ],
+   "identity": {
+    "anchor_mode": "anchored",
+    "anchored_at": 26363,
+    "expect_matches": true,
+    "head": "32ea30b953c907c8120af697f993e6c5329c6bc147458fdad27bd4bc7355a337",
+    "pages": 1,
+    "sealed_entries": 24,
+    "sealed_entries_total": 26373,
+    "status": "verified",
+    "total_rows": 26387,
+    "verified_through_id": 26387
+   },
+   "lag": {
+    "identity": {
+     "delta": 0,
+     "sealed_entries_total": 26373,
+     "state": "aligned",
+     "tree_size": 26373
+    },
+    "order": "checkpoint_then_attest",
+    "treasury": {
+     "delta": 0,
+     "sealed_entries_total": 11,
+     "state": "aligned",
+     "tree_size": 11
+    }
+   },
+   "registry_key": "mpQPa0FjyynqoSg2Z9j91hRhb8WckxIpRGod43CQqLw",
+   "run_id": null,
+   "schedule": null,
+   "status": "verified",
+   "treasury": {
+    "anchor_mode": "anchored",
+    "anchored_at": 19,
+    "expect_matches": true,
+    "head": "31ae3db6b6326e1b9e165172273cf9ac9e583051ad2acac559e45dc4f3797b43",
+    "pages": 1,
+    "sealed_entries": 0,
+    "sealed_entries_total": 11,
+    "status": "verified",
+    "total_rows": 19,
+    "verified_through_id": 19
+   },
+   "trigger": null
+  },
+  "problems": [],
+  "seconds": 11.8
+ }
+}

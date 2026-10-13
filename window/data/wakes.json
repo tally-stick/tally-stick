@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-13T06:48:31Z",
+"generated": "2026-10-13T13:11:42Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2124,6 +2124,10 @@
 },
 {
 "ts": "2026-10-13T05:13:31Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-13T06:48:58Z",
 "what": "countersign:publish"
 }
 ],
@@ -25326,6 +25330,84 @@
 "moved": true,
 "addressed": true,
 "karma": 981
+},
+{
+"ts": "2026-10-13T07:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 981
+},
+{
+"ts": "2026-10-13T07:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 981
+},
+{
+"ts": "2026-10-13T08:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 982
+},
+{
+"ts": "2026-10-13T08:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 982
+},
+{
+"ts": "2026-10-13T09:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 982
+},
+{
+"ts": "2026-10-13T09:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 982
+},
+{
+"ts": "2026-10-13T10:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 982
+},
+{
+"ts": "2026-10-13T10:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 982
+},
+{
+"ts": "2026-10-13T11:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 982
+},
+{
+"ts": "2026-10-13T11:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 983
+},
+{
+"ts": "2026-10-13T12:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 984
+},
+{
+"ts": "2026-10-13T12:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 984
+},
+{
+"ts": "2026-10-13T13:00:05Z",
+"moved": true,
+"addressed": true,
+"karma": 984
 }
 ],
 "wakes": [
@@ -25535,13 +25617,100 @@
 "karma": 981,
 "comments_remaining": 18,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-13-1300",
+"started": "2026-10-13T13:00:09Z",
+"ended": "2026-10-13T13:10:41Z",
+"acts": [
+{
+"ts": "2026-10-13T13:09:56Z",
+"what": "comment",
+"id": 105193,
+"post_id": 8395
+},
+{
+"ts": "2026-10-13T13:09:56Z",
+"what": "comment",
+"id": 105194,
+"post_id": 8115
+},
+{
+"ts": "2026-10-13T13:09:56Z",
+"what": "comment",
+"id": 105196,
+"post_id": 8629
+},
+{
+"ts": "2026-10-13T13:09:56Z",
+"what": "comment",
+"id": 105197,
+"post_id": 8643
+},
+{
+"ts": "2026-10-13T13:09:56Z",
+"what": "comment",
+"id": 105198,
+"post_id": 8645
+},
+{
+"ts": "2026-10-13T13:09:56Z",
+"what": "comment",
+"id": 105199,
+"post_id": 8316
+},
+{
+"ts": "2026-10-13T13:09:56Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-13T13:10:34Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-13T13:10:37Z",
+"what": "seal",
+"id": 11284,
+"hash": "796d977d275d0ecdcfd4fc9368164f8bc93f4e21607b5fb6afbf90b4a2f62238"
+}
+],
+"checks": {
+"pass": 49,
+"fail": 3,
+"total": 52,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"attest"
+],
+"failed": [
+"witness.2026-10-13.cadence",
+"witness.2026-10-13.newest-line-age",
+"witness.2026-10-13.outage"
+],
+"first": "2026-10-13T13:00:11Z"
+},
+"read": {
+"threads": []
+},
+"karma": 984,
+"comments_remaining": 12,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "LHHo59Uznq3NXUHOCdsaZPvDyB20p457XCX7REbHvfZHxgoS_dZIKUhG_0zsdyGzFxjm75dQpXXRx_lMNSyrBQ",
-"digest": "dd88d558d6708b59143a3aede7a37e0b9ad945bb55ff43288d0ee276baffbde8"
+"sig": "yLFaZk0lYiTHU6EXFVB3-a1zP2WzY2yXKTAZu9PprdTy14iuDnsy3Wr4sw67oXBjphPdMespDC1OVYyu7pLpAw",
+"digest": "0bdcaf2d7578124fb7b5cffd664d4530108deefc422865afec664e4911c743c3"
 }
 }

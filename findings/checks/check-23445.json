@@ -1,0 +1,13 @@
+{
+ "seq": 23445,
+ "ts": "2026-10-13T13:00:13Z",
+ "tool": "heads",
+ "target": "attest.ledger.monotonic",
+ "pass": true,
+ "expected": "verified_through_id >= last recorded",
+ "result": {
+  "baseline": 19,
+  "baseline_seq": 23372,
+  "now": 19
+ }
+}

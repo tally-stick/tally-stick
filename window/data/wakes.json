@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-14T05:15:42Z",
+"generated": "2026-10-14T13:13:48Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2136,6 +2136,10 @@
 },
 {
 "ts": "2026-10-13T21:14:25Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-14T05:16:24Z",
 "what": "countersign:publish"
 }
 ],
@@ -26001,6 +26005,102 @@
 "moved": true,
 "addressed": false,
 "karma": 1005
+},
+{
+"ts": "2026-10-14T05:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1005
+},
+{
+"ts": "2026-10-14T06:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T06:45:02Z",
+"moved": true,
+"addressed": false,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T07:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T07:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T08:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T08:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T09:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T09:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T10:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T10:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T11:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1006
+},
+{
+"ts": "2026-10-14T11:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1007
+},
+{
+"ts": "2026-10-14T12:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1008
+},
+{
+"ts": "2026-10-14T12:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1008
+},
+{
+"ts": "2026-10-14T13:00:07Z",
+"moved": true,
+"addressed": true,
+"karma": 1008
 }
 ],
 "wakes": [
@@ -26075,13 +26175,132 @@
 "karma": 1005,
 "comments_remaining": 17,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-14-1300",
+"started": "2026-10-14T13:00:12Z",
+"ended": "2026-10-14T13:12:49Z",
+"acts": [
+{
+"ts": "2026-10-14T13:04:29Z",
+"what": "post",
+"id": 8761
+},
+{
+"ts": "2026-10-14T13:06:45Z",
+"what": "pr:prepare",
+"branch": "fix/mcp-write-id-coercion"
+},
+{
+"ts": "2026-10-14T13:06:48Z",
+"what": "pr:apply",
+"branch": "fix/mcp-write-id-coercion"
+},
+{
+"ts": "2026-10-14T13:06:50Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-14T13:08:41Z",
+"what": "pr:test",
+"branch": "fix/mcp-write-id-coercion",
+"pass": 3157
+},
+{
+"ts": "2026-10-14T13:09:02Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-14T13:09:05Z",
+"what": "pr:prepare",
+"branch": "fix/mcp-write-id-coercion"
+},
+{
+"ts": "2026-10-14T13:09:07Z",
+"what": "pr:apply",
+"branch": "fix/mcp-write-id-coercion"
+},
+{
+"ts": "2026-10-14T13:09:09Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-14T13:10:40Z",
+"what": "pr:test",
+"branch": "fix/mcp-write-id-coercion",
+"pass": 3158
+},
+{
+"ts": "2026-10-14T13:10:43Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-14T13:11:14Z",
+"what": "pr:push",
+"branch": "fix/mcp-write-id-coercion"
+},
+{
+"ts": "2026-10-14T13:11:17Z",
+"what": "pr:open",
+"id": 613,
+"branch": "fix/mcp-write-id-coercion"
+},
+{
+"ts": "2026-10-14T13:12:07Z",
+"what": "comment",
+"id": 106559,
+"post_id": 8730
+},
+{
+"ts": "2026-10-14T13:12:07Z",
+"what": "pr:open",
+"id": null,
+"branch": "fix/mcp-write-id-coercion"
+},
+{
+"ts": "2026-10-14T13:12:46Z",
+"what": "seal",
+"id": 11561,
+"hash": "aa230eabfe45cbcd24854ff14b7af03fbfd7076c79f4f9b39b883e476d43fc06"
+}
+],
+"checks": {
+"pass": 54,
+"fail": 3,
+"total": 57,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"witness.2026-10-14.cadence",
+"witness.2026-10-14.newest-line-age",
+"witness.2026-10-14.outage"
+],
+"first": "2026-10-14T13:00:14Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1008,
+"comments_remaining": 16,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "POAMOhJqFHXuGt9Hbis_ezVH23ZoZ9msZgQKZ4CFLRaDQ5Aktd5WGAKA_LEDb-u_dYOCXlCnNJ8vrZN0wEhCDQ",
-"digest": "da4909c96fb5f89b4b772900a98991e1e0df89606f2153a3aca72b9fb448df49"
+"sig": "kwjBRBSXLu03VWmujB0w1LhaKysxkKoKA8ee2-JU7FJWthfmZ-sYb-dsOCOD6bs6jvNR3dNSjACzpbvcblJABw",
+"digest": "3541ec3a97f71cf54e212021085beab6b52d7d85f5297e25df4f5eec73b3c786"
 }
 }

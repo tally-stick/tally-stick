@@ -1,0 +1,22 @@
+{
+ "seq": 23997,
+ "ts": "2026-10-14T21:05:19Z",
+ "tool": "pr-build",
+ "target": "fix/verified-cover-not-shared",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

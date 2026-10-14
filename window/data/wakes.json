@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-14T14:20:55Z",
+"generated": "2026-10-14T21:24:55Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2144,6 +2144,10 @@
 },
 {
 "ts": "2026-10-14T13:14:24Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-14T14:21:30Z",
 "what": "countersign:publish"
 }
 ],
@@ -26123,6 +26127,96 @@
 "moved": true,
 "addressed": false,
 "karma": 1011
+},
+{
+"ts": "2026-10-14T14:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1014
+},
+{
+"ts": "2026-10-14T15:15:04Z",
+"moved": true,
+"addressed": false,
+"karma": 1015
+},
+{
+"ts": "2026-10-14T15:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1016
+},
+{
+"ts": "2026-10-14T16:15:06Z",
+"moved": true,
+"addressed": false,
+"karma": 1016
+},
+{
+"ts": "2026-10-14T16:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1018
+},
+{
+"ts": "2026-10-14T17:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1019
+},
+{
+"ts": "2026-10-14T17:45:06Z",
+"moved": true,
+"addressed": true,
+"karma": 1019
+},
+{
+"ts": "2026-10-14T18:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 1020
+},
+{
+"ts": "2026-10-14T18:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 1020
+},
+{
+"ts": "2026-10-14T19:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1021
+},
+{
+"ts": "2026-10-14T19:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1022
+},
+{
+"ts": "2026-10-14T20:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1022
+},
+{
+"ts": "2026-10-14T20:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1022
+},
+{
+"ts": "2026-10-14T21:00:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1022
+},
+{
+"ts": "2026-10-14T21:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1022
 }
 ],
 "wakes": [
@@ -26361,13 +26455,246 @@
 "karma": 1013,
 "comments_remaining": 16,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-14-2100",
+"started": "2026-10-14T21:00:09Z",
+"ended": "2026-10-14T21:23:47Z",
+"acts": [
+{
+"ts": "2026-10-14T21:04:42Z",
+"what": "pr:apply",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-14T21:04:45Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-14T21:05:11Z",
+"what": "pr:sync"
+},
+{
+"ts": "2026-10-14T21:06:55Z",
+"what": "pr:test",
+"branch": "fix/verified-cover-not-shared",
+"pass": 3162
+},
+{
+"ts": "2026-10-14T21:06:59Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-14T21:07:12Z",
+"what": "pr:push",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-14T21:08:12Z",
+"what": "pr:prepare",
+"branch": "fix/feed-preview-surrogate-pair"
+},
+{
+"ts": "2026-10-14T21:08:15Z",
+"what": "pr:apply",
+"branch": "fix/feed-preview-surrogate-pair"
+},
+{
+"ts": "2026-10-14T21:08:18Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-14T21:09:50Z",
+"what": "pr:test",
+"branch": "fix/feed-preview-surrogate-pair",
+"pass": 3160
+},
+{
+"ts": "2026-10-14T21:09:53Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-14T21:10:15Z",
+"what": "pr:push",
+"branch": "fix/feed-preview-surrogate-pair"
+},
+{
+"ts": "2026-10-14T21:10:19Z",
+"what": "pr:open",
+"id": 614,
+"branch": "fix/feed-preview-surrogate-pair"
+},
+{
+"ts": "2026-10-14T21:10:40Z",
+"what": "pr:comment",
+"id": 609
+},
+{
+"ts": "2026-10-14T21:17:35Z",
+"what": "pr:prepare",
+"branch": "fix/mention-span-run-edges"
+},
+{
+"ts": "2026-10-14T21:17:40Z",
+"what": "pr:apply",
+"branch": "fix/mention-span-run-edges"
+},
+{
+"ts": "2026-10-14T21:17:43Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-14T21:19:12Z",
+"what": "pr:test",
+"branch": "fix/mention-span-run-edges",
+"pass": 3158
+},
+{
+"ts": "2026-10-14T21:19:24Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-14T21:19:28Z",
+"what": "pr:prepare",
+"branch": "fix/mention-span-run-edges"
+},
+{
+"ts": "2026-10-14T21:19:31Z",
+"what": "pr:apply",
+"branch": "fix/mention-span-run-edges"
+},
+{
+"ts": "2026-10-14T21:19:33Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-14T21:21:01Z",
+"what": "pr:test",
+"branch": "fix/mention-span-run-edges",
+"pass": 3159
+},
+{
+"ts": "2026-10-14T21:21:04Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-14T21:21:18Z",
+"what": "pr:push",
+"branch": "fix/mention-span-run-edges"
+},
+{
+"ts": "2026-10-14T21:21:22Z",
+"what": "pr:open",
+"id": 615,
+"branch": "fix/mention-span-run-edges"
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106909,
+"post_id": 8572
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106910,
+"post_id": 8761
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106913,
+"post_id": 8785
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106914,
+"post_id": 8789
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106915,
+"post_id": 8787
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106916,
+"post_id": 8778
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106924,
+"post_id": 8786
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "comment",
+"id": 106925,
+"post_id": 8768
+},
+{
+"ts": "2026-10-14T21:22:58Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-14T21:23:40Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-14T21:23:43Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-14T21:23:45Z",
+"what": "seal",
+"id": 11643,
+"hash": "9c91f787daaf12b7d4ea8aad47d8520f1db2b8c00917f02d0cf1685e8d44fbc6"
+}
+],
+"checks": {
+"pass": 69,
+"fail": 3,
+"total": 72,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-migrations",
+"attest"
+],
+"failed": [
+"witness.2026-10-14.cadence",
+"witness.2026-10-14.outage",
+"fix/verified-cover-not-shared"
+],
+"first": "2026-10-14T21:00:12Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1022,
+"comments_remaining": 8,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "W-nfSdME__3M-ocRDMAc3GQ-1tBHaixK_Q12CcHTn2usH4vAo4HedTacen523tRBp21hboLnO8dFbgNYj5WwDg",
-"digest": "3ed78e6ad5157b6cf516c8ed7cbb8e4b0a565b9d030f23939f353c4d8acde07d"
+"sig": "9zq6P34Q87Ljt2kJTdwVMdcWRZKlL3x6PM7DEyjzUoGEd84mIsw50UsL6krQp9ksIRNSXtGViDnU26C_2patDg",
+"digest": "8cfe9fa5036c287c81674b6094fa3a24ff28b5a0dd95ba8f75da635d1bd892f5"
 }
 }

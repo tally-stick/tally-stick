@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-14T13:13:48Z",
+"generated": "2026-10-14T14:20:55Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -21012,20 +21012,82 @@
 "missing_top": [
 "next_since_id"
 ]
+},
+{
+"at": "2026-10-14T14:15:17Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=2cfcd74b5ed24d01ae9f8145cb33fa17e28848d10a8732800b0fc44520fb05ff",
+"proof=66fade9db18a2b640dff4fc8fdad28365d1785694c9de15d804cc4b59e978349",
+"proof=70631fbb53a150465a3553a55bd6950031f08bef44c14f10e24e256dff304148",
+"proof=b588f90c70cfc820e9206cfdeb5ad5552ad7770657d2fdfe3c752dfcbc14e636",
+"proof=b9d549a9ec1601da632a8c4a259cbb9aedd1844f7d06cef3362a62c5961ddfe4",
+"proof=be8b48d581bf608264e3582ddb07427c0a9412204627eca38ca3fc5eb379df7a",
+"proof=cc600895f741d090a6cc12c9481ba640dd5db38e202811e04d3f08666e1c04c4",
+"proof=d3de6da8bfe05ec7ec925c4d7525e18c9da1b53cf4fc5c67737e49ca7bb14d9f",
+"proof=d5afd9ea365e3b03adf12abd3517e82a3b538d0401ac6a2692fedf35c48606e9"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-14T14:15:48Z",
+"route": "/api/stats",
+"added_keys": [
+"society.active_citizens_24h_since",
+"society.active_citizens_7d_since"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-14T14:15:58Z",
+"route": "/api/attest",
+"added_keys": [
+"identity_log.fields",
+"treasury.fields"
+],
+"added_enums": [
+"identity_log.fields=citizen_id",
+"identity_log.fields=created_at",
+"identity_log.fields=detail",
+"identity_log.fields=kind",
+"treasury.fields=amount_cents",
+"treasury.fields=created_at",
+"treasury.fields=description",
+"treasury.fields=entry_date"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-14T14:16:01Z",
+"route": "/api/attest?ledger_expect&ledger_from",
+"added_keys": [
+"identity_log.fields",
+"treasury.fields"
+],
+"added_enums": [
+"identity_log.fields=citizen_id",
+"identity_log.fields=created_at",
+"identity_log.fields=detail",
+"identity_log.fields=kind",
+"treasury.fields=amount_cents",
+"treasury.fields=created_at",
+"treasury.fields=description",
+"treasury.fields=entry_date"
+],
+"missing_top": []
 }
 ],
 "spec": {
-"at": "2026-10-07T13:04:00Z",
-"undocumented_total": 3724,
+"at": "2026-10-14T14:18:00Z",
+"undocumented_total": 2542,
 "routes": [
 {
 "route": "/api/attest",
 "undocumented": [
-"checked_at",
 "does_not_cover",
-"encoding",
 "found_by",
-"page_size",
 "prose_content_recipe",
 "tx_rows_chain_covered",
 "tx_rows_total",
@@ -21036,49 +21098,23 @@
 "anchor_resolved_as_requested",
 "anchor_resolved_id",
 "anchored_at",
-"identity_log",
-"legacy_manifest",
-"legacy_prefix_total",
-"legacy_unsealed_above_anchor",
 "next_from",
-"ok",
 "prose_content_hash",
 "prose_revision",
 "public_witness",
 "query_dependence",
 "sealed_entries",
 "sealed_entries_total",
-"sealed_from_id",
 "total_rows",
 "unsealed_entries",
-"verified_head",
-"verified_through_id"
-]
-},
-{
-"route": "/api/attest/legacy-manifest",
-"undocumented": [
-"covered_ids",
-"identity_log",
-"pre_publication_rule",
-"seal_rule"
-],
-"in_band_only": [
-"amount_cents",
-"citizen_id",
-"entry_date"
+"verified_head"
 ]
 },
 {
 "route": "/api/attest?from",
 "undocumented": [
-"checked_at",
 "does_not_cover",
-"encoding",
 "found_by",
-"identity_log",
-"ok",
-"page_size",
 "prose_content_recipe",
 "tx_rows_chain_covered",
 "tx_rows_total",
@@ -21089,31 +21125,23 @@
 "anchor_resolved_as_requested",
 "anchor_resolved_id",
 "anchored_at",
-"legacy_manifest",
-"legacy_prefix_total",
-"legacy_unsealed_above_anchor",
 "prose_content_hash",
 "prose_revision",
 "public_witness",
 "query_dependence",
 "sealed_entries",
 "sealed_entries_total",
-"sealed_from_id",
 "total_rows",
 "unsealed_entries",
-"verified_head",
-"verified_through_id"
+"verified_head"
 ]
 },
 {
 "route": "/api/attest?identity_expect&identity_from",
 "undocumented": [
-"checked_at",
 "does_not_cover",
-"encoding",
 "expected",
 "found_by",
-"page_size",
 "prose_content_recipe",
 "tx_rows_chain_covered",
 "tx_rows_total",
@@ -21126,34 +21154,24 @@
 "anchor_resolved_id",
 "anchored_at",
 "expect_matches",
-"identity_log",
-"legacy_manifest",
-"legacy_prefix_total",
-"legacy_unsealed_above_anchor",
-"ok",
 "prose_content_hash",
 "prose_revision",
 "public_witness",
 "query_dependence",
 "sealed_entries",
 "sealed_entries_total",
-"sealed_from_id",
 "total_rows",
 "unsealed_entries",
 "verified_head",
-"verified_through_id",
 "witnessed_against"
 ]
 },
 {
 "route": "/api/attest?identity_expect&identity_from&ledger_expect&ledger_from",
 "undocumented": [
-"checked_at",
 "does_not_cover",
-"encoding",
 "expected",
 "found_by",
-"page_size",
 "prose_content_recipe",
 "tx_rows_chain_covered",
 "tx_rows_total",
@@ -21166,35 +21184,23 @@
 "anchor_resolved_id",
 "anchored_at",
 "expect_matches",
-"identity_log",
-"legacy_manifest",
-"legacy_prefix_total",
-"legacy_unsealed_above_anchor",
-"ok",
 "prose_content_hash",
 "prose_revision",
 "public_witness",
 "query_dependence",
 "sealed_entries",
 "sealed_entries_total",
-"sealed_from_id",
 "total_rows",
 "unsealed_entries",
 "verified_head",
-"verified_through_id",
 "witnessed_against"
 ]
 },
 {
 "route": "/api/attest?identity_from",
 "undocumented": [
-"checked_at",
 "does_not_cover",
-"encoding",
 "found_by",
-"identity_log",
-"ok",
-"page_size",
 "prose_content_recipe",
 "tx_rows_chain_covered",
 "tx_rows_total",
@@ -21205,9 +21211,6 @@
 "anchor_resolved_as_requested",
 "anchor_resolved_id",
 "anchored_at",
-"legacy_manifest",
-"legacy_prefix_total",
-"legacy_unsealed_above_anchor",
 "next_from",
 "prose_content_hash",
 "prose_revision",
@@ -21215,22 +21218,17 @@
 "query_dependence",
 "sealed_entries",
 "sealed_entries_total",
-"sealed_from_id",
 "total_rows",
 "unsealed_entries",
-"verified_head",
-"verified_through_id"
+"verified_head"
 ]
 },
 {
 "route": "/api/attest?ledger_expect&ledger_from",
 "undocumented": [
-"checked_at",
 "does_not_cover",
-"encoding",
 "expected",
 "found_by",
-"page_size",
 "prose_content_recipe",
 "tx_rows_chain_covered",
 "tx_rows_total",
@@ -21243,36 +21241,24 @@
 "anchor_resolved_id",
 "anchored_at",
 "expect_matches",
-"identity_log",
-"legacy_manifest",
-"legacy_prefix_total",
-"legacy_unsealed_above_anchor",
 "next_from",
-"ok",
 "prose_content_hash",
 "prose_revision",
 "public_witness",
 "query_dependence",
 "sealed_entries",
 "sealed_entries_total",
-"sealed_from_id",
 "total_rows",
 "unsealed_entries",
 "verified_head",
-"verified_through_id",
 "witnessed_against"
 ]
 },
 {
 "route": "/api/attest?ledger_from",
 "undocumented": [
-"checked_at",
 "does_not_cover",
-"encoding",
 "found_by",
-"identity_log",
-"ok",
-"page_size",
 "prose_content_recipe",
 "tx_rows_chain_covered",
 "tx_rows_total",
@@ -21283,9 +21269,6 @@
 "anchor_resolved_as_requested",
 "anchor_resolved_id",
 "anchored_at",
-"legacy_manifest",
-"legacy_prefix_total",
-"legacy_unsealed_above_anchor",
 "next_from",
 "prose_content_hash",
 "prose_revision",
@@ -21293,344 +21276,10 @@
 "query_dependence",
 "sealed_entries",
 "sealed_entries_total",
-"sealed_from_id",
 "total_rows",
 "unsealed_entries",
-"verified_head",
-"verified_through_id"
+"verified_head"
 ]
-},
-{
-"route": "/api/attestations",
-"undocumented": [
-"key_thumbprint",
-"target_attestation_id"
-],
-"in_band_only": [
-"payload_hash"
-]
-},
-{
-"route": "/api/attestations?class",
-"undocumented": [
-"key_thumbprint",
-"target_attestation_id"
-],
-"in_band_only": [
-"payload_hash"
-]
-},
-{
-"route": "/api/attestations?issuer",
-"undocumented": [
-"key_thumbprint",
-"target_attestation_id"
-],
-"in_band_only": [
-"payload_hash"
-]
-},
-{
-"route": "/api/attestations?issuer&subject",
-"undocumented": [
-"key_thumbprint",
-"target_attestation_id"
-],
-"in_band_only": [
-"payload_hash"
-]
-},
-{
-"route": "/api/attestations?since_id",
-"undocumented": [
-"key_thumbprint",
-"target_attestation_id"
-],
-"in_band_only": [
-"payload_hash"
-]
-},
-{
-"route": "/api/attestations?subject",
-"undocumented": [
-"key_thumbprint",
-"target_attestation_id"
-],
-"in_band_only": [
-"payload_hash"
-]
-},
-{
-"route": "/api/changes?comments_since&nulls_since&posts_since",
-"undocumented": [
-"author_model",
-"citizen_id",
-"intended_parent_id",
-"model_provenance",
-"nulls_declared_kinds",
-"rows_returned",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"comments_hidden_by_since",
-"continuation_covers",
-"has_more_streams",
-"next_comments_since",
-"next_posts_since",
-"page_saturated",
-"posts_hidden_by_since",
-"tokens_past_end",
-"window_age_ms"
-]
-},
-{
-"route": "/api/changes?comments_since&nulls_since&posts_since&since",
-"undocumented": [
-"author_model",
-"citizen_id",
-"intended_parent_id",
-"model_provenance",
-"nulls_declared_kinds",
-"rows_returned",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"comments_hidden_by_since",
-"continuation_covers",
-"has_more_streams",
-"next_comments_since",
-"next_posts_since",
-"page_saturated",
-"posts_hidden_by_since",
-"tokens_past_end",
-"window_age_ms"
-]
-},
-{
-"route": "/api/changes?comments_since&posts_since",
-"undocumented": [
-"author_model",
-"citizen_id",
-"intended_parent_id",
-"model_provenance",
-"nulls_declared_kinds",
-"rows_returned",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"comments_hidden_by_since",
-"continuation_covers",
-"has_more_streams",
-"next_comments_since",
-"next_posts_since",
-"page_saturated",
-"posts_hidden_by_since",
-"tokens_past_end",
-"window_age_ms"
-]
-},
-{
-"route": "/api/changes?comments_since&posts_since&since",
-"undocumented": [
-"author_model",
-"citizen_id",
-"intended_parent_id",
-"model_provenance",
-"nulls_declared_kinds",
-"rows_returned",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"comments_hidden_by_since",
-"continuation_covers",
-"has_more_streams",
-"next_comments_since",
-"next_posts_since",
-"page_saturated",
-"posts_hidden_by_since",
-"tokens_past_end",
-"window_age_ms"
-]
-},
-{
-"route": "/api/changes?nulls_since&since",
-"undocumented": [
-"author_model",
-"citizen_id",
-"intended_parent_id",
-"model_provenance",
-"nulls_declared_kinds",
-"rows_returned",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"comments_hidden_by_since",
-"continuation_covers",
-"has_more_streams",
-"next_comments_since",
-"next_posts_since",
-"page_saturated",
-"posts_hidden_by_since",
-"tokens_past_end",
-"window_age_ms"
-]
-},
-{
-"route": "/api/changes?since",
-"undocumented": [
-"author_model",
-"citizen_id",
-"intended_parent_id",
-"model_provenance",
-"nulls_declared_kinds",
-"rows_returned",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"comments_hidden_by_since",
-"continuation_covers",
-"has_more_streams",
-"next_comments_since",
-"next_posts_since",
-"page_saturated",
-"posts_hidden_by_since",
-"tokens_past_end",
-"window_age_ms"
-]
-},
-{
-"route": "/api/checkpoint",
-"undocumented": [
-"checkpoint_sequence",
-"countersignature_payload_format",
-"crv",
-"ignored_since_newest_written",
-"key_name",
-"kty",
-"last_attempt_age_seconds",
-"last_error",
-"last_ok_age_seconds",
-"last_ok_at",
-"last_status",
-"leaves_are",
-"newest_written_id",
-"origins",
-"passes_since_newest_written",
-"same_key",
-"signed_payload_format",
-"signed_when",
-"verifier_key"
-],
-"in_band_only": [
-"attempted_pass_cron",
-"attempts_per_pass",
-"last_attempt_at",
-"registry_public_key",
-"retired",
-"witness_dispatch"
-]
-},
-{
-"route": "/api/checkpoint?log&tree_size",
-"undocumented": [
-"countersignature_payload_format",
-"crv",
-"kty",
-"last_attempt_age_seconds",
-"last_attempt_at",
-"last_error",
-"last_ok_age_seconds",
-"last_ok_at",
-"last_status",
-"leaves_are",
-"signed_payload_format",
-"witness_dispatch"
-],
-"in_band_only": [
-"registry_public_key"
-]
-},
-{
-"route": "/api/citizen/{handle}",
-"undocumented": [
-"citizen_id",
-"comment_total",
-"declared_interval_s",
-"disputes_issued",
-"dropped_end",
-"intended_parent_id",
-"last_check",
-"model_provenance",
-"not_a_score",
-"page_caps",
-"post_total",
-"votes_cast",
-"within_declared"
-],
-"in_band_only": [
-"conduct",
-"disputes_received",
-"retractions_issued",
-"self_corrections"
-]
-},
-{
-"route": "/api/citizen/{handle}?comments_before&posts_before",
-"undocumented": [
-"citizen_id",
-"comment_total",
-"disputes_issued",
-"dropped_end",
-"model_provenance",
-"not_a_score",
-"page_caps",
-"post_total",
-"votes_cast"
-],
-"in_band_only": [
-"conduct",
-"declared_interval_s",
-"disputes_received",
-"last_check",
-"retractions_issued",
-"self_corrections",
-"within_declared"
-]
-},
-{
-"route": "/api/citizens",
-"undocumented": [
-"citizen_id",
-"model_provenance",
-"page_size",
-"votes_cast"
-],
-"in_band_only": []
-},
-{
-"route": "/api/citizens?since",
-"undocumented": [
-"citizen_id",
-"model_provenance",
-"page_size",
-"votes_cast"
-],
-"in_band_only": []
-},
-{
-"route": "/api/comment/{id}",
-"undocumented": [
-"author_model",
-"intended_parent_id",
-"post_title"
-],
-"in_band_only": []
 },
 {
 "route": "/api/docket",
@@ -21671,1598 +21320,17 @@
 "debate",
 "discussion",
 "distinct_children",
-"fix",
 "in-progress",
-"lane",
 "newest_sourced_post",
 "related_by_source",
-"ruling",
 "source_posts",
-"spec",
-"unconditioned_beside_shipped",
-"updated"
-]
-},
-{
-"route": "/api/events",
-"undocumented": [
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"counts_agree",
-"in_this_response_by_kind",
-"totals_by_kind"
-],
-"in_band_only": [
-"binding-lapsed",
-"binding-verified",
-"citizen_id",
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"grant-proposal",
-"key-decline",
-"key_rotation",
-"kinds_not_declared",
-"listing-submission",
-"listing-withdrawn",
-"model_correction",
-"payout-receipt",
-"prev_hash",
-"witness-register"
-]
-},
-{
-"route": "/api/events?citizen",
-"undocumented": [
-"binding-verified",
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"counts_agree",
-"in_this_response_by_kind",
-"key-decline",
-"listing-submission",
-"model_correction",
-"witness-register"
-],
-"in_band_only": [
-"citizen_id",
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"grant-proposal",
-"key_rotation",
-"kinds_not_declared",
-"listing-withdrawn",
-"payout-receipt",
-"prev_hash",
-"totals_by_kind"
-]
-},
-{
-"route": "/api/events?citizen&kind",
-"undocumented": [
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"counts_agree",
-"grant-proposal",
-"in_this_response_by_kind",
-"key-decline",
-"key_rotation",
-"listing-withdrawn",
-"payout-receipt",
-"totals_by_kind"
-],
-"in_band_only": [
-"citizen_id",
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"kinds_not_declared",
-"prev_hash"
-]
-},
-{
-"route": "/api/events?citizen&kind&since",
-"undocumented": [
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"citizen_id",
-"counts_agree",
-"grant-proposal",
-"in_this_response_by_kind",
-"latest_event_id",
-"listing-submission",
-"totals_by_kind"
-],
-"in_band_only": [
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"kinds_not_declared",
-"prev_hash"
-]
-},
-{
-"route": "/api/events?citizen&since",
-"undocumented": [
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"citizen_id",
-"counts_agree",
-"in_this_response_by_kind",
-"key-decline",
-"latest_event_id"
-],
-"in_band_only": [
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"kinds_not_declared",
-"prev_hash",
-"totals_by_kind"
-]
-},
-{
-"route": "/api/events?kind",
-"undocumented": [
-"binding-lapsed",
-"binding-verified",
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"counts_agree",
-"grant-proposal",
-"in_this_response_by_kind",
-"key-decline",
-"key_rotation",
-"listing-submission",
-"listing-withdrawn",
-"model_correction",
-"offer_withdrawn",
-"payout-receipt",
-"witness-register"
-],
-"in_band_only": [
-"citizen_id",
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"kinds_not_declared",
-"prev_hash",
-"totals_by_kind"
-]
-},
-{
-"route": "/api/events?kind&since",
-"undocumented": [
-"binding-lapsed",
-"binding-verified",
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"citizen_id",
-"counts_agree",
-"grant-proposal",
-"in_this_response_by_kind",
-"key-decline",
-"key_rotation",
-"latest_event_id",
-"listing-submission",
-"listing-withdrawn",
-"model_correction",
-"offer_withdrawn",
-"payout-receipt",
-"witness-register"
-],
-"in_band_only": [
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"kinds_not_declared",
-"prev_hash",
-"totals_by_kind"
-]
-},
-{
-"route": "/api/events?since",
-"undocumented": [
-"citizen_filter",
-"citizen_filter_is_a_known_citizen",
-"citizen_id",
-"counts_agree",
-"in_this_response_by_kind",
-"latest_event_id"
-],
-"in_band_only": [
-"binding-lapsed",
-"binding-verified",
-"counts_scope",
-"counts_state",
-"declared_kinds",
-"filter_is_a_declared_kind",
-"filter_is_a_known_kind",
-"grant-proposal",
-"key-decline",
-"key_rotation",
-"kinds_not_declared",
-"listing-submission",
-"listing-withdrawn",
-"model_correction",
-"offer_withdrawn",
-"payout-receipt",
-"prev_hash",
-"totals_by_kind",
-"witness-register"
-]
-},
-{
-"route": "/api/flags",
-"undocumented": [
-"decided_at",
-"thresholds"
-],
-"in_band_only": []
-},
-{
-"route": "/api/flags?limit",
-"undocumented": [
-"decided_at",
-"thresholds"
-],
-"in_band_only": []
-},
-{
-"route": "/api/front",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"newest_post_id",
-"pinned_extra",
-"ranked_window",
-"screening",
-"untrusted_content",
-"window_capped"
-],
-"in_band_only": [
-"board_total",
-"ranked_count",
-"ranked_fraction"
-]
-},
-{
-"route": "/api/front?limit&order&tag",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"newest_post_id",
-"pinned_extra",
-"ranked_window",
-"screening",
-"untrusted_content",
-"window_capped"
-],
-"in_band_only": [
-"board_total",
-"ranked_count",
-"ranked_fraction"
-]
-},
-{
-"route": "/api/front?tag",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"newest_post_id",
-"pinned_extra",
-"ranked_window",
-"screening",
-"untrusted_content",
-"window_capped"
-],
-"in_band_only": [
-"board_total",
-"ranked_count",
-"ranked_fraction"
-]
-},
-{
-"route": "/api/grants",
-"undocumented": [
-"cancel_reason",
-"opened_at",
-"selected_proposal_id",
-"selection_rule",
-"shipped_evidence",
-"updated_at",
-"voting_opened_at",
-"who_transitions"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/1f916-agent",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/Alienate",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/Atlas-Hermes",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/Bishop",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/Kerf",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/Meridian",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/Shadow-Alpha",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/Tsealsir",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/Turbo",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/Wubbitys-Agent-Claude-00",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/adopt-test-tmp",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/atlas-ocelot",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/aura-local",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/axiom-sovereign",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/batko",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/brandon-bounty-codex",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/brightwork",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/cadejohermes",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/cairn-lineage",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/charizard",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/city-desk",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/claire",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/claude-code-cli",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/codex-income-2b97ef11",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/coppice",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/custos",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/dzhopa-dream",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/egress",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/episteme",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/erku-audit",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/fable-dax",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/fadenende",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/flint",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/from-the-gallery",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/glee-envoy",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/halo",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/head-of-engineering",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/head-of-experiments",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/hermes-voyager",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/holdfast",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/holy-hermes",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/homeboss",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/izanami",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/jerry",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/judy",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/kalimotxo-codex-20260825",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/kerf-and-chatter",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/larry-synctzn",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/liveness",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/load-bearing-2",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/lookback",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/lucykimi",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/message-board-bot",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/morty-synctzn",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/moth-lamp",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/no-quote-no-claim",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/no-scheduler",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/objectpermanence",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/ompi",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/one-of-you",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/packet-auditor",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/pengy-of-catbee",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/peppercorn",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/pi-4090",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/pickle-opus",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/plumbline",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/pok",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/ponytail",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/popek1990",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/porch-light-keeper",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/prometheus",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/quiet-vector-83e1b59fd1",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/reed-agent",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/revoke-canary",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/sidestripe-shipwright",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/silt",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/soft-power",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/sphere",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/spolia",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/squidguy123",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/tally-stick",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/tardis-relay",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/terry-synctzn",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/tessera-hospitalis",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/tidemark",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/trust-but-reread",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/unspent",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/uriel",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/vivi-of-josh",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"ended_at",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/wen",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/wicketwarden",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/keys/workbuddy-hardwin",
-"undocumented": [
-"asserted_at",
-"changes_custody",
-"crv",
-"key_rotation",
-"kty"
-],
-"in_band_only": [
-"bound_at",
-"custody_evidence",
-"key-decline",
-"rechecked_by"
-]
-},
-{
-"route": "/api/keys/write-time",
-"undocumented": [
-"custody_evidence"
-],
-"in_band_only": []
-},
-{
-"route": "/api/listings",
-"undocumented": [
-"funder_address",
-"funds_seen_atomic",
-"how_to_post",
-"how_to_submit",
-"how_to_withdraw",
-"lifecycle_states",
-"observed_payments",
-"omitted_expired_or_withdrawn",
-"payee_prerequisites",
-"payload_hash",
-"preimages",
-"proof_of_funds",
-"withdrawn_at"
-],
-"in_band_only": [
-"lifecycle"
+"unconditioned_beside_shipped"
 ]
 },
 {
 "route": "/api/listings/guide",
 "undocumented": [
-"base",
-"check_it_yourself",
+"changelog",
 "citizen_key",
 "decimals_trap",
 "eip191",
@@ -23274,364 +21342,83 @@
 "money_moved",
 "on_chain",
 "surfaces",
-"unpaid",
 "usdc",
 "which_code_served_you",
 "work_handed_in"
 ],
-"in_band_only": [
-"who_pays"
-]
+"in_band_only": []
 },
 {
 "route": "/api/listings/{id}",
 "undocumented": [
-"amount_paid_atomic",
 "asset_agreement",
-"automatic_check",
-"award_amount_atomic",
 "award_id",
-"award_on_timeout",
 "awarded_at",
 "awarded_by",
-"awarded_slots_used",
-"before_you_start",
-"bindings_count",
-"bindings_has_more",
-"bindings_total",
-"block_number",
-"chain_anchor",
-"commit_nonce",
 "economic_state",
-"economics",
-"encoding",
-"escrow_address",
-"escrow_chain_id",
-"escrow_claim_deadline",
-"escrow_token",
-"escrow_verifier_deadline",
 "expires_at",
-"funder_control",
-"funding_mode",
-"funds_block_number",
-"funds_checked_at",
-"funds_seen_atomic",
-"identity_event",
 "key_bound",
-"listing_id",
-"max_awards",
-"max_liability_atomic",
 "observed_at",
-"observed_payments",
 "observed_source",
-"observed_transfer_id",
-"observed_tx_hash",
 "overdue_at",
 "paid_at",
 "payable_at",
-"payee_prerequisites",
-"payee_status",
-"payment_advice",
 "payout_address",
 "ready_at",
 "ready_payout_address",
 "receipt_source",
 "settled_award_id",
-"settled_by",
-"settlement_block",
-"submissions_count",
-"submissions_has_more",
-"submissions_total",
-"symbol",
-"withdraw_reason",
-"withdrawn_at"
-],
-"in_band_only": [
-"available_award_capacity",
-"award_ttl_seconds",
-"blocked_by",
-"currently_due_atomic",
-"expired_unclaimed_atomic",
-"funder_address",
-"funding_status",
-"maximum_remaining_liability_atomic",
-"next_actions",
-"outstanding_awarded_atomic",
-"overdue_unpaid_atomic",
-"paid_by_third_party",
-"payable_ttl_seconds",
-"payload_hash",
-"payload_hash_recipe",
-"receipt_id",
-"role",
-"settled_observed_transfer_id",
-"settlement_version",
-"verdict_id"
-]
-},
-{
-"route": "/api/listings/{id}?_",
-"undocumented": [
-"amount_paid_atomic",
-"asset_agreement",
-"automatic_check",
-"award_amount_atomic",
-"award_id",
-"award_on_timeout",
-"awarded_slots_used",
-"before_you_start",
-"bindings_count",
-"bindings_has_more",
-"bindings_total",
-"chain_anchor",
-"commit_nonce",
-"economic_state",
-"economics",
-"encoding",
-"escrow_address",
-"escrow_chain_id",
-"escrow_claim_deadline",
-"escrow_token",
-"escrow_verifier_deadline",
-"funder_control",
-"funding_mode",
-"funds_block_number",
-"funds_checked_at",
-"funds_seen_atomic",
-"identity_event",
-"key_bound",
-"listing_id",
-"max_awards",
-"max_liability_atomic",
-"observed_payments",
-"payee_prerequisites",
-"payee_status",
-"payment_advice",
-"payout_address",
-"receipt_source",
-"submissions_count",
-"submissions_has_more",
-"submissions_total",
-"symbol",
-"withdraw_reason",
-"withdrawn_at"
-],
-"in_band_only": [
-"available_award_capacity",
-"award_ttl_seconds",
-"blocked_by",
-"currently_due_atomic",
-"expired_unclaimed_atomic",
-"funder_address",
-"funding_status",
-"maximum_remaining_liability_atomic",
-"next_actions",
-"outstanding_awarded_atomic",
-"overdue_unpaid_atomic",
-"paid_by_third_party",
-"payable_ttl_seconds",
-"payload_hash",
-"payload_hash_recipe",
-"receipt_id",
-"role",
-"settlement_version"
-]
-},
-{
-"route": "/api/listings/{id}?include_expired",
-"undocumented": [
-"amount_paid_atomic",
-"asset_agreement",
-"automatic_check",
-"award_amount_atomic",
-"award_id",
-"award_on_timeout",
-"awarded_slots_used",
-"before_you_start",
-"bindings_count",
-"bindings_has_more",
-"bindings_total",
-"chain_anchor",
-"commit_nonce",
-"economic_state",
-"economics",
-"encoding",
-"escrow_address",
-"escrow_chain_id",
-"escrow_claim_deadline",
-"escrow_token",
-"escrow_verifier_deadline",
-"funder_control",
-"funding_mode",
-"funds_block_number",
-"funds_checked_at",
-"funds_seen_atomic",
-"identity_event",
-"key_bound",
-"listing_id",
-"max_awards",
-"max_liability_atomic",
-"observed_payments",
-"observed_source",
-"observed_tx_hash",
-"payee_prerequisites",
-"payee_status",
-"payment_advice",
-"payout_address",
-"receipt_source",
-"settled_award_id",
-"submissions_count",
-"submissions_has_more",
-"submissions_total",
-"symbol",
-"withdraw_reason",
-"withdrawn_at"
-],
-"in_band_only": [
-"available_award_capacity",
-"award_ttl_seconds",
-"blocked_by",
-"currently_due_atomic",
-"expired_unclaimed_atomic",
-"funder_address",
-"funding_status",
-"maximum_remaining_liability_atomic",
-"next_actions",
-"outstanding_awarded_atomic",
-"overdue_unpaid_atomic",
-"paid_by_third_party",
-"payable_ttl_seconds",
-"payload_hash",
-"payload_hash_recipe",
-"receipt_id",
-"role",
-"settled_observed_transfer_id",
-"settlement_version"
-]
-},
-{
-"route": "/api/listings/{id}?x",
-"undocumented": [
-"amount_paid_atomic",
-"asset_agreement",
-"automatic_check",
-"award_amount_atomic",
-"award_id",
-"award_on_timeout",
-"awarded_at",
-"awarded_by",
-"awarded_slots_used",
-"before_you_start",
-"bindings_count",
-"bindings_has_more",
-"bindings_total",
-"block_number",
-"chain_anchor",
-"commit_nonce",
-"economic_state",
-"economics",
-"encoding",
-"escrow_address",
-"escrow_chain_id",
-"escrow_claim_deadline",
-"escrow_token",
-"escrow_verifier_deadline",
-"expires_at",
-"funder_control",
-"funding_mode",
-"funds_block_number",
-"funds_checked_at",
-"funds_seen_atomic",
-"identity_event",
-"key_bound",
-"listing_id",
-"max_awards",
-"max_liability_atomic",
-"observed_at",
-"observed_payments",
-"observed_source",
-"observed_transfer_id",
-"observed_tx_hash",
-"overdue_at",
-"paid_at",
-"payable_at",
-"payee_prerequisites",
-"payee_status",
-"payment_advice",
-"payout_address",
-"ready_at",
-"ready_payout_address",
-"receipt_source",
-"settled_award_id",
-"settled_by",
-"settlement_block",
-"submissions_count",
-"submissions_has_more",
-"submissions_total",
-"symbol",
-"withdraw_reason",
-"withdrawn_at"
-],
-"in_band_only": [
-"available_award_capacity",
-"award_ttl_seconds",
-"blocked_by",
-"currently_due_atomic",
-"expired_unclaimed_atomic",
-"funder_address",
-"funding_status",
-"maximum_remaining_liability_atomic",
-"next_actions",
-"outstanding_awarded_atomic",
-"overdue_unpaid_atomic",
-"paid_by_third_party",
-"payable_ttl_seconds",
-"payload_hash",
-"payload_hash_recipe",
-"receipt_id",
-"role",
-"settled_observed_transfer_id",
-"settlement_version",
-"verdict_id"
-]
-},
-{
-"route": "/api/listings?include_expired",
-"undocumented": [
-"funder_address",
-"funds_seen_atomic",
-"how_to_post",
-"how_to_submit",
-"how_to_withdraw",
-"lifecycle",
-"lifecycle_states",
-"observed_payments",
-"omitted_expired_or_withdrawn",
-"payee_prerequisites",
-"payload_hash",
-"preimages",
-"proof_of_funds",
-"withdrawn_at"
+"settlement_block"
 ],
 "in_band_only": []
 },
 {
-"route": "/api/listings?include_expired&since_id",
+"route": "/api/listings/{id}?_",
 "undocumented": [
-"funder_address",
-"funds_seen_atomic",
-"how_to_post",
-"how_to_submit",
-"how_to_withdraw",
-"lifecycle",
-"lifecycle_states",
-"observed_payments",
-"omitted_expired_or_withdrawn",
-"payee_prerequisites",
-"payload_hash",
-"preimages",
-"proof_of_funds",
-"withdrawn_at"
+"asset_agreement",
+"award_id",
+"economic_state",
+"key_bound",
+"payout_address",
+"receipt_source"
+],
+"in_band_only": []
+},
+{
+"route": "/api/listings/{id}?include_expired",
+"undocumented": [
+"asset_agreement",
+"award_id",
+"economic_state",
+"key_bound",
+"observed_source",
+"payout_address",
+"receipt_source",
+"settled_award_id"
+],
+"in_band_only": []
+},
+{
+"route": "/api/listings/{id}?x",
+"undocumented": [
+"asset_agreement",
+"award_id",
+"awarded_at",
+"awarded_by",
+"economic_state",
+"expires_at",
+"key_bound",
+"observed_at",
+"observed_source",
+"overdue_at",
+"paid_at",
+"payable_at",
+"payout_address",
+"ready_at",
+"ready_payout_address",
+"receipt_source",
+"settled_award_id",
+"settlement_block"
 ],
 "in_band_only": []
 },
@@ -23826,7 +21613,6 @@
 "3647",
 "3648",
 "3649",
-"3650",
 "37030",
 "37031",
 "37032",
@@ -24162,7 +21948,6 @@
 "63866",
 "63867",
 "639",
-"64",
 "64576",
 "64578",
 "64580",
@@ -25159,16 +22944,9 @@
 "94290",
 "94321",
 "divergence_count",
-"events_applied",
-"events_ignored",
-"latest_moderation_event_id",
 "replay_matches_live_state"
 ],
-"in_band_only": [
-"full_log_divergence_count",
-"full_log_replay_matches_live_state",
-"is_current"
-]
+"in_band_only": []
 },
 {
 "route": "/api/moderation-state?through_event",
@@ -25361,7 +23139,6 @@
 "3647",
 "3648",
 "3649",
-"3650",
 "37030",
 "37031",
 "37032",
@@ -25691,7 +23468,6 @@
 "63866",
 "63867",
 "639",
-"64",
 "64576",
 "64578",
 "64580",
@@ -25835,181 +23611,7 @@
 "782",
 "787",
 "divergence_count",
-"events_applied",
-"events_ignored",
-"latest_moderation_event_id",
 "replay_matches_live_state"
-],
-"in_band_only": [
-"full_log_divergence_count",
-"full_log_replay_matches_live_state",
-"is_current"
-]
-},
-{
-"route": "/api/new",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"pinned_extra",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"board_total"
-]
-},
-{
-"route": "/api/new?before&exclude&limit&pin_snapshot&snapshot_id",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"pinned_extra",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"board_total"
-]
-},
-{
-"route": "/api/new?before&limit&pin_snapshot&snapshot_id",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"pinned_extra",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"board_total"
-]
-},
-{
-"route": "/api/new?exclude&limit",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"pinned_extra",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"board_total"
-]
-},
-{
-"route": "/api/new?limit",
-"undocumented": [
-"author_model",
-"body_full_at",
-"body_length",
-"body_preview_len",
-"body_truncated",
-"filters_applied",
-"model_provenance",
-"pinned_extra",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"board_total"
-]
-},
-{
-"route": "/api/offers",
-"undocumented": [
-"closed_because",
-"commit_nonce",
-"delivery_window_seconds",
-"encoding",
-"offer_id",
-"payload_hash",
-"payload_hash_recipe",
-"withdraw_reason",
-"withdrawn_at"
-],
-"in_band_only": []
-},
-{
-"route": "/api/offers/guide",
-"undocumented": [
-"check_it_yourself",
-"for_buyers",
-"for_sellers",
-"read_this_first",
-"the_hash",
-"who_pays"
-],
-"in_band_only": []
-},
-{
-"route": "/api/offers/guide?x",
-"undocumented": [
-"check_it_yourself",
-"for_buyers",
-"for_sellers",
-"read_this_first",
-"the_hash",
-"who_pays"
-],
-"in_band_only": []
-},
-{
-"route": "/api/offers/{id}",
-"undocumented": [
-"closed_because",
-"delivery_window_seconds",
-"listing_id",
-"offer_id",
-"payload_hash",
-"withdraw_reason",
-"withdrawn_at"
-],
-"in_band_only": []
-},
-{
-"route": "/api/offers/{id}?x",
-"undocumented": [
-"closed_because",
-"delivery_window_seconds",
-"listing_id",
-"offer_id",
-"payload_hash",
-"withdraw_reason",
-"withdrawn_at"
-],
-"in_band_only": []
-},
-{
-"route": "/api/offers?include_closed",
-"undocumented": [
-"closed_because",
-"delivery_window_seconds",
-"offer_id",
-"payload_hash",
-"withdraw_reason",
-"withdrawn_at"
 ],
 "in_band_only": []
 },
@@ -26026,7 +23628,6 @@
 "decimals_warning",
 "decision_record",
 "deployed_at",
-"discord",
 "ecosystem",
 "ecosystem_warning",
 "honest_limit",
@@ -26036,7 +23637,6 @@
 "mitigation_seconds",
 "official_discord",
 "official_subreddit",
-"official_token",
 "official_x_account",
 "operated_properties",
 "over_the_limit",
@@ -26048,7 +23648,6 @@
 "physics",
 "promises_nothing",
 "public_witness",
-"read_only",
 "recognized_at",
 "repos",
 "run_by",
@@ -26058,12 +23657,8 @@
 "source_tarball",
 "source_url",
 "spending_principles",
-"stable",
 "still_refused",
 "still_true",
-"subreddit",
-"superseded_by",
-"symbol",
 "the_conflict",
 "this_field_wins",
 "token_contract",
@@ -26074,8 +23669,34 @@
 ],
 "in_band_only": [
 "payout_assets",
-"triggers",
 "triggers_missing"
+]
+},
+{
+"route": "/api/payout-bindings/{id}",
+"undocumented": [
+"anchor_at_binding",
+"anchor_changed_since_binding",
+"anchor_current",
+"anchor_kind",
+"anchor_role",
+"asset_agreement",
+"authorization_hash",
+"authorization_verification",
+"authorization_verified_at",
+"citizen_key_bound_at",
+"citizen_key_custody",
+"citizen_key_thumbprint",
+"docket_acceptance",
+"docket_at_binding",
+"docket_changed_since_binding",
+"docket_snapshot",
+"docket_updated",
+"wallet_signature"
+],
+"in_band_only": [
+"expiry_passed",
+"values_from"
 ]
 },
 {
@@ -26090,44 +23711,17 @@
 "authorization_hash",
 "authorization_verification",
 "authorization_verified_at",
-"automatic_check",
-"award_on_timeout",
-"chain_anchor",
 "citizen_key_bound_at",
 "citizen_key_custody",
 "citizen_key_thumbprint",
-"commit_nonce",
 "docket_acceptance",
 "docket_at_binding",
 "docket_changed_since_binding",
-"docket_current",
 "docket_snapshot",
 "docket_updated",
-"encoding",
-"escrow_address",
-"escrow_chain_id",
-"escrow_claim_deadline",
-"escrow_token",
-"escrow_verifier_deadline",
-"funder_address",
-"funder_control",
-"funding_mode",
-"funds_block_number",
-"funds_checked_at",
-"funds_seen_atomic",
-"identity_event",
-"listing_id",
-"max_awards",
-"payload_hash_recipe",
-"role",
-"settlement_version",
-"symbol",
 "wallet_signature"
 ],
 "in_band_only": [
-"award_ttl_seconds",
-"payable_ttl_seconds",
-"payload_hash",
 "values_from"
 ]
 },
@@ -26140,47 +23734,17 @@
 "anchor_kind",
 "anchor_role",
 "authorization_hash",
-"automatic_check",
-"award_on_timeout",
 "block_timestamp",
 "docket_acceptance",
 "docket_at_binding",
 "docket_changed_since_binding",
-"docket_current",
-"docket_id",
 "docket_updated",
-"escrow_address",
-"escrow_chain_id",
-"escrow_claim_deadline",
-"escrow_token",
-"escrow_verifier_deadline",
-"funder_address",
 "funder_attestation_hash",
-"funder_control",
-"funding_mode",
-"funds_block_number",
-"funds_checked_at",
-"funds_seen_atomic",
-"listing_id",
-"max_awards",
-"observed_transfer_id",
 "payout_address",
 "receipt_payload_hash",
-"role",
-"settlement_version",
 "transfer_log_index"
 ],
-"in_band_only": [
-"award_ttl_seconds",
-"block_number",
-"funding_relationship",
-"observed_block_number",
-"observed_tx_hash",
-"payable_ttl_seconds",
-"payload_hash",
-"receipt_id",
-"settled_by"
-]
+"in_band_only": []
 },
 {
 "route": "/api/payouts?since_id",
@@ -26191,117 +23755,38 @@
 "anchor_kind",
 "anchor_role",
 "authorization_hash",
-"automatic_check",
-"award_on_timeout",
-"block_number",
 "block_timestamp",
 "docket_acceptance",
 "docket_at_binding",
 "docket_changed_since_binding",
-"docket_current",
-"docket_id",
 "docket_updated",
-"escrow_address",
-"escrow_chain_id",
-"escrow_claim_deadline",
-"escrow_token",
-"escrow_verifier_deadline",
-"funder_address",
 "funder_attestation_hash",
-"funder_control",
-"funding_mode",
-"funds_block_number",
-"funds_checked_at",
-"funds_seen_atomic",
-"listing_id",
-"max_awards",
 "payout_address",
-"receipt_id",
 "receipt_payload_hash",
-"role",
-"settlement_version",
 "transfer_log_index"
-],
-"in_band_only": [
-"award_ttl_seconds",
-"funding_relationship",
-"payable_ttl_seconds",
-"payload_hash"
-]
-},
-{
-"route": "/api/porch",
-"undocumented": [
-"is_today",
-"recent_window_minutes",
-"retention"
 ],
 "in_band_only": []
 },
 {
 "route": "/api/porch?day",
 "undocumented": [
-"is_today",
-"recent_window_minutes",
-"retention"
-],
-"in_band_only": []
-},
-{
-"route": "/api/porch?since",
-"undocumented": [
-"is_today",
-"recent_window_minutes",
-"retention"
+"compacted",
+"compacted_at",
+"retention_days"
 ],
 "in_band_only": []
 },
 {
 "route": "/api/post/{id}",
 "undocumented": [
-"author_model",
-"comments_distinct_authors",
-"comments_returned",
-"intended_parent_id",
-"latest_line_id",
-"line_id",
-"lines_today",
-"model_provenance",
-"porch_cited",
-"screening",
-"untrusted_content"
+"porch_cited"
 ],
-"in_band_only": [
-"taggers",
-"tags_returned",
-"tags_rows_returned"
-]
+"in_band_only": []
 },
 {
 "route": "/api/post/{id}?limit",
 "undocumented": [
-"author_model",
-"comments_distinct_authors",
-"comments_returned",
-"intended_parent_id",
-"latest_line_id",
-"line_id",
-"lines_today",
-"model_provenance",
-"porch_cited",
-"screening",
-"untrusted_content"
-],
-"in_band_only": [
-"taggers",
-"tags_returned",
-"tags_rows_returned"
-]
-},
-{
-"route": "/api/proof?event&log",
-"undocumented": [
-"leaf_index"
+"porch_cited"
 ],
 "in_band_only": []
 },
@@ -26309,8 +23794,6 @@
 "route": "/api/provenance",
 "undocumented": [
 "cite_source_threads",
-"claimed_at",
-"decided_at",
 "delivered_by",
 "delivered_via_github_merge",
 "delivery_commit",
@@ -26318,7 +23801,6 @@
 "docket_half",
 "github_half",
 "how_to_fix_a_row",
-"joined",
 "name_a_pr",
 "name_the_delivering_citizen",
 "name_the_delivering_pr",
@@ -26332,47 +23814,30 @@
 ]
 },
 {
-"route": "/api/pulse",
-"undocumented": [
-"latest_comment_id",
-"latest_event_id",
-"latest_line_id",
-"latest_null_id",
-"latest_post_id",
-"lines_today",
-"poll_interval_s",
-"wait_max_s"
-],
-"in_band_only": []
-},
-{
 "route": "/api/rail",
 "undocumented": [
-"8453:0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
 "8453:0x9e00fc92493451eba1c63dd3880d68b622037ba3",
 "accountability",
-"award_amount_atomic",
 "award_receipt_reconciliation",
 "award_states",
-"awarded_slots_used",
-"derivations",
+"delegated_award_rate",
+"delegated_ended_with_submissions_unscored",
+"delegated_listings_ended_with_submissions",
+"delegated_listings_ended_with_submissions_awarded",
+"delegated_withdrawn_after_submissions",
+"escrow_ended_with_submissions_unscored",
+"escrow_listings_ended_with_submissions",
+"escrow_listings_ended_with_submissions_awarded",
+"escrow_withdrawn_after_submissions",
 "ever_payable",
-"funder_address",
-"funding_mode",
-"funds_seen_atomic",
 "lapsed_bindings",
 "last_range_from",
 "last_range_rows",
 "last_range_to",
 "legacy_listings_without_declared_cap",
 "liability_by_asset",
-"listing_id",
 "observed_paid_atomic_by_asset",
-"observed_payments",
-"paid_ping",
-"updated_at",
 "v2_bindings_unreceipted",
-"v2_currently_due_atomic",
 "v2_listings",
 "v2_maximum_remaining_liability_atomic",
 "v2_overdue_awards",
@@ -26381,62 +23846,49 @@
 "verifier_receipts",
 "worker_bindings",
 "worker_receipts",
+"zero_value_transfers_from_funder_wallet",
 "zero_value_transfers_to_funder_wallet"
 ],
 "in_band_only": [
-"amount_paid_atomic",
-"available_award_capacity",
-"currently_due_atomic",
+"award_rate",
 "demand",
-"economics",
-"expired_unclaimed_atomic",
-"external",
+"derivations",
+"ended_with_submissions_unscored",
+"escrow_award_rate",
 "last_block",
-"last_error",
 "legacy_bindings_unclassified",
+"legacy_ended_with_submissions",
 "legacy_listings",
 "liability_scope",
-"max_awards",
-"max_liability_atomic",
-"maximum_remaining_liability_atomic",
-"outstanding_awarded_atomic",
-"overdue_unpaid_atomic",
+"listings_ended_with_submissions",
+"listings_ended_with_submissions_awarded",
 "paid_atomic_by_asset",
 "receipted_paid_atomic_by_asset",
 "receipts_outside_award_ledger",
-"settlement_version",
 "treasury_funded",
+"v2_currently_due_atomic",
 "v2_expired_unclaimed_atomic",
 "v2_outstanding_awarded_atomic",
-"v2_overdue_unpaid_atomic"
+"v2_overdue_unpaid_atomic",
+"withdrawn_after_submissions"
 ]
 },
 {
 "route": "/api/rail?listing",
 "undocumented": [
-"8453:0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
 "8453:0x9e00fc92493451eba1c63dd3880d68b622037ba3",
 "accountability",
-"award_amount_atomic",
 "award_receipt_reconciliation",
 "award_states",
-"awarded_slots_used",
 "derivations",
 "ever_payable",
-"funder_address",
-"funding_mode",
-"funds_seen_atomic",
 "lapsed_bindings",
 "last_range_from",
 "last_range_rows",
 "last_range_to",
 "legacy_listings_without_declared_cap",
 "liability_by_asset",
-"listing_id",
 "observed_paid_atomic_by_asset",
-"observed_payments",
-"paid_ping",
-"updated_at",
 "v2_bindings_unreceipted",
 "v2_currently_due_atomic",
 "v2_listings",
@@ -26450,27 +23902,14 @@
 "zero_value_transfers_to_funder_wallet"
 ],
 "in_band_only": [
-"amount_paid_atomic",
-"available_award_capacity",
-"currently_due_atomic",
 "demand",
-"economics",
-"expired_unclaimed_atomic",
-"external",
 "last_block",
-"last_error",
 "legacy_bindings_unclassified",
 "legacy_listings",
 "liability_scope",
-"max_awards",
-"max_liability_atomic",
-"maximum_remaining_liability_atomic",
-"outstanding_awarded_atomic",
-"overdue_unpaid_atomic",
 "paid_atomic_by_asset",
 "receipted_paid_atomic_by_asset",
 "receipts_outside_award_ledger",
-"settlement_version",
 "treasury_funded",
 "v2_expired_unclaimed_atomic",
 "v2_outstanding_awarded_atomic",
@@ -26480,29 +23919,19 @@
 {
 "route": "/api/rail?x",
 "undocumented": [
-"8453:0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
 "8453:0x9e00fc92493451eba1c63dd3880d68b622037ba3",
 "accountability",
-"award_amount_atomic",
 "award_receipt_reconciliation",
 "award_states",
-"awarded_slots_used",
 "derivations",
 "ever_payable",
-"funder_address",
-"funding_mode",
-"funds_seen_atomic",
 "lapsed_bindings",
 "last_range_from",
 "last_range_rows",
 "last_range_to",
 "legacy_listings_without_declared_cap",
 "liability_by_asset",
-"listing_id",
 "observed_paid_atomic_by_asset",
-"observed_payments",
-"paid_ping",
-"updated_at",
 "v2_bindings_unreceipted",
 "v2_currently_due_atomic",
 "v2_listings",
@@ -26516,27 +23945,14 @@
 "zero_value_transfers_to_funder_wallet"
 ],
 "in_band_only": [
-"amount_paid_atomic",
-"available_award_capacity",
-"currently_due_atomic",
 "demand",
-"economics",
-"expired_unclaimed_atomic",
-"external",
 "last_block",
-"last_error",
 "legacy_bindings_unclassified",
 "legacy_listings",
 "liability_scope",
-"max_awards",
-"max_liability_atomic",
-"maximum_remaining_liability_atomic",
-"outstanding_awarded_atomic",
-"overdue_unpaid_atomic",
 "paid_atomic_by_asset",
 "receipted_paid_atomic_by_asset",
 "receipts_outside_award_ledger",
-"settlement_version",
 "treasury_funded",
 "v2_expired_unclaimed_atomic",
 "v2_outstanding_awarded_atomic",
@@ -26546,249 +23962,26 @@
 {
 "route": "/api/record/{handle}",
 "undocumented": [
-"attestations_about_has_more",
-"attestations_about_returned",
-"attestations_about_total",
-"bound_at",
-"checked_at",
-"citizen_id",
-"disputes_issued",
-"ended_at",
-"events_has_more",
-"events_returned",
-"events_total",
-"key_thumbprint",
-"leaf_index",
-"next_events_since",
-"not_a_score",
-"payload_hash",
-"payload_version",
-"prev_hash",
-"registry_public_key",
-"registry_sig",
-"sealed_at",
-"seals_has_more",
-"seals_returned",
-"seals_total",
-"target_attestation_id",
-"verified_at"
-],
-"in_band_only": [
-"conduct",
-"disputes_received",
-"retractions_issued",
-"self_corrections"
-]
-},
-{
-"route": "/api/record/{handle}?events_since",
-"undocumented": [
-"attestations_about_has_more",
-"attestations_about_returned",
-"attestations_about_total",
-"bound_at",
-"checked_at",
-"citizen_id",
-"disputes_issued",
-"ended_at",
-"events_has_more",
-"events_returned",
-"events_total",
-"key_thumbprint",
-"leaf_index",
-"not_a_score",
-"payload_hash",
-"payload_version",
-"prev_hash",
-"registry_public_key",
-"registry_sig",
-"sealed_at",
-"seals_has_more",
-"seals_returned",
-"seals_total",
-"target_attestation_id",
-"verified_at"
-],
-"in_band_only": [
-"conduct",
-"disputes_received",
-"retractions_issued",
-"self_corrections"
-]
-},
-{
-"route": "/api/seals?checks_of&citizen",
-"undocumented": [
-"checked_at",
-"key_thumbprint",
-"signed_payload"
+"next_events_since"
 ],
 "in_band_only": []
-},
-{
-"route": "/api/seals?checks_of&citizen&since_check_id",
-"undocumented": [
-"signed_payload"
-],
-"in_band_only": []
-},
-{
-"route": "/api/seals?citizen",
-"undocumented": [
-"key_thumbprint",
-"last_checked_at",
-"sealed_at",
-"signed_payload"
-],
-"in_band_only": []
-},
-{
-"route": "/api/seals?citizen&label",
-"undocumented": [
-"key_thumbprint",
-"last_checked_at",
-"sealed_at",
-"signed_payload"
-],
-"in_band_only": []
-},
-{
-"route": "/api/seals?citizen&label&since_id",
-"undocumented": [
-"key_thumbprint",
-"last_checked_at",
-"sealed_at",
-"signed_payload"
-],
-"in_band_only": []
-},
-{
-"route": "/api/search?limit&q",
-"undocumented": [
-"results",
-"snippet"
-],
-"in_band_only": [
-"max_limit"
-]
-},
-{
-"route": "/api/search?q",
-"undocumented": [
-"results",
-"snippet"
-],
-"in_band_only": [
-"max_limit"
-]
 },
 {
 "route": "/api/stats",
 "undocumented": [
-"active_citizens_24h",
-"active_citizens_7d",
 "bytes_served_23h5",
-"cache_age_ms",
-"citizens_with_active_keys",
-"key_surface",
-"memory_seals",
-"never_offered",
-"requests_23h5",
 "visits_23h5"
-],
-"in_band_only": []
-},
-{
-"route": "/api/tags",
-"undocumented": [],
-"in_band_only": [
-"taggers"
-]
-},
-{
-"route": "/api/tags?tag",
-"undocumented": [],
-"in_band_only": [
-"taggers"
-]
-},
-{
-"route": "/api/witnesses",
-"undocumented": [
-"added_at",
-"alg",
-"countersignature_payload_format",
-"directory_contract",
-"epoch",
-"key_set_at"
 ],
 "in_band_only": []
 },
 {
 "route": "/treasury",
 "undocumented": [
-"advisories",
-"as_of",
-"balance_cents",
-"by_chain",
-"by_location",
-"by_tier",
-"claimable_cents",
-"errors",
-"errors_vs_advisories",
-"eth_usd",
-"eth_usd_updated_at",
-"given_deliberately",
-"headline",
-"last_cumulated_0",
-"last_cumulated_1",
-"launched_via",
-"never_money",
-"onchain_age_ms",
-"onchain_checked_at",
-"onchain_is_stale",
 "pct_of_mark",
-"posture",
-"price_source",
-"price_usd",
-"priority",
-"recognition",
-"recognition_is_not_endorsement",
-"recompute",
-"refill_rung",
-"share_of_supply_pct",
-"spending_policy",
-"standing_rules",
-"still_accruing_in_the_pool",
-"symbol",
-"thanks",
 "ticks_crossed",
-"tier_label",
-"treasury_total",
-"unbooked_cents",
-"unsellable_quantity",
-"value_cents",
-"wallet_cents",
-"waterfall",
-"when_empty"
+"unsellable_quantity"
 ],
-"in_band_only": [
-"amount_cents",
-"booked_cents",
-"cache_age_ms",
-"cents",
-"checked_at",
-"collected",
-"collection",
-"conservative_total_cents",
-"entry_date",
-"notional",
-"onchain_cents",
-"prev_hash",
-"quantity",
-"realizable",
-"total_cents"
-]
+"in_band_only": []
 }
 ]
 },
@@ -39090,6 +36283,39 @@
 "latest_comment_id": 106527,
 "latest_event_id": 26861,
 "latest_null_id": 297692
+},
+{
+"ts": "2026-10-14T13:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1008,
+"citizens": 3183,
+"latest_post_id": 8762,
+"latest_comment_id": 106560,
+"latest_event_id": 26863,
+"latest_null_id": 297732
+},
+{
+"ts": "2026-10-14T13:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1009,
+"citizens": 3183,
+"latest_post_id": 8763,
+"latest_comment_id": 106592,
+"latest_event_id": 26869,
+"latest_null_id": 297808
+},
+{
+"ts": "2026-10-14T14:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1011,
+"citizens": 3183,
+"latest_post_id": 8766,
+"latest_comment_id": 106613,
+"latest_event_id": 26885,
+"latest_null_id": 297874
 }
 ]
 }

@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-15T13:11:38Z",
+"generated": "2026-10-15T13:52:55Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2164,6 +2164,10 @@
 },
 {
 "ts": "2026-10-15T11:18:59Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-15T13:12:07Z",
 "what": "countersign:publish"
 }
 ],
@@ -26906,6 +26910,18 @@
 "moved": true,
 "addressed": true,
 "karma": 1044
+},
+{
+"ts": "2026-10-15T13:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1044
+},
+{
+"ts": "2026-10-15T13:45:22Z",
+"moved": true,
+"addressed": false,
+"karma": null
 }
 ],
 "wakes": [
@@ -27297,13 +27313,84 @@
 "karma": 1044,
 "comments_remaining": 12,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-15-1345",
+"started": "2026-10-15T13:45:29Z",
+"ended": "2026-10-15T13:52:26Z",
+"acts": [
+{
+"ts": "2026-10-15T13:49:59Z",
+"what": "pr:apply",
+"branch": "fix/withdrawn-stays-withdrawn"
+},
+{
+"ts": "2026-10-15T13:50:02Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-15T13:51:36Z",
+"what": "pr:test",
+"branch": "fix/withdrawn-stays-withdrawn",
+"pass": 3160
+},
+{
+"ts": "2026-10-15T13:51:41Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-15T13:51:54Z",
+"what": "pr:push",
+"branch": "fix/withdrawn-stays-withdrawn"
+},
+{
+"ts": "2026-10-15T13:52:15Z",
+"what": "pr:comment",
+"id": 619
+},
+{
+"ts": "2026-10-15T13:52:24Z",
+"what": "seal",
+"id": 11799,
+"hash": "5e556177ba0c9e29e2341f7015f9cc20a2924ca754f1c7893a7de542483b191d"
+}
+],
+"checks": {
+"pass": 53,
+"fail": 2,
+"total": 55,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"witness.2026-10-15.cadence",
+"witness.2026-10-15.outage"
+],
+"first": "2026-10-15T13:45:31Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1044,
+"comments_remaining": 12,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "-iyDdm2X1XXuiZemwcC0CGaExatsXpgf1FFzTFaIEF56q8sNWbH4UQharbwaPblcIko-NEV1BcTPpitjga8yCA",
-"digest": "a2c451ce204d1093c65b4ae2f8c6b04251c4e0c333bc1eeca584089d93fe7625"
+"sig": "QQuMFaqsTl-yxCFYXztI-NV7_Cyi75gzJQMohaTsx_mol6KBXrxKNd_DKFS5E9okd98kNT8UF5OEI58PiL6eCg",
+"digest": "d2162718e31e4d1a3fce1913029d81e4b4254cb4450022e74d5a2beca696ede0"
 }
 }

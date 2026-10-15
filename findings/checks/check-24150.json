@@ -1,0 +1,125 @@
+{
+ "seq": 24150,
+ "ts": "2026-10-15T05:00:35Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 6,
+  "detail": [
+   {
+    "added_enums": [
+     "identity_log.fields=citizen_id",
+     "identity_log.fields=created_at",
+     "identity_log.fields=detail",
+     "identity_log.fields=kind",
+     "treasury.fields=amount_cents",
+     "treasury.fields=created_at",
+     "treasury.fields=description",
+     "treasury.fields=entry_date"
+    ],
+    "added_keys": [
+     "identity_log.fields",
+     "treasury.fields"
+    ],
+    "at": "2026-10-14T21:12:13Z",
+    "missing_top": [],
+    "route": "/api/attest?ledger_from"
+   },
+   {
+    "added_enums": [
+     "payload_hash_recipe.fields=amount_atomic",
+     "payload_hash_recipe.fields=chain_id",
+     "payload_hash_recipe.fields=commit_nonce",
+     "payload_hash_recipe.fields=delivery_window_seconds",
+     "payload_hash_recipe.fields=expiry",
+     "payload_hash_recipe.fields=seller",
+     "payload_hash_recipe.fields=terms",
+     "payload_hash_recipe.fields=title",
+     "payload_hash_recipe.fields=token",
+     "payload_hash_recipe.fields=version"
+    ],
+    "added_keys": [
+     "commit_nonce",
+     "orders_count",
+     "orders_has_more",
+     "orders_total",
+     "payload_hash_recipe",
+     "payload_hash_recipe.algorithm",
+     "payload_hash_recipe.encoding",
+     "payload_hash_recipe.fields",
+     "version"
+    ],
+    "at": "2026-10-14T21:12:26Z",
+    "missing_top": [],
+    "route": "/api/offers/{id}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "treasury.anchor_below_sealed_from_id",
+     "treasury.reason"
+    ],
+    "at": "2026-10-14T21:12:28Z",
+    "missing_top": [],
+    "route": "/api/attest?ledger_expect&ledger_from"
+   },
+   {
+    "added_enums": [
+     "declared_kinds=key-rotate",
+     "declared_kinds=wake-cadence",
+     "kinds=wake-cadence"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.wake-cadence",
+     "totals_by_kind.wake-cadence"
+    ],
+    "at": "2026-10-14T21:15:51Z",
+    "missing_top": [],
+    "route": "/api/events?kind&since"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "custody_evidence.kinds.key-rotate",
+     "custody_evidence.kinds.key-rotate.changes_custody",
+     "custody_evidence.kinds.key-rotate.settles",
+     "keys[].ended_at",
+     "signature_validity",
+     "signature_validity.dated_preimages",
+     "signature_validity.dated_preimages.attestation",
+     "signature_validity.dated_preimages.key_rotate",
+     "signature_validity.dated_preimages.seal",
+     "signature_validity.dated_preimages.seal_check",
+     "signature_validity.origin",
+     "signature_validity.rule",
+     "signature_validity.skew_bound_ms"
+    ],
+    "at": "2026-10-14T21:23:38Z",
+    "missing_top": [],
+    "route": "/api/keys/tardis-relay"
+   },
+   {
+    "added_enums": [
+     "proof=422039207cef38168a396e0c5d3b4bdbb7431e7fb7942b31b0390f2d94c59516",
+     "proof=661f2ad7c5dc733debf4a1151079a8d038034f7c6389ca8b5589a28dc0cf0c94",
+     "proof=795752e65900190cba971d781aee9926d66cc6b875e9784b63e94c3c7b15c765",
+     "proof=8103d367bbaeee29a0c5f1cf5145469fe1ebbf531506d91c7d3f703a87562a12",
+     "proof=81600126a981dbed061129f1987545453a13308afb12222e187db0847dfa1d33",
+     "proof=8174b482f3a48e4a5ee0779a947d7708b90f91492d257d87feb549511dca4d61",
+     "proof=ac5d7b5b32acb6755723f2c38323d1b7ea1976f39d9279b952e22c34cdf36f9e",
+     "proof=d7bf5e92a0ccf24fdc803819389bccfb80b8acc934a8c246345cfba3b84acdb6",
+     "proof=e442c3ada4f47ceb94d05e90ff8f308e6b2a45f32080d297787f15542ed5ced2",
+     "proof=f57ccb04d592c908d141fda642578274a2b88e4b7456b638e439bb5b493958de"
+    ],
+    "added_keys": [],
+    "at": "2026-10-15T05:00:16Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-14T21:00:19Z",
+  "through": "2026-10-15T05:00:16Z"
+ }
+}

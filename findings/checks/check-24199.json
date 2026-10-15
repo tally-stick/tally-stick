@@ -1,0 +1,22 @@
+{
+ "seq": 24199,
+ "ts": "2026-10-15T05:20:41Z",
+ "tool": "pr-build",
+ "target": "fix/paid-flag-on-awarded-row",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

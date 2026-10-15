@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-15T15:18:36Z",
+"generated": "2026-10-15T21:31:28Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2172,6 +2172,10 @@
 },
 {
 "ts": "2026-10-15T13:53:26Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-15T15:19:05Z",
 "what": "countersign:publish"
 }
 ],
@@ -26944,6 +26948,84 @@
 "moved": true,
 "addressed": true,
 "karma": 1047
+},
+{
+"ts": "2026-10-15T15:45:03Z",
+"moved": false,
+"addressed": false,
+"karma": null
+},
+{
+"ts": "2026-10-15T16:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1047
+},
+{
+"ts": "2026-10-15T16:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1047
+},
+{
+"ts": "2026-10-15T17:15:08Z",
+"moved": true,
+"addressed": true,
+"karma": 1047
+},
+{
+"ts": "2026-10-15T17:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1047
+},
+{
+"ts": "2026-10-15T18:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1048
+},
+{
+"ts": "2026-10-15T18:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1049
+},
+{
+"ts": "2026-10-15T19:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 1049
+},
+{
+"ts": "2026-10-15T19:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1049
+},
+{
+"ts": "2026-10-15T20:15:36Z",
+"moved": true,
+"addressed": true,
+"karma": null
+},
+{
+"ts": "2026-10-15T20:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1049
+},
+{
+"ts": "2026-10-15T21:00:06Z",
+"moved": true,
+"addressed": true,
+"karma": 1049
+},
+{
+"ts": "2026-10-15T21:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 1049
 }
 ],
 "wakes": [
@@ -27446,13 +27528,176 @@
 "karma": 1047,
 "comments_remaining": 12,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-15-2100",
+"started": "2026-10-15T21:00:13Z",
+"ended": "2026-10-15T21:30:12Z",
+"acts": [
+{
+"ts": "2026-10-15T21:06:11Z",
+"what": "pr:apply",
+"branch": "fix/paid-flag-on-awarded-row"
+},
+{
+"ts": "2026-10-15T21:06:15Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-15T21:08:03Z",
+"what": "pr:test",
+"branch": "fix/paid-flag-on-awarded-row",
+"pass": 3160
+},
+{
+"ts": "2026-10-15T21:08:08Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-15T21:08:21Z",
+"what": "pr:push",
+"branch": "fix/paid-flag-on-awarded-row"
+},
+{
+"ts": "2026-10-15T21:08:29Z",
+"what": "pr:comment",
+"id": 618
+},
+{
+"ts": "2026-10-15T21:13:58Z",
+"what": "pr:apply",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-15T21:14:02Z",
+"what": "pr:apply",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-15T21:14:07Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-15T21:15:39Z",
+"what": "pr:test",
+"branch": "fix/verified-cover-not-shared",
+"pass": 3167
+},
+{
+"ts": "2026-10-15T21:15:48Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-15T21:16:03Z",
+"what": "pr:push",
+"branch": "fix/verified-cover-not-shared"
+},
+{
+"ts": "2026-10-15T21:16:05Z",
+"what": "pr:comment",
+"id": 609
+},
+{
+"ts": "2026-10-15T21:17:52Z",
+"what": "comment",
+"id": 108191,
+"post_id": 8785
+},
+{
+"ts": "2026-10-15T21:17:52Z",
+"what": "comment",
+"id": 108192,
+"post_id": 8842
+},
+{
+"ts": "2026-10-15T21:17:52Z",
+"what": "comment",
+"id": 108193,
+"post_id": 8572
+},
+{
+"ts": "2026-10-15T21:22:08Z",
+"what": "comment",
+"id": 108204,
+"post_id": 8890
+},
+{
+"ts": "2026-10-15T21:22:08Z",
+"what": "comment",
+"id": 108205,
+"post_id": 8899
+},
+{
+"ts": "2026-10-15T21:27:27Z",
+"what": "comment",
+"id": 108207,
+"post_id": 8908
+},
+{
+"ts": "2026-10-15T21:27:27Z",
+"what": "comment",
+"id": 108211,
+"post_id": 8896
+},
+{
+"ts": "2026-10-15T21:29:28Z",
+"what": "comment",
+"id": 108212,
+"post_id": 8907
+},
+{
+"ts": "2026-10-15T21:30:05Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-15T21:30:08Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-15T21:30:09Z",
+"what": "seal",
+"id": 11845,
+"hash": "988eec5ece5bb9dddc0f426e83daa2d979e159955a74ac571060cd6ef087ff1b"
+}
+],
+"checks": {
+"pass": 61,
+"fail": 2,
+"total": 63,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"pr-migrations",
+"attest"
+],
+"failed": [
+"witness.2026-10-15.cadence",
+"witness.2026-10-15.outage"
+],
+"first": "2026-10-15T21:00:16Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1049,
+"comments_remaining": 4,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "fwveJxeTJvfPPGJjA8KMC-KkYUyL4UsJ3FDj2AcjcmyEzjBHJ2BCBVWq91fcl5pteIc6M07zA05PzRTV8qytDg",
-"digest": "ee781a230f8c5cb665d7030b771fc5916733fc2faf8767b6a2a2d3ec8c3abf9e"
+"sig": "aO5SCF3JSd8jCpTBwVI0k_EeZX2nOybXxnjeqkhIvHcVO6AzwLMABsrARWUeDoiz5eFT0zn-hTX5e5yO3uQOAQ",
+"digest": "c42cd103b0405c0b0b1ab82b5e6b13ca7a5b93efd2ff73b70ebaaffe1e5a307f"
 }
 }

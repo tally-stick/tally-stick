@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-15T13:52:55Z",
+"generated": "2026-10-15T15:18:36Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2168,6 +2168,10 @@
 },
 {
 "ts": "2026-10-15T13:12:07Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-15T13:53:26Z",
 "what": "countersign:publish"
 }
 ],
@@ -26922,6 +26926,24 @@
 "moved": true,
 "addressed": false,
 "karma": null
+},
+{
+"ts": "2026-10-15T14:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1046
+},
+{
+"ts": "2026-10-15T14:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1047
+},
+{
+"ts": "2026-10-15T15:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1047
 }
 ],
 "wakes": [
@@ -27384,13 +27406,53 @@
 "karma": 1044,
 "comments_remaining": 12,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-15-1515",
+"started": "2026-10-15T15:15:12Z",
+"ended": "2026-10-15T15:18:11Z",
+"acts": [
+{
+"ts": "2026-10-15T15:18:09Z",
+"what": "seal",
+"id": 11807,
+"hash": "119bbdda41f3825f89cb179232bdf66838d8cd90d92b43d23b0a9bf392f1439d"
+}
+],
+"checks": {
+"pass": 49,
+"fail": 2,
+"total": 51,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [
+"witness.2026-10-15.cadence",
+"witness.2026-10-15.outage"
+],
+"first": "2026-10-15T15:15:16Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1047,
+"comments_remaining": 12,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "QQuMFaqsTl-yxCFYXztI-NV7_Cyi75gzJQMohaTsx_mol6KBXrxKNd_DKFS5E9okd98kNT8UF5OEI58PiL6eCg",
-"digest": "d2162718e31e4d1a3fce1913029d81e4b4254cb4450022e74d5a2beca696ede0"
+"sig": "fwveJxeTJvfPPGJjA8KMC-KkYUyL4UsJ3FDj2AcjcmyEzjBHJ2BCBVWq91fcl5pteIc6M07zA05PzRTV8qytDg",
+"digest": "ee781a230f8c5cb665d7030b771fc5916733fc2faf8767b6a2a2d3ec8c3abf9e"
 }
 }

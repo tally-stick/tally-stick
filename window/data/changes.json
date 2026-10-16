@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-16T06:19:06Z",
+"generated": "2026-10-16T13:12:18Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -21367,6 +21367,63 @@
 "proof=f8b2f924ef6b0295a98ea6e6b56482f9b81c7be536f339c2d8da1a238ed67b98"
 ],
 "missing_top": []
+},
+{
+"at": "2026-10-16T13:00:17Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=4d1afdd2861653adbb362354f24fb7c58e588e09c3423d388988b47f44c391e8",
+"proof=77affa485e9b7894ddd29ef4cc7077d02b4b783d06497b765d1c8426bed5038d",
+"proof=951e346aa84e1e115ec8513bc93fbf4d3d7002260086e0f53cab33f9cb0aa611",
+"proof=a055b264ce7cf1ffdee1d09e1187c1a0d2ae8fac079e628b3d9be9a23b0b8c4f",
+"proof=a92bbe38cfc52d8e0ba73c43a08b39fe3f883d187814556cb1bd7bdd68e19299"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-16T13:08:17Z",
+"route": "/api/payouts?since_id",
+"added_keys": [
+"bindings[].observed_block_number",
+"bindings[].observed_transfer_id",
+"bindings[].observed_tx_hash",
+"bindings[].settled_by"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-16T13:09:47Z",
+"route": "/api/proof?event&log",
+"added_keys": [],
+"added_enums": [
+"proof=39e38e7c777f19aaf8d6eed44f061d7137e5c451e535055eb872ce8a6ac666cd",
+"proof=91bf47fa1c347a585fe705d0aed5e8bc0ad28192935142c2916c78ea325975b3",
+"proof=9668e34a1cc8f4e961b9631862be3c712e29d52a51368c8794ea8c88870fa360",
+"proof=a79a220e7e266b1b3264a7cddc1a5a464dc73ccda6cc128b646558a235dca14f",
+"proof=a9326206048efbd66d14e54cdaaf063a00f095a8195bf47213986040156df8a7",
+"proof=b04ff80692115b742b1fca5b2098d651c62e5ce3d74c9041f0465adec313ff94",
+"proof=e442c3ada4f47ceb94d05e90ff8f308e6b2a45f32080d297787f15542ed5ced2",
+"proof=f0ba640f583bd72e70cddc3e79917ff9c9602ada2d1bc357b9c3eb87ec428656"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-16T13:09:49Z",
+"route": "/api/proof?event&log",
+"added_keys": [],
+"added_enums": [
+"proof=27412cac5c1f01dcb0ba92f046f104025bb9f1c842b08e2f8a1a45bbf4d21086",
+"proof=301881908f7913e5a0b6e6d04f3e692da9b7593e7e847b0eb363cac1846f453f",
+"proof=321e828c9ebfb868292108f7f7260dea95dc4f5f0f8bf60cf1a909fe2cc8b804",
+"proof=709f2caa4b82a41e2dad9035ead8bf68a5c23a28273e18accb87b318a06cab4d",
+"proof=9c4a6387be44efb020a231938a2f64fc33b7a95121a7524da3f4a077857046fb",
+"proof=ea91699abd9ee3317a1e54c3b9e26072654610e079d0bff8e37710f9362e94a7",
+"proof=f8b2f924ef6b0295a98ea6e6b56482f9b81c7be536f339c2d8da1a238ed67b98",
+"proof=fed934f10bc95410ae22bdc63c5fed1f809a418994a7e0c49a255dfd634a8009"
+],
+"missing_top": []
 }
 ],
 "spec": {
@@ -37541,6 +37598,160 @@
 "latest_comment_id": 108741,
 "latest_event_id": 27328,
 "latest_null_id": 304572
+},
+{
+"ts": "2026-10-16T06:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1059,
+"citizens": 3217,
+"latest_post_id": 8959,
+"latest_comment_id": 108760,
+"latest_event_id": 27333,
+"latest_null_id": 304638
+},
+{
+"ts": "2026-10-16T07:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1059,
+"citizens": 3217,
+"latest_post_id": 8962,
+"latest_comment_id": 108822,
+"latest_event_id": 27337,
+"latest_null_id": 304699
+},
+{
+"ts": "2026-10-16T07:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1059,
+"citizens": 3217,
+"latest_post_id": 8964,
+"latest_comment_id": 108858,
+"latest_event_id": 27345,
+"latest_null_id": 304748
+},
+{
+"ts": "2026-10-16T08:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1060,
+"citizens": 3217,
+"latest_post_id": 8969,
+"latest_comment_id": 108883,
+"latest_event_id": 27345,
+"latest_null_id": 304799
+},
+{
+"ts": "2026-10-16T08:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1060,
+"citizens": 3217,
+"latest_post_id": 8969,
+"latest_comment_id": 108903,
+"latest_event_id": 27356,
+"latest_null_id": 304846
+},
+{
+"ts": "2026-10-16T09:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1060,
+"citizens": 3217,
+"latest_post_id": 8972,
+"latest_comment_id": 108925,
+"latest_event_id": 27361,
+"latest_null_id": 304901
+},
+{
+"ts": "2026-10-16T09:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1060,
+"citizens": 3217,
+"latest_post_id": 8973,
+"latest_comment_id": 108953,
+"latest_event_id": 27367,
+"latest_null_id": 304970
+},
+{
+"ts": "2026-10-16T10:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1060,
+"citizens": 3219,
+"latest_post_id": 8973,
+"latest_comment_id": 108970,
+"latest_event_id": 27373,
+"latest_null_id": 305051
+},
+{
+"ts": "2026-10-16T10:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1060,
+"citizens": 3220,
+"latest_post_id": 8974,
+"latest_comment_id": 108988,
+"latest_event_id": 27376,
+"latest_null_id": 305113
+},
+{
+"ts": "2026-10-16T11:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1061,
+"citizens": 3221,
+"latest_post_id": 8976,
+"latest_comment_id": 109018,
+"latest_event_id": 27377,
+"latest_null_id": 305200
+},
+{
+"ts": "2026-10-16T11:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1061,
+"citizens": 3221,
+"latest_post_id": 8979,
+"latest_comment_id": 109040,
+"latest_event_id": 27380,
+"latest_null_id": 305273
+},
+{
+"ts": "2026-10-16T12:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1062,
+"citizens": 3223,
+"latest_post_id": 8983,
+"latest_comment_id": 109074,
+"latest_event_id": 27387,
+"latest_null_id": 305384
+},
+{
+"ts": "2026-10-16T12:45:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1062,
+"citizens": 3225,
+"latest_post_id": 8985,
+"latest_comment_id": 109102,
+"latest_event_id": 27394,
+"latest_null_id": 305492
+},
+{
+"ts": "2026-10-16T13:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1062,
+"citizens": 3225,
+"latest_post_id": 8985,
+"latest_comment_id": 109112,
+"latest_event_id": 27397,
+"latest_null_id": 305538
 }
 ]
 }

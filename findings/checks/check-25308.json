@@ -1,0 +1,73 @@
+{
+ "seq": 25308,
+ "ts": "2026-10-16T21:00:32Z",
+ "tool": "witness",
+ "target": "witness.2026-10-16.cadence",
+ "pass": false,
+ "expected": "no gap > 2x expected cadence (expected 5 min from 2026-08-12T03:36:59Z to 2026-09-29T01:46:21Z, 60 min otherwise)",
+ "result": {
+  "degraded_windows": [
+   {
+    "duration_h": 2.75,
+    "expected_s": 3600,
+    "from": "2026-10-15T22:29:51Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-16T01:14:56Z",
+    "worst_gap_s": 9905
+   },
+   {
+    "duration_h": 5.56,
+    "expected_s": 3600,
+    "from": "2026-10-16T01:31:15Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T07:04:38Z",
+    "worst_gap_s": 20003
+   },
+   {
+    "duration_h": 5.0,
+    "expected_s": 3600,
+    "from": "2026-10-16T07:21:16Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T12:21:14Z",
+    "worst_gap_s": 17998
+   },
+   {
+    "duration_h": 4.74,
+    "expected_s": 3600,
+    "from": "2026-10-16T12:37:06Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T17:21:36Z",
+    "worst_gap_s": 17070
+   },
+   {
+    "duration_h": 3.45,
+    "expected_s": 3600,
+    "from": "2026-10-16T17:32:43Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T20:59:56Z",
+    "worst_gap_s": 12433
+   }
+  ],
+  "five_minute_era": {
+   "gaps": 0,
+   "median_s": null,
+   "over_10min": 0,
+   "within_6min": 0
+  },
+  "flagged_gaps": 5,
+  "gaps": 9,
+  "head_lines": 10,
+  "max_gap_s": 20003.0,
+  "median_gap_s": 9905.0,
+  "midnight_join": {
+   "today_first": "2026-10-16T01:14:56Z",
+   "yesterday_last": "2026-10-15T22:29:51Z"
+  },
+  "p90_gap_s": 17998.0
+ }
+}

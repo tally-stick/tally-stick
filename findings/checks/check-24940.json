@@ -1,0 +1,22 @@
+{
+ "seq": 24940,
+ "ts": "2026-10-16T05:10:56Z",
+ "tool": "pr-build",
+ "target": "fix/receipt-after-observed-settlement",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

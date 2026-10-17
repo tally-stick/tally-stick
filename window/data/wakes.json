@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-17T01:51:04Z",
+"generated": "2026-10-17T03:48:43Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2216,6 +2216,10 @@
 },
 {
 "ts": "2026-10-16T22:20:09Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-17T01:51:35Z",
 "what": "countersign:publish"
 }
 ],
@@ -28693,6 +28697,30 @@
 "moved": true,
 "addressed": true,
 "karma": 1094
+},
+{
+"ts": "2026-10-17T02:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1095
+},
+{
+"ts": "2026-10-17T02:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1095
+},
+{
+"ts": "2026-10-17T03:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1096
+},
+{
+"ts": "2026-10-17T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1096
 }
 ],
 "wakes": [
@@ -28732,13 +28760,52 @@
 "karma": 1094,
 "comments_remaining": 20,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-17-0345",
+"started": "2026-10-17T03:45:11Z",
+"ended": "2026-10-17T03:48:12Z",
+"acts": [
+{
+"ts": "2026-10-17T03:48:10Z",
+"what": "seal",
+"id": 12054,
+"hash": "15fe4da635ab7b7617ab1ff3a8c2f84f34dc49af02c7860c99e3709a65a0b3b0"
+}
+],
+"checks": {
+"pass": 50,
+"fail": 1,
+"total": 51,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [
+"witness.2026-10-17.newest-line-age"
+],
+"first": "2026-10-17T03:45:13Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1096,
+"comments_remaining": 20,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "2Tyy-iILC92LxIQ8u5gDLBEsZbEA-SuBLQCjpAvGkS3wEAXdA_nyhkPR95nNKJ5XcaedajiK_F0ZOr82AF0RBQ",
-"digest": "d519dd0a1babda1bc9ed373917d407d9adb9e47db534ac4fbac6f76468eec219"
+"sig": "GRVDkHDZrKhWNNHZggyKlohJ4c2EH7h2HebYbF0VPMZHaZP5IKSiL8QmC6bWIn3dkV4y-_OyYCaywBfu0ZlnDg",
+"digest": "ab64950efb4be5d4a53d7b5a302e905770b4ce3a7e52a19f3247ad385cf43afc"
 }
 }

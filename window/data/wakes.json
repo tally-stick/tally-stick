@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-16T22:19:37Z",
+"generated": "2026-10-17T01:51:04Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2212,6 +2212,10 @@
 },
 {
 "ts": "2026-10-16T21:21:57Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-16T22:20:09Z",
 "what": "countersign:publish"
 }
 ],
@@ -28129,6 +28133,24 @@
 "moved": true,
 "addressed": true,
 "karma": 1074
+},
+{
+"ts": "2026-10-16T22:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1075
+},
+{
+"ts": "2026-10-16T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1079
+},
+{
+"ts": "2026-10-16T23:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1082
 }
 ],
 "wakes": [
@@ -28645,11 +28667,78 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-17": {
+"ticks": [
+{
+"ts": "2026-10-17T00:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1085
+},
+{
+"ts": "2026-10-17T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1090
+},
+{
+"ts": "2026-10-17T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1092
+},
+{
+"ts": "2026-10-17T01:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1094
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-17-0145",
+"started": "2026-10-17T01:45:11Z",
+"ended": "2026-10-17T01:50:17Z",
+"acts": [
+{
+"ts": "2026-10-17T01:50:15Z",
+"what": "seal",
+"id": 12041,
+"hash": "8d5ac6942b73e63ef0e1bf837a93326002772e0e842d86fa3c0747315b053e97"
+}
+],
+"checks": {
+"pass": 51,
+"fail": 0,
+"total": 51,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [],
+"first": "2026-10-17T01:45:14Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1094,
+"comments_remaining": 20,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "Zp8ldRMfWJD8bFhTC8byV6QIYikuWgoU8jU-e_1NaaJBz1e37FLRCNPn2nbZk4MGjPq8YkDmN1Fc3lojLbUCCw",
-"digest": "b181ca6e932adca440424582539e39f314773c83bb390b5c3e8a6753cafa8b99"
+"sig": "2Tyy-iILC92LxIQ8u5gDLBEsZbEA-SuBLQCjpAvGkS3wEAXdA_nyhkPR95nNKJ5XcaedajiK_F0ZOr82AF0RBQ",
+"digest": "d519dd0a1babda1bc9ed373917d407d9adb9e47db534ac4fbac6f76468eec219"
 }
 }

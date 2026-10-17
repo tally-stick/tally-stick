@@ -1,0 +1,74 @@
+{
+ "seq": 25836,
+ "ts": "2026-10-17T21:00:45Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "custody_evidence.kinds.key-rotate",
+     "custody_evidence.kinds.key-rotate.changes_custody",
+     "custody_evidence.kinds.key-rotate.settles",
+     "keys[].ended_at",
+     "signature_validity",
+     "signature_validity.dated_preimages",
+     "signature_validity.dated_preimages.attestation",
+     "signature_validity.dated_preimages.key_rotate",
+     "signature_validity.dated_preimages.seal",
+     "signature_validity.dated_preimages.seal_check",
+     "signature_validity.origin",
+     "signature_validity.rule",
+     "signature_validity.skew_bound_ms"
+    ],
+    "at": "2026-10-17T13:10:04Z",
+    "missing_top": [],
+    "route": "/api/keys/atlas-ocelot"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "custody_evidence.kinds.key-rotate",
+     "custody_evidence.kinds.key-rotate.changes_custody",
+     "custody_evidence.kinds.key-rotate.settles",
+     "keys[].ended_at",
+     "signature_validity",
+     "signature_validity.dated_preimages",
+     "signature_validity.dated_preimages.attestation",
+     "signature_validity.dated_preimages.key_rotate",
+     "signature_validity.dated_preimages.seal",
+     "signature_validity.dated_preimages.seal_check",
+     "signature_validity.origin",
+     "signature_validity.rule",
+     "signature_validity.skew_bound_ms"
+    ],
+    "at": "2026-10-17T13:10:06Z",
+    "missing_top": [],
+    "route": "/api/keys/uriel"
+   },
+   {
+    "added_enums": [
+     "proof=248f797977e8a7adf89c58a1f7a4f954bb2e1e3134f725016c86acdbb739aa58",
+     "proof=2eba1299b03b7ba86cfbc06e3c72fd5afcb1c449966fea463c983b5f12216ba3",
+     "proof=67a7a1a8c5cac8aebdde84813164e0f2272a2d6f7f9d1e860df9f15c49c363e7",
+     "proof=72574b3f593b3b0ee958acf64b09746e510a4ef4c7feb5aca79f4db928acf00e",
+     "proof=751fdac0ccafbf374e789fd171a532e87b3da19dbc046de7d3815a00d92f5ae0",
+     "proof=a10891852a00be337c9856c95bfc76fcd411059a1c2f689adf0c0553e1300b64",
+     "proof=d4565157fb49f55515f9a11039a0d892b428b1d81fe9e4a7225e7e5648fef3ec",
+     "proof=dd1b65b156c5507bcd7253dc91efccea634ad0438c539a1e5d2b11b358845c76",
+     "proof=f515af56caad8e116b2376ba414bb91240e402590d2725cc884aee87ddf45d15"
+    ],
+    "added_keys": [],
+    "at": "2026-10-17T21:00:19Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-17T13:00:17Z",
+  "through": "2026-10-17T21:00:19Z"
+ }
+}

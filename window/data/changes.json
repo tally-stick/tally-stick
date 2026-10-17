@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-17T03:48:43Z",
+"generated": "2026-10-17T05:15:19Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -22419,6 +22419,47 @@
 "proof=b6a7e02e899fc895aa03efb10ec9ecf3b7f6e7b8ed61ff5a6cfca7abd2fc1ad9"
 ],
 "missing_top": []
+},
+{
+"at": "2026-10-17T05:00:17Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=1e4c1635e78985eb05293e62bf68db6bc4153bd2f604ee097b52e1ca8dce6573",
+"proof=22ebda3b2e6b4e6bd08f049ed083be90f52539b5964c5a2a779984327ae17bb3",
+"proof=4bf88d5b042fc6046e2baca516fbac2f6093ccfb3d2d92949fd8dcaa4335541c",
+"proof=bae15dbf2c09e22bfbbd1aee4a78769d57ac23d4fbc0ad9cc299a55704ee3332",
+"proof=bb8c64ff538dc8c22520c41ff4cc28ede44695d922fbf7a51e101b936ed88a6a"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-17T05:00:32Z",
+"route": "/api/witnesses",
+"added_keys": [
+"witnesses[].countersigned.identity_events.checkpoint_id",
+"witnesses[].countersigned.identity_events.lag_s",
+"witnesses[].countersigned.identity_events.receipt",
+"witnesses[].countersigned.identity_events.receipt.payload",
+"witnesses[].countersigned.identity_events.receipt.sig",
+"witnesses[].countersigned.identity_events.received_at",
+"witnesses[].countersigned.identity_events.root",
+"witnesses[].countersigned.identity_events.tree_size",
+"witnesses[].countersigned.identity_events.witness_epoch",
+"witnesses[].countersigned.identity_events.witness_sig",
+"witnesses[].countersigned.ledger.checkpoint_id",
+"witnesses[].countersigned.ledger.lag_s",
+"witnesses[].countersigned.ledger.receipt",
+"witnesses[].countersigned.ledger.receipt.payload",
+"witnesses[].countersigned.ledger.receipt.sig",
+"witnesses[].countersigned.ledger.received_at",
+"witnesses[].countersigned.ledger.root",
+"witnesses[].countersigned.ledger.tree_size",
+"witnesses[].countersigned.ledger.witness_epoch",
+"witnesses[].countersigned.ledger.witness_sig"
+],
+"added_enums": [],
+"missing_top": []
 }
 ],
 "spec": {
@@ -39088,6 +39129,50 @@
 "latest_comment_id": 109979,
 "latest_event_id": 27547,
 "latest_null_id": 307907
+},
+{
+"ts": "2026-10-17T04:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1096,
+"citizens": 3244,
+"latest_post_id": 9077,
+"latest_comment_id": 109998,
+"latest_event_id": 27549,
+"latest_null_id": 307974
+},
+{
+"ts": "2026-10-17T04:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1096,
+"citizens": 3245,
+"latest_post_id": 9079,
+"latest_comment_id": 110008,
+"latest_event_id": 27553,
+"latest_null_id": 308040
+},
+{
+"ts": "2026-10-17T05:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1097,
+"citizens": 3245,
+"latest_post_id": 9079,
+"latest_comment_id": 110015,
+"latest_event_id": 27553,
+"latest_null_id": 308070
+},
+{
+"ts": "2026-10-17T05:15:02Z",
+"moved": true,
+"addressed": false,
+"karma": 1097,
+"citizens": 3245,
+"latest_post_id": 9079,
+"latest_comment_id": 110027,
+"latest_event_id": 27556,
+"latest_null_id": 308103
 }
 ]
 }

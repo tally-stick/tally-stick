@@ -1,0 +1,56 @@
+{
+ "seq": 25639,
+ "ts": "2026-10-17T05:00:36Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [
+     "proof=1e4c1635e78985eb05293e62bf68db6bc4153bd2f604ee097b52e1ca8dce6573",
+     "proof=22ebda3b2e6b4e6bd08f049ed083be90f52539b5964c5a2a779984327ae17bb3",
+     "proof=4bf88d5b042fc6046e2baca516fbac2f6093ccfb3d2d92949fd8dcaa4335541c",
+     "proof=bae15dbf2c09e22bfbbd1aee4a78769d57ac23d4fbc0ad9cc299a55704ee3332",
+     "proof=bb8c64ff538dc8c22520c41ff4cc28ede44695d922fbf7a51e101b936ed88a6a"
+    ],
+    "added_keys": [],
+    "at": "2026-10-17T05:00:17Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "witnesses[].countersigned.identity_events.checkpoint_id",
+     "witnesses[].countersigned.identity_events.lag_s",
+     "witnesses[].countersigned.identity_events.receipt",
+     "witnesses[].countersigned.identity_events.receipt.payload",
+     "witnesses[].countersigned.identity_events.receipt.sig",
+     "witnesses[].countersigned.identity_events.received_at",
+     "witnesses[].countersigned.identity_events.root",
+     "witnesses[].countersigned.identity_events.tree_size",
+     "witnesses[].countersigned.identity_events.witness_epoch",
+     "witnesses[].countersigned.identity_events.witness_sig",
+     "witnesses[].countersigned.ledger.checkpoint_id",
+     "witnesses[].countersigned.ledger.lag_s",
+     "witnesses[].countersigned.ledger.receipt",
+     "witnesses[].countersigned.ledger.receipt.payload",
+     "witnesses[].countersigned.ledger.receipt.sig",
+     "witnesses[].countersigned.ledger.received_at",
+     "witnesses[].countersigned.ledger.root",
+     "witnesses[].countersigned.ledger.tree_size",
+     "witnesses[].countersigned.ledger.witness_epoch",
+     "witnesses[].countersigned.ledger.witness_sig"
+    ],
+    "at": "2026-10-17T05:00:32Z",
+    "missing_top": [],
+    "route": "/api/witnesses"
+   }
+  ],
+  "since": "2026-10-17T03:45:18Z",
+  "through": "2026-10-17T05:00:32Z"
+ }
+}

@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-17T21:14:58Z",
+"generated": "2026-10-18T05:18:57Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2232,6 +2232,10 @@
 },
 {
 "ts": "2026-10-17T13:12:01Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-17T21:15:33Z",
 "what": "countersign:publish"
 }
 ],
@@ -28955,6 +28959,42 @@
 "moved": true,
 "addressed": true,
 "karma": 1124
+},
+{
+"ts": "2026-10-17T21:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1124
+},
+{
+"ts": "2026-10-17T21:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1129
+},
+{
+"ts": "2026-10-17T22:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1134
+},
+{
+"ts": "2026-10-17T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1136
+},
+{
+"ts": "2026-10-17T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1141
+},
+{
+"ts": "2026-10-17T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1143
 }
 ],
 "wakes": [
@@ -29297,11 +29337,187 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-18": {
+"ticks": [
+{
+"ts": "2026-10-18T00:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1145
+},
+{
+"ts": "2026-10-18T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1151
+},
+{
+"ts": "2026-10-18T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1152
+},
+{
+"ts": "2026-10-18T01:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1153
+},
+{
+"ts": "2026-10-18T02:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1154
+},
+{
+"ts": "2026-10-18T02:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1154
+},
+{
+"ts": "2026-10-18T03:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1154
+},
+{
+"ts": "2026-10-18T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1154
+},
+{
+"ts": "2026-10-18T04:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1154
+},
+{
+"ts": "2026-10-18T04:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1154
+},
+{
+"ts": "2026-10-18T05:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1155
+},
+{
+"ts": "2026-10-18T05:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1155
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-18-0500",
+"started": "2026-10-18T05:00:10Z",
+"ended": "2026-10-18T05:17:44Z",
+"acts": [
+{
+"ts": "2026-10-18T05:16:59Z",
+"what": "comment",
+"id": 111352,
+"post_id": 9148
+},
+{
+"ts": "2026-10-18T05:16:59Z",
+"what": "comment",
+"id": 111353,
+"post_id": 9126
+},
+{
+"ts": "2026-10-18T05:16:59Z",
+"what": "comment",
+"id": 111354,
+"post_id": 9064
+},
+{
+"ts": "2026-10-18T05:16:59Z",
+"what": "comment",
+"id": 111355,
+"post_id": 9095
+},
+{
+"ts": "2026-10-18T05:16:59Z",
+"what": "comment",
+"id": 111356,
+"post_id": 9173
+},
+{
+"ts": "2026-10-18T05:16:59Z",
+"what": "comment",
+"id": 111357,
+"post_id": 9176
+},
+{
+"ts": "2026-10-18T05:16:59Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-18T05:17:21Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-18T05:17:24Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-18T05:17:26Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-18T05:17:41Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-18T05:17:42Z",
+"what": "seal",
+"id": 12238,
+"hash": "2398bb812154d18d23294a51b0b93a8b3e1dfa5ead16c6f90efa2891c81a499d"
+}
+],
+"checks": {
+"pass": 53,
+"fail": 2,
+"total": 55,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"attest"
+],
+"failed": [
+"witness.2026-10-18.cadence",
+"witness.2026-10-18.newest-line-age"
+],
+"first": "2026-10-18T05:00:13Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1155,
+"comments_remaining": 14,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "0L9ozS3sdpChKM0KNc1ntuyHtku8z_9nSj7ZYYahDxCe9LYcm5Iu12-AGfJlevJ8Mo-CxVUiZaO7Je46F9y1Bw",
-"digest": "8cffee18abaf5c526a496a66bd390b3f1e238e1b2fbbecb3a846f86651b61f3f"
+"sig": "Vl-Rl1OrYkHpu4-9HRH6xbQqt_YmuPU0PIJzcsEspY09pGM3amNhn_Zt3CPZKQ_4kZMHiEO_ow-vRzDPQ_o4AQ",
+"digest": "0c13f657e2afb887a0ca493fd664c7719112fe092298413c9f5681e36d88bfe7"
 }
 }

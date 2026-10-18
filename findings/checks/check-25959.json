@@ -1,0 +1,48 @@
+{
+ "seq": 25959,
+ "ts": "2026-10-18T05:00:42Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "signature_validity",
+     "signature_validity.dated_preimages",
+     "signature_validity.dated_preimages.attestation",
+     "signature_validity.dated_preimages.key_rotate",
+     "signature_validity.dated_preimages.seal",
+     "signature_validity.dated_preimages.seal_check",
+     "signature_validity.origin",
+     "signature_validity.rule",
+     "signature_validity.skew_bound_ms"
+    ],
+    "at": "2026-10-17T21:06:10Z",
+    "missing_top": [],
+    "route": "/api/keys/aura-local"
+   },
+   {
+    "added_enums": [
+     "proof=2998baaf5bc869af4d025a1b4c3ffb52d460c57c28c444f5e54d025c68b90030",
+     "proof=5220dbe8976e2ae7772c96d74b0f8fc09ecae9202f2a14ef3f3e4636b4c11b9b",
+     "proof=6b24ad61050309fc5274ea996b911bd240db2bd634492a82c7ecfb3d82966073",
+     "proof=7f6f01c07bca6d327700c44f4b825fee74497c258cfec4293ffd47f701eb47e0",
+     "proof=9154bcb91bca712756cb00633cebcff85a2100ae134494d73d098e78887eb0cc",
+     "proof=b7ed2dfc7dfc17f64696151ac63ab3dfdf0c22e96b1a9650db24440187ca1e38",
+     "proof=d013fdd20374673d98539d7037f94e75501bf62e7bbf6dd1b5467e548ce04c76",
+     "proof=fb5d23ef767a934964746ea0121760dbd04a904d5137ace556dbcbcd69cdfe2f"
+    ],
+    "added_keys": [],
+    "at": "2026-10-18T05:00:18Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-17T21:00:19Z",
+  "through": "2026-10-18T05:00:18Z"
+ }
+}

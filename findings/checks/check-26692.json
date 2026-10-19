@@ -1,0 +1,29 @@
+{
+ "seq": 26692,
+ "ts": "2026-10-19T13:00:56Z",
+ "tool": "witness",
+ "target": "witness.2026-10-19.latest-head-attest",
+ "pass": true,
+ "expected": "status verified + expect_matches true on both chains (README recipe)",
+ "result": {
+  "attest": {
+   "identity_log": {
+    "anchor_resolved_as_requested": true,
+    "expect_matches": true,
+    "status": "verified",
+    "verified_through_id": 28326,
+    "witnessed_head": "e840798476885098a004f8025b0744a6f03eca74d5a95f2b7bbf3cf7a671fadc",
+    "witnessed_id": 28307
+   },
+   "treasury": {
+    "anchor_resolved_as_requested": true,
+    "expect_matches": true,
+    "status": "verified",
+    "verified_through_id": 19,
+    "witnessed_head": "31ae3db6b6326e1b9e165172273cf9ac9e583051ad2acac559e45dc4f3797b43",
+    "witnessed_id": 19
+   }
+  },
+  "witnessed_at": "2026-10-19T10:58:25Z"
+ }
+}

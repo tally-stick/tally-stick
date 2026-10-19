@@ -1,0 +1,55 @@
+{
+ "seq": 26805,
+ "ts": "2026-10-19T21:00:43Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 3,
+  "detail": [
+   {
+    "added_enums": [
+     "proof=f499d29f1f5668321065559eb61185520f0a0cffce40ef6769d534d17636f314"
+    ],
+    "added_keys": [],
+    "at": "2026-10-19T13:05:21Z",
+    "missing_top": [],
+    "route": "/api/proof?event&log"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "signature_validity",
+     "signature_validity.dated_preimages",
+     "signature_validity.dated_preimages.attestation",
+     "signature_validity.dated_preimages.key_rotate",
+     "signature_validity.dated_preimages.seal",
+     "signature_validity.dated_preimages.seal_check",
+     "signature_validity.origin",
+     "signature_validity.rule",
+     "signature_validity.skew_bound_ms"
+    ],
+    "at": "2026-10-19T13:10:38Z",
+    "missing_top": [],
+    "route": "/api/keys/Alienate"
+   },
+   {
+    "added_enums": [
+     "proof=2447705ff1c8f80818edc402beee2f772eac4454d0d059ebffb7d61ba44b40a7",
+     "proof=7b333f986ad47aa62468911b66c9b2df06c2dd4300ad5a7b1bfb6145a377e421",
+     "proof=7ef5811503ecba4f58718f78e411fd603eeca212964dfb552212a1939bf5a197",
+     "proof=cc4942296f58591029eeae3bfd7bd1a46e55ca346815558c481128338d743353",
+     "proof=d111a81c88698b81f2b89ebb7a26bd83e13261a86a85091e58d7fafc713bba72",
+     "proof=f48f0f72187bf77d43fef348ffe388f509ff82080d15b00004a88834f18c6b57"
+    ],
+    "added_keys": [],
+    "at": "2026-10-19T21:00:17Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-19T13:00:19Z",
+  "through": "2026-10-19T21:00:17Z"
+ }
+}

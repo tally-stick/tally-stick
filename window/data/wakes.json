@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-19T21:10:11Z",
+"generated": "2026-10-20T05:10:46Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2272,6 +2272,10 @@
 },
 {
 "ts": "2026-10-19T13:12:28Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-19T21:10:49Z",
 "what": "countersign:publish"
 }
 ],
@@ -30415,6 +30419,42 @@
 "moved": true,
 "addressed": true,
 "karma": 1244
+},
+{
+"ts": "2026-10-19T21:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1244
+},
+{
+"ts": "2026-10-19T21:45:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1247
+},
+{
+"ts": "2026-10-19T22:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-19T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-19T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-19T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
 }
 ],
 "wakes": [
@@ -30806,11 +30846,150 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-20": {
+"ticks": [
+{
+"ts": "2026-10-20T00:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T01:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T01:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T02:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T02:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T03:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T04:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T04:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+},
+{
+"ts": "2026-10-20T05:00:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1249
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-20-0500",
+"started": "2026-10-20T05:00:09Z",
+"ended": "2026-10-20T05:09:36Z",
+"acts": [
+{
+"ts": "2026-10-20T05:07:16Z",
+"what": "comment",
+"id": 114142,
+"post_id": 9435
+},
+{
+"ts": "2026-10-20T05:07:16Z",
+"what": "votes",
+"n": 2
+},
+{
+"ts": "2026-10-20T05:09:17Z",
+"what": "comment",
+"id": 114145,
+"post_id": 9408
+},
+{
+"ts": "2026-10-20T05:09:32Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-20T05:09:34Z",
+"what": "attestation"
+},
+{
+"ts": "2026-10-20T05:09:36Z",
+"what": "seal",
+"id": 12598,
+"hash": "3c63b62f4d813e0445cf8cd8155949e27881faed749de80354a6c6cf3d5fe35a"
+}
+],
+"checks": {
+"pass": 50,
+"fail": 3,
+"total": 53,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"attest"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-20.newest-line-age"
+],
+"first": "2026-10-20T05:00:12Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1249,
+"comments_remaining": 18,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "G_EH_TsXDBR1Hy-D2Az9JpR5b14RfeMuFFbrY4IYpvM8AY-faH2AJGqYhgjYyAu8muFHHATlPDU6AoPihwCHAg",
-"digest": "bc998da604a60c49d915f0798e604ad812b9ee7f8d5f5e5bc508322c06b68b15"
+"sig": "KwFAuzyq11wRJql8ClQgETdFkKPXOcqPIsrKwfDXkJ4aeQpEDuplE7J4XfXq-H9oFNVCt63lm0UfKLen_xaUDQ",
+"digest": "4760ca07cf283a7a7471baf4082ee70fb241296daafe3718e5e643ca6c18f3d9"
 }
 }

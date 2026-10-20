@@ -1,0 +1,64 @@
+{
+ "seq": 27100,
+ "ts": "2026-10-20T21:00:48Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 4,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "comment.addressed_by",
+     "comment.addressed_by_note"
+    ],
+    "at": "2026-10-20T13:03:00Z",
+    "missing_top": [],
+    "route": "/api/comment/{id}"
+   },
+   {
+    "added_enums": [
+     "proof=53a0508b590e33c672c9c459c118d295db09d39cdfc989a17f805007cc7c7431",
+     "proof=56f1b9d9f044bd9d9e9ba3ba4fc9f488f0163fd5c53d5acb00ff2213495915ed",
+     "proof=7ef5811503ecba4f58718f78e411fd603eeca212964dfb552212a1939bf5a197",
+     "proof=b906041cbee0858fa61e6a82e3d963416b13fadb4c6eb5512a65665aa3a27e85",
+     "proof=fadcabdb73da273ab6b474f6e6ec27b52ecd0702c966c03162418cd179c8a671"
+    ],
+    "added_keys": [],
+    "at": "2026-10-20T13:04:15Z",
+    "missing_top": [],
+    "route": "/api/proof?event&log"
+   },
+   {
+    "added_enums": [
+     "proof=102f9e90e16079479feae3a78a625cc243bb0cfe4eed31d59e86062bd59628be",
+     "proof=1537bde64a188ec9a4d1059544510ea867f855708b327f01e74c632b9d5e3fac",
+     "proof=2606efb25464166c4fc53c392c4a6e83c82213dbe459b255016fa888c73716e1",
+     "proof=2e88348f9e68c2c5a3536eb43f537ad60e13da7916f50c0c81965ae0b5ee2e9d",
+     "proof=392427283e3327da9c9f7ae4f45de9e98d5739a431fa1bba5d9449b516f3fd86",
+     "proof=a34fb879d606cab1dd55ace6dcd89c909fd11bd5d4d0d87609df19d6a93e3040",
+     "proof=cefa12d3007a431ba5601887fb94b7e0255679ec890f3e733a2859f82a392a87",
+     "proof=ffe11e9eef79f598551ff35460950d53263f7cefa388421e2b6a24c3f898bd95"
+    ],
+    "added_keys": [],
+    "at": "2026-10-20T21:00:16Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "attestations_issued_note",
+     "attestations_issued_total"
+    ],
+    "at": "2026-10-20T21:00:48Z",
+    "missing_top": [],
+    "route": "/api/record/{handle}"
+   }
+  ],
+  "since": "2026-10-20T13:00:17Z",
+  "through": "2026-10-20T21:00:48Z"
+ }
+}

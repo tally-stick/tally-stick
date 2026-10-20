@@ -1,0 +1,111 @@
+{
+ "seq": 27101,
+ "ts": "2026-10-20T21:00:57Z",
+ "tool": "runs",
+ "target": "runs.2026-10-20",
+ "pass": [
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T20:31:30Z",
+   "event": "schedule",
+   "id": 39492704030,
+   "started_at": "2026-10-20T20:31:30Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T20:31:47Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T18:33:09Z",
+   "event": "schedule",
+   "id": 39475734678,
+   "started_at": "2026-10-20T18:33:09Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T18:33:26Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T16:53:57Z",
+   "event": "schedule",
+   "id": 39461453678,
+   "started_at": "2026-10-20T16:53:57Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T16:54:16Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T13:41:24Z",
+   "event": "schedule",
+   "id": 39432578016,
+   "started_at": "2026-10-20T13:41:24Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T13:41:40Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T11:26:58Z",
+   "event": "schedule",
+   "id": 39415020924,
+   "started_at": "2026-10-20T11:26:58Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T11:27:14Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T07:45:35Z",
+   "event": "schedule",
+   "id": 39388648564,
+   "started_at": "2026-10-20T07:45:35Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T07:45:49Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T05:57:20Z",
+   "event": "schedule",
+   "id": 39377654457,
+   "started_at": "2026-10-20T05:57:20Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T05:57:34Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T01:56:11Z",
+   "event": "schedule",
+   "id": 39356162231,
+   "started_at": "2026-10-20T01:56:11Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T01:56:24Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-20T00:16:33Z",
+   "event": "schedule",
+   "id": 39346667161,
+   "started_at": "2026-10-20T00:16:33Z",
+   "status": "completed",
+   "updated_at": "2026-10-20T00:16:47Z"
+  }
+ ],
+ "expected": "at least one run or line; every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 9
+  },
+  "failed": [],
+  "head_lines": 9,
+  "lines_without_run": [],
+  "running": 0,
+  "runs": 9,
+  "runs_without_line": []
+ }
+}

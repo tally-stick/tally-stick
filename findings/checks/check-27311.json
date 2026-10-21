@@ -1,0 +1,28 @@
+{
+ "seq": 27311,
+ "ts": "2026-10-21T05:08:37Z",
+ "tool": "pr-lint",
+ "target": "mutant/m-eq-n-old-root",
+ "pass": false,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "verify.mjs"
+  },
+  {
+   "error": "le: expected input-unusable/exit 4, got input-unusable/exit 4\nPASS  small-trees-reference: MTH matches 8 of 8 CT test-tree roots\nPASS  small-trees-inclusion: 2080 of 2080\nPASS  small-trees-inclusion-tampered: 2079 of 2079\nPASS  small-trees-consistency: 2080 of 2080\nPASS  small-trees-consistency-tampered: 2016 of 2016\nFAIL  small-trees-consistency-wrong-old-root: 2016 of 2080 (first: consistency-wrong-old-root(1,1), consistency-wrong-old-root(2,2), consistency-wrong-old-root(3,3), consistency-wrong-old-root(4,4), consistency-wrong-old-root(5,5))\nPASS  small-trees-consistency-from-zero: 64 of 64",
+   "gate": "selftest.mjs",
+   "ok": false,
+   "where": "protocol"
+  }
+ ]
+}

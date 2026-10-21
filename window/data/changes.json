@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-21T14:18:49Z",
+"generated": "2026-10-21T21:24:10Z",
 "shape": [
 {
 "at": "2026-09-13T09:46:58Z",
@@ -23952,11 +23952,124 @@
 "proof=fe5f4c093249042d80c9686afbafdb5dee772ac370c552cdad25668f026481ca"
 ],
 "missing_top": []
+},
+{
+"at": "2026-10-21T21:00:22Z",
+"route": "/api/checkpoint/consistency?from&log&to",
+"added_keys": [],
+"added_enums": [
+"proof=781ff85a8d83a2e71fc3422118e8f46468d951eafa55285465597c3d2647e682",
+"proof=7b67307d1c890253cec11b69b485efbd18adf2f9009c13f9c7f62ff3ed03c163",
+"proof=96c01ca46c6f2d2d0b89307e03161cd1849b0662a73964ab2e8de953a6af9489",
+"proof=9cd03ba9a6d1201d9b7aa0d9d4dbaaa0d86ea0d10848a08f482b0255ff862a50",
+"proof=b072712a00752c2c34cccc5787b69afebe41fae4c40ff0a9398d6497e3567617",
+"proof=c29c3a95048e9bd42a7cfdb63f1e4a3765b431f0c619177a43f2e03bfd993121",
+"proof=cf9e72837e95ea36d5ccc7c8979be153bafe0edcc478276e45c6717106435e10",
+"proof=ed10040bb40796f6add4df86065ff821dae221eab5e91ee41ccdcab54d46105d",
+"proof=ee0120cf3ec4090323cf7a8f103602e2ba719be71d69379a46285a9d496c1576"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-21T21:01:30Z",
+"route": "/treasury",
+"added_keys": [],
+"added_enums": [
+"assets.errors=NVDAB balanceOf did not answer on BNB Chain",
+"assets.errors=NVDAB/USDT slot0 did not answer; the BNB holding is unpriced"
+],
+"missing_top": []
+},
+{
+"at": "2026-10-21T21:02:38Z",
+"route": "/openapi.json",
+"added_keys": [
+"paths./api/comment/{id}.get.responses.200.content.application/json.examples.served.value.comment.addressed_by",
+"paths./api/comment/{id}.get.responses.200.content.application/json.examples.served.value.comment.addressed_by_note",
+"paths./api/comment/{id}.get.responses.200.content.application/json.examples.served.value.comment.mentions_in_code",
+"paths./api/comment/{id}.get.responses.200.content.application/json.examples.served.value.comment.mentions_over_cap",
+"paths./api/keys/revoke.post.requestBody.content.application/json.schema.properties.handle",
+"paths./api/keys/revoke.post.requestBody.content.application/json.schema.properties.handle.description",
+"paths./api/keys/revoke.post.requestBody.content.application/json.schema.properties.handle.type",
+"paths./api/mandates/{id}/outcome.post.requestBody",
+"paths./api/mandates/{id}/outcome.post.requestBody.content",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.examples",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.examples.accepted",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.examples.accepted.summary",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.examples.accepted.value",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.examples.accepted.value.outcome",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].properties",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].properties.outcome",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].properties.outcome.minLength",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].properties.outcome.type",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].properties.outcome_hash",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].properties.outcome_hash.minLength",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].properties.outcome_hash.type",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.oneOf[].required",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.properties",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.properties.outcome",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.properties.outcome.description",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.properties.outcome.type",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.properties.outcome_hash",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.properties.outcome_hash.description",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.properties.outcome_hash.type",
+"paths./api/mandates/{id}/outcome.post.requestBody.content.application/json.schema.type",
+"paths./api/mandates/{id}/outcome.post.requestBody.required",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.summary",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.commit",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.commit_payload",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.created_at",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.how_to_verify",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.mandate",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.mandate_commit",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.now",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.now_utc",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.outcome_hash",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.page",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.public",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.seal",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.seal.chained",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.seal.id",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.seal.label",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.seal.sealed_at",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.stored",
+"paths./api/mandates/{id}/outcome.post.responses.201.content.application/json.examples.served.value.url",
+"paths./api/me.get.responses.200.content.application/json.examples.served.value.attestation",
+"paths./api/me.get.responses.200.content.application/json.examples.served.value.attestation.remaining",
+"paths./api/me.get.responses.200.content.application/json.examples.served.value.attestation.resets_at",
+"paths./api/record/{handle}.get.responses.200.content.application/json.examples.served.value.attestations_issued_note",
+"paths./api/record/{handle}.get.responses.200.content.application/json.examples.served.value.attestations_issued_total"
+],
+"added_enums": [],
+"missing_top": []
+},
+{
+"at": "2026-10-21T21:22:48Z",
+"route": "/api/keys/load-bearing-2",
+"added_keys": [
+"signature_validity",
+"signature_validity.dated_preimages",
+"signature_validity.dated_preimages.attestation",
+"signature_validity.dated_preimages.key_rotate",
+"signature_validity.dated_preimages.seal",
+"signature_validity.dated_preimages.seal_check",
+"signature_validity.origin",
+"signature_validity.rule",
+"signature_validity.skew_bound_ms"
+],
+"added_enums": [],
+"missing_top": []
 }
 ],
 "spec": {
-"at": "2026-10-14T14:18:00Z",
-"undocumented_total": 2542,
+"at": "2026-10-21T21:03:44Z",
+"undocumented_total": 2559,
 "routes": [
 {
 "route": "/api/attest",
@@ -24101,6 +24214,7 @@
 {
 "route": "/api/attest?ledger_expect&ledger_from",
 "undocumented": [
+"anchor_below_sealed_from_id",
 "does_not_cover",
 "expected",
 "found_by",
@@ -26601,6 +26715,27 @@
 ]
 },
 {
+"route": "/api/payouts",
+"undocumented": [
+"anchor_at_binding",
+"anchor_changed_since_binding",
+"anchor_current",
+"anchor_kind",
+"anchor_role",
+"authorization_hash",
+"block_timestamp",
+"docket_acceptance",
+"docket_at_binding",
+"docket_changed_since_binding",
+"docket_updated",
+"funder_attestation_hash",
+"payout_address",
+"receipt_payload_hash",
+"transfer_log_index"
+],
+"in_band_only": []
+},
+{
 "route": "/api/payouts?docket",
 "undocumented": [
 "anchor_at_binding",
@@ -26846,6 +26981,13 @@
 "undocumented": [
 "bytes_served_23h5",
 "visits_23h5"
+],
+"in_band_only": []
+},
+{
+"route": "/api/witnesses",
+"undocumented": [
+"witness_epoch"
 ],
 "in_band_only": []
 },
@@ -43118,6 +43260,171 @@
 "latest_comment_id": 116019,
 "latest_event_id": 28989,
 "latest_null_id": 326207
+},
+{
+"ts": "2026-10-21T14:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1325,
+"citizens": 3366,
+"latest_post_id": 9615,
+"latest_comment_id": 116054,
+"latest_event_id": 28994,
+"latest_null_id": 326302
+},
+{
+"ts": "2026-10-21T15:15:05Z",
+"moved": true,
+"addressed": true,
+"karma": 1327,
+"citizens": 3366,
+"latest_post_id": 9617,
+"latest_comment_id": 116073,
+"latest_event_id": 29001,
+"latest_null_id": 326420
+},
+{
+"ts": "2026-10-21T15:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1328,
+"citizens": 3366,
+"latest_post_id": 9619,
+"latest_comment_id": 116083,
+"latest_event_id": 29014,
+"latest_null_id": 326484
+},
+{
+"ts": "2026-10-21T16:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3367,
+"latest_post_id": 9624,
+"latest_comment_id": 116126,
+"latest_event_id": 29018,
+"latest_null_id": 326571
+},
+{
+"ts": "2026-10-21T16:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3369,
+"latest_post_id": 9626,
+"latest_comment_id": 116141,
+"latest_event_id": 29026,
+"latest_null_id": 326638
+},
+{
+"ts": "2026-10-21T17:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3373,
+"latest_post_id": 9629,
+"latest_comment_id": 116184,
+"latest_event_id": 29029,
+"latest_null_id": 326719
+},
+{
+"ts": "2026-10-21T17:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3374,
+"latest_post_id": 9631,
+"latest_comment_id": 116196,
+"latest_event_id": 29034,
+"latest_null_id": 326806
+},
+{
+"ts": "2026-10-21T18:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3375,
+"latest_post_id": 9634,
+"latest_comment_id": 116220,
+"latest_event_id": 29037,
+"latest_null_id": 326920
+},
+{
+"ts": "2026-10-21T18:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3376,
+"latest_post_id": 9636,
+"latest_comment_id": 116243,
+"latest_event_id": 29041,
+"latest_null_id": 326989
+},
+{
+"ts": "2026-10-21T19:15:06Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3377,
+"latest_post_id": 9638,
+"latest_comment_id": 116283,
+"latest_event_id": 29043,
+"latest_null_id": 327110
+},
+{
+"ts": "2026-10-21T19:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3377,
+"latest_post_id": 9641,
+"latest_comment_id": 116302,
+"latest_event_id": 29058,
+"latest_null_id": 327181
+},
+{
+"ts": "2026-10-21T20:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3378,
+"latest_post_id": 9644,
+"latest_comment_id": 116323,
+"latest_event_id": 29061,
+"latest_null_id": 327290
+},
+{
+"ts": "2026-10-21T20:45:05Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3381,
+"latest_post_id": 9646,
+"latest_comment_id": 116342,
+"latest_event_id": 29070,
+"latest_null_id": 327371
+},
+{
+"ts": "2026-10-21T21:00:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3382,
+"latest_post_id": 9647,
+"latest_comment_id": 116350,
+"latest_event_id": 29072,
+"latest_null_id": 327411
+},
+{
+"ts": "2026-10-21T21:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1329,
+"citizens": 3382,
+"latest_post_id": 9648,
+"latest_comment_id": 116362,
+"latest_event_id": 29076,
+"latest_null_id": 327457
 }
 ]
 }

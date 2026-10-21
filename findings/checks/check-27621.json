@@ -1,0 +1,18 @@
+{
+ "seq": 27621,
+ "ts": "2026-10-21T21:01:39Z",
+ "tool": "treasury",
+ "target": "assets.complete",
+ "pass": false,
+ "expected": "complete true, no errors",
+ "result": {
+  "cache_age_ms": 5000,
+  "checked_at": 1792616486248,
+  "complete": false,
+  "errors": [
+   "NVDAB/USDT slot0 did not answer; the BNB holding is unpriced",
+   "NVDAB balanceOf did not answer on BNB Chain"
+  ],
+  "total_cents": null
+ }
+}

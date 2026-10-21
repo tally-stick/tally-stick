@@ -1,0 +1,501 @@
+{
+ "seq": 27635,
+ "ts": "2026-10-21T21:02:37Z",
+ "tool": "witness",
+ "target": "witness.all.cadence",
+ "pass": false,
+ "expected": "no gap > 2x expected cadence (expected 5 min from 2026-08-12T03:36:59Z to 2026-09-29T01:46:21Z, 60 min otherwise) at or after 2026-10-13T14:16Z (older incidents listed as history)",
+ "result": {
+  "degraded_windows": [
+   {
+    "duration_h": 3.29,
+    "expected_s": 3600,
+    "from": "2026-08-09T04:39:27Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-08-09T07:56:34Z",
+    "worst_gap_s": 11827
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-08-12T10:55:55Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-12T11:06:04Z",
+    "worst_gap_s": 609
+   },
+   {
+    "duration_h": 0.25,
+    "expected_s": 300,
+    "from": "2026-08-13T14:31:08Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-13T14:46:14Z",
+    "worst_gap_s": 906
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-08-17T14:40:21Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-17T14:50:29Z",
+    "worst_gap_s": 608
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-08-17T15:50:24Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-17T16:00:52Z",
+    "worst_gap_s": 628
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-08-17T17:05:25Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-17T17:15:41Z",
+    "worst_gap_s": 616
+   },
+   {
+    "duration_h": 0.25,
+    "expected_s": 300,
+    "from": "2026-08-17T17:40:23Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-17T17:55:31Z",
+    "worst_gap_s": 908
+   },
+   {
+    "duration_h": 56.49,
+    "expected_s": 300,
+    "from": "2026-08-17T19:17:57Z",
+    "runs_inside": 38,
+    "severity": "outage",
+    "to": "2026-08-20T03:47:05Z",
+    "worst_gap_s": 12215
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-08-20T17:05:23Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-20T17:15:41Z",
+    "worst_gap_s": 618
+   },
+   {
+    "duration_h": 0.77,
+    "expected_s": 300,
+    "from": "2026-08-26T15:00:56Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-08-26T15:47:15Z",
+    "worst_gap_s": 2779
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-09-01T06:35:26Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-09-01T06:45:49Z",
+    "worst_gap_s": 623
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-09-11T21:10:34Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-09-11T21:20:35Z",
+    "worst_gap_s": 601
+   },
+   {
+    "duration_h": 5.19,
+    "expected_s": 300,
+    "from": "2026-09-12T19:25:43Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-09-13T00:37:19Z",
+    "worst_gap_s": 18696
+   },
+   {
+    "duration_h": 7.82,
+    "expected_s": 300,
+    "from": "2026-09-13T04:00:47Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-09-13T11:49:56Z",
+    "worst_gap_s": 28149
+   },
+   {
+    "duration_h": 1.07,
+    "expected_s": 300,
+    "from": "2026-09-14T01:16:22Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-09-14T02:20:21Z",
+    "worst_gap_s": 3839
+   },
+   {
+    "duration_h": 0.17,
+    "expected_s": 300,
+    "from": "2026-09-15T10:50:37Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-09-15T11:00:42Z",
+    "worst_gap_s": 605
+   },
+   {
+    "duration_h": 314.58,
+    "expected_s": 300,
+    "from": "2026-09-28T16:26:28Z",
+    "runs_inside": 14,
+    "severity": "outage",
+    "to": "2026-10-11T19:01:20Z",
+    "worst_gap_s": 876367
+   },
+   {
+    "duration_h": 2.78,
+    "expected_s": 3600,
+    "from": "2026-10-11T20:12:28Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-11T22:59:18Z",
+    "worst_gap_s": 10010
+   },
+   {
+    "duration_h": 24.08,
+    "expected_s": 3600,
+    "from": "2026-10-12T00:28:54Z",
+    "runs_inside": 6,
+    "severity": "outage",
+    "to": "2026-10-13T00:33:48Z",
+    "worst_gap_s": 24063
+   },
+   {
+    "duration_h": 5.5,
+    "expected_s": 3600,
+    "from": "2026-10-13T02:09:35Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-13T07:39:34Z",
+    "worst_gap_s": 19799
+   },
+   {
+    "duration_h": 6.32,
+    "expected_s": 3600,
+    "from": "2026-10-13T09:34:33Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-13T15:53:57Z",
+    "worst_gap_s": 22764
+   },
+   {
+    "duration_h": 3.52,
+    "expected_s": 3600,
+    "from": "2026-10-13T17:40:26Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-13T21:11:39Z",
+    "worst_gap_s": 12673
+   },
+   {
+    "duration_h": 2.23,
+    "expected_s": 3600,
+    "from": "2026-10-13T22:56:33Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-14T01:10:03Z",
+    "worst_gap_s": 8010
+   },
+   {
+    "duration_h": 5.51,
+    "expected_s": 3600,
+    "from": "2026-10-14T01:59:59Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-14T07:30:24Z",
+    "worst_gap_s": 19825
+   },
+   {
+    "duration_h": 5.84,
+    "expected_s": 3600,
+    "from": "2026-10-14T07:48:52Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-14T13:39:09Z",
+    "worst_gap_s": 21017
+   },
+   {
+    "duration_h": 4.68,
+    "expected_s": 3600,
+    "from": "2026-10-14T13:51:49Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-14T18:32:26Z",
+    "worst_gap_s": 16837
+   },
+   {
+    "duration_h": 3.51,
+    "expected_s": 3600,
+    "from": "2026-10-14T18:44:45Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-14T22:15:26Z",
+    "worst_gap_s": 12641
+   },
+   {
+    "duration_h": 3.01,
+    "expected_s": 3600,
+    "from": "2026-10-14T22:24:28Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-15T01:24:59Z",
+    "worst_gap_s": 10831
+   },
+   {
+    "duration_h": 5.77,
+    "expected_s": 3600,
+    "from": "2026-10-15T01:35:06Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-15T07:21:09Z",
+    "worst_gap_s": 20763
+   },
+   {
+    "duration_h": 5.78,
+    "expected_s": 3600,
+    "from": "2026-10-15T07:35:03Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-15T13:21:34Z",
+    "worst_gap_s": 20791
+   },
+   {
+    "duration_h": 4.67,
+    "expected_s": 3600,
+    "from": "2026-10-15T13:33:17Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-15T18:13:29Z",
+    "worst_gap_s": 16812
+   },
+   {
+    "duration_h": 3.78,
+    "expected_s": 3600,
+    "from": "2026-10-15T18:25:01Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-15T22:11:33Z",
+    "worst_gap_s": 13592
+   },
+   {
+    "duration_h": 2.75,
+    "expected_s": 3600,
+    "from": "2026-10-15T22:29:51Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-16T01:14:56Z",
+    "worst_gap_s": 9905
+   },
+   {
+    "duration_h": 5.56,
+    "expected_s": 3600,
+    "from": "2026-10-16T01:31:15Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T07:04:38Z",
+    "worst_gap_s": 20003
+   },
+   {
+    "duration_h": 5.0,
+    "expected_s": 3600,
+    "from": "2026-10-16T07:21:16Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T12:21:14Z",
+    "worst_gap_s": 17998
+   },
+   {
+    "duration_h": 4.74,
+    "expected_s": 3600,
+    "from": "2026-10-16T12:37:06Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T17:21:36Z",
+    "worst_gap_s": 17070
+   },
+   {
+    "duration_h": 3.45,
+    "expected_s": 3600,
+    "from": "2026-10-16T17:32:43Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-16T20:59:56Z",
+    "worst_gap_s": 12433
+   },
+   {
+    "duration_h": 2.1,
+    "expected_s": 3600,
+    "from": "2026-10-16T21:24:54Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-16T23:30:59Z",
+    "worst_gap_s": 7565
+   },
+   {
+    "duration_h": 3.66,
+    "expected_s": 3600,
+    "from": "2026-10-17T00:36:32Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-17T04:16:09Z",
+    "worst_gap_s": 13177
+   },
+   {
+    "duration_h": 3.54,
+    "expected_s": 3600,
+    "from": "2026-10-17T05:43:03Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-17T09:15:17Z",
+    "worst_gap_s": 12734
+   },
+   {
+    "duration_h": 2.69,
+    "expected_s": 3600,
+    "from": "2026-10-17T10:59:09Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-17T13:40:33Z",
+    "worst_gap_s": 9684
+   },
+   {
+    "duration_h": 2.78,
+    "expected_s": 3600,
+    "from": "2026-10-17T14:17:45Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-17T17:04:49Z",
+    "worst_gap_s": 10024
+   },
+   {
+    "duration_h": 2.63,
+    "expected_s": 3600,
+    "from": "2026-10-17T19:35:59Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-17T22:13:53Z",
+    "worst_gap_s": 9474
+   },
+   {
+    "duration_h": 2.48,
+    "expected_s": 3600,
+    "from": "2026-10-17T22:27:52Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-18T00:56:44Z",
+    "worst_gap_s": 8932
+   },
+   {
+    "duration_h": 4.58,
+    "expected_s": 3600,
+    "from": "2026-10-18T01:14:01Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-18T05:48:33Z",
+    "worst_gap_s": 16472
+   },
+   {
+    "duration_h": 4.85,
+    "expected_s": 3600,
+    "from": "2026-10-18T06:05:39Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-18T10:56:26Z",
+    "worst_gap_s": 17447
+   },
+   {
+    "duration_h": 3.11,
+    "expected_s": 3600,
+    "from": "2026-10-18T11:25:19Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-18T14:31:56Z",
+    "worst_gap_s": 11197
+   },
+   {
+    "duration_h": 2.05,
+    "expected_s": 3600,
+    "from": "2026-10-18T15:59:52Z",
+    "runs_inside": 1,
+    "severity": "missed-slot",
+    "to": "2026-10-18T18:02:45Z",
+    "worst_gap_s": 7373
+   },
+   {
+    "duration_h": 19.84,
+    "expected_s": 3600,
+    "from": "2026-10-19T01:10:12Z",
+    "runs_inside": 6,
+    "severity": "outage",
+    "to": "2026-10-19T21:00:33Z",
+    "worst_gap_s": 16430
+   },
+   {
+    "duration_h": 4.02,
+    "expected_s": 3600,
+    "from": "2026-10-20T01:56:18Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-20T05:57:27Z",
+    "worst_gap_s": 14469
+   },
+   {
+    "duration_h": 9.14,
+    "expected_s": 3600,
+    "from": "2026-10-20T07:45:42Z",
+    "runs_inside": 3,
+    "severity": "outage",
+    "to": "2026-10-20T16:54:06Z",
+    "worst_gap_s": 13284
+   },
+   {
+    "duration_h": 12.24,
+    "expected_s": 3600,
+    "from": "2026-10-21T01:43:45Z",
+    "runs_inside": 4,
+    "severity": "outage",
+    "to": "2026-10-21T13:57:54Z",
+    "worst_gap_s": 14080
+   },
+   {
+    "duration_h": 3.6,
+    "expected_s": 3600,
+    "from": "2026-10-21T15:10:42Z",
+    "runs_inside": 1,
+    "severity": "outage",
+    "to": "2026-10-21T18:46:28Z",
+    "worst_gap_s": 12946
+   }
+  ],
+  "five_minute_era": {
+   "gaps": 12901,
+   "median_s": 300.0,
+   "over_10min": 53,
+   "within_6min": 12781
+  },
+  "flagged_gaps": 118,
+  "gaps": 13100,
+  "head_lines": 13101,
+  "max_gap_s": 876367.0,
+  "median_gap_s": 300.0,
+  "p90_gap_s": 309.0
+ }
+}

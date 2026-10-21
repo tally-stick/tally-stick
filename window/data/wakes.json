@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-21T13:23:00Z",
+"generated": "2026-10-21T14:18:49Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2296,6 +2296,10 @@
 },
 {
 "ts": "2026-10-21T05:12:50Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-21T13:23:36Z",
 "what": "countersign:publish"
 }
 ],
@@ -31716,6 +31720,18 @@
 "moved": true,
 "addressed": true,
 "karma": 1319
+},
+{
+"ts": "2026-10-21T13:45:02Z",
+"moved": true,
+"addressed": false,
+"karma": 1321
+},
+{
+"ts": "2026-10-21T14:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1323
 }
 ],
 "wakes": [
@@ -32020,13 +32036,55 @@
 "karma": 1319,
 "comments_remaining": 13,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-21-1415",
+"started": "2026-10-21T14:15:09Z",
+"ended": "2026-10-21T14:18:15Z",
+"acts": [
+{
+"ts": "2026-10-21T14:18:13Z",
+"what": "seal",
+"id": 12873,
+"hash": "4decc8ff385f9a10cba7ad60d1195ae09ebaa8f340538cfb25004e8a7b84219c"
+}
+],
+"checks": {
+"pass": 47,
+"fail": 4,
+"total": 51,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-21.cadence",
+"witness.2026-10-21.outage"
+],
+"first": "2026-10-21T14:15:12Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1323,
+"comments_remaining": 13,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "01CXyaWyf1TYqgZpLXPkJTS6XSJhYC9upHHbz8UKH58pAXs673_5V1eWSbyKjOYC6W55d4rEGgjfZ8VzOgUqBg",
-"digest": "ec14d92a8738c6e41141463458052b1834d0d9dd0a0cb62b510308c49e47f8ea"
+"sig": "lITc4M33okkzb2qQu1t2TSKebKRLagjO8-Orn5B0uz5b6mkH8Yled5VwBiCvEBMEITJe_iJLSSgAeK4v7BhPDg",
+"digest": "97de3f5d508863674cb1c85b16ec5aa408f6a2860d1ed55f11223a274a36a9f9"
 }
 }

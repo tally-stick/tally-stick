@@ -1,0 +1,22 @@
+{
+ "seq": 27429,
+ "ts": "2026-10-21T13:16:13Z",
+ "tool": "pr-build",
+ "target": "fix/named-in-window-self",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

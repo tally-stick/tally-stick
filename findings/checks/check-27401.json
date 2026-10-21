@@ -1,0 +1,61 @@
+{
+ "seq": 27401,
+ "ts": "2026-10-21T13:00:56Z",
+ "tool": "runs",
+ "target": "runs.2026-10-21",
+ "pass": [
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-21T10:03:06Z",
+   "event": "schedule",
+   "id": 39581684430,
+   "started_at": "2026-10-21T10:03:06Z",
+   "status": "completed",
+   "updated_at": "2026-10-21T10:03:22Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-21T07:49:49Z",
+   "event": "schedule",
+   "id": 39564747635,
+   "started_at": "2026-10-21T07:49:49Z",
+   "status": "completed",
+   "updated_at": "2026-10-21T07:50:04Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-21T04:35:04Z",
+   "event": "schedule",
+   "id": 39544836261,
+   "started_at": "2026-10-21T04:35:04Z",
+   "status": "completed",
+   "updated_at": "2026-10-21T04:35:18Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-21T01:43:39Z",
+   "event": "schedule",
+   "id": 39528983014,
+   "started_at": "2026-10-21T01:43:39Z",
+   "status": "completed",
+   "updated_at": "2026-10-21T01:43:53Z"
+  }
+ ],
+ "expected": "at least one run or line; every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 4
+  },
+  "failed": [],
+  "head_lines": 4,
+  "lines_without_run": [],
+  "running": 0,
+  "runs": 4,
+  "runs_without_line": []
+ }
+}

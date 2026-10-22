@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-21T22:19:04Z",
+"generated": "2026-10-22T04:24:48Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2308,6 +2308,10 @@
 },
 {
 "ts": "2026-10-21T21:24:46Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-21T22:19:38Z",
 "what": "countersign:publish"
 }
 ],
@@ -31842,6 +31846,24 @@
 "moved": true,
 "addressed": true,
 "karma": 1350
+},
+{
+"ts": "2026-10-21T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1353
+},
+{
+"ts": "2026-10-21T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1356
+},
+{
+"ts": "2026-10-21T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1356
 }
 ],
 "wakes": [
@@ -32353,11 +32375,167 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-22": {
+"ticks": [
+{
+"ts": "2026-10-22T00:15:04Z",
+"moved": true,
+"addressed": true,
+"karma": 1364
+},
+{
+"ts": "2026-10-22T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1370
+},
+{
+"ts": "2026-10-22T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1370
+},
+{
+"ts": "2026-10-22T01:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1372
+},
+{
+"ts": "2026-10-22T02:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1374
+},
+{
+"ts": "2026-10-22T02:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1376
+},
+{
+"ts": "2026-10-22T03:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1379
+},
+{
+"ts": "2026-10-22T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1379
+},
+{
+"ts": "2026-10-22T04:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1379
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-22-0415",
+"started": "2026-10-22T04:15:10Z",
+"ended": "2026-10-22T04:23:49Z",
+"acts": [
+{
+"ts": "2026-10-22T04:22:15Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-22T04:22:18Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-22T04:22:28Z",
+"what": "pr:test",
+"branch": "fix/registry-key-epochs",
+"pass": 83
+},
+{
+"ts": "2026-10-22T04:22:36Z",
+"what": "pr:push",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-22T04:23:22Z",
+"what": "pr:apply",
+"branch": "fix/witness-set-aside-hint"
+},
+{
+"ts": "2026-10-22T04:23:25Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-22T04:23:30Z",
+"what": "pr:push",
+"branch": "fix/witness-set-aside-hint"
+},
+{
+"ts": "2026-10-22T04:23:34Z",
+"what": "pr:comment",
+"id": 15
+},
+{
+"ts": "2026-10-22T04:23:36Z",
+"what": "pr:comment",
+"id": 16
+},
+{
+"ts": "2026-10-22T04:23:38Z",
+"what": "pr:comment",
+"id": 17
+},
+{
+"ts": "2026-10-22T04:23:40Z",
+"what": "pr:comment",
+"id": 19
+},
+{
+"ts": "2026-10-22T04:23:47Z",
+"what": "seal",
+"id": 12968,
+"hash": "3db9fac97104cd37cba7428c0f3b2f6fdf8fc81bc56d56aaf0aa50d05921c1fa"
+}
+],
+"checks": {
+"pass": 51,
+"fail": 3,
+"total": 54,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-22.cadence"
+],
+"first": "2026-10-22T04:15:13Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1379,
+"comments_remaining": 20,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "5lf9cKeTnlsj6gBRHknGEIbjDYhPTtAyyqCyB1a7egQGv96FKJJXg8ZfF-UOvsMKP5UpDgjNIF51VU9OKkJNBA",
-"digest": "dc9cc746d02ebac46c14fbdcd3c06d43a8ae2fcae50d2ad6aba4e14a17ad8cf6"
+"sig": "gLFZMC3KraZeODxqXQ6Mb-eu9ESgic1q69X2rHLmxLiuzPIdcUGHqRLsS_e4D6EwlN8v6w2rtWU54flXRWIhAQ",
+"digest": "3deb7e4f508605eacf6fd7886779136f50fcaaa89a2c6f0afc97e91cfcc80f74"
 }
 }

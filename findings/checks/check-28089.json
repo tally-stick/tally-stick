@@ -1,0 +1,28 @@
+{
+ "seq": 28089,
+ "ts": "2026-10-22T21:00:39Z",
+ "tool": "witness",
+ "target": "witness.2026-10-22.outage",
+ "pass": false,
+ "expected": "no degraded window of 3 h or longer (1 h in the five-minute era)",
+ "result": [
+  {
+   "duration_h": 14.68,
+   "expected_s": 3600,
+   "from": "2026-10-21T23:15:42Z",
+   "runs_inside": 5,
+   "severity": "outage",
+   "to": "2026-10-22T13:56:13Z",
+   "worst_gap_s": 13893
+  },
+  {
+   "duration_h": 3.45,
+   "expected_s": 3600,
+   "from": "2026-10-22T15:12:53Z",
+   "runs_inside": 1,
+   "severity": "outage",
+   "to": "2026-10-22T18:39:41Z",
+   "worst_gap_s": 12408
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "seq": 28101,
+ "ts": "2026-10-22T21:00:42Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 4,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "comments[].mentions_in_code",
+     "comments[].mentions_in_code_note",
+     "comments[].mentions_over_cap",
+     "truncated_note"
+    ],
+    "at": "2026-10-22T13:04:30Z",
+    "missing_top": [],
+    "route": "/api/citizen/{handle}"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "attestations[].payload_version"
+    ],
+    "at": "2026-10-22T13:04:50Z",
+    "missing_top": [],
+    "route": "/api/attestations"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "post.mentions_in_code_note"
+    ],
+    "at": "2026-10-22T13:06:05Z",
+    "missing_top": [],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [
+     "proof=081420ce98c7aa9bcb27a99af43ad7c279772db521827d21c0509dc8456bcf39",
+     "proof=3d08ffb4e80130cbbdbde03824c2343bb3a8a0f6b787959e94694f1911ec3362",
+     "proof=45a22b50863549911d0e4a9641871910a97d7fbee7370de9b4a9ada1c95fbcde",
+     "proof=4be2c311da44f3be509f63addd48a0ecd853e504fcd433d0cf24a822acbe81af",
+     "proof=4f7e38d62cfd86f6ed70099af9c8af395ab38a09b0397ff5bb45cf8d71fb267e",
+     "proof=51cd3f86dbdd2910ac519acd8686e43faa12a5a94534e41c411511f4ebfc07c5",
+     "proof=61023675b1e85c0bc8844add2bb51399aea062205c8af08ae0960391612b7a64",
+     "proof=6d9824774e9db755169d365e3769043693aeb6b5de37cff494e473c3cbc19f19",
+     "proof=a11c9e3c0da46b942a3b1e82aaab4b729df5f580668369e707e0f3fd33d49a6f",
+     "proof=ab019eb59ba83ef5c01ca1341664e9b51e7ee5a8ef59debce3123ab1f159435f"
+    ],
+    "added_keys": [],
+    "at": "2026-10-22T21:00:17Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-22T13:00:17Z",
+  "through": "2026-10-22T21:00:17Z"
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "seq": 27907,
+ "ts": "2026-10-22T05:00:34Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "comments[].mentions_in_code",
+     "comments[].mentions_over_cap",
+     "post.mentions_in_code",
+     "post.mentions_over_cap"
+    ],
+    "at": "2026-10-22T04:24:49Z",
+    "missing_top": [],
+    "route": "/api/post/{id}"
+   },
+   {
+    "added_enums": [
+     "proof=8d09e1f25d3e22b904816fc78d974a1d586e00610b49ce3444b2d69cb7dba965",
+     "proof=d8e1c86f7b11ec21f3e03b0ccd83c43ecad2b250cf890133e4ce900dac593bb2",
+     "proof=e11fb1a4cb26af22841f787d0a80028b48c90a3359c62749c9da8500cb92a036",
+     "proof=e70ac9d1a159ca3f811a1f8a0fa9a6a38adcbf07c95b86f5be877b566454ff59",
+     "proof=f0c3aa13a6102bcbca902fc8e556c27ff2c2925ef2cf5ba66f3af744cf153b61",
+     "proof=f835d9f5466c097742ac55bb95d9ffe3c279adafb2b4b179eac41f2d96adbb6a"
+    ],
+    "added_keys": [],
+    "at": "2026-10-22T05:00:15Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-22T04:15:18Z",
+  "through": "2026-10-22T05:00:15Z"
+ }
+}

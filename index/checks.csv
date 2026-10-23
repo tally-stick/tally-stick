@@ -17472,3 +17472,57 @@ seq,ts,tool,target,pass,kind,negative_test
 28442,2026-10-23T13:00:41Z,dossier,tally-stick.counts,1,verify,0
 28443,2026-10-23T13:00:41Z,shape,board.py pages: shape changes since last check,1,verify,0
 28444,2026-10-23T13:00:48Z,runs,runs.2026-10-23,"[{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T09:58:35Z"",""event"":""schedule"",""id"":39935751155,""started_at"":""2026-10-23T09:58:35Z"",""status"":""completed"",""updated_at"":""2026-10-23T09:58:48Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T07:43:23Z"",""event"":""schedule"",""id"":39919676967,""started_at"":""2026-10-23T07:43:23Z"",""status"":""completed"",""updated_at"":""2026-10-23T07:43:36Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T04:39:08Z"",""event"":""schedule"",""id"":39901451663,""started_at"":""2026-10-23T04:39:08Z"",""status"":""completed"",""updated_at"":""2026-10-23T04:39:25Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T01:39:50Z"",""event"":""schedule"",""id"":39885266731,""started_at"":""2026-10-23T01:39:50Z"",""status"":""completed"",""updated_at"":""2026-10-23T01:40:03Z""}]",verify,0
+28483,2026-10-23T21:00:11Z,relay,relay.write.instructions,1,verify,0
+28484,2026-10-23T21:00:11Z,relay,relay.write.pinned-tools,0,verify,0
+28485,2026-10-23T21:00:11Z,relay,relay.write.new-tools,1,verify,0
+28486,2026-10-23T21:00:11Z,relay,relay.read.instructions,1,verify,0
+28487,2026-10-23T21:00:11Z,relay,relay.read.pinned-tools,0,verify,0
+28488,2026-10-23T21:00:11Z,relay,relay.read.new-tools,1,verify,0
+28489,2026-10-23T21:00:14Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+28490,2026-10-23T21:00:14Z,heads,attest.treasury.anchored-append-only,1,verify,0
+28491,2026-10-23T21:00:14Z,heads,attest.identity_events.verified,1,verify,0
+28492,2026-10-23T21:00:14Z,heads,attest.ledger.verified,1,verify,0
+28493,2026-10-23T21:00:14Z,heads,checkpoint.identity_events.signature,1,verify,0
+28494,2026-10-23T21:00:14Z,heads,checkpoint.ledger.signature,1,verify,0
+28495,2026-10-23T21:00:14Z,heads,registry-key.pinned,1,verify,0
+28496,2026-10-23T21:00:14Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+28497,2026-10-23T21:00:14Z,heads,checkpoint.ledger.monotonic,1,verify,0
+28498,2026-10-23T21:00:14Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+28499,2026-10-23T21:00:14Z,heads,attest.identity_events.monotonic,1,verify,0
+28500,2026-10-23T21:00:14Z,heads,attest.ledger.monotonic,1,verify,0
+28501,2026-10-23T21:00:14Z,heads,attest.ledger.same-id-same-head,1,verify,0
+28504,2026-10-23T21:00:15Z,consistency,consistency.identity_events.29772->29772.sizes-as-requested,1,verify,0
+28505,2026-10-23T21:00:15Z,consistency,consistency.identity_events.29772->29772.from-signature,1,verify,0
+28506,2026-10-23T21:00:15Z,consistency,consistency.identity_events.29772->29772.to-signature,1,verify,0
+28507,2026-10-23T21:00:15Z,consistency,consistency.identity_events.29772->29772.from-root-matches-ours,1,verify,0
+28508,2026-10-23T21:00:15Z,consistency,consistency.identity_events.29772->29772.to-root-matches-ours,1,verify,0
+28509,2026-10-23T21:00:15Z,consistency,consistency.identity_events.29772->29772.to-root-matches-live,1,verify,0
+28510,2026-10-23T21:00:15Z,consistency,consistency.identity_events.29772->29772.proof,1,verify,0
+28511,2026-10-23T21:00:17Z,countersign,countersign.identity_events,1,verify,0
+28512,2026-10-23T21:00:17Z,countersign,countersign.ledger,1,verify,0
+28513,2026-10-23T21:00:47Z,pages,pages.domains,1,verify,0
+28514,2026-10-23T21:00:50Z,witness,witness.2026-10-23.registry-signatures,1,verify,0
+28515,2026-10-23T21:00:50Z,witness,witness.2026-10-23.countersignatures,1,verify,0
+28516,2026-10-23T21:00:50Z,witness,witness.2026-10-23.witness-keys-in-directory,1,verify,0
+28517,2026-10-23T21:00:50Z,witness,witness.2026-10-23.refusals,1,verify,0
+28518,2026-10-23T21:00:50Z,witness,witness.2026-10-23.monotonic,1,verify,0
+28519,2026-10-23T21:00:50Z,witness,witness.2026-10-23.checkpoint-id,1,verify,0
+28520,2026-10-23T21:00:50Z,witness,witness.2026-10-23.latest-vs-live,1,verify,0
+28521,2026-10-23T21:00:50Z,witness,witness.2026-10-23.latest-head-attest,1,verify,0
+28522,2026-10-23T21:00:50Z,witness,witness.2026-10-23.cadence,0,verify,0
+28523,2026-10-23T21:00:50Z,witness,witness.2026-10-23.newest-line-age,1,verify,0
+28524,2026-10-23T21:00:50Z,witness,witness.2026-10-23.outage,0,verify,0
+28527,2026-10-23T21:00:53Z,dossier,tally-stick.registry-signature,1,verify,0
+28528,2026-10-23T21:00:53Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+28529,2026-10-23T21:00:53Z,dossier,tally-stick.inclusion,1,verify,0
+28530,2026-10-23T21:00:53Z,dossier,tally-stick.leaf-index,1,verify,0
+28531,2026-10-23T21:00:53Z,dossier,tally-stick.attestation-hashes,1,verify,0
+28532,2026-10-23T21:00:53Z,dossier,tally-stick.keys,1,verify,0
+28533,2026-10-23T21:00:53Z,dossier,tally-stick.event-hashes,1,verify,0
+28534,2026-10-23T21:00:53Z,dossier,tally-stick.seal-signatures,1,verify,0
+28535,2026-10-23T21:00:53Z,dossier,tally-stick.counts,1,verify,0
+28536,2026-10-23T21:00:53Z,shape,board.py pages: shape changes since last check,1,verify,0
+28538,2026-10-23T21:01:23Z,runs,runs.2026-10-23,"[{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T19:07:36Z"",""event"":""schedule"",""id"":40008915881,""started_at"":""2026-10-23T19:07:36Z"",""status"":""completed"",""updated_at"":""2026-10-23T19:07:51Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T18:30:30Z"",""event"":""schedule"",""id"":40003852980,""started_at"":""2026-10-23T18:30:30Z"",""status"":""completed"",""updated_at"":""2026-10-23T18:30:46Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T14:58:32Z"",""event"":""schedule"",""id"":39974228537,""started_at"":""2026-10-23T14:58:32Z"",""status"":""completed"",""updated_at"":""2026-10-23T14:58:46Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T13:37:24Z"",""event"":""schedule"",""id"":39962745756,""started_at"":""2026-10-23T13:37:24Z"",""status"":""completed"",""updated_at"":""2026-10-23T13:37:37Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T09:58:35Z"",""event"":""schedule"",""id"":39935751155,""started_at"":""2026-10-23T09:58:35Z"",""status"":""completed"",""updated_at"":""2026-10-23T09:58:48Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T07:43:23Z"",""event"":""schedule"",""id"":39919676967,""started_at"":""2026-10-23T07:43:23Z"",""status"":""completed"",""updated_at"":""2026-10-23T07:43:36Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T04:39:08Z"",""event"":""schedule"",""id"":39901451663,""started_at"":""2026-10-23T04:39:08Z"",""status"":""completed"",""updated_at"":""2026-10-23T04:39:25Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-23T01:39:50Z"",""event"":""schedule"",""id"":39885266731,""started_at"":""2026-10-23T01:39:50Z"",""status"":""completed"",""updated_at"":""2026-10-23T01:40:03Z""}]",verify,0
+28559,2026-10-23T21:11:06Z,attest,claim #28549,1,verify,0
+28560,2026-10-23T21:11:08Z,attest,claim #28550,1,verify,0
+28561,2026-10-23T21:11:09Z,attest,claim #28551,1,verify,0

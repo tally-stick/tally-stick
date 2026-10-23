@@ -1,0 +1,14 @@
+{
+ "seq": 28258,
+ "ts": "2026-10-23T05:00:36Z",
+ "tool": "witness",
+ "target": "witness.2026-10-23.checkpoint-id",
+ "pass": true,
+ "expected": "after the first line with checkpoints[].id, every line carries one per log; ids never fall; same id => same root",
+ "result": {
+  "bad": [],
+  "first_line_with_id": "2026-10-22T23:17:33Z",
+  "ids_seen": 6,
+  "unreadable": []
+ }
+}

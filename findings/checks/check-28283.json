@@ -1,0 +1,22 @@
+{
+ "seq": 28283,
+ "ts": "2026-10-23T05:08:56Z",
+ "tool": "pr-build",
+ "target": "fix/correction-names-target",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

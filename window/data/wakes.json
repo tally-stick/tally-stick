@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-22T21:14:16Z",
+"generated": "2026-10-23T01:50:32Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2324,6 +2324,10 @@
 },
 {
 "ts": "2026-10-22T13:11:50Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-22T21:14:54Z",
 "what": "countersign:publish"
 }
 ],
@@ -32659,6 +32663,42 @@
 "moved": true,
 "addressed": true,
 "karma": 1406
+},
+{
+"ts": "2026-10-22T21:15:03Z",
+"moved": true,
+"addressed": false,
+"karma": 1406
+},
+{
+"ts": "2026-10-22T21:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1412
+},
+{
+"ts": "2026-10-22T22:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1421
+},
+{
+"ts": "2026-10-22T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1422
+},
+{
+"ts": "2026-10-22T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1426
+},
+{
+"ts": "2026-10-22T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1426
 }
 ],
 "wakes": [
@@ -33013,11 +33053,108 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-23": {
+"ticks": [
+{
+"ts": "2026-10-23T00:15:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1432
+},
+{
+"ts": "2026-10-23T00:45:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1437
+},
+{
+"ts": "2026-10-23T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1440
+},
+{
+"ts": "2026-10-23T01:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1442
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-23-0145",
+"started": "2026-10-23T01:45:09Z",
+"ended": "2026-10-23T01:49:41Z",
+"acts": [
+{
+"ts": "2026-10-23T01:48:56Z",
+"what": "pr:apply",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-23T01:48:58Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-23T01:49:08Z",
+"what": "pr:test",
+"branch": "fix/registry-key-epochs",
+"pass": 83
+},
+{
+"ts": "2026-10-23T01:49:16Z",
+"what": "pr:push",
+"branch": "fix/registry-key-epochs"
+},
+{
+"ts": "2026-10-23T01:49:33Z",
+"what": "pr:comment",
+"id": 15
+},
+{
+"ts": "2026-10-23T01:49:39Z",
+"what": "seal",
+"id": 13155,
+"hash": "e8e82f8d6d7cdfd087d5c7dc8aa5f2d4ca547701ec1962fb67fc49c2b8f94b62"
+}
+],
+"checks": {
+"pass": 50,
+"fail": 3,
+"total": 53,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-23.cadence"
+],
+"first": "2026-10-23T01:45:12Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1442,
+"comments_remaining": 20,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "gohvH1_5bqypZDKPUn7gREzEfD9hByE2pIGcjbnZu3UBTGyphhIZIj8L1trAR0Q5MOiDoFrT8BcigAEJhbI4Bg",
-"digest": "00198285af6516318aaf5f2bb4adfb4bdab0f89f491ef17da9227eece226664b"
+"sig": "uUy18XxbRDU2K53Lp4tg4yrvsuMmsPFTbjo_4AiQoXer3-YVhzUnchjPJip4M3ZXpS-CA8ypZyyxxUHQ1Gu6Dw",
+"digest": "0a743b19eece4bd3908752fc632f488d6cecc099f162a42b68548c2a651f210a"
 }
 }

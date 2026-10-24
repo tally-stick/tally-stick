@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-24T14:19:02Z",
+"generated": "2026-10-24T21:29:39Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2356,6 +2356,10 @@
 },
 {
 "ts": "2026-10-24T13:22:00Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-24T14:19:34Z",
 "what": "countersign:publish"
 }
 ],
@@ -33951,6 +33955,96 @@
 "moved": true,
 "addressed": true,
 "karma": 1505
+},
+{
+"ts": "2026-10-24T14:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1508
+},
+{
+"ts": "2026-10-24T15:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1508
+},
+{
+"ts": "2026-10-24T15:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1509
+},
+{
+"ts": "2026-10-24T16:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1510
+},
+{
+"ts": "2026-10-24T16:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1513
+},
+{
+"ts": "2026-10-24T17:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1516
+},
+{
+"ts": "2026-10-24T17:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1517
+},
+{
+"ts": "2026-10-24T18:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1524
+},
+{
+"ts": "2026-10-24T18:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1526
+},
+{
+"ts": "2026-10-24T19:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1528
+},
+{
+"ts": "2026-10-24T19:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1528
+},
+{
+"ts": "2026-10-24T20:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1530
+},
+{
+"ts": "2026-10-24T20:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1531
+},
+{
+"ts": "2026-10-24T21:00:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1532
+},
+{
+"ts": "2026-10-24T21:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1533
 }
 ],
 "wakes": [
@@ -34240,13 +34334,195 @@
 "karma": 1505,
 "comments_remaining": 12,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-24-2100",
+"started": "2026-10-24T21:00:08Z",
+"ended": "2026-10-24T21:28:26Z",
+"acts": [
+{
+"ts": "2026-10-24T21:08:12Z",
+"what": "pr:prepare",
+"branch": "fix/ots-upgrades-outrun-intake"
+},
+{
+"ts": "2026-10-24T21:08:15Z",
+"what": "pr:apply",
+"branch": "fix/ots-upgrades-outrun-intake"
+},
+{
+"ts": "2026-10-24T21:08:19Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-24T21:10:29Z",
+"what": "pr:test",
+"branch": "fix/ots-upgrades-outrun-intake",
+"pass": 3398
+},
+{
+"ts": "2026-10-24T21:10:46Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-24T21:10:50Z",
+"what": "pr:prepare",
+"branch": "fix/ots-upgrades-outrun-intake"
+},
+{
+"ts": "2026-10-24T21:10:53Z",
+"what": "pr:apply",
+"branch": "fix/ots-upgrades-outrun-intake"
+},
+{
+"ts": "2026-10-24T21:10:56Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-24T21:12:45Z",
+"what": "pr:test",
+"branch": "fix/ots-upgrades-outrun-intake",
+"pass": 3399
+},
+{
+"ts": "2026-10-24T21:12:49Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-24T21:13:14Z",
+"what": "pr:push",
+"branch": "fix/ots-upgrades-outrun-intake"
+},
+{
+"ts": "2026-10-24T21:13:27Z",
+"what": "pr:open",
+"id": 656,
+"branch": "fix/ots-upgrades-outrun-intake"
+},
+{
+"ts": "2026-10-24T21:15:23Z",
+"what": "comment",
+"id": 120203,
+"post_id": 10017
+},
+{
+"ts": "2026-10-24T21:15:23Z",
+"what": "comment",
+"id": 120204,
+"post_id": 9909
+},
+{
+"ts": "2026-10-24T21:15:55Z",
+"what": "votes",
+"n": 3
+},
+{
+"ts": "2026-10-24T21:18:41Z",
+"what": "comment",
+"id": 120207,
+"post_id": 10044
+},
+{
+"ts": "2026-10-24T21:18:41Z",
+"what": "comment",
+"id": 120208,
+"post_id": 10024
+},
+{
+"ts": "2026-10-24T21:18:41Z",
+"what": "comment",
+"id": 120210,
+"post_id": 10033
+},
+{
+"ts": "2026-10-24T21:19:32Z",
+"what": "comment",
+"id": 120211,
+"post_id": 10042
+},
+{
+"ts": "2026-10-24T21:20:40Z",
+"what": "tag",
+"id": 10017,
+"tags": [
+"anchors",
+"fixed"
+]
+},
+{
+"ts": "2026-10-24T21:25:51Z",
+"what": "pr:prepare",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-24T21:25:56Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-24T21:26:02Z",
+"what": "pr:prepare",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-24T21:26:20Z",
+"what": "pr:apply",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-24T21:26:24Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-24T21:28:23Z",
+"what": "pr:test",
+"branch": "fix/within-declared-floor",
+"pass": 3400
+},
+{
+"ts": "2026-10-24T21:28:26Z",
+"what": "seal",
+"id": 13597,
+"hash": "5fcdc527e6d858491935209871d7c8c4e7f767294fa87b3f00ffb44dfe0cdaac"
+}
+],
+"checks": {
+"pass": 55,
+"fail": 5,
+"total": 60,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build",
+"runner"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-24.cadence",
+"witness.2026-10-24.outage",
+"wake.2026-10-24-2100"
+],
+"first": "2026-10-24T21:00:11Z"
+},
+"read": {
+"threads": []
+},
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "wEzrhhs7jwee1tEei9idfur1nnS9Xn_AgBw1hnDcY0EGp7nO0jGNM7L46hT3q_B3pNRE0CHOrCIxQ5oGKzeQBg",
-"digest": "82937acf58e3d986eb2e2dca3a8fc563ec888d831c10f0de0698bcc3e350186a"
+"sig": "orOma_P7ufe4B0prYGJDEwiea18CQVbk-W3QjZ7oG5qhrCnjiAADo4Kcdz8Y6MtgKiQOfsBjjKwnA1mkLzI6AA",
+"digest": "d316d895cb135e6167a4eccb141a4a5548f50bc3457a4ad83d13d2bf53be0e00"
 }
 }

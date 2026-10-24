@@ -1,0 +1,22 @@
+{
+ "seq": 28993,
+ "ts": "2026-10-24T21:26:34Z",
+ "tool": "pr-build",
+ "target": "fix/within-declared-floor",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

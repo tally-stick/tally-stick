@@ -17748,3 +17748,57 @@ seq,ts,tool,target,pass,kind,negative_test
 28992,2026-10-24T21:26:27Z,pr-lint,fix/within-declared-floor,1,gate,0
 28993,2026-10-24T21:26:34Z,pr-build,fix/within-declared-floor,1,gate,0
 28996,2026-10-24T21:28:24Z,runner,wake.2026-10-24-2100,0,verify,0
+29005,2026-10-24T22:15:11Z,relay,relay.write.instructions,1,verify,0
+29006,2026-10-24T22:15:11Z,relay,relay.write.pinned-tools,0,verify,0
+29007,2026-10-24T22:15:11Z,relay,relay.write.new-tools,1,verify,0
+29008,2026-10-24T22:15:11Z,relay,relay.read.instructions,1,verify,0
+29009,2026-10-24T22:15:11Z,relay,relay.read.pinned-tools,0,verify,0
+29010,2026-10-24T22:15:11Z,relay,relay.read.new-tools,1,verify,0
+29011,2026-10-24T22:15:16Z,heads,attest.identity_log.anchored-append-only,1,verify,0
+29012,2026-10-24T22:15:16Z,heads,attest.treasury.anchored-append-only,1,verify,0
+29013,2026-10-24T22:15:16Z,heads,attest.identity_events.verified,1,verify,0
+29014,2026-10-24T22:15:16Z,heads,attest.ledger.verified,1,verify,0
+29015,2026-10-24T22:15:16Z,heads,checkpoint.identity_events.signature,1,verify,0
+29016,2026-10-24T22:15:16Z,heads,checkpoint.ledger.signature,1,verify,0
+29017,2026-10-24T22:15:16Z,heads,registry-key.pinned,1,verify,0
+29018,2026-10-24T22:15:16Z,heads,checkpoint.identity_events.monotonic,1,verify,0
+29019,2026-10-24T22:15:16Z,heads,checkpoint.ledger.monotonic,1,verify,0
+29020,2026-10-24T22:15:16Z,heads,checkpoint.ledger.same-size-same-root,1,verify,0
+29021,2026-10-24T22:15:16Z,heads,attest.identity_events.monotonic,1,verify,0
+29022,2026-10-24T22:15:16Z,heads,attest.ledger.monotonic,1,verify,0
+29023,2026-10-24T22:15:16Z,heads,attest.ledger.same-id-same-head,1,verify,0
+29026,2026-10-24T22:15:18Z,consistency,consistency.identity_events.30248->30248.sizes-as-requested,1,verify,0
+29027,2026-10-24T22:15:18Z,consistency,consistency.identity_events.30248->30248.from-signature,1,verify,0
+29028,2026-10-24T22:15:18Z,consistency,consistency.identity_events.30248->30248.to-signature,1,verify,0
+29029,2026-10-24T22:15:18Z,consistency,consistency.identity_events.30248->30248.from-root-matches-ours,1,verify,0
+29030,2026-10-24T22:15:18Z,consistency,consistency.identity_events.30248->30248.to-root-matches-ours,1,verify,0
+29031,2026-10-24T22:15:18Z,consistency,consistency.identity_events.30248->30248.to-root-matches-live,1,verify,0
+29032,2026-10-24T22:15:18Z,consistency,consistency.identity_events.30248->30248.proof,1,verify,0
+29033,2026-10-24T22:15:20Z,countersign,countersign.identity_events,1,verify,0
+29034,2026-10-24T22:15:20Z,countersign,countersign.ledger,1,verify,0
+29035,2026-10-24T22:15:27Z,pages,pages.domains,1,verify,0
+29036,2026-10-24T22:15:30Z,witness,witness.2026-10-24.registry-signatures,1,verify,0
+29037,2026-10-24T22:15:30Z,witness,witness.2026-10-24.countersignatures,1,verify,0
+29038,2026-10-24T22:15:30Z,witness,witness.2026-10-24.witness-keys-in-directory,1,verify,0
+29039,2026-10-24T22:15:30Z,witness,witness.2026-10-24.refusals,1,verify,0
+29040,2026-10-24T22:15:30Z,witness,witness.2026-10-24.monotonic,1,verify,0
+29041,2026-10-24T22:15:30Z,witness,witness.2026-10-24.checkpoint-id,1,verify,0
+29042,2026-10-24T22:15:30Z,witness,witness.2026-10-24.latest-vs-live,1,verify,0
+29043,2026-10-24T22:15:30Z,witness,witness.2026-10-24.latest-head-attest,1,verify,0
+29044,2026-10-24T22:15:30Z,witness,witness.2026-10-24.cadence,0,verify,0
+29045,2026-10-24T22:15:30Z,witness,witness.2026-10-24.newest-line-age,1,verify,0
+29046,2026-10-24T22:15:30Z,witness,witness.2026-10-24.outage,0,verify,0
+29049,2026-10-24T22:15:33Z,dossier,tally-stick.registry-signature,1,verify,0
+29050,2026-10-24T22:15:33Z,dossier,tally-stick.checkpoint-signature,1,verify,0
+29051,2026-10-24T22:15:33Z,dossier,tally-stick.inclusion,1,verify,0
+29052,2026-10-24T22:15:33Z,dossier,tally-stick.leaf-index,1,verify,0
+29053,2026-10-24T22:15:33Z,dossier,tally-stick.attestation-hashes,1,verify,0
+29054,2026-10-24T22:15:33Z,dossier,tally-stick.keys,1,verify,0
+29055,2026-10-24T22:15:33Z,dossier,tally-stick.event-hashes,1,verify,0
+29056,2026-10-24T22:15:33Z,dossier,tally-stick.seal-signatures,1,verify,0
+29057,2026-10-24T22:15:33Z,dossier,tally-stick.counts,1,verify,0
+29058,2026-10-24T22:15:33Z,shape,board.py pages: shape changes since last check,1,verify,0
+29059,2026-10-24T22:15:58Z,attest,claim #28980,1,verify,0
+29060,2026-10-24T22:16:00Z,attest,claim #28981,1,verify,0
+29061,2026-10-24T22:16:01Z,attest,claim #28982,1,verify,0
+29062,2026-10-24T22:16:02Z,runs,runs.2026-10-24,"[{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T19:34:58Z"",""event"":""schedule"",""id"":40125950143,""started_at"":""2026-10-24T19:34:58Z"",""status"":""completed"",""updated_at"":""2026-10-24T19:35:12Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T19:26:45Z"",""event"":""schedule"",""id"":40125323398,""started_at"":""2026-10-24T19:26:45Z"",""status"":""completed"",""updated_at"":""2026-10-24T19:26:57Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T16:43:26Z"",""event"":""schedule"",""id"":40112879133,""started_at"":""2026-10-24T16:43:26Z"",""status"":""completed"",""updated_at"":""2026-10-24T16:43:39Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T16:32:49Z"",""event"":""schedule"",""id"":40112059553,""started_at"":""2026-10-24T16:32:49Z"",""status"":""completed"",""updated_at"":""2026-10-24T16:33:05Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T12:47:32Z"",""event"":""schedule"",""id"":40095393051,""started_at"":""2026-10-24T12:47:32Z"",""status"":""completed"",""updated_at"":""2026-10-24T12:47:47Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T12:37:45Z"",""event"":""schedule"",""id"":40094715801,""started_at"":""2026-10-24T12:37:45Z"",""status"":""completed"",""updated_at"":""2026-10-24T12:37:59Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T07:25:53Z"",""event"":""schedule"",""id"":40074100226,""started_at"":""2026-10-24T07:25:53Z"",""status"":""completed"",""updated_at"":""2026-10-24T07:26:04Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T07:13:25Z"",""event"":""schedule"",""id"":40073284531,""started_at"":""2026-10-24T07:13:25Z"",""status"":""completed"",""updated_at"":""2026-10-24T07:13:42Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T01:43:44Z"",""event"":""schedule"",""id"":40051098296,""started_at"":""2026-10-24T01:43:44Z"",""status"":""completed"",""updated_at"":""2026-10-24T01:44:01Z""},{""attempt"":1,""conclusion"":""success"",""created_at"":""2026-10-24T01:33:05Z"",""event"":""schedule"",""id"":40050307794,""started_at"":""2026-10-24T01:33:05Z"",""status"":""completed"",""updated_at"":""2026-10-24T01:33:19Z""}]",verify,0

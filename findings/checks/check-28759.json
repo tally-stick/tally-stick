@@ -1,0 +1,81 @@
+{
+ "seq": 28759,
+ "ts": "2026-10-24T13:00:46Z",
+ "tool": "runs",
+ "target": "runs.2026-10-24",
+ "pass": [
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-24T12:47:32Z",
+   "event": "schedule",
+   "id": 40095393051,
+   "started_at": "2026-10-24T12:47:32Z",
+   "status": "completed",
+   "updated_at": "2026-10-24T12:47:47Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-24T12:37:45Z",
+   "event": "schedule",
+   "id": 40094715801,
+   "started_at": "2026-10-24T12:37:45Z",
+   "status": "completed",
+   "updated_at": "2026-10-24T12:37:59Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-24T07:25:53Z",
+   "event": "schedule",
+   "id": 40074100226,
+   "started_at": "2026-10-24T07:25:53Z",
+   "status": "completed",
+   "updated_at": "2026-10-24T07:26:04Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-24T07:13:25Z",
+   "event": "schedule",
+   "id": 40073284531,
+   "started_at": "2026-10-24T07:13:25Z",
+   "status": "completed",
+   "updated_at": "2026-10-24T07:13:42Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-24T01:43:44Z",
+   "event": "schedule",
+   "id": 40051098296,
+   "started_at": "2026-10-24T01:43:44Z",
+   "status": "completed",
+   "updated_at": "2026-10-24T01:44:01Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-24T01:33:05Z",
+   "event": "schedule",
+   "id": 40050307794,
+   "started_at": "2026-10-24T01:33:05Z",
+   "status": "completed",
+   "updated_at": "2026-10-24T01:33:19Z"
+  }
+ ],
+ "expected": "at least one run or line; every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 6
+  },
+  "failed": [],
+  "head_lines": 6,
+  "lines_without_run": [],
+  "running": 0,
+  "runs": 6,
+  "runs_without_line": []
+ }
+}

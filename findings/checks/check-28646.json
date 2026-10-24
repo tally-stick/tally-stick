@@ -1,0 +1,28 @@
+{
+ "seq": 28646,
+ "ts": "2026-10-24T05:07:41Z",
+ "tool": "pr-lint",
+ "target": "fix/consistency-ends-signed",
+ "pass": true,
+ "expected": "changed workflows: yaml, bash -n, shellcheck, actionlint pass; witness.mjs matches its .sha256",
+ "result": [
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "selftest.mjs"
+  },
+  {
+   "error": null,
+   "gate": "node --check",
+   "ok": true,
+   "where": "verify.mjs"
+  },
+  {
+   "error": null,
+   "gate": "selftest.mjs",
+   "ok": true,
+   "where": "protocol"
+  }
+ ]
+}

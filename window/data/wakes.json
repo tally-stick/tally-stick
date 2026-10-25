@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-25T05:23:02Z",
+"generated": "2026-10-25T06:23:42Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2368,6 +2368,10 @@
 },
 {
 "ts": "2026-10-24T22:19:25Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-25T05:23:36Z",
 "what": "countersign:publish"
 }
 ],
@@ -34673,6 +34677,18 @@
 "moved": true,
 "addressed": true,
 "karma": 1549
+},
+{
+"ts": "2026-10-25T05:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1550
+},
+{
+"ts": "2026-10-25T06:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1552
 }
 ],
 "wakes": [
@@ -34857,13 +34873,82 @@
 "karma": 1549,
 "comments_remaining": 16,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-25-0615",
+"started": "2026-10-25T06:15:10Z",
+"ended": "2026-10-25T06:22:15Z",
+"acts": [
+{
+"ts": "2026-10-25T06:19:09Z",
+"what": "pr:apply",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-25T06:19:12Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-25T06:21:40Z",
+"what": "pr:test",
+"branch": "fix/within-declared-floor",
+"pass": 3404
+},
+{
+"ts": "2026-10-25T06:21:52Z",
+"what": "pr:push",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-25T06:21:58Z",
+"what": "pr:comment",
+"id": 659
+},
+{
+"ts": "2026-10-25T06:22:13Z",
+"what": "seal",
+"id": 13687,
+"hash": "e881daee19eaa8d9f6543cd55bc51c1ca6c4fd9317c0170d0f79f2de1d04dfc7"
+}
+],
+"checks": {
+"pass": 51,
+"fail": 4,
+"total": 55,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-25.cadence",
+"witness.2026-10-25.outage"
+],
+"first": "2026-10-25T06:15:13Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1552,
+"comments_remaining": 16,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "xvV4KPTgaxKiUPqALOB-CaLnCCo8Ja6_sAxyUb2OkZ24UBP6Xmn4Dfftzy3zuVV_yYIwG87UsV0LqUrkEFmIDg",
-"digest": "46f84b90dadff5a07c57549d0d7b08f3ce3a5afec26bbe9d3896a51213b97e0a"
+"sig": "G3273__luKwujKI7JVWdhEOWWEwTVTOTrdbZAOByYPnfLZQrvQxxcz6BV_LusO9XzS5j1dT15BySIOMt0bSDAA",
+"digest": "4a5b9fdae7f9678709e67289ca803d34abe9f087f6ad5c270e52f3ffbf85cd66"
 }
 }

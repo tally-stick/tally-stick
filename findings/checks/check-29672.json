@@ -1,0 +1,22 @@
+{
+ "seq": 29672,
+ "ts": "2026-10-25T21:07:10Z",
+ "tool": "pr-build",
+ "target": "fix/citations-by-name",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

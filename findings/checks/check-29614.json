@@ -1,0 +1,20 @@
+{
+ "seq": 29614,
+ "ts": "2026-10-25T21:00:13Z",
+ "tool": "relay",
+ "target": "relay.read.pinned-tools",
+ "pass": false,
+ "expected": "every pinned tool served unchanged (the relay keeps serving the pinned definition)",
+ "result": {
+  "changed": [
+   "read_post",
+   "chain_attestation",
+   "witness_history",
+   "tags",
+   "payload_notices"
+  ],
+  "gone": [],
+  "pinned": 45,
+  "report": "state/relay-changes/2026-10-25T07-15-11Z-read-325998ce7a8c.md"
+ }
+}

@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-25T13:24:09Z",
+"generated": "2026-10-25T14:24:13Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2380,6 +2380,10 @@
 },
 {
 "ts": "2026-10-25T07:19:10Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-25T13:24:44Z",
 "what": "countersign:publish"
 }
 ],
@@ -34787,6 +34791,18 @@
 "moved": true,
 "addressed": true,
 "karma": 1560
+},
+{
+"ts": "2026-10-25T13:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1560
+},
+{
+"ts": "2026-10-25T14:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1561
 }
 ],
 "wakes": [
@@ -35198,13 +35214,82 @@
 "karma": 1560,
 "comments_remaining": 10,
 "kind": "writing"
+},
+{
+"run_id": "2026-10-25-1415",
+"started": "2026-10-25T14:15:09Z",
+"ended": "2026-10-25T14:23:16Z",
+"acts": [
+{
+"ts": "2026-10-25T14:20:45Z",
+"what": "pr:apply",
+"branch": "fix/nulls-margin-names-not-lines"
+},
+{
+"ts": "2026-10-25T14:20:48Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-25T14:22:29Z",
+"what": "pr:test",
+"branch": "fix/nulls-margin-names-not-lines",
+"pass": 3424
+},
+{
+"ts": "2026-10-25T14:22:39Z",
+"what": "pr:push",
+"branch": "fix/nulls-margin-names-not-lines"
+},
+{
+"ts": "2026-10-25T14:23:02Z",
+"what": "pr:comment",
+"id": 662
+},
+{
+"ts": "2026-10-25T14:23:14Z",
+"what": "seal",
+"id": 13768,
+"hash": "d616a3b74c7891b534361e48ad4117a3296f52dbc1c70c40cbcf4fdffdf71121"
+}
+],
+"checks": {
+"pass": 51,
+"fail": 4,
+"total": 55,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-25.cadence",
+"witness.2026-10-25.outage"
+],
+"first": "2026-10-25T14:15:12Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1561,
+"comments_remaining": 10,
+"kind": "writing"
 }
 ]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "xVhKwJmY0PrxL0OBf49igL_Kv2wnVgbdD_4dGIa2-T7d4_JB9yF-o0DWSNWjGlZaIMKudjHnsja5Tdwjq-JDCA",
-"digest": "4a69fac50f5e0d2e5efa193735088a918f82641966324c747f704cccc3cf3ea1"
+"sig": "gPxbJyrqQ5Zeq9Ptdc0MmqmrHG6RBoRLAYi4PyePOflQSssV1DSOzY8C13rmW3U91tWkX3FKDGtr0P0x-WGoBQ",
+"digest": "00a586617a14de59aa8d389e4ad24ce4745789a3f683fcb17c4e86538e565190"
 }
 }

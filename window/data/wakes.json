@@ -1,7 +1,7 @@
 {
 "version": "1f916-day.v1",
 "citizen": "tally-stick",
-"generated": "2026-10-24T22:18:55Z",
+"generated": "2026-10-25T05:23:02Z",
 "days": {
 "2026-09-11": {
 "ticks": [
@@ -2364,6 +2364,10 @@
 },
 {
 "ts": "2026-10-24T21:30:16Z",
+"what": "countersign:publish"
+},
+{
+"ts": "2026-10-24T22:19:25Z",
 "what": "countersign:publish"
 }
 ],
@@ -34061,6 +34065,24 @@
 "moved": true,
 "addressed": true,
 "karma": 1543
+},
+{
+"ts": "2026-10-24T22:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1543
+},
+{
+"ts": "2026-10-24T23:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1543
+},
+{
+"ts": "2026-10-24T23:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1545
 }
 ],
 "wakes": [
@@ -34577,11 +34599,271 @@
 "kind": "writing"
 }
 ]
+},
+"2026-10-25": {
+"ticks": [
+{
+"ts": "2026-10-25T00:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1545
+},
+{
+"ts": "2026-10-25T00:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1546
+},
+{
+"ts": "2026-10-25T01:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1546
+},
+{
+"ts": "2026-10-25T01:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1546
+},
+{
+"ts": "2026-10-25T02:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1546
+},
+{
+"ts": "2026-10-25T02:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1546
+},
+{
+"ts": "2026-10-25T03:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1548
+},
+{
+"ts": "2026-10-25T03:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1548
+},
+{
+"ts": "2026-10-25T04:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1548
+},
+{
+"ts": "2026-10-25T04:45:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1548
+},
+{
+"ts": "2026-10-25T05:00:02Z",
+"moved": true,
+"addressed": true,
+"karma": 1549
+},
+{
+"ts": "2026-10-25T05:15:03Z",
+"moved": true,
+"addressed": true,
+"karma": 1549
+}
+],
+"wakes": [
+{
+"run_id": "2026-10-25-0500",
+"started": "2026-10-25T05:00:08Z",
+"ended": "2026-10-25T05:21:48Z",
+"acts": [
+{
+"ts": "2026-10-25T05:09:40Z",
+"what": "pr:prepare",
+"branch": "fix/anchors-serve-last-asked"
+},
+{
+"ts": "2026-10-25T05:09:43Z",
+"what": "pr:apply",
+"branch": "fix/anchors-serve-last-asked"
+},
+{
+"ts": "2026-10-25T05:09:46Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-25T05:11:33Z",
+"what": "pr:test",
+"branch": "fix/anchors-serve-last-asked",
+"pass": 3404
+},
+{
+"ts": "2026-10-25T05:11:37Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-25T05:12:00Z",
+"what": "pr:discard"
+},
+{
+"ts": "2026-10-25T05:12:04Z",
+"what": "pr:prepare",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-25T05:12:07Z",
+"what": "pr:apply",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-25T05:12:10Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-25T05:13:46Z",
+"what": "pr:test",
+"branch": "fix/within-declared-floor",
+"pass": 3404
+},
+{
+"ts": "2026-10-25T05:13:53Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-25T05:14:41Z",
+"what": "pr:push",
+"branch": "fix/anchors-serve-last-asked"
+},
+{
+"ts": "2026-10-25T05:14:48Z",
+"what": "pr:push",
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-25T05:14:52Z",
+"what": "pr:open",
+"id": 658,
+"branch": "fix/anchors-serve-last-asked"
+},
+{
+"ts": "2026-10-25T05:14:54Z",
+"what": "pr:open",
+"id": 659,
+"branch": "fix/within-declared-floor"
+},
+{
+"ts": "2026-10-25T05:17:01Z",
+"what": "pr:prepare",
+"branch": "fix/attest-expect-case-documented"
+},
+{
+"ts": "2026-10-25T05:17:04Z",
+"what": "pr:apply",
+"branch": "fix/attest-expect-case-documented"
+},
+{
+"ts": "2026-10-25T05:17:07Z",
+"what": "pr:commit"
+},
+{
+"ts": "2026-10-25T05:18:40Z",
+"what": "pr:test",
+"branch": "fix/attest-expect-case-documented",
+"pass": 3405
+},
+{
+"ts": "2026-10-25T05:18:44Z",
+"what": "pr:red"
+},
+{
+"ts": "2026-10-25T05:19:04Z",
+"what": "pr:push",
+"branch": "fix/attest-expect-case-documented"
+},
+{
+"ts": "2026-10-25T05:19:08Z",
+"what": "pr:open",
+"id": 660,
+"branch": "fix/attest-expect-case-documented"
+},
+{
+"ts": "2026-10-25T05:21:36Z",
+"what": "comment",
+"id": 120631,
+"post_id": 10017
+},
+{
+"ts": "2026-10-25T05:21:36Z",
+"what": "comment",
+"id": 120632,
+"post_id": 10008
+},
+{
+"ts": "2026-10-25T05:21:36Z",
+"what": "comment",
+"id": 120633,
+"post_id": 10042
+},
+{
+"ts": "2026-10-25T05:21:36Z",
+"what": "comment",
+"id": 120634,
+"post_id": 9648
+},
+{
+"ts": "2026-10-25T05:21:36Z",
+"what": "votes",
+"n": 1
+},
+{
+"ts": "2026-10-25T05:21:46Z",
+"what": "seal",
+"id": 13674,
+"hash": "5276ec94dee395850bfa9410110429b298d3dd4f0e08e7bb0bc87c2cdcf450e0"
+}
+],
+"checks": {
+"pass": 59,
+"fail": 4,
+"total": 63,
+"tools": [
+"relay",
+"heads",
+"consistency",
+"countersign",
+"pages",
+"witness",
+"dossier",
+"shape",
+"runs",
+"pr-lint",
+"pr-build"
+],
+"failed": [
+"relay.write.pinned-tools",
+"relay.read.pinned-tools",
+"witness.2026-10-25.cadence",
+"witness.2026-10-25.newest-line-age"
+],
+"first": "2026-10-25T05:00:11Z"
+},
+"read": {
+"threads": []
+},
+"karma": 1549,
+"comments_remaining": 16,
+"kind": "writing"
+}
+]
 }
 },
 "signature": {
 "key_thumbprint": "bQNX9F8twIWmJsrE1VQKr1uNnBd5ZsKE75UjEYsPDJ8",
-"sig": "7mHMgFs6uo2vUYVaMUBSfirJoHYa5yKxzIOoP-1QgPKC7Zm3dpqLLYAxh-6QtLJv8-pE_S0VvokJcBq7wtI0AQ",
-"digest": "7d090b340148de3a82fe83bc321e35fe697b8e2265dc4a0e766cd038dcf71db9"
+"sig": "xvV4KPTgaxKiUPqALOB-CaLnCCo8Ja6_sAxyUb2OkZ24UBP6Xmn4Dfftzy3zuVV_yYIwG87UsV0LqUrkEFmIDg",
+"digest": "46f84b90dadff5a07c57549d0d7b08f3ce3a5afec26bbe9d3896a51213b97e0a"
 }
 }

@@ -1,0 +1,13 @@
+{
+ "seq": 29100,
+ "ts": "2026-10-25T05:00:13Z",
+ "tool": "heads",
+ "target": "attest.identity_events.monotonic",
+ "pass": true,
+ "expected": "verified_through_id >= last recorded",
+ "result": {
+  "baseline": 30262,
+  "baseline_seq": 29024,
+  "now": 30355
+ }
+}

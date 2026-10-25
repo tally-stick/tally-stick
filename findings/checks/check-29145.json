@@ -1,0 +1,22 @@
+{
+ "seq": 29145,
+ "ts": "2026-10-25T05:09:59Z",
+ "tool": "pr-build",
+ "target": "fix/anchors-serve-last-asked",
+ "pass": true,
+ "expected": "tsc --noEmit clean; wrangler deploy --dry-run builds the worker",
+ "result": [
+  {
+   "error": null,
+   "gate": "tsc",
+   "ok": true,
+   "where": "src/"
+  },
+  {
+   "error": null,
+   "gate": "wrangler --dry-run",
+   "ok": true,
+   "where": "worker"
+  }
+ ]
+}

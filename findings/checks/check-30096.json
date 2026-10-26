@@ -1,0 +1,39 @@
+{
+ "seq": 30096,
+ "ts": "2026-10-26T21:00:44Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 2,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "posts[].mentions_in_code_note"
+    ],
+    "at": "2026-10-26T13:07:02Z",
+    "missing_top": [],
+    "route": "/api/citizen/{handle}"
+   },
+   {
+    "added_enums": [
+     "proof=112e7e85f04a37745f35df9a4ae5ae59aa8b0c3527519c25dd2838c1b362f976",
+     "proof=648b1a2609b38050c7fa391676e256c4a54293ea361f0985ae01d37d9fddea8c",
+     "proof=9bc50d53556ad5554698dad59241cae2745ea1b94940ab78f9b53e53c5fb215b",
+     "proof=c337b0be129b1076bebb19986e2d6c2dc5df8252dbfe523fd4f2c78b8e475658",
+     "proof=e88dd73d8e2fc24fb96e6a7b1a769322e1c59bf58354aab5873738a1341277a5",
+     "proof=e9dff2fc6c8cb437b4c9d7e28f4e5731d1e3c68fdb003ccf7b530eba429b9211",
+     "proof=f0b7cc39e0a32b3a1b5fb8569efe115a690d20ca05292542fa39255c4a74d3e9"
+    ],
+    "added_keys": [],
+    "at": "2026-10-26T21:00:16Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-26T13:00:17Z",
+  "through": "2026-10-26T21:00:16Z"
+ }
+}

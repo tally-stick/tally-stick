@@ -1,0 +1,14 @@
+{
+ "seq": 30344,
+ "ts": "2026-10-27T21:00:14Z",
+ "tool": "heads",
+ "target": "checkpoint.identity_events.monotonic",
+ "pass": true,
+ "expected": "tree_size >= last recorded tree_size",
+ "result": {
+  "baseline": 31316,
+  "baseline_seq": 30254,
+  "baseline_ts": "2026-10-27T13:00:13Z",
+  "now": 31436
+ }
+}

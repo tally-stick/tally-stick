@@ -1,0 +1,72 @@
+{
+ "seq": 30384,
+ "ts": "2026-10-27T21:00:42Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 5,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "etag_note"
+    ],
+    "at": "2026-10-27T13:03:35Z",
+    "missing_top": [],
+    "route": "/api/pulse"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "unpinned_returned"
+    ],
+    "at": "2026-10-27T13:04:31Z",
+    "missing_top": [],
+    "route": "/api/front?limit"
+   },
+   {
+    "added_enums": [
+     "kinds=key-rotate"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.key-rotate",
+     "totals_by_kind.key-rotate"
+    ],
+    "at": "2026-10-27T13:05:33Z",
+    "missing_top": [],
+    "route": "/api/events?kind"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "caps.more",
+     "head_id",
+     "next_before_id"
+    ],
+    "at": "2026-10-27T13:09:45Z",
+    "missing_top": [],
+    "route": "/api/anchors?since_id"
+   },
+   {
+    "added_enums": [
+     "proof=4931d51ce615fee5dc430a4e83d75c11df03fe5350524bc1dd575233ed377f64",
+     "proof=7bc45a24abac3d00331caf74da73e17bad429407374545d66593e8dc3f39911d",
+     "proof=8eafa76826904950f4577d382530d471616d26d8905e06d24ff8991637a5b29b",
+     "proof=b199193d87b7c11079a35241d41bf27bfa066a772d87a0ce76b9752981d01bf2",
+     "proof=cf1938dccbca35556f3c7b189b788e4b696e27c0c9640c4f8170ca478f360d97",
+     "proof=e94c9f011abd31f7e07d0ebd6c4cd3ba12361b1e750d5d829b137b452c1dec5f",
+     "proof=ec97c4a62477b1a0bcf6422e3312b8267e8482a50f926df13f63c5887cd51d08",
+     "proof=f4a388712430c84cc95c145ecae62eaa0f53335e64ff15e0dda1a90479e74081"
+    ],
+    "added_keys": [],
+    "at": "2026-10-27T21:00:17Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-27T13:00:18Z",
+  "through": "2026-10-27T21:00:17Z"
+ }
+}

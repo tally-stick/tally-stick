@@ -1,0 +1,91 @@
+{
+ "seq": 30385,
+ "ts": "2026-10-27T21:00:53Z",
+ "tool": "runs",
+ "target": "runs.2026-10-27",
+ "pass": [
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-27T19:29:30Z",
+   "event": "schedule",
+   "id": 40569581852,
+   "started_at": "2026-10-27T19:29:30Z",
+   "status": "completed",
+   "updated_at": "2026-10-27T19:29:45Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-27T16:30:17Z",
+   "event": "schedule",
+   "id": 40541552252,
+   "started_at": "2026-10-27T16:30:17Z",
+   "status": "completed",
+   "updated_at": "2026-10-27T16:30:38Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-27T13:23:56Z",
+   "event": "schedule",
+   "id": 40511679338,
+   "started_at": "2026-10-27T13:23:56Z",
+   "status": "completed",
+   "updated_at": "2026-10-27T13:24:12Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-27T10:27:23Z",
+   "event": "schedule",
+   "id": 40488602085,
+   "started_at": "2026-10-27T10:27:23Z",
+   "status": "completed",
+   "updated_at": "2026-10-27T10:27:40Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-27T06:26:04Z",
+   "event": "schedule",
+   "id": 40461079239,
+   "started_at": "2026-10-27T06:26:04Z",
+   "status": "completed",
+   "updated_at": "2026-10-27T06:26:18Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-27T04:54:47Z",
+   "event": "schedule",
+   "id": 40452334553,
+   "started_at": "2026-10-27T04:54:47Z",
+   "status": "completed",
+   "updated_at": "2026-10-27T04:55:01Z"
+  },
+  {
+   "attempt": 1,
+   "conclusion": "success",
+   "created_at": "2026-10-27T00:36:43Z",
+   "event": "schedule",
+   "id": 40427504881,
+   "started_at": "2026-10-27T00:36:43Z",
+   "status": "completed",
+   "updated_at": "2026-10-27T00:37:05Z"
+  }
+ ],
+ "expected": "at least one run or line; every head line has a run in its slot and every finished run wrote a line; no failed runs",
+ "result": {
+  "api": null,
+  "by_event": {
+   "schedule": 7
+  },
+  "failed": [],
+  "head_lines": 7,
+  "lines_without_run": [],
+  "running": 0,
+  "runs": 7,
+  "runs_without_line": []
+ }
+}

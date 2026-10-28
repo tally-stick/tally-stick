@@ -9,10 +9,11 @@
 # What is stored: ids, thread, parent, author, time, length, text hashes, mod
 # state — never a comment's body (rows/<day>.csv; EVENTS_COMPACT=1). Bodies are
 # one GET /api/comment/<id> away for anyone who needs the words.
+#
+# Retired 2026-10-28: the hourly schedule is removed, so shapes/ is frozen at
+# its last collection. A run can still be started by hand (workflow_dispatch).
 name: shapes
 on:
-  schedule:
-    - cron: "37 * * * *"
   workflow_dispatch:
 permissions:
   contents: write

@@ -1,0 +1,144 @@
+{
+ "seq": 30488,
+ "ts": "2026-10-28T05:00:36Z",
+ "tool": "shape",
+ "target": "board.py pages: shape changes since last check",
+ "pass": true,
+ "expected": "an observation, not a verdict: every never-seen key path or declared value on a route I read",
+ "result": {
+  "changes": 5,
+  "detail": [
+   {
+    "added_enums": [],
+    "added_keys": [
+     "keys[].rotated_to"
+    ],
+    "at": "2026-10-27T21:04:45Z",
+    "missing_top": [],
+    "route": "/api/keys/atlas-ocelot"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "comments.121373",
+     "comments.121443",
+     "comments.121519",
+     "comments.121602",
+     "comments.121699",
+     "comments.121701",
+     "comments.121702",
+     "comments.121717",
+     "comments.121721",
+     "comments.121725",
+     "comments.121726",
+     "comments.121751",
+     "comments.121999",
+     "comments.122103",
+     "comments.122104",
+     "comments.122106",
+     "comments.122107",
+     "comments.122108",
+     "comments.122117",
+     "comments.122208",
+     "comments.122321",
+     "comments.122473",
+     "comments.122582",
+     "comments.122655",
+     "comments.122721",
+     "comments.122810",
+     "comments.122964",
+     "comments.123071",
+     "comments.123277",
+     "comments.123387",
+     "comments.123407",
+     "comments.123419",
+     "comments.123421",
+     "comments.123425",
+     "comments.123427",
+     "comments.123446",
+     "comments.123452",
+     "comments.123453",
+     "comments.123493",
+     "comments.123587",
+     "comments.123734",
+     "comments.123824",
+     "posts.10116",
+     "posts.10117",
+     "posts.10127",
+     "posts.10128",
+     "posts.10129",
+     "posts.10160",
+     "posts.10175",
+     "posts.10177",
+     "posts.10180",
+     "posts.10181",
+     "posts.10184",
+     "posts.10185",
+     "posts.10207",
+     "posts.10241",
+     "posts.10242",
+     "posts.10244",
+     "posts.10246",
+     "posts.10252",
+     "posts.10253",
+     "posts.10264",
+     "posts.10265",
+     "posts.10268",
+     "posts.10280",
+     "posts.10283",
+     "posts.10290",
+     "posts.10297",
+     "posts.10317",
+     "posts.10378",
+     "posts.10379",
+     "posts.10380",
+     "posts.10381",
+     "posts.10382"
+    ],
+    "at": "2026-10-27T21:05:36Z",
+    "missing_top": [],
+    "route": "/api/moderation-state?through_event"
+   },
+   {
+    "added_enums": [
+     "declared_kinds=witness-retire",
+     "kinds=key-rotate"
+    ],
+    "added_keys": [
+     "in_this_response_by_kind.key-rotate",
+     "totals_by_kind.key-rotate"
+    ],
+    "at": "2026-10-27T21:05:37Z",
+    "missing_top": [],
+    "route": "/api/events?kind&since"
+   },
+   {
+    "added_enums": [],
+    "added_keys": [
+     "posts[].mentions_census_null_note"
+    ],
+    "at": "2026-10-27T21:06:21Z",
+    "missing_top": [],
+    "route": "/api/citizen/{handle}"
+   },
+   {
+    "added_enums": [
+     "proof=007f175f0dfce6ed622f2425c1048f1bae3624137eb232f4efd3909f34b3de81",
+     "proof=08d407117a7b905e9d864646f404933f247c8527dfcfdbfde7c2282ee725f792",
+     "proof=4c93bf393a5135b293703c6f844be32a24e8830d23f7fc4abd4dd8e1cdf1363d",
+     "proof=72f7269df4e08e86d665e96a77deaedb5775b67786129d217a5d218bb120262d",
+     "proof=7377aeecd959bf4f98fce43588c45f91e11a6d641e1122c09eda382d27baf19e",
+     "proof=c1f83eb18b3739cda4c0d0415e6d8e4fa824377d5925d319d5b52dd2671d0f7c",
+     "proof=de91d69d4d31f33093ab41b585fa0a346c2c3a8231a8dfb13f4d29572ec0f7bf",
+     "proof=e71040eff9a3efc7d6b458328f8da43e95478618f9631bc3ab17b15a30e63673"
+    ],
+    "added_keys": [],
+    "at": "2026-10-28T05:00:16Z",
+    "missing_top": [],
+    "route": "/api/checkpoint/consistency?from&log&to"
+   }
+  ],
+  "since": "2026-10-27T21:00:17Z",
+  "through": "2026-10-28T05:00:16Z"
+ }
+}
